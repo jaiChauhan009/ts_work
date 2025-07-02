@@ -46,7 +46,7 @@ features:
     serviceUrl: 'https://nfts-graph.dharitri.org/graphql'
   exchange:
     enabled: false
-    serviceUrl: 'https://graph.xexchange.com/graphql'
+    serviceUrl: 'https://graph.dharitrix.com/graphql'
   dataApi:
     enabled: false
     serviceUrl: 'https://data-api.dharitri.org'
@@ -141,7 +141,7 @@ urls:
   tmp: '/tmp'
   ipfs: 'https://ipfs.io/ipfs'
   socket: 'socket-api-fra.dharitri.org'
-  maiarId: 'https://id-api.dharitri.org'
+  durianId: 'https://id-api.dharitri.org'
 indexer:
   type: 'elastic'
   maxPagination: 10000

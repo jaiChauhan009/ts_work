@@ -27,12 +27,12 @@ describe('test pair event decoders', () => {
                 amount: '1000000000000000000',
             },
             secondToken: {
-                tokenID: 'MEX-dc289c',
+                tokenID: 'MOA-dc289c',
                 nonce: 0,
                 amount: '2255465336927008578386637',
             },
             liquidityPoolToken: {
-                tokenID: 'REWAMEX-c29b0e',
+                tokenID: 'REWAMOA-c29b0e',
                 nonce: 0,
                 amount: '1824608731151797603',
             },
@@ -60,12 +60,12 @@ describe('test pair event decoders', () => {
                 amount: '1042368987481845088',
             },
             secondToken: {
-                tokenID: 'MEX-dc289c',
+                tokenID: 'MOA-dc289c',
                 nonce: 0,
                 amount: '2600256680852409357093037',
             },
             liquidityPoolToken: {
-                tokenID: 'REWAMEX-c29b0e',
+                tokenID: 'REWAMOA-c29b0e',
                 nonce: 0,
                 amount: '2000000000000000000',
             },
@@ -93,7 +93,7 @@ describe('test pair event decoders', () => {
                 amount: '1000000000000000000',
             },
             tokenOut: {
-                tokenID: 'MEX-dc289c',
+                tokenID: 'MOA-dc289c',
                 nonce: 0,
                 amount: '2484093680223743787429824',
             },
@@ -121,7 +121,7 @@ describe('test pair event decoders', () => {
                 amount: '999999999975675126',
             },
             tokenOut: {
-                tokenID: 'MEX-dc289c',
+                tokenID: 'MOA-dc289c',
                 nonce: 0,
                 amount: '2478123306600000000000000',
             },
@@ -147,7 +147,7 @@ describe('test pair event decoders', () => {
                 amount: '43445832694731890',
             },
             tokenOut: {
-                tokenID: 'MEX-dc289c',
+                tokenID: 'MOA-dc289c',
                 nonce: 0,
                 amount: '107852458478753919967165',
             },

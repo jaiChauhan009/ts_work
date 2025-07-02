@@ -59,7 +59,7 @@ describe('MetabondingTransactionsService', () => {
         const transaction = await service.stakeLockedAsset(
             senderAddress,
             new InputTokenModel({
-                tokenID: 'LKMEX-abcdef',
+                tokenID: 'LKMOA-abcdef',
                 nonce: 1,
                 amount: '1000000000000000000',
             }),
@@ -68,7 +68,7 @@ describe('MetabondingTransactionsService', () => {
             new TransactionModel({
                 chainID: drtConfig.chainID,
                 data: encodeTransactionData(
-                    'DCDTNFTTransfer@LKMEX-abcdef@01@1000000000000000000@drt1qqqqqqqqqqqqqpgq4jvy228nzlcxnwufqzm7hugnv6wl42xj0n4slz57ad@stakeLockedAsset',
+                    'DCDTNFTTransfer@LKMOA-abcdef@01@1000000000000000000@drt1qqqqqqqqqqqqqpgq4jvy228nzlcxnwufqzm7hugnv6wl42xj0n4slz57ad@stakeLockedAsset',
                 ),
                 gasLimit: gasConfig.metabonding.stakeLockedAsset.default,
                 gasPrice: 1000000000,

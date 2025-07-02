@@ -4,7 +4,7 @@ import { MetabondingAbiService } from '../services/metabonding.abi.service';
 
 export class MetabondingAbiServiceMock implements IMetabondingAbiService {
     async lockedAssetTokenID(): Promise<string> {
-        return 'LKMEX-abcdef';
+        return 'LKMOA-abcdef';
     }
     totalLockedAssetSupply(): Promise<string> {
         throw new Error('Method not implemented.');

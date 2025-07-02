@@ -42,7 +42,7 @@ export class WeeklyRewardsSplittingAbiServiceMock
             }),
             new DcdtTokenPayment({
                 amount: '150000000000000000000',
-                tokenID: 'MEX-123456',
+                tokenID: 'MOA-123456',
             }),
             new DcdtTokenPayment({
                 amount: '200000000000000000000',

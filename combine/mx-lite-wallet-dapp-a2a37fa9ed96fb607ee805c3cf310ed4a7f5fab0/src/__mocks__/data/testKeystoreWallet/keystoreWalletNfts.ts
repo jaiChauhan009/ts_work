@@ -819,18 +819,18 @@ export const keystoreWalletNfts = [
     isNsfw: false
   },
   {
-    identifier: 'REWAMEXFL-2ed783-04',
-    collection: 'REWAMEXFL-2ed783',
+    identifier: 'REWAMOAFL-2ed783-04',
+    collection: 'REWAMOAFL-2ed783',
     attributes:
       'AAAABhSeHDNSrwAAAAAAAASrAAAAAAAAAAgCsgKYUvWXVnXLh8JDUaZ7iS9X3OwOsrKgeq+rLxqrdBoQ/GEFny/o',
     nonce: 4,
     type: 'MetaDCDT',
-    name: 'REWAMEXLPStakedLK',
+    name: 'REWAMOALPStakedLK',
     creator: 'drt1qqqqqqqqqqqqqpgqqjpfmappkpzq6kdju3mkqepk3d2kcymu0n4s73zhnr',
     isWhitelistedStorage: false,
     balance: '194220587180463958',
     decimals: 18,
-    ticker: 'REWAMEXFL-2ed783',
+    ticker: 'REWAMOAFL-2ed783',
     price: 51.549192855952654,
     valueUsd: 10.011914505162101
   },
@@ -1154,7 +1154,7 @@ export const keystoreWalletNfts = [
     attributes: 'AAAACk1FWC1hNjU5ZDAAAAAAAAAAAAAAAAAAAAWg',
     nonce: 9,
     type: 'MetaDCDT',
-    name: 'MEX-a659d0',
+    name: 'MOA-a659d0',
     creator: 'drt1qqqqqqqqqqqqqpgq2l97gw2j4wnlem4y2rx7dudqlssjtwpu0n4ssntjd5',
     isWhitelistedStorage: false,
     balance: '21000000000000000000',

@@ -105,7 +105,7 @@ describe('PositionCreatorTransaction', () => {
                         '0000000000000000000000000000000000000000000000000000000000000012',
                     ).bech32(),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'MEX-abcdef',
+                        tokenIdentifier: 'MOA-abcdef',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -328,7 +328,7 @@ describe('PositionCreatorTransaction', () => {
                     ).bech32(),
                     [
                         new DcdtTokenPayment({
-                            tokenIdentifier: 'MEX-abcdef',
+                            tokenIdentifier: 'MOA-abcdef',
                             tokenNonce: 0,
                             amount: '100000000000000000000',
                         }),
@@ -356,7 +356,7 @@ describe('PositionCreatorTransaction', () => {
                             amount: '100000000000000000000',
                         }),
                         new DcdtTokenPayment({
-                            tokenIdentifier: 'REWAMEXFL-123456',
+                            tokenIdentifier: 'REWAMOAFL-123456',
                             tokenNonce: 1,
                             amount: '100000000000000000000',
                         }),
@@ -533,7 +533,7 @@ describe('PositionCreatorTransaction', () => {
                         amount: '100000000000000000000',
                     }),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'REWAMEXFL-abcdef',
+                        tokenIdentifier: 'REWAMOAFL-abcdef',
                         tokenNonce: 1,
                         amount: '100000000000000000000',
                     }),
@@ -577,7 +577,7 @@ describe('PositionCreatorTransaction', () => {
                     gasPrice: 1000000000,
                     gasLimit: gasLimit,
                     data: encodeTransactionData(
-                        `MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@WREWA-123456@@100000000000000000000@REWAMEXFL-abcdef@01@100000000000000000000@createFarmPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000021@47008144020574367766@47008144020574367766823`,
+                        `MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@WREWA-123456@@100000000000000000000@REWAMOAFL-abcdef@01@100000000000000000000@createFarmPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000021@47008144020574367766@47008144020574367766823`,
                     ),
                     chainID: 'T',
                     version: 2,
@@ -622,7 +622,7 @@ describe('PositionCreatorTransaction', () => {
                         amount: '100000000000000000000',
                     }),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'REWAMEXFL-abcdef',
+                        tokenIdentifier: 'REWAMOAFL-abcdef',
                         tokenNonce: 1,
                         amount: '100000000000000000000',
                     }),
@@ -648,7 +648,7 @@ describe('PositionCreatorTransaction', () => {
                     gasPrice: 1000000000,
                     gasLimit: gasLimit,
                     data: encodeTransactionData(
-                        `MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@USDC-123456@@100000000000000000000@REWAMEXFL-abcdef@01@100000000000000000000@createFarmPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000021@329339339317295273252@329339339317295273252718@0000000000000000000000000000000000000000000000000000000000000013@swapTokensFixedInput@WREWA-123456@989999999900702106327`,
+                        `MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@USDC-123456@@100000000000000000000@REWAMOAFL-abcdef@01@100000000000000000000@createFarmPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000021@329339339317295273252@329339339317295273252718@0000000000000000000000000000000000000000000000000000000000000013@swapTokensFixedInput@WREWA-123456@989999999900702106327`,
                     ),
                     chainID: 'T',
                     version: 2,
@@ -1189,7 +1189,7 @@ describe('PositionCreatorTransaction', () => {
                 Address.Zero().bech32(),
                 [
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'REWAMEXLP-abcdef',
+                        tokenIdentifier: 'REWAMOALP-abcdef',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -1219,7 +1219,7 @@ describe('PositionCreatorTransaction', () => {
                     gasPrice: 1000000000,
                     gasLimit: gasLimit,
                     data: encodeTransactionData(
-                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@REWAMEXLP-abcdef@@100000000000000000000@METASTAKE-123456@01@100000000000000000000@createMetastakingPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000000@@',
+                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@REWAMOALP-abcdef@@100000000000000000000@METASTAKE-123456@01@100000000000000000000@createMetastakingPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000000@@',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -1288,7 +1288,7 @@ describe('PositionCreatorTransaction', () => {
             );
 
             jest.spyOn(stakingAbi, 'farmingTokenID').mockResolvedValue(
-                'MEX-123456',
+                'MOA-123456',
             );
 
             const swapRoutes =
@@ -1332,7 +1332,7 @@ describe('PositionCreatorTransaction', () => {
                     gasPrice: 1000000000,
                     gasLimit: gasLimit,
                     data: encodeTransactionData(
-                        'createFarmStakingPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000000@90661089388014913158134@0000000000000000000000000000000000000000000000000000000000000012@swapTokensFixedInput@MEX-123456@89754478494134764026552',
+                        'createFarmStakingPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000000@90661089388014913158134@0000000000000000000000000000000000000000000000000000000000000012@swapTokensFixedInput@MOA-123456@89754478494134764026552',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -1415,7 +1415,7 @@ describe('PositionCreatorTransaction', () => {
             );
 
             jest.spyOn(stakingAbi, 'farmingTokenID').mockResolvedValue(
-                'MEX-123456',
+                'MOA-123456',
             );
 
             const swapRoutes =
@@ -1482,7 +1482,7 @@ describe('PositionCreatorTransaction', () => {
                     gasPrice: 1000000000,
                     gasLimit: gasLimit,
                     data: encodeTransactionData(
-                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@WREWA-123456@@100000000000000000000@STAKETOK-111111@01@100000000000000000000@createFarmStakingPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000000@90661089388014913158134@0000000000000000000000000000000000000000000000000000000000000012@swapTokensFixedInput@MEX-123456@89754478494134764026552',
+                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@WREWA-123456@@100000000000000000000@STAKETOK-111111@01@100000000000000000000@createFarmStakingPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000000@90661089388014913158134@0000000000000000000000000000000000000000000000000000000000000012@swapTokensFixedInput@MOA-123456@89754478494134764026552',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -1579,7 +1579,7 @@ describe('PositionCreatorTransaction', () => {
                             amount: '100000000000000000000',
                         }),
                         new DcdtTokenPayment({
-                            tokenIdentifier: 'MEX-abcdef',
+                            tokenIdentifier: 'MOA-abcdef',
                             tokenNonce: 0,
                             amount: '100000000000000000000',
                         }),
@@ -1606,12 +1606,12 @@ describe('PositionCreatorTransaction', () => {
                             amount: '100000000000000000000',
                         }),
                         new DcdtTokenPayment({
-                            tokenIdentifier: 'MEX-123456',
+                            tokenIdentifier: 'MOA-123456',
                             tokenNonce: 0,
                             amount: '100000000000000000000',
                         }),
                         new DcdtTokenPayment({
-                            tokenIdentifier: 'REWAMEXFL-123456',
+                            tokenIdentifier: 'REWAMOAFL-123456',
                             tokenNonce: 1,
                             amount: '100000000000000000000',
                         }),
@@ -1637,7 +1637,7 @@ describe('PositionCreatorTransaction', () => {
                         amount: '100000000000000000000',
                     }),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'MEX-123456',
+                        tokenIdentifier: 'MOA-123456',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -1656,7 +1656,7 @@ describe('PositionCreatorTransaction', () => {
                     gasPrice: 1000000000,
                     gasLimit: gasConfig.positionCreator.dualTokens.farmPosition,
                     data: encodeTransactionData(
-                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@WREWA-123456@@100000000000000000000@MEX-123456@@100000000000000000000@createFarmPosFromTwoTokens@0000000000000000000000000000000000000000000000000000000000000021@99000000000000000000@99000000000000000000',
+                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@WREWA-123456@@100000000000000000000@MOA-123456@@100000000000000000000@createFarmPosFromTwoTokens@0000000000000000000000000000000000000000000000000000000000000021@99000000000000000000@99000000000000000000',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -1684,12 +1684,12 @@ describe('PositionCreatorTransaction', () => {
                         amount: '100000000000000000000',
                     }),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'MEX-123456',
+                        tokenIdentifier: 'MOA-123456',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'REWAMEXFL-abcdef',
+                        tokenIdentifier: 'REWAMOAFL-abcdef',
                         tokenNonce: 1,
                         amount: '100000000000000000000',
                     }),
@@ -1708,7 +1708,7 @@ describe('PositionCreatorTransaction', () => {
                     gasPrice: 1000000000,
                     gasLimit: gasConfig.positionCreator.dualTokens.farmPosition,
                     data: encodeTransactionData(
-                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@03@WREWA-123456@@100000000000000000000@MEX-123456@@100000000000000000000@REWAMEXFL-abcdef@01@100000000000000000000@createFarmPosFromTwoTokens@0000000000000000000000000000000000000000000000000000000000000021@99000000000000000000@99000000000000000000',
+                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@03@WREWA-123456@@100000000000000000000@MOA-123456@@100000000000000000000@REWAMOAFL-abcdef@01@100000000000000000000@createFarmPosFromTwoTokens@0000000000000000000000000000000000000000000000000000000000000021@99000000000000000000@99000000000000000000',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -1736,12 +1736,12 @@ describe('PositionCreatorTransaction', () => {
                         amount: '100000000000000000000',
                     }),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'MEX-123456',
+                        tokenIdentifier: 'MOA-123456',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'REWAMEXFL-abcdef',
+                        tokenIdentifier: 'REWAMOAFL-abcdef',
                         tokenNonce: 1,
                         amount: '100000000000000000000',
                     }),
@@ -1778,7 +1778,7 @@ describe('PositionCreatorTransaction', () => {
                     gasPrice: 1000000000,
                     gasLimit: gasConfig.positionCreator.dualTokens.farmPosition,
                     data: encodeTransactionData(
-                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@03@WREWA-123456@@100000000000000000000@MEX-123456@@100000000000000000000@REWAMEXFL-abcdef@01@100000000000000000000@createFarmPosFromTwoTokens@0000000000000000000000000000000000000000000000000000000000000021@99000000000000000000@99000000000000000000',
+                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@03@WREWA-123456@@100000000000000000000@MOA-123456@@100000000000000000000@REWAMOAFL-abcdef@01@100000000000000000000@createFarmPosFromTwoTokens@0000000000000000000000000000000000000000000000000000000000000021@99000000000000000000@99000000000000000000',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -1810,7 +1810,7 @@ describe('PositionCreatorTransaction', () => {
                             amount: '100000000000000000000',
                         }),
                         new DcdtTokenPayment({
-                            tokenIdentifier: 'ELKMEX-123456',
+                            tokenIdentifier: 'ELKMOA-123456',
                             tokenNonce: 0,
                             amount: '100000000000000000000',
                         }),
@@ -1827,7 +1827,7 @@ describe('PositionCreatorTransaction', () => {
                     ).bech32(),
                     [
                         new DcdtTokenPayment({
-                            tokenIdentifier: 'ELKMEX-123456',
+                            tokenIdentifier: 'ELKMOA-123456',
                             tokenNonce: 1,
                             amount: '100000000000000000000',
                         }),
@@ -1849,7 +1849,7 @@ describe('PositionCreatorTransaction', () => {
                     ).bech32(),
                     [
                         new DcdtTokenPayment({
-                            tokenIdentifier: 'ELKMEX-123456',
+                            tokenIdentifier: 'ELKMOA-123456',
                             tokenNonce: 1,
                             amount: '100000000000000000000',
                         }),
@@ -1877,7 +1877,7 @@ describe('PositionCreatorTransaction', () => {
                     ).bech32(),
                     [
                         new DcdtTokenPayment({
-                            tokenIdentifier: 'ELKMEX-123456',
+                            tokenIdentifier: 'ELKMOA-123456',
                             tokenNonce: 1,
                             amount: '100000000000000000000',
                         }),
@@ -1908,7 +1908,7 @@ describe('PositionCreatorTransaction', () => {
                 ).bech32(),
                 [
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'ELKMEX-123456',
+                        tokenIdentifier: 'ELKMOA-123456',
                         tokenNonce: 1,
                         amount: '100000000000000000000',
                     }),
@@ -1933,7 +1933,7 @@ describe('PositionCreatorTransaction', () => {
                     gasLimit:
                         gasConfig.positionCreator.dualTokens.farmPositionProxy,
                     data: encodeTransactionData(
-                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@WREWA-123456@@100000000000000000000@ELKMEX-123456@01@100000000000000000000@createFarmPosFromTwoTokens@99000000000000000000@99000000000000000000',
+                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@WREWA-123456@@100000000000000000000@ELKMOA-123456@01@100000000000000000000@createFarmPosFromTwoTokens@99000000000000000000@99000000000000000000',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -1956,7 +1956,7 @@ describe('PositionCreatorTransaction', () => {
                 ).bech32(),
                 [
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'ELKMEX-123456',
+                        tokenIdentifier: 'ELKMOA-123456',
                         tokenNonce: 1,
                         amount: '100000000000000000000',
                     }),
@@ -1986,7 +1986,7 @@ describe('PositionCreatorTransaction', () => {
                     gasLimit:
                         gasConfig.positionCreator.dualTokens.farmPositionProxy,
                     data: encodeTransactionData(
-                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@03@WREWA-123456@@100000000000000000000@ELKMEX-123456@01@100000000000000000000@LKFARM-123456@01@100000000000000000000@createFarmPosFromTwoTokens@99000000000000000000@99000000000000000000',
+                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@03@WREWA-123456@@100000000000000000000@ELKMOA-123456@01@100000000000000000000@LKFARM-123456@01@100000000000000000000@createFarmPosFromTwoTokens@99000000000000000000@99000000000000000000',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -2024,7 +2024,7 @@ describe('PositionCreatorTransaction', () => {
                             amount: '100000000000000000000',
                         }),
                         new DcdtTokenPayment({
-                            tokenIdentifier: 'MEX-abcdef',
+                            tokenIdentifier: 'MOA-abcdef',
                             tokenNonce: 0,
                             amount: '100000000000000000000',
                         }),
@@ -2058,7 +2058,7 @@ describe('PositionCreatorTransaction', () => {
                             amount: '100000000000000000000',
                         }),
                         new DcdtTokenPayment({
-                            tokenIdentifier: 'MEX-123456',
+                            tokenIdentifier: 'MOA-123456',
                             tokenNonce: 0,
                             amount: '100000000000000000000',
                         }),
@@ -2096,7 +2096,7 @@ describe('PositionCreatorTransaction', () => {
                         amount: '100000000000000000000',
                     }),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'MEX-123456',
+                        tokenIdentifier: 'MOA-123456',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -2116,7 +2116,7 @@ describe('PositionCreatorTransaction', () => {
                     gasLimit:
                         gasConfig.positionCreator.dualTokens.dualFarmPosition,
                     data: encodeTransactionData(
-                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@WREWA-123456@@100000000000000000000@MEX-123456@@100000000000000000000@createMetastakingPosFromTwoTokens@0000000000000000000000000000000000000000000000000000000000000000@99000000000000000000@99000000000000000000',
+                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@WREWA-123456@@100000000000000000000@MOA-123456@@100000000000000000000@createMetastakingPosFromTwoTokens@0000000000000000000000000000000000000000000000000000000000000000@99000000000000000000@99000000000000000000',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -2151,7 +2151,7 @@ describe('PositionCreatorTransaction', () => {
                         amount: '100000000000000000000',
                     }),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'MEX-123456',
+                        tokenIdentifier: 'MOA-123456',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -2194,7 +2194,7 @@ describe('PositionCreatorTransaction', () => {
                     gasLimit:
                         gasConfig.positionCreator.dualTokens.dualFarmPosition,
                     data: encodeTransactionData(
-                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@03@WREWA-123456@@100000000000000000000@MEX-123456@@100000000000000000000@METASTAKE-123456@01@100000000000000000000@createMetastakingPosFromTwoTokens@0000000000000000000000000000000000000000000000000000000000000000@99000000000000000000@99000000000000000000',
+                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@03@WREWA-123456@@100000000000000000000@MOA-123456@@100000000000000000000@METASTAKE-123456@01@100000000000000000000@createMetastakingPosFromTwoTokens@0000000000000000000000000000000000000000000000000000000000000000@99000000000000000000@99000000000000000000',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -2229,7 +2229,7 @@ describe('PositionCreatorTransaction', () => {
                         amount: '100000000000000000000',
                     }),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'MEX-123456',
+                        tokenIdentifier: 'MOA-123456',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -2254,7 +2254,7 @@ describe('PositionCreatorTransaction', () => {
                     gasLimit:
                         gasConfig.positionCreator.dualTokens.dualFarmPosition,
                     data: encodeTransactionData(
-                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@03@WREWA-123456@@100000000000000000000@MEX-123456@@100000000000000000000@METASTAKE-123456@01@100000000000000000000@createMetastakingPosFromTwoTokens@0000000000000000000000000000000000000000000000000000000000000000@99000000000000000000@99000000000000000000',
+                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@03@WREWA-123456@@100000000000000000000@MOA-123456@@100000000000000000000@METASTAKE-123456@01@100000000000000000000@createMetastakingPosFromTwoTokens@0000000000000000000000000000000000000000000000000000000000000000@99000000000000000000@99000000000000000000',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -2279,7 +2279,7 @@ describe('PositionCreatorTransaction', () => {
                         '0000000000000000000000000000000000000000000000000000000000000021',
                     ).bech32(),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'MEX-abcdef',
+                        tokenIdentifier: 'MOA-abcdef',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -2298,7 +2298,7 @@ describe('PositionCreatorTransaction', () => {
                     '0000000000000000000000000000000000000000000000000000000000000021',
                 ).bech32(),
                 new DcdtTokenPayment({
-                    tokenIdentifier: 'REWAMEXFL-abcdef',
+                    tokenIdentifier: 'REWAMOAFL-abcdef',
                     tokenNonce: 1,
                     amount: '100000000000000000000',
                 }),
@@ -2315,7 +2315,7 @@ describe('PositionCreatorTransaction', () => {
                 gasPrice: 1000000000,
                 gasLimit: gasConfig.positionCreator.dualTokens.exitFarm,
                 data: encodeTransactionData(
-                    'DCDTNFTTransfer@REWAMEXFL-abcdef@01@100000000000000000000@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@exitFarmPos@0000000000000000000000000000000000000000000000000000000000000021@99000000000000000000@99000000000000000000000',
+                    'DCDTNFTTransfer@REWAMOAFL-abcdef@01@100000000000000000000@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@exitFarmPos@0000000000000000000000000000000000000000000000000000000000000021@99000000000000000000@99000000000000000000000',
                 ),
                 chainID: 'T',
                 version: 2,
@@ -2361,7 +2361,7 @@ describe('PositionCreatorTransaction', () => {
                     tokenNonce: 0,
                     amount: '1000000000000000000',
                 }),
-                constantsConfig.MEX_TOKEN_ID,
+                constantsConfig.MOA_TOKEN_ID,
                 0.01,
             );
 
@@ -2380,7 +2380,7 @@ describe('PositionCreatorTransaction', () => {
                 {
                     chainID: 'T',
                     data: encodeTransactionData(
-                        'DCDTTransfer@WREWA-123456@1000000000000000000@createEnergyPosition@1440@986046911229504184328@0000000000000000000000000000000000000000000000000000000000000012@swapTokensFixedInput@MEX-123456@986046911229504184328',
+                        'DCDTTransfer@WREWA-123456@1000000000000000000@createEnergyPosition@1440@986046911229504184328@0000000000000000000000000000000000000000000000000000000000000012@swapTokensFixedInput@MOA-123456@986046911229504184328',
                     ),
                     gasLimit: 43000000,
                     gasPrice: 1000000000,
@@ -2413,7 +2413,7 @@ describe('PositionCreatorTransaction', () => {
                     tokenNonce: 0,
                     amount: '1000000000000000000',
                 }),
-                constantsConfig.MEX_TOKEN_ID,
+                constantsConfig.MOA_TOKEN_ID,
                 0.01,
             );
 
@@ -2432,7 +2432,7 @@ describe('PositionCreatorTransaction', () => {
                 {
                     chainID: 'T',
                     data: encodeTransactionData(
-                        'createEnergyPosition@1440@986046911229504184328@0000000000000000000000000000000000000000000000000000000000000012@swapTokensFixedInput@MEX-123456@986046911229504184328',
+                        'createEnergyPosition@1440@986046911229504184328@0000000000000000000000000000000000000000000000000000000000000012@swapTokensFixedInput@MOA-123456@986046911229504184328',
                     ),
                     gasLimit: 43000000,
                     gasPrice: 1000000000,

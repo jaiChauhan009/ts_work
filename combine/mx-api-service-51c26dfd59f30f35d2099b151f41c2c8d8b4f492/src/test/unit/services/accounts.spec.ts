@@ -850,10 +850,10 @@ describe('Account Service', () => {
         name: 'Dharitri  DNS: Contract 239',
         description: '',
         social: new AccountAssetsSocial({
-          website: "https://xexchange.com",
+          website: "https://dharitrix.com",
           twitter: "https://twitter.com/xExchangeApp",
           telegram: "https://t.me/xExchangeApp",
-          blog: "https://dharitri.org/blog/maiar-exchange-mex-tokenomics",
+          blog: "https://dharitri.org/blog/durian-exchange-moa-tokenomics",
         }),
         tags: ['dns'],
         icon: 'dharitri',

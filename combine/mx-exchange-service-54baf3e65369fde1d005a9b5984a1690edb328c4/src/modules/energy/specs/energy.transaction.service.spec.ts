@@ -55,7 +55,7 @@ describe('EnergyTransactionService', () => {
         const transaction = await service.lockTokens(
             senderAddress,
             new InputTokenModel({
-                tokenID: 'XMEX-123456',
+                tokenID: 'XMOA-123456',
                 nonce: 1,
                 amount: '1000000000000000000',
             }),
@@ -67,7 +67,7 @@ describe('EnergyTransactionService', () => {
                 chainID: drtConfig.chainID,
                 nonce: 0,
                 data: encodeTransactionData(
-                    `DCDTNFTTransfer@XMEX-123456@01@1000000000000000000@${scAddress.simpleLockEnergy}@lockTokens@720`,
+                    `DCDTNFTTransfer@XMOA-123456@01@1000000000000000000@${scAddress.simpleLockEnergy}@lockTokens@720`,
                 ),
                 gasPrice: 1000000000,
                 gasLimit: gasConfig.simpleLockEnergy.lockTokens,
@@ -88,7 +88,7 @@ describe('EnergyTransactionService', () => {
         const transaction = await service.lockTokens(
             senderAddress,
             new InputTokenModel({
-                tokenID: 'MEX-123456',
+                tokenID: 'MOA-123456',
                 nonce: 0,
                 amount: '1000000000000000000',
             }),
@@ -100,7 +100,7 @@ describe('EnergyTransactionService', () => {
                 chainID: drtConfig.chainID,
                 nonce: 0,
                 data: encodeTransactionData(
-                    `DCDTTransfer@MEX-123456@1000000000000000000@lockTokens@720`,
+                    `DCDTTransfer@MOA-123456@1000000000000000000@lockTokens@720`,
                 ),
                 gasPrice: 1000000000,
                 gasLimit: gasConfig.simpleLockEnergy.lockTokens,
@@ -121,7 +121,7 @@ describe('EnergyTransactionService', () => {
         const transaction = await service.unlockTokens(
             senderAddress,
             new InputTokenModel({
-                tokenID: 'XMEX-123456',
+                tokenID: 'XMOA-123456',
                 nonce: 1,
                 amount: '1000000000000000000',
             }),
@@ -133,7 +133,7 @@ describe('EnergyTransactionService', () => {
                 chainID: drtConfig.chainID,
                 nonce: 0,
                 data: encodeTransactionData(
-                    `DCDTNFTTransfer@XMEX-123456@01@1000000000000000000@${scAddress.simpleLockEnergy}@unlockEarly`,
+                    `DCDTNFTTransfer@XMOA-123456@01@1000000000000000000@${scAddress.simpleLockEnergy}@unlockEarly`,
                 ),
                 gasPrice: 1000000000,
                 gasLimit: gasConfig.simpleLockEnergy.unlockTokens.unlockEarly,
@@ -154,7 +154,7 @@ describe('EnergyTransactionService', () => {
         const transaction = await service.unlockTokens(
             senderAddress,
             new InputTokenModel({
-                tokenID: 'XMEX-123456',
+                tokenID: 'XMOA-123456',
                 nonce: 1,
                 amount: '1000000000000000000',
             }),
@@ -167,7 +167,7 @@ describe('EnergyTransactionService', () => {
                 chainID: drtConfig.chainID,
                 nonce: 0,
                 data: encodeTransactionData(
-                    `DCDTNFTTransfer@XMEX-123456@01@1000000000000000000@${scAddress.simpleLockEnergy}@reduceLockPeriod@400`,
+                    `DCDTNFTTransfer@XMOA-123456@01@1000000000000000000@${scAddress.simpleLockEnergy}@reduceLockPeriod@400`,
                 ),
                 gasPrice: 1000000000,
                 gasLimit:
@@ -189,7 +189,7 @@ describe('EnergyTransactionService', () => {
         const transaction = await service.unlockTokens(
             senderAddress,
             new InputTokenModel({
-                tokenID: 'XMEX-123456',
+                tokenID: 'XMOA-123456',
                 nonce: 1,
                 amount: '1000000000000000000',
             }),
@@ -201,7 +201,7 @@ describe('EnergyTransactionService', () => {
                 chainID: drtConfig.chainID,
                 nonce: 0,
                 data: encodeTransactionData(
-                    `DCDTNFTTransfer@XMEX-123456@01@1000000000000000000@${scAddress.simpleLockEnergy}@unlockTokens`,
+                    `DCDTNFTTransfer@XMOA-123456@01@1000000000000000000@${scAddress.simpleLockEnergy}@unlockTokens`,
                 ),
                 gasPrice: 1000000000,
                 gasLimit: gasConfig.simpleLockEnergy.unlockTokens.default,
@@ -221,12 +221,12 @@ describe('EnergyTransactionService', () => {
 
         const transaction = await service.mergeTokens(senderAddress, [
             new InputTokenModel({
-                tokenID: 'XMEX-123456',
+                tokenID: 'XMOA-123456',
                 nonce: 1,
                 amount: '1000000000000000000',
             }),
             new InputTokenModel({
-                tokenID: 'XMEX-123456',
+                tokenID: 'XMOA-123456',
                 nonce: 2,
                 amount: '2000000000000000000',
             }),
@@ -237,7 +237,7 @@ describe('EnergyTransactionService', () => {
                 chainID: drtConfig.chainID,
                 nonce: 0,
                 data: encodeTransactionData(
-                    `MultiDCDTNFTTransfer@${scAddress.simpleLockEnergy}@02@XMEX-123456@01@1000000000000000000@XMEX-123456@02@2000000000000000000@mergeTokens`,
+                    `MultiDCDTNFTTransfer@${scAddress.simpleLockEnergy}@02@XMOA-123456@01@1000000000000000000@XMOA-123456@02@2000000000000000000@mergeTokens`,
                 ),
                 gasPrice: 1000000000,
                 gasLimit: gasConfig.simpleLockEnergy.defaultMergeTokens * 2,
@@ -257,12 +257,12 @@ describe('EnergyTransactionService', () => {
 
         const transaction = await service.migrateOldTokens(senderAddress, [
             new InputTokenModel({
-                tokenID: 'LKMEX-abcdef',
+                tokenID: 'LKMOA-abcdef',
                 nonce: 1,
                 amount: '1000000000000000000',
             }),
             new InputTokenModel({
-                tokenID: 'LKMEX-abcdef',
+                tokenID: 'LKMOA-abcdef',
                 nonce: 2,
                 amount: '2000000000000000000',
             }),
@@ -273,7 +273,7 @@ describe('EnergyTransactionService', () => {
                 chainID: drtConfig.chainID,
                 nonce: 0,
                 data: encodeTransactionData(
-                    `MultiDCDTNFTTransfer@${scAddress.simpleLockEnergy}@02@LKMEX-abcdef@01@1000000000000000000@LKMEX-abcdef@02@2000000000000000000@migrateOldTokens`,
+                    `MultiDCDTNFTTransfer@${scAddress.simpleLockEnergy}@02@LKMOA-abcdef@01@1000000000000000000@LKMOA-abcdef@02@2000000000000000000@migrateOldTokens`,
                 ),
                 gasPrice: 1000000000,
                 gasLimit: gasConfig.simpleLockEnergy.migrateOldTokens * 2,

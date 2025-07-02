@@ -59,7 +59,7 @@ describe('EscrowTransactionService', () => {
         await expect(
             service.lockFunds(senderAddress, receiverAddress, [
                 {
-                    tokenID: 'XMEX-123456',
+                    tokenID: 'XMOA-123456',
                     nonce: 1,
                     amount: '1000000000000000000',
                 },
@@ -79,7 +79,7 @@ describe('EscrowTransactionService', () => {
             receiverAddress,
             [
                 {
-                    tokenID: 'XMEX-123456',
+                    tokenID: 'XMOA-123456',
                     nonce: 1,
                     amount: '1000000000000000000',
                 },
@@ -91,7 +91,7 @@ describe('EscrowTransactionService', () => {
                 chainID: drtConfig.chainID,
                 nonce: 0,
                 data: encodeTransactionData(
-                    `DCDTNFTTransfer@XMEX-123456@01@1000000000000000000@${scAddress.escrow}@lockFunds@${receiverAddress}`,
+                    `DCDTNFTTransfer@XMOA-123456@01@1000000000000000000@${scAddress.escrow}@lockFunds@${receiverAddress}`,
                 ),
                 gasPrice: 1000000000,
                 gasLimit: gasConfig.escrow.lockFunds,

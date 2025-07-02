@@ -45,7 +45,7 @@ features:
     serviceUrl: 'https://devnet-nfts-graph.dharitri.org/graphql'
   exchange:
     enabled: false
-    serviceUrl: 'https://devnet-graph.xexchange.com/graphql'
+    serviceUrl: 'https://devnet-graph.dharitrix.com/graphql'
   dataApi:
     enabled: false
     serviceUrl: 'https://devnet-data-api.dharitri.org'
@@ -137,7 +137,7 @@ urls:
   tmp: '/tmp'
   ipfs: 'https://ipfs.io/ipfs'
   socket: 'devnet-socket-api.dharitri.org'
-  maiarId: 'https://devnet-id-api.dharitri.org'
+  durianId: 'https://devnet-id-api.dharitri.org'
 indexer:
   type: 'elastic'
   maxPagination: 10000

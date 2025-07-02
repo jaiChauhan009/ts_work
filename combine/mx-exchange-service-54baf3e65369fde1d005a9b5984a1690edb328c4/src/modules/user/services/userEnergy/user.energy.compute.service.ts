@@ -379,8 +379,8 @@ export class UserEnergyComputeService {
 
         if (userNftsCount === 0) {
             return new UserNegativeEnergyCheck({
-                LKMEX: false,
-                XMEX: false,
+                LKMOA: false,
+                XMOA: false,
                 lockedLPTokenV1: false,
                 lockedLPTokenV2: false,
                 lockedFarmTokenV1: false,
@@ -390,13 +390,13 @@ export class UserEnergyComputeService {
         }
 
         const [
-            lkmexTokenID,
-            xmexTokenID,
+            lkmoaTokenID,
+            xmoaTokenID,
             lockedLPTokenIDV1,
             lockedLPTokenIDV2,
             lockedFarmTokenIDV1,
             lockedFarmTokenIDV2,
-            lkmexActivationNonce,
+            lkmoaActivationNonce,
             stats,
         ] = await Promise.all([
             this.lockedAssetGetter.getLockedTokenID(),
@@ -414,11 +414,11 @@ export class UserEnergyComputeService {
             'MetaDCDT',
         );
 
-        const lkmexTokens = userNfts.filter((nft) =>
-            nft.collection.includes(lkmexTokenID),
+        const lkmoaTokens = userNfts.filter((nft) =>
+            nft.collection.includes(lkmoaTokenID),
         );
-        const xmexTokens = userNfts.filter((nft) =>
-            nft.collection.includes(xmexTokenID),
+        const xmoaTokens = userNfts.filter((nft) =>
+            nft.collection.includes(xmoaTokenID),
         );
         const lockedLPTokensV1 = userNfts.filter(
             (nft) => nft.collection === lockedLPTokenIDV1,
@@ -434,56 +434,56 @@ export class UserEnergyComputeService {
         );
 
         const [
-            checkLKMEX,
-            checkXMEX,
+            checkLKMOA,
+            checkXMOA,
             checkLockedLPTokenV1,
             checkLockedLPTokenV2,
             checkLockedFarmTokenV1,
             checkLockedFarmTokenV2,
         ] = await Promise.all([
-            this.checkLKMEXNegativeEnergy(
+            this.checkLKMOANegativeEnergy(
                 stats.epoch,
-                lkmexTokens.map((token) =>
+                lkmoaTokens.map((token) =>
                     LockedAssetAttributes.fromAttributes(
-                        token.nonce >= lkmexActivationNonce,
+                        token.nonce >= lkmoaActivationNonce,
                         token.attributes,
                     ),
                 ),
             ),
-            this.checkXMEXNegativeEnergy(
+            this.checkXMOANegativeEnergy(
                 stats.epoch,
-                xmexTokens.map((token) =>
+                xmoaTokens.map((token) =>
                     LockedTokenAttributes.fromAttributes(token.attributes),
                 ),
             ),
             this.checkLockedLPTokenNegativeEnergyV1(
                 stats.epoch,
-                lkmexActivationNonce,
-                lkmexTokenID,
+                lkmoaActivationNonce,
+                lkmoaTokenID,
                 lockedLPTokensV1.map((token) =>
                     WrappedLpTokenAttributes.fromAttributes(token.attributes),
                 ),
             ),
             this.checkLockedLPTokenNegativeEnergyV2(
                 stats.epoch,
-                lkmexActivationNonce,
-                lkmexTokenID,
+                lkmoaActivationNonce,
+                lkmoaTokenID,
                 lockedLPTokensV2.map((token) =>
                     WrappedLpTokenAttributesV2.fromAttributes(token.attributes),
                 ),
             ),
             this.checkLockedFarmTokenNegativeEnergyV1(
                 stats.epoch,
-                lkmexActivationNonce,
-                lkmexTokenID,
+                lkmoaActivationNonce,
+                lkmoaTokenID,
                 lockedFarmTokensV1.map((token) =>
                     WrappedFarmTokenAttributes.fromAttributes(token.attributes),
                 ),
             ),
             this.checkLockedFarmTokenNegativeEnergyV2(
                 stats.epoch,
-                lkmexActivationNonce,
-                lkmexTokenID,
+                lkmoaActivationNonce,
+                lkmoaTokenID,
                 lockedFarmTokensV2.map((token) =>
                     WrappedFarmTokenAttributesV2.fromAttributes(
                         token.attributes,
@@ -503,13 +503,13 @@ export class UserEnergyComputeService {
                     await this.drtApi.getNftAttributesByTokenIdentifier(
                         scAddress.metabondingStakingAddress,
                         tokenIdentifier(
-                            lkmexTokenID,
+                            lkmoaTokenID,
                             userMetabondingEntry.tokenNonce,
                         ),
                     );
-                metabondingCheck = this.checkLKMEXNegativeEnergy(stats.epoch, [
+                metabondingCheck = this.checkLKMOANegativeEnergy(stats.epoch, [
                     LockedAssetAttributes.fromAttributes(
-                        userMetabondingEntry.tokenNonce >= lkmexActivationNonce,
+                        userMetabondingEntry.tokenNonce >= lkmoaActivationNonce,
                         metabondingTokensAttributes,
                     ),
                 ]);
@@ -517,8 +517,8 @@ export class UserEnergyComputeService {
         }
 
         return new UserNegativeEnergyCheck({
-            LKMEX: checkLKMEX,
-            XMEX: checkXMEX,
+            LKMOA: checkLKMOA,
+            XMOA: checkXMOA,
             lockedLPTokenV1: checkLockedLPTokenV1,
             lockedLPTokenV2: checkLockedLPTokenV2,
             lockedFarmTokenV1: checkLockedFarmTokenV1,
@@ -527,7 +527,7 @@ export class UserEnergyComputeService {
         });
     }
 
-    checkLKMEXNegativeEnergy(
+    checkLKMOANegativeEnergy(
         currentEpoch: number,
         lockedTokensAttributes: LockedAssetAttributes[],
     ): boolean {
@@ -544,7 +544,7 @@ export class UserEnergyComputeService {
         return true;
     }
 
-    checkXMEXNegativeEnergy(
+    checkXMOANegativeEnergy(
         currentEpoch: number,
         lockedTokensAttributes: LockedTokenAttributes[],
     ): boolean {
@@ -561,12 +561,12 @@ export class UserEnergyComputeService {
 
     async checkLockedLPTokenNegativeEnergyV1(
         currentEpoch: number,
-        lkmexExtendedAttributesActivationNonce: number,
-        lkmexTokenID: string,
+        lkmoaExtendedAttributesActivationNonce: number,
+        lkmoaTokenID: string,
         attributes: WrappedLpTokenAttributes[],
     ): Promise<boolean> {
         const identifiers = attributes.map((attribute) =>
-            tokenIdentifier(lkmexTokenID, attribute.lockedAssetsNonce),
+            tokenIdentifier(lkmoaTokenID, attribute.lockedAssetsNonce),
         );
         const lockedTokensAttributes =
             await this.drtApi.getNftsAttributesForUser(
@@ -575,12 +575,12 @@ export class UserEnergyComputeService {
                 identifiers,
             );
 
-        return this.checkLKMEXNegativeEnergy(
+        return this.checkLKMOANegativeEnergy(
             currentEpoch,
             lockedTokensAttributes.map((attribute, index) =>
                 LockedAssetAttributes.fromAttributes(
                     attributes[index].lockedAssetsNonce >=
-                        lkmexExtendedAttributesActivationNonce,
+                        lkmoaExtendedAttributesActivationNonce,
                     attribute,
                 ),
             ),
@@ -589,24 +589,24 @@ export class UserEnergyComputeService {
 
     async checkLockedLPTokenNegativeEnergyV2(
         currentEpoch: number,
-        lkmexExtendedAttributesActivationNonce: number,
-        lkmexTokenID: string,
+        lkmoaExtendedAttributesActivationNonce: number,
+        lkmoaTokenID: string,
         attributes: WrappedLpTokenAttributesV2[],
     ): Promise<boolean> {
-        const lockedLPWithLKMEX = attributes.filter(
+        const lockedLPWithLKMOA = attributes.filter(
             (attribute) =>
-                attribute.lockedTokens.tokenIdentifier === lkmexTokenID,
+                attribute.lockedTokens.tokenIdentifier === lkmoaTokenID,
         );
-        const lockedLPWithXMEX = attributes.filter(
+        const lockedLPWithXMOA = attributes.filter(
             (attribute) =>
-                attribute.lockedTokens.tokenIdentifier !== lkmexTokenID,
+                attribute.lockedTokens.tokenIdentifier !== lkmoaTokenID,
         );
 
-        const [lkmexAttributesRaw, xmexAttributesRaw] = await Promise.all([
+        const [lkmoaAttributesRaw, xmoaAttributesRaw] = await Promise.all([
             this.drtApi.getNftsAttributesForUser(
                 scAddress.proxyDexAddress.v2,
                 'MetaDCDT',
-                lockedLPWithLKMEX.map((attribute) =>
+                lockedLPWithLKMOA.map((attribute) =>
                     tokenIdentifier(
                         attribute.lockedTokens.tokenIdentifier,
                         attribute.lockedTokens.tokenNonce,
@@ -616,7 +616,7 @@ export class UserEnergyComputeService {
             this.drtApi.getNftsAttributesForUser(
                 scAddress.proxyDexAddress.v2,
                 'MetaDCDT',
-                lockedLPWithXMEX.map((attribute) =>
+                lockedLPWithXMOA.map((attribute) =>
                     tokenIdentifier(
                         attribute.lockedTokens.tokenIdentifier,
                         attribute.lockedTokens.tokenNonce,
@@ -625,44 +625,44 @@ export class UserEnergyComputeService {
             ),
         ]);
 
-        const checkLKMEX = this.checkLKMEXNegativeEnergy(
+        const checkLKMOA = this.checkLKMOANegativeEnergy(
             currentEpoch,
-            lkmexAttributesRaw.map((attribute, index) =>
+            lkmoaAttributesRaw.map((attribute, index) =>
                 LockedAssetAttributes.fromAttributes(
-                    lockedLPWithLKMEX[index].lockedTokens.tokenNonce >=
-                        lkmexExtendedAttributesActivationNonce,
+                    lockedLPWithLKMOA[index].lockedTokens.tokenNonce >=
+                        lkmoaExtendedAttributesActivationNonce,
                     attribute,
                 ),
             ),
         );
-        const checkXMEX = this.checkXMEXNegativeEnergy(
+        const checkXMOA = this.checkXMOANegativeEnergy(
             currentEpoch,
-            xmexAttributesRaw.map((attribute) =>
+            xmoaAttributesRaw.map((attribute) =>
                 LockedTokenAttributes.fromAttributes(attribute),
             ),
         );
 
-        return checkLKMEX || checkXMEX;
+        return checkLKMOA || checkXMOA;
     }
 
     async checkLockedFarmTokenNegativeEnergyV1(
         currentEpoch: number,
-        lkmexExtendedAttributesActivationNonce: number,
-        lkmexTokenID: string,
+        lkmoaExtendedAttributesActivationNonce: number,
+        lkmoaTokenID: string,
         attributes: WrappedFarmTokenAttributes[],
     ): Promise<boolean> {
-        const lockedFarmTokensWithLKMEX = attributes.filter(
-            (attribute) => attribute.farmingTokenID === lkmexTokenID,
+        const lockedFarmTokensWithLKMOA = attributes.filter(
+            (attribute) => attribute.farmingTokenID === lkmoaTokenID,
         );
         const lockedFarmTokensWithLKLP = attributes.filter(
-            (attribute) => attribute.farmingTokenID !== lkmexTokenID,
+            (attribute) => attribute.farmingTokenID !== lkmoaTokenID,
         );
 
-        const [lkmexAttributesRaw, lklpAttributesRaw] = await Promise.all([
+        const [lkmoaAttributesRaw, lklpAttributesRaw] = await Promise.all([
             this.drtApi.getNftsAttributesForUser(
                 scAddress.proxyDexAddress.v1,
                 'MetaDCDT',
-                lockedFarmTokensWithLKMEX.map((attribute) =>
+                lockedFarmTokensWithLKMOA.map((attribute) =>
                     tokenIdentifier(
                         attribute.farmingTokenID,
                         attribute.farmingTokenNonce,
@@ -681,12 +681,12 @@ export class UserEnergyComputeService {
             ),
         ]);
 
-        const checkLKMEX = this.checkLKMEXNegativeEnergy(
+        const checkLKMOA = this.checkLKMOANegativeEnergy(
             currentEpoch,
-            lkmexAttributesRaw.map((attribute, index) => {
+            lkmoaAttributesRaw.map((attribute, index) => {
                 return LockedAssetAttributes.fromAttributes(
-                    lockedFarmTokensWithLKMEX[index].farmingTokenNonce >=
-                        lkmexExtendedAttributesActivationNonce,
+                    lockedFarmTokensWithLKMOA[index].farmingTokenNonce >=
+                        lkmoaExtendedAttributesActivationNonce,
                     attribute,
                 );
             }),
@@ -695,20 +695,20 @@ export class UserEnergyComputeService {
         const checkLockedLPTokenV1 =
             await this.checkLockedLPTokenNegativeEnergyV1(
                 currentEpoch,
-                lkmexExtendedAttributesActivationNonce,
-                lkmexTokenID,
+                lkmoaExtendedAttributesActivationNonce,
+                lkmoaTokenID,
                 lklpAttributesRaw.map((attribute) =>
                     WrappedLpTokenAttributes.fromAttributes(attribute),
                 ),
             );
 
-        return checkLKMEX || checkLockedLPTokenV1;
+        return checkLKMOA || checkLockedLPTokenV1;
     }
 
     async checkLockedFarmTokenNegativeEnergyV2(
         currentEpoch: number,
-        lkmexExtendedAttributesActivationNonce: number,
-        lkmexTokenID: string,
+        lkmoaExtendedAttributesActivationNonce: number,
+        lkmoaTokenID: string,
         attributes: WrappedFarmTokenAttributesV2[],
     ): Promise<boolean> {
         const lklpAttributesRaw = await this.drtApi.getNftsAttributesForUser(
@@ -724,8 +724,8 @@ export class UserEnergyComputeService {
 
         return this.checkLockedLPTokenNegativeEnergyV2(
             currentEpoch,
-            lkmexExtendedAttributesActivationNonce,
-            lkmexTokenID,
+            lkmoaExtendedAttributesActivationNonce,
+            lkmoaTokenID,
             lklpAttributesRaw.map((attribute) =>
                 WrappedLpTokenAttributesV2.fromAttributes(attribute),
             ),

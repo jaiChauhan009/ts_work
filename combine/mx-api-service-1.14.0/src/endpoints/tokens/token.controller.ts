@@ -22,7 +22,7 @@ import { TransactionDetailed } from "../transactions/entities/transaction.detail
 import { Response } from "express";
 import { TokenType } from "src/common/indexer/entities";
 import { ParseArrayPipeOptions } from "@terradharitri/sdk-nestjs-common/lib/pipes/entities/parse.array.options";
-import { MexPairType } from "../mex/entities/mex.pair.type";
+import { MoaPairType } from "../moa/entities/moa.pair.type";
 import { TokenAssetsPriceSourceType } from "src/common/assets/entities/token.assets.price.source.type";
 
 @Controller()
@@ -47,7 +47,7 @@ export class TokenController {
   @ApiQuery({ name: 'sort', description: 'Sorting criteria', required: false, enum: SortTokens })
   @ApiQuery({ name: 'order', description: 'Sorting order (asc / desc)', required: false, enum: SortOrder })
   @ApiQuery({ name: 'includeMetaDCDT', description: 'Include MetaDCDTs in response', required: false, type: Boolean })
-  @ApiQuery({ name: 'mexPairType', description: 'Token Mex Pair', required: false, enum: MexPairType })
+  @ApiQuery({ name: 'drtPairType', description: 'Token Moa Pair', required: false, enum: MoaPairType })
   @ApiQuery({ name: 'priceSource', description: 'Token Price Source', required: false, enum: TokenAssetsPriceSourceType })
   async getTokens(
     @Query('from', new DefaultValuePipe(0), ParseIntPipe) from: number,
@@ -60,13 +60,13 @@ export class TokenController {
     @Query('sort', new ParseEnumPipe(TokenSort)) sort?: TokenSort,
     @Query('order', new ParseEnumPipe(SortOrder)) order?: SortOrder,
     @Query('includeMetaDCDT', ParseBoolPipe) includeMetaDCDT?: boolean,
-    @Query('mexPairType', new ParseEnumArrayPipe(MexPairType)) mexPairType?: MexPairType[],
+    @Query('drtPairType', new ParseEnumArrayPipe(MoaPairType)) drtPairType?: MoaPairType[],
     @Query('priceSource', new ParseEnumPipe(TokenAssetsPriceSourceType)) priceSource?: TokenAssetsPriceSourceType,
   ): Promise<TokenDetailed[]> {
 
     return await this.tokenService.getTokens(
       new QueryPagination({ from, size }),
-      new TokenFilter({ type, search, name, identifier, identifiers, includeMetaDCDT, sort, order, mexPairType, priceSource })
+      new TokenFilter({ type, search, name, identifier, identifiers, includeMetaDCDT, sort, order, drtPairType, priceSource })
     );
   }
 
@@ -79,7 +79,7 @@ export class TokenController {
   @ApiQuery({ name: 'identifier', description: 'Search by token identifier', required: false })
   @ApiQuery({ name: 'identifiers', description: 'Search by multiple token identifiers, comma-separated', required: false })
   @ApiQuery({ name: 'includeMetaDCDT', description: 'Include MetaDCDTs in response', required: false, type: Boolean })
-  @ApiQuery({ name: 'mexPairType', description: 'Token Mex Pair', required: false, enum: MexPairType })
+  @ApiQuery({ name: 'drtPairType', description: 'Token Moa Pair', required: false, enum: MoaPairType })
   @ApiQuery({ name: 'priceSource', description: 'Token Price Source', required: false, enum: TokenAssetsPriceSourceType })
   async getTokenCount(
     @Query('search') search?: string,
@@ -88,10 +88,10 @@ export class TokenController {
     @Query('identifier', ParseTokenPipe) identifier?: string,
     @Query('identifiers', ParseArrayPipe) identifiers?: string[],
     @Query('includeMetaDCDT', ParseBoolPipe) includeMetaDCDT?: boolean,
-    @Query('mexPairType', new ParseEnumArrayPipe(MexPairType)) mexPairType?: MexPairType[],
+    @Query('drtPairType', new ParseEnumArrayPipe(MoaPairType)) drtPairType?: MoaPairType[],
     @Query('priceSource', new ParseEnumPipe(TokenAssetsPriceSourceType)) priceSource?: TokenAssetsPriceSourceType,
   ): Promise<number> {
-    return await this.tokenService.getTokenCount(new TokenFilter({ type, search, name, identifier, identifiers, includeMetaDCDT, mexPairType, priceSource }));
+    return await this.tokenService.getTokenCount(new TokenFilter({ type, search, name, identifier, identifiers, includeMetaDCDT, drtPairType, priceSource }));
   }
 
   @Get("/tokens/c")
@@ -103,10 +103,10 @@ export class TokenController {
     @Query('identifier', ParseTokenPipe) identifier?: string,
     @Query('identifiers', ParseArrayPipe) identifiers?: string[],
     @Query('includeMetaDCDT', ParseBoolPipe) includeMetaDCDT?: boolean,
-    @Query('mexPairType', new ParseEnumArrayPipe(MexPairType)) mexPairType?: MexPairType[],
+    @Query('drtPairType', new ParseEnumArrayPipe(MoaPairType)) drtPairType?: MoaPairType[],
     @Query('priceSource', new ParseEnumPipe(TokenAssetsPriceSourceType)) priceSource?: TokenAssetsPriceSourceType,
   ): Promise<number> {
-    return await this.tokenService.getTokenCount(new TokenFilter({ type, search, name, identifier, identifiers, includeMetaDCDT, mexPairType, priceSource }));
+    return await this.tokenService.getTokenCount(new TokenFilter({ type, search, name, identifier, identifiers, includeMetaDCDT, drtPairType, priceSource }));
   }
 
   @Get('/tokens/:identifier')

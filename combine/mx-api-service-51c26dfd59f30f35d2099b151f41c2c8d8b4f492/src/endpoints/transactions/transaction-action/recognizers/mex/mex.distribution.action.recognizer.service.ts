@@ -2,13 +2,13 @@ import { Injectable } from "@nestjs/common";
 import { TransactionAction } from "../../entities/transaction.action";
 import { TransactionActionCategory } from "../../entities/transaction.action.category";
 import { TransactionMetadata } from "../../entities/transaction.metadata";
-import { MexFunction } from "./entities/mex.function.options";
-import { MexSettings } from "../../../../mex/entities/mex.settings";
+import { MoaFunction } from "./entities/moa.function.options";
+import { MoaSettings } from "../../../../moa/entities/moa.settings";
 
 @Injectable()
-export class MexDistributionActionRecognizerService {
-  recognize(settings: MexSettings, metadata: TransactionMetadata): TransactionAction | undefined {
-    if (metadata.receiver === settings.distributionContract && metadata.functionName === MexFunction.claimLockedAssets) {
+export class MoaDistributionActionRecognizerService {
+  recognize(settings: MoaSettings, metadata: TransactionMetadata): TransactionAction | undefined {
+    if (metadata.receiver === settings.distributionContract && metadata.functionName === MoaFunction.claimLockedAssets) {
       return this.getClaimLockedAssetsAction();
     }
 
@@ -17,8 +17,8 @@ export class MexDistributionActionRecognizerService {
 
   private getClaimLockedAssetsAction(): TransactionAction {
     const result = new TransactionAction();
-    result.category = TransactionActionCategory.mex;
-    result.name = MexFunction.claimLockedAssets;
+    result.category = TransactionActionCategory.moa;
+    result.name = MoaFunction.claimLockedAssets;
     result.description = 'Claim locked assets';
 
     return result;

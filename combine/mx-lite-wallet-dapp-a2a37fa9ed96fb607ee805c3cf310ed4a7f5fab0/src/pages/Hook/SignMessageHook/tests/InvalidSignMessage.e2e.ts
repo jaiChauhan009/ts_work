@@ -5,7 +5,7 @@ import { getByDataTestId, loginWithKeystore } from 'utils/testUtils/puppeteer';
 describe('Invalid sign message tests', () => {
   it('should navigate to /dashboard route without signing when message is missing', async () => {
     await page.goto(
-      `${WALLET_SOURCE_ORIGIN}/hook/sign-message?callbackUrl=https://devnet.xexchange.com`,
+      `${WALLET_SOURCE_ORIGIN}/hook/sign-message?callbackUrl=https://devnet.dharitrix.com`,
       {
         waitUntil: 'domcontentloaded'
       }

@@ -106,7 +106,7 @@ export const mockGetCommonDataInput = {
         '00000000000000000500139ed7ae4aa03792e6bcb332394a40fe746eefa47ceb'
     },
     '4d45582d613635396430@@e177704bc43f9bee3106': {
-      tokenId: 'MEX-a659d0',
+      tokenId: 'MOA-a659d0',
       amount: '1064735712967374589014278',
       type: 'dcdtTransaction',
       nonce: '',

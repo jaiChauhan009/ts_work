@@ -12,18 +12,18 @@ describe('test farm v2 event decoders', () => {
         const decodedEvent = new EnterFarmEventV2(rawEnterFarmEventV2);
         expect(decodedEvent.toJSON()).toEqual({
             farmingToken: {
-                tokenIdentifier: 'REWAMEX-0be9e5',
+                tokenIdentifier: 'REWAMOA-0be9e5',
                 tokenNonce: 0,
                 amount: '7799008171247025659',
             },
             rewardTokenReserves: '178404389302049246029573056506',
             farmToken: {
-                tokenIdentifier: 'REWAMEXFL-c2521e',
+                tokenIdentifier: 'REWAMOAFL-c2521e',
                 tokenNonce: 367987,
                 amount: '10384405708276779102',
             },
             farmSupply: '604294281608022071770093',
-            rewardTokenID: 'MEX-455c57',
+            rewardTokenID: 'MOA-455c57',
             createdWithMerge: true,
             farmAttributes: {
                 rewardPerShare: '716695002750628061',
@@ -40,18 +40,18 @@ describe('test farm v2 event decoders', () => {
         const decodedEvent = new ExitFarmEventV2(rawExitFarmEventV2);
         expect(decodedEvent.toJSON()).toEqual({
             farmingToken: {
-                tokenIdentifier: 'REWAMEX-0be9e5',
+                tokenIdentifier: 'REWAMOA-0be9e5',
                 tokenNonce: 0,
                 amount: '27118253941196305',
             },
             farmToken: {
-                tokenIdentifier: 'REWAMEXFL-c2521e',
+                tokenIdentifier: 'REWAMOAFL-c2521e',
                 tokenNonce: 367969,
                 amount: '27118253941196305',
             },
             farmSupply: '604286482599850824744434',
             rewardTokens: {
-                tokenIdentifier: 'MEX-455c57',
+                tokenIdentifier: 'MOA-455c57',
                 tokenNonce: 0,
                 amount: '135706487898282236',
             },
@@ -71,18 +71,18 @@ describe('test farm v2 event decoders', () => {
         const decodedEvent = new ClaimRewardsEventV2(rawClaimRewardsEventV2);
         expect(decodedEvent.toJSON()).toEqual({
             oldFarmToken: {
-                tokenIdentifier: 'REWAMEXFL-c2521e',
+                tokenIdentifier: 'REWAMOAFL-c2521e',
                 tokenNonce: 355083,
                 amount: '884549960938460528',
             },
             newFarmToken: {
-                tokenIdentifier: 'REWAMEXFL-c2521e',
+                tokenIdentifier: 'REWAMOAFL-c2521e',
                 tokenNonce: 368031,
                 amount: '884549960938460528',
             },
             farmSupply: '604308599373139170528579',
             rewardTokens: {
-                tokenIdentifier: 'XMEX-fda355',
+                tokenIdentifier: 'XMOA-fda355',
                 tokenNonce: 55,
                 amount: '137615009379486858215279',
             },

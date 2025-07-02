@@ -28,7 +28,7 @@ class EscrowAbiServiceMock implements EscrowAbiServiceInterface {
                 lockedFunds: new LockedFundsModel({
                     funds: [
                         {
-                            tokenIdentifier: 'ELKMEX-123456',
+                            tokenIdentifier: 'ELKMOA-123456',
                             tokenNonce: 1,
                             amount: '1000000000000000000',
                         },

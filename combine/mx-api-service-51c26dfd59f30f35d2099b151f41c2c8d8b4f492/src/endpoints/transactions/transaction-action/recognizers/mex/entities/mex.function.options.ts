@@ -1,4 +1,4 @@
-export enum MexFunction {
+export enum MoaFunction {
   claimLockedAssets = 'claimLockedAssets',
   swapTokensFixedInput = 'swapTokensFixedInput',
   swapTokensFixedOutput = 'swapTokensFixedOutput',

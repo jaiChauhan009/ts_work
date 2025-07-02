@@ -45,14 +45,14 @@ export class MxDataApiService {
     }
   }
 
-  async getXexchangeTokens(): Promise<string[]> {
-    const requestUrl = `${this.url}/v1/tokens/xexchange?fields=identifier`;
+  async getdharitriXTokens(): Promise<string[]> {
+    const requestUrl = `${this.url}/v1/tokens/dharitrix?fields=identifier`;
     try {
       let response = await this.apiService.get(requestUrl);
       return response?.data?.map((x) => x.identifier);
     } catch (error) {
       this.logger.error(`An error occurred while calling the drt data service on url ${requestUrl}`, {
-        path: this.getXexchangeTokens.name,
+        path: this.getdharitriXTokens.name,
         exception: error,
       });
       return;
@@ -60,7 +60,7 @@ export class MxDataApiService {
   }
 
   async getXechangeTokenPrice(token: string, isoDateOnly: string): Promise<number> {
-    const requestUrl = `${this.url}/v1/quotes/xexchange/${token}?date=${isoDateOnly}&fields=price`;
+    const requestUrl = `${this.url}/v1/quotes/dharitrix/${token}?date=${isoDateOnly}&fields=price`;
     try {
       let response = await this.apiService.get(requestUrl, this.getHeaders());
 

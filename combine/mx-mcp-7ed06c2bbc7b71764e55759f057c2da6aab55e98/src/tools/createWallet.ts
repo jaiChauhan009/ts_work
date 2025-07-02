@@ -33,7 +33,7 @@ export async function createWallet(): Promise<CallToolResult> {
       {
         type: "text",
         text: `A wallet has been created and saved as a PEM file at: ${walletPath}. PEM files ARE NOT SECURE.
-If you want to further use the generated wallet, make sure to fund it first and set the absolute path in the config file under the "MVX_WALLET" environment variable.`,
+If you want to further use the generated wallet, make sure to fund it first and set the absolute path in the config file under the "DRT_WALLET" environment variable.`,
       },
     ],
   };

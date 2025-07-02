@@ -6,7 +6,7 @@ import { DcdtAddressService } from "./dcdt.address.service";
 import { NftModule } from "../nfts/nft.module";
 import { CollectionModule } from "../collections/collection.module";
 import { TransactionModule } from "../transactions/transaction.module";
-import { MexModule } from "../mex/mex.module";
+import { MoaModule } from "../moa/moa.module";
 import { AssetsModule } from "src/common/assets/assets.module";
 
 
@@ -17,7 +17,7 @@ import { AssetsModule } from "src/common/assets/assets.module";
     forwardRef(() => TokenModule),
     VmQueryModule,
     forwardRef(() => TransactionModule),
-    forwardRef(() => MexModule.forRoot()),
+    forwardRef(() => MoaModule.forRoot()),
     forwardRef(() => AssetsModule),
   ],
   providers: [

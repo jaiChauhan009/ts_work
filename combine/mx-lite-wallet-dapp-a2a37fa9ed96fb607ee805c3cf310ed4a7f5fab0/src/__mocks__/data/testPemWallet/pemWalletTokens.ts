@@ -57,7 +57,7 @@ export const pemWalletTokens = [
     marketCap: 1709405499.806506,
     supply: '1000000000000000000000000000',
     circulatingSupply: '1000000000000000000000000000',
-    mexPairType: 'core',
+    drtPairType: 'core',
     totalLiquidity: 1979.8036073008088,
     totalVolume24h: 17.65023089741058,
     isLowLiquidity: true,
@@ -74,7 +74,7 @@ export const pemWalletTokens = [
     decimals: 18,
     isPaused: false,
     assets: {
-      website: 'https://xexchange.com',
+      website: 'https://dharitrix.com',
       description:
         'wREWA is an DCDT token that has the same value as REWA, the native coin of the DharitrI blockchain.',
       status: 'active',
@@ -101,7 +101,7 @@ export const pemWalletTokens = [
     marketCap: 6250520.003238895,
     supply: '239003901529053656323437',
     circulatingSupply: '239003901529053656323437',
-    mexPairType: 'core',
+    drtPairType: 'core',
     totalLiquidity: 3288606.992101627,
     totalVolume24h: 805.637269814171,
     balance: '637542379447693',

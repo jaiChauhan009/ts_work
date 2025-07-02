@@ -1,7 +1,7 @@
 import { ApiProperty } from "@nestjs/swagger";
 
-export class MexStakingProxy {
-  constructor(init?: Partial<MexStakingProxy>) {
+export class MoaStakingProxy {
+  constructor(init?: Partial<MoaStakingProxy>) {
     Object.assign(this, init);
   }
 
@@ -14,8 +14,8 @@ export class MexStakingProxy {
   @ApiProperty()
   dualYieldTokenCollection: string = '';
 
-  static fromQueryResponse(response: any): MexStakingProxy {
-    const stakingProxy = new MexStakingProxy();
+  static fromQueryResponse(response: any): MoaStakingProxy {
+    const stakingProxy = new MoaStakingProxy();
     stakingProxy.address = response.address;
     stakingProxy.dualYieldTokenName = response.dualYieldToken.name;
     stakingProxy.dualYieldTokenCollection = response.dualYieldToken.collection;

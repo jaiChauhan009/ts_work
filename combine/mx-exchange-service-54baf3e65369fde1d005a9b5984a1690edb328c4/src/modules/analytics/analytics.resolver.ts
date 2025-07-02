@@ -52,8 +52,8 @@ export class AnalyticsResolver {
     }
 
     @Query(() => String)
-    async totalLockedMexStakedUSD(): Promise<string> {
-        return this.analyticsCompute.totalLockedMexStakedUSD();
+    async totalLockedMoaStakedUSD(): Promise<string> {
+        return this.analyticsCompute.totalLockedMoaStakedUSD();
     }
 
     @Query(() => String)

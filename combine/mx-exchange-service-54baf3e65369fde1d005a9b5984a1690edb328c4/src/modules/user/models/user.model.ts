@@ -268,8 +268,8 @@ export class OutdatedContract {
 
 @ObjectType()
 export class UserNegativeEnergyCheck {
-    @Field() LKMEX: boolean;
-    @Field() XMEX: boolean;
+    @Field() LKMOA: boolean;
+    @Field() XMOA: boolean;
     @Field() lockedLPTokenV1: boolean;
     @Field() lockedLPTokenV2: boolean;
     @Field() lockedFarmTokenV2: boolean;

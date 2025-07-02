@@ -106,7 +106,7 @@ describe('FeesCollectorService', () => {
         expect(rewards[0].amount).toEqual('0');
         expect(rewards[1].tokenID).toEqual('Minted' + energyToken);
         expect(rewards[1].amount).toEqual('0');
-        const secondToken = 'MEX-abcabc';
+        const secondToken = 'MOA-abcabc';
         tokens.push(secondToken);
         rewards = await service.getAccumulatedFees(
             Address.Zero().bech32(),
@@ -124,7 +124,7 @@ describe('FeesCollectorService', () => {
 
     it('getAccumulatedFees' + ' should work', async () => {
         const firstToken = 'WREWA-abcabc';
-        const secondToken = 'MEX-abcabc';
+        const secondToken = 'MOA-abcabc';
         const rewardsFirstToken = '100';
         const rewardsSecondToken = '300';
         const rewardsMinted = '1000';

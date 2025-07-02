@@ -82,7 +82,7 @@ class EscrowBaseEvent extends RawEvent {
     }
 
     protected getStructure(): StructType {
-        return new StructType('XMEXTransferEvent', [
+        return new StructType('XMOATransferEvent', [
             new FieldDefinition('sender', '', new AddressType()),
             new FieldDefinition('receiver', '', new AddressType()),
             new FieldDefinition(

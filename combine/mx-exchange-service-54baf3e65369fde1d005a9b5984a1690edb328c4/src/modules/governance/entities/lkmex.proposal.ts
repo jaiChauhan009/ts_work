@@ -4,11 +4,11 @@ import { DcdtTokenPaymentModel } from '../../tokens/models/dcdt.token.payment.mo
 import { ObjectType } from '@nestjs/graphql';
 
 @ObjectType()
-export class GovernanceLKMEXProposal extends GovernanceProposalModel {
+export class GovernanceLKMOAProposal extends GovernanceProposalModel {
     constructor() {
         super({
             description: new DescriptionV1({
-                title: 'Maiar DEX to transform Into xExchange with New MEX 2.0 Economic Model',
+                title: 'Maiar DEX to transform Into xExchange with New MOA 2.0 Economic Model',
                 shortDescription:
                     'xExchange (Maiar DEX 2.0) presents a set of significant improvements and benefits, while correcting the most important limitations residing in the previous economics model.',
                 strapiId: 2,
@@ -33,7 +33,7 @@ export class GovernanceLKMEXProposal extends GovernanceProposalModel {
             rootHash: "",
             totalQuorum: "6742520471308000000000000000000",
             feePayment: new DcdtTokenPaymentModel({
-                tokenIdentifier: "LKMEX-aab910",
+                tokenIdentifier: "LKMOA-aab910",
                 tokenNonce: 0,
                 amount: "0",
             }),

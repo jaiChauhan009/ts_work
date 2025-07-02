@@ -40,7 +40,7 @@ describe('Register DCDT Token test', () => {
       value: 'drt1qqqqqqqqqqqqqpgqfcm6l6rd42hwhskmk4thlp9kz58npfq50gfqslu5rr'
     });
 
-    await page.type('#react-select-3-input', 'MEX');
+    await page.type('#react-select-3-input', 'MOA');
     await page.keyboard.press('Enter');
     await page.click(getByDataTestId(DataTestIdsEnum.sendBtn));
     await expectElementToContainText({

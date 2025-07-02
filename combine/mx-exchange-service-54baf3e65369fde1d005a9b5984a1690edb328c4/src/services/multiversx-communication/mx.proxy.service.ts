@@ -428,7 +428,7 @@ export class MXProxyService {
         return this.getSmartContract(
             scAddress.escrow,
             abiConfig.escrow,
-            'LkmexTransfer',
+            'LkmoaTransfer',
         );
     }
 
@@ -438,7 +438,7 @@ export class MXProxyService {
         return this.getSmartContractTransaction(
             scAddress.escrow,
             abiConfig.escrow,
-            'LkmexTransfer',
+            'LkmoaTransfer',
             options,
         );
     }

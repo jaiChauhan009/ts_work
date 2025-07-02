@@ -5,7 +5,7 @@ import { NftMediaModule } from "src/queue.worker/nft.worker/queue/job-services/m
 import { NftMetadataModule } from "src/queue.worker/nft.worker/queue/job-services/metadata/nft.metadata.module";
 import { CollectionModule } from "../collections/collection.module";
 import { DcdtModule } from "../dcdt/dcdt.module";
-import { MexModule } from "../mex/mex.module";
+import { MoaModule } from "../moa/moa.module";
 import { TokenModule } from "../tokens/token.module";
 import { NftExtendedAttributesService } from "./nft.extendedattributes.service";
 import { NftService } from "./nft.service";
@@ -18,7 +18,7 @@ import { LockedAssetModule } from "../../common/locked-asset/locked-asset.module
     forwardRef(() => CollectionModule),
     forwardRef(() => PluginModule),
     forwardRef(() => NftMetadataModule),
-    forwardRef(() => MexModule.forRoot()),
+    forwardRef(() => MoaModule.forRoot()),
     forwardRef(() => AssetsModule),
     forwardRef(() => LockedAssetModule),
     NftMediaModule,

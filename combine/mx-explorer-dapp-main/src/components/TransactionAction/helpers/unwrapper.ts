@@ -16,7 +16,7 @@ export const defaultAction = (action: TransactionActionType) => {
   return [];
 };
 
-export const mexUnwrapper = (
+export const moaUnwrapper = (
   action: TransactionActionType
 ): Array<string | TransactionUnwrapperType> => {
   switch (action?.arguments?.functionName) {
@@ -193,8 +193,8 @@ export const unwrapper = (
     switch (action.category) {
       case TransactionActionCategoryEnum.dcdtNft:
         return dcdtNftUnwrapper(action);
-      case TransactionActionCategoryEnum.mex:
-        return mexUnwrapper(action);
+      case TransactionActionCategoryEnum.moa:
+        return moaUnwrapper(action);
       case TransactionActionCategoryEnum.stake:
         return stakeUnwrapper(action);
       default:

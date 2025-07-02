@@ -115,13 +115,13 @@ describe('API Config', () => {
   });
 
   describe("getMaiarIdUrl", () => {
-    it("should return maiarId url", () => {
+    it("should return durianId url", () => {
       jest
         .spyOn(ConfigService.prototype, "get")
-        .mockImplementation(jest.fn(() => 'https://testnet-id.maiar.com'));
+        .mockImplementation(jest.fn(() => 'https://testnet-id.durian.com'));
 
       const results = apiConfigService.getSocketUrl();
-      expect(results).toEqual('https://testnet-id.maiar.com');
+      expect(results).toEqual('https://testnet-id.durian.com');
     });
   });
 
@@ -1306,10 +1306,10 @@ describe('API Config', () => {
     it("should return Maiar Exchange Url", () => {
       jest
         .spyOn(ConfigService.prototype, "get")
-        .mockImplementation(jest.fn(() => 'https://graph.xexchange.com/graphql'));
+        .mockImplementation(jest.fn(() => 'https://graph.dharitrix.com/graphql'));
 
       const results = apiConfigService.getExchangeServiceUrlMandatory();
-      expect(results).toEqual('https://graph.xexchange.com/graphql');
+      expect(results).toEqual('https://graph.dharitrix.com/graphql');
     });
 
     it("should throw new error because test simulates that Maiar Exchange Url is not defined", () => {

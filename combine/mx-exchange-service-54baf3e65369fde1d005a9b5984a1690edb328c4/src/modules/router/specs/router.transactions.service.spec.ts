@@ -186,7 +186,7 @@ describe('RouterService', () => {
                     '0000000000000000000000000000000000000000000000000000000000000012',
                 ).toBech32(),
                 'LiquidityPoolTokenT1T4',
-                'REWAMEXLP-abcdef',
+                'REWAMOALP-abcdef',
             );
         } catch (error) {
             expect(error).toEqual(new Error('LP Token already issued'));

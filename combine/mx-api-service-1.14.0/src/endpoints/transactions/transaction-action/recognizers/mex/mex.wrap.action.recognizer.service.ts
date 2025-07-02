@@ -4,27 +4,27 @@ import { TransactionAction } from "../../entities/transaction.action";
 import { TransactionActionCategory } from "../../entities/transaction.action.category";
 import { TransactionMetadata } from "../../entities/transaction.metadata";
 import { TransactionActionDcdtNftRecognizerService } from "../dcdt/transaction.action.dcdt.nft.recognizer.service";
-import { MexFunction } from "./entities/mex.function.options";
-import { MexSettings } from "../../../../mex/entities/mex.settings";
-import { MexSettingsService } from "../../../../mex/mex.settings.service";
+import { MoaFunction } from "./entities/moa.function.options";
+import { MoaSettings } from "../../../../moa/entities/moa.settings";
+import { MoaSettingsService } from "../../../../moa/moa.settings.service";
 import { NumberUtils } from "@terradharitri/sdk-nestjs-common";
 
 @Injectable()
-export class MexWrapActionRecognizerService {
+export class MoaWrapActionRecognizerService {
   constructor(
     private readonly transactionActionDcdtNftRecognizerService: TransactionActionDcdtNftRecognizerService,
-    private readonly mexSettingsService: MexSettingsService,
+    private readonly moaSettingsService: MoaSettingsService,
   ) { }
 
-  recognize(settings: MexSettings, metadata: TransactionMetadata): TransactionAction | undefined {
+  recognize(settings: MoaSettings, metadata: TransactionMetadata): TransactionAction | undefined {
     if (!settings.wrapContracts.includes(metadata.receiver)) {
       return undefined;
     }
 
     switch (metadata.functionName) {
-      case MexFunction.wrapRewa:
+      case MoaFunction.wrapRewa:
         return this.getWrapAction(metadata);
-      case MexFunction.unwrapRewa:
+      case MoaFunction.unwrapRewa:
         return this.getUnwrapAction(metadata);
       default:
         return undefined;
@@ -32,7 +32,7 @@ export class MexWrapActionRecognizerService {
   }
 
   private getWrapAction(metadata: TransactionMetadata): TransactionAction | undefined {
-    const wrewaId = this.mexSettingsService.getWrewaId();
+    const wrewaId = this.moaSettingsService.getWrewaId();
     if (!wrewaId) {
       return undefined;
     }
@@ -41,8 +41,8 @@ export class MexWrapActionRecognizerService {
 
 
     const result = new TransactionAction();
-    result.category = TransactionActionCategory.mex;
-    result.name = MexFunction.wrapRewa;
+    result.category = TransactionActionCategory.moa;
+    result.name = MoaFunction.wrapRewa;
     result.description = `Wrap ${valueDenominated} REWA`;
     result.arguments = {
       token: {
@@ -60,6 +60,6 @@ export class MexWrapActionRecognizerService {
   }
 
   private getUnwrapAction(metadata: TransactionMetadata): TransactionAction | undefined {
-    return this.transactionActionDcdtNftRecognizerService.getMultiTransferActionWithTicker(metadata, TransactionActionCategory.mex, MexFunction.unwrapRewa, 'Unwrap');
+    return this.transactionActionDcdtNftRecognizerService.getMultiTransferActionWithTicker(metadata, TransactionActionCategory.moa, MoaFunction.unwrapRewa, 'Unwrap');
   }
 }

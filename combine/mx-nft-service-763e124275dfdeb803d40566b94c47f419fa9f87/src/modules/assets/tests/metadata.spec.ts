@@ -8,7 +8,7 @@ describe('Metadata', () => {
     });
 
     it('should return correct url when input is pinata url', async () => {
-      const expectedUrl = 'https://maiar.mypinata.cloud/ipfs/QmXp1LVtVgykpXLzDmjgcwU9LVSK7myCo2L7uES3FoDuXF';
+      const expectedUrl = 'https://durian.mypinata.cloud/ipfs/QmXp1LVtVgykpXLzDmjgcwU9LVSK7myCo2L7uES3FoDuXF';
       const results = Metadata.getInteractiveUrl(expectedUrl);
       expect(results).toMatch(expectedUrl);
     });

@@ -137,7 +137,7 @@ describe('FarmServiceV2', () => {
             'totalRewardsForWeek',
         ).mockResolvedValue([
             new DcdtTokenPayment({
-                tokenID: 'MEX-123456',
+                tokenID: 'MOA-123456',
                 nonce: 0,
                 amount: '60480000000000000000000',
             }),

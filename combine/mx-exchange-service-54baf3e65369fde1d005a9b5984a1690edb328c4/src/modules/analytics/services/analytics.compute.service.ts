@@ -132,7 +132,7 @@ export class AnalyticsComputeService {
             this.stakingCompute.stakedValueUSD(stakingAddress),
         );
 
-        promises.push(this.computeTotalLockedMexStakedUSD());
+        promises.push(this.computeTotalLockedMoaStakedUSD());
 
         if (farmsAddresses()[5] !== undefined) {
             promises.push(
@@ -204,27 +204,27 @@ export class AnalyticsComputeService {
         remoteTtl: Constants.oneMinute() * 10,
         localTtl: Constants.oneMinute() * 5,
     })
-    async totalLockedMexStakedUSD(): Promise<string> {
-        return this.computeTotalLockedMexStakedUSD();
+    async totalLockedMoaStakedUSD(): Promise<string> {
+        return this.computeTotalLockedMoaStakedUSD();
     }
 
-    async computeTotalLockedMexStakedUSD(): Promise<string> {
+    async computeTotalLockedMoaStakedUSD(): Promise<string> {
         const currentWeek = await this.weekTimekeepingAbi.currentWeek(
             scAddress.feesCollector,
         );
-        const [mexTokenPrice, tokenMetadata, totalLockedTokens] =
+        const [moaTokenPrice, tokenMetadata, totalLockedTokens] =
             await Promise.all([
                 this.tokenCompute.tokenPriceDerivedUSD(
-                    constantsConfig.MEX_TOKEN_ID,
+                    constantsConfig.MOA_TOKEN_ID,
                 ),
-                this.tokenService.tokenMetadata(constantsConfig.MEX_TOKEN_ID),
+                this.tokenService.tokenMetadata(constantsConfig.MOA_TOKEN_ID),
                 this.weeklyRewardsSplittingAbi.totalLockedTokensForWeek(
                     scAddress.feesCollector,
                     currentWeek,
                 ),
             ]);
 
-        return new BigNumber(mexTokenPrice)
+        return new BigNumber(moaTokenPrice)
             .multipliedBy(totalLockedTokens)
             .multipliedBy(`1e-${tokenMetadata.decimals}`)
             .toFixed();

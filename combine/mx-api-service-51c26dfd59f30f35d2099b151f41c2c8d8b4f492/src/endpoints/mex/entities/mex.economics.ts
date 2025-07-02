@@ -1,8 +1,8 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { MexSettings } from './mex.settings';
+import { MoaSettings } from './moa.settings';
 
-export class MexEconomics {
-  constructor(init?: Partial<MexEconomics>) {
+export class MoaEconomics {
+  constructor(init?: Partial<MoaEconomics>) {
     Object.assign(this, init);
   }
 
@@ -24,15 +24,15 @@ export class MexEconomics {
   @ApiProperty({ type: Number, example: 15 })
   marketPairs: number = 0;
 
-  static fromQueryResponse(response: any, settings: MexSettings): MexEconomics {
+  static fromQueryResponse(response: any, settings: MoaSettings): MoaEconomics {
     const totalSupply = 8_045_920_000_000;
-    const price = Number(response.mexPriceUSD);
-    const circulatingSupply = Number(response.mexSupply);
+    const price = Number(response.moaPriceUSD);
+    const circulatingSupply = Number(response.moaSupply);
     const marketCap = Math.round(circulatingSupply * price);
     const volume24h = Math.round(Number(response.factory.totalVolumeUSD24h));
     const marketPairs = settings.pairContracts.length;
 
-    return new MexEconomics({
+    return new MoaEconomics({
       totalSupply,
       price,
       circulatingSupply,

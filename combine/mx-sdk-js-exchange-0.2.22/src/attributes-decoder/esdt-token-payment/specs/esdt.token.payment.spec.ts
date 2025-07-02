@@ -12,7 +12,7 @@ describe('test dcdt token payment attributes decoder', () => {
 
         expect(dcdtTokenPayment).toEqual(
             new DcdtTokenPayment({
-                tokenIdentifier: 'MEX-dc289c',
+                tokenIdentifier: 'MOA-dc289c',
                 tokenNonce: 0,
                 amount: '365359339001228979577216',
             }),
@@ -26,7 +26,7 @@ describe('test dcdt token payment attributes decoder', () => {
 
         expect(dcdtTokenPayment).toEqual(
             new DcdtTokenPayment({
-                tokenIdentifier: 'MEX-dc289c',
+                tokenIdentifier: 'MOA-dc289c',
                 tokenNonce: 0,
                 amount: '365359339001228979577216',
             }),

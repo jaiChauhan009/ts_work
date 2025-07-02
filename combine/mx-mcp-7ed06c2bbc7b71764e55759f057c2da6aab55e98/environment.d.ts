@@ -1,8 +1,8 @@
 declare global {
     namespace NodeJS {
       interface ProcessEnv {
-        MVX_WALLET: string;
-        MVX_NETWORK: string;
+        DRT_WALLET: string;
+        DRT_NETWORK: string;
       }
     }
 }

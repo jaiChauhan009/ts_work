@@ -3,46 +3,46 @@ import { BadRequestException, Injectable } from "@nestjs/common";
 import { gql } from "graphql-request";
 import { CacheInfo } from "src/utils/cache.info";
 import { GraphQlService } from "src/common/graphql/graphql.service";
-import { MexSettingsService } from "./mex.settings.service";
-import { MexEconomics } from "./entities/mex.economics";
+import { MoaSettingsService } from "./moa.settings.service";
+import { MoaEconomics } from "./entities/moa.economics";
 
 @Injectable()
-export class MexEconomicsService {
+export class MoaEconomicsService {
   constructor(
-    private readonly mexSettingService: MexSettingsService,
+    private readonly moaSettingService: MoaSettingsService,
     private readonly cachingService: CacheService,
     private readonly graphQlService: GraphQlService
   ) { }
 
-  async refreshMexEconomics() {
-    const economics = await this.getMexEconomicsRaw();
-    await this.cachingService.setRemote(CacheInfo.MexEconomics.key, economics, CacheInfo.MexEconomics.ttl);
+  async refreshMoaEconomics() {
+    const economics = await this.getMoaEconomicsRaw();
+    await this.cachingService.setRemote(CacheInfo.MoaEconomics.key, economics, CacheInfo.MoaEconomics.ttl);
   }
 
-  async getMexEconomics(): Promise<MexEconomics> {
+  async getMoaEconomics(): Promise<MoaEconomics> {
     return await this.cachingService.getOrSet(
-      CacheInfo.MexEconomics.key,
-      async () => await this.getMexEconomicsRaw(),
-      CacheInfo.MexEconomics.ttl,
+      CacheInfo.MoaEconomics.key,
+      async () => await this.getMoaEconomicsRaw(),
+      CacheInfo.MoaEconomics.ttl,
     );
   }
 
-  async getMexEconomicsRaw(): Promise<MexEconomics> {
-    const settings = await this.mexSettingService.getSettings();
+  async getMoaEconomicsRaw(): Promise<MoaEconomics> {
+    const settings = await this.moaSettingService.getSettings();
     if (!settings) {
-      throw new BadRequestException('Could not fetch MEX settings');
+      throw new BadRequestException('Could not fetch MOA settings');
     }
 
     const variables = {
-      "mexID": settings.mexId,
+      "moaID": settings.moaId,
       "days": 7,
     };
 
     const query = gql`
-      query ($days: Int!, $mexID: String!) {
+      query ($days: Int!, $moaID: String!) {
         totalAggregatedRewards(days: $days)
-        mexPriceUSD: getTokenPriceUSD(tokenID: $mexID)
-        mexSupply: totalTokenSupply(tokenID: $mexID)
+        moaPriceUSD: getTokenPriceUSD(tokenID: $moaID)
+        moaSupply: totalTokenSupply(tokenID: $moaID)
         factory {
           totalVolumeUSD24h
           __typename
@@ -52,10 +52,10 @@ export class MexEconomicsService {
 
     const response: any = await this.graphQlService.getExchangeServiceData(query, variables);
     if (!response) {
-      throw new BadRequestException('Could not fetch MEX economics data from MEX microservice');
+      throw new BadRequestException('Could not fetch MOA economics data from MOA microservice');
     }
 
-    const mexEconomics = MexEconomics.fromQueryResponse(response, settings);
-    return mexEconomics;
+    const moaEconomics = MoaEconomics.fromQueryResponse(response, settings);
+    return moaEconomics;
   }
 }

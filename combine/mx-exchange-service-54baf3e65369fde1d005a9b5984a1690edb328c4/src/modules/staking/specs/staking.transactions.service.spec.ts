@@ -337,12 +337,12 @@ describe('StakingTransactionService', () => {
             Address.Zero().bech32(),
             [
                 new InputTokenModel({
-                    tokenID: 'REWAMEXFL-abcdef',
+                    tokenID: 'REWAMOAFL-abcdef',
                     nonce: 0,
                     amount: '1000000',
                 }),
                 new InputTokenModel({
-                    tokenID: 'REWAMEXFL-abcdef',
+                    tokenID: 'REWAMOAFL-abcdef',
                     nonce: 0,
                     amount: '1000000',
                 }),
@@ -357,7 +357,7 @@ describe('StakingTransactionService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.stake.mergeTokens,
             data: encodeTransactionData(
-                'MultiDCDTNFTTransfer@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z@02@REWAMEXFL-abcdef@@01000000@REWAMEXFL-abcdef@@01000000@mergeFarmTokens',
+                'MultiDCDTNFTTransfer@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z@02@REWAMOAFL-abcdef@@01000000@REWAMOAFL-abcdef@@01000000@mergeFarmTokens',
             ),
             chainID: 'T',
             version: 2,

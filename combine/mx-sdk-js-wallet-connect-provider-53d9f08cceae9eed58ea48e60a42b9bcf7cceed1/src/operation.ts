@@ -1,11 +1,11 @@
 export enum Operation {
-  SIGN_TRANSACTION = "mvx_signTransaction",
-  SIGN_TRANSACTIONS = "mvx_signTransactions",
-  SIGN_MESSAGE = "mvx_signMessage",
+  SIGN_TRANSACTION = "drt_signTransaction",
+  SIGN_TRANSACTIONS = "drt_signTransactions",
+  SIGN_MESSAGE = "drt_signMessage",
 }
 
 export enum OptionalOperation {
-  SIGN_LOGIN_TOKEN = "mvx_signLoginToken",
-  SIGN_NATIVE_AUTH_TOKEN = "mvx_signNativeAuthToken",
-  CANCEL_ACTION = "mvx_cancelAction",
+  SIGN_LOGIN_TOKEN = "drt_signLoginToken",
+  SIGN_NATIVE_AUTH_TOKEN = "drt_signNativeAuthToken",
+  CANCEL_ACTION = "drt_cancelAction",
 }

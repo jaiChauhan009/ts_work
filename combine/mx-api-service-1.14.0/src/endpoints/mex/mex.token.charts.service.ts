@@ -2,23 +2,23 @@ import { Injectable } from "@nestjs/common";
 import { GraphQlService } from "src/common/graphql/graphql.service";
 import { OriginLogger } from "@terradharitri/sdk-nestjs-common";
 import { gql } from 'graphql-request';
-import { MexTokenChart } from "./entities/mex.token.chart";
-import { MexTokenService } from "./mex.token.service";
+import { MoaTokenChart } from "./entities/moa.token.chart";
+import { MoaTokenService } from "./moa.token.service";
 import { CacheService } from "@terradharitri/sdk-nestjs-cache";
 import { CacheInfo } from "src/utils/cache.info";
 import { tokenPricesHourResolutionQuery } from "./graphql/token.prices.hour.resolution.query";
 
 @Injectable()
-export class MexTokenChartsService {
-  private readonly logger = new OriginLogger(MexTokenChartsService.name);
+export class MoaTokenChartsService {
+  private readonly logger = new OriginLogger(MoaTokenChartsService.name);
 
   constructor(
     private readonly graphQlService: GraphQlService,
-    private readonly mexTokenService: MexTokenService,
+    private readonly moaTokenService: MoaTokenService,
     private readonly cachingService: CacheService,
   ) { }
 
-  async getTokenPricesHourResolution(tokenIdentifier: string): Promise<MexTokenChart[] | undefined> {
+  async getTokenPricesHourResolution(tokenIdentifier: string): Promise<MoaTokenChart[] | undefined> {
     return await this.cachingService.getOrSet(
       CacheInfo.TokenHourChart(tokenIdentifier).key,
       async () => await this.getTokenPricesHourResolutionRaw(tokenIdentifier),
@@ -26,23 +26,23 @@ export class MexTokenChartsService {
     );
   }
 
-  async getTokenPricesHourResolutionRaw(tokenIdentifier: string): Promise<MexTokenChart[] | undefined> {
-    const isMexToken = await this.isMexToken(tokenIdentifier);
-    if (!isMexToken) {
+  async getTokenPricesHourResolutionRaw(tokenIdentifier: string): Promise<MoaTokenChart[] | undefined> {
+    const isMoaToken = await this.isMoaToken(tokenIdentifier);
+    if (!isMoaToken) {
       return undefined;
     }
 
     try {
       const query = tokenPricesHourResolutionQuery(tokenIdentifier);
       const data = await this.graphQlService.getExchangeServiceData(query);
-      return this.convertToMexTokenChart(data?.values24h) || [];
+      return this.convertToMoaTokenChart(data?.values24h) || [];
     } catch (error) {
       this.logger.error(`An error occurred while fetching hourly token prices for ${tokenIdentifier}`, error);
       return [];
     }
   }
 
-  async getTokenPricesDayResolution(tokenIdentifier: string): Promise<MexTokenChart[] | undefined> {
+  async getTokenPricesDayResolution(tokenIdentifier: string): Promise<MoaTokenChart[] | undefined> {
     return await this.cachingService.getOrSet(
       CacheInfo.TokenDailyChart(tokenIdentifier).key,
       async () => await this.getTokenPricesDayResolutionRaw(tokenIdentifier),
@@ -50,9 +50,9 @@ export class MexTokenChartsService {
     );
   }
 
-  async getTokenPricesDayResolutionRaw(tokenIdentifier: string): Promise<MexTokenChart[] | undefined> {
-    const isMexToken = await this.isMexToken(tokenIdentifier);
-    if (!isMexToken) {
+  async getTokenPricesDayResolutionRaw(tokenIdentifier: string): Promise<MoaTokenChart[] | undefined> {
+    const isMoaToken = await this.isMoaToken(tokenIdentifier);
+    if (!isMoaToken) {
       return undefined;
     }
 
@@ -70,22 +70,22 @@ export class MexTokenChartsService {
 
     try {
       const data = await this.graphQlService.getExchangeServiceData(query);
-      return this.convertToMexTokenChart(data?.latestCompleteValues) || [];
+      return this.convertToMoaTokenChart(data?.latestCompleteValues) || [];
     } catch (error) {
       this.logger.error(`An error occurred while fetching daily token prices for ${tokenIdentifier}`, error);
       return [];
     }
   }
 
-  private convertToMexTokenChart(data: { timestamp: string; value: string }[]): MexTokenChart[] {
-    return data?.map(item => new MexTokenChart({
+  private convertToMoaTokenChart(data: { timestamp: string; value: string }[]): MoaTokenChart[] {
+    return data?.map(item => new MoaTokenChart({
       timestamp: Math.floor(new Date(item.timestamp).getTime() / 1000),
       value: Number(item.value),
     })) || [];
   }
 
-  private async isMexToken(tokenIdentifier: string): Promise<boolean> {
-    const token = await this.mexTokenService.getMexTokenByIdentifier(tokenIdentifier);
+  private async isMoaToken(tokenIdentifier: string): Promise<boolean> {
+    const token = await this.moaTokenService.getMoaTokenByIdentifier(tokenIdentifier);
     return token !== undefined;
   }
 }

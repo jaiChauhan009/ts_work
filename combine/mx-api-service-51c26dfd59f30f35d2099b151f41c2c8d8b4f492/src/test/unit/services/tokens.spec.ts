@@ -8,7 +8,7 @@ import { IndexerService } from "src/common/indexer/indexer.service";
 import { CollectionService } from "src/endpoints/collections/collection.service";
 import { DcdtAddressService } from "src/endpoints/dcdt/dcdt.address.service";
 import { DcdtService } from "src/endpoints/dcdt/dcdt.service";
-import { MexTokenService } from "src/endpoints/mex/mex.token.service";
+import { MoaTokenService } from "src/endpoints/moa/moa.token.service";
 import { TokenFilter } from "src/endpoints/tokens/entities/token.filter";
 import { TokenService } from "src/endpoints/tokens/token.service";
 import { TransactionService } from "src/endpoints/transactions/transaction.service";
@@ -22,7 +22,7 @@ import { TokenProperties } from "src/endpoints/tokens/entities/token.properties"
 import { DcdtType } from "src/endpoints/dcdt/entities/dcdt.type";
 import { AccountAssets } from "src/common/assets/entities/account.assets";
 import { TransferService } from "src/endpoints/transfers/transfer.service";
-import { MexPairService } from "src/endpoints/mex/mex.pair.service";
+import { MoaPairService } from "src/endpoints/moa/moa.pair.service";
 import * as fs from 'fs';
 import * as path from 'path';
 import { ApiService, ApiUtils } from "@terradharitri/sdk-nestjs-http";
@@ -119,9 +119,9 @@ describe('Token Service', () => {
           },
         },
         {
-          provide: MexTokenService,
+          provide: MoaTokenService,
           useValue: {
-            getMexPricesRaw: jest.fn(),
+            getMoaPricesRaw: jest.fn(),
           },
         },
         {
@@ -145,9 +145,9 @@ describe('Token Service', () => {
           },
         },
         {
-          provide: MexPairService,
+          provide: MoaPairService,
           useValue: {
-            getAllMexPairs: jest.fn(),
+            getAllMoaPairs: jest.fn(),
           },
         },
         {
@@ -374,13 +374,13 @@ describe('Token Service', () => {
       jest.spyOn(tokenService, 'applyTickerFromAssets').mockImplementation();
 
       const queryPagination: QueryPagination = new QueryPagination();
-      const filter: TokenFilter = new TokenFilter({ identifiers: ['MEX-455c57', 'WREWA-bd4d79'] });
+      const filter: TokenFilter = new TokenFilter({ identifiers: ['MOA-455c57', 'WREWA-bd4d79'] });
 
       const result = await tokenService.getTokens(queryPagination, filter);
 
       expect(result).toHaveLength(2);
       expect(result).toEqual(expect.arrayContaining([
-        expect.objectContaining({ identifier: 'MEX-455c57' }),
+        expect.objectContaining({ identifier: 'MOA-455c57' }),
         expect.objectContaining({ identifier: 'WREWA-bd4d79' }),
       ]));
     });
@@ -498,7 +498,7 @@ describe('Token Service', () => {
       const getFilteredTokensMock = jest.spyOn(tokenService, 'getAllTokens').mockReturnValue(mockTokens);
 
       const filter = new TokenFilter();
-      filter.identifiers = ['MEX-455c57', 'WREWA-bd4d79'];
+      filter.identifiers = ['MOA-455c57', 'WREWA-bd4d79'];
 
       const result = await tokenService.getTokenCount(filter);
 
@@ -625,7 +625,7 @@ describe('Token Service', () => {
         decimals: 18,
         isPaused: false,
         assets: {
-          website: "https://xexchange.com",
+          website: "https://dharitrix.com",
           description: "wREWA is an DCDT token that has the same value as REWA, the native coin of the DharitrI blockchain.",
           status: TokenAssetStatus.active,
           pngUrl: "https://media.dharitri.org/tokens/asset/WREWA-bd4d79/logo.png",
@@ -647,14 +647,14 @@ describe('Token Service', () => {
       },
       {
         type: "FungibleDCDT",
-        identifier: "MEX-455c57",
-        name: "MEX",
-        ticker: "MEX",
+        identifier: "MOA-455c57",
+        name: "MOA",
+        ticker: "MOA",
         owner: "drt1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsaws9xq",
         decimals: 18,
         isPaused: false,
         assets: {
-          website: "https://xexchange.com",
+          website: "https://dharitrix.com",
           description: "wREWA is an DCDT token that has the same value as REWA, the native coin of the DharitrI blockchain.",
           status: "active",
           pngUrl: "https://media.dharitri.org/tokens/asset/WREWA-bd4d79/logo.png",
@@ -705,10 +705,10 @@ describe('Token Service', () => {
         jest.spyOn(collectionService, 'getNftCollections').mockResolvedValue(mockNftCollections as NftCollection[]);
 
         jest.spyOn(tokenService as any, 'batchProcessTokens').mockImplementation(() => Promise.resolve());
-        jest.spyOn(tokenService as any, 'applyMexLiquidity').mockImplementation(() => Promise.resolve());
-        jest.spyOn(tokenService as any, 'applyMexPrices').mockImplementation(() => Promise.resolve());
-        jest.spyOn(tokenService as any, 'applyMexPairType').mockImplementation(() => Promise.resolve());
-        jest.spyOn(tokenService as any, 'applyMexPairTradesCount').mockImplementation(() => Promise.resolve());
+        jest.spyOn(tokenService as any, 'applyMoaLiquidity').mockImplementation(() => Promise.resolve());
+        jest.spyOn(tokenService as any, 'applyMoaPrices').mockImplementation(() => Promise.resolve());
+        jest.spyOn(tokenService as any, 'applyMoaPairType').mockImplementation(() => Promise.resolve());
+        jest.spyOn(tokenService as any, 'applyMoaPairTradesCount').mockImplementation(() => Promise.resolve());
         jest.spyOn(cacheService as any, 'batchApplyAll').mockImplementation(() => Promise.resolve());
         jest.spyOn(dataApiService, 'getDcdtTokenPrice').mockResolvedValue(100);
         jest.spyOn(dataApiService, 'getRewaPrice').mockResolvedValue(100);
@@ -756,10 +756,10 @@ describe('Token Service', () => {
         });
 
         expect((tokenService as any).batchProcessTokens).toHaveBeenCalledWith(mockTokens);
-        expect((tokenService as any).applyMexLiquidity).toHaveBeenCalledWith(mockTokens.filter(x => x.type !== TokenType.MetaDCDT));
-        expect((tokenService as any).applyMexPrices).toHaveBeenCalledWith(mockTokens.filter(x => x.type !== TokenType.MetaDCDT));
-        expect((tokenService as any).applyMexPairType).toHaveBeenCalledWith(mockTokens.filter(x => x.type !== TokenType.MetaDCDT));
-        expect((tokenService as any).applyMexPairTradesCount).toHaveBeenCalledWith(mockTokens.filter(x => x.type !== TokenType.MetaDCDT));
+        expect((tokenService as any).applyMoaLiquidity).toHaveBeenCalledWith(mockTokens.filter(x => x.type !== TokenType.MetaDCDT));
+        expect((tokenService as any).applyMoaPrices).toHaveBeenCalledWith(mockTokens.filter(x => x.type !== TokenType.MetaDCDT));
+        expect((tokenService as any).applyMoaPairType).toHaveBeenCalledWith(mockTokens.filter(x => x.type !== TokenType.MetaDCDT));
+        expect((tokenService as any).applyMoaPairTradesCount).toHaveBeenCalledWith(mockTokens.filter(x => x.type !== TokenType.MetaDCDT));
         expect((cacheService as any).batchApplyAll).toHaveBeenCalled();
         mockTokens.forEach(mockToken => {
           const priceSourcetype = mockToken.assets?.priceSource?.type;
@@ -850,10 +850,10 @@ describe('Token Service', () => {
       });
 
       // Fake other dependencies
-      jest.spyOn(tokenService as any, 'applyMexLiquidity').mockResolvedValue(undefined);
-      jest.spyOn(tokenService as any, 'applyMexPrices').mockResolvedValue(undefined);
-      jest.spyOn(tokenService as any, 'applyMexPairType').mockResolvedValue(undefined);
-      jest.spyOn(tokenService as any, 'applyMexPairTradesCount').mockResolvedValue(undefined);
+      jest.spyOn(tokenService as any, 'applyMoaLiquidity').mockResolvedValue(undefined);
+      jest.spyOn(tokenService as any, 'applyMoaPrices').mockResolvedValue(undefined);
+      jest.spyOn(tokenService as any, 'applyMoaPairType').mockResolvedValue(undefined);
+      jest.spyOn(tokenService as any, 'applyMoaPairTradesCount').mockResolvedValue(undefined);
       jest.spyOn(tokenService['apiService'] as any, 'get').mockResolvedValue({data: [{usdPrice: 1.0}]});
       jest.spyOn(tokenService['cachingService'], 'batchApplyAll').mockImplementation(
         // eslint-disable-next-line require-await
@@ -939,7 +939,7 @@ describe('Token Service', () => {
         'drt1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsaws9xq': '1000000000000000000',
         'erd1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsqj8x91': '500000000000000000',
       },
-      extraTokens: ['MEX-455c57', 'USDC-c76f1f'],
+      extraTokens: ['MOA-455c57', 'USDC-c76f1f'],
       preferredRankAlgorithm: NftRankAlgorithm.trait,
       priceSource: undefined,
     };

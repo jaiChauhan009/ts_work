@@ -1,10 +1,10 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { MexPairState } from "./mex.pair.state";
-import { MexPairType } from "./mex.pair.type";
-import { MexPairExchange } from "./mex.pair.exchange";
+import { MoaPairState } from "./moa.pair.state";
+import { MoaPairType } from "./moa.pair.type";
+import { MoaPairExchange } from "./moa.pair.exchange";
 
-export class MexPair {
-  constructor(init?: Partial<MexPair>) {
+export class MoaPair {
+  constructor(init?: Partial<MoaPair>) {
     Object.assign(this, init);
   }
 
@@ -29,13 +29,13 @@ export class MexPair {
   @ApiProperty()
   quotePrevious24hPrice: number = 0;
 
-  @ApiProperty({ type: String, example: 'MEX-455c57' })
+  @ApiProperty({ type: String, example: 'MOA-455c57' })
   baseId: string = '';
 
-  @ApiProperty({ type: String, example: 'MEX' })
+  @ApiProperty({ type: String, example: 'MOA' })
   baseSymbol: string = '';
 
-  @ApiProperty({ type: String, example: 'MEX' })
+  @ApiProperty({ type: String, example: 'MOA' })
   baseName: string = '';
 
   @ApiProperty({ type: Number, example: 0.00020596180499578328 })
@@ -59,14 +59,14 @@ export class MexPair {
   @ApiProperty({ type: Number, example: '2109423.4531209776' })
   volume24h: number | undefined;
 
-  @ApiProperty({ enum: MexPairState })
-  state: MexPairState = MexPairState.inactive;
+  @ApiProperty({ enum: MoaPairState })
+  state: MoaPairState = MoaPairState.inactive;
 
-  @ApiProperty({ enum: MexPairType })
-  type: MexPairType = MexPairType.experimental;
+  @ApiProperty({ enum: MoaPairType })
+  type: MoaPairType = MoaPairType.experimental;
 
   @ApiProperty({ type: String, example: 'jungledex' })
-  exchange: MexPairExchange | undefined;
+  exchange: MoaPairExchange | undefined;
 
   @ApiProperty({ type: Number, nullable: true })
   tradesCount: number | undefined = undefined;

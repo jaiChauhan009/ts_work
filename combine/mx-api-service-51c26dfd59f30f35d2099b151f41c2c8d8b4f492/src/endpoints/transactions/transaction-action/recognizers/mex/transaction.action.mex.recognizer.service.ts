@@ -2,23 +2,23 @@ import { Injectable } from "@nestjs/common";
 import { TransactionAction } from "../../entities/transaction.action";
 import { TransactionMetadata } from "../../entities/transaction.metadata";
 import { TransactionActionRecognizerInterface } from "../../transaction.action.recognizer.interface";
-import { MexFarmActionRecognizerService } from "./mex.farm.action.recognizer.service";
-import { MexPairActionRecognizerService } from "./mex.pair.action.recognizer.service";
-import { MexWrapActionRecognizerService } from "./mex.wrap.action.recognizer.service";
-import { MexDistributionActionRecognizerService } from "./mex.distribution.action.recognizer.service";
-import { MexLockedAssetActionRecognizerService } from "./mex.locked.asset.action.recognizer.service";
-import { MexSettingsService } from "../../../../mex/mex.settings.service";
+import { MoaFarmActionRecognizerService } from "./moa.farm.action.recognizer.service";
+import { MoaPairActionRecognizerService } from "./moa.pair.action.recognizer.service";
+import { MoaWrapActionRecognizerService } from "./moa.wrap.action.recognizer.service";
+import { MoaDistributionActionRecognizerService } from "./moa.distribution.action.recognizer.service";
+import { MoaLockedAssetActionRecognizerService } from "./moa.locked.asset.action.recognizer.service";
+import { MoaSettingsService } from "../../../../moa/moa.settings.service";
 import { ApiConfigService } from "src/common/api-config/api.config.service";
 
 @Injectable()
-export class TransactionActionMexRecognizerService implements TransactionActionRecognizerInterface {
+export class TransactionActionMoaRecognizerService implements TransactionActionRecognizerInterface {
   constructor(
-    private readonly pairActionRecognizer: MexPairActionRecognizerService,
-    private readonly farmActionRecognizer: MexFarmActionRecognizerService,
-    private readonly wrapActionRecognizer: MexWrapActionRecognizerService,
-    private readonly distributionRecognizer: MexDistributionActionRecognizerService,
-    private readonly lockedAssetRecognizer: MexLockedAssetActionRecognizerService,
-    private readonly mexSettingsService: MexSettingsService,
+    private readonly pairActionRecognizer: MoaPairActionRecognizerService,
+    private readonly farmActionRecognizer: MoaFarmActionRecognizerService,
+    private readonly wrapActionRecognizer: MoaWrapActionRecognizerService,
+    private readonly distributionRecognizer: MoaDistributionActionRecognizerService,
+    private readonly lockedAssetRecognizer: MoaLockedAssetActionRecognizerService,
+    private readonly moaSettingsService: MoaSettingsService,
     private readonly apiConfigService: ApiConfigService
   ) { }
 
@@ -28,18 +28,18 @@ export class TransactionActionMexRecognizerService implements TransactionActionR
       return false;
     }
 
-    const settings = await this.mexSettingsService.getSettings();
+    const settings = await this.moaSettingsService.getSettings();
     return settings !== undefined;
   }
 
   async recognize(metadata: TransactionMetadata): Promise<TransactionAction | undefined> {
-    const settings = await this.mexSettingsService.getSettings();
+    const settings = await this.moaSettingsService.getSettings();
     if (!settings) {
       return undefined;
     }
 
-    const isMexInteraction = await this.mexSettingsService.isMexInteraction(metadata);
-    if (!isMexInteraction) {
+    const isMoaInteraction = await this.moaSettingsService.isMoaInteraction(metadata);
+    if (!isMoaInteraction) {
       return undefined;
     }
 

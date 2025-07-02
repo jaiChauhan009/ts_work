@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryColumn, ViewColumn, ViewEntity } from 'typeorm';
 
 @Entity('hyper_dex_analytics')
-export class XExchangeAnalyticsEntity {
+export class DharitrixAnalyticsEntity {
     @PrimaryColumn({ nullable: false, type: 'timestamp without time zone' })
     timestamp: Date;
 
@@ -20,17 +20,17 @@ export class XExchangeAnalyticsEntity {
     })
     value = '0';
 
-    constructor(init?: Partial<XExchangeAnalyticsEntity>) {
+    constructor(init?: Partial<DharitrixAnalyticsEntity>) {
         Object.assign(this, init);
     }
 
     public static fromObject(
         timestamp: Date,
         object: Record<string, Record<string, string>>,
-    ): XExchangeAnalyticsEntity[] {
+    ): DharitrixAnalyticsEntity[] {
         const entities = Object.entries(object)
             .map(([series, record]: [string, Record<string, string>]) =>
-                XExchangeAnalyticsEntity.fromRecord(timestamp, record, series),
+                DharitrixAnalyticsEntity.fromRecord(timestamp, record, series),
             )
             .flat(1);
         return entities;
@@ -40,9 +40,9 @@ export class XExchangeAnalyticsEntity {
         timestamp: Date,
         record: Record<string, string>,
         series?: string,
-    ): XExchangeAnalyticsEntity[] {
+    ): DharitrixAnalyticsEntity[] {
         const entities = Object.entries(record).map(([key, value]) => {
-            const entity = new XExchangeAnalyticsEntity();
+            const entity = new DharitrixAnalyticsEntity();
             entity.timestamp = timestamp;
             entity.series = series;
             entity.key = key;

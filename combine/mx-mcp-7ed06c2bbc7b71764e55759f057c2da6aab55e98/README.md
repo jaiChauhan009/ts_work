@@ -37,8 +37,8 @@ Add the mcp server to your configuration:
                 "@terradharitri/mcp"
             ],
             "env": {
-                "MVX_NETWORK": "devnet",
-                "MVX_WALLET": "absolute/path/to/someWallet.pem"
+                "DRT_NETWORK": "devnet",
+                "DRT_WALLET": "absolute/path/to/someWallet.pem"
             }
         }
     }
@@ -64,8 +64,8 @@ In the config file, set the server to the one you've just built.
                "absolute/path/to/index.js"
             ],
          "env": {
-            "MVX_NETWORK": "devnet",
-            "MVX_WALLET": "absolute/path/to/someWallet.pem"
+            "DRT_NETWORK": "devnet",
+            "DRT_WALLET": "absolute/path/to/someWallet.pem"
           }
         }
     }

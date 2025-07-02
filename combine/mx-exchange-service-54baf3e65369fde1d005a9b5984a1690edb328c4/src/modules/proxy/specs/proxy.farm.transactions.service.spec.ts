@@ -79,7 +79,7 @@ describe('ProxyFarmTransactionsService', () => {
                     'AAAAEEVHTERNRVhGTC1naGlqa2wAAAAAAAAACgAAAAcrKmP2fki2AAAAC0xLTFAtYWJjZGVmAAAAAAAAAAEAAAAHKypj9n5Itg==',
                 nonce: 10,
                 type: 'MetaDCDT',
-                name: 'xMEXLPStaked',
+                name: 'xMOALPStaked',
                 creator:
                     'drt1qqqqqqqqqqqqqpgqat0auzsgk9x0g9gm8n6tq6qa9xtmwu4h295qqpgp07',
                 balance: '12150032824158390',
@@ -111,7 +111,7 @@ describe('ProxyFarmTransactionsService', () => {
                     'AAAAEEVHTERNRVhGTC1naGlqa2wAAAAAAAAAAQAAAAcrKmP2fki2AAAAC0xLTFAtYWJjZGVmAAAAAAAAAAEAAAAHKypj9n5Itg==',
                 nonce: 5,
                 type: 'MetaDCDT',
-                name: 'xMEXLPStaked',
+                name: 'xMOALPStaked',
                 creator:
                     'drt1qqqqqqqqqqqqqpgqat0auzsgk9x0g9gm8n6tq6qa9xtmwu4h295qqpgp07',
                 balance: '12150032824158390',

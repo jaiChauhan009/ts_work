@@ -87,7 +87,7 @@ export enum GlobalSelectorsEnum {
 }
 
 export enum ApiPathEnum {
-  devnetGraphXexchange = 'https://devnet-graph.xexchange.com/graphql',
+  devnetGraphdharitriX = 'https://devnet-graph.dharitrix.com/graphql',
   devnetUrl = 'https://devnet-wallet.dharitri.org/'
 }
 

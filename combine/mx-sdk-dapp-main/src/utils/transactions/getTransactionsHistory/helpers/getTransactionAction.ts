@@ -8,7 +8,7 @@ import { getTransactionActionDirectionLabel } from './getTransactionActionDirect
 import { getTransactionActionTransferLabel } from './getTransactionActionTransferLabel';
 
 export enum TransactionActionCategoryTypeEnum {
-  mex = 'mex',
+  moa = 'moa',
   stake = 'stake'
 }
 
@@ -81,7 +81,7 @@ export const getTransactionAction = ({
   });
 
   const transactionActionDescriptionCategories = [
-    TransactionActionCategoryTypeEnum.mex,
+    TransactionActionCategoryTypeEnum.moa,
     TransactionActionCategoryTypeEnum.stake
   ];
 

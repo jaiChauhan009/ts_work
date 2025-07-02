@@ -1,6 +1,6 @@
 import { registerEnumType } from "@nestjs/graphql";
 
-export enum MexPairType {
+export enum MoaPairType {
   core = 'core',
   community = 'community',
   ecosystem = 'ecosystem',
@@ -8,9 +8,9 @@ export enum MexPairType {
   unlisted = 'unlisted',
 }
 
-registerEnumType(MexPairType, {
-  name: 'MexPairType',
-  description: 'MexPairType object type.',
+registerEnumType(MoaPairType, {
+  name: 'MoaPairType',
+  description: 'MoaPairType object type.',
   valuesMap: {
     core: {
       description: 'Core Type.',

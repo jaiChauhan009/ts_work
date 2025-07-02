@@ -9,7 +9,7 @@ import {
     PriceCandleDaily,
     SumDaily,
     SumHourly,
-    XExchangeAnalyticsEntity,
+    DharitrixAnalyticsEntity,
     TokenCandlesMinute,
     TokenCandlesHourly,
     TokenCandlesDaily,
@@ -34,7 +34,7 @@ export default new DataSource({
     database: configService.get('TIMESCALEDB_DATABASE'),
     migrationsTransactionMode: 'each',
     entities: [
-        XExchangeAnalyticsEntity,
+        DharitrixAnalyticsEntity,
         SumDaily,
         SumHourly,
         CloseDaily,

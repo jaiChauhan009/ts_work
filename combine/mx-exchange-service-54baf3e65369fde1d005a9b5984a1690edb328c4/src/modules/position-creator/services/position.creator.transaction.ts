@@ -535,7 +535,7 @@ export class PositionCreatorTransactionService {
             secondTokenID,
             farmTokenID,
             wrappedFarmTokenID,
-            xmexTokenID,
+            xmoaTokenID,
         ] = await Promise.all([
             this.pairAbi.firstTokenID(pairAddress),
             this.pairAbi.secondTokenID(pairAddress),
@@ -568,15 +568,15 @@ export class PositionCreatorTransactionService {
                 : [payments[1], payments[0]];
 
         const isLockedToken =
-            firstPayment.tokenIdentifier === xmexTokenID ||
-            secondPayment.tokenIdentifier === xmexTokenID;
+            firstPayment.tokenIdentifier === xmoaTokenID ||
+            secondPayment.tokenIdentifier === xmoaTokenID;
 
         if (
             isLockedToken &&
             !this.checkLockedTokenPayments(
                 [firstPayment, secondPayment],
                 firstTokenID,
-                xmexTokenID,
+                xmoaTokenID,
             )
         ) {
             throw new Error('Invalid locked tokens payments');

@@ -8,7 +8,7 @@
     "decimals": 18,
     "isPaused": false,
     "assets": {
-      "website": "https://xexchange.com",
+      "website": "https://dharitrix.com",
       "description": "wEGLD is an ESDT token that has the same value as EGLD, the native coin of the DharitrI blockchain.",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/WEGLD-bd4d79/logo.png",
@@ -39,7 +39,7 @@
     "decimals": 18,
     "isPaused": false,
     "assets": {
-      "website": "https://xexchange.com",
+      "website": "https://dharitrix.com",
       "description": "MEX is the utility token of the xExchange.",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/MEX-455c57/logo.png",
@@ -212,7 +212,7 @@
     "decimals": 6,
     "isPaused": false,
     "assets": {
-      "website": "https://xexchange.com",
+      "website": "https://dharitrix.com",
       "description": "USDC stablecoin originating on Ethereum, bridged as an ESDT token on DharitrI. 1 USDC = 1 WrappedUSDC",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/USDC-c76f1f/logo.png",
@@ -1062,7 +1062,7 @@
     "decimals": 18,
     "isPaused": false,
     "assets": {
-      "website": "https://xexchange.com",
+      "website": "https://dharitrix.com",
       "description": "This token tracks your LKMEX stake in the MEX farm on the xExchange.",
       "status": "active",
       "pngUrl": "https://media.dharitri.org/tokens/asset/LKFARM-9d1ea8/logo.png",

@@ -36,11 +36,11 @@ export const Tokens = (tokenID: string): DcdtToken => {
                 derivedREWA: '1',
                 roles: new RolesModel(),
             });
-        case 'MEX-123456':
+        case 'MOA-123456':
             return new DcdtToken({
-                identifier: 'MEX-123456',
-                name: 'MEX',
-                ticker: 'MEX',
+                identifier: 'MOA-123456',
+                name: 'MOA',
+                ticker: 'MOA',
                 owner: Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000001',
                 ).bech32(),
@@ -228,11 +228,11 @@ export const Tokens = (tokenID: string): DcdtToken => {
                 price: '1',
                 roles: new RolesModel(),
             });
-        case 'REWAMEXLP-abcdef':
+        case 'REWAMOALP-abcdef':
             return new DcdtToken({
-                identifier: 'REWAMEXLP-abcdef',
-                name: 'REWAMEXLPToken',
-                ticker: 'REWAMEXLP',
+                identifier: 'REWAMOALP-abcdef',
+                name: 'REWAMOALPToken',
+                ticker: 'REWAMOALP',
                 type: 'FungibleDCDT',
                 owner: scAddress.routerAddress,
                 supply: '0',
@@ -414,11 +414,11 @@ export const Tokens = (tokenID: string): DcdtToken => {
                 price: '10',
                 roles: new RolesModel(),
             });
-        case 'REWAMEXFL-abcdef':
+        case 'REWAMOAFL-abcdef':
             return {
-                identifier: 'REWAMEXFL-abcdef',
-                name: 'REWAMEXLPStaked',
-                ticker: 'REWAMEXFL',
+                identifier: 'REWAMOAFL-abcdef',
+                name: 'REWAMOALPStaked',
+                ticker: 'REWAMOAFL',
                 type: 'FungibleDCDT',
                 owner: Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000021',
@@ -444,11 +444,11 @@ export const Tokens = (tokenID: string): DcdtToken => {
                 price: '1',
                 roles: new RolesModel(),
             };
-        case 'REWAMEXF-abcdef':
+        case 'REWAMOAF-abcdef':
             return {
-                identifier: 'REWAMEXF-abcdef',
-                name: 'REWAMEXLPStaked',
-                ticker: 'REWAMEXF',
+                identifier: 'REWAMOAF-abcdef',
+                name: 'REWAMOALPStaked',
+                ticker: 'REWAMOAF',
                 type: 'FungibleDCDT',
                 owner: Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000022',
@@ -474,11 +474,11 @@ export const Tokens = (tokenID: string): DcdtToken => {
                 price: '1',
                 roles: new RolesModel(),
             };
-        case 'REWAMEXFL-bcdefg':
+        case 'REWAMOAFL-bcdefg':
             return {
-                identifier: 'REWAMEXFL-bcdefg',
-                name: 'REWAMEXLPStaked',
-                ticker: 'REWAMEXFL',
+                identifier: 'REWAMOAFL-bcdefg',
+                name: 'REWAMOALPStaked',
+                ticker: 'REWAMOAFL',
                 type: 'FungibleDCDT',
                 owner: Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000023',
@@ -545,8 +545,8 @@ export const pairs = [
             '0000000000000000000000000000000000000000000000000000000000000012',
         ).bech32(),
         firstToken: Tokens('WREWA-123456'),
-        secondToken: Tokens('MEX-123456'),
-        liquidityPoolToken: Tokens('REWAMEXLP-abcdef'),
+        secondToken: Tokens('MOA-123456'),
+        liquidityPoolToken: Tokens('REWAMOALP-abcdef'),
         info: {
             reserves0: '1000000000000000000000',
             reserves1: '1000000000000000000000000',
@@ -768,8 +768,8 @@ export const pairs = [
 
 export async function PairsMap(): Promise<Map<string, string[]>> {
     const pairsMap: Map<string, string[]> = new Map();
-    pairsMap.set('WREWA-123456', ['MEX-123456', 'USDC-123456', 'TOK4-123456']);
-    pairsMap.set('MEX-123456', ['WREWA-123456']);
+    pairsMap.set('WREWA-123456', ['MOA-123456', 'USDC-123456', 'TOK4-123456']);
+    pairsMap.set('MOA-123456', ['WREWA-123456']);
     pairsMap.set('USDC-123456', ['WREWA-123456']);
     pairsMap.set('TOK4-123456', ['WREWA-123456']);
     return pairsMap;

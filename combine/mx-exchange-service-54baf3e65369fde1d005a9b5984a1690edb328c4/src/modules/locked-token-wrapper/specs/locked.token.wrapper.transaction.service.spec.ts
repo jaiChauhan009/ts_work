@@ -52,11 +52,11 @@ describe('LockedTokenWrapperTransactionService', () => {
             drtApi,
             'getNftAttributesByTokenIdentifier',
         ).mockImplementation(async (address: string, nftIdentifier: string) => {
-            if (nftIdentifier === 'WXMEX-123456-01') {
+            if (nftIdentifier === 'WXMOA-123456-01') {
                 return 'AAAAAAAAAAE=';
             }
 
-            if (nftIdentifier === 'ELKMEX-123456-01') {
+            if (nftIdentifier === 'ELKMOA-123456-01') {
                 return 'AAAACk1FWC00NTVjNTcAAAAAAAAAAAAAAAAAAAAC';
             }
         });
@@ -64,7 +64,7 @@ describe('LockedTokenWrapperTransactionService', () => {
         const transaction = await service.unwrapLockedToken(
             Address.Zero().toBech32(),
             {
-                tokenID: 'WXMEX-123456',
+                tokenID: 'WXMOA-123456',
                 nonce: 1,
                 amount: '1',
             },
@@ -79,7 +79,7 @@ describe('LockedTokenWrapperTransactionService', () => {
                 gasPrice: 1000000000,
                 value: '0',
                 data: encodeTransactionData(
-                    `DCDTNFTTransfer@WXMEX-123456@1@1@${scAddress.lockedTokenWrapper}@unwrapLockedToken`,
+                    `DCDTNFTTransfer@WXMOA-123456@1@1@${scAddress.lockedTokenWrapper}@unwrapLockedToken`,
                 ),
                 options: undefined,
                 signature: undefined,
@@ -95,7 +95,7 @@ describe('LockedTokenWrapperTransactionService', () => {
         const transaction = await service.wrapLockedToken(
             Address.Zero().toBech32(),
             {
-                tokenID: 'XMEX-123456',
+                tokenID: 'XMOA-123456',
                 nonce: 1,
                 amount: '1',
             },
@@ -110,7 +110,7 @@ describe('LockedTokenWrapperTransactionService', () => {
                 gasPrice: 1000000000,
                 value: '0',
                 data: encodeTransactionData(
-                    `DCDTNFTTransfer@XMEX-123456@1@1@${scAddress.lockedTokenWrapper}@wrapLockedToken`,
+                    `DCDTNFTTransfer@XMOA-123456@1@1@${scAddress.lockedTokenWrapper}@wrapLockedToken`,
                 ),
                 options: undefined,
                 signature: undefined,

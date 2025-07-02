@@ -14,7 +14,7 @@ const transactionsWithLogs: TransactionLog[] =
       proof: "",
       name: "Maiar Exchange: WREWA/USDC Liquidity Pool",
       tags: [
-        "mex",
+        "moa",
         "liquiditypool",
       ],
       social: new AccountAssetsSocial(),

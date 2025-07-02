@@ -98,16 +98,16 @@ export class UserMetaDcdtService {
         pagination: PaginationArgs,
         rawNfts?: NftToken[],
     ): Promise<UserLockedAssetToken[]> {
-        const lockedMEXTokenID =
+        const lockedMOATokenID =
             await this.lockedAssetGetter.getLockedTokenID();
         const nfts = rawNfts
-            ? rawNfts.filter((nft) => nft.collection === lockedMEXTokenID)
+            ? rawNfts.filter((nft) => nft.collection === lockedMOATokenID)
             : await this.contextGetter.getNftsForUser(
                   userAddress,
                   pagination.offset,
                   pagination.limit,
                   'MetaDCDT',
-                  [lockedMEXTokenID],
+                  [lockedMOATokenID],
               );
         return Promise.all(
             nfts.map((nft) =>
@@ -673,9 +673,9 @@ export class UserMetaDcdtService {
     }
 
     private async getNftTokenTypeRaw(tokenID: string): Promise<NftTokenType> {
-        const lockedMEXTokenID =
+        const lockedMOATokenID =
             await this.lockedAssetGetter.getLockedTokenID();
-        if (tokenID === lockedMEXTokenID) {
+        if (tokenID === lockedMOATokenID) {
             return NftTokenType.LockedAssetToken;
         }
 

@@ -2,38 +2,38 @@ import { forwardRef, Inject, Injectable } from "@nestjs/common";
 import { TransactionAction } from "../../entities/transaction.action";
 import { TransactionActionCategory } from "../../entities/transaction.action.category";
 import { TransactionMetadata } from "../../entities/transaction.metadata";
-import { MexFunction } from "./entities/mex.function.options";
-import { MexSettings } from "../../../../mex/entities/mex.settings";
+import { MoaFunction } from "./entities/moa.function.options";
+import { MoaSettings } from "../../../../moa/entities/moa.settings";
 import { TokenTransferService } from "src/endpoints/tokens/token.transfer.service";
-import { MexSettingsService } from "../../../../mex/mex.settings.service";
+import { MoaSettingsService } from "../../../../moa/moa.settings.service";
 import { TransactionActionDcdtNftRecognizerService } from "../dcdt/transaction.action.dcdt.nft.recognizer.service";
 import { BinaryUtils, NumberUtils } from "@terradharitri/sdk-nestjs-common";
 
 @Injectable()
-export class MexPairActionRecognizerService {
+export class MoaPairActionRecognizerService {
   constructor(
-    private readonly mexSettingsService: MexSettingsService,
+    private readonly moaSettingsService: MoaSettingsService,
     @Inject(forwardRef(() => TokenTransferService))
     private readonly tokenTransferService: TokenTransferService,
     private readonly transactionActionDcdtNftRecognizerService: TransactionActionDcdtNftRecognizerService,
   ) { }
 
-  async recognize(settings: MexSettings, metadata: TransactionMetadata): Promise<TransactionAction | undefined> {
+  async recognize(settings: MoaSettings, metadata: TransactionMetadata): Promise<TransactionAction | undefined> {
     if (!settings.pairContracts.includes(metadata.receiver) && settings.routerFactoryContract !== metadata.receiver) {
       return undefined;
     }
 
     switch (metadata.functionName) {
-      case MexFunction.swapTokensFixedInput:
-      case MexFunction.swapTokensFixedOutput:
+      case MoaFunction.swapTokensFixedInput:
+      case MoaFunction.swapTokensFixedOutput:
         return await this.getSwapAction(metadata);
-      case MexFunction.addLiquidity:
-      case MexFunction.addLiquidityProxy:
+      case MoaFunction.addLiquidity:
+      case MoaFunction.addLiquidityProxy:
         return this.getAddLiquidityAction(metadata);
-      case MexFunction.removeLiquidity:
-      case MexFunction.removeLiquidityProxy:
+      case MoaFunction.removeLiquidity:
+      case MoaFunction.removeLiquidityProxy:
         return this.getRemoveLiquidityAction(metadata);
-      case MexFunction.multiPairSwap:
+      case MoaFunction.multiPairSwap:
         return this.getMultiSwapAction(metadata);
       default:
         return undefined;
@@ -41,7 +41,7 @@ export class MexPairActionRecognizerService {
   }
 
   private async getSwapAction(metadata: TransactionMetadata): Promise<TransactionAction | undefined> {
-    const transfers = this.mexSettingsService.getTransfers(metadata);
+    const transfers = this.moaSettingsService.getTransfers(metadata);
     if (!transfers) {
       return undefined;
     }
@@ -70,15 +70,15 @@ export class MexPairActionRecognizerService {
     });
 
     let description = `Swap ${valueDenominated} ${pair1Properties.ticker} for a minimum of ${destinationValueDenominated} ${pair2Properties.ticker}`;
-    if (metadata.functionName === MexFunction.swapTokensFixedOutput) {
+    if (metadata.functionName === MoaFunction.swapTokensFixedOutput) {
       description = `Swap a maximum of ${valueDenominated} ${pair1Properties.ticker} for ${destinationValueDenominated} ${pair2Properties.ticker}`;
     }
 
-    return this.transactionActionDcdtNftRecognizerService.getMultiTransferAction(metadata, TransactionActionCategory.mex, 'swap', description);
+    return this.transactionActionDcdtNftRecognizerService.getMultiTransferAction(metadata, TransactionActionCategory.moa, 'swap', description);
   }
 
   private async getMultiSwapAction(metadata: TransactionMetadata): Promise<TransactionAction | undefined> {
-    const transfers = this.mexSettingsService.getTransfers(metadata);
+    const transfers = this.moaSettingsService.getTransfers(metadata);
     if (!transfers) {
       return undefined;
     }
@@ -129,14 +129,14 @@ export class MexPairActionRecognizerService {
 
     const description = `Swap ${firstSwap.denominatedValue} ${firstSwap.properties.ticker} for a minimum of ${lastSwap.denominatedValue} ${lastSwap.properties.ticker} with intermediate pair(s) ${intermediateSwaps.map(s => s.properties.ticker).join(', ')}`;
 
-    return this.transactionActionDcdtNftRecognizerService.getMultiTransferAction(metadata, TransactionActionCategory.mex, 'multiSwap', description);
+    return this.transactionActionDcdtNftRecognizerService.getMultiTransferAction(metadata, TransactionActionCategory.moa, 'multiSwap', description);
   }
 
   private getAddLiquidityAction(metadata: TransactionMetadata): TransactionAction | undefined {
-    return this.transactionActionDcdtNftRecognizerService.getMultiTransferActionWithTicker(metadata, TransactionActionCategory.mex, MexFunction.addLiquidity, 'Added liquidity for');
+    return this.transactionActionDcdtNftRecognizerService.getMultiTransferActionWithTicker(metadata, TransactionActionCategory.moa, MoaFunction.addLiquidity, 'Added liquidity for');
   }
 
   private getRemoveLiquidityAction(metadata: TransactionMetadata): TransactionAction | undefined {
-    return this.transactionActionDcdtNftRecognizerService.getMultiTransferActionWithTicker(metadata, TransactionActionCategory.mex, MexFunction.removeLiquidity, 'Removed liquidity with');
+    return this.transactionActionDcdtNftRecognizerService.getMultiTransferActionWithTicker(metadata, TransactionActionCategory.moa, MoaFunction.removeLiquidity, 'Removed liquidity with');
   }
 }

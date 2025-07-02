@@ -1,10 +1,10 @@
-export class MexSettingsFarmContracts {
-  constructor(init?: Partial<MexSettingsFarmContracts>) {
+export class MoaSettingsFarmContracts {
+  constructor(init?: Partial<MoaSettingsFarmContracts>) {
     Object.assign(this, init);
   }
 
-  rewaMex: string = '';
+  rewaMoa: string = '';
   rewaUsd: string = '';
-  mex: string = '';
+  moa: string = '';
   exit: string = '';
 }

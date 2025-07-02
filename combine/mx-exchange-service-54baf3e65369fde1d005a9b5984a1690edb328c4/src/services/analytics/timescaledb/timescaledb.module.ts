@@ -14,7 +14,7 @@ import {
     SumDaily,
     SumHourly,
     TokenBurnedWeekly,
-    XExchangeAnalyticsEntity,
+    DharitrixAnalyticsEntity,
     TokenCandlesMinute,
     TokenCandlesHourly,
     TokenCandlesDaily,
@@ -52,7 +52,7 @@ import { DynamicModuleUtils } from 'src/utils/dynamic.module.utils';
             inject: [ApiConfigService],
         }),
         TypeOrmModule.forFeature([
-            XExchangeAnalyticsEntity,
+            DharitrixAnalyticsEntity,
             SumDaily,
             SumHourly,
             CloseDaily,

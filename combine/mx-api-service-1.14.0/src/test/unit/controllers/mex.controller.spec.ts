@@ -1,119 +1,119 @@
 import { INestApplication } from "@nestjs/common";
-import { mockMexEconomicsService, mockMexFarmsService, mockMexPairService, mockMexSettingsService, mockMexTokensService } from "./services.mock/mex.services.mock";
+import { mockMoaEconomicsService, mockMoaFarmsService, mockMoaPairService, mockMoaSettingsService, mockMoaTokensService } from "./services.mock/moa.services.mock";
 import { Test, TestingModule } from "@nestjs/testing";
-import { MexController } from "src/endpoints/mex/mex.controller";
-import { MexSettingsService } from "src/endpoints/mex/mex.settings.service";
-import { MexEconomicsService } from "src/endpoints/mex/mex.economics.service";
-import { MexPairService } from "src/endpoints/mex/mex.pair.service";
-import { MexTokenService } from "src/endpoints/mex/mex.token.service";
-import { MexFarmService } from "src/endpoints/mex/mex.farm.service";
+import { MoaController } from "src/endpoints/moa/moa.controller";
+import { MoaSettingsService } from "src/endpoints/moa/moa.settings.service";
+import { MoaEconomicsService } from "src/endpoints/moa/moa.economics.service";
+import { MoaPairService } from "src/endpoints/moa/moa.pair.service";
+import { MoaTokenService } from "src/endpoints/moa/moa.token.service";
+import { MoaFarmService } from "src/endpoints/moa/moa.farm.service";
 import request = require('supertest');
 import { PublicAppModule } from "src/public.app.module";
 import { QueryPagination } from "src/common/entities/query.pagination";
-import { MexPairExchange } from "src/endpoints/mex/entities/mex.pair.exchange";
-import { MexPairsFilter } from 'src/endpoints/mex/entities/mex.pairs..filter';
+import { MoaPairExchange } from "src/endpoints/moa/entities/moa.pair.exchange";
+import { MoaPairsFilter } from 'src/endpoints/moa/entities/moa.pairs..filter';
 
-describe('MexController', () => {
+describe('MoaController', () => {
   let app: INestApplication;
-  const path = '/mex';
+  const path = '/moa';
 
-  const mexSettingsServiceMocks = mockMexSettingsService();
-  const mexEconomicsServiceMocks = mockMexEconomicsService();
-  const mexPairServiceMocks = mockMexPairService();
-  const mexTokensServiceMocks = mockMexTokensService();
-  const mexFarmsServiceMocks = mockMexFarmsService();
+  const moaSettingsServiceMocks = mockMoaSettingsService();
+  const moaEconomicsServiceMocks = mockMoaEconomicsService();
+  const drtPairServiceMocks = mockMoaPairService();
+  const moaTokensServiceMocks = mockMoaTokensService();
+  const moaFarmsServiceMocks = mockMoaFarmsService();
 
   beforeEach(async () => {
     jest.resetAllMocks();
     const moduleFixture: TestingModule = await Test.createTestingModule({
-      controllers: [MexController],
+      controllers: [MoaController],
       imports: [PublicAppModule],
-    }).overrideProvider(MexSettingsService).useValue(mexSettingsServiceMocks)
-      .overrideProvider(MexEconomicsService).useValue(mexEconomicsServiceMocks)
-      .overrideProvider(MexPairService).useValue(mexPairServiceMocks)
-      .overrideProvider(MexTokenService).useValue(mexTokensServiceMocks)
-      .overrideProvider(MexFarmService).useValue(mexFarmsServiceMocks)
+    }).overrideProvider(MoaSettingsService).useValue(moaSettingsServiceMocks)
+      .overrideProvider(MoaEconomicsService).useValue(moaEconomicsServiceMocks)
+      .overrideProvider(MoaPairService).useValue(drtPairServiceMocks)
+      .overrideProvider(MoaTokenService).useValue(moaTokensServiceMocks)
+      .overrideProvider(MoaFarmService).useValue(moaFarmsServiceMocks)
       .compile();
 
     app = moduleFixture.createNestApplication();
     await app.init();
   });
 
-  describe('GET /mex/setting', () => {
-    it('should return mex settings details', async () => {
-      mexSettingsServiceMocks.getSettings.mockReturnValue({});
+  describe('GET /moa/setting', () => {
+    it('should return moa settings details', async () => {
+      moaSettingsServiceMocks.getSettings.mockReturnValue({});
       await request(app.getHttpServer())
         .get(`${path}/settings`)
         .expect(200);
 
-      expect(mexSettingsServiceMocks.getSettings).toHaveBeenCalled();
+      expect(moaSettingsServiceMocks.getSettings).toHaveBeenCalled();
     });
   });
 
-  describe('GET /mex/economics', () => {
-    it('should return mex economics details', async () => {
-      mexEconomicsServiceMocks.getMexEconomics.mockReturnValue({});
+  describe('GET /moa/economics', () => {
+    it('should return moa economics details', async () => {
+      moaEconomicsServiceMocks.getMoaEconomics.mockReturnValue({});
       await request(app.getHttpServer())
         .get(`${path}/economics`)
         .expect(200);
 
-      expect(mexEconomicsServiceMocks.getMexEconomics).toHaveBeenCalled();
+      expect(moaEconomicsServiceMocks.getMoaEconomics).toHaveBeenCalled();
     });
   });
 
-  describe('GET /mex/pairs', () => {
-    it('should return a list of mex pairs', async () => {
-      mexPairServiceMocks.getMexPairs.mockReturnValue([]);
+  describe('GET /moa/pairs', () => {
+    it('should return a list of moa pairs', async () => {
+      drtPairServiceMocks.getMoaPairs.mockReturnValue([]);
       await request(app.getHttpServer())
         .get(`${path}/pairs`)
         .expect(200);
 
-      expect(mexPairServiceMocks.getMexPairs).toHaveBeenCalledWith(
-        0, 25, new MexPairsFilter({ exchange: undefined, includeFarms: false })
+      expect(drtPairServiceMocks.getMoaPairs).toHaveBeenCalledWith(
+        0, 25, new MoaPairsFilter({ exchange: undefined, includeFarms: false })
       );
     });
 
-    it('should return a list of mex pairs with size equal with 5', async () => {
-      mexPairServiceMocks.getMexPairs.mockReturnValue([]);
+    it('should return a list of moa pairs with size equal with 5', async () => {
+      drtPairServiceMocks.getMoaPairs.mockReturnValue([]);
       const queryPagination = new QueryPagination({ from: 0, size: 5 });
 
       await request(app.getHttpServer())
         .get(`${path}/pairs?size=${queryPagination.size}`)
         .expect(200);
 
-      expect(mexPairServiceMocks.getMexPairs).toHaveBeenCalledWith(
-        0, 5, new MexPairsFilter({ exchange: undefined, includeFarms: false })
+      expect(drtPairServiceMocks.getMoaPairs).toHaveBeenCalledWith(
+        0, 5, new MoaPairsFilter({ exchange: undefined, includeFarms: false })
       );
     });
 
-    it('should return a list of mex pairs from exchange source', async () => {
-      mexPairServiceMocks.getMexPairs.mockReturnValue([]);
+    it('should return a list of moa pairs from exchange source', async () => {
+      drtPairServiceMocks.getMoaPairs.mockReturnValue([]);
       const queryPagination = new QueryPagination({ from: 0, size: 5 });
 
       await request(app.getHttpServer())
-        .get(`${path}/pairs?size=${queryPagination.size}&exchange=${MexPairExchange.xexchange}`)
+        .get(`${path}/pairs?size=${queryPagination.size}&exchange=${MoaPairExchange.dharitrix}`)
         .expect(200);
 
-      expect(mexPairServiceMocks.getMexPairs).toHaveBeenCalledWith(
-        0, 5, new MexPairsFilter({ exchange: MexPairExchange.xexchange, includeFarms: false })
+      expect(drtPairServiceMocks.getMoaPairs).toHaveBeenCalledWith(
+        0, 5, new MoaPairsFilter({ exchange: MoaPairExchange.dharitrix, includeFarms: false })
       );
     });
 
-    it('should return a list of mex pairs from unknown source', async () => {
-      mexPairServiceMocks.getMexPairs.mockReturnValue([]);
+    it('should return a list of moa pairs from unknown source', async () => {
+      drtPairServiceMocks.getMoaPairs.mockReturnValue([]);
       const queryPagination = new QueryPagination({ from: 0, size: 5 });
 
       await request(app.getHttpServer())
-        .get(`${path}/pairs?size=${queryPagination.size}&exchange=${MexPairExchange.unknown}`)
+        .get(`${path}/pairs?size=${queryPagination.size}&exchange=${MoaPairExchange.unknown}`)
         .expect(200);
 
-      expect(mexPairServiceMocks.getMexPairs).toHaveBeenCalledWith(
-        0, 5, new MexPairsFilter({ exchange: MexPairExchange.unknown, includeFarms: false })
+      expect(drtPairServiceMocks.getMoaPairs).toHaveBeenCalledWith(
+        0, 5, new MoaPairsFilter({ exchange: MoaPairExchange.unknown, includeFarms: false })
       );
     });
 
-    it('should return total mex pairs count', async () => {
-      mexPairServiceMocks.getMexPairsCount.mockReturnValue(10);
+    it('should return total moa pairs count', async () => {
+      drtPairServiceMocks.getMoaPairsCount.mockReturnValue(10);
       await request(app.getHttpServer())
         .get(`${path}/pairs/count`)
         .expect(200)
@@ -121,76 +121,76 @@ describe('MexController', () => {
           expect(+response.text).toStrictEqual(10);
         });
 
-      expect(mexPairServiceMocks.getMexPairsCount).toHaveBeenCalledWith(
-        new MexPairsFilter({ exchange: undefined, includeFarms: false })
+      expect(drtPairServiceMocks.getMoaPairsCount).toHaveBeenCalledWith(
+        new MoaPairsFilter({ exchange: undefined, includeFarms: false })
       );
     });
 
-    it('should return total mex pairs count from exchange', async () => {
-      mexPairServiceMocks.getMexPairsCount.mockReturnValue(5);
+    it('should return total moa pairs count from exchange', async () => {
+      drtPairServiceMocks.getMoaPairsCount.mockReturnValue(5);
       await request(app.getHttpServer())
-        .get(`${path}/pairs/count?exchange=${MexPairExchange.xexchange}`)
+        .get(`${path}/pairs/count?exchange=${MoaPairExchange.dharitrix}`)
         .expect(200)
         .expect(response => {
           expect(+response.text).toStrictEqual(5);
         });
 
-      expect(mexPairServiceMocks.getMexPairsCount).toHaveBeenCalledWith(
-        new MexPairsFilter({ exchange: MexPairExchange.xexchange, includeFarms: false })
+      expect(drtPairServiceMocks.getMoaPairsCount).toHaveBeenCalledWith(
+        new MoaPairsFilter({ exchange: MoaPairExchange.dharitrix, includeFarms: false })
       );
     });
 
-    it('should return total mex pairs count from unknown', async () => {
-      mexPairServiceMocks.getMexPairsCount.mockReturnValue(5);
+    it('should return total moa pairs count from unknown', async () => {
+      drtPairServiceMocks.getMoaPairsCount.mockReturnValue(5);
       await request(app.getHttpServer())
-        .get(`${path}/pairs/count?exchange=${MexPairExchange.unknown}`)
+        .get(`${path}/pairs/count?exchange=${MoaPairExchange.unknown}`)
         .expect(200)
         .expect(response => {
           expect(+response.text).toStrictEqual(5);
         });
 
-      expect(mexPairServiceMocks.getMexPairsCount).toHaveBeenCalledWith(
-        new MexPairsFilter({ exchange: MexPairExchange.unknown, includeFarms: false })
+      expect(drtPairServiceMocks.getMoaPairsCount).toHaveBeenCalledWith(
+        new MoaPairsFilter({ exchange: MoaPairExchange.unknown, includeFarms: false })
       );
     });
 
-    it('should return mex pair based on basId and quoteId', async () => {
-      mexPairServiceMocks.getMexPair.mockReturnValue({});
-      const baseId = 'MEX-455c57';
+    it('should return moa pair based on basId and quoteId', async () => {
+      drtPairServiceMocks.getMoaPair.mockReturnValue({});
+      const baseId = 'MOA-455c57';
       const quoteId = 'WREWA-bd4d79';
 
       await request(app.getHttpServer())
         .get(`${path}/pairs/${baseId}/${quoteId}`)
         .expect(200);
 
-      expect(mexPairServiceMocks.getMexPair).toHaveBeenCalledWith(baseId, quoteId, false);
+      expect(drtPairServiceMocks.getMoaPair).toHaveBeenCalledWith(baseId, quoteId, false);
     });
 
-    it('should return mex pairs with farms information', async () => {
-      mexPairServiceMocks.getMexPairs.mockReturnValue([]);
+    it('should return moa pairs with farms information', async () => {
+      drtPairServiceMocks.getMoaPairs.mockReturnValue([]);
       await request(app.getHttpServer())
         .get(`${path}/pairs?includeFarms=true`)
         .expect(200);
 
-      expect(mexPairServiceMocks.getMexPairs).toHaveBeenCalledWith(
-        0, 25, new MexPairsFilter({ exchange: undefined, includeFarms: true })
+      expect(drtPairServiceMocks.getMoaPairs).toHaveBeenCalledWith(
+        0, 25, new MoaPairsFilter({ exchange: undefined, includeFarms: true })
       );
     });
 
-    it('should return mex pair with farms information', async () => {
-      mexPairServiceMocks.getMexPair.mockReturnValue({});
-      const baseId = 'MEX-455c57';
+    it('should return moa pair with farms information', async () => {
+      drtPairServiceMocks.getMoaPair.mockReturnValue({});
+      const baseId = 'MOA-455c57';
       const quoteId = 'WREWA-bd4d79';
 
       await request(app.getHttpServer())
         .get(`${path}/pairs/${baseId}/${quoteId}?includeFarms=true`)
         .expect(200);
 
-      expect(mexPairServiceMocks.getMexPair).toHaveBeenCalledWith(baseId, quoteId, true);
+      expect(drtPairServiceMocks.getMoaPair).toHaveBeenCalledWith(baseId, quoteId, true);
     });
 
-    it('should return total mex pairs count with farms information', async () => {
-      mexPairServiceMocks.getMexPairsCount.mockReturnValue(10);
+    it('should return total moa pairs count with farms information', async () => {
+      drtPairServiceMocks.getMoaPairsCount.mockReturnValue(10);
       await request(app.getHttpServer())
         .get(`${path}/pairs/count?includeFarms=true`)
         .expect(200)
@@ -198,40 +198,40 @@ describe('MexController', () => {
           expect(+response.text).toStrictEqual(10);
         });
 
-      expect(mexPairServiceMocks.getMexPairsCount).toHaveBeenCalledWith(
-        new MexPairsFilter({ exchange: undefined, includeFarms: true })
+      expect(drtPairServiceMocks.getMoaPairsCount).toHaveBeenCalledWith(
+        new MoaPairsFilter({ exchange: undefined, includeFarms: true })
       );
     });
   });
 
-  describe('GET /mex/tokens', () => {
+  describe('GET /moa/tokens', () => {
     it('should return a list of tokens', async () => {
-      mexTokensServiceMocks.getMexTokens.mockReturnValue([]);
+      moaTokensServiceMocks.getMoaTokens.mockReturnValue([]);
 
       await request(app.getHttpServer())
         .get(`${path}/tokens`)
         .expect(200);
 
-      expect(mexTokensServiceMocks.getMexTokens).toHaveBeenCalledWith(
+      expect(moaTokensServiceMocks.getMoaTokens).toHaveBeenCalledWith(
         new QueryPagination({ from: 0, size: 25 })
       );
     });
 
     it('should return a list of 5 tokens', async () => {
-      mexTokensServiceMocks.getMexTokens.mockReturnValue([]);
+      moaTokensServiceMocks.getMoaTokens.mockReturnValue([]);
       const queryPagination = new QueryPagination();
 
       await request(app.getHttpServer())
         .get(`${path}/tokens?size=${queryPagination.size = 5}`)
         .expect(200);
 
-      expect(mexTokensServiceMocks.getMexTokens).toHaveBeenCalledWith(
+      expect(moaTokensServiceMocks.getMoaTokens).toHaveBeenCalledWith(
         new QueryPagination({ from: 0, size: 5 })
       );
     });
 
-    it('should return total mex tokens count', async () => {
-      mexTokensServiceMocks.getMexTokensCount.mockReturnValue(100);
+    it('should return total moa tokens count', async () => {
+      moaTokensServiceMocks.getMoaTokensCount.mockReturnValue(100);
 
       await request(app.getHttpServer())
         .get(`${path}/tokens/count`)
@@ -240,26 +240,26 @@ describe('MexController', () => {
           expect(+response.text).toStrictEqual(100);
         });
 
-      expect(mexTokensServiceMocks.getMexTokensCount).toHaveBeenCalled();
+      expect(moaTokensServiceMocks.getMoaTokensCount).toHaveBeenCalled();
     });
 
-    it('should return mex token details for a given token identifier', async () => {
-      mexTokensServiceMocks.getMexTokenByIdentifier.mockReturnValue({});
-      const mexTokenIdentifier = 'MEX-455c57';
+    it('should return moa token details for a given token identifier', async () => {
+      moaTokensServiceMocks.getMoaTokenByIdentifier.mockReturnValue({});
+      const moaTokenIdentifier = 'MOA-455c57';
 
       await request(app.getHttpServer())
-        .get(`${path}/tokens/${mexTokenIdentifier}`)
+        .get(`${path}/tokens/${moaTokenIdentifier}`)
         .expect(200);
 
-      expect(mexTokensServiceMocks.getMexTokenByIdentifier).toHaveBeenCalledWith(mexTokenIdentifier);
+      expect(moaTokensServiceMocks.getMoaTokenByIdentifier).toHaveBeenCalledWith(moaTokenIdentifier);
     });
 
     it('should thorow 400 Bad Request for a given invalid token identifier', async () => {
-      mexTokensServiceMocks.getMexTokenByIdentifier.mockReturnValue({});
-      const mexTokenIdentifier = 'MEX-455c57-Invalid';
+      moaTokensServiceMocks.getMoaTokenByIdentifier.mockReturnValue({});
+      const moaTokenIdentifier = 'MOA-455c57-Invalid';
 
       await request(app.getHttpServer())
-        .get(`${path}/tokens/${mexTokenIdentifier}`)
+        .get(`${path}/tokens/${moaTokenIdentifier}`)
         .expect(400)
         .expect(response => {
           expect(response.body.message).toStrictEqual("Validation failed for argument 'identifier': Invalid token identifier.");
@@ -267,40 +267,40 @@ describe('MexController', () => {
     });
   });
 
-  describe('GET /mex/farms', () => {
-    it('should return a list of mex farms', async () => {
-      mexFarmsServiceMocks.getMexFarms.mockReturnValue([]);
+  describe('GET /moa/farms', () => {
+    it('should return a list of moa farms', async () => {
+      moaFarmsServiceMocks.getMoaFarms.mockReturnValue([]);
 
       await request(app.getHttpServer())
         .get(`${path}/farms`)
         .expect(200);
 
-      expect(mexFarmsServiceMocks.getMexFarms).toHaveBeenCalledWith(
+      expect(moaFarmsServiceMocks.getMoaFarms).toHaveBeenCalledWith(
         new QueryPagination({ from: 0, size: 25 })
       );
     });
 
-    it('should return a list of 5 mex farms', async () => {
-      mexFarmsServiceMocks.getMexFarms.mockReturnValue([]);
+    it('should return a list of 5 moa farms', async () => {
+      moaFarmsServiceMocks.getMoaFarms.mockReturnValue([]);
       const queryPagination = new QueryPagination();
 
       await request(app.getHttpServer())
         .get(`${path}/farms?size=${queryPagination.size = 5}`)
         .expect(200);
 
-      expect(mexFarmsServiceMocks.getMexFarms).toHaveBeenCalledWith(
+      expect(moaFarmsServiceMocks.getMoaFarms).toHaveBeenCalledWith(
         new QueryPagination({ from: 0, size: 5 })
       );
     });
 
-    it('should return total mex farms count', async () => {
-      mexFarmsServiceMocks.getMexFarmsCount.mockReturnValue(10);
+    it('should return total moa farms count', async () => {
+      moaFarmsServiceMocks.getMoaFarmsCount.mockReturnValue(10);
 
       await request(app.getHttpServer())
         .get(`${path}/farms/count`)
         .expect(200);
 
-      expect(mexFarmsServiceMocks.getMexFarmsCount).toHaveBeenCalled();
+      expect(moaFarmsServiceMocks.getMoaFarmsCount).toHaveBeenCalled();
     });
   });
 });

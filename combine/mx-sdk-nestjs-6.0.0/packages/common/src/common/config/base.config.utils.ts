@@ -1,6 +1,6 @@
 export class BaseConfigUtils {
   static getKeyOverride(key: string, valueGetter?: (key: string) => any): any | undefined {
-    const overridePrefix = 'MVX_OVERRIDE_';
+    const overridePrefix = 'DRT_OVERRIDE_';
     const envKey = key
       // Replace any non-uppercase sequence before an uppercase letter or number with that letter/number prefixed by an underscore
       .replace(/([a-z])([A-Z])/g, '$1_$2')

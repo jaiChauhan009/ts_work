@@ -72,22 +72,22 @@ export const getSwapAndLockTransactions = ({
       gasLimit: BigInt(25500000),
       gasPrice: BigInt(GAS_PRICE),
       nonce: BigInt(nonce),
-      receiver: Address.newFromBech32(BATCH_TRANSACTIONS_SC.wREWA_MEX.contract),
+      receiver: Address.newFromBech32(BATCH_TRANSACTIONS_SC.wREWA_MOA.contract),
       sender: Address.newFromBech32(address),
       value: BigInt('0'),
       version: VERSION,
-      data: Uint8Array.from(Buffer.from(BATCH_TRANSACTIONS_SC.wREWA_MEX.data))
+      data: Uint8Array.from(Buffer.from(BATCH_TRANSACTIONS_SC.wREWA_MOA.data))
     }),
     new Transaction({
       chainID,
       gasLimit: BigInt(10000000),
       gasPrice: BigInt(GAS_PRICE),
       nonce: BigInt(nonce),
-      receiver: Address.newFromBech32(BATCH_TRANSACTIONS_SC.lock_MEX.contract),
+      receiver: Address.newFromBech32(BATCH_TRANSACTIONS_SC.lock_MOA.contract),
       sender: Address.newFromBech32(address),
       value: BigInt('0'),
       version: VERSION,
-      data: Uint8Array.from(Buffer.from(BATCH_TRANSACTIONS_SC.lock_MEX.data))
+      data: Uint8Array.from(Buffer.from(BATCH_TRANSACTIONS_SC.lock_MOA.data))
     })
   ];
 };

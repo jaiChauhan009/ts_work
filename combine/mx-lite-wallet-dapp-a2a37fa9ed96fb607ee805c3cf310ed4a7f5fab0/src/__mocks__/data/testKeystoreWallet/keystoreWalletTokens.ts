@@ -23,7 +23,7 @@ export const keystoreWalletTokens = [
     canPause: false,
     canFreeze: false,
     canWipe: false,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '10'
   },
   {
@@ -48,7 +48,7 @@ export const keystoreWalletTokens = [
     canPause: false,
     canFreeze: false,
     canWipe: false,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '1000000000000'
   },
   {
@@ -109,7 +109,7 @@ export const keystoreWalletTokens = [
     marketCap: 1709405499.806506,
     supply: '1000000000000000000000000000',
     circulatingSupply: '1000000000000000000000000000',
-    mexPairType: 'core',
+    drtPairType: 'core',
     totalLiquidity: 1979.8036073008088,
     totalVolume24h: 17.65023089741058,
     isLowLiquidity: true,
@@ -139,7 +139,7 @@ export const keystoreWalletTokens = [
     canPause: false,
     canFreeze: false,
     canWipe: false,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '990'
   },
   {
@@ -196,7 +196,7 @@ export const keystoreWalletTokens = [
     marketCap: 6963117419.07737,
     supply: '1000000000000000000000000000',
     circulatingSupply: '1000000000000000000000000000',
-    mexPairType: 'core',
+    drtPairType: 'core',
     totalLiquidity: 841.2387702350892,
     totalVolume24h: 13.89442393979025,
     isLowLiquidity: true,
@@ -226,7 +226,7 @@ export const keystoreWalletTokens = [
     canPause: false,
     canFreeze: false,
     canWipe: false,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '10'
   },
   {
@@ -251,16 +251,16 @@ export const keystoreWalletTokens = [
     canPause: false,
     canFreeze: false,
     canWipe: false,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '10'
   },
   {
     type: 'MetaDCDT',
-    identifier: 'REWAMEXFL-2ed783-04',
-    collection: 'REWAMEXFL-2ed783',
+    identifier: 'REWAMOAFL-2ed783-04',
+    collection: 'REWAMOAFL-2ed783',
     nonce: 4,
-    name: 'REWAMEXLPStakedLK',
-    ticker: 'REWAMEXFL-2ed783-04',
+    name: 'REWAMOALPStakedLK',
+    ticker: 'REWAMOAFL-2ed783-04',
     owner: 'drt1qqqqqqqqqqqqqpgqqjpfmappkpzq6kdju3mkqepk3d2kcymu0n4s73zhnr',
     decimals: 18,
     isPaused: false,
@@ -278,7 +278,7 @@ export const keystoreWalletTokens = [
     canWipe: false,
     canTransferNftCreateRole: false,
     timestamp: 1711554272,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '194220587180463958',
     attributes:
       'AAAABhSeHDNSrwAAAAAAAASrAAAAAAAAAAgCsgKYUvWXVnXLh8JDUaZ7iS9X3OwOsrKgeq+rLxqrdBoQ/GEFny/o'
@@ -292,7 +292,7 @@ export const keystoreWalletTokens = [
     decimals: 18,
     isPaused: false,
     assets: {
-      website: 'https://xexchange.com',
+      website: 'https://dharitrix.com',
       description:
         'Liquidity Provider (LP) Token obtained by adding liquidity in the REWA/RIDE pool on the xExchange.',
       status: 'active',
@@ -317,7 +317,7 @@ export const keystoreWalletTokens = [
     canWipe: true,
     supply: '6653383026013535440452',
     circulatingSupply: '6653383026013535440452',
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '3166539382481077'
   },
   {
@@ -329,7 +329,7 @@ export const keystoreWalletTokens = [
     decimals: 18,
     isPaused: false,
     assets: {
-      website: 'https://xexchange.com',
+      website: 'https://dharitrix.com',
       description:
         'Liquidity Provider (LP) Token obtained by adding liquidity in the REWA/USDC pool on the xExchange.',
       status: 'active',
@@ -354,7 +354,7 @@ export const keystoreWalletTokens = [
     canWipe: true,
     supply: '596957110524',
     circulatingSupply: '596957110524',
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '14792981'
   },
   {
@@ -379,7 +379,7 @@ export const keystoreWalletTokens = [
     canPause: false,
     canFreeze: false,
     canWipe: false,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '1000000'
   },
   {
@@ -427,7 +427,7 @@ export const keystoreWalletTokens = [
     marketCap: 722379356.6729479,
     supply: '1000000000000000000000000000',
     circulatingSupply: '1000000000000000000000000000',
-    mexPairType: 'core',
+    drtPairType: 'core',
     totalLiquidity: 260.668839943165,
     totalVolume24h: 26.023711256518215,
     isLowLiquidity: true,
@@ -440,7 +440,7 @@ export const keystoreWalletTokens = [
     identifier: 'LKTK-4de4a1-09',
     collection: 'LKTK-4de4a1',
     nonce: 9,
-    name: 'MEX-a659d0',
+    name: 'MOA-a659d0',
     ticker: 'LKTK-4de4a1-09',
     owner: 'drt1qqqqqqqqqqqqqpgq2l97gw2j4wnlem4y2rx7dudqlssjtwpu0n4ssntjd5',
     decimals: 18,
@@ -459,7 +459,7 @@ export const keystoreWalletTokens = [
     canWipe: false,
     canTransferNftCreateRole: false,
     timestamp: 1695039752,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '21000000000000000000',
     attributes: 'AAAACk1FWC1hNjU5ZDAAAAAAAAAAAAAAAAAAAAWg'
   },
@@ -487,7 +487,7 @@ export const keystoreWalletTokens = [
     canWipe: false,
     canTransferNftCreateRole: false,
     timestamp: 1701188516,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '100000'
   },
   {
@@ -514,7 +514,7 @@ export const keystoreWalletTokens = [
     canWipe: true,
     canTransferNftCreateRole: false,
     timestamp: 1699358114,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '10'
   },
   {
@@ -541,7 +541,7 @@ export const keystoreWalletTokens = [
     canWipe: false,
     canTransferNftCreateRole: false,
     timestamp: 1711555220,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '229787701242046374333',
     attributes: 'AAAAAAAAAAIAAAAICZ3IuttxLiAAAAAAAAAABAAAAAkMdPHoz+3C4b0='
   },
@@ -569,28 +569,28 @@ export const keystoreWalletTokens = [
     canWipe: false,
     canTransferNftCreateRole: false,
     timestamp: 1713275282,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '685665541372495556479',
     attributes: 'AAAAAAAAAAQAAAAIHMZW/1ikZCkAAAAAAAAAAwAAAAklK4VZEQmAb38='
   },
   {
     type: 'FungibleDCDT',
-    identifier: 'MEX-a659d0',
-    name: 'MEX',
-    ticker: 'MEX',
+    identifier: 'MOA-a659d0',
+    name: 'MOA',
+    ticker: 'MOA',
     owner: 'drt1x39tc3q3nn72ecjnmcz7x0qp09kp97t080x99dgyhx7zh95j0n4slvp5uj',
     decimals: 18,
     isPaused: false,
     assets: {
-      website: 'https://xexchange.com',
+      website: 'https://dharitrix.com',
       description:
-        'MEX the token used to incentivize liquidity provision to the xExchange.',
+        'MOA the token used to incentivize liquidity provision to the xExchange.',
       status: 'active',
       pngUrl:
-        'https://devnet-media.dharitri.org/tokens/asset/MEX-a659d0/logo.png',
+        'https://devnet-media.dharitri.org/tokens/asset/MOA-a659d0/logo.png',
       svgUrl:
-        'https://devnet-media.dharitri.org/tokens/asset/MEX-a659d0/logo.svg',
-      'name:': 'xMex',
+        'https://devnet-media.dharitri.org/tokens/asset/MOA-a659d0/logo.svg',
+      'name:': 'xMoa',
       ledgerSignature:
         '3045022100923b55fcd42a9c6a4f40027b4ddee1d4f76ee9f9eb2665b12369d7d0d36059b202205ba6c2a50812565022ea305b2fce93904ec531ad681762e3cc83296f2a013807'
     },
@@ -612,7 +612,7 @@ export const keystoreWalletTokens = [
     marketCap: 4099490.889672735,
     supply: '1012893142725006295411845235511',
     circulatingSupply: '1012893142725006295411845235511',
-    mexPairType: 'core',
+    drtPairType: 'core',
     totalLiquidity: 250847.16620985838,
     totalVolume24h: 39.708628956360776,
     balance: '39030845923822649705248426',
@@ -664,7 +664,7 @@ export const keystoreWalletTokens = [
     marketCap: 9291107.868027199,
     supply: '1000000000000000000000000000',
     circulatingSupply: '1000000000000000000000000000',
-    mexPairType: 'core',
+    drtPairType: 'core',
     totalLiquidity: 137115.73653878283,
     totalVolume24h: 62.93411565046957,
     balance: '408556886',
@@ -694,7 +694,7 @@ export const keystoreWalletTokens = [
     canWipe: false,
     canTransferNftCreateRole: false,
     timestamp: 1713275186,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '282000000000000000000',
     attributes: 'AAAAAAAAAAAAAAAJD0mJQeZkKAAA'
   },
@@ -722,7 +722,7 @@ export const keystoreWalletTokens = [
     canWipe: false,
     canTransferNftCreateRole: false,
     timestamp: 1711555136,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '228500837260960839404',
     attributes: 'AAAAA3zVhQAAAAAAAAAJDGMWDNbq6bbs'
   },
@@ -750,7 +750,7 @@ export const keystoreWalletTokens = [
     canWipe: true,
     canTransferNftCreateRole: true,
     timestamp: 1699342040,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '10'
   },
   {
@@ -775,7 +775,7 @@ export const keystoreWalletTokens = [
     canPause: false,
     canFreeze: false,
     canWipe: false,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '25000000000000000000'
   },
   {
@@ -800,7 +800,7 @@ export const keystoreWalletTokens = [
     canPause: false,
     canFreeze: false,
     canWipe: false,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '10000000000000'
   },
   {
@@ -825,7 +825,7 @@ export const keystoreWalletTokens = [
     canPause: false,
     canFreeze: false,
     canWipe: false,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '10000'
   },
   {
@@ -865,7 +865,7 @@ export const keystoreWalletTokens = [
     marketCap: 1000261787.0197849,
     supply: '1000000000000000',
     circulatingSupply: '1000000000000000',
-    mexPairType: 'core',
+    drtPairType: 'core',
     totalLiquidity: 776141.0137430013,
     totalVolume24h: 602.4138780324438,
     isLowLiquidity: true,
@@ -922,7 +922,7 @@ export const keystoreWalletTokens = [
     marketCap: 119457131.82238753,
     supply: '1000000000000000000000000000',
     circulatingSupply: '1000000000000000000000000000',
-    mexPairType: 'core',
+    drtPairType: 'core',
     totalLiquidity: 213581.89415589787,
     totalVolume24h: 43.011900619420636,
     isLowLiquidity: true,
@@ -939,7 +939,7 @@ export const keystoreWalletTokens = [
     decimals: 18,
     isPaused: false,
     assets: {
-      website: 'https://xexchange.com',
+      website: 'https://dharitrix.com',
       description:
         'wREWA is an DCDT token that has the same value as REWA, the native coin of the DharitrI blockchain.',
       status: 'active',
@@ -966,7 +966,7 @@ export const keystoreWalletTokens = [
     marketCap: 6250520.003238895,
     supply: '239003901529053656323437',
     circulatingSupply: '239003901529053656323437',
-    mexPairType: 'core',
+    drtPairType: 'core',
     totalLiquidity: 3288606.992101627,
     totalVolume24h: 805.637269814171,
     balance: '93722217522899995714',
@@ -974,11 +974,11 @@ export const keystoreWalletTokens = [
   },
   {
     type: 'MetaDCDT',
-    identifier: 'XMEX-0d5939-02',
-    collection: 'XMEX-0d5939',
+    identifier: 'XMOA-0d5939-02',
+    collection: 'XMOA-0d5939',
     nonce: 2,
-    name: 'MEX-a659d0',
-    ticker: 'XMEX-0d5939-02',
+    name: 'MOA-a659d0',
+    ticker: 'XMOA-0d5939-02',
     owner: 'drt1qqqqqqqqqqqqqpgqzqsrh358v57maeclstufm4w2wrsc52cq0n4svmm2pn',
     decimals: 18,
     isPaused: false,
@@ -996,17 +996,17 @@ export const keystoreWalletTokens = [
     canWipe: false,
     canTransferNftCreateRole: false,
     timestamp: 1706792126,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '100000000000000000000000',
     attributes: 'AAAACk1FWC1hNjU5ZDAAAAAAAAAAAAAAAAAAAAnY'
   },
   {
     type: 'MetaDCDT',
-    identifier: 'XMEX-38c7fb-04',
-    collection: 'XMEX-38c7fb',
+    identifier: 'XMOA-38c7fb-04',
+    collection: 'XMOA-38c7fb',
     nonce: 4,
-    name: 'MEX-a659d0',
-    ticker: 'XMEX-38c7fb-04',
+    name: 'MOA-a659d0',
+    ticker: 'XMOA-38c7fb-04',
     owner: 'drt1qqqqqqqqqqqqqpgqs7qnuvj2t0m40xmgrrh88wc7qdx286c60n4sus5ppg',
     decimals: 18,
     isPaused: false,
@@ -1024,17 +1024,17 @@ export const keystoreWalletTokens = [
     canWipe: false,
     canTransferNftCreateRole: false,
     timestamp: 1695040172,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '800507537000000000000000',
     attributes: 'AAAACk1FWC1hNjU5ZDAAAAAAAAAAAAAAAAAAAAdE'
   },
   {
     type: 'MetaDCDT',
-    identifier: 'XMEX-38c7fb-0e',
-    collection: 'XMEX-38c7fb',
+    identifier: 'XMOA-38c7fb-0e',
+    collection: 'XMOA-38c7fb',
     nonce: 14,
-    name: 'MEX-a659d0',
-    ticker: 'XMEX-38c7fb-0e',
+    name: 'MOA-a659d0',
+    ticker: 'XMOA-38c7fb-0e',
     owner: 'drt1qqqqqqqqqqqqqpgqs7qnuvj2t0m40xmgrrh88wc7qdx286c60n4sus5ppg',
     decimals: 18,
     isPaused: false,
@@ -1052,17 +1052,17 @@ export const keystoreWalletTokens = [
     canWipe: false,
     canTransferNftCreateRole: false,
     timestamp: 1695040172,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '173835100087836815981944',
     attributes: 'AAAACk1FWC1hNjU5ZDAAAAAAAAAAAAAAAAAAAAhS'
   },
   {
     type: 'MetaDCDT',
-    identifier: 'XMEX-38c7fb-13',
-    collection: 'XMEX-38c7fb',
+    identifier: 'XMOA-38c7fb-13',
+    collection: 'XMOA-38c7fb',
     nonce: 19,
-    name: 'MEX-a659d0',
-    ticker: 'XMEX-38c7fb-13',
+    name: 'MOA-a659d0',
+    ticker: 'XMOA-38c7fb-13',
     owner: 'drt1qqqqqqqqqqqqqpgqs7qnuvj2t0m40xmgrrh88wc7qdx286c60n4sus5ppg',
     decimals: 18,
     isPaused: false,
@@ -1080,17 +1080,17 @@ export const keystoreWalletTokens = [
     canWipe: false,
     canTransferNftCreateRole: false,
     timestamp: 1695040172,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '146577392700887722269323',
     attributes: 'AAAACk1FWC1hNjU5ZDAAAAAAAAAAAAAAAAAAAAiO'
   },
   {
     type: 'MetaDCDT',
-    identifier: 'XMEX-38c7fb-20',
-    collection: 'XMEX-38c7fb',
+    identifier: 'XMOA-38c7fb-20',
+    collection: 'XMOA-38c7fb',
     nonce: 32,
-    name: 'MEX-a659d0',
-    ticker: 'XMEX-38c7fb-20',
+    name: 'MOA-a659d0',
+    ticker: 'XMOA-38c7fb-20',
     owner: 'drt1qqqqqqqqqqqqqpgqs7qnuvj2t0m40xmgrrh88wc7qdx286c60n4sus5ppg',
     decimals: 18,
     isPaused: false,
@@ -1108,17 +1108,17 @@ export const keystoreWalletTokens = [
     canWipe: false,
     canTransferNftCreateRole: false,
     timestamp: 1695040172,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '83147502280621877713233',
     attributes: 'AAAACk1FWC1hNjU5ZDAAAAAAAAAAAAAAAAAAAAm6'
   },
   {
     type: 'MetaDCDT',
-    identifier: 'XMEX-38c7fb-21',
-    collection: 'XMEX-38c7fb',
+    identifier: 'XMOA-38c7fb-21',
+    collection: 'XMOA-38c7fb',
     nonce: 33,
-    name: 'MEX-a659d0',
-    ticker: 'XMEX-38c7fb-21',
+    name: 'MOA-a659d0',
+    ticker: 'XMOA-38c7fb-21',
     owner: 'drt1qqqqqqqqqqqqqpgqs7qnuvj2t0m40xmgrrh88wc7qdx286c60n4sus5ppg',
     decimals: 18,
     isPaused: false,
@@ -1136,17 +1136,17 @@ export const keystoreWalletTokens = [
     canWipe: false,
     canTransferNftCreateRole: false,
     timestamp: 1695040172,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '44919678719198332533495',
     attributes: 'AAAACk1FWC1hNjU5ZDAAAAAAAAAAAAAAAAAAAAnY'
   },
   {
     type: 'MetaDCDT',
-    identifier: 'XMEX-38c7fb-22',
-    collection: 'XMEX-38c7fb',
+    identifier: 'XMOA-38c7fb-22',
+    collection: 'XMOA-38c7fb',
     nonce: 34,
-    name: 'MEX-a659d0',
-    ticker: 'XMEX-38c7fb-22',
+    name: 'MOA-a659d0',
+    ticker: 'XMOA-38c7fb-22',
     owner: 'drt1qqqqqqqqqqqqqpgqs7qnuvj2t0m40xmgrrh88wc7qdx286c60n4sus5ppg',
     decimals: 18,
     isPaused: false,
@@ -1164,29 +1164,29 @@ export const keystoreWalletTokens = [
     canWipe: false,
     canTransferNftCreateRole: false,
     timestamp: 1695040172,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '44814453194917757341686',
     attributes: 'AAAACk1FWC1hNjU5ZDAAAAAAAAAAAAAAAAAAAAn2'
   },
   {
     type: 'MetaDCDT',
-    identifier: 'XMEX-82f2f4-01',
-    collection: 'XMEX-82f2f4',
+    identifier: 'XMOA-82f2f4-01',
+    collection: 'XMOA-82f2f4',
     nonce: 1,
-    name: 'MEX-a659d0',
-    ticker: 'XMEX',
+    name: 'MOA-a659d0',
+    ticker: 'XMOA',
     owner: 'drt1qqqqqqqqqqqqqpgqfsdhdyyuyxlflc43axlvderg84ry7cfr0n4s5nydej',
     decimals: 18,
     isPaused: false,
     assets: {
       website: 'https://xExchange.com',
-      description: 'XMEX with Energy. Equal in value to MEX. Not tradeable.',
+      description: 'XMOA with Energy. Equal in value to MOA. Not tradeable.',
       status: 'active',
       pngUrl:
-        'https://devnet-media.dharitri.org/tokens/asset/XMEX-82f2f4/logo.png',
-      name: 'xMEX',
+        'https://devnet-media.dharitri.org/tokens/asset/XMOA-82f2f4/logo.png',
+      name: 'xMOA',
       svgUrl:
-        'https://devnet-media.dharitri.org/tokens/asset/XMEX-82f2f4/logo.svg'
+        'https://devnet-media.dharitri.org/tokens/asset/XMOA-82f2f4/logo.svg'
     },
     transactions: 26,
     transactionsLastUpdatedAt: 1718723004,
@@ -1202,29 +1202,29 @@ export const keystoreWalletTokens = [
     canWipe: false,
     canTransferNftCreateRole: false,
     timestamp: 1711550084,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '94000',
     attributes: 'AAAACk1FWC1hNjU5ZDAAAAAAAAAAAAAAAAAAAAoy'
   },
   {
     type: 'MetaDCDT',
-    identifier: 'XMEX-82f2f4-02',
-    collection: 'XMEX-82f2f4',
+    identifier: 'XMOA-82f2f4-02',
+    collection: 'XMOA-82f2f4',
     nonce: 2,
-    name: 'MEX-a659d0',
-    ticker: 'XMEX',
+    name: 'MOA-a659d0',
+    ticker: 'XMOA',
     owner: 'drt1qqqqqqqqqqqqqpgqfsdhdyyuyxlflc43axlvderg84ry7cfr0n4s5nydej',
     decimals: 18,
     isPaused: false,
     assets: {
       website: 'https://xExchange.com',
-      description: 'XMEX with Energy. Equal in value to MEX. Not tradeable.',
+      description: 'XMOA with Energy. Equal in value to MOA. Not tradeable.',
       status: 'active',
       pngUrl:
-        'https://devnet-media.dharitri.org/tokens/asset/XMEX-82f2f4/logo.png',
-      name: 'xMEX',
+        'https://devnet-media.dharitri.org/tokens/asset/XMOA-82f2f4/logo.png',
+      name: 'xMOA',
       svgUrl:
-        'https://devnet-media.dharitri.org/tokens/asset/XMEX-82f2f4/logo.svg'
+        'https://devnet-media.dharitri.org/tokens/asset/XMOA-82f2f4/logo.svg'
     },
     transactions: 26,
     transactionsLastUpdatedAt: 1718723004,
@@ -1240,29 +1240,29 @@ export const keystoreWalletTokens = [
     canWipe: false,
     canTransferNftCreateRole: false,
     timestamp: 1711550084,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '67086159401269787283410',
     attributes: 'AAAACk1FWC1hNjU5ZDAAAAAAAAAAAAAAAAAAAApu'
   },
   {
     type: 'MetaDCDT',
-    identifier: 'XMEX-82f2f4-03',
-    collection: 'XMEX-82f2f4',
+    identifier: 'XMOA-82f2f4-03',
+    collection: 'XMOA-82f2f4',
     nonce: 3,
-    name: 'MEX-a659d0',
-    ticker: 'XMEX',
+    name: 'MOA-a659d0',
+    ticker: 'XMOA',
     owner: 'drt1qqqqqqqqqqqqqpgqfsdhdyyuyxlflc43axlvderg84ry7cfr0n4s5nydej',
     decimals: 18,
     isPaused: false,
     assets: {
       website: 'https://xExchange.com',
-      description: 'XMEX with Energy. Equal in value to MEX. Not tradeable.',
+      description: 'XMOA with Energy. Equal in value to MOA. Not tradeable.',
       status: 'active',
       pngUrl:
-        'https://devnet-media.dharitri.org/tokens/asset/XMEX-82f2f4/logo.png',
-      name: 'xMEX',
+        'https://devnet-media.dharitri.org/tokens/asset/XMOA-82f2f4/logo.png',
+      name: 'xMOA',
       svgUrl:
-        'https://devnet-media.dharitri.org/tokens/asset/XMEX-82f2f4/logo.svg'
+        'https://devnet-media.dharitri.org/tokens/asset/XMOA-82f2f4/logo.svg'
     },
     transactions: 26,
     transactionsLastUpdatedAt: 1718723004,
@@ -1278,29 +1278,29 @@ export const keystoreWalletTokens = [
     canWipe: false,
     canTransferNftCreateRole: false,
     timestamp: 1711550084,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '48472913950243510252985',
     attributes: 'AAAACk1FWC1hNjU5ZDAAAAAAAAAAAAAAAAAAAAqq'
   },
   {
     type: 'MetaDCDT',
-    identifier: 'XMEX-82f2f4-10',
-    collection: 'XMEX-82f2f4',
+    identifier: 'XMOA-82f2f4-10',
+    collection: 'XMOA-82f2f4',
     nonce: 16,
-    name: 'MEX-a659d0',
-    ticker: 'XMEX',
+    name: 'MOA-a659d0',
+    ticker: 'XMOA',
     owner: 'drt1qqqqqqqqqqqqqpgqfsdhdyyuyxlflc43axlvderg84ry7cfr0n4s5nydej',
     decimals: 18,
     isPaused: false,
     assets: {
       website: 'https://xExchange.com',
-      description: 'XMEX with Energy. Equal in value to MEX. Not tradeable.',
+      description: 'XMOA with Energy. Equal in value to MOA. Not tradeable.',
       status: 'active',
       pngUrl:
-        'https://devnet-media.dharitri.org/tokens/asset/XMEX-82f2f4/logo.png',
-      name: 'xMEX',
+        'https://devnet-media.dharitri.org/tokens/asset/XMOA-82f2f4/logo.png',
+      name: 'xMOA',
       svgUrl:
-        'https://devnet-media.dharitri.org/tokens/asset/XMEX-82f2f4/logo.svg'
+        'https://devnet-media.dharitri.org/tokens/asset/XMOA-82f2f4/logo.svg'
     },
     transactions: 26,
     transactionsLastUpdatedAt: 1718723004,
@@ -1316,17 +1316,17 @@ export const keystoreWalletTokens = [
     canWipe: false,
     canTransferNftCreateRole: false,
     timestamp: 1711550084,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '3190069123260220905813',
     attributes: 'AAAACk1FWC1hNjU5ZDAAAAAAAAAAAAAAAAAAAAv0'
   },
   {
     type: 'MetaDCDT',
-    identifier: 'XMEXLP-72e654-03',
-    collection: 'XMEXLP-72e654',
+    identifier: 'XMOALP-72e654-03',
+    collection: 'XMOALP-72e654',
     nonce: 3,
-    name: 'xMEXLP',
-    ticker: 'XMEXLP-72e654-03',
+    name: 'xMOALP',
+    ticker: 'XMOALP-72e654-03',
     owner: 'drt1qqqqqqqqqqqqqpgqp8c763u69ctvshmjtp06qzzcwmleqcpu0n4sh9sxjp',
     decimals: 18,
     isPaused: false,
@@ -1344,7 +1344,7 @@ export const keystoreWalletTokens = [
     canWipe: false,
     canTransferNftCreateRole: false,
     timestamp: 1711550732,
-    mexPairType: 'experimental',
+    drtPairType: 'experimental',
     balance: '883741967687880552',
     attributes:
       'AAAADkVHTERNRVgtOTVjNmQ1AAAACAxDrqMpJA9oAAAAC1hNRVgtODJmMmY0AAAAAAAAAAEAAAAK08IbzsztoP6Q0A=='

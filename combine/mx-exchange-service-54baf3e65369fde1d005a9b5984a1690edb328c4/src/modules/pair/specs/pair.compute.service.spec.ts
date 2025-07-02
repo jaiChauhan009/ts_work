@@ -249,7 +249,7 @@ describe('PairService', () => {
         const pairService = module.get<PairService>(PairService);
         const pairAbi = module.get<PairAbiService>(PairAbiService);
 
-        jest.spyOn(pairAbi, 'firstTokenID').mockResolvedValue('MEX-123456');
+        jest.spyOn(pairAbi, 'firstTokenID').mockResolvedValue('MOA-123456');
         jest.spyOn(pairAbi, 'secondTokenID').mockResolvedValue('USDC-123456');
         jest.spyOn(pairAbi, 'pairInfoMetadata').mockResolvedValue({
             reserves0: '0',
@@ -257,7 +257,7 @@ describe('PairService', () => {
             totalSupply: '0',
         });
         jest.spyOn(pairService, 'getFirstToken').mockResolvedValue(
-            Tokens('MEX-123456'),
+            Tokens('MOA-123456'),
         );
         jest.spyOn(pairService, 'getSecondToken').mockResolvedValue(
             Tokens('USDC-123456'),

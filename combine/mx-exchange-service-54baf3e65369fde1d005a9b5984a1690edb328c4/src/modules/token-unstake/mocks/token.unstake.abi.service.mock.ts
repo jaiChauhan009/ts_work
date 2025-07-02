@@ -24,12 +24,12 @@ export class TokenUnstakeAbiServiceMock implements ITokenUnstakeAbiService {
             new UnstakePairModel({
                 lockedTokens: new DcdtTokenPaymentModel({
                     amount: '1000000000000000000',
-                    tokenIdentifier: 'XMEX-123456',
+                    tokenIdentifier: 'XMOA-123456',
                     tokenNonce: 2,
                 }),
                 unlockedTokens: new DcdtTokenPaymentModel({
                     amount: '1000000000000000000',
-                    tokenIdentifier: 'XMEX-123456',
+                    tokenIdentifier: 'XMOA-123456',
                     tokenNonce: 1,
                 }),
                 unlockEpoch: 1,

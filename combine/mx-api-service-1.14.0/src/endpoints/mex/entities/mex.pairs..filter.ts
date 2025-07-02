@@ -1,9 +1,9 @@
-import { MexPairExchange } from "./mex.pair.exchange";
+import { MoaPairExchange } from "./moa.pair.exchange";
 
-export class MexPairsFilter {
-  constructor(init?: Partial<MexPairsFilter>) {
+export class MoaPairsFilter {
+  constructor(init?: Partial<MoaPairsFilter>) {
     Object.assign(this, init);
   }
-  exchange?: MexPairExchange;
+  exchange?: MoaPairExchange;
   includeFarms?: boolean;
 }

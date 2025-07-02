@@ -4,5 +4,5 @@ export class MetabondingWeek {
   }
   week: number = 0;
   rewaStaked: string = '';
-  lkmexStaked: string = '';
+  lkmoaStaked: string = '';
 }

@@ -2,45 +2,45 @@ import { DynamicModule, Module, Provider, Type } from "@nestjs/common";
 import configuration from "config/configuration";
 import { GraphQlModule } from "src/common/graphql/graphql.module";
 import { DynamicModuleUtils } from "src/utils/dynamic.module.utils";
-import { MexEconomicsService } from "./mex.economics.service";
-import { MexFarmService } from "./mex.farm.service";
-import { MexPairService } from "./mex.pair.service";
-import { MexSettingsService } from "./mex.settings.service";
-import { MexTokenChartsService } from "./mex.token.charts.service";
-import { MexTokenService } from "./mex.token.service";
-import { MexWarmerService } from "./mex.warmer.service";
+import { MoaEconomicsService } from "./moa.economics.service";
+import { MoaFarmService } from "./moa.farm.service";
+import { MoaPairService } from "./moa.pair.service";
+import { MoaSettingsService } from "./moa.settings.service";
+import { MoaTokenChartsService } from "./moa.token.charts.service";
+import { MoaTokenService } from "./moa.token.service";
+import { MoaWarmerService } from "./moa.warmer.service";
 
 @Module({})
-export class MexModule {
+export class MoaModule {
   static forRoot(): DynamicModule {
     const providers: (Type<any> | Provider<any>)[] = [
       DynamicModuleUtils.getPubSubService(),
-      MexEconomicsService,
-      MexSettingsService,
-      MexPairService,
-      MexTokenService,
-      MexFarmService,
-      MexTokenChartsService,
+      MoaEconomicsService,
+      MoaSettingsService,
+      MoaPairService,
+      MoaTokenService,
+      MoaFarmService,
+      MoaTokenChartsService,
     ];
 
     const isExchangeEnabled = configuration().features?.exchange?.enabled ?? false;
     if (isExchangeEnabled) {
-      providers.push(MexWarmerService);
+      providers.push(MoaWarmerService);
     }
 
     return {
-      module: MexModule,
+      module: MoaModule,
       imports: [
         GraphQlModule,
       ],
       providers,
       exports: [
-        MexEconomicsService,
-        MexPairService,
-        MexSettingsService,
-        MexTokenService,
-        MexFarmService,
-        MexTokenChartsService,
+        MoaEconomicsService,
+        MoaPairService,
+        MoaSettingsService,
+        MoaTokenService,
+        MoaFarmService,
+        MoaTokenChartsService,
       ],
     };
   }

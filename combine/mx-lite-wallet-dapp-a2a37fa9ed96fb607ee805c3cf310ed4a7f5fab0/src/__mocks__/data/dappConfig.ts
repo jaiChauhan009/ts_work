@@ -7,7 +7,7 @@ export const dappConfig = {
   gasPerDataByte: '1500',
   apiTimeout: '4000',
   walletConnectDeepLink:
-    'https://maiar.page.link/?apn=com.dharitri.maiar.wallet&isi=1519405832&ibi=com.dharitri.maiar.wallet&link=https://maiar.com/',
+    'https://durian.page.link/?apn=com.dharitri.durian.wallet&isi=1519405832&ibi=com.dharitri.durian.wallet&link=https://durian.com/',
   walletConnectBridgeAddresses: ['https://bridge.walletconnect.org'],
   walletAddress: 'https://wallet-sovereign-test.numbat.ro/',
   apiAddress: 'https://api-sovereign-test.numbat.ro',

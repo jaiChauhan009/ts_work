@@ -101,25 +101,25 @@ export class AnalyticsCacheWarmerService {
         }
 
         const feeBurned = await this.analyticsCompute.computeTokenBurned(
-            constantsConfig.MEX_TOKEN_ID,
+            constantsConfig.MOA_TOKEN_ID,
             awsOneYear(),
             'feeBurned',
         );
         delay(constantsConfig.AWS_QUERY_CACHE_WARMER_DELAY);
         const penaltyBurned = await this.analyticsCompute.computeTokenBurned(
-            constantsConfig.MEX_TOKEN_ID,
+            constantsConfig.MOA_TOKEN_ID,
             awsOneYear(),
             'penaltyBurned',
         );
         delay(constantsConfig.AWS_QUERY_CACHE_WARMER_DELAY);
         const cachedKeys = await Promise.all([
             this.analyticsSetter.feeTokenBurned(
-                constantsConfig.MEX_TOKEN_ID,
+                constantsConfig.MOA_TOKEN_ID,
                 awsOneYear(),
                 feeBurned,
             ),
             this.analyticsSetter.penaltyTokenBurned(
-                constantsConfig.MEX_TOKEN_ID,
+                constantsConfig.MOA_TOKEN_ID,
                 awsOneYear(),
                 penaltyBurned,
             ),

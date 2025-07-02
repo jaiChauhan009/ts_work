@@ -197,7 +197,7 @@ describe('FeesCollectorTransactionService', () => {
         );
         const transaction = await service.handleKnownTokens(senderAddress, [
             'WREWA-123456',
-            'MEX-123456',
+            'MOA-123456',
         ]);
 
         expect(transaction).toEqual(
@@ -212,7 +212,7 @@ describe('FeesCollectorTransactionService', () => {
                 senderUsername: undefined,
                 value: '0',
                 data: encodeTransactionData(
-                    `addKnownTokens@${'WREWA-123456'}@${'MEX-123456'}`,
+                    `addKnownTokens@${'WREWA-123456'}@${'MOA-123456'}`,
                 ),
                 options: undefined,
                 signature: undefined,

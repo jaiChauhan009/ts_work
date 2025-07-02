@@ -220,12 +220,12 @@ describe('FeesCollectorComputeService', () => {
         'computeUserApr' + ' last week' + ' with default user energy',
         async () => {
             const user1 = 'drt1';
-            const mex = 'MEX-123456';
+            const moa = 'MOA-123456';
             const priceMap = new Map<string, string>();
             priceMap.set('WREWA-123456', '10');
-            priceMap.set('MEX-123456', '20');
+            priceMap.set('MOA-123456', '20');
             priceMap.set('TOK4-123456', '30');
-            priceMap.set(mex, '1');
+            priceMap.set(moa, '1');
 
             const totalEnergyForWeek = '3000000000000000000000000';
             const totalLockedTokensForWeek = '1000000000000000000000000';
@@ -288,12 +288,12 @@ describe('FeesCollectorComputeService', () => {
         'computeUserApr' + ' last week' + ' with custom user energy',
         async () => {
             const user1 = 'drt1';
-            const mex = 'MEX-123456';
+            const moa = 'MOA-123456';
             const priceMap = new Map<string, string>();
             priceMap.set('WREWA-123456', '10');
-            priceMap.set('MEX-123456', '20');
+            priceMap.set('MOA-123456', '20');
             priceMap.set('TOK4-123456', '30');
-            priceMap.set(mex, '1');
+            priceMap.set(moa, '1');
 
             const totalEnergyForWeek = '3000000000000000000000000';
             const totalLockedTokensForWeek = '1000000000000000000000000';
@@ -358,12 +358,12 @@ describe('FeesCollectorComputeService', () => {
             ' with custom user energy and locked tokens',
         async () => {
             const user1 = 'drt1';
-            const mex = 'MEX-123456';
+            const moa = 'MOA-123456';
             const priceMap = new Map<string, string>();
             priceMap.set('WREWA-123456', '10');
-            priceMap.set('MEX-123456', '20');
+            priceMap.set('MOA-123456', '20');
             priceMap.set('TOK4-123456', '30');
-            priceMap.set(mex, '1');
+            priceMap.set(moa, '1');
 
             const totalEnergyForWeek = '3000000000000000000000000';
             const totalLockedTokensForWeek = '1000000000000000000000000';

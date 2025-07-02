@@ -237,7 +237,7 @@ describe('when the gas limit is updated', () => {
           },
           text: {
             displayValue:
-              'MultiDCDTNFTTransfer@\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0005\u0000\u0013�׮J�7�漳29J@�tn�|�@\u0002@WREWA-a28c59@@\rඳ�d\u0000\u0000@MEX-a659d0@@�wpK�?��1\u0006@addLiquidity@\r�/�7�\u0000\u0000@�6>�r�\r�5�',
+              'MultiDCDTNFTTransfer@\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0005\u0000\u0013�׮J�7�漳29J@�tn�|�@\u0002@WREWA-a28c59@@\rඳ�d\u0000\u0000@MOA-a659d0@@�wpK�?��1\u0006@addLiquidity@\r�/�7�\u0000\u0000@�6>�r�\r�5�',
             validationWarnings: [],
             highlight: 'addLiquidity@\r�/�7�\u0000\u0000@�6>�r�\r�5�'
           },
@@ -250,7 +250,7 @@ describe('when the gas limit is updated', () => {
           },
           smart: {
             displayValue:
-              'MultiDCDTNFTTransfer@drt1qqqqqqqqqqqqqpgqzw0d0tj25qme9e4ukverjjjqle6xamay0n4sflc0xk@\u0002@WREWA-a28c59@@1000000000000000000@MEX-a659d0@@1064735712967374589014278@addLiquidity@990000000000000000@1054088355837700843124135',
+              'MultiDCDTNFTTransfer@drt1qqqqqqqqqqqqqpgqzw0d0tj25qme9e4ukverjjjqle6xamay0n4sflc0xk@\u0002@WREWA-a28c59@@1000000000000000000@MOA-a659d0@@1064735712967374589014278@addLiquidity@990000000000000000@1054088355837700843124135',
             validationWarnings: [],
             highlight:
               'addLiquidity@990000000000000000@1054088355837700843124135'

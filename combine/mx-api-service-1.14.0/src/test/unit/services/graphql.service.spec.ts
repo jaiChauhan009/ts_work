@@ -12,7 +12,7 @@ describe('GraphQlService', () => {
 
   beforeEach(async () => {
     mockApiConfigService = {
-      getExchangeServiceUrlMandatory: jest.fn().mockReturnValue('https://graph.xexchange.com/graphql'),
+      getExchangeServiceUrlMandatory: jest.fn().mockReturnValue('https://graph.dharitrix.com/graphql'),
       getMarketplaceServiceUrl: jest.fn().mockReturnValue('https://nfts-graph.dharitri.org/graphql'),
       getSelfUrl: jest.fn().mockReturnValue('https://api.dharitri.org'),
     };

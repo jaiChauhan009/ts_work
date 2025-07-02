@@ -8,7 +8,7 @@ import { PersistenceService } from "src/common/persistence/persistence.service";
 import { PluginService } from "src/common/plugins/plugin.service";
 import { DcdtAddressService } from "src/endpoints/dcdt/dcdt.address.service";
 import { DcdtService } from "src/endpoints/dcdt/dcdt.service";
-import { MexTokenService } from "src/endpoints/mex/mex.token.service";
+import { MoaTokenService } from "src/endpoints/moa/moa.token.service";
 import { NftService } from "src/endpoints/nfts/nft.service";
 import { NftMediaService } from "src/queue.worker/nft.worker/queue/job-services/media/nft.media.service";
 import { NftMetadataService } from "src/queue.worker/nft.worker/queue/job-services/metadata/nft.metadata.service";
@@ -95,16 +95,16 @@ describe('NftService', () => {
           },
         },
         {
-          provide: MexTokenService,
+          provide: MoaTokenService,
           useValue: {
-            getMexPrices: jest.fn(),
+            getMoaPrices: jest.fn(),
           },
         },
         {
           provide: LockedAssetService,
           useValue: {
-            getLkmexUnlockSchedule: jest.fn(),
-            getXmexUnlockEpoch: jest.fn(),
+            getLkmoaUnlockSchedule: jest.fn(),
+            getXmoaUnlockEpoch: jest.fn(),
           },
         },
       ],

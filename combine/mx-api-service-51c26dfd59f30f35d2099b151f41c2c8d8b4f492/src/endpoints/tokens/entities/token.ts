@@ -2,7 +2,7 @@ import { SwaggerUtils } from "@terradharitri/sdk-nestjs-common";
 import { ApiProperty } from "@nestjs/swagger";
 import { TokenType } from "src/common/indexer/entities";
 import { TokenAssets } from "../../../common/assets/entities/token.assets";
-import { MexPairType } from "src/endpoints/mex/entities/mex.pair.type";
+import { MoaPairType } from "src/endpoints/moa/entities/moa.pair.type";
 import { TokenOwnersHistory } from "./token.owner.history";
 import { NftSubType } from "../../nfts/entities/nft.sub.type";
 
@@ -113,8 +113,8 @@ export class Token {
   @ApiProperty({ type: Number, description: 'Creation timestamp' })
   timestamp: number | undefined = undefined;
 
-  @ApiProperty({ enum: MexPairType })
-  mexPairType: MexPairType = MexPairType.experimental;
+  @ApiProperty({ enum: MoaPairType })
+  drtPairType: MoaPairType = MoaPairType.experimental;
 
   @ApiProperty({ type: Number, nullable: true, required: false })
   totalLiquidity: number | undefined = undefined;

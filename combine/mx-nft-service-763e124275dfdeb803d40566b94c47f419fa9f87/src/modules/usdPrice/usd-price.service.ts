@@ -91,7 +91,7 @@ export class UsdPriceService {
   }
 
   private async getTokenHistoricalPrice(tokenId: string, timestamp: number): Promise<number> {
-    let [cexTokens, xExchangeTokens] = await Promise.all([this.getCexTokens(), this.getXexchangeTokens()]);
+    let [cexTokens, xExchangeTokens] = await Promise.all([this.getCexTokens(), this.getdharitriXTokens()]);
 
     if (cexTokens?.includes(tokenId)) {
       {
@@ -134,10 +134,10 @@ export class UsdPriceService {
     );
   }
 
-  private async getXexchangeTokens(): Promise<string[]> {
+  private async getdharitriXTokens(): Promise<string[]> {
     return await this.cacheService.getOrSet(
       CacheInfo.xExchangeTokens.key,
-      async () => await this.drtDataApi.getXexchangeTokens(),
+      async () => await this.drtDataApi.getdharitriXTokens(),
       CacheInfo.xExchangeTokens.ttl,
     );
   }

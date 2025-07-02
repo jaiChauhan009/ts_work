@@ -5,7 +5,7 @@ import { GovernanceDescriptionService } from './governance.description.service';
 import { GovernanceType } from '../../../utils/governance';
 import { GovernanceProposalModel, GovernanceProposalStatus } from '../models/governance.proposal.model';
 import { ProposalVotes } from '../models/governance.proposal.votes.model';
-import { GovernanceLKMEXProposal } from '../entities/lkmex.proposal';
+import { GovernanceLKMOAProposal } from '../entities/lkmoa.proposal';
 import { GovernanceEnergyAbiService } from './governance.abi.service';
 import { LockedAssetGetterService } from '../../locked-asset-factory/services/locked.asset.getter.service';
 
@@ -55,14 +55,14 @@ export class GovernanceOldEnergyAbiService extends GovernanceEnergyAbiService {
     }
 
     async proposalVotes(scAddress: string, proposalId: number): Promise<ProposalVotes> {
-        return Promise.resolve(new GovernanceLKMEXProposal().votes);
+        return Promise.resolve(new GovernanceLKMOAProposal().votes);
     }
 
     async proposals(scAddress: string): Promise<GovernanceProposalModel[]> {
         return Promise.resolve([
             new GovernanceProposalModel({
                 contractAddress: scAddress,
-                ...new GovernanceLKMEXProposal()
+                ...new GovernanceLKMOAProposal()
             }),
         ]);
     }

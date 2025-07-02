@@ -80,7 +80,7 @@ describe('TransactionPairService', () => {
                 ).bech32(),
                 tokens: [
                     {
-                        tokenID: 'MEX-123456',
+                        tokenID: 'MOA-123456',
                         nonce: 0,
                         amount: firstTokenAmount,
                     },
@@ -124,7 +124,7 @@ describe('TransactionPairService', () => {
             data: encodeTransactionData(
                 `MultiDCDTNFTTransfer@${Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000012',
-                ).bech32()}@2@WREWA-123456@@9000000000000000000@MEX-123456@@10000000000000000000@addInitialLiquidity`,
+                ).bech32()}@2@WREWA-123456@@9000000000000000000@MOA-123456@@10000000000000000000@addInitialLiquidity`,
             ),
             chainID: drtConfig.chainID,
             version: 2,
@@ -154,7 +154,7 @@ describe('TransactionPairService', () => {
                         amount: firstTokenAmount,
                     },
                     {
-                        tokenID: 'MEX-123456',
+                        tokenID: 'MOA-123456',
                         nonce: 0,
                         amount: secondTokenAmount,
                     },
@@ -172,7 +172,7 @@ describe('TransactionPairService', () => {
             data: encodeTransactionData(
                 `MultiDCDTNFTTransfer@${Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000012',
-                ).bech32()}@02@WREWA-123456@@10000000000000000000@MEX-123456@@9000000000000000000@addInitialLiquidity`,
+                ).bech32()}@02@WREWA-123456@@10000000000000000000@MOA-123456@@9000000000000000000@addInitialLiquidity`,
             ),
             chainID: drtConfig.chainID,
             version: 2,
@@ -197,7 +197,7 @@ describe('TransactionPairService', () => {
                 ).bech32(),
                 tokens: [
                     {
-                        tokenID: 'MEX-123456',
+                        tokenID: 'MOA-123456',
                         nonce: 0,
                         amount: firstTokenAmount,
                     },
@@ -222,7 +222,7 @@ describe('TransactionPairService', () => {
             data: encodeTransactionData(
                 `MultiDCDTNFTTransfer@${Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000012',
-                ).bech32()}@2@WREWA-123456@@9@MEX-123456@@10@addLiquidity@8@9`,
+                ).bech32()}@2@WREWA-123456@@9@MOA-123456@@10@addLiquidity@8@9`,
             ),
             chainID: drtConfig.chainID,
             version: 2,
@@ -252,7 +252,7 @@ describe('TransactionPairService', () => {
                         amount: firstTokenAmount,
                     },
                     {
-                        tokenID: 'MEX-123456',
+                        tokenID: 'MOA-123456',
                         nonce: 0,
                         amount: secondTokenAmount,
                     },
@@ -292,7 +292,7 @@ describe('TransactionPairService', () => {
             data: encodeTransactionData(
                 `MultiDCDTNFTTransfer@${Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000012',
-                ).bech32()}@02@WREWA-123456@@10@MEX-123456@@09@addLiquidity@09@08`,
+                ).bech32()}@02@WREWA-123456@@10@MOA-123456@@09@addLiquidity@09@08`,
             ),
             chainID: drtConfig.chainID,
             version: 2,
@@ -319,7 +319,7 @@ describe('TransactionPairService', () => {
                 ).bech32(),
                 tokens: [
                     {
-                        tokenID: 'MEX-123456',
+                        tokenID: 'MOA-123456',
                         nonce: 0,
                         amount: firstTokenAmount,
                     },
@@ -365,7 +365,7 @@ describe('TransactionPairService', () => {
             data: encodeTransactionData(
                 `MultiDCDTNFTTransfer@${Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000012',
-                ).bech32()}@02@WREWA-123456@@09@MEX-123456@@10@addLiquidity@08@09`,
+                ).bech32()}@02@WREWA-123456@@09@MOA-123456@@10@addLiquidity@08@09`,
             ),
             chainID: drtConfig.chainID,
             version: 2,
@@ -445,7 +445,7 @@ describe('TransactionPairService', () => {
                 '0000000000000000000000000000000000000000000000000000000000000012',
             ).bech32(),
             tokenInID: 'REWA',
-            tokenOutID: 'MEX-123456',
+            tokenOutID: 'MOA-123456',
             amountIn: '5',
             amountOut: '5',
             tolerance: 0.01,
@@ -479,7 +479,7 @@ describe('TransactionPairService', () => {
             pairAddress: Address.fromHex(
                 '0000000000000000000000000000000000000000000000000000000000000012',
             ).bech32(),
-            tokenInID: 'MEX-123456',
+            tokenInID: 'MOA-123456',
             tokenOutID: 'REWA',
             amountIn: '5',
             amountOut: '5',
@@ -514,7 +514,7 @@ describe('TransactionPairService', () => {
                 '0000000000000000000000000000000000000000000000000000000000000012',
             ).bech32(),
             [
-                new InputTokenModel({ tokenID: 'MEX-123456' }),
+                new InputTokenModel({ tokenID: 'MOA-123456' }),
                 new InputTokenModel({ tokenID: 'REWA' }),
             ],
         );
@@ -525,7 +525,7 @@ describe('TransactionPairService', () => {
                 amount: undefined,
                 nonce: undefined,
             },
-            { tokenID: 'MEX-123456' },
+            { tokenID: 'MOA-123456' },
         ]);
 
         try {
@@ -534,7 +534,7 @@ describe('TransactionPairService', () => {
                     '0000000000000000000000000000000000000000000000000000000000000012',
                 ).bech32(),
                 [
-                    new InputTokenModel({ tokenID: 'MEX-123456', nonce: 1 }),
+                    new InputTokenModel({ tokenID: 'MOA-123456', nonce: 1 }),
                     new InputTokenModel({ tokenID: 'REWA' }),
                 ],
             );
@@ -639,7 +639,7 @@ describe('TransactionPairService', () => {
             ).bech32(),
             Address.Zero().bech32(),
             'WREWA-123456',
-            'MEX-123456',
+            'MOA-123456',
         );
 
         expect(transaction).toEqual({
@@ -654,7 +654,7 @@ describe('TransactionPairService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.pairs.admin.addTrustedSwapPair,
             data: encodeTransactionData(
-                'addTrustedSwapPair@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z@WREWA-123456@MEX-123456',
+                'addTrustedSwapPair@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z@WREWA-123456@MOA-123456',
             ),
             chainID: drtConfig.chainID,
             version: 2,
@@ -676,7 +676,7 @@ describe('TransactionPairService', () => {
                 '0000000000000000000000000000000000000000000000000000000000000012',
             ).bech32(),
             'WREWA-123456',
-            'MEX-123456',
+            'MOA-123456',
         );
 
         expect(transaction).toEqual({
@@ -691,7 +691,7 @@ describe('TransactionPairService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.pairs.admin.removeTrustedSwapPair,
             data: encodeTransactionData(
-                'removeTrustedSwapPair@WREWA-123456@MEX-123456',
+                'removeTrustedSwapPair@WREWA-123456@MOA-123456',
             ),
             chainID: drtConfig.chainID,
             version: 2,

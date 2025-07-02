@@ -2,7 +2,7 @@ import { TokenUtils } from "../../src/utils/token.utils";
 
 describe('isToken', () => {
     it('Check isToken function', () => {
-      expect(TokenUtils.isToken('MEX-455c57')).toBeTruthy();
+      expect(TokenUtils.isToken('MOA-455c57')).toBeTruthy();
       expect(TokenUtils.isToken('EWLD-e23800-455c74')).toBeFalsy();
     });
   });

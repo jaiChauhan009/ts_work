@@ -1,16 +1,16 @@
 import { ApiProperty } from "@nestjs/swagger";
-export class MexToken {
-  constructor(init?: Partial<MexToken>) {
+export class MoaToken {
+  constructor(init?: Partial<MoaToken>) {
     Object.assign(this, init);
   }
 
-  @ApiProperty({ type: String, example: 'MEX-455c57' })
+  @ApiProperty({ type: String, example: 'MOA-455c57' })
   id: string = '';
 
-  @ApiProperty({ type: String, example: 'MEX' })
+  @ApiProperty({ type: String, example: 'MOA' })
   symbol: string = '';
 
-  @ApiProperty({ type: String, example: 'MEX' })
+  @ApiProperty({ type: String, example: 'MOA' })
   name: string = '';
 
   @ApiProperty({ type: Number, example: 0.000206738758250580 })

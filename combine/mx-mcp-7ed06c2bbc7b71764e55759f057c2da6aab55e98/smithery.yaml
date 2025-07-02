@@ -21,8 +21,8 @@ startCommand:
     |-
     (config) => ({ command: 'node', args: ['build/index.js'],
       env: {
-        MVX_NETWORK: config.mvxNetwork,
-        MVX_WALLET: config.mvxWallet
+        DRT_NETWORK: config.mvxNetwork,
+        DRT_WALLET: config.mvxWallet
       }})
   exampleConfig:
     mvxNetwork: devnet

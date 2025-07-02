@@ -6,7 +6,7 @@ export class LockedTokenWrapperAbiServiceMock
     implements ILockedTokenWrapperAbiService
 {
     async wrappedTokenId(address: string): Promise<string> {
-        return 'WXMEX-123456';
+        return 'WXMOA-123456';
     }
 
     energyFactoryAddress(address: string): Promise<string> {

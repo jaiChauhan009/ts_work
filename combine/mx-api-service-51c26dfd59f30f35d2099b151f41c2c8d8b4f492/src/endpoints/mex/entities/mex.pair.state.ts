@@ -1,15 +1,15 @@
 import { registerEnumType } from "@nestjs/graphql";
 
-export enum MexPairState {
+export enum MoaPairState {
   active = 'active',
   inactive = 'inactive',
   paused = 'paused',
   partial = 'partial',
 }
 
-registerEnumType(MexPairState, {
-  name: 'MexPairState',
-  description: 'MexPairState object type.',
+registerEnumType(MoaPairState, {
+  name: 'MoaPairState',
+  description: 'MoaPairState object type.',
   valuesMap: {
     active: {
       description: 'Active state.',

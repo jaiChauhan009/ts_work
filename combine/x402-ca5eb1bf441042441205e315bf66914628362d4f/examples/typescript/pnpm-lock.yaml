@@ -4471,7 +4471,7 @@ packages:
     resolution: {integrity: sha512-lytcDEdxKjGJPTLEfW4mYMigRezMlyJY8W4wxJK8zE533Jlb8L8dRuObJFWg2P+AuOIxoCgKF+2Oq4d4Zd0OUA==}
     engines: {node: ^18 || ^20 || >= 21}
 
-  node-domexception@1.0.0:
+  node-domoaception@1.0.0:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
     engines: {node: '>=10.5.0'}
     deprecated: Use your platform's native DOMException instead
@@ -8965,7 +8965,7 @@ snapshots:
 
   formdata-node@4.4.1:
     dependencies:
-      node-domexception: 1.0.0
+      node-domoaception: 1.0.0
       web-streams-polyfill: 4.0.0-beta.3
 
   forwarded@0.2.0: {}
@@ -9599,7 +9599,7 @@ snapshots:
 
   node-addon-api@8.3.1: {}
 
-  node-domexception@1.0.0: {}
+  node-domoaception@1.0.0: {}
 
   node-fetch-native@1.6.6: {}
 

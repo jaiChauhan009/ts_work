@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { LockedAssetService } from './locked-asset.service';
 import { VmQueryModule } from '../../endpoints/vm.query/vm.query.module';
-import { MexModule } from 'src/endpoints/mex/mex.module';
+import { MoaModule } from 'src/endpoints/moa/moa.module';
 
 @Module({
   imports: [
     VmQueryModule,
-    MexModule.forRoot(),
+    MoaModule.forRoot(),
   ],
   providers: [
     LockedAssetService,

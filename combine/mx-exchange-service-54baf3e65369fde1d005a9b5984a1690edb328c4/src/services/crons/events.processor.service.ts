@@ -309,7 +309,7 @@ export class EventsProcessorService {
             }
 
             Records.push({
-                series: constantsConfig.MEX_TOKEN_ID,
+                series: constantsConfig.MOA_TOKEN_ID,
                 key: MeasureName,
                 value: record,
                 timestamp,
@@ -353,7 +353,7 @@ export class EventsProcessorService {
             const burnedTokenID = localBurn.getTopics().tokenID;
             const burnedAmount = localBurn.getTopics().amount;
 
-            if (burnedTokenID !== constantsConfig.MEX_TOKEN_ID) {
+            if (burnedTokenID !== constantsConfig.MOA_TOKEN_ID) {
                 continue;
             }
 
@@ -424,7 +424,7 @@ export class EventsProcessorService {
         dcdtLocalBurnEvents
             .filter(
                 (event) =>
-                    event.getTopics().tokenID === constantsConfig.MEX_TOKEN_ID,
+                    event.getTopics().tokenID === constantsConfig.MOA_TOKEN_ID,
             )
             .forEach((event) => {
                 penalty = penalty.plus(event.getTopics().amount);
@@ -449,11 +449,11 @@ export class EventsProcessorService {
             const burnedAmount = localBurn.getTopics().amount;
 
             // Skip LP tokens burn
-            if (burnedTokenID !== constantsConfig.MEX_TOKEN_ID) {
+            if (burnedTokenID !== constantsConfig.MOA_TOKEN_ID) {
                 continue;
             }
 
-            // Skip MEX to LKMEX rewards for V1_2 farms
+            // Skip MOA to LKMOA rewards for V1_2 farms
             if (
                 burnedAmount === exitFarmEvent.rewardToken.amount.toFixed() &&
                 lockedRewards
@@ -461,7 +461,7 @@ export class EventsProcessorService {
                 continue;
             }
 
-            // Skip MEX to LKMEX farming tokens
+            // Skip MOA to LKMOA farming tokens
             if (
                 burnedAmount === exitFarmEvent.farmingToken.amount.toFixed() &&
                 burnedTokenID === exitFarmEvent.farmingToken.tokenID

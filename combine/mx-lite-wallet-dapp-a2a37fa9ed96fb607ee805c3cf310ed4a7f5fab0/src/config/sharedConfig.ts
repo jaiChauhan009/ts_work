@@ -14,11 +14,11 @@ export const BATCH_TRANSACTIONS_SC = {
     contract: 'drt1qqqqqqqqqqqqqpgqtqfhy99su9xzjjrq59kpzpp25udtc9eq0n4s7ec79y',
     data: 'DCDTTransfer@5745474C442D613238633539@06f05b59d3b20000@73776170546f6b656e734669786564496e707574@555344432D333530633465@01'
   },
-  wREWA_MEX: {
+  wREWA_MOA: {
     contract: 'drt1qqqqqqqqqqqqqpgqzw0d0tj25qme9e4ukverjjjqle6xamay0n4sflc0xk',
     data: 'DCDTTransfer@5745474C442D613238633539@06f05b59d3b20000@73776170546f6b656e734669786564496e707574@4D45582D613635396430@01'
   },
-  lock_MEX: {
+  lock_MOA: {
     contract: 'drt1qqqqqqqqqqqqqpgq2l97gw2j4wnlem4y2rx7dudqlssjtwpu0n4ssntjd5',
     data: 'DCDTTransfer@4D45582D613635396430@0de0b6b3a7640000@6c6f636b546f6b656e73@05a0'
   }

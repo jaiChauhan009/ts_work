@@ -33,7 +33,7 @@ export class PairComputeServiceMock implements IPairComputeService {
         switch (tokenID) {
             case 'WREWA-123456':
                 return '10';
-            case 'MEX-123456':
+            case 'MOA-123456':
                 return '0.01';
             case 'USDC-123456':
                 return '1';
@@ -43,9 +43,9 @@ export class PairComputeServiceMock implements IPairComputeService {
                 return '15';
             case 'REWATOK4LP-abcdef':
                 return '50';
-            case 'REWAMEXFL-abcdef':
+            case 'REWAMOAFL-abcdef':
                 return '100;';
-            case 'REWAMEXLP-abcdef':
+            case 'REWAMOALP-abcdef':
                 return '2';
         }
     }

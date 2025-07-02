@@ -2,14 +2,14 @@ import { forwardRef, Inject, Injectable } from "@nestjs/common";
 import { Transaction } from "src/endpoints/transactions/entities/transaction";
 import { TransactionMetadata } from "./entities/transaction.metadata";
 import { TransactionAction } from "./entities/transaction.action";
-import { TransactionActionMexRecognizerService } from "./recognizers/mex/transaction.action.mex.recognizer.service";
+import { TransactionActionMoaRecognizerService } from "./recognizers/moa/transaction.action.moa.recognizer.service";
 import { TransactionActionRecognizerInterface } from "./transaction.action.recognizer.interface";
 import { StakeActionRecognizerService } from "./recognizers/staking/transaction.action.stake.recognizer.service";
 import { SCCallActionRecognizerService } from "./recognizers/sc-calls/transaction.action.sc-calls.recognizer.service";
 import { TransactionActionDcdtNftRecognizerService } from "./recognizers/dcdt/transaction.action.dcdt.nft.recognizer.service";
 import { TokenTransferService } from "src/endpoints/tokens/token.transfer.service";
 import { TransactionType } from "src/endpoints/transactions/entities/transaction.type";
-import { MetabondingActionRecognizerService } from "./recognizers/mex/mex.metabonding.action.recognizer.service";
+import { MetabondingActionRecognizerService } from "./recognizers/moa/moa.metabonding.action.recognizer.service";
 import { AddressUtils, BinaryUtils, StringUtils } from "@terradharitri/sdk-nestjs-common";
 import { OriginLogger } from "@terradharitri/sdk-nestjs-common";
 
@@ -19,7 +19,7 @@ export class TransactionActionService {
   private readonly logger = new OriginLogger(TransactionActionService.name);
 
   constructor(
-    private readonly mexRecognizer: TransactionActionMexRecognizerService,
+    private readonly moaRecognizer: TransactionActionMoaRecognizerService,
     private readonly dcdtNftRecognizer: TransactionActionDcdtNftRecognizerService,
     private readonly stakeRecognizer: StakeActionRecognizerService,
     private readonly scCallRecognizer: SCCallActionRecognizerService,
@@ -30,9 +30,9 @@ export class TransactionActionService {
 
   private async getRecognizers() {
     if (this.recognizers.length === 0) {
-      const isMexActive = await this.mexRecognizer.isActive();
-      if (isMexActive) {
-        this.recognizers.push(this.mexRecognizer);
+      const isMoaActive = await this.moaRecognizer.isActive();
+      if (isMoaActive) {
+        this.recognizers.push(this.moaRecognizer);
       }
 
       this.recognizers.push(this.metabondingRecognizer);

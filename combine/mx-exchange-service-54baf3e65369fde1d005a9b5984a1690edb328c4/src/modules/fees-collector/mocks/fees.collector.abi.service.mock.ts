@@ -6,7 +6,7 @@ export class FeesCollectorAbiServiceMock implements IFeesCollectorAbiService {
         return '0';
     }
     async lockedTokenID(): Promise<string> {
-        return 'ELKMEX-123456';
+        return 'ELKMOA-123456';
     }
 
     async lockedTokensPerBlock(): Promise<string> {

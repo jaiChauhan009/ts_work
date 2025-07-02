@@ -119,7 +119,7 @@ describe('BaseConfigService', () => {
     configServiceMock.get.mockReturnValueOnce('str:overriden value')
 
     const result = baseConfigService.get<string[]>('testArray');
-    expect(configServiceMock.get).toHaveBeenCalledWith('MVX_OVERRIDE_TEST_ARRAY')
+    expect(configServiceMock.get).toHaveBeenCalledWith('DRT_OVERRIDE_TEST_ARRAY')
 
     expect(result).toBe('overriden value');
   });
@@ -128,7 +128,7 @@ describe('BaseConfigService', () => {
     configServiceMock.get.mockReturnValueOnce('num:123')
 
     const result = baseConfigService.get<string[]>('testArray.nested');
-    expect(configServiceMock.get).toHaveBeenCalledWith('MVX_OVERRIDE_TEST_ARRAY_NESTED')
+    expect(configServiceMock.get).toHaveBeenCalledWith('DRT_OVERRIDE_TEST_ARRAY_NESTED')
 
     expect(result).toBe(123);
   });
@@ -137,7 +137,7 @@ describe('BaseConfigService', () => {
     configServiceMock.get.mockReturnValueOnce('bool:false')
 
     const result = baseConfigService.get<string[]>('wrappedREWAIdentifier.nested');
-    expect(configServiceMock.get).toHaveBeenCalledWith('MVX_OVERRIDE_WRAPPED_REWA_IDENTIFIER_NESTED')
+    expect(configServiceMock.get).toHaveBeenCalledWith('DRT_OVERRIDE_WRAPPED_REWA_IDENTIFIER_NESTED')
 
     expect(result).toBe(false);
   });

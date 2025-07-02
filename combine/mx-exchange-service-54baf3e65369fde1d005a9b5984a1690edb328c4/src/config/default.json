@@ -576,7 +576,7 @@
         "energyUpdate": "./src/abis/energy-update.abi.json",
         "tokenUnstake": "./src/abis/token-unstake.abi.json",
         "lockedTokenWrapper": "./src/abis/locked-token-wrapper.abi.json",
-        "escrow": "./src/abis/lkmex-transfer.abi.json",
+        "escrow": "./src/abis/lkmoa-transfer.abi.json",
         "governance": {
             "energy": "./src/abis/governance-v2.abi.json",
             "tokenSnapshot": "./src/abis/governance-v2-merkle-proof.abi.json"

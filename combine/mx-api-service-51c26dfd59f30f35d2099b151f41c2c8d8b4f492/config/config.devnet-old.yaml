@@ -47,7 +47,7 @@ features:
     serviceUrl: 'https://devnet-old-nfts-graph.dharitri.org/graphql'
   exchange:
     enabled: false
-    serviceUrl: 'https://devnet-old-graph.xexchange.com/graphql'
+    serviceUrl: 'https://devnet-old-graph.dharitrix.com/graphql'
   dataApi:
     enabled: false
     serviceUrl: 'https://devnet-old-data-api.dharitri.org'
@@ -85,7 +85,7 @@ urls:
   tmp: '/tmp'
   ipfs: 'https://ipfs.io/ipfs'
   socket: 'devnet-socket-api.dharitri.org'
-  maiarId: 'https://devnet-old-id-api.dharitri.org'
+  durianId: 'https://devnet-old-id-api.dharitri.org'
   assetsCdn: 'https://tools.dharitri.org/assets-cdn'
 indexer:
   type: 'elastic'

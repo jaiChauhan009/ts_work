@@ -80,7 +80,7 @@ describe('FarmService', () => {
                     'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
                 tokens: [
                     {
-                        tokenID: 'REWAMEXLP-abcdef',
+                        tokenID: 'REWAMOALP-abcdef',
                         nonce: 0,
                         amount: '1000000000000',
                     },
@@ -97,7 +97,7 @@ describe('FarmService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.farms['v1.2'].enterFarm.default,
             data: encodeTransactionData(
-                'DCDTTransfer@REWAMEXLP-abcdef@1000000000000@enterFarmAndLockRewards',
+                'DCDTTransfer@REWAMOALP-abcdef@1000000000000@enterFarmAndLockRewards',
             ),
             chainID: drtConfig.chainID,
             version: 2,
@@ -116,7 +116,7 @@ describe('FarmService', () => {
             {
                 farmAddress:
                     'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
-                farmTokenID: 'REWAMEXFL-abcdef',
+                farmTokenID: 'REWAMOAFL-abcdef',
                 farmTokenNonce: 1,
                 amount: '1000000000000',
                 withPenalty: false,
@@ -134,7 +134,7 @@ describe('FarmService', () => {
                 gasConfig.farms['v1.2']['lockedRewards'].exitFarm.default +
                 gasConfig.lockedAssetCreate,
             data: encodeTransactionData(
-                'DCDTNFTTransfer@REWAMEXFL-abcdef@01@1000000000000@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42@07311709943153914477',
+                'DCDTNFTTransfer@REWAMOAFL-abcdef@01@1000000000000@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42@07311709943153914477',
             ),
             chainID: drtConfig.chainID,
             version: 2,
@@ -210,7 +210,7 @@ describe('FarmService', () => {
             {
                 farmAddress:
                     'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
-                farmTokenID: 'REWAMEXFL-abcdef',
+                farmTokenID: 'REWAMOAFL-abcdef',
                 farmTokenNonce: 1,
                 amount: '1000000000000',
                 withPenalty: false,
@@ -226,7 +226,7 @@ describe('FarmService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.farms['v1.2'].migrateToNewFarm,
             data: encodeTransactionData(
-                'DCDTNFTTransfer@REWAMEXFL-abcdef@01@1000000000000@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42@migrateToNewFarm@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
+                'DCDTNFTTransfer@REWAMOAFL-abcdef@01@1000000000000@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42@migrateToNewFarm@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             ),
             chainID: drtConfig.chainID,
             version: 2,
@@ -245,7 +245,7 @@ describe('FarmService', () => {
             {
                 oldFarmAddress:
                     'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
-                oldFarmTokenID: 'REWAMEXFL-abcdef',
+                oldFarmTokenID: 'REWAMOAFL-abcdef',
                 newFarmAddress: Address.Zero().bech32(),
                 newLockedFarmAddress: Address.Zero().bech32(),
             },
@@ -261,7 +261,7 @@ describe('FarmService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.farms.admin.setFarmMigrationConfig,
             data: encodeTransactionData(
-                'setFarmMigrationConfig@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42@REWAMEXFL-abcdef@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
+                'setFarmMigrationConfig@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42@REWAMOAFL-abcdef@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             ),
             chainID: drtConfig.chainID,
             version: 2,
@@ -796,12 +796,12 @@ describe('FarmService', () => {
             'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
             [
                 {
-                    tokenID: 'REWAMEXFL-abcdef',
+                    tokenID: 'REWAMOAFL-abcdef',
                     nonce: 0,
                     amount: '1000000000000',
                 },
                 {
-                    tokenID: 'REWAMEXFL-abcdef',
+                    tokenID: 'REWAMOAFL-abcdef',
                     nonce: 0,
                     amount: '1000000000000',
                 },
@@ -816,7 +816,7 @@ describe('FarmService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.farms['v1.3'].mergeFarmTokensMultiplier * 2,
             data: encodeTransactionData(
-                'MultiDCDTNFTTransfer@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42@02@REWAMEXFL-abcdef@@01000000000000@REWAMEXFL-abcdef@@01000000000000@mergeFarmTokens',
+                'MultiDCDTNFTTransfer@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42@02@REWAMOAFL-abcdef@@01000000000000@REWAMOAFL-abcdef@@01000000000000@mergeFarmTokens',
             ),
             chainID: drtConfig.chainID,
             version: 2,

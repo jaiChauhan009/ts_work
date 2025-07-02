@@ -34,7 +34,7 @@ urls:
   providers: 'https://internal-delegation-api.dharitri.org/providers'
   delegation: 'https://delegation-api.dharitri.org'
   media: 'https://media.dharitri.org'
-  maiarId: 'https://id-api.dharitri.org'
+  durianId: 'https://id-api.dharitri.org'
 database:
   enabled: false
   url: 'mongodb://127.0.0.1:27017/api?authSource=admin'
@@ -74,5 +74,5 @@ test:
   mockTokens: true
   mockPath: './src/test/mocks/'
 transaction-action:
-  mex:
-    microServiceUrl: 'https://graph.xexchange.com/graphql'
+  moa:
+    microServiceUrl: 'https://graph.dharitrix.com/graphql'

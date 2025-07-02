@@ -1,78 +1,78 @@
 import { BadRequestException, forwardRef, Inject, Injectable } from "@nestjs/common";
 import { CacheInfo } from "src/utils/cache.info";
-import { MexToken } from "./entities/mex.token";
-import { MexPairService } from "./mex.pair.service";
-import { MexPair } from "./entities/mex.pair";
+import { MoaToken } from "./entities/moa.token";
+import { MoaPairService } from "./moa.pair.service";
+import { MoaPair } from "./entities/moa.pair";
 import { ApiConfigService } from "src/common/api-config/api.config.service";
-import { MexFarmService } from "./mex.farm.service";
-import { MexSettingsService } from "./mex.settings.service";
+import { MoaFarmService } from "./moa.farm.service";
+import { MoaSettingsService } from "./moa.settings.service";
 import { Constants } from "@terradharitri/sdk-nestjs-common";
 import { CacheService } from "@terradharitri/sdk-nestjs-cache";
 import { OriginLogger } from "@terradharitri/sdk-nestjs-common";
 import { QueryPagination } from "src/common/entities/query.pagination";
-import { MexTokenType } from "./entities/mex.token.type";
+import { MoaTokenType } from "./entities/moa.token.type";
 import { GraphQlService } from "src/common/graphql/graphql.service";
 import { tokensQuery } from "./graphql/tokens.query";
 
 @Injectable()
-export class MexTokenService {
-  private readonly logger = new OriginLogger(MexTokenService.name);
+export class MoaTokenService {
+  private readonly logger = new OriginLogger(MoaTokenService.name);
 
   constructor(
     private readonly cachingService: CacheService,
     private readonly apiConfigService: ApiConfigService,
-    private readonly mexPairService: MexPairService,
-    @Inject(forwardRef(() => MexFarmService))
-    private readonly mexFarmService: MexFarmService,
-    private readonly mexSettingsService: MexSettingsService,
+    private readonly drtPairService: MoaPairService,
+    @Inject(forwardRef(() => MoaFarmService))
+    private readonly moaFarmService: MoaFarmService,
+    private readonly moaSettingsService: MoaSettingsService,
     private readonly graphQlService: GraphQlService,
   ) { }
 
-  async refreshMexTokens(): Promise<void> {
-    const tokens = await this.getAllMexTokensRaw();
-    await this.cachingService.setRemote(CacheInfo.MexTokens.key, tokens, CacheInfo.MexTokens.ttl);
-    this.cachingService.setLocal(CacheInfo.MexTokens.key, tokens, Constants.oneSecond() * 30);
+  async refreshMoaTokens(): Promise<void> {
+    const tokens = await this.getAllMoaTokensRaw();
+    await this.cachingService.setRemote(CacheInfo.MoaTokens.key, tokens, CacheInfo.MoaTokens.ttl);
+    this.cachingService.setLocal(CacheInfo.MoaTokens.key, tokens, Constants.oneSecond() * 30);
 
-    const tokenTypes = await this.getAllMexTokenTypesRaw();
-    await this.cachingService.setRemote(CacheInfo.MexTokenTypes.key, tokenTypes, CacheInfo.MexTokenTypes.ttl);
-    this.cachingService.setLocal(CacheInfo.MexTokenTypes.key, tokenTypes, Constants.oneSecond() * 30);
+    const tokenTypes = await this.getAllMoaTokenTypesRaw();
+    await this.cachingService.setRemote(CacheInfo.MoaTokenTypes.key, tokenTypes, CacheInfo.MoaTokenTypes.ttl);
+    this.cachingService.setLocal(CacheInfo.MoaTokenTypes.key, tokenTypes, Constants.oneSecond() * 30);
 
-    const indexedTokens = await this.getIndexedMexTokensRaw();
-    await this.cachingService.setRemote(CacheInfo.MexTokensIndexed.key, indexedTokens, CacheInfo.MexTokensIndexed.ttl);
-    this.cachingService.setLocal(CacheInfo.MexTokensIndexed.key, indexedTokens, Constants.oneSecond() * 30);
+    const indexedTokens = await this.getIndexedMoaTokensRaw();
+    await this.cachingService.setRemote(CacheInfo.MoaTokensIndexed.key, indexedTokens, CacheInfo.MoaTokensIndexed.ttl);
+    this.cachingService.setLocal(CacheInfo.MoaTokensIndexed.key, indexedTokens, Constants.oneSecond() * 30);
 
-    const indexedPrices = await this.getMexPricesRaw();
-    await this.cachingService.setRemote(CacheInfo.MexPrices.key, indexedPrices, CacheInfo.MexPrices.ttl);
-    this.cachingService.setLocal(CacheInfo.MexPrices.key, indexedPrices, Constants.oneSecond() * 30);
+    const indexedPrices = await this.getMoaPricesRaw();
+    await this.cachingService.setRemote(CacheInfo.MoaPrices.key, indexedPrices, CacheInfo.MoaPrices.ttl);
+    this.cachingService.setLocal(CacheInfo.MoaPrices.key, indexedPrices, Constants.oneSecond() * 30);
   }
 
-  async getMexTokens(queryPagination: QueryPagination): Promise<MexToken[]> {
+  async getMoaTokens(queryPagination: QueryPagination): Promise<MoaToken[]> {
     const { from, size } = queryPagination;
-    let allMexTokens = await this.getAllMexTokens();
-    allMexTokens = JSON.parse(JSON.stringify(allMexTokens));
+    let allMoaTokens = await this.getAllMoaTokens();
+    allMoaTokens = JSON.parse(JSON.stringify(allMoaTokens));
 
-    return allMexTokens.slice(from, from + size);
+    return allMoaTokens.slice(from, from + size);
   }
 
-  async getMexTokenByIdentifier(identifier: string): Promise<MexToken | undefined> {
-    const mexTokens = await this.getAllMexTokens();
-    return mexTokens.find(x => x.id === identifier);
+  async getMoaTokenByIdentifier(identifier: string): Promise<MoaToken | undefined> {
+    const moaTokens = await this.getAllMoaTokens();
+    return moaTokens.find(x => x.id === identifier);
   }
 
-  async getMexPrices(): Promise<Record<string, { price: number, isToken: boolean }>> {
+  async getMoaPrices(): Promise<Record<string, { price: number, isToken: boolean }>> {
     return await this.cachingService.getOrSet(
-      CacheInfo.MexPrices.key,
-      async () => await this.getMexPricesRaw(),
-      CacheInfo.MexPrices.ttl,
+      CacheInfo.MoaPrices.key,
+      async () => await this.getMoaPricesRaw(),
+      CacheInfo.MoaPrices.ttl,
       Constants.oneSecond() * 30
     );
   }
 
-  async getMexPricesRaw(): Promise<Record<string, { price: number, isToken: boolean }>> {
+  async getMoaPricesRaw(): Promise<Record<string, { price: number, isToken: boolean }>> {
     try {
       const result: Record<string, { price: number, isToken: boolean }> = {};
 
-      const tokens = await this.getAllMexTokens();
+      const tokens = await this.getAllMoaTokens();
       for (const token of tokens) {
         result[token.id] = {
           price: token.price,
@@ -80,7 +80,7 @@ export class MexTokenService {
         };
       }
 
-      const pairs = await this.mexPairService.getAllMexPairs();
+      const pairs = await this.drtPairService.getAllMoaPairs();
       for (const pair of pairs) {
         result[pair.id] = {
           price: pair.price,
@@ -88,7 +88,7 @@ export class MexTokenService {
         };
       }
 
-      const farms = await this.mexFarmService.getAllMexFarms();
+      const farms = await this.moaFarmService.getAllMoaFarms();
       for (const farm of farms) {
         result[farm.id] = {
           price: farm.price,
@@ -96,22 +96,22 @@ export class MexTokenService {
         };
       }
 
-      const settings = await this.mexSettingsService.getSettings();
+      const settings = await this.moaSettingsService.getSettings();
       if (settings) {
-        const mexToken = tokens.find(x => x.symbol === 'MEX');
-        if (mexToken) {
-          const lkmexIdentifier = settings.lockedAssetIdentifier;
-          if (lkmexIdentifier) {
-            result[lkmexIdentifier] = {
-              price: mexToken.price,
+        const moaToken = tokens.find(x => x.symbol === 'MOA');
+        if (moaToken) {
+          const lkmoaIdentifier = settings.lockedAssetIdentifier;
+          if (lkmoaIdentifier) {
+            result[lkmoaIdentifier] = {
+              price: moaToken.price,
               isToken: false,
             };
           }
 
-          const xmexIdentifier = settings.lockedAssetIdentifierV2;
-          if (xmexIdentifier) {
-            result[xmexIdentifier] = {
-              price: mexToken.price,
+          const xmoaIdentifier = settings.lockedAssetIdentifierV2;
+          if (xmoaIdentifier) {
+            result[xmoaIdentifier] = {
+              price: moaToken.price,
               isToken: false,
             };
           }
@@ -120,29 +120,29 @@ export class MexTokenService {
 
       return result;
     } catch (error) {
-      this.logger.error('An error occurred while fetching mex prices');
+      this.logger.error('An error occurred while fetching moa prices');
       this.logger.error(error);
       return {};
     }
   }
 
-  async getIndexedMexTokens(): Promise<Record<string, MexToken>> {
+  async getIndexedMoaTokens(): Promise<Record<string, MoaToken>> {
     if (!this.apiConfigService.getExchangeServiceUrl()) {
       return {};
     }
 
     return await this.cachingService.getOrSet(
-      CacheInfo.MexTokensIndexed.key,
-      async () => await this.getIndexedMexTokensRaw(),
-      CacheInfo.MexTokensIndexed.ttl,
+      CacheInfo.MoaTokensIndexed.key,
+      async () => await this.getIndexedMoaTokensRaw(),
+      CacheInfo.MoaTokensIndexed.ttl,
       Constants.oneSecond() * 30
     );
   }
 
-  async getIndexedMexTokensRaw(): Promise<Record<string, MexToken>> {
-    const result: Record<string, MexToken> = {};
+  async getIndexedMoaTokensRaw(): Promise<Record<string, MoaToken>> {
+    const result: Record<string, MoaToken> = {};
 
-    const tokens = await this.getAllMexTokens();
+    const tokens = await this.getAllMoaTokens();
     for (const token of tokens) {
       result[token.id] = token;
     }
@@ -150,56 +150,56 @@ export class MexTokenService {
     return result;
   }
 
-  async getMexTokensCount(): Promise<number> {
-    const mexTokens = await this.getAllMexTokens();
+  async getMoaTokensCount(): Promise<number> {
+    const moaTokens = await this.getAllMoaTokens();
 
-    return mexTokens.length;
+    return moaTokens.length;
   }
 
-  private async getAllMexTokens(): Promise<MexToken[]> {
+  private async getAllMoaTokens(): Promise<MoaToken[]> {
     if (!this.apiConfigService.getExchangeServiceUrl()) {
       return [];
     }
 
     return await this.cachingService.getOrSet(
-      CacheInfo.MexTokens.key,
-      async () => await this.getAllMexTokensRaw(),
-      CacheInfo.MexTokens.ttl,
+      CacheInfo.MoaTokens.key,
+      async () => await this.getAllMoaTokensRaw(),
+      CacheInfo.MoaTokens.ttl,
       Constants.oneSecond() * 30
     );
   }
 
-  private async getAllMexTokensRaw(): Promise<MexToken[]> {
-    const pairs = await this.mexPairService.getAllMexPairs();
+  private async getAllMoaTokensRaw(): Promise<MoaToken[]> {
+    const pairs = await this.drtPairService.getAllMoaPairs();
 
-    const mexTokens: MexToken[] = [];
+    const moaTokens: MoaToken[] = [];
     for (const pair of pairs) {
       if (pair.baseSymbol === 'WREWA' && pair.quoteSymbol === "USDC") {
-        const wrewaToken = new MexToken();
+        const wrewaToken = new MoaToken();
         wrewaToken.id = pair.baseId;
         wrewaToken.symbol = pair.baseSymbol;
         wrewaToken.name = pair.baseName;
         wrewaToken.price = pair.basePrice;
         wrewaToken.previous24hPrice = pair.basePrevious24hPrice;
         wrewaToken.previous24hVolume = pair.volume24h;
-        wrewaToken.tradesCount = this.computeTradesCountForMexToken(wrewaToken, pairs);
-        mexTokens.push(wrewaToken);
+        wrewaToken.tradesCount = this.computeTradesCountForMoaToken(wrewaToken, pairs);
+        moaTokens.push(wrewaToken);
       }
 
-      const mexToken = this.getMexToken(pair);
-      if (!mexToken) {
+      const moaToken = this.getMoaToken(pair);
+      if (!moaToken) {
         continue;
       }
 
-      mexToken.tradesCount = this.computeTradesCountForMexToken(mexToken, pairs);
+      moaToken.tradesCount = this.computeTradesCountForMoaToken(moaToken, pairs);
 
-      mexTokens.push(mexToken);
+      moaTokens.push(moaToken);
     }
 
-    return mexTokens.distinct(x => x.id);
+    return moaTokens.distinct(x => x.id);
   }
 
-  private getMexToken(pair: MexPair): MexToken | null {
+  private getMoaToken(pair: MoaPair): MoaToken | null {
     if (pair.baseSymbol === 'WREWA' && pair.quoteSymbol === "USDC") {
       return {
         id: pair.quoteId,
@@ -239,24 +239,24 @@ export class MexTokenService {
     return null;
   }
 
-  async getAllMexTokenTypes(): Promise<MexTokenType[]> {
+  async getAllMoaTokenTypes(): Promise<MoaTokenType[]> {
     if (!this.apiConfigService.getExchangeServiceUrl()) {
       return [];
     }
 
     return await this.cachingService.getOrSet(
-      CacheInfo.MexTokenTypes.key,
-      async () => await this.getAllMexTokenTypesRaw(),
-      CacheInfo.MexTokenTypes.ttl,
+      CacheInfo.MoaTokenTypes.key,
+      async () => await this.getAllMoaTokenTypesRaw(),
+      CacheInfo.MoaTokenTypes.ttl,
       Constants.oneSecond() * 30
     );
   }
 
-  private async getAllMexTokenTypesRaw(): Promise<MexTokenType[]> {
+  private async getAllMoaTokenTypesRaw(): Promise<MoaTokenType[]> {
     try {
-      const settings = await this.mexSettingsService.getSettings();
+      const settings = await this.moaSettingsService.getSettings();
       if (!settings) {
-        throw new BadRequestException('Could not fetch MEX tokens');
+        throw new BadRequestException('Could not fetch MOA tokens');
       }
 
       const result: any = await this.graphQlService.getExchangeServiceData(tokensQuery);
@@ -264,19 +264,19 @@ export class MexTokenService {
         return [];
       }
 
-      return result.tokens.map((token: MexTokenType) => ({
+      return result.tokens.map((token: MoaTokenType) => ({
         identifier: token.identifier,
         type: token.type.toLowerCase(),
       }));
     } catch (error) {
-      this.logger.error('An error occurred while fetching all mex token types');
+      this.logger.error('An error occurred while fetching all moa token types');
       this.logger.error(error);
       return [];
     }
   }
 
-  private computeTradesCountForMexToken(mexToken: MexToken, filteredPairs: MexPair[]): number {
-    const pairs = filteredPairs.filter(x => x.baseId === mexToken.id || x.quoteId === mexToken.id);
+  private computeTradesCountForMoaToken(moaToken: MoaToken, filteredPairs: MoaPair[]): number {
+    const pairs = filteredPairs.filter(x => x.baseId === moaToken.id || x.quoteId === moaToken.id);
     const computeResult = pairs.sum(pair => pair.tradesCount ?? 0);
     return computeResult;
   }

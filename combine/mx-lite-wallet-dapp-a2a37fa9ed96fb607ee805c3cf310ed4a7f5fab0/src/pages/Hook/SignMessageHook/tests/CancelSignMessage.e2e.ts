@@ -5,7 +5,7 @@ import { getByDataTestId, loginWithKeystore } from 'utils/testUtils/puppeteer';
 describe('Cancel sign message tests', () => {
   it('should cancel sign message and redirect to callbackUrl with status cancelled', async () => {
     await page.goto(
-      `${WALLET_SOURCE_ORIGIN}/hook/sign-message?message=test&callbackUrl=https://devnet.xexchange.com`,
+      `${WALLET_SOURCE_ORIGIN}/hook/sign-message?message=test&callbackUrl=https://devnet.dharitrix.com`,
       {
         waitUntil: 'domcontentloaded'
       }
@@ -20,7 +20,7 @@ describe('Cancel sign message tests', () => {
     await page.click(getByDataTestId(DataTestIdsEnum.cancelSignMessageBtn));
 
     expect(page.url()).toMatch(
-      `https://devnet.xexchange.com/?address=${keystoreAccount.address}&status=cancelled`
+      `https://devnet.dharitrix.com/?address=${keystoreAccount.address}&status=cancelled`
     );
   });
 });

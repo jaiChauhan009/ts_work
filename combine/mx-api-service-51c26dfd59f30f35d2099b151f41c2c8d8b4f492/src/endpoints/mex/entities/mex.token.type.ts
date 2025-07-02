@@ -1,14 +1,14 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { MexPairType } from './mex.pair.type';
+import { MoaPairType } from './moa.pair.type';
 
-export class MexTokenType {
-  constructor(init?: Partial<MexTokenType>) {
+export class MoaTokenType {
+  constructor(init?: Partial<MoaTokenType>) {
     Object.assign(this, init);
   }
 
   @ApiProperty({ type: String, example: '' })
   identifier: string = '';
 
-  @ApiProperty({ enum: MexPairType })
-  type: MexPairType = MexPairType.experimental;
+  @ApiProperty({ enum: MoaPairType })
+  type: MoaPairType = MoaPairType.experimental;
 }

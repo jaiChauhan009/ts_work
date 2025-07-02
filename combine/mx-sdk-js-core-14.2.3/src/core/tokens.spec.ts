@@ -75,7 +75,7 @@ describe("test tokens and token computer", async () => {
 
 describe("test token transfer", () => {
     it("should work with custom token type", () => {
-        const identifier = "MEXFARML-28d646";
+        const identifier = "MOAFARML-28d646";
         const nonce = 12345678n;
         const transfer = new TokenTransfer({
             token: new Token({ identifier, nonce }),

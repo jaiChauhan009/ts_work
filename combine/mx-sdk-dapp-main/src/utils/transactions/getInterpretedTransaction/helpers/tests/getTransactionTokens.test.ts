@@ -23,7 +23,7 @@ describe('getTransactionTokens', () => {
       ...baseTransactionMock,
       action: {
         name: TransactionActionsEnum.swap,
-        category: TransactionActionCategoryEnum.mex,
+        category: TransactionActionCategoryEnum.moa,
         description: 'Swap 1 WREWA for a minimum of 45.117988 USDC',
         arguments: {
           transfers: [

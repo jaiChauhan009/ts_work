@@ -1,7 +1,7 @@
 import { CallToolResult } from "@modelcontextprotocol/sdk/types.js";
 
 export async function getNetwork(): Promise<CallToolResult> {
-  const network = process.env.MVX_NETWORK;
+  const network = process.env.DRT_NETWORK;
 
   return {
     content: [

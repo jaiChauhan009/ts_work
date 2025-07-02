@@ -6,7 +6,7 @@ import { CacheService } from "@terradharitri/sdk-nestjs-cache";
 import { Constants } from '@terradharitri/sdk-nestjs-common';
 import { TokenHelpers } from '../../utils/token.helpers';
 import { GatewayService } from '../gateway/gateway.service';
-import { MexSettingsService } from 'src/endpoints/mex/mex.settings.service';
+import { MoaSettingsService } from 'src/endpoints/moa/moa.settings.service';
 import { LockedTokensInterface } from './entities/locked.tokens.interface';
 import { UnlockMileStoneModel } from './entities/unlock.milestone.model';
 import { LockedAssetAttributes, UnlockMilestone, LockedTokenAttributes } from '@terradharitri/sdk-exchange';
@@ -18,16 +18,16 @@ export class LockedAssetService {
     private readonly vmQueryService: VmQueryService,
     private readonly cachingService: CacheService,
     private readonly gatewayService: GatewayService,
-    private readonly mexSettingsService: MexSettingsService,
+    private readonly moaSettingsService: MoaSettingsService,
   ) { }
 
-  async getLkmexUnlockSchedule(identifier: string, attributes: string): Promise<UnlockMileStoneModel[] | undefined> {
+  async getLkmoaUnlockSchedule(identifier: string, attributes: string): Promise<UnlockMileStoneModel[] | undefined> {
     const lockedTokenIds = await this.getLockedTokens();
     if (!lockedTokenIds) {
       return undefined;
     }
 
-    if (!lockedTokenIds.lkmex || !identifier.startsWith(lockedTokenIds.lkmex)) {
+    if (!lockedTokenIds.lkmoa || !identifier.startsWith(lockedTokenIds.lkmoa)) {
       return undefined;
     }
 
@@ -42,13 +42,13 @@ export class LockedAssetService {
     return await this.getUnlockMilestones(lockedAssetAttributes.unlockSchedule, withActivationNonce);
   }
 
-  async getXmexUnlockEpoch(identifier: string, attributes: string): Promise<number | undefined> {
+  async getXmoaUnlockEpoch(identifier: string, attributes: string): Promise<number | undefined> {
     const lockedTokenIds = await this.getLockedTokens();
     if (!lockedTokenIds) {
       return undefined;
     }
 
-    if (!lockedTokenIds.xmex || !identifier.startsWith(lockedTokenIds.xmex)) {
+    if (!lockedTokenIds.xmoa || !identifier.startsWith(lockedTokenIds.xmoa)) {
       return undefined;
     }
 
@@ -66,7 +66,7 @@ export class LockedAssetService {
   }
 
   private async getExtendedAttributesActivationNonceRaw(): Promise<number> {
-    const settings = await this.mexSettingsService.getSettings();
+    const settings = await this.moaSettingsService.getSettings();
     if (!settings) {
       return 0;
     }
@@ -96,7 +96,7 @@ export class LockedAssetService {
   }
 
   private async getInitEpochRaw(): Promise<number> {
-    const settings = await this.mexSettingsService.getSettings();
+    const settings = await this.moaSettingsService.getSettings();
     if (!settings) {
       return 0;
     }
@@ -125,17 +125,17 @@ export class LockedAssetService {
   }
 
   private async getLockedTokensRaw(): Promise<LockedTokensInterface> {
-    const settings = await this.mexSettingsService.getSettings();
+    const settings = await this.moaSettingsService.getSettings();
     if (!settings) {
       return {
-        lkmex: '',
-        xmex: '',
+        lkmoa: '',
+        xmoa: '',
       };
     }
 
     return {
-      lkmex: settings.lockedAssetIdentifier,
-      xmex: settings.lockedAssetIdentifierV2,
+      lkmoa: settings.lockedAssetIdentifier,
+      xmoa: settings.lockedAssetIdentifierV2,
     };
   }
 

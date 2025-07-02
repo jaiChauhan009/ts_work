@@ -55,7 +55,7 @@ import { NodeStatusRaw } from '../nodes/entities/node.status';
 import { AccountKeyFilter } from './entities/account.key.filter';
 import { ScamType } from 'src/common/entities/scam-type.enum';
 import { DeepHistoryInterceptor } from 'src/interceptors/deep-history.interceptor';
-import { MexPairType } from '../mex/entities/mex.pair.type';
+import { MoaPairType } from '../moa/entities/moa.pair.type';
 import { NftSubType } from '../nfts/entities/nft.sub.type';
 import { AccountContract } from './entities/account.contract';
 import { AccountFetchOptions } from './entities/account.fetch.options';
@@ -265,7 +265,7 @@ export class AccountController {
   @ApiQuery({ name: 'identifiers', description: 'A comma-separated list of identifiers to filter by', required: false, type: String })
   @ApiQuery({ name: 'includeMetaDCDT', description: 'Include MetaDCDTs in response', required: false, type: Boolean })
   @ApiQuery({ name: 'timestamp', description: 'Retrieve entries from timestamp', required: false, type: Number })
-  @ApiQuery({ name: 'mexPairType', description: 'Token Mex Pair', required: false, enum: MexPairType })
+  @ApiQuery({ name: 'drtPairType', description: 'Token Moa Pair', required: false, enum: MoaPairType })
   @ApiOkResponse({ type: [TokenWithBalance] })
   async getAccountTokens(
     @Param('address', ParseAddressPipe) address: string,
@@ -279,10 +279,10 @@ export class AccountController {
     @Query('identifiers', ParseArrayPipe) identifiers?: string[],
     @Query('includeMetaDCDT', ParseBoolPipe) includeMetaDCDT?: boolean,
     @Query('timestamp', ParseIntPipe) _timestamp?: number,
-    @Query('mexPairType', new ParseEnumArrayPipe(MexPairType)) mexPairType?: MexPairType[],
+    @Query('drtPairType', new ParseEnumArrayPipe(MoaPairType)) drtPairType?: MoaPairType[],
   ): Promise<TokenWithBalance[]> {
     try {
-      return await this.tokenService.getTokensForAddress(address, new QueryPagination({ from, size }), new TokenFilter({ type, subType, search, name, identifier, identifiers, includeMetaDCDT, mexPairType }));
+      return await this.tokenService.getTokensForAddress(address, new QueryPagination({ from, size }), new TokenFilter({ type, subType, search, name, identifier, identifiers, includeMetaDCDT, drtPairType }));
     } catch (error) {
       this.logger.error(`Error in getAccountTokens for address ${address}`);
       this.logger.error(error);
@@ -301,7 +301,7 @@ export class AccountController {
   @ApiQuery({ name: 'identifiers', description: 'A comma-separated list of identifiers to filter by', required: false, type: String })
   @ApiQuery({ name: 'includeMetaDCDT', description: 'Include MetaDCDTs in response', required: false, type: Boolean })
   @ApiQuery({ name: 'timestamp', description: 'Retrieve entries from timestamp', required: false, type: Number })
-  @ApiQuery({ name: 'mexPairType', description: 'Token Mex Pair', required: false, enum: MexPairType })
+  @ApiQuery({ name: 'drtPairType', description: 'Token Moa Pair', required: false, enum: MoaPairType })
   @ApiOkResponse({ type: Number })
   async getTokenCount(
     @Param('address', ParseAddressPipe) address: string,
@@ -312,10 +312,10 @@ export class AccountController {
     @Query('identifiers', ParseArrayPipe) identifiers?: string[],
     @Query('includeMetaDCDT', ParseBoolPipe) includeMetaDCDT?: boolean,
     @Query('timestamp', ParseIntPipe) _timestamp?: number,
-    @Query('mexPairType', new ParseEnumArrayPipe(MexPairType)) mexPairType?: MexPairType[],
+    @Query('drtPairType', new ParseEnumArrayPipe(MoaPairType)) drtPairType?: MoaPairType[],
   ): Promise<number> {
     try {
-      return await this.tokenService.getTokenCountForAddress(address, new TokenFilter({ type, search, name, identifier, identifiers, includeMetaDCDT, mexPairType }));
+      return await this.tokenService.getTokenCountForAddress(address, new TokenFilter({ type, search, name, identifier, identifiers, includeMetaDCDT, drtPairType }));
     } catch (error) {
       this.logger.error(`Error in getTokenCount for address ${address}`);
       this.logger.error(error);
@@ -336,10 +336,10 @@ export class AccountController {
     @Query('identifiers', ParseArrayPipe) identifiers?: string[],
     @Query('includeMetaDCDT', ParseBoolPipe) includeMetaDCDT?: boolean,
     @Query('timestamp', ParseIntPipe) _timestamp?: number,
-    @Query('mexPairType', new ParseEnumArrayPipe(MexPairType)) mexPairType?: MexPairType[],
+    @Query('drtPairType', new ParseEnumArrayPipe(MoaPairType)) drtPairType?: MoaPairType[],
   ): Promise<number> {
     try {
-      return await this.tokenService.getTokenCountForAddress(address, new TokenFilter({ type, search, name, identifier, identifiers, includeMetaDCDT, mexPairType }));
+      return await this.tokenService.getTokenCountForAddress(address, new TokenFilter({ type, search, name, identifier, identifiers, includeMetaDCDT, drtPairType }));
     } catch (error) {
       this.logger.error(`Error in getTokenCount for address ${address}`);
       this.logger.error(error);

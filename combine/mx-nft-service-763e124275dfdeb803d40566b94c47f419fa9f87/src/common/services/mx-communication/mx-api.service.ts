@@ -376,7 +376,7 @@ export class MxApiService {
   }
 
   async getAllDexTokens(): Promise<Token[]> {
-    const allTokens = await this.doGetGeneric(this.getAllDexTokens.name, 'mex/tokens?size=10000');
+    const allTokens = await this.doGetGeneric(this.getAllDexTokens.name, 'moa/tokens?size=10000');
     return allTokens.map((t) => Token.fromMxApiDexToken(t));
   }
 

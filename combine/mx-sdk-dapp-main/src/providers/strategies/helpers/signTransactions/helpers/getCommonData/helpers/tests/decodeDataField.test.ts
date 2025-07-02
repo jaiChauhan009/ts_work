@@ -13,7 +13,7 @@ const DECODED_DATA = {
   },
   [DecodeMethodEnum.text]: {
     displayValue:
-      'MultiDCDTNFTTransfer@\x00\x00\x00\x00\x00\x00\x00\x00\x05\x00\x13�׮J�7�漳29J@�tn�|�@\x02@WREWA-a28c59@@��#\x04��\x00\x00@MEX-a659d0@@\x07�]n14~��\x11\x1D@addLiquidity@�c݌,^\x00\x00@\x07���5�?�\x0F�',
+      'MultiDCDTNFTTransfer@\x00\x00\x00\x00\x00\x00\x00\x00\x05\x00\x13�׮J�7�漳29J@�tn�|�@\x02@WREWA-a28c59@@��#\x04��\x00\x00@MOA-a659d0@@\x07�]n14~��\x11\x1D@addLiquidity@�c݌,^\x00\x00@\x07���5�?�\x0F�',
     highlight: 'WREWA-a28c59@@'
   },
   [DecodeMethodEnum.decimal]: {
@@ -23,7 +23,7 @@ const DECODED_DATA = {
   },
   [DecodeMethodEnum.smart]: {
     displayValue:
-      'MultiDCDTNFTTransfer@drt1qqqqqqqqqqqqqpgqzw0d0tj25qme9e4ukverjjjqle6xamay0n4sflc0xk@\x02@WREWA-a28c59@@10000000000000000000@MEX-a659d0@@9352009123466089130430749@addLiquidity@9900000000000000000@9258489032231428239126441',
+      'MultiDCDTNFTTransfer@drt1qqqqqqqqqqqqqpgqzw0d0tj25qme9e4ukverjjjqle6xamay0n4sflc0xk@\x02@WREWA-a28c59@@10000000000000000000@MOA-a659d0@@9352009123466089130430749@addLiquidity@9900000000000000000@9258489032231428239126441',
     highlight: 'WREWA-a28c59@@10000000000000000000'
   }
 };

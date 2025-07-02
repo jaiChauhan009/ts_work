@@ -9,7 +9,7 @@ import { ProxyFarmAbiService } from '../services/proxy-farm/proxy.farm.abi.servi
 
 export class ProxyAbiServiceMock implements IProxyAbiService {
     async lockedAssetTokenID(proxyAddress: string): Promise<string[]> {
-        return ['LKMEX-123456'];
+        return ['LKMOA-123456'];
     }
 }
 

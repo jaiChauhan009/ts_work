@@ -24,7 +24,7 @@ describe('Escrow Events', () => {
             lockedFunds: {
                 funds: [
                     {
-                        tokenIdentifier: 'XMEX-fda355',
+                        tokenIdentifier: 'XMOA-fda355',
                         tokenNonce: 1,
                         amount: '100000000000000000000000',
                     },
@@ -46,12 +46,12 @@ describe('Escrow Events', () => {
             lockedFunds: {
                 funds: [
                     {
-                        tokenIdentifier: 'XMEX-fda355',
+                        tokenIdentifier: 'XMOA-fda355',
                         tokenNonce: 1,
                         amount: '100000000000000000000000',
                     },
                     {
-                        tokenIdentifier: 'XMEX-fda355',
+                        tokenIdentifier: 'XMOA-fda355',
                         tokenNonce: 1,
                         amount: '100000000000000000000000',
                     },
@@ -77,7 +77,7 @@ describe('Escrow Events', () => {
             lockedFunds: {
                 funds: [
                     {
-                        tokenIdentifier: 'XMEX-fda355',
+                        tokenIdentifier: 'XMOA-fda355',
                         tokenNonce: 1,
                         amount: '100000000000000000000000',
                     },

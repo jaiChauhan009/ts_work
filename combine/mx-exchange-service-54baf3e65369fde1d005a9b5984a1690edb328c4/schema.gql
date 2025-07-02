@@ -1621,7 +1621,7 @@ type Query {
   totalValueLockedUSD: String!
   totalValueStakedUSD: String!
   totalLockedValueUSDFarms: String!
-  totalLockedMexStakedUSD: String!
+  totalLockedMoaStakedUSD: String!
   totalTokenSupply(tokenID: String!): String!
   totalAggregatedRewards(days: Int!): String!
   getFeeTokenBurned(tokenID: String!, time: String!): String!

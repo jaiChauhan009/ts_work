@@ -26,7 +26,7 @@ export class DappConfig {
   @ApiProperty({ type: String, example: '4000' })
   apiTimeout: string = '';
 
-  @ApiProperty({ type: String, example: 'https://maiar.page.link/?apn=com.dharitri.maiar.wallet&isi=1519405832&ibi=com.dharitri.maiar.wallet&link=https://maiar.com/' })
+  @ApiProperty({ type: String, example: 'https://durian.page.link/?apn=com.dharitri.durian.wallet&isi=1519405832&ibi=com.dharitri.durian.wallet&link=https://durian.com/' })
   walletConnectDeepLink: string = '';
 
   @ApiProperty({ type: [String], example: 'https://bridge.walletconnect.org' })

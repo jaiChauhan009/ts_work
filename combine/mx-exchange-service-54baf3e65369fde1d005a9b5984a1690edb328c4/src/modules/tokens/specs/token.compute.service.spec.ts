@@ -64,11 +64,11 @@ describe('TokenComputeService', () => {
         expect(price).toEqual('1');
     });
 
-    it('should compute token price derived REWA for MEX-123456', async () => {
+    it('should compute token price derived REWA for MOA-123456', async () => {
         const service: TokenComputeService =
             module.get<TokenComputeService>(TokenComputeService);
         const price = await service.computeTokenPriceDerivedREWA(
-            'MEX-123456',
+            'MOA-123456',
             [],
         );
         expect(price).toEqual('0.001');

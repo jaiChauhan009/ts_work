@@ -1,15 +1,15 @@
-export class MexSettingsToken {
-  constructor(init?: Partial<MexSettingsToken>) {
+export class MoaSettingsToken {
+  constructor(init?: Partial<MoaSettingsToken>) {
     Object.assign(this, init);
   }
 
   wrewa: string = '';
-  mex: string = '';
+  moa: string = '';
   busd: string = '';
-  rewaMex: string = '';
+  rewaMoa: string = '';
   rewaUsd: string = '';
 
-  mexFarm: string = '';
-  rewaMexFarm: string = '';
+  moaFarm: string = '';
+  rewaMoaFarm: string = '';
   rewaUsdFarm: string = '';
 }

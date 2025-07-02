@@ -7,7 +7,7 @@ import { MetricsCollector } from 'src/utils/metrics.collector';
 import { PerformanceProfiler } from 'src/utils/performance.profiler';
 import { AnalyticsWriteInterface } from '../interfaces/analytics.write.interface';
 import { InjectRepository } from '@nestjs/typeorm';
-import { XExchangeAnalyticsEntity } from './entities/timescaledb.entities';
+import { DharitrixAnalyticsEntity } from './entities/timescaledb.entities';
 import { Repository } from 'typeorm';
 import { IngestRecord } from '../entities/ingest.record';
 
@@ -15,8 +15,8 @@ import { IngestRecord } from '../entities/ingest.record';
 export class TimescaleDBWriteService implements AnalyticsWriteInterface {
     constructor(
         @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: Logger,
-        @InjectRepository(XExchangeAnalyticsEntity)
-        private readonly dexAnalytics: Repository<XExchangeAnalyticsEntity>,
+        @InjectRepository(DharitrixAnalyticsEntity)
+        private readonly dexAnalytics: Repository<DharitrixAnalyticsEntity>,
     ) {}
 
     async ingest({ data, Time }) {
@@ -58,7 +58,7 @@ export class TimescaleDBWriteService implements AnalyticsWriteInterface {
     }
 
     private async writeRecords(
-        records: XExchangeAnalyticsEntity[],
+        records: DharitrixAnalyticsEntity[],
     ): Promise<void> {
         const profiler = new PerformanceProfiler('ingestData');
 
@@ -87,13 +87,13 @@ export class TimescaleDBWriteService implements AnalyticsWriteInterface {
         }
     }
 
-    createRecords({ data, Time }): XExchangeAnalyticsEntity[] {
-        const records: XExchangeAnalyticsEntity[] = [];
+    createRecords({ data, Time }): DharitrixAnalyticsEntity[] {
+        const records: DharitrixAnalyticsEntity[] = [];
         Object.keys(data).forEach((series) => {
             Object.keys(data[series]).forEach((key) => {
                 const value = data[series][key].toString();
                 records.push(
-                    new XExchangeAnalyticsEntity({
+                    new DharitrixAnalyticsEntity({
                         series,
                         key,
                         value,
@@ -107,9 +107,9 @@ export class TimescaleDBWriteService implements AnalyticsWriteInterface {
 
     private convertRecordsToDataAPIRecords(
         Records: IngestRecord[],
-    ): XExchangeAnalyticsEntity[] {
+    ): DharitrixAnalyticsEntity[] {
         return Records.map((record) => {
-            return new XExchangeAnalyticsEntity({
+            return new DharitrixAnalyticsEntity({
                 timestamp: moment.unix(record.timestamp).toDate(),
                 series: record.series,
                 key: record.key,

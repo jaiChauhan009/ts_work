@@ -76,7 +76,7 @@ describe('StakingService', () => {
             farmAddress:
                 'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqescr4954',
             liquidity: '1000000000000000',
-            identifier: 'MEXFARML-772223-14',
+            identifier: 'MOAFARML-772223-14',
             attributes:
                 'AAAAAAAAAAAAAAQUAAAAAAAABBQAAAAMBP50cQa8hndHG4AAAAAAAAAAAAwE/nRxBryGd0cbgAA=',
             vmQuery: false,
@@ -89,7 +89,7 @@ describe('StakingService', () => {
                 compoundedReward: '0',
                 currentFarmAmount:
                     '519205458813209018315265407815173060004346493743728287017479820327455628280230924139593728',
-                identifier: 'MEXFARML-772223-14',
+                identifier: 'MOAFARML-772223-14',
                 rewardPerShare: '0',
                 type: 'stakingFarmToken',
             },
@@ -105,7 +105,7 @@ describe('StakingService', () => {
                 farmAddress:
                     'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqescr4954',
                 liquidity: '1000000000000000',
-                identifier: 'MEXFARML-772223-14',
+                identifier: 'MOAFARML-772223-14',
                 attributes:
                     'AAAAAAAAAAAAAAQUAAAAAAAABBQAAAAMBP50cQa8hndHG4AAAAAAAAAAAAwE/nRxBryGd0cbgAA=',
                 vmQuery: false,
@@ -120,7 +120,7 @@ describe('StakingService', () => {
                     compoundedReward: '0',
                     currentFarmAmount:
                         '519205458813209018315265407815173060004346493743728287017479820327455628280230924139593728',
-                    identifier: 'MEXFARML-772223-14',
+                    identifier: 'MOAFARML-772223-14',
                     rewardPerShare: '0',
                     type: 'stakingFarmToken',
                 },

@@ -424,7 +424,7 @@ export class PositionCreatorTransactionResolver {
 
         const swapRoute = await this.posCreatorCompute.computeSingleTokenInput(
             dcdtTokenPayment,
-            constantsConfig.MEX_TOKEN_ID,
+            constantsConfig.MOA_TOKEN_ID,
             tolerance,
         );
 

@@ -19,7 +19,7 @@ describe("test factory", () => {
     });
 
     it("should create lists of token identifiers", () => {
-        let identifiers = ["RIDE-7d18e9", "MEX-455c57"];
+        let identifiers = ["RIDE-7d18e9", "MOA-455c57"];
         let list = createListOfTokenIdentifiers(identifiers);
         assert.deepEqual(list.getType(), new ListType(new TokenIdentifierType()));
         assert.deepEqual(list.valueOf(), identifiers);

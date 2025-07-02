@@ -176,9 +176,9 @@ describe('UserService', () => {
             ),
         ).toEqual([
             new UserToken({
-                identifier: 'MEX-123456',
-                ticker: 'MEX',
-                name: 'MEX',
+                identifier: 'MOA-123456',
+                ticker: 'MOA',
+                name: 'MOA',
                 type: 'Ecosystem',
                 owner: Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000001',
@@ -224,13 +224,13 @@ describe('UserService', () => {
             ),
         ).toEqual([
             new UserFarmToken({
-                collection: 'REWAMEXFL-abcdef',
-                ticker: 'REWAMEXFL',
+                collection: 'REWAMOAFL-abcdef',
+                ticker: 'REWAMOAFL',
                 name: 'FarmToken',
                 type: 'SemiFungibleDCDT',
                 decimals: 18,
                 balance: '1000000000000000000',
-                identifier: 'REWAMEXFL-abcdef-01',
+                identifier: 'REWAMOAFL-abcdef-01',
                 attributes: 'AAAABQeMCWDbAAAAAAAAAF8CAQ==',
                 creator: Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000021',
@@ -246,7 +246,7 @@ describe('UserService', () => {
                     attributes: 'AAAABQeMCWDbAAAAAAAAAF8CAQ==',
                     originalEnteringEpoch: 1,
                     enteringEpoch: 1,
-                    identifier: 'REWAMEXFL-abcdef-01',
+                    identifier: 'REWAMOAFL-abcdef-01',
                     lockedRewards: false,
                     rewardPerShare: '3000',
                     initialFarmingAmount: '100',

@@ -54,7 +54,7 @@
                     "type": "BigUint"
                 },
                 {
-                    "name": "user_lkmex_staked_amount",
+                    "name": "user_lkmoa_staked_amount",
                     "type": "BigUint"
                 }
             ],

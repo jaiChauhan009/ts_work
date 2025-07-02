@@ -1,7 +1,7 @@
 import { ApiProperty } from "@nestjs/swagger";
 
-export class MexTokenChart {
-  constructor(init?: Partial<MexTokenChart>) {
+export class MoaTokenChart {
+  constructor(init?: Partial<MoaTokenChart>) {
     Object.assign(this, init);
   }
 

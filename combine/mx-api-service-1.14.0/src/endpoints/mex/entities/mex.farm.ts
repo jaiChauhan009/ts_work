@@ -1,14 +1,14 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { MexFarmType } from "./mex.farm.type";
-import { MexToken } from "./mex.token";
+import { MoaFarmType } from "./moa.farm.type";
+import { MoaToken } from "./moa.token";
 
-export class MexFarm {
-  constructor(init?: Partial<MexFarm>) {
+export class MoaFarm {
+  constructor(init?: Partial<MoaFarm>) {
     Object.assign(this, init);
   }
 
-  @ApiProperty({ enum: MexFarmType })
-  type: MexFarmType = MexFarmType.standard;
+  @ApiProperty({ enum: MoaFarmType })
+  type: MoaFarmType = MoaFarmType.standard;
 
   @ApiProperty({ nullable: true, required: false })
   version?: string;
@@ -52,7 +52,7 @@ export class MexFarm {
   @ApiProperty()
   farmedPrice: number = 0;
 
-  static fromFarmQueryResponse(response: any): MexFarm {
+  static fromFarmQueryResponse(response: any): MoaFarm {
     let price = Number(response.farmTokenPriceUSD);
 
     const symbol = response.farmToken.collection.split('-')[0];
@@ -60,45 +60,45 @@ export class MexFarm {
       price = price / (10 ** 12) * 2;
     }
 
-    const mexFarm = new MexFarm();
-    mexFarm.type = MexFarmType.standard;
-    mexFarm.version = response.version;
-    mexFarm.address = response.address;
-    mexFarm.id = response.farmToken.collection;
-    mexFarm.symbol = symbol;
-    mexFarm.name = response.farmToken.name;
-    mexFarm.price = price;
-    mexFarm.farmingId = response.farmingToken.identifier;
-    mexFarm.farmingSymbol = response.farmingToken.identifier.split('-')[0];
-    mexFarm.farmingName = response.farmingToken.name;
-    mexFarm.farmingPrice = Number(response.farmingTokenPriceUSD);
-    mexFarm.farmedId = response.farmedToken.identifier;
-    mexFarm.farmedSymbol = response.farmedToken.identifier.split('-')[0];
-    mexFarm.farmedName = response.farmedToken.name;
-    mexFarm.farmedPrice = Number(response.farmedTokenPriceUSD);
+    const moaFarm = new MoaFarm();
+    moaFarm.type = MoaFarmType.standard;
+    moaFarm.version = response.version;
+    moaFarm.address = response.address;
+    moaFarm.id = response.farmToken.collection;
+    moaFarm.symbol = symbol;
+    moaFarm.name = response.farmToken.name;
+    moaFarm.price = price;
+    moaFarm.farmingId = response.farmingToken.identifier;
+    moaFarm.farmingSymbol = response.farmingToken.identifier.split('-')[0];
+    moaFarm.farmingName = response.farmingToken.name;
+    moaFarm.farmingPrice = Number(response.farmingTokenPriceUSD);
+    moaFarm.farmedId = response.farmedToken.identifier;
+    moaFarm.farmedSymbol = response.farmedToken.identifier.split('-')[0];
+    moaFarm.farmedName = response.farmedToken.name;
+    moaFarm.farmedPrice = Number(response.farmedTokenPriceUSD);
 
-    return mexFarm;
+    return moaFarm;
   }
 
-  static fromStakingFarmResponse(response: any, pairs: Record<string, MexToken>): MexFarm {
+  static fromStakingFarmResponse(response: any, pairs: Record<string, MoaToken>): MoaFarm {
     const price = pairs[response.farmingToken.identifier]?.price ?? 0;
 
-    const mexFarm = new MexFarm();
-    mexFarm.type = MexFarmType.metastaking;
-    mexFarm.address = response.address;
-    mexFarm.id = response.farmToken.collection;
-    mexFarm.symbol = response.farmToken.collection.split('-')[0];
-    mexFarm.name = response.farmToken.name;
-    mexFarm.price = price;
-    mexFarm.farmingId = response.farmingToken.identifier;
-    mexFarm.farmingSymbol = response.farmingToken.identifier.split('-')[0];
-    mexFarm.farmingName = response.farmingToken.name;
-    mexFarm.farmingPrice = price;
-    mexFarm.farmedId = response.farmingToken.identifier;
-    mexFarm.farmedSymbol = response.farmingToken.identifier.split('-')[0];
-    mexFarm.farmedName = response.farmingToken.name;
-    mexFarm.farmedPrice = price;
+    const moaFarm = new MoaFarm();
+    moaFarm.type = MoaFarmType.metastaking;
+    moaFarm.address = response.address;
+    moaFarm.id = response.farmToken.collection;
+    moaFarm.symbol = response.farmToken.collection.split('-')[0];
+    moaFarm.name = response.farmToken.name;
+    moaFarm.price = price;
+    moaFarm.farmingId = response.farmingToken.identifier;
+    moaFarm.farmingSymbol = response.farmingToken.identifier.split('-')[0];
+    moaFarm.farmingName = response.farmingToken.name;
+    moaFarm.farmingPrice = price;
+    moaFarm.farmedId = response.farmingToken.identifier;
+    moaFarm.farmedSymbol = response.farmingToken.identifier.split('-')[0];
+    moaFarm.farmedName = response.farmingToken.name;
+    moaFarm.farmedPrice = price;
 
-    return mexFarm;
+    return moaFarm;
   }
 }

@@ -121,11 +121,11 @@ export class GlobalRewardsService {
             pairAddresses,
         );
 
-        const mexTokenID = constantsConfig.MEX_TOKEN_ID;
+        const moaTokenID = constantsConfig.MOA_TOKEN_ID;
 
-        const mexMetadata = await this.tokenService.tokenMetadata(mexTokenID);
-        const mexPrice = await this.tokenCompute.tokenPriceDerivedUSD(
-            mexTokenID,
+        const moaMetadata = await this.tokenService.tokenMetadata(moaTokenID);
+        const moaPrice = await this.tokenCompute.tokenPriceDerivedUSD(
+            moaTokenID,
         );
 
         for (let i = 0; i < farmAddresses.length; i++) {
@@ -135,8 +135,8 @@ export class GlobalRewardsService {
                 pairAddresses[i],
                 firstTokens[i],
                 secondTokens[i],
-                mexMetadata,
-                mexPrice,
+                moaMetadata,
+                moaPrice,
             );
 
             farmsData.push(farmReward);
@@ -153,8 +153,8 @@ export class GlobalRewardsService {
         pairAddress: string,
         firstToken: DcdtToken,
         secondToken: DcdtToken,
-        mexMetadata: DcdtToken,
-        mexPrice: string,
+        moaMetadata: DcdtToken,
+        moaPrice: string,
     ): Promise<FarmsGlobalRewards> {
         const farmBoostedPercentage =
             await this.farmAbiV2.boostedYieldsRewardsPercenatage(farmAddress);
@@ -187,8 +187,8 @@ export class GlobalRewardsService {
 
         const energyRewardsUSD = computeValueUSD(
             rewardAmount,
-            mexMetadata.decimals,
-            mexPrice,
+            moaMetadata.decimals,
+            moaPrice,
         ).toFixed();
 
         const totalRewardsUSD = new BigNumber(energyRewardsUSD)

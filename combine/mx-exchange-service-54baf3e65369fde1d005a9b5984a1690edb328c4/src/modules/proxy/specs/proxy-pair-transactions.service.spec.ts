@@ -89,7 +89,7 @@ describe('TransactionProxyPairService', () => {
             async () => 'WREWA-123456',
         );
         jest.spyOn(pairAbi, 'secondTokenID').mockImplementation(
-            async () => 'MEX-123456',
+            async () => 'MOA-123456',
         );
 
         const liquidityBatchTransactions = await service.addLiquidityProxyBatch(
@@ -104,7 +104,7 @@ describe('TransactionProxyPairService', () => {
                         amount: firstTokenAmount,
                     },
                     {
-                        tokenID: 'LKMEX-123456',
+                        tokenID: 'LKMOA-123456',
                         nonce: 1,
                         amount: secondTokenAmount,
                     },
@@ -118,7 +118,7 @@ describe('TransactionProxyPairService', () => {
         expect(wrapRewaTransaction.value).toEqual(firstTokenAmount);
         expect(addLiquidityProxy.data).toEqual(
             encodeTransactionData(
-                'MultiDCDTNFTTransfer@000000000000000005001e2a1428dd1e3a5146b3960d9e0f4a50369904ee5483@02@WREWA-123456@@10@LKMEX-123456@01@09@addLiquidityProxy@0000000000000000000000000000000000000000000000000000000000000000@09@08',
+                'MultiDCDTNFTTransfer@000000000000000005001e2a1428dd1e3a5146b3960d9e0f4a50369904ee5483@02@WREWA-123456@@10@LKMOA-123456@01@09@addLiquidityProxy@0000000000000000000000000000000000000000000000000000000000000000@09@08',
             ),
         );
     });
@@ -140,7 +140,7 @@ describe('TransactionProxyPairService', () => {
             async () => 'WREWA-123456',
         );
         jest.spyOn(pairAbi, 'secondTokenID').mockImplementation(
-            async () => 'MEX-123456',
+            async () => 'MOA-123456',
         );
 
         const liquidityBatchTransactions = await service.addLiquidityProxyBatch(
@@ -150,7 +150,7 @@ describe('TransactionProxyPairService', () => {
                 pairAddress: Address.Zero().bech32(),
                 tokens: [
                     {
-                        tokenID: 'LKMEX-123456',
+                        tokenID: 'LKMOA-123456',
                         nonce: 1,
                         amount: firstTokenAmount,
                     },
@@ -169,7 +169,7 @@ describe('TransactionProxyPairService', () => {
         expect(wrapRewaTransaction.value).toEqual(secondTokenAmount);
         expect(addLiquidityProxy.data).toEqual(
             encodeTransactionData(
-                'MultiDCDTNFTTransfer@000000000000000005001e2a1428dd1e3a5146b3960d9e0f4a50369904ee5483@02@WREWA-123456@@09@LKMEX-123456@01@10@addLiquidityProxy@0000000000000000000000000000000000000000000000000000000000000000@08@09',
+                'MultiDCDTNFTTransfer@000000000000000005001e2a1428dd1e3a5146b3960d9e0f4a50369904ee5483@02@WREWA-123456@@09@LKMOA-123456@01@10@addLiquidityProxy@0000000000000000000000000000000000000000000000000000000000000000@08@09',
             ),
         );
     });

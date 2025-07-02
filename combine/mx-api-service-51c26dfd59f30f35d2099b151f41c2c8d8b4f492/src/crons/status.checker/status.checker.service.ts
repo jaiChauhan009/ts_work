@@ -7,15 +7,15 @@ import { GatewayService } from "src/common/gateway/gateway.service";
 import { ElasticIndexerService } from "src/common/indexer/elastic/elastic.indexer.service";
 import { ProtocolService } from "src/common/protocol/protocol.service";
 import { IdentitiesService } from "src/endpoints/identities/identities.service";
-import { MexFarmService } from "src/endpoints/mex/mex.farm.service";
-import { MexPairService } from "src/endpoints/mex/mex.pair.service";
-import { MexTokenService } from "src/endpoints/mex/mex.token.service";
+import { MoaFarmService } from "src/endpoints/moa/moa.farm.service";
+import { MoaPairService } from "src/endpoints/moa/moa.pair.service";
+import { MoaTokenService } from "src/endpoints/moa/moa.token.service";
 import { NodeService } from "src/endpoints/nodes/node.service";
 import { ProviderService } from "src/endpoints/providers/provider.service";
 import { RoundFilter } from "src/endpoints/rounds/entities/round.filter";
 import { ShardService } from "src/endpoints/shards/shard.service";
 import { TokenService } from "src/endpoints/tokens/token.service";
-import { MexEconomicsService } from "src/endpoints/mex/mex.economics.service";
+import { MoaEconomicsService } from "src/endpoints/moa/moa.economics.service";
 import { NetworkService } from "src/endpoints/network/network.service";
 import { QueryPagination } from "src/common/entities/query.pagination";
 import { TokenFilter } from "src/endpoints/tokens/entities/token.filter";
@@ -38,10 +38,10 @@ export class StatusCheckerService {
     private readonly nodeService: NodeService,
     private readonly providerService: ProviderService,
     private readonly shardService: ShardService,
-    private readonly mexPairService: MexPairService,
-    private readonly mexFarmService: MexFarmService,
-    private readonly mexTokenService: MexTokenService,
-    private readonly mexEconomicService: MexEconomicsService,
+    private readonly drtPairService: MoaPairService,
+    private readonly moaFarmService: MoaFarmService,
+    private readonly moaTokenService: MoaTokenService,
+    private readonly moaEconomicService: MoaEconomicsService,
     private readonly economicService: NetworkService,
     private readonly apiConfigService: ApiConfigService
   ) { }
@@ -159,26 +159,26 @@ export class StatusCheckerService {
   }
 
   @Cron(CronExpression.EVERY_MINUTE)
-  async handleMexPairsCount() {
-    await Locker.lock('Status Checker: Mex Pairs Count', async () => {
-      const count = await this.mexPairService.getMexPairsCount();
-      MetricsService.setClusterComparisonValue('total_mex_pairs', count);
+  async handleMoaPairsCount() {
+    await Locker.lock('Status Checker: Moa Pairs Count', async () => {
+      const count = await this.drtPairService.getMoaPairsCount();
+      MetricsService.setClusterComparisonValue('total_moa_pairs', count);
     }, true);
   }
 
   @Cron(CronExpression.EVERY_MINUTE)
-  async handleMexFarmsCount() {
-    await Locker.lock('Status Checker: Mex Farms Count', async () => {
-      const count = await this.mexFarmService.getMexFarmsCount();
-      MetricsService.setClusterComparisonValue('total_mex_farms', count);
+  async handleMoaFarmsCount() {
+    await Locker.lock('Status Checker: Moa Farms Count', async () => {
+      const count = await this.moaFarmService.getMoaFarmsCount();
+      MetricsService.setClusterComparisonValue('total_moa_farms', count);
     }, true);
   }
 
   @Cron(CronExpression.EVERY_MINUTE)
-  async handleMexTokensCount() {
-    await Locker.lock('Status Checker: Mex Tokens Count', async () => {
-      const count = await this.mexTokenService.getMexTokensCount();
-      MetricsService.setClusterComparisonValue('total_mex_tokens', count);
+  async handleMoaTokensCount() {
+    await Locker.lock('Status Checker: Moa Tokens Count', async () => {
+      const count = await this.moaTokenService.getMoaTokensCount();
+      MetricsService.setClusterComparisonValue('total_moa_tokens', count);
     }, true);
   }
 
@@ -195,11 +195,11 @@ export class StatusCheckerService {
   }
 
   @Cron(CronExpression.EVERY_MINUTE)
-  async handleMexEconomicValues() {
-    await Locker.lock('Status Checker: Store Mex economics metrics', async () => {
-      const economics = await this.mexEconomicService.getMexEconomics();
+  async handleMoaEconomicValues() {
+    await Locker.lock('Status Checker: Store Moa economics metrics', async () => {
+      const economics = await this.moaEconomicService.getMoaEconomics();
       for (const [key, value] of Object.entries(economics)) {
-        MetricsService.setClusterComparisonValue(`mex_economics_${key}`, value);
+        MetricsService.setClusterComparisonValue(`moa_economics_${key}`, value);
       }
     }, true);
   }

@@ -17,7 +17,7 @@ import { CacheInfo } from "src/utils/cache.info";
 import { DcdtDataSource } from "../dcdt/entities/dcdt.data.source";
 import { DcdtAddressService } from "../dcdt/dcdt.address.service";
 import { PersistenceService } from "src/common/persistence/persistence.service";
-import { MexTokenService } from "../mex/mex.token.service";
+import { MoaTokenService } from "../moa/moa.token.service";
 import { BinaryUtils, NumberUtils, RecordUtils, BatchUtils, TokenUtils, OriginLogger } from "@terradharitri/sdk-nestjs-common";
 import { ApiUtils } from "@terradharitri/sdk-nestjs-http";
 import { CacheService } from "@terradharitri/sdk-nestjs-cache";
@@ -49,7 +49,7 @@ export class NftService {
     private readonly persistenceService: PersistenceService,
     @Inject(forwardRef(() => DcdtAddressService))
     private readonly dcdtAddressService: DcdtAddressService,
-    private readonly mexTokenService: MexTokenService,
+    private readonly moaTokenService: MoaTokenService,
     private readonly lockedAssetService: LockedAssetService,
   ) {
     this.NFT_THUMBNAIL_PREFIX = this.apiConfigService.getExternalMediaUrl() + '/nfts/asset';
@@ -249,14 +249,14 @@ export class NftService {
     }
 
     try {
-      nft.unlockSchedule = await this.lockedAssetService.getLkmexUnlockSchedule(nft.identifier, nft.attributes);
+      nft.unlockSchedule = await this.lockedAssetService.getLkmoaUnlockSchedule(nft.identifier, nft.attributes);
     } catch (error) {
       this.logger.error(`An error occurred while applying unlock schedule for NFT with identifier '${nft.identifier}' and attributes '${nft.attributes}'`);
       this.logger.error(error);
     }
 
     try {
-      nft.unlockEpoch = await this.lockedAssetService.getXmexUnlockEpoch(nft.identifier, nft.attributes);
+      nft.unlockEpoch = await this.lockedAssetService.getXmoaUnlockEpoch(nft.identifier, nft.attributes);
     } catch (error) {
       this.logger.error(`An error occurred while applying unlock epoch for NFT with identifier '${nft.identifier}' and attributes '${nft.attributes}'`);
       this.logger.error(error);
@@ -516,7 +516,7 @@ export class NftService {
     }
 
     try {
-      const prices = await this.mexTokenService.getMexPrices();
+      const prices = await this.moaTokenService.getMoaPrices();
 
       const price = prices[nft.collection];
       if (price) {

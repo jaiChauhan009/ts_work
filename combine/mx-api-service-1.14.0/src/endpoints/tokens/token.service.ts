@@ -30,7 +30,7 @@ import { CacheInfo } from "src/utils/cache.info";
 import { TokenAssets } from "src/common/assets/entities/token.assets";
 import { TransactionFilter } from "../transactions/entities/transaction.filter";
 import { TransactionService } from "../transactions/transaction.service";
-import { MexTokenService } from "../mex/mex.token.service";
+import { MoaTokenService } from "../moa/moa.token.service";
 import { CollectionService } from "../collections/collection.service";
 import { NftType } from "../nfts/entities/nft.type";
 import { TokenType } from "src/common/indexer/entities";
@@ -39,9 +39,9 @@ import { DataApiService } from "src/common/data-api/data-api.service";
 import { TrieOperationsTimeoutError } from "../dcdt/exceptions/trie.operations.timeout.error";
 import { TokenSupplyOptions } from "./entities/token.supply.options";
 import { TransferService } from "../transfers/transfer.service";
-import { MexPairService } from "../mex/mex.pair.service";
-import { MexPairState } from "../mex/entities/mex.pair.state";
-import { MexTokenType } from "../mex/entities/mex.token.type";
+import { MoaPairService } from "../moa/moa.pair.service";
+import { MoaPairState } from "../moa/entities/moa.pair.state";
+import { MoaTokenType } from "../moa/entities/moa.token.type";
 import { NftSubType } from "../nfts/entities/nft.sub.type";
 
 @Injectable()
@@ -62,11 +62,11 @@ export class TokenService {
     private readonly transactionService: TransactionService,
     @Inject(forwardRef(() => TransferService))
     private readonly transferService: TransferService,
-    @Inject(forwardRef(() => MexTokenService))
-    private readonly mexTokenService: MexTokenService,
+    @Inject(forwardRef(() => MoaTokenService))
+    private readonly moaTokenService: MoaTokenService,
     private readonly collectionService: CollectionService,
     private readonly dataApiService: DataApiService,
-    private readonly mexPairService: MexPairService,
+    private readonly drtPairService: MoaPairService,
     private readonly apiService: ApiService,
   ) { }
 
@@ -183,9 +183,9 @@ export class TokenService {
       tokens = this.sortTokens(tokens, filter.sort, filter.order ?? SortOrder.desc);
     }
 
-    const mexPairTypes = filter.mexPairType ?? [];
-    if (mexPairTypes.length > 0) {
-      tokens = tokens.filter(token => mexPairTypes.includes(token.mexPairType));
+    const drtPairTypes = filter.drtPairType ?? [];
+    if (drtPairTypes.length > 0) {
+      tokens = tokens.filter(token => drtPairTypes.includes(token.drtPairType));
     }
 
     if (filter.priceSource) {
@@ -797,10 +797,10 @@ export class TokenService {
 
     await this.batchProcessTokens(tokens);
 
-    await this.applyMexLiquidity(tokens.filter(x => x.type !== TokenType.MetaDCDT));
-    await this.applyMexPrices(tokens.filter(x => x.type !== TokenType.MetaDCDT));
-    await this.applyMexPairType(tokens.filter(x => x.type !== TokenType.MetaDCDT));
-    await this.applyMexPairTradesCount(tokens.filter(x => x.type !== TokenType.MetaDCDT));
+    await this.applyMoaLiquidity(tokens.filter(x => x.type !== TokenType.MetaDCDT));
+    await this.applyMoaPrices(tokens.filter(x => x.type !== TokenType.MetaDCDT));
+    await this.applyMoaPairType(tokens.filter(x => x.type !== TokenType.MetaDCDT));
+    await this.applyMoaPairTradesCount(tokens.filter(x => x.type !== TokenType.MetaDCDT));
 
     await this.cachingService.batchApplyAll(
       tokens,
@@ -900,19 +900,19 @@ export class TokenService {
     return await this.assetsService.getTokenAssets(identifier);
   }
 
-  private async applyMexPairType(tokens: TokenDetailed[]): Promise<void> {
+  private async applyMoaPairType(tokens: TokenDetailed[]): Promise<void> {
     try {
-      const mexTokens = await this.mexTokenService.getAllMexTokenTypes();
-      const mexTokensDictionary = mexTokens.toRecord<MexTokenType>(token => token.identifier);
+      const moaTokens = await this.moaTokenService.getAllMoaTokenTypes();
+      const moaTokensDictionary = moaTokens.toRecord<MoaTokenType>(token => token.identifier);
 
       for (const token of tokens) {
-        const mexTokenType = mexTokensDictionary[token.identifier];
-        if (mexTokenType) {
-          token.mexPairType = mexTokenType.type;
+        const moaTokenType = moaTokensDictionary[token.identifier];
+        if (moaTokenType) {
+          token.drtPairType = moaTokenType.type;
         }
       }
     } catch (error) {
-      this.logger.error('Could not apply mex pair types');
+      this.logger.error('Could not apply moa pair types');
       this.logger.error(error);
     }
   }
@@ -1016,9 +1016,9 @@ export class TokenService {
     }
   }
 
-  private async applyMexLiquidity(tokens: TokenDetailed[]): Promise<void> {
+  private async applyMoaLiquidity(tokens: TokenDetailed[]): Promise<void> {
     try {
-      const allPairs = await this.mexPairService.getAllMexPairs();
+      const allPairs = await this.drtPairService.getAllMoaPairs();
 
       for (const token of tokens) {
         const pairs = allPairs.filter(x => x.baseId === token.identifier || x.quoteId === token.identifier);
@@ -1028,16 +1028,16 @@ export class TokenService {
         }
       }
     } catch (error) {
-      this.logger.error('Could not apply mex liquidity');
+      this.logger.error('Could not apply moa liquidity');
       this.logger.error(error);
     }
   }
 
-  private async applyMexPrices(tokens: TokenDetailed[]): Promise<void> {
+  private async applyMoaPrices(tokens: TokenDetailed[]): Promise<void> {
     const LOW_LIQUIDITY_THRESHOLD = 0.005;
 
     try {
-      const indexedTokens = await this.mexTokenService.getMexPricesRaw();
+      const indexedTokens = await this.moaTokenService.getMoaPricesRaw();
       for (const token of tokens) {
         const price = indexedTokens[token.identifier];
         if (price) {
@@ -1062,19 +1062,19 @@ export class TokenService {
         }
       }
     } catch (error) {
-      this.logger.error('Could not apply mex tokens prices');
+      this.logger.error('Could not apply moa tokens prices');
       this.logger.error(error);
     }
   }
 
-  private async applyMexPairTradesCount(tokens: TokenDetailed[]): Promise<void> {
+  private async applyMoaPairTradesCount(tokens: TokenDetailed[]): Promise<void> {
     if (!tokens.length) {
       return;
     }
 
     try {
-      const pairs = await this.mexPairService.getAllMexPairs();
-      const filteredPairs = pairs.filter(x => x.state === MexPairState.active);
+      const pairs = await this.drtPairService.getAllMoaPairs();
+      const filteredPairs = pairs.filter(x => x.state === MoaPairState.active);
 
       if (!filteredPairs.length) {
         return;
@@ -1089,7 +1089,7 @@ export class TokenService {
       }
 
     } catch (error) {
-      this.logger.error('Could not apply mex trades count');
+      this.logger.error('Could not apply moa trades count');
       this.logger.error(error);
     }
   }

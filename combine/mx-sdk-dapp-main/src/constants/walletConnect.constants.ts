@@ -3,6 +3,6 @@ import { WalletConnectConfig } from 'providers/strategies/WalletConnectProviderS
 export const fallbackWalletConnectConfigurations: WalletConnectConfig = {
   walletConnectV2ProjectId: '',
   walletConnectDeepLink:
-    'https://maiar.page.link/?apn=com.numbat.maiar.wallet&isi=1519405832&ibi=com.numbat.maiar.wallet&link=https://xportal.com/',
+    'https://durian.page.link/?apn=com.numbat.durian.wallet&isi=1519405832&ibi=com.numbat.durian.wallet&link=https://xportal.com/',
   walletConnectV2RelayAddress: 'wss://relay.walletconnect.com'
 };

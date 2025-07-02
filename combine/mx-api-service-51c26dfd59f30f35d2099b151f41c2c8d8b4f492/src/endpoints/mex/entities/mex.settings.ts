@@ -1,5 +1,5 @@
-export class MexSettings {
-  constructor(init?: Partial<MexSettings>) {
+export class MoaSettings {
+  constructor(init?: Partial<MoaSettings>) {
     Object.assign(this, init);
   }
 
@@ -11,11 +11,11 @@ export class MexSettings {
   lockedAssetContract: string = '';
   lockedAssetIdentifier: string = '';
   lockedAssetIdentifierV2: string = '';
-  mexId: string = '';
+  moaId: string = '';
   wrewaId: string = '';
 
-  static fromQueryResponse(response: any): MexSettings {
-    const settings = new MexSettings();
+  static fromQueryResponse(response: any): MoaSettings {
+    const settings = new MoaSettings();
     settings.farmContracts = [
       ...response.farms.filter((x: any) => ['Active', 'Migrate'].includes(x.state)).map((x: any) => x.address),
       ...response.stakingFarms.filter((x: any) => x.state === 'Active').map((x: any) => x.address),
@@ -36,14 +36,14 @@ export class MexSettings {
       .flat()
       .distinct();
 
-    settings.lockedAssetIdentifier = lockedAssetIdentifiers.find((identifier: string) => identifier.startsWith('LKMEX'));
-    settings.lockedAssetIdentifierV2 = lockedAssetIdentifiers.find((identifier: string) => identifier.startsWith('XMEX'));
+    settings.lockedAssetIdentifier = lockedAssetIdentifiers.find((identifier: string) => identifier.startsWith('LKMOA'));
+    settings.lockedAssetIdentifierV2 = lockedAssetIdentifiers.find((identifier: string) => identifier.startsWith('XMOA'));
 
     const wrappedToken = response.wrappingInfo[0].wrappedToken.identifier;
-    const mexToken = response.simpleLockEnergy.baseAssetToken.identifier;
+    const moaToken = response.simpleLockEnergy.baseAssetToken.identifier;
 
     settings.wrewaId = wrappedToken;
-    settings.mexId = mexToken;
+    settings.moaId = moaToken;
 
     return settings;
   }

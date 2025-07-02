@@ -1,7 +1,7 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
 
-export class XExchange1718807173692 implements MigrationInterface {
-    name = 'XExchange1718807173692';
+export class Dharitrix1718807173692 implements MigrationInterface {
+    name = 'Dharitrix1718807173692';
     transaction = false;
 
     public async up(queryRunner: QueryRunner): Promise<void> {

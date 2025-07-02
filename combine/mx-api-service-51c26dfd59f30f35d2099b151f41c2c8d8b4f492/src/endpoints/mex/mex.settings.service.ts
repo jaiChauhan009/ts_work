@@ -5,13 +5,13 @@ import { CacheInfo } from "src/utils/cache.info";
 import { GraphQlService } from "src/common/graphql/graphql.service";
 import { TransactionMetadata } from "../transactions/transaction-action/entities/transaction.metadata";
 import { TransactionMetadataTransfer } from "../transactions/transaction-action/entities/transaction.metadata.transfer";
-import { MexSettings } from "./entities/mex.settings";
+import { MoaSettings } from "./entities/moa.settings";
 import { ApiConfigService } from "src/common/api-config/api.config.service";
 import { settingsQuery } from "./graphql/settings.query";
 import { pairCountQuery } from "./graphql/pairs.count.query";
 
 @Injectable()
-export class MexSettingsService {
+export class MoaSettingsService {
   private wrewaId: string | undefined;
 
   constructor(
@@ -29,30 +29,30 @@ export class MexSettingsService {
     return transfers;
   }
 
-  async isMexInteraction(metadata: TransactionMetadata): Promise<boolean> {
-    const mexContracts = await this.getMexContracts();
-    return mexContracts.has(metadata.receiver);
+  async isMoaInteraction(metadata: TransactionMetadata): Promise<boolean> {
+    const moaContracts = await this.getMoaContracts();
+    return moaContracts.has(metadata.receiver);
   }
 
   async refreshSettings(): Promise<void> {
     const settings = await this.getSettingsRaw();
-    await this.cachingService.setRemote(CacheInfo.MexSettings.key, settings, CacheInfo.MexSettings.ttl);
-    this.cachingService.setLocal(CacheInfo.MexSettings.key, settings, Constants.oneMinute() * 10);
+    await this.cachingService.setRemote(CacheInfo.MoaSettings.key, settings, CacheInfo.MoaSettings.ttl);
+    this.cachingService.setLocal(CacheInfo.MoaSettings.key, settings, Constants.oneMinute() * 10);
 
-    const contracts = await this.getMexContractsRaw();
-    await this.cachingService.setRemote(CacheInfo.MexContracts.key, contracts, CacheInfo.MexContracts.ttl);
-    this.cachingService.setLocal(CacheInfo.MexContracts.key, contracts, Constants.oneMinute() * 10);
+    const contracts = await this.getMoaContractsRaw();
+    await this.cachingService.setRemote(CacheInfo.MoaContracts.key, contracts, CacheInfo.MoaContracts.ttl);
+    this.cachingService.setLocal(CacheInfo.MoaContracts.key, contracts, Constants.oneMinute() * 10);
   }
 
-  async getSettings(): Promise<MexSettings | null> {
+  async getSettings(): Promise<MoaSettings | null> {
     if (!this.apiConfigService.isExchangeEnabled()) {
       return null;
     }
 
     const settings = await this.cachingService.getOrSet(
-      CacheInfo.MexSettings.key,
+      CacheInfo.MoaSettings.key,
       async () => await this.getSettingsRaw(),
-      CacheInfo.MexSettings.ttl,
+      CacheInfo.MoaSettings.ttl,
       Constants.oneMinute() * 10,
     );
 
@@ -61,17 +61,17 @@ export class MexSettingsService {
     return settings;
   }
 
-  async getMexContracts(): Promise<Set<string>> {
-    let contracts = await this.cachingService.getLocal<Set<string>>(CacheInfo.MexContracts.key);
+  async getMoaContracts(): Promise<Set<string>> {
+    let contracts = await this.cachingService.getLocal<Set<string>>(CacheInfo.MoaContracts.key);
     if (!contracts) {
-      contracts = await this.getMexContractsRaw();
-      this.cachingService.setLocal(CacheInfo.MexContracts.key, contracts, Constants.oneMinute() * 10);
+      contracts = await this.getMoaContractsRaw();
+      this.cachingService.setLocal(CacheInfo.MoaContracts.key, contracts, Constants.oneMinute() * 10);
     }
 
     return contracts;
   }
 
-  async getMexContractsRaw(): Promise<Set<string>> {
+  async getMoaContractsRaw(): Promise<Set<string>> {
     const settings = await this.getSettings();
     if (!settings) {
       return new Set<string>();
@@ -87,7 +87,7 @@ export class MexSettingsService {
     ]);
   }
 
-  public async getSettingsRaw(): Promise<MexSettings | null> {
+  public async getSettingsRaw(): Promise<MoaSettings | null> {
     const pairLimitCount = await this.getPairLimitCount();
     const response = await this.graphQlService.getExchangeServiceData(settingsQuery(pairLimitCount));
     if (!response) {
@@ -101,7 +101,7 @@ export class MexSettingsService {
       })),
     };
 
-    const settings = MexSettings.fromQueryResponse(transformedResponse);
+    const settings = MoaSettings.fromQueryResponse(transformedResponse);
     return settings;
   }
 

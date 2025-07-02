@@ -116,7 +116,7 @@ describe('PairService', () => {
         const service = module.get<PairService>(PairService);
 
         const address = await service.getPairAddressByLpTokenID(
-            'REWAMEXLP-abcdef',
+            'REWAMOALP-abcdef',
         );
         expect(address).toEqual(
             Address.fromHex(
@@ -128,7 +128,7 @@ describe('PairService', () => {
     it('should check if token is part of any pair', async () => {
         const service = module.get<PairService>(PairService);
 
-        const isPair0 = await service.isPairDcdtToken('REWAMEXLP-abcdef');
+        const isPair0 = await service.isPairDcdtToken('REWAMOALP-abcdef');
         expect(isPair0).toEqual(true);
 
         const isPair1 = await service.isPairDcdtToken('LPT-4321');

@@ -11,7 +11,7 @@ import { DcdtModule } from "./dcdt/dcdt.module";
 import { IdentitiesModule } from "./identities/identities.module";
 import { KeysModule } from "./keys/keys.module";
 import { NftMarketplaceModule } from "./marketplace/nft.marketplace.module";
-import { MexModule } from "./mex/mex.module";
+import { MoaModule } from "./moa/moa.module";
 import { MiniBlockModule } from "./miniblocks/miniblock.module";
 import { NetworkModule } from "./network/network.module";
 import { NftModule } from "./nfts/nft.module";
@@ -70,7 +70,7 @@ import { EventsModule } from "./events/events.module";
     PoolModule,
     TransactionActionModule,
     WebsocketModule,
-    MexModule.forRoot(),
+    MoaModule.forRoot(),
     ProcessNftsModule,
     NftMarketplaceModule,
     TransactionsBatchModule,
@@ -82,7 +82,7 @@ import { EventsModule } from "./events/events.module";
     AccountModule, CollectionModule, BlockModule, DelegationModule, DelegationLegacyModule, IdentitiesModule, KeysModule,
     MiniBlockModule, NetworkModule, NftModule, NftMediaModule, TagModule, NodeModule, ProviderModule,
     RoundModule, SmartContractResultModule, ShardModule, StakeModule, TokenModule, RoundModule, TransactionModule, UsernameModule, VmQueryModule,
-    WaitingListModule, DcdtModule, BlsModule, DappConfigModule, TransferModule, PoolModule, TransactionActionModule, WebsocketModule, MexModule,
+    WaitingListModule, DcdtModule, BlsModule, DappConfigModule, TransferModule, PoolModule, TransactionActionModule, WebsocketModule, MoaModule,
     ProcessNftsModule, NftMarketplaceModule, TransactionsBatchModule, TpsModule, ApplicationModule, EventsModule,
   ],
 })

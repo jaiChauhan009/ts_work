@@ -13,7 +13,7 @@ import { HealthCheckController } from "./health-check/health.check.controller";
 import { IdentitiesController } from "./identities/identities.controller";
 import { KeysController } from "./keys/keys.controller";
 import { NftMarketplaceController } from "./marketplace/nft.marketplace.controller";
-import { MexController } from "./mex/mex.controller";
+import { MoaController } from "./moa/moa.controller";
 import { MiniBlockController } from "./miniblocks/mini.block.controller";
 import { NetworkController } from "./network/network.controller";
 import { NftController } from "./nfts/nft.controller";
@@ -59,11 +59,11 @@ export class EndpointsControllersModule {
 
     const isExchangeEnabled =
       (configuration().features?.exchange?.enabled ?? false) ||
-      (configuration()['transaction-action']?.mex?.microServiceUrl) ||
-      (configuration()['plugins']?.['transaction-action']?.['mex']?.['microServiceUrl']);
+      (configuration()['transaction-action']?.moa?.microServiceUrl) ||
+      (configuration()['plugins']?.['transaction-action']?.['moa']?.['microServiceUrl']);
 
     if (isExchangeEnabled) {
-      controllers.push(MexController);
+      controllers.push(MoaController);
     }
 
     const isTxPoolEnabled = configuration().features?.transactionPool?.enabled;

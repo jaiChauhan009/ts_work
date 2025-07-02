@@ -88,7 +88,7 @@ describe('WeeklyRewardsSplittingComputeService', () => {
     it('computeTotalRewardsForWeekPriceUSD' + ' should work', async () => {
         const priceMap = new Map<string, string>();
         priceMap.set('WREWA-123456', '10');
-        priceMap.set('MEX-123456', '20');
+        priceMap.set('MOA-123456', '20');
         priceMap.set('TOK4-123456', '30');
 
         const service = module.get<WeeklyRewardsSplittingComputeService>(
@@ -138,7 +138,7 @@ describe('WeeklyRewardsSplittingComputeService', () => {
     });
 
     it(
-        'computeTotalRewardsForWeekPriceUSD' + ' MEX-123456 has price 10',
+        'computeTotalRewardsForWeekPriceUSD' + ' MOA-123456 has price 10',
         async () => {
             const service = module.get<WeeklyRewardsSplittingComputeService>(
                 WeeklyRewardsSplittingComputeService,
@@ -164,15 +164,15 @@ describe('WeeklyRewardsSplittingComputeService', () => {
     );
 
     it(
-        'computeAprGivenLockedTokensAndRewards' + ' MEX-123456 has price 10',
+        'computeAprGivenLockedTokensAndRewards' + ' MOA-123456 has price 10',
         async () => {
-            const mex = 'MEX-123456';
+            const moa = 'MOA-123456';
 
             const priceMap = new Map<string, string>();
             priceMap.set('WREWA-123456', '10');
-            priceMap.set('MEX-123456', '20');
+            priceMap.set('MOA-123456', '20');
             priceMap.set('TOK4-123456', '30');
-            priceMap.set(mex, '1');
+            priceMap.set(moa, '1');
 
             const service = module.get<WeeklyRewardsSplittingComputeService>(
                 WeeklyRewardsSplittingComputeService,
@@ -219,14 +219,14 @@ describe('WeeklyRewardsSplittingComputeService', () => {
         },
     );
 
-    it('computeApr' + ' MEX-123456 has price 10', async () => {
-        const mex = 'MEX-123456';
+    it('computeApr' + ' MOA-123456 has price 10', async () => {
+        const moa = 'MOA-123456';
 
         const priceMap = new Map<string, string>();
         priceMap.set('WREWA-123456', '10');
-        priceMap.set('MEX-123456', '20');
+        priceMap.set('MOA-123456', '20');
         priceMap.set('TOK4-123456', '30');
-        priceMap.set(mex, '1');
+        priceMap.set(moa, '1');
 
         const service = module.get<WeeklyRewardsSplittingComputeService>(
             WeeklyRewardsSplittingComputeService,
@@ -245,13 +245,13 @@ describe('WeeklyRewardsSplittingComputeService', () => {
     });
 
     it('computeUserApr' + ' user has all the energy', async () => {
-        const mex = 'MEX-123456';
+        const moa = 'MOA-123456';
 
         const priceMap = new Map<string, string>();
         priceMap.set('WREWA-123456', '10');
-        priceMap.set('MEX-123456', '20');
+        priceMap.set('MOA-123456', '20');
         priceMap.set('TOK4-123456', '30');
-        priceMap.set(mex, '1');
+        priceMap.set(moa, '1');
 
         const totalEnergyForWeek = '1000';
         const totalLockedTokensForWeek = '1000';
@@ -294,13 +294,13 @@ describe('WeeklyRewardsSplittingComputeService', () => {
         'computeUserApr' +
             ' 2 user has equal part of lk tokens & energy should have both global APR',
         async () => {
-            const mex = 'MEX-123456';
+            const moa = 'MOA-123456';
 
             const priceMap = new Map<string, string>();
             priceMap.set('WREWA-123456', '10');
-            priceMap.set('MEX-123456', '20');
+            priceMap.set('MOA-123456', '20');
             priceMap.set('TOK4-123456', '30');
-            priceMap.set(mex, '1');
+            priceMap.set(moa, '1');
             const totalEnergyForWeek = '1000';
             const totalLockedTokensForWeek = '1000';
 
@@ -353,12 +353,12 @@ describe('WeeklyRewardsSplittingComputeService', () => {
         async () => {
             const user1 = 'drt1';
             const user2 = 'erd2';
-            const mex = 'MEX-123456';
+            const moa = 'MOA-123456';
             const priceMap = new Map<string, string>();
             priceMap.set('WREWA-123456', '10');
-            priceMap.set('MEX-123456', '20');
+            priceMap.set('MOA-123456', '20');
             priceMap.set('TOK4-123456', '30');
-            priceMap.set(mex, '1');
+            priceMap.set(moa, '1');
 
             const totalEnergyForWeek = '3000';
             const totalLockedTokensForWeek = '1000';
@@ -428,12 +428,12 @@ describe('WeeklyRewardsSplittingComputeService', () => {
         async () => {
             const user1 = 'drt1';
             const user2 = 'erd2';
-            const mex = 'MEX-123456';
+            const moa = 'MOA-123456';
             const priceMap = new Map<string, string>();
             priceMap.set('WREWA-123456', '10');
-            priceMap.set('MEX-123456', '20');
+            priceMap.set('MOA-123456', '20');
             priceMap.set('TOK4-123456', '30');
-            priceMap.set(mex, '1');
+            priceMap.set(moa, '1');
 
             const totalEnergyForWeek = '3000';
             const totalLockedTokensForWeek = '1000';

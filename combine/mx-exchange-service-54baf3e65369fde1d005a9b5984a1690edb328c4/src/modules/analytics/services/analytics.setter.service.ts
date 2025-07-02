@@ -52,9 +52,9 @@ export class AnalyticsSetterService extends GenericSetterService {
         );
     }
 
-    async totalLockedMexStakedUSD(value: string): Promise<string> {
+    async totalLockedMoaStakedUSD(value: string): Promise<string> {
         return await this.setData(
-            this.getCacheKey('totalLockedMexStakedUSD'),
+            this.getCacheKey('totalLockedMoaStakedUSD'),
             value,
             Constants.oneMinute() * 10,
             Constants.oneMinute() * 5,

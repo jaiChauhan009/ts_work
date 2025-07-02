@@ -14,9 +14,9 @@ import { DcdtService } from "src/endpoints/dcdt/dcdt.service";
 import { CacheInfo } from "src/utils/cache.info";
 import { AssetsService } from "src/common/assets/assets.service";
 import { GatewayComponentRequest } from "src/common/gateway/entities/gateway.component.request";
-import { MexSettingsService } from "src/endpoints/mex/mex.settings.service";
-import { MexPairService } from "src/endpoints/mex/mex.pair.service";
-import { MexFarmService } from "src/endpoints/mex/mex.farm.service";
+import { MoaSettingsService } from "src/endpoints/moa/moa.settings.service";
+import { MoaPairService } from "src/endpoints/moa/moa.pair.service";
+import { MoaFarmService } from "src/endpoints/moa/moa.farm.service";
 import { CacheService, GuestCacheWarmer } from "@terradharitri/sdk-nestjs-cache";
 import { BatchUtils, Constants, Lock, OriginLogger } from "@terradharitri/sdk-nestjs-common";
 import { DelegationLegacyService } from "src/endpoints/delegation.legacy/delegation.legacy.service";
@@ -55,9 +55,9 @@ export class CacheWarmerService {
     private readonly gatewayService: GatewayService,
     private readonly schedulerRegistry: SchedulerRegistry,
     private readonly assetsService: AssetsService,
-    private readonly mexPairsService: MexPairService,
-    private readonly mexSettingsService: MexSettingsService,
-    private readonly mexFarmsService: MexFarmService,
+    private readonly drtPairsService: MoaPairService,
+    private readonly moaSettingsService: MoaSettingsService,
+    private readonly moaFarmsService: MoaFarmService,
     private readonly delegationLegacyService: DelegationLegacyService,
     private readonly tokenService: TokenService,
     private readonly indexerService: IndexerService,
@@ -259,10 +259,10 @@ export class CacheWarmerService {
     const providers = await this.providerService.getAllProviders();
     const identities = await this.identitiesService.getAllIdentities();
 
-    const pairs = await this.mexPairsService.getAllMexPairs();
-    const farms = await this.mexFarmsService.getAllMexFarms();
-    const settings = await this.mexSettingsService.getSettings();
-    const stakingProxies = await this.mexFarmsService.getAllStakingProxies();
+    const pairs = await this.drtPairsService.getAllMoaPairs();
+    const farms = await this.moaFarmsService.getAllMoaFarms();
+    const settings = await this.moaSettingsService.getSettings();
+    const stakingProxies = await this.moaFarmsService.getAllStakingProxies();
 
     const accountLabels = await this.assetsService.getAllAccountAssetsRaw(providers, identities, pairs, farms, settings ?? undefined, stakingProxies);
     await this.invalidateKey(CacheInfo.AccountAssets.key, accountLabels, CacheInfo.AccountAssets.ttl);

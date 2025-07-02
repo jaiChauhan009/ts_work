@@ -49,9 +49,9 @@ describe("test smart contract interactor", function () {
             new TokenTransfer({ token: new Token({ identifier: "FOO-6ce17b" }), amount: BigInt(amount.toString()) });
         const TokenBar = (amount: BigNumber.Value) =>
             new TokenTransfer({ token: new Token({ identifier: "BAR-5bc08f" }), amount: BigInt(amount.toString()) });
-        const LKMEX = (nonce: number, amount: BigNumber.Value) =>
+        const LKMOA = (nonce: number, amount: BigNumber.Value) =>
             new TokenTransfer({
-                token: new Token({ identifier: "LKMEX-aab910", nonce: BigInt(nonce) }),
+                token: new Token({ identifier: "LKMOA-aab910", nonce: BigInt(nonce) }),
                 amount: BigInt(amount.toString()),
             });
         const nonFungibleToken = (nonce: number) =>
@@ -59,7 +59,7 @@ describe("test smart contract interactor", function () {
 
         const hexFoo = "464f4f2d366365313762";
         const hexBar = "4241522d356263303866";
-        const hexLKMEX = "4c4b4d45582d616162393130";
+        const hexLKMOA = "4c4b4d45582d616162393130";
         const hexNFT = "4d4f532d623962346232";
         const hexContractAddress = contract.getAddress().toHex();
         const hexDummyFunction = "64756d6d79";
@@ -75,19 +75,19 @@ describe("test smart contract interactor", function () {
         // Meta DCDT (special SFT), single
         transaction = new Interaction(contract, dummyFunction, [])
             .withSender(alice)
-            .withSingleDCDTNFTTransfer(LKMEX(123456, "123456000000000000000"))
+            .withSingleDCDTNFTTransfer(LKMOA(123456, "123456000000000000000"))
             .buildTransaction();
 
         assert.equal(transaction.sender.toBech32(), alice.toBech32());
         assert.equal(transaction.receiver.toBech32(), alice.toBech32());
         assert.equal(
             transaction.data.toString(),
-            `DCDTNFTTransfer@${hexLKMEX}@01e240@06b14bd1e6eea00000@${hexContractAddress}@${hexDummyFunction}`,
+            `DCDTNFTTransfer@${hexLKMOA}@01e240@06b14bd1e6eea00000@${hexContractAddress}@${hexDummyFunction}`,
         );
 
         // Meta DCDT (special SFT), single, but using "withSender()" (recommended)
         transaction = new Interaction(contract, dummyFunction, [])
-            .withSingleDCDTNFTTransfer(LKMEX(123456, 123456000000000000000))
+            .withSingleDCDTNFTTransfer(LKMOA(123456, 123456000000000000000))
             .withSender(alice)
             .buildTransaction();
 
@@ -95,7 +95,7 @@ describe("test smart contract interactor", function () {
         assert.equal(transaction.receiver.toBech32(), alice.toBech32());
         assert.equal(
             transaction.data.toString(),
-            `DCDTNFTTransfer@${hexLKMEX}@01e240@06b14bd1e6eea00000@${hexContractAddress}@${hexDummyFunction}`,
+            `DCDTNFTTransfer@${hexLKMOA}@01e240@06b14bd1e6eea00000@${hexContractAddress}@${hexDummyFunction}`,
         );
 
         // NFT, single

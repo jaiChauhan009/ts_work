@@ -111,7 +111,7 @@ describe('FarmService', () => {
     it('should get rewards with locked rewards', async () => {
         const attributes =
             'AAAABwc+9Mqu1tkAAAAAAAAAAQAAAAAAAAABAgEAAAAIiscjBInoAAAAAAAAAAAACQEVjkYJE9AAAA==';
-        const identifier = 'MEXFARM-abcd-01';
+        const identifier = 'MOAFARM-abcd-01';
         const liquidity = '2000000000000000000';
 
         const serviceV1_2 = module.get<FarmServiceV1_2>(FarmServiceV1_2);
@@ -128,7 +128,7 @@ describe('FarmService', () => {
 
         expect(rewards).toEqual(
             new RewardsModel({
-                identifier: 'MEXFARM-abcd-01',
+                identifier: 'MOAFARM-abcd-01',
                 remainingFarmingEpochs: 3,
                 rewards: '1000000000000000000',
             }),
@@ -210,7 +210,7 @@ describe('FarmService', () => {
                     farmAddress:
                         'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqeqdzaapx',
                     liquidity: '1000000000000000000',
-                    identifier: 'REWAMEXFL-bcdefg-0b',
+                    identifier: 'REWAMOAFL-bcdefg-0b',
                     attributes:
                         'AAAAAAAAAAAAAAQVAAAAAAAABBUAAAAIEW8LcTY8qMwAAAAAAAAACBFvC3E2PKjM',
                     vmQuery: false,
@@ -220,7 +220,7 @@ describe('FarmService', () => {
 
         expect(batchRewardsForPosition).toEqual([
             new RewardsModel({
-                identifier: 'REWAMEXFL-bcdefg-0b',
+                identifier: 'REWAMOAFL-bcdefg-0b',
                 remainingFarmingEpochs: 1047,
                 rewards: '1000000000000000000',
             }),
@@ -240,7 +240,7 @@ describe('FarmService', () => {
             farmAddress:
                 'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqeqdzaapx',
             liquidity: '1000000000000000000',
-            identifier: 'REWAMEXFL-a329b6-0b',
+            identifier: 'REWAMOAFL-a329b6-0b',
             attributes:
                 'AAAAAAAAAAAAAAQVAAAAAAAABBUAAAAIEW8LcTY8qMwAAAAAAAAACBFvC3E2PKjM',
             vmQuery: false,
@@ -255,7 +255,7 @@ describe('FarmService', () => {
     it('should decode farm token attributes', async () => {
         const serviceV1_3 = module.get<FarmServiceV1_3>(FarmServiceV1_3);
         const tokensForExitFarm = serviceV1_3.decodeFarmTokenAttributes(
-            'REWAMEXFL-a329b6-0b',
+            'REWAMOAFL-a329b6-0b',
             'AAAAAAAAAAAAAAQVAAAAAAAABBUAAAAIEW8LcTY8qMwAAAAAAAAACBFvC3E2PKjM',
         );
         expect(tokensForExitFarm).toEqual({
@@ -264,7 +264,7 @@ describe('FarmService', () => {
             compoundedReward: '0',
             currentFarmAmount: '1256235401928812748',
             enteringEpoch: 1045,
-            identifier: 'REWAMEXFL-a329b6-0b',
+            identifier: 'REWAMOAFL-a329b6-0b',
             initialFarmingAmount: '1256235401928812748',
             originalEnteringEpoch: 1045,
             rewardPerShare: '0',

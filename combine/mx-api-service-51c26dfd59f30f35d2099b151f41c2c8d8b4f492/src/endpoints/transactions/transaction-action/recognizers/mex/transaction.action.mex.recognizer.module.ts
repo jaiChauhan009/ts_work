@@ -1,30 +1,30 @@
 import { forwardRef, Module } from "@nestjs/common";
 import { TokenModule } from "src/endpoints/tokens/token.module";
-import { MexFarmActionRecognizerService } from "./mex.farm.action.recognizer.service";
-import { MexPairActionRecognizerService } from "./mex.pair.action.recognizer.service";
-import { TransactionActionMexRecognizerService } from "./transaction.action.mex.recognizer.service";
-import { MexWrapActionRecognizerService } from "./mex.wrap.action.recognizer.service";
-import { MexDistributionActionRecognizerService } from "./mex.distribution.action.recognizer.service";
+import { MoaFarmActionRecognizerService } from "./moa.farm.action.recognizer.service";
+import { MoaPairActionRecognizerService } from "./moa.pair.action.recognizer.service";
+import { TransactionActionMoaRecognizerService } from "./transaction.action.moa.recognizer.service";
+import { MoaWrapActionRecognizerService } from "./moa.wrap.action.recognizer.service";
+import { MoaDistributionActionRecognizerService } from "./moa.distribution.action.recognizer.service";
 import { TransactionActionModule } from "../../transaction.action.module";
-import { MexLockedAssetActionRecognizerService } from "./mex.locked.asset.action.recognizer.service";
+import { MoaLockedAssetActionRecognizerService } from "./moa.locked.asset.action.recognizer.service";
 import { ApiConfigModule } from "src/common/api-config/api.config.module";
-import { MexModule } from "src/endpoints/mex/mex.module";
+import { MoaModule } from "src/endpoints/moa/moa.module";
 
 @Module({
   imports: [
     forwardRef(() => TokenModule),
     forwardRef(() => TransactionActionModule),
     ApiConfigModule,
-    MexModule.forRoot(),
+    MoaModule.forRoot(),
   ],
   providers: [
-    TransactionActionMexRecognizerService,
-    MexPairActionRecognizerService,
-    MexFarmActionRecognizerService,
-    MexWrapActionRecognizerService,
-    MexDistributionActionRecognizerService,
-    MexLockedAssetActionRecognizerService,
+    TransactionActionMoaRecognizerService,
+    MoaPairActionRecognizerService,
+    MoaFarmActionRecognizerService,
+    MoaWrapActionRecognizerService,
+    MoaDistributionActionRecognizerService,
+    MoaLockedAssetActionRecognizerService,
   ],
-  exports: [TransactionActionMexRecognizerService],
+  exports: [TransactionActionMoaRecognizerService],
 })
-export class TransactionActionMexRecognizerModule { }
+export class TransactionActionMoaRecognizerModule { }

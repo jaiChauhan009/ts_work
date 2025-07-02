@@ -28,11 +28,11 @@
                 "type": "Address"
             },
             {
-                "name": "mex_wegld_lp_pair_address",
+                "name": "moa_wegld_lp_pair_address",
                 "type": "Address"
             },
             {
-                "name": "mex_wegld_lp_farm_address",
+                "name": "moa_wegld_lp_farm_address",
                 "type": "Address"
             },
             {

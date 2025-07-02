@@ -8,7 +8,7 @@
             "short": "rustc 1.70.0-nightly (3a8a131e9 2023-04-02)"
         },
         "contractCrate": {
-            "name": "lkmex-transfer",
+            "name": "lkmoa-transfer",
             "version": "0.0.0",
             "gitVersion": "v1.6.0-1262-gbd0806ab"
         },

@@ -5,7 +5,7 @@ import { TransactionAction } from "../../entities/transaction.action";
 import { TransactionActionCategory } from "../../entities/transaction.action.category";
 import { TransactionMetadata } from "../../entities/transaction.metadata";
 import { MetabondingWeek } from "./entities/metabonding.week";
-import { MexFunction } from "./entities/mex.function.options";
+import { MoaFunction } from "./entities/moa.function.options";
 
 @Injectable()
 export class MetabondingActionRecognizerService {
@@ -20,7 +20,7 @@ export class MetabondingActionRecognizerService {
     }
 
     switch (metadata.functionName) {
-      case MexFunction.claimRewards:
+      case MoaFunction.claimRewards:
         return this.getClaimRewardsAction(metadata);
       default:
         return undefined;
@@ -40,15 +40,15 @@ export class MetabondingActionRecognizerService {
       const week = new MetabondingWeek();
       week.week = BinaryUtils.hexToNumber(chunk[0]);
       week.rewaStaked = BinaryUtils.hexToBigInt(chunk[1]).toString();
-      week.lkmexStaked = BinaryUtils.hexToBigInt(chunk[2]).toString();
+      week.lkmoaStaked = BinaryUtils.hexToBigInt(chunk[2]).toString();
 
       metabondingWeeks.push(week);
     }
 
     const result = new TransactionAction();
-    result.name = MexFunction.claimRewards;
-    result.category = TransactionActionCategory.mex;
-    result.description = `Eligible stake for ${metabondingWeeks.map((week) => `week ${week.week}: REWA ${NumberUtils.toDenominatedString(BigInt(week.rewaStaked))}, LKMEX ${NumberUtils.toDenominatedString(BigInt(week.lkmexStaked))}`).join('; ')}`;
+    result.name = MoaFunction.claimRewards;
+    result.category = TransactionActionCategory.moa;
+    result.description = `Eligible stake for ${metabondingWeeks.map((week) => `week ${week.week}: REWA ${NumberUtils.toDenominatedString(BigInt(week.rewaStaked))}, LKMOA ${NumberUtils.toDenominatedString(BigInt(week.lkmoaStaked))}`).join('; ')}`;
     result.arguments = {
       weeks: metabondingWeeks,
       functionName: metadata.functionName,

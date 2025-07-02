@@ -253,7 +253,7 @@ export class UsernameUtils {
     'drt1qqqqqqqqqqqqqpgqtxf5ra4qkj4cmgv8q070w8g2cyd8y56jqrmqc6yw80',
     'drt1qqqqqqqqqqqqqpgq3uxwmwtgmms6jytn3vzlw89vrxxe9xjwqrms093fy0',
     'drt1qqqqqqqqqqqqqpgqs6d64ffr3m4veck8cuvkp8zgn2gflmemqruqnlq9nh',
-    'drt1qqqqqqqqqqqqqpgqt9mexedq83vc8fdqjfknuend4auj7gewqrusp6qvqd',
+    'drt1qqqqqqqqqqqqqpgqt9moaedq83vc8fdqjfknuend4auj7gewqrusp6qvqd',
     'drt1qqqqqqqqqqqqqpgqwq64a8w0gqqnxchm572tj38uda9elqw7qraq6m8a34',
     'drt1qqqqqqqqqqqqqpgqzwl6axaq2kfjaglfsrm3eqc0rs3cn85rqraskkfe8m',
     'drt1qqqqqqqqqqqqqpgq3e4gtyegzqttlfqau6wtzm7vg4hl2fjmqr7qqgky0n',

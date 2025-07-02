@@ -1,6 +1,6 @@
 export enum TransactionActionCategory {
   dcdtNft = 'dcdtNft',
-  mex = 'mex',
+  moa = 'moa',
   stake = 'stake',
   scCall = 'scCall',
   scDeploy = 'scDeploy',

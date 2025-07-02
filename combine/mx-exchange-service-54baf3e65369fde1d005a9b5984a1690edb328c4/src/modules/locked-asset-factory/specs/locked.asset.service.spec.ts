@@ -60,7 +60,7 @@ describe('LockedAssetService', () => {
     });
 
     it('should get unlock schedule', async () => {
-        const decodedLockedMEX = await service.decodeLockedAssetAttributes({
+        const decodedLockedMOA = await service.decodeLockedAssetAttributes({
             batchAttributes: [
                 {
                     attributes: 'AAAAAgAAAAAAAAABCgAAAAAAAAAeWgA=',
@@ -68,7 +68,7 @@ describe('LockedAssetService', () => {
                 },
             ],
         });
-        expect(decodedLockedMEX).toEqual([
+        expect(decodedLockedMOA).toEqual([
             new LockedAssetAttributesModel({
                 attributes: 'AAAAAgAAAAAAAAABCgAAAAAAAAAeWgA=',
                 identifier: 'LKTOK-1234-01',
@@ -95,7 +95,7 @@ describe('LockedAssetService', () => {
                 return 2;
             },
         );
-        const decodedLockedMEX = await service.decodeLockedAssetAttributes({
+        const decodedLockedMOA = await service.decodeLockedAssetAttributes({
             batchAttributes: [
                 {
                     attributes: 'AAAAAgAAAAAAAAABCgAAAAAAAAAeWgA=',
@@ -103,7 +103,7 @@ describe('LockedAssetService', () => {
                 },
             ],
         });
-        expect(decodedLockedMEX).toEqual([
+        expect(decodedLockedMOA).toEqual([
             new LockedAssetAttributesModel({
                 attributes: 'AAAAAgAAAAAAAAABCgAAAAAAAAAeWgA=',
                 identifier: 'LKTOK-1234-01',
@@ -130,7 +130,7 @@ describe('LockedAssetService', () => {
                 return 10;
             },
         );
-        const decodedLockedMEX = await service.decodeLockedAssetAttributes({
+        const decodedLockedMOA = await service.decodeLockedAssetAttributes({
             batchAttributes: [
                 {
                     attributes: 'AAAAAgAAAAAAAAACCgAAAAAAAAAfWgA=',
@@ -138,7 +138,7 @@ describe('LockedAssetService', () => {
                 },
             ],
         });
-        expect(decodedLockedMEX).toEqual([
+        expect(decodedLockedMOA).toEqual([
             new LockedAssetAttributesModel({
                 attributes: 'AAAAAgAAAAAAAAACCgAAAAAAAAAfWgA=',
                 identifier: 'LKTOK-1234-01',

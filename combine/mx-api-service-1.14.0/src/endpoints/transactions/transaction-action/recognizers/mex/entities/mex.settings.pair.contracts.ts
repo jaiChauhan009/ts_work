@@ -1,8 +1,8 @@
-export class MexSettingsPairContracts {
-  constructor(init?: Partial<MexSettingsPairContracts>) {
+export class MoaSettingsPairContracts {
+  constructor(init?: Partial<MoaSettingsPairContracts>) {
     Object.assign(this, init);
   }
 
-  rewaMex: string = '';
+  rewaMoa: string = '';
   rewaUsd: string = '';
 }

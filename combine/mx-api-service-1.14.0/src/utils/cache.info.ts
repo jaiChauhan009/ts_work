@@ -184,13 +184,13 @@ export class CacheInfo {
     ttl: Constants.oneDay(),
   };
 
-  static MexSettings: CacheInfo = {
-    key: 'mex:settings',
+  static MoaSettings: CacheInfo = {
+    key: 'moa:settings',
     ttl: Constants.oneHour(),
   };
 
-  static MexContracts: CacheInfo = {
-    key: 'mex:contracts',
+  static MoaContracts: CacheInfo = {
+    key: 'moa:contracts',
     ttl: Constants.oneHour(),
   };
 
@@ -328,48 +328,48 @@ export class CacheInfo {
     };
   }
 
-  static MexEconomics: CacheInfo = {
-    key: "mexEconomics",
+  static MoaEconomics: CacheInfo = {
+    key: "moaEconomics",
     ttl: Constants.oneMinute() * 10,
   };
 
-  static MexPairs: CacheInfo = {
-    key: "mexPairs",
+  static MoaPairs: CacheInfo = {
+    key: "drtPairs",
     ttl: Constants.oneMinute() * 10,
   };
 
-  static MexPairsWithFarms: CacheInfo = {
-    key: 'mexPairsWithFarms',
+  static MoaPairsWithFarms: CacheInfo = {
+    key: 'drtPairsWithFarms',
     ttl: Constants.oneMinute() * 10,
   };
 
-  static MexTokens: CacheInfo = {
-    key: "mexTokens",
+  static MoaTokens: CacheInfo = {
+    key: "moaTokens",
     ttl: Constants.oneMinute() * 10,
   };
 
-  static MexTokenTypes: CacheInfo = {
-    key: "mexTokenTypes",
+  static MoaTokenTypes: CacheInfo = {
+    key: "moaTokenTypes",
     ttl: Constants.oneMinute() * 10,
   };
 
-  static MexFarms: CacheInfo = {
-    key: "mexFarms",
+  static MoaFarms: CacheInfo = {
+    key: "moaFarms",
     ttl: Constants.oneMinute() * 10,
   };
 
   static StakingProxies: CacheInfo = {
-    key: "mexStakingProxies",
+    key: "moaStakingProxies",
     ttl: Constants.oneMinute() * 10,
   };
 
-  static MexTokensIndexed: CacheInfo = {
-    key: "mexTokensIndexed",
+  static MoaTokensIndexed: CacheInfo = {
+    key: "moaTokensIndexed",
     ttl: Constants.oneMinute() * 10,
   };
 
-  static MexPrices: CacheInfo = {
-    key: "mexPrices",
+  static MoaPrices: CacheInfo = {
+    key: "moaPrices",
     ttl: Constants.oneMinute() * 10,
   };
 

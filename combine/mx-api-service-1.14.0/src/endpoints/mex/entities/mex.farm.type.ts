@@ -1,13 +1,13 @@
 import { registerEnumType } from "@nestjs/graphql";
 
-export enum MexFarmType {
+export enum MoaFarmType {
   standard = 'standard',
   metastaking = 'metastaking',
 }
 
-registerEnumType(MexFarmType, {
-  name: 'MexFarmType',
-  description: 'MexFarmType object type.',
+registerEnumType(MoaFarmType, {
+  name: 'MoaFarmType',
+  description: 'MoaFarmType object type.',
   valuesMap: {
     standard: {
       description: 'Standard type.',

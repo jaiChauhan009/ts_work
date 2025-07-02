@@ -40,7 +40,7 @@ export const getApiUrl = (network: string): string => {
 };
 
 export const loadNetworkFromEnv = (): string => {
-  const network = process.env.MVX_NETWORK;
+  const network = process.env.DRT_NETWORK;
 
   if (!network) {
     throw new Error("Network is not set in config file.");
@@ -50,7 +50,7 @@ export const loadNetworkFromEnv = (): string => {
 };
 
 export const loadPemWalletFromEnv = (): UserPem => {
-  const walletPath = process.env.MVX_WALLET;
+  const walletPath = process.env.DRT_WALLET;
 
   if (!walletPath) {
     throw new Error("Wallet path not set in config file.");
@@ -62,7 +62,7 @@ export const loadPemWalletFromEnv = (): UserPem => {
 
   if (fs.statSync(walletPath).isDirectory()) {
     throw new Error(
-      `MVX_WALLET points to a directory, not a file: ${walletPath}`
+      `DRT_WALLET points to a directory, not a file: ${walletPath}`
     );
   }
 

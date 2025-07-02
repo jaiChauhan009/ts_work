@@ -15,7 +15,7 @@ import {
     SumDaily,
     SumHourly,
     TokenBurnedWeekly,
-    XExchangeAnalyticsEntity,
+    DharitrixAnalyticsEntity,
     TokenCandlesMinute,
     TokenCandlesHourly,
     TokenCandlesDaily,
@@ -38,8 +38,8 @@ import { GetOrSetCache } from 'src/helpers/decorators/caching.decorator';
 export class TimescaleDBQueryService implements AnalyticsQueryInterface {
     constructor(
         @Inject(WINSTON_MODULE_NEST_PROVIDER) private readonly logger: Logger,
-        @InjectRepository(XExchangeAnalyticsEntity)
-        private readonly dexAnalytics: Repository<XExchangeAnalyticsEntity>,
+        @InjectRepository(DharitrixAnalyticsEntity)
+        private readonly dexAnalytics: Repository<DharitrixAnalyticsEntity>,
         @InjectRepository(SumDaily)
         private readonly sumDaily: Repository<SumDaily>,
         @InjectRepository(SumHourly)

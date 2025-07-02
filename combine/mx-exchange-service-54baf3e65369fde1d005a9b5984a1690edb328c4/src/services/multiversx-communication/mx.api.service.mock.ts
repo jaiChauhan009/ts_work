@@ -27,7 +27,7 @@ export class MXApiServiceMock {
     async getTokensForUser(address: string): Promise<DcdtToken[]> {
         return [
             new DcdtToken({
-                ...Tokens('MEX-123456'),
+                ...Tokens('MOA-123456'),
                 balance: '1000000000000000000',
             }),
         ];
@@ -40,13 +40,13 @@ export class MXApiServiceMock {
     async getNftsForUser(address: string): Promise<NftToken[]> {
         return [
             {
-                collection: 'REWAMEXFL-abcdef',
-                ticker: 'REWAMEXFL',
+                collection: 'REWAMOAFL-abcdef',
+                ticker: 'REWAMOAFL',
                 name: 'FarmToken',
                 type: 'SemiFungibleDCDT',
                 decimals: 18,
                 balance: '1000000000000000000',
-                identifier: 'REWAMEXFL-abcdef-01',
+                identifier: 'REWAMOAFL-abcdef-01',
                 attributes: 'AAAABQeMCWDbAAAAAAAAAF8CAQ==',
                 creator: Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000021',

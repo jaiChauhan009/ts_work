@@ -3,7 +3,7 @@ import { Component, h, Prop } from '@stencil/core';
 
 const XPORTAL_APP_GALLERY_LINK = 'https://appgallery.huawei.com/app/C104325151';
 const XPORTAL_APP_STORE_LINK = 'https://apps.apple.com/us/app/xportal/id1519405832';
-const XPORTAL_PLAY_STORE_LINK = 'https://play.google.com/store/apps/details?id=com.numbat.maiar.wallet&hl=ro&pli=1';
+const XPORTAL_PLAY_STORE_LINK = 'https://play.google.com/store/apps/details?id=com.numbat.durian.wallet&hl=ro&pli=1';
 
 interface XPortalDownloadOptionType {
   image: JSX.Element;
