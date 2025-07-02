@@ -7,14 +7,14 @@ import {
 import { Injectable } from '@nestjs/common';
 import { gasConfig, scAddress } from 'src/config';
 import { TransactionModel } from 'src/models/transaction.model';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { UserEnergyComputeService } from './user.energy.compute.service';
 import { TransactionOptions } from 'src/modules/common/transaction.options';
 
 @Injectable()
 export class UserEnergyTransactionService {
     constructor(
-        private readonly mxProxy: MXProxyService,
+        private readonly drtProxy: MXProxyService,
         private readonly userEnergyCompute: UserEnergyComputeService,
     ) {}
 
@@ -67,7 +67,7 @@ export class UserEnergyTransactionService {
 
         endpointArgs.push(VariadicValue.fromItems(...farmAddresses));
 
-        return this.mxProxy.getEnergyUpdateSmartContractTransaction(
+        return this.drtProxy.getEnergyUpdateSmartContractTransaction(
             new TransactionOptions({
                 sender: userAddress,
                 gasLimit:

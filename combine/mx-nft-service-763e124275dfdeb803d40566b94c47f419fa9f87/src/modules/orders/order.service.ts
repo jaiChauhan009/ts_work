@@ -13,7 +13,7 @@ import { OrdersCachingService } from './caching/orders-caching.service';
 import { NotificationsService } from '../notifications/notifications.service';
 import { PersistenceService } from 'src/common/persistence/persistence.service';
 import { UsdPriceService } from '../usdPrice/usd-price.service';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 
 @Injectable()
 export class OrdersService {
@@ -58,7 +58,7 @@ export class OrdersService {
       await this.triggerCacheInvalidation(createOrderArgs.auctionId, createOrderArgs.ownerAddress, createOrderArgs.marketplaceKey);
       const paymentToken = await this.usdPriceService.getToken(createOrderArgs.priceToken);
       const orderEntity = await this.persistenceService.saveOrder(
-        CreateOrderArgs.toEntity(createOrderArgs, paymentToken?.decimals ?? mxConfig.decimals),
+        CreateOrderArgs.toEntity(createOrderArgs, paymentToken?.decimals ?? drtConfig.decimals),
       );
       if (orderEntity && activeOrder) {
         await this.handleNotifications(createOrderArgs, activeOrder);

@@ -1,5 +1,5 @@
 import { forwardRef, Module } from '@nestjs/common';
-import { MXCommunicationModule } from '../../../../services/dharitri-communication/mx.communication.module';
+import { MXCommunicationModule } from '../../../../services/dharitri-communication/drt.communication.module';
 import { ContextModule } from '../../../../services/context/context.module';
 import { ProxyFarmAbiService } from './proxy.farm.abi.service';
 import { ProxyFarmTransactionsService } from './proxy.farm.transactions.service';

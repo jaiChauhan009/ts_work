@@ -1,4 +1,4 @@
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { TierInfoAbi } from 'src/modules/campaigns/models/abi/TierInfoAbi';
 import { BigNumberUtils } from 'src/utils/bigNumber-utils';
 import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
@@ -40,7 +40,7 @@ export class TierEntity extends BaseEntity {
     Object.assign(this, init);
   }
 
-  static fromTierAbi(tier: TierInfoAbi, decimals: number = mxConfig.decimals) {
+  static fromTierAbi(tier: TierInfoAbi, decimals: number = drtConfig.decimals) {
     return tier
       ? new TierEntity({
           tierName: tier.tier.valueOf().toString(),

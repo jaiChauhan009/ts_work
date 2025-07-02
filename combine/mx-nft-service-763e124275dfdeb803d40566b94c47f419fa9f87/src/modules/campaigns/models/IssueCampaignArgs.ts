@@ -1,6 +1,6 @@
 import { Field, InputType, Int, registerEnumType } from '@nestjs/graphql';
 import { Matches, MaxLength, MinLength } from 'class-validator';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { ADDRESS_ERROR, ADDRESS_RGX, NFT_IDENTIFIER_ERROR, NFT_IDENTIFIER_RGX, NUMERIC_ERROR, NUMERIC_RGX } from 'src/utils/constants';
 
 @InputType()
@@ -36,7 +36,7 @@ export class IssueCampaignArgs {
   whitelistEndTime: number;
 
   @Field()
-  mintPriceToken: string = mxConfig.rewa;
+  mintPriceToken: string = drtConfig.rewa;
 
   @MinLength(3, { message: 'The token name should have at least 3 caracters' })
   @MaxLength(20, { message: 'The token name should have at most 20 caracters' })

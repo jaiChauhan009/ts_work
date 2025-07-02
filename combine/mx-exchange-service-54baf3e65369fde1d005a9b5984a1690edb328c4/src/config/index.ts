@@ -6,7 +6,7 @@ import config from 'config';
  * Wallet object configuration.
  * Has 3rd party API hosts and other configurations
  */
-export const mxConfig = config.get('dharitri');
+export const drtConfig = config.get('dharitri');
 /**
  * Caching time config.
  * The values are in seconds

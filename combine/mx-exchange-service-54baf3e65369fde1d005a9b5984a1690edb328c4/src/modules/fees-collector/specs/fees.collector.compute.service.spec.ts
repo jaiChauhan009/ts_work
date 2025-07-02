@@ -12,7 +12,7 @@ import { FeesCollectorAbiServiceProvider } from '../mocks/fees.collector.abi.ser
 import { WeeklyRewardsSplittingComputeService } from 'src/submodules/weekly-rewards-splitting/services/weekly-rewards-splitting.compute.service';
 import { EnergyAbiServiceProvider } from 'src/modules/energy/mocks/energy.abi.service.mock';
 import { TokenComputeService } from 'src/modules/tokens/services/token.compute.service';
-import { MXDataApiServiceProvider } from 'src/services/dharitri-communication/mx.data.api.service.mock';
+import { MXDataApiServiceProvider } from 'src/services/dharitri-communication/drt.data.api.service.mock';
 import { Address } from '@terradharitri/sdk-core/out';
 import { WeeklyRewardsSplittingAbiService } from 'src/submodules/weekly-rewards-splitting/services/weekly-rewards-splitting.abi.service';
 import { DcdtTokenPayment } from 'src/models/dcdtTokenPayment.model';
@@ -35,7 +35,7 @@ import { ApiConfigService } from 'src/helpers/api.config.service';
 import winston from 'winston';
 import { DynamicModuleUtils } from 'src/utils/dynamic.module.utils';
 import { AnalyticsQueryServiceProvider } from 'src/services/analytics/mocks/analytics.query.service.mock';
-import { MXApiServiceProvider } from 'src/services/dharitri-communication/mx.api.service.mock';
+import { MXApiServiceProvider } from 'src/services/dharitri-communication/drt.api.service.mock';
 import { ElasticSearchModule } from 'src/services/elastic-search/elastic.search.module';
 
 describe('FeesCollectorComputeService', () => {

@@ -5,7 +5,7 @@ import {
     Token,
     TokenTransfer,
 } from '@terradharitri/sdk-core';
-import { mxConfig, gasConfig } from '../../../../config';
+import { drtConfig, gasConfig } from '../../../../config';
 import { BigNumber } from 'bignumber.js';
 import {
     ClaimRewardsArgs,
@@ -13,7 +13,7 @@ import {
     EnterFarmArgs,
     ExitFarmArgs,
 } from '../../models/farm.args';
-import { MXProxyService } from '../../../../services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from '../../../../services/dharitri-communication/drt.proxy.service';
 import { InputTokenModel } from 'src/models/inputToken.model';
 import { FarmRewardType, FarmVersion } from '../../models/farm.model';
 import { PairService } from 'src/modules/pair/services/pair.service';
@@ -23,7 +23,7 @@ import { TransactionOptions } from 'src/modules/common/transaction.options';
 
 export abstract class TransactionsFarmService {
     constructor(
-        protected readonly mxProxy: MXProxyService,
+        protected readonly drtProxy: MXProxyService,
         protected readonly farmAbi: FarmAbiService,
         protected readonly pairService: PairService,
         protected readonly pairAbi: PairAbiService,
@@ -118,11 +118,11 @@ export abstract class TransactionsFarmService {
         sender: string,
         farmAddress: string,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getFarmSmartContractTransaction(
+        return this.drtProxy.getFarmSmartContractTransaction(
             farmAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.farms.admin.end_produce_rewards,
                 function: 'end_produce_rewards',
             }),
@@ -133,11 +133,11 @@ export abstract class TransactionsFarmService {
         sender: string,
         farmAddress: string,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getFarmSmartContractTransaction(
+        return this.drtProxy.getFarmSmartContractTransaction(
             farmAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.farms.admin.start_produce_rewards,
                 function: 'start_produce_rewards',
             }),
@@ -149,11 +149,11 @@ export abstract class TransactionsFarmService {
         farmAddress: string,
         amount: string,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getFarmSmartContractTransaction(
+        return this.drtProxy.getFarmSmartContractTransaction(
             farmAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.farms.admin.setPerBlockRewardAmount,
                 function: 'setPerBlockRewardAmount',
                 arguments: [new BigUIntValue(new BigNumber(amount))],
@@ -166,11 +166,11 @@ export abstract class TransactionsFarmService {
         farmAddress: string,
         percent: number,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getFarmSmartContractTransaction(
+        return this.drtProxy.getFarmSmartContractTransaction(
             farmAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.farms.admin.set_penalty_percent,
                 function: 'set_penalty_percent',
                 arguments: [new BigUIntValue(new BigNumber(percent))],
@@ -183,11 +183,11 @@ export abstract class TransactionsFarmService {
         farmAddress: string,
         epochs: number,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getFarmSmartContractTransaction(
+        return this.drtProxy.getFarmSmartContractTransaction(
             farmAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.farms.admin.set_minimum_farming_epochs,
                 function: 'set_minimum_farming_epochs',
                 arguments: [new BigUIntValue(new BigNumber(epochs))],
@@ -200,11 +200,11 @@ export abstract class TransactionsFarmService {
         farmAddress: string,
         gasLimit: number,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getFarmSmartContractTransaction(
+        return this.drtProxy.getFarmSmartContractTransaction(
             farmAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.farms.admin.set_transfer_exec_gas_limit,
                 function: 'set_transfer_exec_gas_limit',
                 arguments: [new BigUIntValue(new BigNumber(gasLimit))],
@@ -217,11 +217,11 @@ export abstract class TransactionsFarmService {
         farmAddress: string,
         gasLimit: number,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getFarmSmartContractTransaction(
+        return this.drtProxy.getFarmSmartContractTransaction(
             farmAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.farms.admin.set_burn_gas_limit,
                 function: 'set_burn_gas_limit',
                 arguments: [new BigUIntValue(new BigNumber(gasLimit))],
@@ -233,11 +233,11 @@ export abstract class TransactionsFarmService {
         sender: string,
         farmAddress: string,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getFarmSmartContractTransaction(
+        return this.drtProxy.getFarmSmartContractTransaction(
             farmAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.farms.admin.pause,
                 function: 'pause',
             }),
@@ -248,11 +248,11 @@ export abstract class TransactionsFarmService {
         sender: string,
         farmAddress: string,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getFarmSmartContractTransaction(
+        return this.drtProxy.getFarmSmartContractTransaction(
             farmAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.farms.admin.resume,
                 function: 'resume',
             }),
@@ -266,11 +266,11 @@ export abstract class TransactionsFarmService {
         tokenTicker: string,
         decimals: number,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getFarmSmartContractTransaction(
+        return this.drtProxy.getFarmSmartContractTransaction(
             farmAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.farms.admin.registerFarmToken,
                 function: 'registerFarmToken',
                 arguments: [
@@ -286,11 +286,11 @@ export abstract class TransactionsFarmService {
         sender: string,
         farmAddress: string,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getFarmSmartContractTransaction(
+        return this.drtProxy.getFarmSmartContractTransaction(
             farmAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.farms.admin.setLocalRolesFarmToken,
                 function: 'setLocalRolesFarmToken',
             }),
@@ -302,11 +302,11 @@ export abstract class TransactionsFarmService {
         farmAddress: string,
         payments: InputTokenModel[],
     ): Promise<TransactionModel> {
-        return this.mxProxy.getFarmSmartContractTransaction(
+        return this.drtProxy.getFarmSmartContractTransaction(
             farmAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit:
                     gasConfig.farms['v1.3'].mergeFarmTokensMultiplier *
                     payments.length,

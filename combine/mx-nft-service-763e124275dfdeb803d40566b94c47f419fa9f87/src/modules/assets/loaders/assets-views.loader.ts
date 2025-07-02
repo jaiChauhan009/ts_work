@@ -2,7 +2,7 @@ import DataLoader = require('dataloader');
 import { BaseProvider } from '../../common/base.loader';
 import { Injectable, Scope } from '@nestjs/common';
 import { AssetsViewsRedisHandler } from './assets-views.redis-handler';
-import { MxStatsService } from 'src/common/services/mx-communication/mx-stats.service';
+import { MxStatsService } from 'src/common/services/drt-communication/drt-stats.service';
 
 @Injectable({
   scope: Scope.REQUEST,

@@ -8,20 +8,20 @@ DharitrI Front-End SDK for JavaScript and TypeScript (written in TypeScript).
 
 It is built for applications that use any of the following technologies:
 
-- React (example: [Template Dapp](https://github.com/TerraDharitri/mx-template-dapp))
+- React (example: [Template Dapp](https://github.com/TerraDharitri/drt-template-dapp))
 - Angular
 - Vue
-- Any other JavaScript framework (e.g. Solid.js etc.) (example: [Solid.js Dapp](https://github.com/TerraDharitri/mx-solidjs-template-dapp))
+- Any other JavaScript framework (e.g. Solid.js etc.) (example: [Solid.js Dapp](https://github.com/TerraDharitri/drt-solidjs-template-dapp))
 - React Native
-- Next.js (example: [Next.js Dapp](https://github.com/TerraDharitri/mx-template-dapp-nextjs))
+- Next.js (example: [Next.js Dapp](https://github.com/TerraDharitri/drt-template-dapp-nextjs))
 
 ## GitHub project
 
-The GitHub repository can be found here: [https://github.com/TerraDharitri/mx-sdk-dapp](https://github.com/TerraDharitri/mx-sdk-dapp)
+The GitHub repository can be found here: [https://github.com/TerraDharitri/drt-sdk-dapp](https://github.com/TerraDharitri/drt-sdk-dapp)
 
 ## Live demo: template-dapp
 
-See [Template dApp](https://template-dapp.dharitri.org/) for live demo or checkout usage in the [Github repo](https://github.com/TerraDharitri/mx-template-dapp)
+See [Template dApp](https://template-dapp.dharitri.org/) for live demo or checkout usage in the [Github repo](https://github.com/TerraDharitri/drt-template-dapp)
 
 ## Requirements
 
@@ -60,7 +60,7 @@ Also, make sure you run your app on `https`, not `http`, otherwise some provider
 npm install
 ```
 
-If you're transitioning from `@terradharitri/sdk-dapp@4.x`, you can check out the [Migration guide](https://github.com/TerraDharitri/mx-template-dapp/blob/0eb7bc6194195b6c364b8010023d351d914db65e/MIGRATION_GUIDE.md) and  [migration PR](https://github.com/TerraDharitri/mx-template-dapp/pull/343) of Template Dapp
+If you're transitioning from `@terradharitri/sdk-dapp@4.x`, you can check out the [Migration guide](https://github.com/TerraDharitri/drt-template-dapp/blob/0eb7bc6194195b6c364b8010023d351d914db65e/MIGRATION_GUIDE.md) and  [migration PR](https://github.com/TerraDharitri/drt-template-dapp/pull/343) of Template Dapp
 
 ## Usage
 
@@ -417,7 +417,7 @@ Conceptually, these can be split into 3 main parts:
 
 - First is the business logic in `apiCalls`, `constants`, `providers` and `methods`
 - Then comes the persistence layer hosted in the `store` folder, using [Zustand](https://zustand.docs.pmnd.rs/) under the hood.
-- Last are the UI components hosted in [@terradharitri/sdk-dapp-ui](https://github.com/TerraDharitri/mx-sdk-dapp-ui) with some components controlled on demand by classes defined in `controlles` and `managers`
+- Last are the UI components hosted in [@terradharitri/sdk-dapp-ui](https://github.com/TerraDharitri/drt-sdk-dapp-ui) with some components controlled on demand by classes defined in `controlles` and `managers`
 
 Next, we will take the elements from Table 3 and detail them in the following sections.
 
@@ -442,7 +442,7 @@ An existing provider is initialized on app load (this is take care of by `initAp
 
 #### Creating a custom provider
 
-If you need to create a custom signing provider, make sure to extend the `IProvider` interface and implement all required methods (see example [here](https://github.com/TerraDharitri/mx-template-dapp/tree/main/src/provider)). Next step would be to include it in the `customProviders` array in the `initApp` method or add it to the [window object](https://github.com/TerraDharitri/mx-template-dapp/tree/main/src/initConfig). Last step is to login using the custom provider.
+If you need to create a custom signing provider, make sure to extend the `IProvider` interface and implement all required methods (see example [here](https://github.com/TerraDharitri/drt-template-dapp/tree/main/src/provider)). Next step would be to include it in the `customProviders` array in the `initApp` method or add it to the [window object](https://github.com/TerraDharitri/drt-template-dapp/tree/main/src/initConfig). Last step is to login using the custom provider.
 
 ```typescript
 const provider = await ProviderFactory.create({
@@ -741,7 +741,7 @@ const eventBus = await modalElement.getEventBus();
 eventBus.publish('TRANSACTION_TOAST_DATA_UPDATE', someData);
 ```
 
-If you want to override private components and create your own, you can implement a similar strategy by respecting each webcomponent's API (see an interface example [here](https://github.com/TerraDharitri/mx-sdk-dapp/blob/main/src/providers/strategies/LedgerProviderStrategy/types/ledger.types.ts)).
+If you want to override private components and create your own, you can implement a similar strategy by respecting each webcomponent's API (see an interface example [here](https://github.com/TerraDharitri/drt-sdk-dapp/blob/main/src/providers/strategies/LedgerProviderStrategy/types/ledger.types.ts)).
 
 ## Debugging your dApp
 

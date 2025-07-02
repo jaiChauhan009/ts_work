@@ -11,10 +11,10 @@ import {
 import { DcdtTokenPayment } from '@terradharitri/sdk-exchange';
 import { Injectable } from '@nestjs/common';
 import BigNumber from 'bignumber.js';
-import { gasConfig, mxConfig, scAddress } from 'src/config';
+import { gasConfig, drtConfig, scAddress } from 'src/config';
 import { TransactionModel } from 'src/models/transaction.model';
 import { PairAbiService } from 'src/modules/pair/services/pair.abi.service';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { FarmAbiServiceV2 } from 'src/modules/farm/v2/services/farm.v2.abi.service';
 import { StakingProxyAbiService } from 'src/modules/staking-proxy/services/staking.proxy.abi.service';
 import { StakingAbiService } from 'src/modules/staking/services/staking.abi.service';
@@ -46,7 +46,7 @@ export class PositionCreatorTransactionService {
         private readonly wrapTransaction: WrapTransactionsService,
         private readonly proxyFarmAbi: ProxyFarmAbiService,
         private readonly energyAbi: EnergyAbiService,
-        private readonly mxProxy: MXProxyService,
+        private readonly drtProxy: MXProxyService,
     ) {}
 
     async createLiquidityPositionSingleToken(
@@ -62,7 +62,7 @@ export class PositionCreatorTransactionService {
 
         if (
             !uniqueTokensIDs.includes(payment.tokenIdentifier) &&
-            payment.tokenIdentifier !== mxConfig.REWAIdentifier
+            payment.tokenIdentifier !== drtConfig.REWAIdentifier
         ) {
             throw new Error('Invalid DCDT token payment');
         }
@@ -88,11 +88,11 @@ export class PositionCreatorTransactionService {
 
         const transactionOptions = new TransactionOptions({
             sender: sender,
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             gasLimit: gasLimit,
         });
 
-        if (payment.tokenIdentifier === mxConfig.REWAIdentifier) {
+        if (payment.tokenIdentifier === drtConfig.REWAIdentifier) {
             transactionOptions.nativeTransferAmount = payment.amount;
         } else {
             transactionOptions.tokenTransfers = [
@@ -143,7 +143,7 @@ export class PositionCreatorTransactionService {
             VariadicValue.fromItems(...swapRouteArgs),
         ];
 
-        return this.mxProxy.getLockedTokenPositionCreatorContractTransaction(
+        return this.drtProxy.getLockedTokenPositionCreatorContractTransaction(
             transactionOptions,
         );
     }
@@ -163,7 +163,7 @@ export class PositionCreatorTransactionService {
             VariadicValue.fromItems(...swapRouteArgs),
         ];
 
-        return this.mxProxy.getPositionCreatorContractTransaction(
+        return this.drtProxy.getPositionCreatorContractTransaction(
             transactionOptions,
         );
     }
@@ -184,7 +184,7 @@ export class PositionCreatorTransactionService {
 
         if (
             !uniqueTokensIDs.includes(payments[0].tokenIdentifier) &&
-            payments[0].tokenIdentifier !== mxConfig.REWAIdentifier
+            payments[0].tokenIdentifier !== drtConfig.REWAIdentifier
         ) {
             throw new Error('Invalid DCDT token payment');
         }
@@ -197,7 +197,7 @@ export class PositionCreatorTransactionService {
 
         const transactions = [];
         if (
-            payments[0].tokenIdentifier === mxConfig.REWAIdentifier &&
+            payments[0].tokenIdentifier === drtConfig.REWAIdentifier &&
             payments.length > 1
         ) {
             transactions.push(
@@ -227,19 +227,19 @@ export class PositionCreatorTransactionService {
 
         const transactionOptions = new TransactionOptions({
             sender: sender,
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             gasLimit: gasLimit,
             function: 'createFarmPosFromSingleToken',
         });
 
         if (
-            payments[0].tokenIdentifier === mxConfig.REWAIdentifier &&
+            payments[0].tokenIdentifier === drtConfig.REWAIdentifier &&
             payments.length === 1
         ) {
             transactionOptions.nativeTransferAmount = payments[0].amount;
         } else {
             payments[0].tokenIdentifier =
-                payments[0].tokenIdentifier === mxConfig.REWAIdentifier
+                payments[0].tokenIdentifier === drtConfig.REWAIdentifier
                     ? wrappedRewaTokenID
                     : payments[0].tokenIdentifier;
             transactionOptions.tokenTransfers = payments.map(
@@ -293,7 +293,7 @@ export class PositionCreatorTransactionService {
             VariadicValue.fromItems(...swapRouteArgs),
         ];
 
-        return this.mxProxy.getPositionCreatorContractTransaction(
+        return this.drtProxy.getPositionCreatorContractTransaction(
             transactionOptions,
         );
     }
@@ -312,7 +312,7 @@ export class PositionCreatorTransactionService {
             VariadicValue.fromItems(...swapRouteArgs),
         ];
 
-        return this.mxProxy.getLockedTokenPositionCreatorContractTransaction(
+        return this.drtProxy.getLockedTokenPositionCreatorContractTransaction(
             transactionOptions,
         );
     }
@@ -340,7 +340,7 @@ export class PositionCreatorTransactionService {
         if (
             !uniqueTokensIDs.includes(payments[0].tokenIdentifier) &&
             payments[0].tokenIdentifier !== lpTokenID &&
-            payments[0].tokenIdentifier !== mxConfig.REWAIdentifier
+            payments[0].tokenIdentifier !== drtConfig.REWAIdentifier
         ) {
             throw new Error('Invalid DCDT token payment');
         }
@@ -353,7 +353,7 @@ export class PositionCreatorTransactionService {
 
         const transactions = [];
         if (
-            payments[0].tokenIdentifier === mxConfig.REWAIdentifier &&
+            payments[0].tokenIdentifier === drtConfig.REWAIdentifier &&
             payments.length > 1
         ) {
             transactions.push(
@@ -386,7 +386,7 @@ export class PositionCreatorTransactionService {
 
         const transactionOptions = new TransactionOptions({
             sender: sender,
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             gasLimit: gasLimit,
             function: 'createMetastakingPosFromSingleToken',
             arguments: [
@@ -398,13 +398,13 @@ export class PositionCreatorTransactionService {
         });
 
         if (
-            payments[0].tokenIdentifier === mxConfig.REWAIdentifier &&
+            payments[0].tokenIdentifier === drtConfig.REWAIdentifier &&
             payments.length === 1
         ) {
             transactionOptions.nativeTransferAmount = payments[0].amount;
         } else {
             payments[0].tokenIdentifier =
-                payments[0].tokenIdentifier === mxConfig.REWAIdentifier
+                payments[0].tokenIdentifier === drtConfig.REWAIdentifier
                     ? wrappedRewaTokenID
                     : payments[0].tokenIdentifier;
             transactionOptions.tokenTransfers = payments.map(
@@ -420,7 +420,7 @@ export class PositionCreatorTransactionService {
         }
 
         const transaction =
-            await this.mxProxy.getPositionCreatorContractTransaction(
+            await this.drtProxy.getPositionCreatorContractTransaction(
                 transactionOptions,
             );
 
@@ -443,7 +443,7 @@ export class PositionCreatorTransactionService {
 
         if (
             !uniqueTokensIDs.includes(payments[0].tokenIdentifier) &&
-            payments[0].tokenIdentifier !== mxConfig.REWAIdentifier
+            payments[0].tokenIdentifier !== drtConfig.REWAIdentifier
         ) {
             throw new Error('Invalid DCDT token payment');
         }
@@ -456,7 +456,7 @@ export class PositionCreatorTransactionService {
 
         const transactions = [];
         if (
-            payments[0].tokenIdentifier === mxConfig.REWAIdentifier &&
+            payments[0].tokenIdentifier === drtConfig.REWAIdentifier &&
             payments.length > 1
         ) {
             transactions.push(
@@ -474,7 +474,7 @@ export class PositionCreatorTransactionService {
 
         const transactionOptions = new TransactionOptions({
             sender: sender,
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             gasLimit: gasLimit,
             function: 'createFarmStakingPosFromSingleToken',
             arguments: [
@@ -491,13 +491,13 @@ export class PositionCreatorTransactionService {
         });
 
         if (
-            payments[0].tokenIdentifier === mxConfig.REWAIdentifier &&
+            payments[0].tokenIdentifier === drtConfig.REWAIdentifier &&
             payments.length === 1
         ) {
             transactionOptions.nativeTransferAmount = payments[0].amount;
         } else {
             payments[0].tokenIdentifier =
-                payments[0].tokenIdentifier === mxConfig.REWAIdentifier
+                payments[0].tokenIdentifier === drtConfig.REWAIdentifier
                     ? wrappedRewaTokenID
                     : payments[0].tokenIdentifier;
             transactionOptions.tokenTransfers = payments.map(
@@ -513,7 +513,7 @@ export class PositionCreatorTransactionService {
         }
 
         const transaction =
-            await this.mxProxy.getPositionCreatorContractTransaction(
+            await this.drtProxy.getPositionCreatorContractTransaction(
                 transactionOptions,
             );
 
@@ -546,7 +546,7 @@ export class PositionCreatorTransactionService {
 
         const transactions = [];
 
-        if (payments[0].tokenIdentifier === mxConfig.REWAIdentifier) {
+        if (payments[0].tokenIdentifier === drtConfig.REWAIdentifier) {
             payments[0].tokenIdentifier =
                 await this.wrapAbi.wrappedRewaTokenID();
             transactions.push(
@@ -554,7 +554,7 @@ export class PositionCreatorTransactionService {
             );
         }
 
-        if (payments[1].tokenIdentifier === mxConfig.REWAIdentifier) {
+        if (payments[1].tokenIdentifier === drtConfig.REWAIdentifier) {
             payments[1].tokenIdentifier =
                 await this.wrapAbi.wrappedRewaTokenID();
             transactions.push(
@@ -628,7 +628,7 @@ export class PositionCreatorTransactionService {
 
         const transactionOptions = new TransactionOptions({
             sender: sender,
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             gasLimit: gasLimit,
             function: 'createFarmPosFromTwoTokens',
             arguments: endpointArgs,
@@ -660,10 +660,10 @@ export class PositionCreatorTransactionService {
         });
 
         const transaction = isLockedToken
-            ? await this.mxProxy.getLockedTokenPositionCreatorContractTransaction(
+            ? await this.drtProxy.getLockedTokenPositionCreatorContractTransaction(
                   transactionOptions,
               )
-            : await this.mxProxy.getPositionCreatorContractTransaction(
+            : await this.drtProxy.getPositionCreatorContractTransaction(
                   transactionOptions,
               );
 
@@ -684,7 +684,7 @@ export class PositionCreatorTransactionService {
 
         const transactions = [];
 
-        if (payments[0].tokenIdentifier === mxConfig.REWAIdentifier) {
+        if (payments[0].tokenIdentifier === drtConfig.REWAIdentifier) {
             payments[0].tokenIdentifier =
                 await this.wrapAbi.wrappedRewaTokenID();
             transactions.push(
@@ -692,7 +692,7 @@ export class PositionCreatorTransactionService {
             );
         }
 
-        if (payments[1].tokenIdentifier === mxConfig.REWAIdentifier) {
+        if (payments[1].tokenIdentifier === drtConfig.REWAIdentifier) {
             payments[1].tokenIdentifier =
                 await this.wrapAbi.wrappedRewaTokenID();
             transactions.push(
@@ -731,7 +731,7 @@ export class PositionCreatorTransactionService {
 
         const transactionOptions = new TransactionOptions({
             sender: sender,
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             gasLimit: gasConfig.positionCreator.dualTokens.dualFarmPosition,
             function: 'createMetastakingPosFromTwoTokens',
             arguments: [
@@ -766,7 +766,7 @@ export class PositionCreatorTransactionService {
         });
 
         const transaction =
-            await this.mxProxy.getPositionCreatorContractTransaction(
+            await this.drtProxy.getPositionCreatorContractTransaction(
                 transactionOptions,
             );
 
@@ -802,7 +802,7 @@ export class PositionCreatorTransactionService {
 
         const transactionOptions = new TransactionOptions({
             sender: sender,
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             gasLimit: gasConfig.positionCreator.dualTokens.exitFarm,
             function: 'exitFarmPos',
             arguments: [
@@ -821,7 +821,7 @@ export class PositionCreatorTransactionService {
             ],
         });
 
-        return this.mxProxy.getPositionCreatorContractTransaction(
+        return this.drtProxy.getPositionCreatorContractTransaction(
             transactionOptions,
         );
     }
@@ -838,7 +838,7 @@ export class PositionCreatorTransactionService {
 
         if (
             !uniqueTokensIDs.includes(payment.tokenIdentifier) &&
-            payment.tokenIdentifier !== mxConfig.REWAIdentifier
+            payment.tokenIdentifier !== drtConfig.REWAIdentifier
         ) {
             throw new Error('Invalid DCDT token payment');
         }
@@ -855,7 +855,7 @@ export class PositionCreatorTransactionService {
 
         const transactionOptions = new TransactionOptions({
             sender: sender,
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             gasLimit: gasLimit,
             function: 'createEnergyPosition',
             arguments: [
@@ -865,7 +865,7 @@ export class PositionCreatorTransactionService {
             ],
         });
 
-        if (payment.tokenIdentifier === mxConfig.REWAIdentifier) {
+        if (payment.tokenIdentifier === drtConfig.REWAIdentifier) {
             transactionOptions.nativeTransferAmount = payment.amount;
         } else {
             transactionOptions.tokenTransfers = [
@@ -879,7 +879,7 @@ export class PositionCreatorTransactionService {
         }
 
         const transaction =
-            await this.mxProxy.getLockedTokenPositionCreatorContractTransaction(
+            await this.drtProxy.getLockedTokenPositionCreatorContractTransaction(
                 transactionOptions,
             );
 

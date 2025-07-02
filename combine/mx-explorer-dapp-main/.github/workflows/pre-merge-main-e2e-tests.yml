@@ -54,6 +54,6 @@ jobs:
         with:
           name: cypress-execution-report
           path: |
-            /home/runner/work/mx-explorer-dapp/mx-explorer-dapp/mochawesome-report/mochawesome.html
-            /home/runner/work/mx-explorer-dapp/mx-explorer-dapp/cypress/screenshots
-            /home/runner/work/mx-explorer-dapp/mx-explorer-dapp/cypress/videos
+            /home/runner/work/drt-explorer-dapp/drt-explorer-dapp/mochawesome-report/mochawesome.html
+            /home/runner/work/drt-explorer-dapp/drt-explorer-dapp/cypress/screenshots
+            /home/runner/work/drt-explorer-dapp/drt-explorer-dapp/cypress/videos

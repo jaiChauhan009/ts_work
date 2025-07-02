@@ -1,21 +1,21 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { ContextGetterServiceProvider } from 'src/services/context/mocks/context.getter.service.mock';
 import { ApiConfigService } from 'src/helpers/api.config.service';
-import { MXGatewayService } from 'src/services/dharitri-communication/mx.gateway.service';
+import { MXGatewayService } from 'src/services/dharitri-communication/drt.gateway.service';
 import { StakingTransactionService } from '../services/staking.transactions.service';
 
 import { Address } from '@terradharitri/sdk-core';
 import { InputTokenModel } from 'src/models/inputToken.model';
 import { encodeTransactionData } from 'src/helpers/helpers';
-import { mxConfig, gasConfig } from 'src/config';
+import { drtConfig, gasConfig } from 'src/config';
 import { StakingAbiServiceProvider } from '../mocks/staking.abi.service.mock';
-import { MXProxyServiceProvider } from 'src/services/dharitri-communication/mx.proxy.service.mock';
+import { MXProxyServiceProvider } from 'src/services/dharitri-communication/drt.proxy.service.mock';
 import { ConfigModule } from '@nestjs/config';
 import { WinstonModule } from 'nest-winston';
 import winston from 'winston';
 import { DynamicModuleUtils } from 'src/utils/dynamic.module.utils';
-import { MXApiService } from 'src/services/dharitri-communication/mx.api.service';
-import { MXApiServiceProvider } from 'src/services/dharitri-communication/mx.api.service.mock';
+import { MXApiService } from 'src/services/dharitri-communication/drt.api.service';
+import { MXApiServiceProvider } from 'src/services/dharitri-communication/drt.api.service.mock';
 
 describe('StakingTransactionService', () => {
     let module: TestingModule;
@@ -79,7 +79,7 @@ describe('StakingTransactionService', () => {
             data: encodeTransactionData(
                 'DCDTTransfer@WREWA-123456@1000@stakeFarm',
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -245,8 +245,8 @@ describe('StakingTransactionService', () => {
         const service = module.get<StakingTransactionService>(
             StakingTransactionService,
         );
-        const mxApi = module.get<MXApiService>(MXApiService);
-        jest.spyOn(mxApi, 'getNftsForUser').mockResolvedValue([
+        const drtApi = module.get<MXApiService>(MXApiService);
+        jest.spyOn(drtApi, 'getNftsForUser').mockResolvedValue([
             {
                 identifier: 'STAKETOK-111111-01',
                 collection: 'STAKETOK-111111',

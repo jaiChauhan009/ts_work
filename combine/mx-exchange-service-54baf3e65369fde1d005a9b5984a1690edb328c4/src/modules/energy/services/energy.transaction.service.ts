@@ -12,7 +12,7 @@ import { gasConfig } from 'src/config';
 import { InputTokenModel } from 'src/models/inputToken.model';
 import { TransactionModel } from 'src/models/transaction.model';
 import { ContextGetterService } from 'src/services/context/context.getter.service';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { UnlockType } from '../models/energy.model';
 import { TransactionOptions } from 'src/modules/common/transaction.options';
 
@@ -20,7 +20,7 @@ import { TransactionOptions } from 'src/modules/common/transaction.options';
 export class EnergyTransactionService {
     constructor(
         protected readonly contextGetter: ContextGetterService,
-        protected readonly mxProxy: MXProxyService,
+        protected readonly drtProxy: MXProxyService,
     ) {}
 
     async lockTokens(
@@ -28,7 +28,7 @@ export class EnergyTransactionService {
         inputTokens: InputTokenModel,
         lockEpochs: number,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getSimpleLockEnergySmartContractTransaction(
+        return this.drtProxy.getSimpleLockEnergySmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
                 gasLimit: gasConfig.simpleLockEnergy.lockTokens,
@@ -87,7 +87,7 @@ export class EnergyTransactionService {
                 break;
         }
 
-        return this.mxProxy.getSimpleLockEnergySmartContractTransaction(
+        return this.drtProxy.getSimpleLockEnergySmartContractTransaction(
             transactionOptions,
         );
     }
@@ -96,7 +96,7 @@ export class EnergyTransactionService {
         sender: string,
         inputTokens: InputTokenModel[],
     ): Promise<TransactionModel> {
-        return this.mxProxy.getSimpleLockEnergySmartContractTransaction(
+        return this.drtProxy.getSimpleLockEnergySmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
                 gasLimit:
@@ -121,7 +121,7 @@ export class EnergyTransactionService {
         sender: string,
         args: InputTokenModel[],
     ): Promise<TransactionModel> {
-        return this.mxProxy.getSimpleLockEnergySmartContractTransaction(
+        return this.drtProxy.getSimpleLockEnergySmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
                 gasLimit:
@@ -146,7 +146,7 @@ export class EnergyTransactionService {
         sender: string,
         lockOptions: number[],
     ): Promise<TransactionModel> {
-        return this.mxProxy.getSimpleLockEnergySmartContractTransaction(
+        return this.drtProxy.getSimpleLockEnergySmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
                 gasLimit: gasConfig.simpleLockEnergy.admin.updateLockOptions,

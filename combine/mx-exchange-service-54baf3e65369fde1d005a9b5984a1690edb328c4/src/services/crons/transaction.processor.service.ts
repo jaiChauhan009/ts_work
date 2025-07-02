@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
 import { CacheService } from 'src/services/caching/cache.service';
 import { Address } from '@terradharitri/sdk-core';
-import { MXApiService } from '../dharitri-communication/mx.api.service';
+import { MXApiService } from '../dharitri-communication/drt.api.service';
 import { cacheConfig, constantsConfig } from 'src/config';
 import { MetricsCollector } from 'src/utils/metrics.collector';
 

@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { ComposableTasksTransactionService } from '../services/composable.tasks.transaction';
-import { MXProxyServiceProvider } from 'src/services/dharitri-communication/mx.proxy.service.mock';
+import { MXProxyServiceProvider } from 'src/services/dharitri-communication/drt.proxy.service.mock';
 import { WrapAbiServiceProvider } from 'src/modules/wrapping/mocks/wrap.abi.service.mock';
 import { WinstonModule } from 'nest-winston';
 import winston from 'winston';

@@ -8,7 +8,7 @@ import {
     TokenTransfer,
     U64Value,
 } from '@terradharitri/sdk-core';
-import { mxConfig, gasConfig, scAddress, constantsConfig } from 'src/config';
+import { drtConfig, gasConfig, scAddress, constantsConfig } from 'src/config';
 import { TransactionModel } from 'src/models/transaction.model';
 import {
     AddLiquidityArgs,
@@ -18,7 +18,7 @@ import {
     WhitelistArgs,
 } from '../models/pair.args';
 import BigNumber from 'bignumber.js';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { WrapTransactionsService } from 'src/modules/wrapping/services/wrap.transactions.service';
 import { PairService } from './pair.service';
 import { InputTokenModel } from 'src/models/inputToken.model';
@@ -33,7 +33,7 @@ import { TransactionOptions } from 'src/modules/common/transaction.options';
 @Injectable()
 export class PairTransactionService {
     constructor(
-        private readonly mxProxy: MXProxyService,
+        private readonly drtProxy: MXProxyService,
         private readonly pairService: PairService,
         private readonly pairAbi: PairAbiService,
         private readonly pairCompute: PairComputeService,
@@ -48,7 +48,7 @@ export class PairTransactionService {
     ): Promise<TransactionModel[]> {
         const transactions: TransactionModel[] = [];
 
-        switch (mxConfig.REWAIdentifier) {
+        switch (drtConfig.REWAIdentifier) {
             case args.tokens[0].tokenID:
                 transactions.push(
                     await this.wrapTransaction.wrapRewa(
@@ -80,7 +80,7 @@ export class PairTransactionService {
     ): Promise<TransactionModel[]> {
         const transactions: TransactionModel[] = [];
 
-        switch (mxConfig.REWAIdentifier) {
+        switch (drtConfig.REWAIdentifier) {
             case args.tokens[0].tokenID:
                 transactions.push(
                     await this.wrapTransaction.wrapRewa(
@@ -148,11 +148,11 @@ export class PairTransactionService {
             throw new Error('Permanent locked amount must be less than 1 USD');
         }
 
-        return this.mxProxy.getPairSmartContractTransaction(
+        return this.drtProxy.getPairSmartContractTransaction(
             args.pairAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.pairs.addLiquidity,
                 function: 'addInitialLiquidity',
                 tokenTransfers: [
@@ -195,11 +195,11 @@ export class PairTransactionService {
             .multipliedBy(1 - args.tolerance)
             .integerValue();
 
-        return this.mxProxy.getPairSmartContractTransaction(
+        return this.drtProxy.getPairSmartContractTransaction(
             args.pairAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.pairs.addLiquidity,
                 function: 'addLiquidity',
                 arguments: [
@@ -247,11 +247,11 @@ export class PairTransactionService {
             .multipliedBy(1 - args.tolerance)
             .integerValue();
 
-        const transaction = await this.mxProxy.getPairSmartContractTransaction(
+        const transaction = await this.drtProxy.getPairSmartContractTransaction(
             args.pairAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.pairs.removeLiquidity,
                 function: 'removeLiquidity',
                 arguments: [
@@ -316,7 +316,7 @@ export class PairTransactionService {
             .multipliedBy(amountOut)
             .integerValue();
 
-        if (args.tokenInID === mxConfig.REWAIdentifier) {
+        if (args.tokenInID === drtConfig.REWAIdentifier) {
             return this.composableTasksTransaction.wrapRewaAndSwapTransaction(
                 sender,
                 args.amountIn,
@@ -326,7 +326,7 @@ export class PairTransactionService {
             );
         }
 
-        if (args.tokenOutID === mxConfig.REWAIdentifier) {
+        if (args.tokenOutID === drtConfig.REWAIdentifier) {
             return this.composableTasksTransaction.swapAndUnwrapRewaTransaction(
                 sender,
                 new DcdtTokenPayment({
@@ -348,11 +348,11 @@ export class PairTransactionService {
                 ? gasConfig.pairs.swapTokensFixedInput.default
                 : gasConfig.pairs.swapTokensFixedInput.withFeeSwap;
 
-        return this.mxProxy.getPairSmartContractTransaction(
+        return this.drtProxy.getPairSmartContractTransaction(
             args.pairAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasLimit,
                 function: 'swapTokensFixedInput',
                 arguments: [
@@ -392,7 +392,7 @@ export class PairTransactionService {
         const amountIn = new BigNumber(args.amountIn);
         const amountOut = new BigNumber(args.amountOut);
 
-        if (args.tokenInID === mxConfig.REWAIdentifier) {
+        if (args.tokenInID === drtConfig.REWAIdentifier) {
             return this.composableTasksTransaction.wrapRewaAndSwapTransaction(
                 sender,
                 args.amountIn,
@@ -402,7 +402,7 @@ export class PairTransactionService {
             );
         }
 
-        if (args.tokenOutID === mxConfig.REWAIdentifier) {
+        if (args.tokenOutID === drtConfig.REWAIdentifier) {
             return this.composableTasksTransaction.swapAndUnwrapRewaTransaction(
                 sender,
                 new DcdtTokenPayment({
@@ -424,11 +424,11 @@ export class PairTransactionService {
                 ? gasConfig.pairs.swapTokensFixedOutput.default
                 : gasConfig.pairs.swapTokensFixedOutput.withFeeSwap;
 
-        return this.mxProxy.getPairSmartContractTransaction(
+        return this.drtProxy.getPairSmartContractTransaction(
             args.pairAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasLimit,
                 function: 'swapTokensFixedOutput',
                 arguments: [
@@ -461,8 +461,8 @@ export class PairTransactionService {
         }
 
         if (
-            tokens[0].tokenID === mxConfig.REWAIdentifier ||
-            tokens[1].tokenID === mxConfig.REWAIdentifier
+            tokens[0].tokenID === drtConfig.REWAIdentifier ||
+            tokens[1].tokenID === drtConfig.REWAIdentifier
         ) {
             return this.getTokensWithREWA(tokens, firstTokenID, secondTokenID);
         }
@@ -489,7 +489,7 @@ export class PairTransactionService {
         firstTokenID: string,
         secondTokenID: string,
     ): Promise<InputTokenModel[]> {
-        switch (mxConfig.REWAIdentifier) {
+        switch (drtConfig.REWAIdentifier) {
             case tokens[0].tokenID:
                 return this.getTokensInOrder(
                     tokens[1],
@@ -542,11 +542,11 @@ export class PairTransactionService {
         sender: string,
         args: WhitelistArgs,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getPairSmartContractTransaction(
+        return this.drtProxy.getPairSmartContractTransaction(
             args.pairAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.pairs.admin.whitelist,
                 function: 'whitelist',
                 arguments: [
@@ -560,11 +560,11 @@ export class PairTransactionService {
         sender: string,
         args: WhitelistArgs,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getPairSmartContractTransaction(
+        return this.drtProxy.getPairSmartContractTransaction(
             args.pairAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.pairs.admin.removeWhitelist,
                 function: 'removeWhitelist',
                 arguments: [
@@ -581,11 +581,11 @@ export class PairTransactionService {
         firstTokenID: string,
         secondTokenID: string,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getPairSmartContractTransaction(
+        return this.drtProxy.getPairSmartContractTransaction(
             pairAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.pairs.admin.addTrustedSwapPair,
                 function: 'addTrustedSwapPair',
                 arguments: [
@@ -605,11 +605,11 @@ export class PairTransactionService {
         firstTokenID: string,
         secondTokenID: string,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getPairSmartContractTransaction(
+        return this.drtProxy.getPairSmartContractTransaction(
             pairAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.pairs.admin.removeTrustedSwapPair,
                 function: 'removeTrustedSwapPair',
                 arguments: [
@@ -624,11 +624,11 @@ export class PairTransactionService {
         sender: string,
         pairAddress: string,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getPairSmartContractTransaction(
+        return this.drtProxy.getPairSmartContractTransaction(
             pairAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.pairs.admin.pause,
                 function: 'pause',
             }),
@@ -639,11 +639,11 @@ export class PairTransactionService {
         sender: string,
         pairAddress: string,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getPairSmartContractTransaction(
+        return this.drtProxy.getPairSmartContractTransaction(
             pairAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.pairs.admin.resume,
                 function: 'resume',
             }),
@@ -654,11 +654,11 @@ export class PairTransactionService {
         sender: string,
         pairAddress: string,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getPairSmartContractTransaction(
+        return this.drtProxy.getPairSmartContractTransaction(
             pairAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.pairs.admin.setStateActiveNoSwaps,
                 function: 'setStateActiveNoSwaps',
             }),
@@ -671,11 +671,11 @@ export class PairTransactionService {
         totalFeePercent: number,
         specialFeePercent: number,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getPairSmartContractTransaction(
+        return this.drtProxy.getPairSmartContractTransaction(
             pairAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.pairs.admin.setFeePercents,
                 function: 'setFeePercents',
                 arguments: [
@@ -691,11 +691,11 @@ export class PairTransactionService {
         pairAddress: string,
         newDeadline: number,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getPairSmartContractTransaction(
+        return this.drtProxy.getPairSmartContractTransaction(
             pairAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.pairs.admin.setLockingDeadlineEpoch,
                 function: 'setLockingDeadlineEpoch',
                 arguments: [new BigUIntValue(new BigNumber(newDeadline))],
@@ -708,11 +708,11 @@ export class PairTransactionService {
         pairAddress: string,
         newEpoch: number,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getPairSmartContractTransaction(
+        return this.drtProxy.getPairSmartContractTransaction(
             pairAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.pairs.admin.setUnlockEpoch,
                 function: 'setUnlockEpoch',
                 arguments: [new BigUIntValue(new BigNumber(newEpoch))],
@@ -725,11 +725,11 @@ export class PairTransactionService {
         pairAddress: string,
         newAddress: string,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getPairSmartContractTransaction(
+        return this.drtProxy.getPairSmartContractTransaction(
             pairAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.pairs.admin.setLockingScAddress,
                 function: 'setLockingScAddress',
                 arguments: [
@@ -745,11 +745,11 @@ export class PairTransactionService {
         sender: string,
         pairAddress: string,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getPairSmartContractTransaction(
+        return this.drtProxy.getPairSmartContractTransaction(
             pairAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.pairs.admin.setupFeesCollector,
                 function: 'setupFeesCollector',
                 arguments: [

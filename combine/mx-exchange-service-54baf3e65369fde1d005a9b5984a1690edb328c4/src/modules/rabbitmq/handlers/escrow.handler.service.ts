@@ -9,7 +9,7 @@ import { RedisPubSub } from 'graphql-redis-subscriptions';
 import { scAddress } from 'src/config';
 import { EscrowAbiService } from 'src/modules/escrow/services/escrow.abi.service';
 import { EscrowSetterService } from 'src/modules/escrow/services/escrow.setter.service';
-import { MXGatewayService } from 'src/services/dharitri-communication/mx.gateway.service';
+import { MXGatewayService } from 'src/services/dharitri-communication/drt.gateway.service';
 import { PUB_SUB } from 'src/services/redis.pubSub.module';
 
 @Injectable()
@@ -17,7 +17,7 @@ export class EscrowHandlerService {
     constructor(
         private readonly escrowAbi: EscrowAbiService,
         private readonly escrowSetter: EscrowSetterService,
-        private readonly mxGateway: MXGatewayService,
+        private readonly drtGateway: MXGatewayService,
         @Inject(PUB_SUB) private pubSub: RedisPubSub,
     ) {}
 
@@ -85,7 +85,7 @@ export class EscrowHandlerService {
         sender: string,
         receiver: string,
     ): Promise<void> {
-        const scKeys = await this.mxGateway.getSCStorageKeys(
+        const scKeys = await this.drtGateway.getSCStorageKeys(
             scAddress.escrow,
             [],
         );

@@ -4,8 +4,8 @@ import { WinstonModule } from 'nest-winston';
 import winston from 'winston';
 import { ConfigModule } from '@nestjs/config';
 import { DynamicModuleUtils } from 'src/utils/dynamic.module.utils';
-import { MXProxyServiceProvider } from 'src/services/dharitri-communication/mx.proxy.service.mock';
-import { MXApiServiceProvider } from 'src/services/dharitri-communication/mx.api.service.mock';
+import { MXProxyServiceProvider } from 'src/services/dharitri-communication/drt.proxy.service.mock';
+import { MXApiServiceProvider } from 'src/services/dharitri-communication/drt.api.service.mock';
 import { FarmAbiServiceProviderV1_2 } from 'src/modules/farm/mocks/farm.v1.2.abi.service.mock';
 import { FarmAbiServiceProviderV1_3 } from 'src/modules/farm/mocks/farm.v1.3.abi.service.mock';
 import { FarmAbiServiceProviderV2 } from 'src/modules/farm/mocks/farm.v2.abi.service.mock';
@@ -20,7 +20,7 @@ import { ContextGetterServiceProvider } from 'src/services/context/mocks/context
 import { FarmAbiFactory } from 'src/modules/farm/farm.abi.factory';
 import { ApiConfigService } from 'src/helpers/api.config.service';
 import { Address } from '@terradharitri/sdk-core/out';
-import { MXApiService } from 'src/services/dharitri-communication/mx.api.service';
+import { MXApiService } from 'src/services/dharitri-communication/drt.api.service';
 import { encodeTransactionData } from 'src/helpers/helpers';
 
 describe('ProxyFarmTransactionsService', () => {
@@ -69,9 +69,9 @@ describe('ProxyFarmTransactionsService', () => {
             module.get<ProxyFarmTransactionsService>(
                 ProxyFarmTransactionsService,
             );
-        const mxApi = module.get<MXApiService>(MXApiService);
-        jest.spyOn(mxApi, 'getNftsCountForUser').mockResolvedValue(1);
-        jest.spyOn(mxApi, 'getNftsForUser').mockResolvedValue([
+        const drtApi = module.get<MXApiService>(MXApiService);
+        jest.spyOn(drtApi, 'getNftsCountForUser').mockResolvedValue(1);
+        jest.spyOn(drtApi, 'getNftsForUser').mockResolvedValue([
             {
                 identifier: 'LKFARM-123456-0a',
                 collection: 'LKFARM-123456',
@@ -101,9 +101,9 @@ describe('ProxyFarmTransactionsService', () => {
             module.get<ProxyFarmTransactionsService>(
                 ProxyFarmTransactionsService,
             );
-        const mxApi = module.get<MXApiService>(MXApiService);
-        jest.spyOn(mxApi, 'getNftsCountForUser').mockResolvedValue(1);
-        jest.spyOn(mxApi, 'getNftsForUser').mockResolvedValue([
+        const drtApi = module.get<MXApiService>(MXApiService);
+        jest.spyOn(drtApi, 'getNftsCountForUser').mockResolvedValue(1);
+        jest.spyOn(drtApi, 'getNftsForUser').mockResolvedValue([
             {
                 identifier: 'LKFARM-123456-05',
                 collection: 'LKFARM-123456',

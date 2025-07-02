@@ -8,7 +8,7 @@ import { CollectionNftTrait } from 'src/modules/nft-traits/models/collection-tra
 import { CollectionAsset } from './CollectionAsset.dto';
 import { CollectionSocial } from './CollectionSocial.dto';
 import { CollectionVolumeLast24 } from 'src/modules/analytics/models/collection-volume';
-import { CollectionElastic } from 'src/common/services/mx-communication/elastic-collection.model';
+import { CollectionElastic } from 'src/common/services/drt-communication/elastic-collection.model';
 
 @ObjectType()
 export class Collection {

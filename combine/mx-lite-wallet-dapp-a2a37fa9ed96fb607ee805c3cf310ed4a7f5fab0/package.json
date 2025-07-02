@@ -1,10 +1,10 @@
 {
-  "name": "@terradharitri/mx-lite-wallet-dapp",
+  "name": "@TerraDharitri/drt-lite-wallet-dapp",
   "description": "DharitrI Lite Wallet DApp",
   "version": "2.0.2",
   "author": "DharitrI",
   "license": "GPL-3.0-or-later",
-  "repository": "@terradharitri/mx-lite-wallet-dapp",
+  "repository": "@TerraDharitri/drt-lite-wallet-dapp",
   "scripts": {
     "set-storage-persist": "node src/scripts/sdkDappStorageConfig",
     "lint": "eslint --fix --ext js,ts,tsx src",

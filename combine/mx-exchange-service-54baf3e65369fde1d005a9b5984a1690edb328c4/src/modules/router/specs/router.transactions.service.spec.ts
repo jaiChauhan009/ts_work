@@ -2,14 +2,14 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { ContextGetterService } from 'src/services/context/context.getter.service';
 import { ContextGetterServiceMock } from 'src/services/context/mocks/context.getter.service.mock';
 import { RouterTransactionService } from '../services/router.transactions.service';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { ApiConfigService } from 'src/helpers/api.config.service';
 import { WrapTransactionsService } from 'src/modules/wrapping/services/wrap.transactions.service';
 import { RouterService } from '../services/router.service';
 import { Address } from '@terradharitri/sdk-core';
 import { encodeTransactionData } from 'src/helpers/helpers';
 import { DcdtLocalRole } from '../models/router.args';
-import { mxConfig, gasConfig } from 'src/config';
+import { drtConfig, gasConfig } from 'src/config';
 import { PairService } from 'src/modules/pair/services/pair.service';
 import { WrapAbiServiceProvider } from 'src/modules/wrapping/mocks/wrap.abi.service.mock';
 import { WrapService } from 'src/modules/wrapping/services/wrap.service';
@@ -22,7 +22,7 @@ import { WinstonModule } from 'nest-winston';
 import { ConfigModule } from '@nestjs/config';
 import winston from 'winston';
 import { DynamicModuleUtils } from 'src/utils/dynamic.module.utils';
-import { MXApiServiceProvider } from 'src/services/dharitri-communication/mx.api.service.mock';
+import { MXApiServiceProvider } from 'src/services/dharitri-communication/drt.api.service.mock';
 import { PairFilteringService } from 'src/modules/pair/services/pair.filtering.service';
 
 describe('RouterService', () => {
@@ -97,7 +97,7 @@ describe('RouterService', () => {
             data: encodeTransactionData(
                 `createPair@TOK3-3333@TOK4-123456@${senderAddress}`,
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -131,7 +131,7 @@ describe('RouterService', () => {
             data: encodeTransactionData(
                 `upgradePair@WREWA-123456@USDC-123456@${senderAddress}@300@100`,
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -165,7 +165,7 @@ describe('RouterService', () => {
             data: encodeTransactionData(
                 'issueLpToken@drt1sea63y47u569ns3x5mqjf4vnygn9whkk7p6ry4rfpqyd6rd5addqe3ju25@LiquidityPoolToken3@LPT-3333',
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -218,7 +218,7 @@ describe('RouterService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.router.setLocalRoles,
             data: encodeTransactionData(`setLocalRoles@${pairAddress}`),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -251,7 +251,7 @@ describe('RouterService', () => {
             data: encodeTransactionData(
                 'pause@drt1qqqqqqqqqqqqqpgqe8m9w7cv2ekdc28q5ahku9x3hcregqpn0n4sp8c6jz',
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -288,7 +288,7 @@ describe('RouterService', () => {
                     '0000000000000000000000000000000000000000000000000000000000000012',
                 ).toBech32()}`,
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -325,7 +325,7 @@ describe('RouterService', () => {
             data: encodeTransactionData(
                 `setFeeOff@${pairAddress}@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z@WREWA-123456`,
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -362,7 +362,7 @@ describe('RouterService', () => {
             data: encodeTransactionData(
                 `setFeeOn@${pairAddress}@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z@WREWA-123456`,
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -395,7 +395,7 @@ describe('RouterService', () => {
             data: encodeTransactionData(
                 'setLocalRolesOwner@WREWA-123456@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z@01',
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -426,7 +426,7 @@ describe('RouterService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.router.admin.removePair,
             data: encodeTransactionData('removePair@WREWA-123456@USDC-123456'),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -456,7 +456,7 @@ describe('RouterService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.router.admin.setPairCreationEnabled,
             data: encodeTransactionData('setPairCreationEnabled@01'),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -486,7 +486,7 @@ describe('RouterService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.router.admin.setPairCreationEnabled,
             data: encodeTransactionData('setPairCreationEnabled@'),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -515,7 +515,7 @@ describe('RouterService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.router.admin.clearPairTemporaryOwnerStorage,
             data: 'Y2xlYXJQYWlyVGVtcG9yYXJ5T3duZXJTdG9yYWdl',
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -547,7 +547,7 @@ describe('RouterService', () => {
             data: encodeTransactionData(
                 'setTemporaryOwnerPeriod@1000000000000000000000000000000000',
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -579,7 +579,7 @@ describe('RouterService', () => {
             data: encodeTransactionData(
                 'setPairTemplateAddress@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -618,7 +618,7 @@ describe('RouterService', () => {
                     '0000000000000000000000000000000000000000000000000000000000000013',
                 ).toBech32()}`,
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,

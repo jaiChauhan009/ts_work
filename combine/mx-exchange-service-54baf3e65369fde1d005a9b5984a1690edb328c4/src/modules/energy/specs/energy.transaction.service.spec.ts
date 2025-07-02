@@ -1,16 +1,16 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { MXProxyServiceProvider } from 'src/services/dharitri-communication/mx.proxy.service.mock';
+import { MXProxyServiceProvider } from 'src/services/dharitri-communication/drt.proxy.service.mock';
 import { TransactionModel } from 'src/models/transaction.model';
 import { encodeTransactionData } from 'src/helpers/helpers';
-import { gasConfig, mxConfig, scAddress } from 'src/config';
+import { gasConfig, drtConfig, scAddress } from 'src/config';
 import { ConfigModule } from '@nestjs/config';
 import { WinstonModule } from 'nest-winston';
 import { ApiConfigService } from 'src/helpers/api.config.service';
 import winston from 'winston';
 import { DynamicModuleUtils } from 'src/utils/dynamic.module.utils';
-import { MXApiServiceProvider } from 'src/services/dharitri-communication/mx.api.service.mock';
+import { MXApiServiceProvider } from 'src/services/dharitri-communication/drt.api.service.mock';
 import { ContextGetterServiceProvider } from 'src/services/context/mocks/context.getter.service.mock';
-import { MXGatewayServiceProvider } from 'src/services/dharitri-communication/mx.gateway.service.mock';
+import { MXGatewayServiceProvider } from 'src/services/dharitri-communication/drt.gateway.service.mock';
 import { InputTokenModel } from 'src/models/inputToken.model';
 import { EnergyTransactionService } from '../services/energy.transaction.service';
 import { Address } from '@terradharitri/sdk-core';
@@ -64,7 +64,7 @@ describe('EnergyTransactionService', () => {
 
         expect(transaction).toEqual(
             new TransactionModel({
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 nonce: 0,
                 data: encodeTransactionData(
                     `DCDTNFTTransfer@XMEX-123456@01@1000000000000000000@${scAddress.simpleLockEnergy}@lockTokens@720`,
@@ -97,7 +97,7 @@ describe('EnergyTransactionService', () => {
 
         expect(transaction).toEqual(
             new TransactionModel({
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 nonce: 0,
                 data: encodeTransactionData(
                     `DCDTTransfer@MEX-123456@1000000000000000000@lockTokens@720`,
@@ -130,7 +130,7 @@ describe('EnergyTransactionService', () => {
 
         expect(transaction).toEqual(
             new TransactionModel({
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 nonce: 0,
                 data: encodeTransactionData(
                     `DCDTNFTTransfer@XMEX-123456@01@1000000000000000000@${scAddress.simpleLockEnergy}@unlockEarly`,
@@ -164,7 +164,7 @@ describe('EnergyTransactionService', () => {
 
         expect(transaction).toEqual(
             new TransactionModel({
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 nonce: 0,
                 data: encodeTransactionData(
                     `DCDTNFTTransfer@XMEX-123456@01@1000000000000000000@${scAddress.simpleLockEnergy}@reduceLockPeriod@400`,
@@ -198,7 +198,7 @@ describe('EnergyTransactionService', () => {
 
         expect(transaction).toEqual(
             new TransactionModel({
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 nonce: 0,
                 data: encodeTransactionData(
                     `DCDTNFTTransfer@XMEX-123456@01@1000000000000000000@${scAddress.simpleLockEnergy}@unlockTokens`,
@@ -234,7 +234,7 @@ describe('EnergyTransactionService', () => {
 
         expect(transaction).toEqual(
             new TransactionModel({
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 nonce: 0,
                 data: encodeTransactionData(
                     `MultiDCDTNFTTransfer@${scAddress.simpleLockEnergy}@02@XMEX-123456@01@1000000000000000000@XMEX-123456@02@2000000000000000000@mergeTokens`,
@@ -270,7 +270,7 @@ describe('EnergyTransactionService', () => {
 
         expect(transaction).toEqual(
             new TransactionModel({
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 nonce: 0,
                 data: encodeTransactionData(
                     `MultiDCDTNFTTransfer@${scAddress.simpleLockEnergy}@02@LKMEX-abcdef@01@1000000000000000000@LKMEX-abcdef@02@2000000000000000000@migrateOldTokens`,

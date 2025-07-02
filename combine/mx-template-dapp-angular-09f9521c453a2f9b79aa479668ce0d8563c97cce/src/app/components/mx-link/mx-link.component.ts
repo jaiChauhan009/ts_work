@@ -2,11 +2,11 @@ import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-mx-link',
+  selector: 'app-drt-link',
   standalone: true,
   imports: [RouterModule],
-  templateUrl: './mx-link.component.html',
-  styleUrls: ['./mx-link.component.css']
+  templateUrl: './drt-link.component.html',
+  styleUrls: ['./drt-link.component.css']
 })
 export class MxLinkComponent {
   @Input() to!: string;

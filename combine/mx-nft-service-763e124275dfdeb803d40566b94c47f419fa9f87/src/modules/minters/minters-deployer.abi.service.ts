@@ -9,7 +9,7 @@ import { DeployMinterRequest, UpgradeMinterRequest } from './models/requests/Dep
 
 @Injectable()
 export class MintersDeployerAbiService {
-  constructor(private mxApiService: MxApiService) {}
+  constructor(private drtApiService: MxApiService) {}
   async deployMinter(request: DeployMinterRequest): Promise<TransactionNode> {
     const factory = await ContractLoader.getFactory(MarketplaceUtils.deployerMintersAbiPath);
     const transaction = factory.createTransactionForExecute(Address.newFromBech32(request.ownerAddress), {
@@ -49,7 +49,7 @@ export class MintersDeployerAbiService {
 
   public async getMintersForAddress(address: string): Promise<string[]> {
     const controller: SmartContractController = await ContractLoader.getController(
-      this.mxApiService.getService(),
+      this.drtApiService.getService(),
       MarketplaceUtils.deployerMintersAbiPath,
     );
 

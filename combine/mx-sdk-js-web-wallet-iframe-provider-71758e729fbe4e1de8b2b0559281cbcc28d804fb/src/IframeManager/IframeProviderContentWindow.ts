@@ -99,7 +99,7 @@ export class IframeProviderContentWindow
     this.title.innerText = this.loginBranding[this.loginType].title;
     this.title.style.cssText = titleElementStyle;
 
-    headingElement.id = 'mx-wallet-iframe-window-toggle-button';
+    headingElement.id = 'drt-wallet-iframe-window-toggle-button';
     headingElement.style.cssText = headingElementStyle;
     headingElement.appendChild(iframeIconElement);
     headingElement.appendChild(this.title);

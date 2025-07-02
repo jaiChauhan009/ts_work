@@ -3,10 +3,10 @@ import { WrapTransactionsService } from '../services/wrap.transactions.service';
 import { WrapAbiServiceProvider } from '../mocks/wrap.abi.service.mock';
 import { WrapService } from '../services/wrap.service';
 import { TokenServiceProvider } from 'src/modules/tokens/mocks/token.service.mock';
-import { MXProxyServiceProvider } from 'src/services/dharitri-communication/mx.proxy.service.mock';
+import { MXProxyServiceProvider } from 'src/services/dharitri-communication/drt.proxy.service.mock';
 import { Address } from '@terradharitri/sdk-core/out';
 import { TransactionModel } from 'src/models/transaction.model';
-import { gasConfig, mxConfig } from 'src/config';
+import { gasConfig, drtConfig } from 'src/config';
 import { encodeTransactionData } from 'src/helpers/helpers';
 import { WinstonModule } from 'nest-winston';
 import { ConfigModule } from '@nestjs/config';
@@ -53,7 +53,7 @@ describe('WrapTransactionsService', () => {
         expect(transaction).toEqual(
             new TransactionModel({
                 nonce: 0,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.wrapREWA,
                 value: rewaValue,
                 data: encodeTransactionData('wrapRewa'),
@@ -81,7 +81,7 @@ describe('WrapTransactionsService', () => {
         expect(transaction).toEqual(
             new TransactionModel({
                 nonce: 0,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.wrapREWA,
                 value: '0',
                 data: encodeTransactionData(

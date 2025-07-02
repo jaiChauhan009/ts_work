@@ -1,5 +1,5 @@
 import { Field, ObjectType } from '@nestjs/graphql';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { Price } from 'src/modules/assets/models';
 import { BigNumberUtils } from 'src/utils/bigNumber-utils';
 import { DateUtils } from 'src/utils/date-utils';
@@ -16,7 +16,7 @@ export class PriceRange {
     Object.assign(this, init);
   }
 
-  static fromEntity(minBid: string, maxBid: string, paymentToken: string = mxConfig.rewa, paymentDecimals: number = mxConfig.decimals) {
+  static fromEntity(minBid: string, maxBid: string, paymentToken: string = drtConfig.rewa, paymentDecimals: number = drtConfig.decimals) {
     return new PriceRange({
       minBid: new Price({
         token: paymentToken,

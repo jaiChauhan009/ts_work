@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { CommonAppModule } from 'src/common.app.module';
 import { ContextModule } from 'src/services/context/context.module';
-import { MXCommunicationModule } from 'src/services/dharitri-communication/mx.communication.module';
+import { MXCommunicationModule } from 'src/services/dharitri-communication/drt.communication.module';
 import { TokenModule } from '../tokens/token.module';
 import { EnergyModule } from '../energy/energy.module';
 import {

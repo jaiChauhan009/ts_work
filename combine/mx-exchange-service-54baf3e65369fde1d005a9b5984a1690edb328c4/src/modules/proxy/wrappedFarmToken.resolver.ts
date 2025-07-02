@@ -1,6 +1,6 @@
 import { UseGuards } from '@nestjs/common';
 import { Args, Query, ResolveField, Resolver } from '@nestjs/graphql';
-import { MXApiService } from 'src/services/dharitri-communication/mx.api.service';
+import { MXApiService } from 'src/services/dharitri-communication/drt.api.service';
 import { tokenCollection, tokenIdentifier } from 'src/utils/token.converters';
 import { JwtOrNativeAuthGuard } from '../auth/jwt.or.native.auth.guard';
 import { FarmTokenAttributesUnion } from '../farm/models/farmTokenAttributes.model';

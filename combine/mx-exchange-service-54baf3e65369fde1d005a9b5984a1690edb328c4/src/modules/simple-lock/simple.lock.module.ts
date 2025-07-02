@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ContextModule } from 'src/services/context/context.module';
-import { MXCommunicationModule } from 'src/services/dharitri-communication/mx.communication.module';
+import { MXCommunicationModule } from 'src/services/dharitri-communication/drt.communication.module';
 import { PairModule } from '../pair/pair.module';
 import { TokenModule } from '../tokens/token.module';
 import { WrappingModule } from '../wrapping/wrap.module';

@@ -1,5 +1,5 @@
 import { Inject, Injectable, Logger, forwardRef } from '@nestjs/common';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { AuctionEntity } from 'src/db/auctions';
 import { ExternalAuctionEventEnum } from 'src/modules/assets/models';
 import { AuctionsGetterService, AuctionsSetterService, NftMarketplaceAbiService } from 'src/modules/auctions';
@@ -61,7 +61,7 @@ export class UpdatePriceEventHandler {
     return topicsUpdatePrice.newBid;
   }
 
-  private updateAuctionPrice(updatedAuction: AuctionEntity, newBid: string, hash: string, decimals: number = mxConfig.decimals) {
+  private updateAuctionPrice(updatedAuction: AuctionEntity, newBid: string, hash: string, decimals: number = drtConfig.decimals) {
     updatedAuction.minBid = newBid;
     updatedAuction.minBidDenominated = BigNumberUtils.denominateAmount(newBid, decimals);
     updatedAuction.maxBid = newBid;

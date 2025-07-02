@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { NftTag } from 'src/common/services/mx-communication/models';
+import { NftTag } from 'src/common/services/drt-communication/models';
 import { constants } from 'src/config';
 import { AuctionStatusEnum } from 'src/modules/auctions/models';
 import { MYSQL_ALREADY_EXISTS } from 'src/utils/constants';

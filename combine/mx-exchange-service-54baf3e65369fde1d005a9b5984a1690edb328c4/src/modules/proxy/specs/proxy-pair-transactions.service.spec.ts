@@ -1,13 +1,13 @@
 import { Test, TestingModule } from '@nestjs/testing';
 
-import { MXProxyService } from '../../../services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from '../../../services/dharitri-communication/drt.proxy.service';
 import { ProxyPairTransactionsService } from '../services/proxy-pair/proxy.pair.transactions.service';
 import { PairService } from 'src/modules/pair/services/pair.service';
 import { Address } from '@terradharitri/sdk-core';
 import { WrapTransactionsService } from 'src/modules/wrapping/services/wrap.transactions.service';
 import { ApiConfigService } from 'src/helpers/api.config.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { MXProxyServiceProvider } from 'src/services/dharitri-communication/mx.proxy.service.mock';
+import { MXProxyServiceProvider } from 'src/services/dharitri-communication/drt.proxy.service.mock';
 import {
     ProxyAbiServiceMock,
     ProxyPairAbiServiceProvider,
@@ -25,7 +25,7 @@ import { encodeTransactionData } from 'src/helpers/helpers';
 import { WinstonModule } from 'nest-winston';
 import winston from 'winston';
 import { DynamicModuleUtils } from 'src/utils/dynamic.module.utils';
-import { MXApiServiceProvider } from 'src/services/dharitri-communication/mx.api.service.mock';
+import { MXApiServiceProvider } from 'src/services/dharitri-communication/drt.api.service.mock';
 
 describe('TransactionProxyPairService', () => {
     let module: TestingModule;
@@ -79,10 +79,10 @@ describe('TransactionProxyPairService', () => {
             module.get<ProxyPairTransactionsService>(
                 ProxyPairTransactionsService,
             );
-        const mxProxy = module.get<MXProxyService>(MXProxyService);
+        const drtProxy = module.get<MXProxyService>(MXProxyService);
         const pairAbi = module.get<PairAbiService>(PairAbiService);
 
-        jest.spyOn(mxProxy, 'getAddressShardID').mockImplementation(
+        jest.spyOn(drtProxy, 'getAddressShardID').mockImplementation(
             async () => 0,
         );
         jest.spyOn(pairAbi, 'firstTokenID').mockImplementation(
@@ -130,10 +130,10 @@ describe('TransactionProxyPairService', () => {
             module.get<ProxyPairTransactionsService>(
                 ProxyPairTransactionsService,
             );
-        const mxProxy = module.get<MXProxyService>(MXProxyService);
+        const drtProxy = module.get<MXProxyService>(MXProxyService);
         const pairAbi = module.get<PairAbiService>(PairAbiService);
 
-        jest.spyOn(mxProxy, 'getAddressShardID').mockImplementation(
+        jest.spyOn(drtProxy, 'getAddressShardID').mockImplementation(
             async () => 0,
         );
         jest.spyOn(pairAbi, 'firstTokenID').mockImplementation(

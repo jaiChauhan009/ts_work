@@ -3,7 +3,7 @@ import { utilities as nestWinstonModuleUtilities, WinstonModule } from 'nest-win
 import * as winston from 'winston';
 import * as Transport from 'winston-transport';
 import { MxApiService } from 'src/common';
-import { MxApiServiceMock } from 'src/common/services/mx-communication/mx-api.service.mock';
+import { MxApiServiceMock } from 'src/common/services/drt-communication/drt-api.service.mock';
 import { TagsService } from '../tags.service';
 import { Tag } from '../models';
 import { TagsFilter } from '../models/Tags.Filter';

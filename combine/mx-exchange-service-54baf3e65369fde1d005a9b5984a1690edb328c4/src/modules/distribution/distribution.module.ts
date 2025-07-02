@@ -3,7 +3,7 @@ import { ContextModule } from '../../services/context/context.module';
 import { DistributionAbiService } from './services/distribution.abi.service';
 import { DistributionResolver } from './distribution.resolver';
 import { DistributionTransactionsService } from './services/distribution.transactions.service';
-import { MXCommunicationModule } from '../../services/dharitri-communication/mx.communication.module';
+import { MXCommunicationModule } from '../../services/dharitri-communication/drt.communication.module';
 
 @Module({
     imports: [ContextModule, MXCommunicationModule],

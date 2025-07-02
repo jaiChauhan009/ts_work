@@ -12,7 +12,7 @@ import {
     DecodeAttributesArgs,
     DecodeAttributesModel,
 } from '../models/proxy.args';
-import { MXApiService } from 'src/services/dharitri-communication/mx.api.service';
+import { MXApiService } from 'src/services/dharitri-communication/drt.api.service';
 import {
     FarmTokenAttributesV1_2,
     FarmTokenAttributesV1_3,

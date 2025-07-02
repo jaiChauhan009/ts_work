@@ -127,7 +127,7 @@ export class KeybaseService {
 
     return new KeybaseIdentity({
       identity,
-      avatar: `https://raw.githubusercontent.com/TerraDharitri/mx-assets/master${folder}/identities/${identity}/logo.png`,
+      avatar: `https://raw.githubusercontent.com/TerraDharitri/drt-assets/master${folder}/identities/${identity}/logo.png`,
       ...info,
     });
   }

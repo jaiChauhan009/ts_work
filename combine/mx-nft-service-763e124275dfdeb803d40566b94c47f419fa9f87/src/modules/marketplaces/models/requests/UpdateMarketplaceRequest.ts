@@ -1,12 +1,12 @@
 import { UpdateMarketplaceArgs } from '../UpdateMarketplaceArgs';
 import { WhitelistMarketplaceArgs } from '../WhitelistMarketplaceArgs';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 
 export class UpdateMarketplaceRequest {
   marketplaceName: string;
   marketplaceKey: string;
   marketplaceUrl: string;
-  marketplaceScAddress: string = mxConfig.nftMarketplaceAddress;
+  marketplaceScAddress: string = drtConfig.nftMarketplaceAddress;
 
   constructor(init?: Partial<UpdateMarketplaceRequest>) {
     Object.assign(this, init);

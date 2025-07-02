@@ -14,7 +14,7 @@ export class MxStatsService {
       const response = await this.apiService.get(url);
       return response.data;
     } catch (error) {
-      this.logger.error(`An error occurred while calling the mx stats service on url ${removeCredentialsFromUrl(url)}`, {
+      this.logger.error(`An error occurred while calling the drt stats service on url ${removeCredentialsFromUrl(url)}`, {
         path: `${MxStatsService.name}.${this.getTrending.name}`,
         dimension,
         exception: error,
@@ -30,7 +30,7 @@ export class MxStatsService {
       const response = await this.apiService.get(url);
       return response.data;
     } catch (error) {
-      this.logger.error(`An error occurred while calling the mx stats service on url ${removeCredentialsFromUrl(url)}`, {
+      this.logger.error(`An error occurred while calling the drt stats service on url ${removeCredentialsFromUrl(url)}`, {
         path: `${MxStatsService.name}.${this.getNftsViewsCount.name}`,
         identifier,
         exception: error,

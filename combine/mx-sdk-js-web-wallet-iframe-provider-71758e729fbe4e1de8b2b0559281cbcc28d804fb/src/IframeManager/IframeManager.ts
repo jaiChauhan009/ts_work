@@ -21,7 +21,7 @@ import {
 
 export class IframeManager extends WindowManager {
   private iframeWalletComponent: IframeProviderContentWindowModel | null = null;
-  private readonly iframeId = 'mx-iframe-wallet';
+  private readonly iframeId = 'drt-iframe-wallet';
   private loginType: ExtendedIframeLoginType = IframeLoginTypes.metamask;
   private hasHandshake: boolean;
 

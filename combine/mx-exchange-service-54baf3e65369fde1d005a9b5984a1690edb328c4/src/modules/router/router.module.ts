@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { RouterService } from './services/router.service';
 import { RouterResolver } from './router.resolver';
-import { MXCommunicationModule } from '../../services/dharitri-communication/mx.communication.module';
+import { MXCommunicationModule } from '../../services/dharitri-communication/drt.communication.module';
 import { RouterAbiService } from './services/router.abi.service';
 import { RouterTransactionService } from './services/router.transactions.service';
 import { RouterComputeService } from './services/router.compute.service';

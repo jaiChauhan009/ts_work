@@ -1,4 +1,4 @@
-import { EventResponse } from 'src/common/services/mx-communication/models/elastic-search/event.response';
+import { EventResponse } from 'src/common/services/drt-communication/models/elastic-search/event.response';
 
 export interface MarketplaceEventAndTransactionData {
   eventData?: EventResponse;

@@ -22,9 +22,9 @@ import { FarmTokenAttributesV2 } from '@terradharitri/sdk-exchange';
 import { FarmRewardType } from '../../models/farm.model';
 import { farmType } from 'src/utils/farm.utils';
 import { BoostedYieldsFactors } from '../../models/farm.v2.model';
-import { MXProxyService } from '../../../../services/dharitri-communication/mx.proxy.service';
-import { MXGatewayService } from '../../../../services/dharitri-communication/mx.gateway.service';
-import { MXApiService } from 'src/services/dharitri-communication/mx.api.service';
+import { MXProxyService } from '../../../../services/dharitri-communication/drt.proxy.service';
+import { MXGatewayService } from '../../../../services/dharitri-communication/drt.gateway.service';
+import { MXApiService } from 'src/services/dharitri-communication/drt.api.service';
 import { ErrorLoggerAsync } from '@terradharitri/sdk-nestjs-common';
 import { GetOrSetCache } from 'src/helpers/decorators/caching.decorator';
 import { CacheTtlInfo } from 'src/services/caching/cache.ttl.info';
@@ -37,12 +37,12 @@ export class FarmAbiServiceV2
     implements IFarmAbiServiceV2
 {
     constructor(
-        protected readonly mxProxy: MXProxyService,
+        protected readonly drtProxy: MXProxyService,
         protected readonly gatewayService: MXGatewayService,
-        protected readonly mxApi: MXApiService,
+        protected readonly drtApi: MXApiService,
         protected readonly cacheService: CacheService,
     ) {
-        super(mxProxy, gatewayService, mxApi, cacheService);
+        super(drtProxy, gatewayService, drtApi, cacheService);
     }
 
     async getLastErrorMessageRaw(farmAddress: string): Promise<string> {
@@ -70,7 +70,7 @@ export class FarmAbiServiceV2
     async getBoostedYieldsRewardsPercenatageRaw(
         farmAddress: string,
     ): Promise<number> {
-        const contract = await this.mxProxy.getFarmSmartContract(farmAddress);
+        const contract = await this.drtProxy.getFarmSmartContract(farmAddress);
 
         const interaction: Interaction =
             contract.methodsExplicit.getBoostedYieldsRewardsPercentage();
@@ -95,7 +95,7 @@ export class FarmAbiServiceV2
             return undefined;
         }
 
-        const contract = await this.mxProxy.getFarmSmartContract(farmAddress);
+        const contract = await this.drtProxy.getFarmSmartContract(farmAddress);
 
         const interaction: Interaction =
             contract.methodsExplicit.getLockingScAddress();
@@ -120,7 +120,7 @@ export class FarmAbiServiceV2
             return undefined;
         }
 
-        const contract = await this.mxProxy.getFarmSmartContract(farmAddress);
+        const contract = await this.drtProxy.getFarmSmartContract(farmAddress);
 
         const interaction: Interaction =
             contract.methodsExplicit.getLockEpochs();
@@ -150,7 +150,7 @@ export class FarmAbiServiceV2
         farmAddress: string,
         week: number,
     ): Promise<string> {
-        const contract = await this.mxProxy.getFarmSmartContract(farmAddress);
+        const contract = await this.drtProxy.getFarmSmartContract(farmAddress);
         const interaction: Interaction =
             contract.methodsExplicit.getRemainingBoostedRewardsToDistribute([
                 new U32Value(new BigNumber(week)),
@@ -174,7 +174,7 @@ export class FarmAbiServiceV2
     async getUndistributedBoostedRewardsRaw(
         farmAddress: string,
     ): Promise<string> {
-        const contract = await this.mxProxy.getFarmSmartContract(farmAddress);
+        const contract = await this.drtProxy.getFarmSmartContract(farmAddress);
 
         const interaction: Interaction =
             contract.methodsExplicit.getUndistributedBoostedRewards();
@@ -216,7 +216,7 @@ export class FarmAbiServiceV2
     async getBoostedYieldsFactorsRaw(
         farmAddress: string,
     ): Promise<BoostedYieldsFactors> {
-        const contract = await this.mxProxy.getFarmSmartContract(farmAddress);
+        const contract = await this.drtProxy.getFarmSmartContract(farmAddress);
         const interaction: Interaction =
             contract.methodsExplicit.getBoostedYieldsFactors();
         const response = await this.getGenericData(interaction);
@@ -254,7 +254,7 @@ export class FarmAbiServiceV2
         week: number,
     ): Promise<string> {
         // TODO: remove the code above after the contracts are upgraded with the required view
-        const contract = await this.mxProxy.getFarmSmartContract(scAddress);
+        const contract = await this.drtProxy.getFarmSmartContract(scAddress);
         const interaction: Interaction =
             contract.methodsExplicit.getAccumulatedRewardsForWeek([
                 new U32Value(new BigNumber(week)),
@@ -276,7 +276,7 @@ export class FarmAbiServiceV2
     }
 
     async getEnergyFactoryAddressRaw(farmAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getFarmSmartContract(farmAddress);
+        const contract = await this.drtProxy.getFarmSmartContract(farmAddress);
 
         const interaction: Interaction =
             contract.methodsExplicit.getEnergyFactoryAddress();
@@ -287,7 +287,7 @@ export class FarmAbiServiceV2
     async calculateRewardsForGivenPosition(
         args: CalculateRewardsArgs,
     ): Promise<BigNumber> {
-        const contract = await this.mxProxy.getFarmSmartContract(
+        const contract = await this.drtProxy.getFarmSmartContract(
             args.farmAddress,
         );
         const decodedAttributes = FarmTokenAttributesV2.fromAttributes(
@@ -370,7 +370,7 @@ export class FarmAbiServiceV2
     }
 
     async getBurnGasLimitRaw(farmAddress: string): Promise<string | undefined> {
-        const contract = await this.mxProxy.getFarmSmartContract(farmAddress);
+        const contract = await this.drtProxy.getFarmSmartContract(farmAddress);
         const interaction: Interaction =
             contract.methodsExplicit.getBurnGasLimit();
         const response = await this.getGenericData(interaction);
@@ -396,7 +396,7 @@ export class FarmAbiServiceV2
         farmAddress: string,
         userAddress: string,
     ): Promise<string> {
-        const contract = await this.mxProxy.getFarmSmartContract(farmAddress);
+        const contract = await this.drtProxy.getFarmSmartContract(farmAddress);
         const interaction: Interaction =
             contract.methodsExplicit.getUserTotalFarmPosition([
                 new AddressValue(Address.fromString(userAddress)),
@@ -428,7 +428,7 @@ export class FarmAbiServiceV2
     async getFarmPositionMigrationNonceRaw(
         farmAddress: string,
     ): Promise<number> {
-        const contract = await this.mxProxy.getFarmSmartContract(farmAddress);
+        const contract = await this.drtProxy.getFarmSmartContract(farmAddress);
         const interaction: Interaction =
             contract.methodsExplicit.getFarmPositionMigrationNonce();
         const response = await this.getGenericData(interaction);
@@ -454,7 +454,7 @@ export class FarmAbiServiceV2
         farmAddress: string,
         week: number,
     ): Promise<string> {
-        const contract = await this.mxProxy.getFarmSmartContract(farmAddress);
+        const contract = await this.drtProxy.getFarmSmartContract(farmAddress);
         const interaction: Interaction =
             contract.methodsExplicit.getFarmSupplyForWeek([
                 new U32Value(new BigNumber(week)),

@@ -217,8 +217,8 @@ export class AssetsService {
     return new AccountAssets({
       name: name,
       tags: tags,
-      iconSvg: 'https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/accounts/icons/xexchange.svg',
-      iconPng: 'https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/accounts/icons/xexchange.png',
+      iconSvg: 'https://raw.githubusercontent.com/TerraDharitri/drt-assets/master/accounts/icons/xexchange.svg',
+      iconPng: 'https://raw.githubusercontent.com/TerraDharitri/drt-assets/master/accounts/icons/xexchange.png',
     });
   }
 }

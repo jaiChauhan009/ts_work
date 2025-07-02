@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Address, AddressValue, Interaction } from '@terradharitri/sdk-core';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import BigNumber from 'bignumber.js';
 import { CommunityDistributionModel } from '../models/distribution.model';
 import { GenericAbiService } from 'src/services/generics/generic.abi.service';
@@ -10,8 +10,8 @@ import { ErrorLoggerAsync } from '@terradharitri/sdk-nestjs-common';
 
 @Injectable()
 export class DistributionAbiService extends GenericAbiService {
-    constructor(protected readonly mxProxy: MXProxyService) {
-        super(mxProxy);
+    constructor(protected readonly drtProxy: MXProxyService) {
+        super(drtProxy);
     }
 
     @ErrorLoggerAsync()
@@ -25,7 +25,7 @@ export class DistributionAbiService extends GenericAbiService {
     }
 
     async getCommunityDistributionRaw(): Promise<CommunityDistributionModel> {
-        const contract = await this.mxProxy.getDistributionSmartContract();
+        const contract = await this.drtProxy.getDistributionSmartContract();
         const interaction: Interaction =
             contract.methodsExplicit.getLastCommunityDistributionAmountAndEpoch();
         const response = await this.getGenericData(interaction);
@@ -48,7 +48,7 @@ export class DistributionAbiService extends GenericAbiService {
     async getDistributedLockedAssetsRaw(
         userAddress: string,
     ): Promise<BigNumber> {
-        const contract = await this.mxProxy.getDistributionSmartContract();
+        const contract = await this.drtProxy.getDistributionSmartContract();
         const interaction: Interaction =
             contract.methodsExplicit.calculateLockedAssets([
                 new AddressValue(Address.fromString(userAddress)),

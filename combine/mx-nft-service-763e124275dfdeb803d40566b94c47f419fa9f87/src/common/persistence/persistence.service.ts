@@ -1,6 +1,6 @@
 import { PerformanceProfiler } from '@terradharitri/sdk-nestjs-monitoring';
 import { Inject, Injectable, forwardRef } from '@nestjs/common';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { AccountStatsEntity } from 'src/db/account-stats/account-stats';
 import { AccountStatsRepository } from 'src/db/account-stats/account-stats.repository';
 import { AssetLikeEntity, AssetsLikesRepository } from 'src/db/assets';
@@ -39,7 +39,7 @@ import { MetricsCollector } from 'src/modules/metrics/metrics.collector';
 import { NotificationTypeEnum } from 'src/modules/notifications/models/Notification-type.enum';
 import { OrderStatusEnum } from 'src/modules/orders/models';
 import { DeleteResult } from 'typeorm';
-import { NftTag } from '../services/mx-communication/models/nft.dto';
+import { NftTag } from '../services/drt-communication/models/nft.dto';
 import { MinterEntity } from 'src/db/minters';
 import { MintersRepository } from 'src/db/minters/minters.repository';
 
@@ -156,7 +156,7 @@ export class PersistenceService {
   async getCollectionStats(
     identifier: string,
     marketplaceKey: string = undefined,
-    paymentToken: string = mxConfig.rewa,
+    paymentToken: string = drtConfig.rewa,
   ): Promise<CollectionStatsEntity> {
     return await this.execute(
       this.getCollectionStats.name,
@@ -167,7 +167,7 @@ export class PersistenceService {
   async getCollectionFloorPrice(
     identifier: string,
     marketplaceKey: string = undefined,
-    paymentToken: string = mxConfig.rewa,
+    paymentToken: string = drtConfig.rewa,
   ): Promise<number> {
     return await this.execute(
       this.getCollectionStats.name,

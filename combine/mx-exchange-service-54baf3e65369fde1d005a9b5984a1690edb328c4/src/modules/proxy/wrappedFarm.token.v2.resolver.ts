@@ -1,6 +1,6 @@
 import { Args, Query, ResolveField, Resolver } from '@nestjs/graphql';
 import { scAddress } from 'src/config';
-import { MXApiService } from 'src/services/dharitri-communication/mx.api.service';
+import { MXApiService } from 'src/services/dharitri-communication/drt.api.service';
 import { tokenIdentifier } from 'src/utils/token.converters';
 import { FarmTokenAttributesUnion } from '../farm/models/farmTokenAttributes.model';
 import { DecodeAttributesArgs } from './models/proxy.args';

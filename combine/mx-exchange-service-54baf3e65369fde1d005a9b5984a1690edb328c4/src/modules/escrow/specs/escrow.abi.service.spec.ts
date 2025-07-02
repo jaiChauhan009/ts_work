@@ -1,9 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { EscrowAbiService } from '../services/escrow.abi.service';
-import { MXProxyServiceProvider } from 'src/services/dharitri-communication/mx.proxy.service.mock';
-import { MXGatewayServiceProvider } from 'src/services/dharitri-communication/mx.gateway.service.mock';
+import { MXProxyServiceProvider } from 'src/services/dharitri-communication/drt.proxy.service.mock';
+import { MXGatewayServiceProvider } from 'src/services/dharitri-communication/drt.gateway.service.mock';
 import { SCPermissions } from '../models/escrow.model';
-import { MXGatewayService } from 'src/services/dharitri-communication/mx.gateway.service';
+import { MXGatewayService } from 'src/services/dharitri-communication/drt.gateway.service';
 import { Address, ReturnCode, U32Value } from '@terradharitri/sdk-core/out';
 import { ConfigModule } from '@nestjs/config';
 import { WinstonModule } from 'nest-winston';
@@ -15,7 +15,7 @@ import { CacheService } from 'src/services/caching/cache.service';
 
 describe('EscrowAbiService', () => {
     let service: EscrowAbiService;
-    let mxGateway: MXGatewayService;
+    let drtGateway: MXGatewayService;
     let cachingService: CacheService;
 
     beforeAll(async () => {
@@ -37,7 +37,7 @@ describe('EscrowAbiService', () => {
         }).compile();
 
         service = module.get<EscrowAbiService>(EscrowAbiService);
-        mxGateway = module.get<MXGatewayService>(MXGatewayService);
+        drtGateway = module.get<MXGatewayService>(MXGatewayService);
         cachingService = module.get<CacheService>(CacheService);
     });
 
@@ -93,11 +93,11 @@ describe('EscrowAbiService', () => {
     it('should get none receivers for sender', async () => {
         const sender = Address.Zero();
 
-        jest.spyOn(mxGateway, 'getSCStorageKeys').mockResolvedValue({});
+        jest.spyOn(drtGateway, 'getSCStorageKeys').mockResolvedValue({});
         let receivers = await service.getAllReceiversRaw(sender.bech32());
         expect(receivers).toEqual([]);
 
-        jest.spyOn(mxGateway, 'getSCStorageKeys').mockResolvedValue({
+        jest.spyOn(drtGateway, 'getSCStorageKeys').mockResolvedValue({
             '7065726d697373696f6e73344abc44119cfcace253de05e33c01796c12f96f3bcc52b504b9bc2b96927ceb':
                 '03',
             '7065726d697373696f6e7360bb6011a781eb8b53d61d79047450adaa46977e20239312951262c1057d1090':
@@ -111,7 +111,7 @@ describe('EscrowAbiService', () => {
         receivers = await service.getAllReceiversRaw(sender.bech32());
         expect(receivers).toEqual([]);
 
-        jest.spyOn(mxGateway, 'getSCStorageKeys').mockResolvedValue({
+        jest.spyOn(drtGateway, 'getSCStorageKeys').mockResolvedValue({
             '616c6c53656e646572732c5594ae2f77a913119bc9db52833245a5879674cd4aeaedcd92f6f9e7edf17d2e696e646578344abc44119cfcace253de05e33c01796c12f96f3bcc52b504b9bc2b96927ceb':
                 '01',
             '616c6c53656e646572732c5594ae2f77a913119bc9db52833245a5879674cd4aeaedcd92f6f9e7edf17d2e6974656d00000001':
@@ -126,7 +126,7 @@ describe('EscrowAbiService', () => {
     });
 
     it('should get one receiver for sender', async () => {
-        jest.spyOn(mxGateway, 'getSCStorageKeys').mockResolvedValue({
+        jest.spyOn(drtGateway, 'getSCStorageKeys').mockResolvedValue({
             '616c6c53656e646572736e593caf5c21cd2e419c8249101e20eb53770d6b2512ee9f19b971fd3c0a0e892e696e646578344abc44119cfcace253de05e33c01796c12f96f3bcc52b504b9bc2b96927ceb':
                 '01',
             '616c6c53656e646572736e593caf5c21cd2e419c8249101e20eb53770d6b2512ee9f19b971fd3c0a0e892e6974656d00000001':
@@ -144,7 +144,7 @@ describe('EscrowAbiService', () => {
     });
 
     it('should get two receivers for sender', async () => {
-        jest.spyOn(mxGateway, 'getSCStorageKeys').mockResolvedValue({
+        jest.spyOn(drtGateway, 'getSCStorageKeys').mockResolvedValue({
             '616c6c53656e646572736e593caf5c21cd2e419c8249101e20eb53770d6b2512ee9f19b971fd3c0a0e892e696e646578344abc44119cfcace253de05e33c01796c12f96f3bcc52b504b9bc2b96927ceb':
                 '01',
             '616c6c53656e646572736e593caf5c21cd2e419c8249101e20eb53770d6b2512ee9f19b971fd3c0a0e892e6974656d00000001':

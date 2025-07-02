@@ -4,7 +4,7 @@ import {
     FeesCollectorResolver,
     UserEntryFeesCollectorResolver,
 } from './fees-collector.resolver';
-import { MXCommunicationModule } from '../../services/dharitri-communication/mx.communication.module';
+import { MXCommunicationModule } from '../../services/dharitri-communication/drt.communication.module';
 import { FeesCollectorService } from './services/fees-collector.service';
 import { WeeklyRewardsSplittingModule } from '../../submodules/weekly-rewards-splitting/weekly-rewards-splitting.module';
 import { WeekTimekeepingModule } from '../../submodules/week-timekeeping/week-timekeeping.module';

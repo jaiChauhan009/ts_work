@@ -7,7 +7,7 @@ import { RedisPubSub } from 'graphql-redis-subscriptions';
 import { WINSTON_MODULE_PROVIDER } from 'nest-winston';
 import { Constants } from '@terradharitri/sdk-nestjs-common';
 import { CacheService } from 'src/services/caching/cache.service';
-import { MXApiService } from 'src/services/dharitri-communication/mx.api.service';
+import { MXApiService } from 'src/services/dharitri-communication/drt.api.service';
 import { PUB_SUB } from 'src/services/redis.pubSub.module';
 import { generateCacheKeyFromParams } from 'src/utils/generate-cache-key';
 import { Logger } from 'winston';

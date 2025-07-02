@@ -4,7 +4,7 @@ import { constantsConfig, gasConfig } from 'src/config';
 import { TransactionModel } from 'src/models/transaction.model';
 import { BigNumber } from 'bignumber.js';
 import { UnlockAssetsArgs } from '../models/locked-asset.args';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { InputTokenModel } from 'src/models/inputToken.model';
 import { WINSTON_MODULE_PROVIDER } from 'nest-winston';
 import { Logger } from 'winston';
@@ -15,7 +15,7 @@ import { TransactionOptions } from 'src/modules/common/transaction.options';
 @Injectable()
 export class TransactionsLockedAssetService {
     constructor(
-        private readonly mxProxy: MXProxyService,
+        private readonly drtProxy: MXProxyService,
         private readonly lockedAssetGetter: LockedAssetGetterService,
         @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: Logger,
     ) {}
@@ -24,7 +24,7 @@ export class TransactionsLockedAssetService {
         sender: string,
         args: UnlockAssetsArgs,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getLockedAssetFactorySmartContractTransaction(
+        return this.drtProxy.getLockedAssetFactorySmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
                 gasLimit: gasConfig.lockedAssetFactory.unlockAssets,
@@ -48,7 +48,7 @@ export class TransactionsLockedAssetService {
     ): Promise<TransactionModel> {
         await this.validateLockAssetsInputTokens(token);
 
-        return this.mxProxy.getLockedAssetFactorySmartContractTransaction(
+        return this.drtProxy.getLockedAssetFactorySmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
                 gasLimit: gasConfig.lockedAssetFactory.lockAssets,
@@ -97,7 +97,7 @@ export class TransactionsLockedAssetService {
             .plus(gasConfig.lockedAssetFactory.defaultMergeLockedAssets)
             .toNumber();
 
-        return this.mxProxy.getLockedAssetFactorySmartContractTransaction(
+        return this.drtProxy.getLockedAssetFactorySmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
                 gasLimit: gasLimit,

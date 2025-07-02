@@ -17,11 +17,11 @@ It is built for applications that use any of the following technologies:
 
 ## GitHub project
 
-The GitHub repository can be found here: [https://github.com/TerraDharitri/mx-sdk-dapp-core](https://github.com/TerraDharitri/mx-sdk-dapp-core)
+The GitHub repository can be found here: [https://github.com/TerraDharitri/drt-sdk-dapp-core](https://github.com/TerraDharitri/drt-sdk-dapp-core)
 
 ## Live demo: template-dapp
 
-See [Template dApp](https://template-dapp.dharitri.org/) for live demo or checkout usage in the [Github repo](https://github.com/TerraDharitri/mx-template-dapp)
+See [Template dApp](https://template-dapp.dharitri.org/) for live demo or checkout usage in the [Github repo](https://github.com/TerraDharitri/drt-template-dapp)
 
 ## Requirements
 
@@ -60,7 +60,7 @@ Also, make sure you run your app on `https`, not `http`, otherwise some provider
 npm install
 ```
 
-If you're transitioning from @terradharitri/sdk-dapp, you can check out the [Migration guide PR](https://github.com/TerraDharitri/mx-template-dapp/pull/264) of Template Dapp
+If you're transitioning from @terradharitri/sdk-dapp, you can check out the [Migration guide PR](https://github.com/TerraDharitri/drt-template-dapp/pull/264) of Template Dapp
 
 ## Usage
 
@@ -238,7 +238,7 @@ Conceptually, these can be split into 3 main parts:
 
 - First is the business logic in `apiCalls`, `constants` and `core` (signing providers).
 - Then comes the persistence layer hosted in the `store` folder, using [Zustand](https://zustand.docs.pmnd.rs/) under the hood.
-- Last are the UI components hosted in [@terradharitri/sdk-dapp-core](https://github.com/TerraDharitri/mx-sdk-dapp-core-ui) with some components controlled on demand by classes defined in `controlles`
+- Last are the UI components hosted in [@terradharitri/sdk-dapp-core](https://github.com/TerraDharitri/drt-sdk-dapp-core-ui) with some components controlled on demand by classes defined in `controlles`
 
 Next, we will take the elements from Table 2 and detail them in the following sections.
 
@@ -263,7 +263,7 @@ It's important to initialize it on app load (this is take care of by `initApp`),
 
 #### Creating a custom provider
 
-If you need to create a custom signing provider, make sure to extend the `IProvider` interface and implement all required methods (see example [here](https://github.com/TerraDharitri/mx-template-dapp/tree/main/src/provider)). Next step would be to include it in the `customProviders` array in the `initApp` method or add it to the [window object](https://github.com/TerraDharitri/mx-template-dapp/tree/main/src/initConfig). Last step is to login using the custom provider.
+If you need to create a custom signing provider, make sure to extend the `IProvider` interface and implement all required methods (see example [here](https://github.com/TerraDharitri/drt-template-dapp/tree/main/src/provider)). Next step would be to include it in the `customProviders` array in the `initApp` method or add it to the [window object](https://github.com/TerraDharitri/drt-template-dapp/tree/main/src/initConfig). Last step is to login using the custom provider.
 
 ```typescript
 import { ProviderTypeEnum } from '@terradharitri/sdk-dapp-core/out/core/providers/types/providerFactory.types';
@@ -488,7 +488,7 @@ const eventBus = await modalElement.getEventBus();
 eventBus.publish('TRANSACTION_TOAST_DATA_UPDATE', someData);
 ```
 
-If you want to override private components and create your own, you can implement a similar strategy, of course by respecting each webcomponent's API (see an interface example [here](https://github.com/TerraDharitri/mx-sdk-dapp-core/blob/main/src/core/providers/strategies/LedgerProviderStrategy/types/ledger.types.ts)).
+If you want to override private components and create your own, you can implement a similar strategy, of course by respecting each webcomponent's API (see an interface example [here](https://github.com/TerraDharitri/drt-sdk-dapp-core/blob/main/src/core/providers/strategies/LedgerProviderStrategy/types/ledger.types.ts)).
 
 ## Debugging your dApp
 

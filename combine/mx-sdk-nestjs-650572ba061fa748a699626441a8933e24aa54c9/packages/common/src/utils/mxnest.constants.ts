@@ -1,1 +1,1 @@
-export const MXNEST_CONFIG_SERVICE = 'MxnestConfigService';
+export const DRTNEST_CONFIG_SERVICE = 'MxnestConfigService';

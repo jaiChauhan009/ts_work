@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { gasConfig } from 'src/config';
 import { TransactionModel } from 'src/models/transaction.model';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { TokenUnstakeAbiService } from './token.unstake.abi.service';
 import { TransactionOptions } from 'src/modules/common/transaction.options';
 
@@ -9,7 +9,7 @@ import { TransactionOptions } from 'src/modules/common/transaction.options';
 export class TokenUnstakeTransactionService {
     constructor(
         private readonly tokenUnstakeAbi: TokenUnstakeAbiService,
-        private readonly mxProxy: MXProxyService,
+        private readonly drtProxy: MXProxyService,
     ) {}
 
     async claimUnlockedTokens(sender: string): Promise<TransactionModel> {
@@ -21,7 +21,7 @@ export class TokenUnstakeTransactionService {
             gasConfig.tokenUnstake.claimUnlockedTokens.additionalTokens *
                 unstakedTokens.length;
 
-        return await this.mxProxy.getTokenUnstakeSmartContractTransaction(
+        return await this.drtProxy.getTokenUnstakeSmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
                 gasLimit: gasLimit,
@@ -40,7 +40,7 @@ export class TokenUnstakeTransactionService {
             gasConfig.tokenUnstake.cancelUnbond.additionalTokens *
                 unstakedTokens.length;
 
-        return await this.mxProxy.getTokenUnstakeSmartContractTransaction(
+        return await this.drtProxy.getTokenUnstakeSmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
                 gasLimit: gasLimit,

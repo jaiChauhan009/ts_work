@@ -1,6 +1,6 @@
 import { Address, AddressValue, Interaction } from '@terradharitri/sdk-core';
 import { Injectable } from '@nestjs/common';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { GenericAbiService } from 'src/services/generics/generic.abi.service';
 import { UserEntryModel } from '../models/metabonding.model';
 import { GetOrSetCache } from 'src/helpers/decorators/caching.decorator';
@@ -13,8 +13,8 @@ export class MetabondingAbiService
     extends GenericAbiService
     implements IMetabondingAbiService
 {
-    constructor(protected readonly mxProxy: MXProxyService) {
-        super(mxProxy);
+    constructor(protected readonly drtProxy: MXProxyService) {
+        super(drtProxy);
     }
 
     @ErrorLoggerAsync()
@@ -29,7 +29,7 @@ export class MetabondingAbiService
 
     async getLockedAssetTokenIDRaw(): Promise<string> {
         const contract =
-            await this.mxProxy.getMetabondingStakingSmartContract();
+            await this.drtProxy.getMetabondingStakingSmartContract();
         const interaction: Interaction =
             contract.methodsExplicit.getLockedAssetTokenId();
 
@@ -49,7 +49,7 @@ export class MetabondingAbiService
 
     async getTotalLockedAssetSupplyRaw(): Promise<string> {
         const contract =
-            await this.mxProxy.getMetabondingStakingSmartContract();
+            await this.drtProxy.getMetabondingStakingSmartContract();
         const interaction: Interaction =
             contract.methodsExplicit.getTotalLockedAssetSupply();
 
@@ -69,7 +69,7 @@ export class MetabondingAbiService
 
     async getStakedAmountForUserRaw(userAddress: string): Promise<string> {
         const contract =
-            await this.mxProxy.getMetabondingStakingSmartContract();
+            await this.drtProxy.getMetabondingStakingSmartContract();
         const interaction: Interaction =
             contract.methodsExplicit.getStakedAmountForUser([
                 new AddressValue(Address.fromString(userAddress)),
@@ -91,7 +91,7 @@ export class MetabondingAbiService
 
     async getUserEntryRaw(userAddress: string): Promise<UserEntryModel> {
         const contract =
-            await this.mxProxy.getMetabondingStakingSmartContract();
+            await this.drtProxy.getMetabondingStakingSmartContract();
         const interaction: Interaction = contract.methodsExplicit.getUserEntry([
             new AddressValue(Address.fromString(userAddress)),
         ]);

@@ -8,7 +8,7 @@ import { CalculateRewardsArgs } from 'src/modules/farm/models/farm.args';
 import { DecodeAttributesArgs } from 'src/modules/proxy/models/proxy.args';
 import { RemoteConfigGetterService } from 'src/modules/remote-config/remote-config.getter.service';
 import { ContextGetterService } from 'src/services/context/context.getter.service';
-import { MXApiService } from 'src/services/dharitri-communication/mx.api.service';
+import { MXApiService } from 'src/services/dharitri-communication/drt.api.service';
 import {
     StakingBoostedRewardsModel,
     StakingModel,

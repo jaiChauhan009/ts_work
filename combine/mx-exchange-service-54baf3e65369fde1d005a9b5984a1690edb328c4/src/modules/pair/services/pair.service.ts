@@ -1,5 +1,5 @@
 import { forwardRef, Inject, Injectable } from '@nestjs/common';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { BigNumber } from 'bignumber.js';
 import { LiquidityPosition, LockedTokensInfo } from '../models/pair.model';
 import {
@@ -184,7 +184,7 @@ export class PairService {
         ]);
 
         const tokenIn =
-            tokenInID === mxConfig.REWAIdentifier ? wrappedTokenID : tokenInID;
+            tokenInID === drtConfig.REWAIdentifier ? wrappedTokenID : tokenInID;
 
         switch (tokenIn) {
             case firstTokenID:
@@ -226,7 +226,7 @@ export class PairService {
         ]);
 
         const tokenOut =
-            tokenOutID === mxConfig.REWAIdentifier
+            tokenOutID === drtConfig.REWAIdentifier
                 ? wrappedTokenID
                 : tokenOutID;
 
@@ -264,7 +264,7 @@ export class PairService {
             ]);
 
         const tokenIn =
-            tokenInID === mxConfig.REWAIdentifier ? wrappedTokenID : tokenInID;
+            tokenInID === drtConfig.REWAIdentifier ? wrappedTokenID : tokenInID;
 
         switch (tokenIn) {
             case firstTokenID:

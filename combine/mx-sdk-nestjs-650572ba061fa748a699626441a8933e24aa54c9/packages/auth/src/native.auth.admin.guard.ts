@@ -1,5 +1,5 @@
 import { Injectable, CanActivate, ExecutionContext, Inject } from '@nestjs/common';
-import { ExecutionContextUtils, MxnestConfigService, MXNEST_CONFIG_SERVICE } from '@terradharitri/sdk-nestjs-common';
+import { ExecutionContextUtils, MxnestConfigService, DRTNEST_CONFIG_SERVICE } from '@terradharitri/sdk-nestjs-common';
 
 /**
  * This Guard allows only specific addresses to be authenticated.
@@ -14,12 +14,12 @@ import { ExecutionContextUtils, MxnestConfigService, MXNEST_CONFIG_SERVICE } fro
 @Injectable()
 export class NativeAuthAdminGuard implements CanActivate {
   constructor(
-    @Inject(MXNEST_CONFIG_SERVICE)
-    private readonly mxnestConfigService: MxnestConfigService
+    @Inject(DRTNEST_CONFIG_SERVICE)
+    private readonly drtnestConfigService: MxnestConfigService
   ) { }
 
   canActivate(context: ExecutionContext): boolean {
-    const admins = this.mxnestConfigService.getSecurityAdmins();
+    const admins = this.drtnestConfigService.getSecurityAdmins();
     if (!admins) {
       return false;
     }

@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Interaction } from '@terradharitri/sdk-core/out/smartcontracts/interaction';
 import { U64Value } from '@terradharitri/sdk-core';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { PhaseModel } from '../models/price.discovery.model';
 import BigNumber from 'bignumber.js';
 import { constantsConfig } from 'src/config';
@@ -19,10 +19,10 @@ export class PriceDiscoveryAbiService
     implements IPriceDiscoveryAbiService
 {
     constructor(
-        protected readonly mxProxy: MXProxyService,
+        protected readonly drtProxy: MXProxyService,
         private readonly cachingService: CacheService,
     ) {
-        super(mxProxy);
+        super(drtProxy);
     }
 
     @ErrorLoggerAsync({
@@ -40,7 +40,7 @@ export class PriceDiscoveryAbiService
     async getLaunchedTokenIDRaw(
         priceDiscoveryAddress: string,
     ): Promise<string> {
-        const contract = await this.mxProxy.getPriceDiscoverySmartContract(
+        const contract = await this.drtProxy.getPriceDiscoverySmartContract(
             priceDiscoveryAddress,
         );
         const interaction: Interaction =
@@ -65,7 +65,7 @@ export class PriceDiscoveryAbiService
     async getAcceptedTokenIDRaw(
         priceDiscoveryAddress: string,
     ): Promise<string> {
-        const contract = await this.mxProxy.getPriceDiscoverySmartContract(
+        const contract = await this.drtProxy.getPriceDiscoverySmartContract(
             priceDiscoveryAddress,
         );
         const interaction: Interaction =
@@ -88,7 +88,7 @@ export class PriceDiscoveryAbiService
     }
 
     async getRedeemTokenIDRaw(priceDiscoveryAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getPriceDiscoverySmartContract(
+        const contract = await this.drtProxy.getPriceDiscoverySmartContract(
             priceDiscoveryAddress,
         );
         const interaction: Interaction =
@@ -125,7 +125,7 @@ export class PriceDiscoveryAbiService
     async getLaunchedTokenBalanceRaw(
         priceDiscoveryAddress: string,
     ): Promise<string> {
-        const contract = await this.mxProxy.getPriceDiscoverySmartContract(
+        const contract = await this.drtProxy.getPriceDiscoverySmartContract(
             priceDiscoveryAddress,
         );
         const interaction: Interaction =
@@ -150,7 +150,7 @@ export class PriceDiscoveryAbiService
     async getAcceptedTokenBalanceRaw(
         priceDiscoveryAddress: string,
     ): Promise<string> {
-        const contract = await this.mxProxy.getPriceDiscoverySmartContract(
+        const contract = await this.drtProxy.getPriceDiscoverySmartContract(
             priceDiscoveryAddress,
         );
         const interaction: Interaction =
@@ -179,7 +179,7 @@ export class PriceDiscoveryAbiService
     async getLaunchedTokenRedeemBalanceRaw(
         priceDiscoveryAddress: string,
     ): Promise<string> {
-        const contract = await this.mxProxy.getPriceDiscoverySmartContract(
+        const contract = await this.drtProxy.getPriceDiscoverySmartContract(
             priceDiscoveryAddress,
         );
         const interaction: Interaction =
@@ -210,7 +210,7 @@ export class PriceDiscoveryAbiService
     async getAcceptedTokenRedeemBalanceRaw(
         priceDiscoveryAddress: string,
     ): Promise<string> {
-        const contract = await this.mxProxy.getPriceDiscoverySmartContract(
+        const contract = await this.drtProxy.getPriceDiscoverySmartContract(
             priceDiscoveryAddress,
         );
         const interaction: Interaction =
@@ -235,7 +235,7 @@ export class PriceDiscoveryAbiService
     }
 
     async getStartBlockRaw(priceDiscoveryAddress: string): Promise<number> {
-        const contract = await this.mxProxy.getPriceDiscoverySmartContract(
+        const contract = await this.drtProxy.getPriceDiscoverySmartContract(
             priceDiscoveryAddress,
         );
         const interaction: Interaction =
@@ -258,7 +258,7 @@ export class PriceDiscoveryAbiService
     }
 
     async getEndBlockRaw(priceDiscoveryAddress: string): Promise<number> {
-        const contract = await this.mxProxy.getPriceDiscoverySmartContract(
+        const contract = await this.drtProxy.getPriceDiscoverySmartContract(
             priceDiscoveryAddress,
         );
         const interaction: Interaction = contract.methodsExplicit.getEndBlock();
@@ -282,7 +282,7 @@ export class PriceDiscoveryAbiService
     async getCurrentPhaseRaw(
         priceDiscoveryAddress: string,
     ): Promise<PhaseModel> {
-        const contract = await this.mxProxy.getPriceDiscoverySmartContract(
+        const contract = await this.drtProxy.getPriceDiscoverySmartContract(
             priceDiscoveryAddress,
         );
         const interaction: Interaction =
@@ -321,7 +321,7 @@ export class PriceDiscoveryAbiService
     async getMinLaunchedTokenPriceRaw(
         priceDiscoveryAddress: string,
     ): Promise<string> {
-        const contract = await this.mxProxy.getPriceDiscoverySmartContract(
+        const contract = await this.drtProxy.getPriceDiscoverySmartContract(
             priceDiscoveryAddress,
         );
         const interaction: Interaction =
@@ -350,7 +350,7 @@ export class PriceDiscoveryAbiService
     async getNoLimitPhaseDurationBlocksRaw(
         priceDiscoveryAddress: string,
     ): Promise<number> {
-        const contract = await this.mxProxy.getPriceDiscoverySmartContract(
+        const contract = await this.drtProxy.getPriceDiscoverySmartContract(
             priceDiscoveryAddress,
         );
         const interaction: Interaction =
@@ -378,7 +378,7 @@ export class PriceDiscoveryAbiService
     async getLinearPenaltyPhaseDurationBlocksRaw(
         priceDiscoveryAddress: string,
     ): Promise<number> {
-        const contract = await this.mxProxy.getPriceDiscoverySmartContract(
+        const contract = await this.drtProxy.getPriceDiscoverySmartContract(
             priceDiscoveryAddress,
         );
         const interaction: Interaction =
@@ -406,7 +406,7 @@ export class PriceDiscoveryAbiService
     async getFixedPenaltyPhaseDurationBlocksRaw(
         priceDiscoveryAddress: string,
     ): Promise<number> {
-        const contract = await this.mxProxy.getPriceDiscoverySmartContract(
+        const contract = await this.drtProxy.getPriceDiscoverySmartContract(
             priceDiscoveryAddress,
         );
         const interaction: Interaction =
@@ -430,7 +430,7 @@ export class PriceDiscoveryAbiService
     async getLockingScAddressRaw(
         priceDiscoveryAddress: string,
     ): Promise<string> {
-        const contract = await this.mxProxy.getPriceDiscoverySmartContract(
+        const contract = await this.drtProxy.getPriceDiscoverySmartContract(
             priceDiscoveryAddress,
         );
         const interaction: Interaction =
@@ -452,7 +452,7 @@ export class PriceDiscoveryAbiService
     }
 
     async getUnlockEpochRaw(priceDiscoveryAddress: string): Promise<number> {
-        const contract = await this.mxProxy.getPriceDiscoverySmartContract(
+        const contract = await this.drtProxy.getPriceDiscoverySmartContract(
             priceDiscoveryAddress,
         );
         const interaction: Interaction =
@@ -476,7 +476,7 @@ export class PriceDiscoveryAbiService
     async getPenaltyMinPercentageRaw(
         priceDiscoveryAddress: string,
     ): Promise<number> {
-        const contract = await this.mxProxy.getPriceDiscoverySmartContract(
+        const contract = await this.drtProxy.getPriceDiscoverySmartContract(
             priceDiscoveryAddress,
         );
         const interaction: Interaction =
@@ -503,7 +503,7 @@ export class PriceDiscoveryAbiService
     async getPenaltyMaxPercentageRaw(
         priceDiscoveryAddress: string,
     ): Promise<number> {
-        const contract = await this.mxProxy.getPriceDiscoverySmartContract(
+        const contract = await this.drtProxy.getPriceDiscoverySmartContract(
             priceDiscoveryAddress,
         );
         const interaction: Interaction =
@@ -532,7 +532,7 @@ export class PriceDiscoveryAbiService
     async getFixedPenaltyPercentageRaw(
         priceDiscoveryAddress: string,
     ): Promise<number> {
-        const contract = await this.mxProxy.getPriceDiscoverySmartContract(
+        const contract = await this.drtProxy.getPriceDiscoverySmartContract(
             priceDiscoveryAddress,
         );
         const interaction: Interaction =

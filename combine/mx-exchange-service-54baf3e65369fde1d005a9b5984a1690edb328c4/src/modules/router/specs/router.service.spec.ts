@@ -16,7 +16,7 @@ import { PairServiceProvider } from 'src/modules/pair/mocks/pair.service.mock';
 import { WrapAbiServiceProvider } from 'src/modules/wrapping/mocks/wrap.abi.service.mock';
 import { TokenServiceProvider } from 'src/modules/tokens/mocks/token.service.mock';
 import { ContextGetterServiceProvider } from 'src/services/context/mocks/context.getter.service.mock';
-import { MXApiServiceProvider } from 'src/services/dharitri-communication/mx.api.service.mock';
+import { MXApiServiceProvider } from 'src/services/dharitri-communication/drt.api.service.mock';
 
 describe('RouterService', () => {
     let module: TestingModule;

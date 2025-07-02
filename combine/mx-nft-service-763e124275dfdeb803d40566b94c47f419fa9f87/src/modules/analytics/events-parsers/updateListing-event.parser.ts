@@ -4,7 +4,7 @@ import { UsdPriceService } from 'src/modules/usdPrice/usd-price.service';
 import { UpdateListingEvent } from '../../rabbitmq/entities/auction/updateListing.event';
 import { BigNumberUtils } from 'src/utils/bigNumber-utils';
 import { computeUsd } from 'src/utils/helpers';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 
 @Injectable()
 export class UpdateListingEventParser {
@@ -17,7 +17,7 @@ export class UpdateListingEventParser {
 
     if (!marketplace) return;
 
-    const tokenData = await this.usdPriceService.getToken(topics.paymentToken ?? mxConfig.rewa);
+    const tokenData = await this.usdPriceService.getToken(topics.paymentToken ?? drtConfig.rewa);
     const tokenPrice = await this.usdPriceService.getTokenPriceFromDate(tokenData.identifier, timestamp);
 
     const data = [];

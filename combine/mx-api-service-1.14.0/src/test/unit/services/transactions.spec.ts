@@ -259,9 +259,9 @@ describe('TransactionService', () => {
       'account': new AccountAssets({
         name: 'Test',
         description: 'Test',
-        icon: 'https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/accounts/icons/dharitri.png',
-        iconPng: 'https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/accounts/icons/dharitri.png',
-        iconSvg: 'https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/accounts/icons/dharitri.png',
+        icon: 'https://raw.githubusercontent.com/TerraDharitri/drt-assets/master/accounts/icons/dharitri.png',
+        iconPng: 'https://raw.githubusercontent.com/TerraDharitri/drt-assets/master/accounts/icons/dharitri.png',
+        iconSvg: 'https://raw.githubusercontent.com/TerraDharitri/drt-assets/master/accounts/icons/dharitri.png',
         proof: '',
         tags: ["transactions", "tests", "unit"],
       }),

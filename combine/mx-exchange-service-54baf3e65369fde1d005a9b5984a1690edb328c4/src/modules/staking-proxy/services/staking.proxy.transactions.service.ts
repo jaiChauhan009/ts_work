@@ -8,8 +8,8 @@ import { InputTokenModel } from 'src/models/inputToken.model';
 import { TransactionModel } from 'src/models/transaction.model';
 import { FarmFactoryService } from 'src/modules/farm/farm.factory';
 import { PairService } from 'src/modules/pair/services/pair.service';
-import { MXApiService } from 'src/services/dharitri-communication/mx.api.service';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXApiService } from 'src/services/dharitri-communication/drt.api.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { generateLogMessage } from 'src/utils/generate-log-message';
 import { tokenIdentifier } from 'src/utils/token.converters';
 import { Logger } from 'winston';
@@ -34,7 +34,7 @@ export class StakingProxyTransactionService {
         private readonly farmFactory: FarmFactoryService,
         private readonly farmAbiV2: FarmAbiServiceV2,
         private readonly stakingAbi: StakingAbiService,
-        private readonly mxProxy: MXProxyService,
+        private readonly drtProxy: MXProxyService,
         private readonly apiService: MXApiService,
         private readonly contextGetter: ContextGetterService,
         @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: Logger,
@@ -65,7 +65,7 @@ export class StakingProxyTransactionService {
                 ? gasConfig.stakeProxy.stakeFarmTokens.withTokenMerge
                 : gasConfig.stakeProxy.stakeFarmTokens.default;
 
-        return this.mxProxy.getStakingProxySmartContractTransaction(
+        return this.drtProxy.getStakingProxySmartContractTransaction(
             args.proxyStakingAddress,
             new TransactionOptions({
                 sender: sender,
@@ -98,7 +98,7 @@ export class StakingProxyTransactionService {
             }
         }
 
-        return this.mxProxy.getStakingProxySmartContractTransaction(
+        return this.drtProxy.getStakingProxySmartContractTransaction(
             args.proxyStakingAddress,
             new TransactionOptions({
                 sender: sender,
@@ -175,7 +175,7 @@ export class StakingProxyTransactionService {
             .multipliedBy(1 - args.tolerance)
             .integerValue();
 
-        return this.mxProxy.getStakingProxySmartContractTransaction(
+        return this.drtProxy.getStakingProxySmartContractTransaction(
             args.proxyStakingAddress,
             new TransactionOptions({
                 sender: sender,

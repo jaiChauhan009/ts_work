@@ -1,18 +1,18 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { LockedTokenWrapperTransactionService } from '../services/locked-token-wrapper.transaction.service';
-import { MXProxyServiceProvider } from 'src/services/dharitri-communication/mx.proxy.service.mock';
+import { MXProxyServiceProvider } from 'src/services/dharitri-communication/drt.proxy.service.mock';
 import { Address } from '@terradharitri/sdk-core/out';
 import { TransactionModel } from 'src/models/transaction.model';
-import { gasConfig, mxConfig, scAddress } from 'src/config';
+import { gasConfig, drtConfig, scAddress } from 'src/config';
 import { encodeTransactionData } from 'src/helpers/helpers';
 import { WinstonModule } from 'nest-winston';
 import { ConfigModule } from '@nestjs/config';
 import { ApiConfigService } from 'src/helpers/api.config.service';
 import winston from 'winston';
 import { EnergyAbiServiceProvider } from 'src/modules/energy/mocks/energy.abi.service.mock';
-import { MXApiServiceProvider } from 'src/services/dharitri-communication/mx.api.service.mock';
+import { MXApiServiceProvider } from 'src/services/dharitri-communication/drt.api.service.mock';
 import { ContextGetterServiceProvider } from 'src/services/context/mocks/context.getter.service.mock';
-import { MXApiService } from 'src/services/dharitri-communication/mx.api.service';
+import { MXApiService } from 'src/services/dharitri-communication/drt.api.service';
 
 describe('LockedTokenWrapperTransactionService', () => {
     let module: TestingModule;
@@ -47,9 +47,9 @@ describe('LockedTokenWrapperTransactionService', () => {
         const service = module.get<LockedTokenWrapperTransactionService>(
             LockedTokenWrapperTransactionService,
         );
-        const mxApi = module.get<MXApiService>(MXApiService);
+        const drtApi = module.get<MXApiService>(MXApiService);
         jest.spyOn(
-            mxApi,
+            drtApi,
             'getNftAttributesByTokenIdentifier',
         ).mockImplementation(async (address: string, nftIdentifier: string) => {
             if (nftIdentifier === 'WXMEX-123456-01') {
@@ -71,7 +71,7 @@ describe('LockedTokenWrapperTransactionService', () => {
         );
         expect(transaction).toEqual(
             new TransactionModel({
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 nonce: 0,
                 receiver: Address.Zero().toBech32(),
                 sender: Address.Zero().toBech32(),
@@ -102,7 +102,7 @@ describe('LockedTokenWrapperTransactionService', () => {
         );
         expect(transaction).toEqual(
             new TransactionModel({
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 nonce: 0,
                 receiver: Address.Zero().toBech32(),
                 sender: Address.Zero().toBech32(),

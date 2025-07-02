@@ -2,7 +2,7 @@ import { Inject, Injectable, Logger } from '@nestjs/common';
 import { Cron } from '@nestjs/schedule';
 import { CacheService } from '@terradharitri/sdk-nestjs-cache';
 import { generateCacheKeyFromParams } from 'src/utils/generate-cache-key';
-import { MXApiService } from '../dharitri-communication/mx.api.service';
+import { MXApiService } from '../dharitri-communication/drt.api.service';
 import { PUB_SUB } from '../redis.pubSub.module';
 import { RedisPubSub } from 'graphql-redis-subscriptions';
 import { Constants, Locker } from '@terradharitri/sdk-nestjs-common';
@@ -80,7 +80,7 @@ export class CacheWarmerService {
                     console.log(
                         `Started warming up query '${JSON.stringify(
                             keyValue,
-                        )}' for url '${process.env.MX_GOVERNANCE_URL}'`,
+                        )}' for url '${process.env.DRT_GOVERNANCE_URL}'`,
                     );
                     const profiler = new PerformanceProfiler();
 
@@ -88,7 +88,7 @@ export class CacheWarmerService {
                     try {
                         // Get new data without cache and update it
                         const response = await axios.post(
-                            `${process.env.MX_GOVERNANCE_URL}/${this.configService.getPrefix()}/graphql`,
+                            `${process.env.DRT_GOVERNANCE_URL}/${this.configService.getPrefix()}/graphql`,
                             keyValue,
                             {
                                 headers: {
@@ -102,7 +102,7 @@ export class CacheWarmerService {
                         console.error(
                             `An error occurred while warming up query '${JSON.stringify(
                                 keyValue,
-                            )}' for url '${process.env.MX_GOVERNANCE_URL}'`,
+                            )}' for url '${process.env.DRT_GOVERNANCE_URL}'`,
                         );
                         console.error(error);
                     }
@@ -113,7 +113,7 @@ export class CacheWarmerService {
                         `Finished warming up query '${JSON.stringify(
                             keyValue,
                         )}' for url '${
-                            process.env.MX_GOVERNANCE_URL
+                            process.env.DRT_GOVERNANCE_URL
                         }'. Response size: ${
                             JSON.stringify(data).length
                         }. Duration: ${profiler.duration}`,

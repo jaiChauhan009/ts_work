@@ -1,16 +1,16 @@
 # DharitrI Explorer
 
-![explorer.dharitri.org](https://github.com/TerraDharitri/mx-explorer-dapp/blob/main/public/share.jpg)
+![explorer.dharitri.org](https://github.com/TerraDharitri/drt-explorer-dapp/blob/main/public/share.jpg)
 
 This project was bootstrapped with [Vite](https://vitejs.dev/guide/).
 
 ## Tests
- [![E2E tests](https://github.com/TerraDharitri/mx-explorer-dapp/actions/workflows/pre-merge-main-e2e-tests.yml/badge.svg)](https://github.com/TerraDharitri/mx-explorer-dapp/actions/workflows/pre-merge-main-e2e-tests.yml)
+ [![E2E tests](https://github.com/TerraDharitri/drt-explorer-dapp/actions/workflows/pre-merge-main-e2e-tests.yml/badge.svg)](https://github.com/TerraDharitri/drt-explorer-dapp/actions/workflows/pre-merge-main-e2e-tests.yml)
 
 ## Deployments
 
-[![deploy-devnet](https://github.com/TerraDharitri/mx-explorer-dapp/actions/workflows/deploy-devnet.yml/badge.svg)](https://github.com/TerraDharitri/mx-explorer-dapp/actions/workflows/deploy-devnet.yml)
-[![deploy-testnet](https://github.com/TerraDharitri/mx-explorer-dapp/actions/workflows/deploy-testnet.yml/badge.svg)](https://github.com/TerraDharitri/mx-explorer-dapp/actions/workflows/deploy-testnet.yml)
+[![deploy-devnet](https://github.com/TerraDharitri/drt-explorer-dapp/actions/workflows/deploy-devnet.yml/badge.svg)](https://github.com/TerraDharitri/drt-explorer-dapp/actions/workflows/deploy-devnet.yml)
+[![deploy-testnet](https://github.com/TerraDharitri/drt-explorer-dapp/actions/workflows/deploy-testnet.yml/badge.svg)](https://github.com/TerraDharitri/drt-explorer-dapp/actions/workflows/deploy-testnet.yml)
 
 ## Requirements
 
@@ -71,7 +71,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## Roadmap
 
-See the [open issues](https://github.com/TerraDharitri/mx-explorer-dapp/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/TerraDharitri/drt-explorer-dapp/issues) for a list of proposed features (and known issues).
 
 ## Contributing
 

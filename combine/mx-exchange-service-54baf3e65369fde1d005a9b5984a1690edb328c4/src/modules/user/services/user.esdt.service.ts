@@ -7,7 +7,7 @@ import {
     DcdtTokenType,
 } from 'src/modules/tokens/models/dcdtToken.model';
 import { TokenService } from 'src/modules/tokens/services/token.service';
-import { MXApiService } from 'src/services/dharitri-communication/mx.api.service';
+import { MXApiService } from 'src/services/dharitri-communication/drt.api.service';
 import { UserToken } from '../models/user.model';
 import { UserDcdtComputeService } from './dcdt.compute.service';
 import { RouterAbiService } from 'src/modules/router/services/router.abi.service';

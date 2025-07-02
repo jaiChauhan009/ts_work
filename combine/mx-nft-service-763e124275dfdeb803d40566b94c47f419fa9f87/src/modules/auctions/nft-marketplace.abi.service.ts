@@ -24,7 +24,7 @@ import { MxApiService } from 'src/common';
 import { BadRequestError } from 'src/common/models/errors/bad-request-error';
 import { generateCacheKeyFromParams } from 'src/utils/generate-cache-key';
 import { getCollectionAndNonceFromIdentifier, numberToFixedHexBuffer } from 'src/utils/helpers';
-import { gas, mxConfig } from '../../config';
+import { gas, drtConfig } from '../../config';
 import '../../utils/extensions';
 import { NftTypeEnum } from '../assets/models';
 import { TransactionNode } from '../common/transaction';
@@ -41,7 +41,7 @@ import { BidRequest, BuySftRequest, CreateAuctionRequest } from './models/reques
 
 @Injectable()
 export class NftMarketplaceAbiService {
-  private config = new TransactionsFactoryConfig({ chainID: mxConfig.chainID });
+  private config = new TransactionsFactoryConfig({ chainID: drtConfig.chainID });
 
   constructor(
     private readonly apiService: MxApiService,
@@ -82,7 +82,7 @@ export class NftMarketplaceAbiService {
     const { marketplaceAddress, auction } = await this.configureTransactionData(request.auctionId);
     if (request.paymentTokenIdentifier !== auction.paymentToken) throw new BadRequestError('Unaccepted payment token');
 
-    return request.paymentTokenIdentifier !== mxConfig.rewa
+    return request.paymentTokenIdentifier !== drtConfig.rewa
       ? await this.bidWithDcdt(ownerAddress, request, marketplaceAddress, auction.marketplaceAuctionId)
       : await this.bidWithRewa(ownerAddress, request, marketplaceAddress, auction.marketplaceAuctionId);
   }
@@ -111,7 +111,7 @@ export class NftMarketplaceAbiService {
     }
 
     const factory = await ContractLoader.getFactory();
-    if (request.paymentToken !== mxConfig.rewa) {
+    if (request.paymentToken !== drtConfig.rewa) {
       const token = new Token({ identifier: request.paymentToken });
       const transfer = new TokenTransfer({ token, amount: BigInt(request.paymentAmount) });
 
@@ -236,7 +236,7 @@ export class NftMarketplaceAbiService {
     const { marketplaceAddress, auction } = await this.configureTransactionData(request.auctionId);
     if (request.paymentTokenIdentifier !== auction.paymentToken) throw new BadRequestError('Unaccepted payment token');
 
-    return request.paymentTokenIdentifier !== mxConfig.rewa
+    return request.paymentTokenIdentifier !== drtConfig.rewa
       ? await this.buySftWithDcdt(ownerAddress, request, marketplaceAddress, auction.marketplaceAuctionId)
       : await this.buySftWithRewa(ownerAddress, request, marketplaceAddress, auction.marketplaceAuctionId);
   }
@@ -383,7 +383,7 @@ export class NftMarketplaceAbiService {
       new BigUIntValue(new BigNumber(args.maxBid || 0)),
       new U64Value(new BigNumber(args.deadline)),
       new TokenIdentifierValue(args.paymentToken),
-      new OptionalValue(new BigUIntType(), new BigUIntValue(new BigNumber(mxConfig.minimumBidDifference))),
+      new OptionalValue(new BigUIntType(), new BigUIntValue(new BigNumber(drtConfig.minimumBidDifference))),
     ];
     if (args.startDate) {
       return [

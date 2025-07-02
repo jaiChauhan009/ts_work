@@ -6,15 +6,15 @@ DharitrI Front-End Library for JavaScript and TypeScript (written in TypeScript)
 
 `sdk-dapp-ui` is a library that holds components to display user information from the DharitrI blockchain.
 
-Since the library is built using [Stencil](https://stenciljs.com/), it can be used in any front-end framework, such as [React](https://github.com/TerraDharitri/mx-template-dapp), Angular, or [Solid.js](https://github.com/TerraDharitri/mx-solidjs-template-dapp), but also in back-end frameworks like [Next.js](https://github.com/TerraDharitri/mx-template-dapp-nextjs).
+Since the library is built using [Stencil](https://stenciljs.com/), it can be used in any front-end framework, such as [React](https://github.com/TerraDharitri/drt-template-dapp), Angular, or [Solid.js](https://github.com/TerraDharitri/drt-solidjs-template-dapp), but also in back-end frameworks like [Next.js](https://github.com/TerraDharitri/drt-template-dapp-nextjs).
 
 ## GitHub project
 
-The GitHub repository can be found here: [https://github.com/TerraDharitri/mx-sdk-dapp-ui](https://github.com/TerraDharitri/mx-sdk-dapp-ui)
+The GitHub repository can be found here: [https://github.com/TerraDharitri/drt-sdk-dapp-ui](https://github.com/TerraDharitri/drt-sdk-dapp-ui)
 
 ## Live demo: template-dapp
 
-See [Template dApp](https://template-dapp.dharitri.org/) for live demo or checkout usage in the [Github repo](https://github.com/TerraDharitri/mx-template-dapp)
+See [Template dApp](https://template-dapp.dharitri.org/) for live demo or checkout usage in the [Github repo](https://github.com/TerraDharitri/drt-template-dapp)
 
 ## Requirements
 
@@ -156,7 +156,7 @@ Components:
 - **Toast List** (`mvx-toast-list`): Notification management
 - **Ledger Connect** (`mvx-ledger-connect`): Hardware wallet connection
 
-You can check out the way these components are used in `@terradharitri/sdk-dapp` [here](https://github.com/TerraDharitri/mx-sdk-dapp/blob/main/src/managers/UnlockPanelManager/UnlockPanelManager.ts).
+You can check out the way these components are used in `@terradharitri/sdk-dapp` [here](https://github.com/TerraDharitri/drt-sdk-dapp/blob/main/src/managers/UnlockPanelManager/UnlockPanelManager.ts).
 
 ## Debugging your dApp
 

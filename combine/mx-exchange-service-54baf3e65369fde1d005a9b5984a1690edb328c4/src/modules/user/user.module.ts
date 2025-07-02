@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ContextModule } from '../../services/context/context.module';
-import { MXCommunicationModule } from 'src/services/dharitri-communication/mx.communication.module';
+import { MXCommunicationModule } from 'src/services/dharitri-communication/drt.communication.module';
 import { PairModule } from '../pair/pair.module';
 import { ProxyFarmModule } from '../proxy/services/proxy-farm/proxy.farm.module';
 import { ProxyPairModule } from '../proxy/services/proxy-pair/proxy.pair.module';

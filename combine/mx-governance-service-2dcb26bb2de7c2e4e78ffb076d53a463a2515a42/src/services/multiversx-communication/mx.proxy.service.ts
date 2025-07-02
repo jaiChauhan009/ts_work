@@ -1,6 +1,6 @@
 import { AbiRegistry, Address, SmartContract } from '@terradharitri/sdk-core';
 import { Inject, Injectable } from '@nestjs/common';
-import { abiConfig, mxConfig, scAddress } from '../../config';
+import { abiConfig, drtConfig, scAddress } from '../../config';
 import Agent, { HttpsAgent } from 'agentkeepalive';
 import { WINSTON_MODULE_PROVIDER } from 'nest-winston';
 import { Logger } from 'winston';
@@ -19,10 +19,10 @@ export class MXProxyService {
         @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: Logger,
     ) {
         const keepAliveOptions = {
-            maxSockets: mxConfig.keepAliveMaxSockets,
-            maxFreeSockets: mxConfig.keepAliveMaxFreeSockets,
+            maxSockets: drtConfig.keepAliveMaxSockets,
+            maxFreeSockets: drtConfig.keepAliveMaxFreeSockets,
             timeout: this.apiConfigService.getKeepAliveTimeoutDownstream(),
-            freeSocketTimeout: mxConfig.keepAliveFreeSocketTimeout,
+            freeSocketTimeout: drtConfig.keepAliveFreeSocketTimeout,
             keepAlive: true,
         };
         const httpAgent = new Agent(keepAliveOptions);
@@ -31,9 +31,9 @@ export class MXProxyService {
         this.proxy = new ProxyNetworkProviderProfiler(
             this.apiConfigService.getApiUrl(),
             {
-                timeout: mxConfig.proxyTimeout,
-                httpAgent: mxConfig.keepAlive ? httpAgent : null,
-                httpsAgent: mxConfig.keepAlive ? httpsAgent : null,
+                timeout: drtConfig.proxyTimeout,
+                httpAgent: drtConfig.keepAlive ? httpAgent : null,
+                httpsAgent: drtConfig.keepAlive ? httpsAgent : null,
                 headers: {
                     origin: 'MaiarExchangeService',
                 },

@@ -19,7 +19,7 @@ export class MarketplaceEventsIndexingService {
     private readonly logger: Logger,
     private readonly persistenceService: PersistenceService,
     private readonly marketplaceService: MarketplacesService,
-    private readonly mxElasticService: MxElasticService,
+    private readonly drtElasticService: MxElasticService,
     private readonly cacheEventsPublisher: CacheEventsPublisherService,
   ) {}
 
@@ -125,7 +125,7 @@ export class MarketplaceEventsIndexingService {
   ): Promise<number> {
     let newestTimestamp: number;
 
-    await this.mxElasticService.getScrollableList(elasticCollection, 'identifier', elasticQuery, async (items) => {
+    await this.drtElasticService.getScrollableList(elasticCollection, 'identifier', elasticQuery, async (items) => {
       if (!items || items.length === 0) {
         return false;
       }

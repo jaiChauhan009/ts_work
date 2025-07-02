@@ -10,7 +10,7 @@ import { UpdatePriceEventHandler } from './handlers/updatePrice-event.handler';
 import { SendOfferEventHandler } from './handlers/sendOffer-event.handler';
 import { AcceptGlobalOfferEventHandler } from './handlers/acceptGlobalOffer-event.handler';
 import { SwapUpdateEventHandler } from './handlers/swapUpdate-event.handler';
-import { SlackReportService } from 'src/common/services/mx-communication/slack-report.service';
+import { SlackReportService } from 'src/common/services/drt-communication/slack-report.service';
 import { AcceptOfferEventHandler } from './handlers/acceptOffer-event.handler';
 import { WithdrawOfferEventHandler } from './handlers/withdrawOffer-event.handler';
 import { UpdateListingEventHandler } from './handlers/updateListing-event.handler';

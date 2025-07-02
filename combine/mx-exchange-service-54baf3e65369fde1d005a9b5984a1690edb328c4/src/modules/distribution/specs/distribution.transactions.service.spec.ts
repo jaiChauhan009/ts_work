@@ -1,9 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { DistributionTransactionsService } from '../services/distribution.transactions.service';
-import { MXProxyServiceProvider } from 'src/services/dharitri-communication/mx.proxy.service.mock';
+import { MXProxyServiceProvider } from 'src/services/dharitri-communication/drt.proxy.service.mock';
 import { TransactionModel } from 'src/models/transaction.model';
 import { encodeTransactionData } from 'src/helpers/helpers';
-import { gasConfig, mxConfig } from 'src/config';
+import { gasConfig, drtConfig } from 'src/config';
 import { ConfigModule } from '@nestjs/config';
 import { WinstonModule } from 'nest-winston';
 import { ApiConfigService } from 'src/helpers/api.config.service';
@@ -51,7 +51,7 @@ describe('DistributionTransactionsService', () => {
         const transaction = await service.claimLockedAssets(senderAddress);
         expect(transaction).toEqual(
             new TransactionModel({
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 data: encodeTransactionData('claimLockedAssets'),
                 gasLimit: gasConfig.claimLockedAssets,
                 gasPrice: 1000000000,

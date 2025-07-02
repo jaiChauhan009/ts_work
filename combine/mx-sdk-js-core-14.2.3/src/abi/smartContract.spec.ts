@@ -195,7 +195,7 @@ describe("test contract", () => {
     });
 
     it("v13 should be stricter than v12 on optional<variadic<type>> (exotic) parameters (since NativeSerializer is used under the hood)", async () => {
-        // Related to: https://github.com/TerraDharitri/mx-sdk-js-core/issues/435.
+        // Related to: https://github.com/TerraDharitri/drt-sdk-js-core/issues/435.
         // In v12, contract.call() only supported TypedValue[] as contract call arguments.
         // In v13, NativeSerializer is used under the hood, which allows one to mix typed values with native values.
         // However, this comes with additional rules regarding optional<variadic<?>> parameters.

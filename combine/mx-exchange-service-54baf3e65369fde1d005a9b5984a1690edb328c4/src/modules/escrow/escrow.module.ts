@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { CommonAppModule } from 'src/common.app.module';
 import { ContextModule } from 'src/services/context/context.module';
-import { MXCommunicationModule } from 'src/services/dharitri-communication/mx.communication.module';
+import { MXCommunicationModule } from 'src/services/dharitri-communication/drt.communication.module';
 import { EscrowResolver } from './escrow.resolver';
 import { EscrowAbiService } from './services/escrow.abi.service';
 import { EscrowComputeService } from './services/escrow.compute.service';

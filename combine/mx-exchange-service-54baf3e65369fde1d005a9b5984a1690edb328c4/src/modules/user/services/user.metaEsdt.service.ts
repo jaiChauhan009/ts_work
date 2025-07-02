@@ -1,6 +1,6 @@
 import { Inject, Injectable, Logger } from '@nestjs/common';
 import { NftToken } from 'src/modules/tokens/models/nftToken.model';
-import { MXApiService } from '../../../services/dharitri-communication/mx.api.service';
+import { MXApiService } from '../../../services/dharitri-communication/drt.api.service';
 import { UserNftTokens } from '../models/nfttokens.union';
 import { UserMetaDcdtComputeService } from './metaDcdt.compute.service';
 import { LockedAssetToken } from 'src/modules/tokens/models/lockedAssetToken.model';

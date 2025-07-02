@@ -11,7 +11,7 @@ import { FarmAbiServiceProviderV2 } from 'src/modules/farm/mocks/farm.v2.abi.ser
 import { StakingAbiServiceProvider } from 'src/modules/staking/mocks/staking.abi.service.mock';
 import { StakingProxyAbiServiceProvider } from 'src/modules/staking-proxy/mocks/staking.proxy.abi.service.mock';
 import { TokenServiceProvider } from 'src/modules/tokens/mocks/token.service.mock';
-import { MXProxyServiceProvider } from 'src/services/dharitri-communication/mx.proxy.service.mock';
+import { MXProxyServiceProvider } from 'src/services/dharitri-communication/drt.proxy.service.mock';
 import { PairComputeServiceProvider } from 'src/modules/pair/mocks/pair.compute.service.mock';
 import { WrapAbiServiceProvider } from 'src/modules/wrapping/mocks/wrap.abi.service.mock';
 import { WinstonModule } from 'nest-winston';
@@ -34,7 +34,7 @@ import { ProxyFarmAbiServiceProvider } from 'src/modules/proxy/mocks/proxy.abi.s
 import { EnergyAbiServiceProvider } from 'src/modules/energy/mocks/energy.abi.service.mock';
 import { constantsConfig, gasConfig, scAddress } from 'src/config';
 import { StakingAbiService } from 'src/modules/staking/services/staking.abi.service';
-import { MXApiServiceProvider } from 'src/services/dharitri-communication/mx.api.service.mock';
+import { MXApiServiceProvider } from 'src/services/dharitri-communication/drt.api.service.mock';
 import { SwapRouteModel } from 'src/modules/auto-router/models/auto-route.model';
 import { PairFilteringService } from 'src/modules/pair/services/pair.filtering.service';
 import { FarmVersion } from 'src/modules/farm/models/farm.model';

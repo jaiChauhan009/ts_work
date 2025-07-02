@@ -1,4 +1,4 @@
-import { MxToolsService } from 'src/common/services/mx-communication/mx-tools.service';
+import { MxToolsService } from 'src/common/services/drt-communication/drt-tools.service';
 import { AnalyticsInput } from './models/analytics-input.model';
 import { MxElasticService } from 'src/common';
 import { CollectionsGetterService } from '../nftCollections/collections-getter.service';

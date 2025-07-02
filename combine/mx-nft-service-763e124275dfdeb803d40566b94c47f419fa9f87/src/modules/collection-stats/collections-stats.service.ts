@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { MxApiService } from 'src/common';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { generateCacheKeyFromParams } from 'src/utils/generate-cache-key';
 import { AssetsQuery } from '../assets';
 import { CollectionStatsEntity } from 'src/db/collection-stats/collection-stats';
@@ -20,7 +20,7 @@ export class CollectionsStatsService {
   async getStats(
     identifier: string,
     marketplaceKey: string = undefined,
-    paymentToken: string = mxConfig.rewa,
+    paymentToken: string = drtConfig.rewa,
   ): Promise<CollectionStatsEntity> {
     try {
       const cacheKey = this.getStatsCacheKey(identifier, marketplaceKey, paymentToken);
@@ -52,7 +52,7 @@ export class CollectionsStatsService {
     }
   }
 
-  private getStatsCacheKey(identifier: string, marketplaceKey: string = undefined, paymentToken: string = mxConfig.rewa) {
+  private getStatsCacheKey(identifier: string, marketplaceKey: string = undefined, paymentToken: string = drtConfig.rewa) {
     return generateCacheKeyFromParams(CacheInfo.CollectionStats.key, identifier, marketplaceKey ?? '', paymentToken ?? '');
   }
 

@@ -1,5 +1,5 @@
 import { Logger, Module } from '@nestjs/common';
-import { MxCommunicationModule } from '../../common/services/mx-communication/mx-communication.module';
+import { MxCommunicationModule } from '../../common/services/drt-communication/drt-communication.module';
 import { PinataService } from './pinata.service';
 
 @Module({

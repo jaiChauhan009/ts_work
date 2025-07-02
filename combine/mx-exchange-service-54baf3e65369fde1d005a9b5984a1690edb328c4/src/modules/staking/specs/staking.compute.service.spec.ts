@@ -9,7 +9,7 @@ import { StakingAbiServiceProvider } from '../mocks/staking.abi.service.mock';
 import { StakingAbiService } from '../services/staking.abi.service';
 import { StakingService } from '../services/staking.service';
 import { ContextGetterServiceProvider } from 'src/services/context/mocks/context.getter.service.mock';
-import { MXApiServiceProvider } from 'src/services/dharitri-communication/mx.api.service.mock';
+import { MXApiServiceProvider } from 'src/services/dharitri-communication/drt.api.service.mock';
 import { RemoteConfigGetterServiceProvider } from 'src/modules/remote-config/mocks/remote-config.getter.mock';
 import { OptimalCompoundModel } from '../models/staking.model';
 import { ConfigModule } from '@nestjs/config';

@@ -1,19 +1,19 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { EscrowTransactionService } from '../services/escrow.transaction.service';
-import { MXProxyServiceProvider } from 'src/services/dharitri-communication/mx.proxy.service.mock';
+import { MXProxyServiceProvider } from 'src/services/dharitri-communication/drt.proxy.service.mock';
 import { Address } from '@terradharitri/sdk-core/out';
 import { TransactionModel } from 'src/models/transaction.model';
 import { encodeTransactionData } from 'src/helpers/helpers';
-import { gasConfig, mxConfig, scAddress } from 'src/config';
+import { gasConfig, drtConfig, scAddress } from 'src/config';
 import { ConfigModule } from '@nestjs/config';
 import { WinstonModule } from 'nest-winston';
 import { ApiConfigService } from 'src/helpers/api.config.service';
 import winston from 'winston';
 import { DynamicModuleUtils } from 'src/utils/dynamic.module.utils';
-import { MXApiService } from 'src/services/dharitri-communication/mx.api.service';
-import { MXApiServiceProvider } from 'src/services/dharitri-communication/mx.api.service.mock';
+import { MXApiService } from 'src/services/dharitri-communication/drt.api.service';
+import { MXApiServiceProvider } from 'src/services/dharitri-communication/drt.api.service.mock';
 import { ContextGetterServiceProvider } from 'src/services/context/mocks/context.getter.service.mock';
-import { MXGatewayServiceProvider } from 'src/services/dharitri-communication/mx.gateway.service.mock';
+import { MXGatewayServiceProvider } from 'src/services/dharitri-communication/drt.gateway.service.mock';
 import { EscrowSetterService } from '../services/escrow.setter.service';
 import { EscrowAbiServiceProvider } from '../mocks/escrow.abi.service.mock';
 
@@ -88,7 +88,7 @@ describe('EscrowTransactionService', () => {
 
         expect(transaction).toEqual(
             new TransactionModel({
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 nonce: 0,
                 data: encodeTransactionData(
                     `DCDTNFTTransfer@XMEX-123456@01@1000000000000000000@${scAddress.escrow}@lockFunds@${receiverAddress}`,
@@ -109,9 +109,9 @@ describe('EscrowTransactionService', () => {
         const service = module.get<EscrowTransactionService>(
             EscrowTransactionService,
         );
-        const mxApi = module.get<MXApiService>(MXApiService);
+        const drtApi = module.get<MXApiService>(MXApiService);
         jest.spyOn(
-            mxApi,
+            drtApi,
             'getNftAttributesByTokenIdentifier',
         ).mockResolvedValue('AAAACk1FWC00NTVjNTcAAAAAAAAAAAAAAAAAAAAC');
 
@@ -123,7 +123,7 @@ describe('EscrowTransactionService', () => {
 
         expect(transaction).toEqual(
             new TransactionModel({
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 nonce: 0,
                 data: encodeTransactionData(`withdraw@${senderAddress}`),
                 gasPrice: 1000000000,
@@ -161,7 +161,7 @@ describe('EscrowTransactionService', () => {
 
         expect(transaction).toEqual(
             new TransactionModel({
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 nonce: 0,
                 data: encodeTransactionData(
                     `cancelTransfer@${senderAddress}@${receiverAddress}`,

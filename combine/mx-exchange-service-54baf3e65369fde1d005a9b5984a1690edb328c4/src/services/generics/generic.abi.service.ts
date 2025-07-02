@@ -6,15 +6,15 @@ import {
     TypedOutcomeBundle,
 } from '@terradharitri/sdk-core';
 import { PendingExecutor } from 'src/utils/pending.executor';
-import { MXProxyService } from '../dharitri-communication/mx.proxy.service';
+import { MXProxyService } from '../dharitri-communication/drt.proxy.service';
 
 export class GenericAbiService {
     private queryExecutor: PendingExecutor<Query, ContractQueryResponse>;
 
-    constructor(protected readonly mxProxy: MXProxyService) {
+    constructor(protected readonly drtProxy: MXProxyService) {
         this.queryExecutor = new PendingExecutor(
             async (query: Query) =>
-                await this.mxProxy.getService().queryContract(query),
+                await this.drtProxy.getService().queryContract(query),
         );
     }
 

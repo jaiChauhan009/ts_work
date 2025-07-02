@@ -6,7 +6,7 @@ import { XOXNO_MINTING_MANAGER } from 'src/utils/constants';
 
 @Injectable()
 export class SmartContractArtistsService {
-  constructor(private cacheService: CacheService, private mxApiService: MxApiService, private logger: Logger) {}
+  constructor(private cacheService: CacheService, private drtApiService: MxApiService, private logger: Logger) {}
 
   async getOrSetArtistForScAddress(address: string) {
     return this.cacheService.getOrSet(
@@ -24,7 +24,7 @@ export class SmartContractArtistsService {
 
   public async getArtistForScAddress(scAddress: string): Promise<{ address: string; owner: string }> {
     try {
-      const account = await this.mxApiService.getSmartContractOwner(scAddress);
+      const account = await this.drtApiService.getSmartContractOwner(scAddress);
       if (account.owner === XOXNO_MINTING_MANAGER) {
         return await this.getXoxnoMinterOwner(scAddress);
       }
@@ -40,11 +40,11 @@ export class SmartContractArtistsService {
 
   private async getXoxnoMinterOwner(scAddress: string): Promise<{ address: string; owner: string }> {
     const xoxnoScCount = await this.getOrSetXoxnoScCount(XOXNO_MINTING_MANAGER);
-    const smartContracts = await this.mxApiService.getAccountSmartContracts(XOXNO_MINTING_MANAGER, xoxnoScCount);
+    const smartContracts = await this.drtApiService.getAccountSmartContracts(XOXNO_MINTING_MANAGER, xoxnoScCount);
 
     const selectedContract = smartContracts.find((c) => c.address === scAddress);
     if (selectedContract) {
-      const transaction = await this.mxApiService.getTransactionByHash(selectedContract.deployTxHash);
+      const transaction = await this.drtApiService.getTransactionByHash(selectedContract.deployTxHash);
       return {
         address: scAddress,
         owner: transaction.sender.toBech32(),
@@ -60,7 +60,7 @@ export class SmartContractArtistsService {
   private async getOrSetXoxnoScCount(address: string) {
     return this.cacheService.getOrSet(
       CacheInfo.XoxnoScCount.key,
-      async () => this.mxApiService.getAccountSmartContractsCount(address),
+      async () => this.drtApiService.getAccountSmartContractsCount(address),
       CacheInfo.XoxnoScCount.ttl,
     );
   }

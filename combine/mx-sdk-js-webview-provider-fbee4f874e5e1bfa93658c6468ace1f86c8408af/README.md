@@ -1,4 +1,4 @@
-# mx-sdk-js-webview-provider
+# drt-sdk-js-webview-provider
 
 This provider is used to interact with the DharitrI dApps in a webview environment.
 It facilitates the communication between the host application (wallet) and the dApp.

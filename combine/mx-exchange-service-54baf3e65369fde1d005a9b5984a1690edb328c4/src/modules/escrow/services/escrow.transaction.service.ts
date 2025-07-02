@@ -9,17 +9,17 @@ import { gasConfig } from 'src/config';
 import { InputTokenModel } from 'src/models/inputToken.model';
 import { TransactionModel } from 'src/models/transaction.model';
 import { TransactionOptions } from 'src/modules/common/transaction.options';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 
 @Injectable()
 export class EscrowTransactionService {
-    constructor(private readonly mxProxy: MXProxyService) {}
+    constructor(private readonly drtProxy: MXProxyService) {}
 
     async withdraw(
         senderAddress: string,
         userAddress: string,
     ): Promise<TransactionModel> {
-        return await this.mxProxy.getEscrowSmartContractTransaction(
+        return await this.drtProxy.getEscrowSmartContractTransaction(
             new TransactionOptions({
                 sender: userAddress,
                 gasLimit: gasConfig.escrow.withdraw,
@@ -36,7 +36,7 @@ export class EscrowTransactionService {
         receiverAddress: string,
         userAddress: string,
     ): Promise<TransactionModel> {
-        return await this.mxProxy.getEscrowSmartContractTransaction(
+        return await this.drtProxy.getEscrowSmartContractTransaction(
             new TransactionOptions({
                 sender: userAddress,
                 gasLimit: gasConfig.escrow.cancelTransfer,
@@ -58,7 +58,7 @@ export class EscrowTransactionService {
             throw new Error('Sender and receiver cannot be the same');
         }
 
-        return await this.mxProxy.getEscrowSmartContractTransaction(
+        return await this.drtProxy.getEscrowSmartContractTransaction(
             new TransactionOptions({
                 sender: senderAddress,
                 gasLimit: gasConfig.escrow.lockFunds,

@@ -2,7 +2,7 @@ import { DcdtTokenPayment } from '@terradharitri/sdk-exchange';
 import { Address, AddressValue, Interaction } from '@terradharitri/sdk-core';
 import { Injectable } from '@nestjs/common';
 import { DcdtTokenPaymentModel } from 'src/modules/tokens/models/dcdt.token.payment.model';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { GenericAbiService } from 'src/services/generics/generic.abi.service';
 import { UnstakePairModel } from '../models/token.unstake.model';
 import { GetOrSetCache } from 'src/helpers/decorators/caching.decorator';
@@ -15,8 +15,8 @@ export class TokenUnstakeAbiService
     extends GenericAbiService
     implements ITokenUnstakeAbiService
 {
-    constructor(protected readonly mxProxy: MXProxyService) {
-        super(mxProxy);
+    constructor(protected readonly drtProxy: MXProxyService) {
+        super(drtProxy);
     }
 
     @ErrorLoggerAsync()
@@ -30,7 +30,7 @@ export class TokenUnstakeAbiService
     }
 
     async getUnbondEpochsRaw(): Promise<number> {
-        const contract = await this.mxProxy.getTokenUnstakeContract();
+        const contract = await this.drtProxy.getTokenUnstakeContract();
         const interaction: Interaction =
             contract.methodsExplicit.getUnbondEpochs();
         const response = await this.getGenericData(interaction);
@@ -48,7 +48,7 @@ export class TokenUnstakeAbiService
     }
 
     async getFeesBurnPercentageRaw(): Promise<number> {
-        const contract = await this.mxProxy.getTokenUnstakeContract();
+        const contract = await this.drtProxy.getTokenUnstakeContract();
         const interaction: Interaction =
             contract.methodsExplicit.getFeesBurnPercentage();
         const response = await this.getGenericData(interaction);
@@ -66,7 +66,7 @@ export class TokenUnstakeAbiService
     }
 
     async feesCollectorAddressRaw(): Promise<string> {
-        const contract = await this.mxProxy.getTokenUnstakeContract();
+        const contract = await this.drtProxy.getTokenUnstakeContract();
         const interaction: Interaction =
             contract.methodsExplicit.getFeesCollectorAddress();
         const response = await this.getGenericData(interaction);
@@ -84,7 +84,7 @@ export class TokenUnstakeAbiService
     }
 
     async getEnergyFactoryAddressRaw(): Promise<string> {
-        const contract = await this.mxProxy.getTokenUnstakeContract();
+        const contract = await this.drtProxy.getTokenUnstakeContract();
         const interaction: Interaction =
             contract.methodsExplicit.getEnergyFactoryAddress();
         const response = await this.getGenericData(interaction);
@@ -101,7 +101,7 @@ export class TokenUnstakeAbiService
     async getUnlockedTokensForUserRaw(
         userAddress: string,
     ): Promise<UnstakePairModel[]> {
-        const contract = await this.mxProxy.getTokenUnstakeContract();
+        const contract = await this.drtProxy.getTokenUnstakeContract();
         const interaction: Interaction =
             contract.methodsExplicit.getUnlockedTokensForUser([
                 new AddressValue(Address.fromString(userAddress)),

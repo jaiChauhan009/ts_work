@@ -19,7 +19,7 @@ import BigNumber from 'bignumber.js';
 import { MxApiService } from 'src/common';
 import { nominateVal } from 'src/utils';
 import { getCollectionAndNonceFromIdentifier } from 'src/utils/helpers';
-import { gas, mxConfig } from '../../config';
+import { gas, drtConfig } from '../../config';
 import '../../utils/extensions';
 import { ContractLoader } from '../auctions/contractLoader';
 import { TransactionNode } from '../common/transaction';
@@ -32,10 +32,10 @@ import { UpgradeNftRequest } from './models/requests/UpgradeNftRequest ';
 export class NftMinterAbiService {
   private readonly abiPath: string = './src/abis/nft-minter.abi.json';
 
-  constructor(private mxApiService: MxApiService) {}
+  constructor(private drtApiService: MxApiService) {}
 
   public async getCampaignsForScAddress(address: string) {
-    const controller = await ContractLoader.getController(this.mxApiService.getService(), this.abiPath);
+    const controller = await ContractLoader.getController(this.drtApiService.getService(), this.abiPath);
     let getDataQuery = await controller.runQuery(
       new SmartContractQuery({
         contract: Address.newFromBech32(address),
@@ -51,7 +51,7 @@ export class NftMinterAbiService {
   }
 
   public async getMaxNftsPerTransaction(address: string) {
-    const controller = await ContractLoader.getController(this.mxApiService.getService(), this.abiPath);
+    const controller = await ContractLoader.getController(this.drtApiService.getService(), this.abiPath);
     let getDataQuery = await controller.runQuery(
       new SmartContractQuery({
         contract: Address.newFromBech32(address),
@@ -74,7 +74,7 @@ export class NftMinterAbiService {
       function: 'issueTokenForBrand',
       gasLimit: gas.issueCampaign,
       arguments: this.getIssueCampaignArgs(request),
-      nativeTransferAmount: BigInt(mxConfig.issueNftCost),
+      nativeTransferAmount: BigInt(drtConfig.issueNftCost),
     });
     return transaction.toPlainObject();
   }

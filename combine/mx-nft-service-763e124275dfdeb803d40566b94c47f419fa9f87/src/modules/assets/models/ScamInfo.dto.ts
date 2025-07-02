@@ -1,5 +1,5 @@
 import { ObjectType, Field } from '@nestjs/graphql';
-import { ScamInfoApi } from 'src/common/services/mx-communication/models/scam-info.dto';
+import { ScamInfoApi } from 'src/common/services/drt-communication/models/scam-info.dto';
 import { elasticDictionary } from 'src/config';
 import { NftScamInfoModel } from 'src/modules/scam/models/nft-scam-info.model';
 import { Asset, ScamInfoTypeEnum } from '.';

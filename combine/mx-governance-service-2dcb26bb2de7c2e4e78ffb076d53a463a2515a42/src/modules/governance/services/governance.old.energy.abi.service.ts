@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { MXProxyService } from '../../../services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from '../../../services/dharitri-communication/drt.proxy.service';
 import { GovernanceTokenSnapshotMerkleService } from './governance.token.snapshot.merkle.service';
 import { GovernanceDescriptionService } from './governance.description.service';
 import { GovernanceType } from '../../../utils/governance';
@@ -12,12 +12,12 @@ import { LockedAssetGetterService } from '../../locked-asset-factory/services/lo
 @Injectable()
 export class GovernanceOldEnergyAbiService extends GovernanceEnergyAbiService {
     constructor(
-        protected readonly mxProxy: MXProxyService,
+        protected readonly drtProxy: MXProxyService,
         protected readonly governanceMerkle: GovernanceTokenSnapshotMerkleService,
         protected readonly governanceDescription: GovernanceDescriptionService,
         private readonly lockedAssetGetter: LockedAssetGetterService,
     ) {
-        super(mxProxy, governanceMerkle, governanceDescription);
+        super(drtProxy, governanceMerkle, governanceDescription);
         this.type = GovernanceType.OLD_ENERGY;
     }
 

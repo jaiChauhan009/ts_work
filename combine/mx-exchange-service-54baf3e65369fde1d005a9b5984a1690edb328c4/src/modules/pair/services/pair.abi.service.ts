@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Interaction } from '@terradharitri/sdk-core/out/smartcontracts/interaction';
 import { PairInfoModel } from '../models/pair-info.model';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import BigNumber from 'bignumber.js';
 import { FeeDestination } from '../models/pair.model';
 import {
@@ -21,7 +21,7 @@ import {
     U64Value,
 } from '@terradharitri/sdk-core';
 import { GenericAbiService } from 'src/services/generics/generic.abi.service';
-import { constantsConfig, mxConfig } from 'src/config';
+import { constantsConfig, drtConfig } from 'src/config';
 import { VmQueryError } from 'src/utils/errors.constants';
 import { ErrorLoggerAsync } from '@terradharitri/sdk-nestjs-common';
 import { GetOrSetCache } from 'src/helpers/decorators/caching.decorator';
@@ -37,10 +37,10 @@ export class PairAbiService
     implements IPairAbiService
 {
     constructor(
-        protected readonly mxProxy: MXProxyService,
+        protected readonly drtProxy: MXProxyService,
         private readonly cachingService: CacheService,
     ) {
-        super(mxProxy);
+        super(drtProxy);
     }
 
     @ErrorLoggerAsync({
@@ -56,7 +56,7 @@ export class PairAbiService
     }
 
     async getFirstTokenIDRaw(pairAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getPairSmartContract(pairAddress);
+        const contract = await this.drtProxy.getPairSmartContract(pairAddress);
         const interaction: Interaction =
             contract.methodsExplicit.getFirstTokenId();
 
@@ -77,7 +77,7 @@ export class PairAbiService
     }
 
     async getSecondTokenIDRaw(pairAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getPairSmartContract(pairAddress);
+        const contract = await this.drtProxy.getPairSmartContract(pairAddress);
         const interaction: Interaction =
             contract.methodsExplicit.getSecondTokenId();
 
@@ -98,13 +98,13 @@ export class PairAbiService
     }
 
     async getLpTokenIDRaw(pairAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getPairSmartContract(pairAddress);
+        const contract = await this.drtProxy.getPairSmartContract(pairAddress);
         const interaction: Interaction =
             contract.methodsExplicit.getLpTokenIdentifier();
 
         const response = await this.getGenericData(interaction);
         const lpTokenID = response.firstValue.valueOf().toString();
-        return lpTokenID === mxConfig.REWAIdentifier || lpTokenID === ''
+        return lpTokenID === drtConfig.REWAIdentifier || lpTokenID === ''
             ? undefined
             : lpTokenID;
     }
@@ -151,7 +151,7 @@ export class PairAbiService
         pairAddress: string,
         tokenID: string,
     ): Promise<string> {
-        const contract = await this.mxProxy.getPairSmartContract(pairAddress);
+        const contract = await this.drtProxy.getPairSmartContract(pairAddress);
         const interaction: Interaction = contract.methodsExplicit.getReserve([
             new TokenIdentifierValue(tokenID),
         ]);
@@ -172,7 +172,7 @@ export class PairAbiService
     }
 
     async getTotalSupplyRaw(pairAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getPairSmartContract(pairAddress);
+        const contract = await this.drtProxy.getPairSmartContract(pairAddress);
         const interaction: Interaction =
             contract.methodsExplicit.getTotalSupply();
 
@@ -193,7 +193,7 @@ export class PairAbiService
     }
 
     async getPairInfoMetadataRaw(pairAddress: string): Promise<PairInfoModel> {
-        const contract = await this.mxProxy.getPairSmartContract(pairAddress);
+        const contract = await this.drtProxy.getPairSmartContract(pairAddress);
         const interaction: Interaction =
             contract.methodsExplicit.getReservesAndTotalSupply();
 
@@ -233,7 +233,7 @@ export class PairAbiService
     }
 
     async getTotalFeePercentRaw(pairAddress: string): Promise<number> {
-        const contract = await this.mxProxy.getPairSmartContract(pairAddress);
+        const contract = await this.drtProxy.getPairSmartContract(pairAddress);
         const interaction: Interaction =
             contract.methodsExplicit.getTotalFeePercent();
 
@@ -271,7 +271,7 @@ export class PairAbiService
     }
 
     async getSpecialFeePercentRaw(pairAddress: string): Promise<number> {
-        const contract = await this.mxProxy.getPairSmartContract(pairAddress);
+        const contract = await this.drtProxy.getPairSmartContract(pairAddress);
         const interaction: Interaction =
             contract.methodsExplicit.getSpecialFee();
 
@@ -292,7 +292,7 @@ export class PairAbiService
     }
 
     async getTrustedSwapPairsRaw(pairAddress: string): Promise<string[]> {
-        const contract = await this.mxProxy.getPairSmartContract(pairAddress);
+        const contract = await this.drtProxy.getPairSmartContract(pairAddress);
         const interaction: Interaction =
             contract.methodsExplicit.getTrustedSwapPairs();
 
@@ -315,12 +315,12 @@ export class PairAbiService
     }
 
     async getInitialLiquidityAdderRaw(pairAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getPairSmartContract(pairAddress);
+        const contract = await this.drtProxy.getPairSmartContract(pairAddress);
         try {
             const interaction: Interaction =
                 contract.methodsExplicit.getInitialLiquidtyAdder();
             const query = interaction.check().buildQuery();
-            const queryResponse = await this.mxProxy
+            const queryResponse = await this.drtProxy
                 .getService()
                 .queryContract(query);
             if (
@@ -360,7 +360,7 @@ export class PairAbiService
     }
 
     async getStateRaw(pairAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getPairSmartContract(pairAddress);
+        const contract = await this.drtProxy.getPairSmartContract(pairAddress);
         const interaction: Interaction = contract.methodsExplicit.getState([]);
 
         const response = await this.getGenericData(interaction);
@@ -380,7 +380,7 @@ export class PairAbiService
     }
 
     async getFeeStateRaw(pairAddress: string): Promise<boolean> {
-        const contract = await this.mxProxy.getPairSmartContract(pairAddress);
+        const contract = await this.drtProxy.getPairSmartContract(pairAddress);
         const interaction: Interaction = contract.methodsExplicit.getFeeState(
             [],
         );
@@ -418,12 +418,12 @@ export class PairAbiService
     async getLockingScAddressRaw(
         pairAddress: string,
     ): Promise<string | undefined> {
-        const contract = await this.mxProxy.getPairSmartContract(pairAddress);
+        const contract = await this.drtProxy.getPairSmartContract(pairAddress);
         try {
             const interaction: Interaction =
                 contract.methodsExplicit.getLockingScAddress();
             const query = interaction.check().buildQuery();
-            const queryResponse = await this.mxProxy
+            const queryResponse = await this.drtProxy
                 .getService()
                 .queryContract(query);
             if (
@@ -475,12 +475,12 @@ export class PairAbiService
     }
 
     async getUnlockEpochRaw(pairAddress: string): Promise<number | undefined> {
-        const contract = await this.mxProxy.getPairSmartContract(pairAddress);
+        const contract = await this.drtProxy.getPairSmartContract(pairAddress);
         const interaction: Interaction =
             contract.methodsExplicit.getUnlockEpoch();
         try {
             const query = interaction.check().buildQuery();
-            const queryResponse = await this.mxProxy
+            const queryResponse = await this.drtProxy
                 .getService()
                 .queryContract(query);
             if (queryResponse.returnCode === VmQueryError.FUNCTION_NOT_FOUND) {
@@ -534,12 +534,12 @@ export class PairAbiService
     async getLockingDeadlineEpochRaw(
         pairAddress: string,
     ): Promise<number | undefined> {
-        const contract = await this.mxProxy.getPairSmartContract(pairAddress);
+        const contract = await this.drtProxy.getPairSmartContract(pairAddress);
         const interaction: Interaction =
             contract.methodsExplicit.getLockingDeadlineEpoch();
         try {
             const query = interaction.check().buildQuery();
-            const queryResponse = await this.mxProxy
+            const queryResponse = await this.drtProxy
                 .getService()
                 .queryContract(query);
             if (queryResponse.returnCode === VmQueryError.FUNCTION_NOT_FOUND) {
@@ -577,7 +577,7 @@ export class PairAbiService
     async getFeeDestinationsRaw(
         pairAddress: string,
     ): Promise<FeeDestination[]> {
-        const contract = await this.mxProxy.getPairSmartContract(pairAddress);
+        const contract = await this.drtProxy.getPairSmartContract(pairAddress);
         const interaction: Interaction = contract.methods.getFeeDestinations(
             [],
         );
@@ -605,7 +605,7 @@ export class PairAbiService
     }
 
     async getWhitelistedAddressesRaw(pairAddress: string): Promise<string[]> {
-        const contract = await this.mxProxy.getPairSmartContract(pairAddress);
+        const contract = await this.drtProxy.getPairSmartContract(pairAddress);
         const interaction: Interaction =
             contract.methods.getWhitelistedManagedAddresses([]);
         const response = await this.getGenericData(interaction);
@@ -627,7 +627,7 @@ export class PairAbiService
     }
 
     async getRouterAddressRaw(address: string): Promise<string> {
-        const contract = await this.mxProxy.getPairSmartContract(address);
+        const contract = await this.drtProxy.getPairSmartContract(address);
         const interaction: Interaction =
             contract.methods.getRouterManagedAddress([]);
         const response = await this.getGenericData(interaction);
@@ -653,7 +653,7 @@ export class PairAbiService
         pairAddress: string,
         dcdtTokenPayment: DcdtTokenPayment,
     ): Promise<DcdtTokenPayment> {
-        const contract = await this.mxProxy.getPairSmartContract(pairAddress);
+        const contract = await this.drtProxy.getPairSmartContract(pairAddress);
         const interaction: Interaction = contract.methods.updateAndGetSafePrice(
             [
                 new Struct(DcdtTokenPaymentStruct.getStructure(), [
@@ -715,7 +715,7 @@ export class PairAbiService
     }
 
     async getFeesCollectorAddressRaw(address: string): Promise<string> {
-        const contract = await this.mxProxy.getPairSmartContract(address);
+        const contract = await this.drtProxy.getPairSmartContract(address);
         const interaction: Interaction =
             contract.methods.getFeesCollectorAddress([]);
         const response = await this.getGenericData(interaction);
@@ -740,7 +740,7 @@ export class PairAbiService
     }
 
     async getFeesCollectorCutPercentageRaw(address: string): Promise<number> {
-        const contract = await this.mxProxy.getPairSmartContract(address);
+        const contract = await this.drtProxy.getPairSmartContract(address);
         const interaction: Interaction =
             contract.methods.getFeesCollectorCutPercentage([]);
         const response = await this.getGenericData(interaction);

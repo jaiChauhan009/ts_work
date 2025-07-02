@@ -125,7 +125,7 @@ export class ApiConfigService {
     }
 
     getApiUrl(): string {
-        const apiUrl = this.configService.get<string>('MX_API_URL');
+        const apiUrl = this.configService.get<string>('DRT_API_URL');
         if (!apiUrl) {
             throw new Error('No apiUrl present');
         }
@@ -133,7 +133,7 @@ export class ApiConfigService {
     }
 
     getGatewayUrl(): string {
-        const gatewayUrl = this.configService.get<string>('MX_GATEWAY_URL');
+        const gatewayUrl = this.configService.get<string>('DRT_GATEWAY_URL');
         if (!gatewayUrl) {
             throw new Error('No gatewayUrl present');
         }
@@ -255,7 +255,7 @@ export class ApiConfigService {
     }
 
     getMXDataApiURL(): string {
-        const url = this.configService.get<string>('MX_DATA_API_URL');
+        const url = this.configService.get<string>('DRT_DATA_API_URL');
         if (!url) {
             throw new Error('No MX Data API url present');
         }

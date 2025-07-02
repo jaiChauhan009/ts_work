@@ -8,7 +8,7 @@ import {
     AutoRouterComputeService,
     BestSwapRoute,
 } from './auto-router.compute.service';
-import { constantsConfig, mxConfig } from 'src/config';
+import { constantsConfig, drtConfig } from 'src/config';
 import { AutoRouterArgs } from '../models/auto-router.args';
 import { AutoRouteModel, SWAP_TYPE } from '../models/auto-route.model';
 import { AutoRouterTransactionService } from './auto-router.transactions.service';
@@ -383,7 +383,7 @@ export class AutoRouterService {
         const wrappedRewaTokenID = await this.wrapAbi.wrappedRewaTokenID();
 
         return tokensIDs.map((t) => {
-            return mxConfig.REWAIdentifier === t ? wrappedRewaTokenID : t;
+            return drtConfig.REWAIdentifier === t ? wrappedRewaTokenID : t;
         });
     }
 

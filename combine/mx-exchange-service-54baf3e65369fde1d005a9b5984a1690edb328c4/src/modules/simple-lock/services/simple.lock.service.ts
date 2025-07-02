@@ -16,7 +16,7 @@ import {
     DecodeAttributesArgs,
     DecodeAttributesModel,
 } from 'src/modules/proxy/models/proxy.args';
-import { MXApiService } from 'src/services/dharitri-communication/mx.api.service';
+import { MXApiService } from 'src/services/dharitri-communication/drt.api.service';
 import { tokenIdentifier } from 'src/utils/token.converters';
 import {
     FarmProxyTokenAttributesModel,

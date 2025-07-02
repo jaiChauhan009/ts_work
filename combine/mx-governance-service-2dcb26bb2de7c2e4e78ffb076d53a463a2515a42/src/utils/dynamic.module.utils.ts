@@ -4,7 +4,7 @@ import {
 } from '@terradharitri/sdk-nestjs-cache';
 import { DynamicModule } from '@nestjs/common';
 import { CommonAppModule } from 'src/common.app.module';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { ApiConfigService } from 'src/helpers/api.config.service';
 
 export class DynamicModuleUtils {
@@ -21,7 +21,7 @@ export class DynamicModuleUtils {
                     }),
             },
             {
-                maxItems: mxConfig.localCacheMaxItems,
+                maxItems: drtConfig.localCacheMaxItems,
             },
         );
     }

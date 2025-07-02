@@ -3,9 +3,9 @@ import { ContextGetterServiceProvider } from 'src/services/context/mocks/context
 import { ApiConfigService } from 'src/helpers/api.config.service';
 import { StakingService } from '../services/staking.service';
 import { StakingComputeService } from '../services/staking.compute.service';
-import { MXProxyServiceProvider } from 'src/services/dharitri-communication/mx.proxy.service.mock';
-import { MXGatewayService } from 'src/services/dharitri-communication/mx.gateway.service';
-import { MXApiServiceProvider } from 'src/services/dharitri-communication/mx.api.service.mock';
+import { MXProxyServiceProvider } from 'src/services/dharitri-communication/drt.proxy.service.mock';
+import { MXGatewayService } from 'src/services/dharitri-communication/drt.gateway.service';
+import { MXApiServiceProvider } from 'src/services/dharitri-communication/drt.api.service.mock';
 import { RemoteConfigGetterServiceProvider } from 'src/modules/remote-config/mocks/remote-config.getter.mock';
 import { Address } from '@terradharitri/sdk-core';
 import { TokenServiceProvider } from '../../tokens/mocks/token.service.mock';

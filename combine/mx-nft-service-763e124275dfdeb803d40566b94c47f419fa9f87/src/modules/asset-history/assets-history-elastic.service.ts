@@ -5,7 +5,7 @@ import { constants } from 'src/config';
 
 @Injectable()
 export class AssetsHistoryElasticService {
-  constructor(private readonly mxElasticService: MxElasticService) {}
+  constructor(private readonly drtElasticService: MxElasticService) {}
 
   async getHistoryLog(collection: string, nonce: string, limit: number, beforeTimestamp: number): Promise<any> {
     let elasticLogs = [];
@@ -26,7 +26,7 @@ export class AssetsHistoryElasticService {
         size: constants.getLogsFromElasticBatchSize,
       });
 
-    await this.mxElasticService.getScrollableList('logs', 'identifier', query, async (logs) => {
+    await this.drtElasticService.getScrollableList('logs', 'identifier', query, async (logs) => {
       logs.map((log) => {
         const anyMatchingEvent = log.events.find((event) => event.topics?.[0] === encodedCollection && event.topics?.[1] === encodedNonce);
         if (anyMatchingEvent) {

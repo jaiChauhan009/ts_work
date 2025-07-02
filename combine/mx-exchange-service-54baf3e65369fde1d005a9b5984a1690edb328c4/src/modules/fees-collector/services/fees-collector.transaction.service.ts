@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { FeesCollectorTransactionModel } from '../models/fees-collector.model';
 import { WeekTimekeepingAbiService } from 'src/submodules/week-timekeeping/services/week-timekeeping.abi.service';
 import { WeeklyRewardsSplittingAbiService } from 'src/submodules/weekly-rewards-splitting/services/weekly-rewards-splitting.abi.service';
@@ -21,7 +21,7 @@ export class FeesCollectorTransactionService {
     constructor(
         private readonly weekTimekeepingAbi: WeekTimekeepingAbiService,
         private readonly weeklyRewardsSplittingAbi: WeeklyRewardsSplittingAbiService,
-        private readonly mxProxy: MXProxyService,
+        private readonly drtProxy: MXProxyService,
     ) {}
 
     async claimRewardsBatch(
@@ -65,7 +65,7 @@ export class FeesCollectorTransactionService {
         sender: string,
         gasLimit: number,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getFeesCollectorSmartContractTransaction(
+        return this.drtProxy.getFeesCollectorSmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
                 gasLimit: gasLimit,
@@ -75,7 +75,7 @@ export class FeesCollectorTransactionService {
     }
 
     async updateEnergyForUser(userAddress: string): Promise<TransactionModel> {
-        return this.mxProxy.getFeesCollectorSmartContractTransaction(
+        return this.drtProxy.getFeesCollectorSmartContractTransaction(
             new TransactionOptions({
                 sender: userAddress,
                 gasLimit: gasConfig.feesCollector.updateEnergyForUser,
@@ -92,7 +92,7 @@ export class FeesCollectorTransactionService {
         pairAddresses: string[],
         remove = false,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getFeesCollectorSmartContractTransaction(
+        return this.drtProxy.getFeesCollectorSmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
                 gasLimit: gasConfig.feesCollector.addKnownContracts,
@@ -117,7 +117,7 @@ export class FeesCollectorTransactionService {
         tokenIDs: string[],
         remove = false,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getFeesCollectorSmartContractTransaction(
+        return this.drtProxy.getFeesCollectorSmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
                 gasLimit: gasConfig.feesCollector.addKnownTokens,

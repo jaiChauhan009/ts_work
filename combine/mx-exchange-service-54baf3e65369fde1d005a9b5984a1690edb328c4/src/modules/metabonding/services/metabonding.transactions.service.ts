@@ -5,7 +5,7 @@ import { RedisPubSub } from 'graphql-redis-subscriptions';
 import { gasConfig } from 'src/config';
 import { InputTokenModel } from 'src/models/inputToken.model';
 import { TransactionModel } from 'src/models/transaction.model';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { PUB_SUB } from 'src/services/redis.pubSub.module';
 import { MetabondingAbiService } from './metabonding.abi.service';
 import { TransactionOptions } from 'src/modules/common/transaction.options';
@@ -14,7 +14,7 @@ import { TransactionOptions } from 'src/modules/common/transaction.options';
 export class MetabondingTransactionService {
     constructor(
         private readonly metabondingAbi: MetabondingAbiService,
-        private readonly mxProxy: MXProxyService,
+        private readonly drtProxy: MXProxyService,
         @Inject(PUB_SUB) private pubSub: RedisPubSub,
     ) {}
 
@@ -29,7 +29,7 @@ export class MetabondingTransactionService {
                 ? gasConfig.metabonding.stakeLockedAsset.withTokenMerge
                 : gasConfig.metabonding.stakeLockedAsset.default;
 
-        return await this.mxProxy.getMetabondingStakingSmartContractTransaction(
+        return await this.drtProxy.getMetabondingStakingSmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
                 gasLimit: gasLimit,
@@ -51,7 +51,7 @@ export class MetabondingTransactionService {
         sender: string,
         unstakeAmount: string,
     ): Promise<TransactionModel> {
-        return await this.mxProxy.getMetabondingStakingSmartContractTransaction(
+        return await this.drtProxy.getMetabondingStakingSmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
                 gasLimit: gasConfig.metabonding.unstake,
@@ -64,7 +64,7 @@ export class MetabondingTransactionService {
     async unbond(sender: string): Promise<TransactionModel> {
         await this.pubSub.publish('deleteCacheKeys', [`${sender}.userEntry`]);
 
-        return await this.mxProxy.getMetabondingStakingSmartContractTransaction(
+        return await this.drtProxy.getMetabondingStakingSmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
                 gasLimit: gasConfig.metabonding.unbond,

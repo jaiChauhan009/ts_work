@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 
 function format(big: string, denomination: number, decimals: number, showLastNonZeroDecimal: boolean, addCommas: boolean) {
   showLastNonZeroDecimal = typeof showLastNonZeroDecimal !== 'undefined' ? showLastNonZeroDecimal : false;
@@ -96,4 +96,4 @@ export function nominateStringVal(value: string): string {
   return value;
 }
 
-export const nominateAmount = (tokenAmount: string): string => new BigNumber(tokenAmount).multipliedBy(`1e+${mxConfig.decimals}`).toFixed();
+export const nominateAmount = (tokenAmount: string): string => new BigNumber(tokenAmount).multipliedBy(`1e+${drtConfig.decimals}`).toFixed();

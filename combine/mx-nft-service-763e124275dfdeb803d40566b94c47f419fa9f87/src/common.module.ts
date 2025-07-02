@@ -1,7 +1,7 @@
 import { forwardRef, Global, Logger, Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config/dist';
 import { ScheduleModule } from '@nestjs/schedule';
-import { MxCommunicationModule } from './common/services/mx-communication/mx-communication.module';
+import { MxCommunicationModule } from './common/services/drt-communication/drt-communication.module';
 import { CacheModule } from './common/services/caching/caching.module';
 import { ApiConfigModule } from './modules/common/api-config/api.config.module';
 

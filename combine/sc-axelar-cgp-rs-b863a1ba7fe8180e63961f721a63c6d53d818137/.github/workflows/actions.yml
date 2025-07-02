@@ -14,7 +14,7 @@ permissions:
 jobs:
   contracts:
     name: Contracts
-    uses: dharitri/mx-sc-actions/.github/workflows/contracts.yml@v4.2.2
+    uses: dharitri/drt-sc-actions/.github/workflows/contracts.yml@v4.2.2
     with:
       rust-toolchain: 1.84.0
     secrets:
@@ -41,7 +41,7 @@ jobs:
           
           cargo install dharitri-sc-meta --version 0.50.3 --locked
 
-          which mxpy
+          which drtpyyyy
           which wasm-opt
 
       - name: Use Node.js

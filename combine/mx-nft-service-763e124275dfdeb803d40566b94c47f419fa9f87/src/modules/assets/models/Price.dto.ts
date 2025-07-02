@@ -1,5 +1,5 @@
 import { Field, ID, Int, ObjectType } from '@nestjs/graphql';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { OrderEntity } from 'src/db/orders';
 import { DateUtils } from 'src/utils/date-utils';
 import { Token } from '../../usdPrice/Token.model';
@@ -27,7 +27,7 @@ export class Price {
   static fromEntity(entity: OrderEntity): Price {
     return entity
       ? new Price({
-          token: entity?.priceToken === mxConfig.rewa ? mxConfig.rewa : entity?.priceToken,
+          token: entity?.priceToken === drtConfig.rewa ? drtConfig.rewa : entity?.priceToken,
           amount: entity?.priceAmount,
           nonce: entity?.priceNonce,
           timestamp: DateUtils.getTimestamp(entity.creationDate),

@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { ContextGetterService } from 'src/services/context/context.getter.service';
 import { ContextGetterServiceMock } from 'src/services/context/mocks/context.getter.service.mock';
-import { MXCommunicationModule } from 'src/services/dharitri-communication/mx.communication.module';
+import { MXCommunicationModule } from 'src/services/dharitri-communication/drt.communication.module';
 import { AbiLockedAssetService } from '../services/abi-locked-asset.service';
 import { AbiLockedAssetServiceMock } from '../mocks/abi.locked.asset.service.mock';
 import { LockedAssetService } from '../services/locked-asset.service';

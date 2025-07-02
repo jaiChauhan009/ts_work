@@ -2,12 +2,12 @@ import { forwardRef, Inject, Injectable } from '@nestjs/common';
 import BigNumber from 'bignumber.js';
 import {
     constantsConfig,
-    mxConfig,
+    drtConfig,
     scAddress,
     tokenProviderUSD,
 } from 'src/config';
 import { PairMetadata } from 'src/modules/router/models/pair.metadata.model';
-import { MXDataApiService } from 'src/services/dharitri-communication/mx.data.api.service';
+import { MXDataApiService } from 'src/services/dharitri-communication/drt.data.api.service';
 import { ITokenComputeService } from '../interfaces';
 import { PairAbiService } from 'src/modules/pair/services/pair.abi.service';
 import { PairComputeService } from 'src/modules/pair/services/pair.compute.service';
@@ -146,7 +146,7 @@ export class TokenComputeService implements ITokenComputeService {
                         const rewaLocked = new BigNumber(secondTokenReserves)
                             .times(`1e-${secondToken.decimals}`)
                             .times(secondTokenDerivedREWA)
-                            .times(`1e${mxConfig.REWADecimals}`)
+                            .times(`1e${drtConfig.REWADecimals}`)
                             .integerValue();
 
                         if (rewaLocked.isGreaterThan(largestLiquidityREWA)) {
@@ -174,7 +174,7 @@ export class TokenComputeService implements ITokenComputeService {
                         const rewaLocked = new BigNumber(firstTokenReserves)
                             .times(`1e-${firstToken.decimals}`)
                             .times(firstTokenDerivedREWA)
-                            .times(`1e${mxConfig.REWADecimals}`)
+                            .times(`1e${drtConfig.REWADecimals}`)
                             .integerValue();
                         if (rewaLocked.isGreaterThan(largestLiquidityREWA)) {
                             largestLiquidityREWA = rewaLocked;

@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { MXCommunicationModule } from '../../services/dharitri-communication/mx.communication.module';
+import { MXCommunicationModule } from '../../services/dharitri-communication/drt.communication.module';
 import { LockedTokenWrapperAbiService } from './services/locked-token-wrapper.abi.service';
 import { LockedTokenWrapperTransactionService } from './services/locked-token-wrapper.transaction.service';
 import { LockedTokenWrapperResolver } from './locked-token-wrapper.resolver';

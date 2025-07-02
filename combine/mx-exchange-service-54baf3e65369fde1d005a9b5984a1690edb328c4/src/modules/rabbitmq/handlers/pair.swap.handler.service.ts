@@ -12,7 +12,7 @@ import {
 } from '@terradharitri/sdk-exchange';
 import { PairHandler } from './pair.handler.service';
 import { RouterComputeService } from 'src/modules/router/services/router.compute.service';
-import { MXDataApiService } from 'src/services/dharitri-communication/mx.data.api.service';
+import { MXDataApiService } from 'src/services/dharitri-communication/drt.data.api.service';
 import { PairService } from 'src/modules/pair/services/pair.service';
 import { PairAbiService } from 'src/modules/pair/services/pair.abi.service';
 import { TokenComputeService } from 'src/modules/tokens/services/token.compute.service';

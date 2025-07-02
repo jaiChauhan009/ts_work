@@ -1,7 +1,7 @@
 import { DcdtToken } from 'src/modules/tokens/models/dcdtToken.model';
 import { NftToken } from 'src/modules/tokens/models/nftToken.model';
 import { Tokens } from 'src/modules/pair/mocks/pair.constants';
-import { MXApiService } from './mx.api.service';
+import { MXApiService } from './drt.api.service';
 import { Address } from '@terradharitri/sdk-core/out';
 
 export class MXApiServiceMock {

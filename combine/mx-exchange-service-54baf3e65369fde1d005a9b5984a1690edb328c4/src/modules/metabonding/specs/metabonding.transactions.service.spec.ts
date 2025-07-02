@@ -2,11 +2,11 @@ import { PUB_SUB, RedisPubSubModule } from 'src/services/redis.pubSub.module';
 import { MetabondingTransactionService } from '../services/metabonding.transactions.service';
 import { Test, TestingModule } from '@nestjs/testing';
 import { MetabondingAbiServiceMockProvider } from '../mocks/metabonding.abi.service.mock';
-import { MXProxyServiceProvider } from 'src/services/dharitri-communication/mx.proxy.service.mock';
+import { MXProxyServiceProvider } from 'src/services/dharitri-communication/drt.proxy.service.mock';
 import { Address } from '@terradharitri/sdk-core/out';
 import { InputTokenModel } from 'src/models/inputToken.model';
 import { TransactionModel } from 'src/models/transaction.model';
-import { gasConfig, mxConfig, scAddress } from 'src/config';
+import { gasConfig, drtConfig, scAddress } from 'src/config';
 import { encodeTransactionData } from 'src/helpers/helpers';
 import { WinstonModule } from 'nest-winston';
 import { ConfigModule } from '@nestjs/config';
@@ -66,7 +66,7 @@ describe('MetabondingTransactionsService', () => {
         );
         expect(transaction).toEqual(
             new TransactionModel({
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 data: encodeTransactionData(
                     'DCDTNFTTransfer@LKMEX-abcdef@01@1000000000000000000@drt1qqqqqqqqqqqqqpgq4jvy228nzlcxnwufqzm7hugnv6wl42xj0n4slz57ad@stakeLockedAsset',
                 ),
@@ -94,7 +94,7 @@ describe('MetabondingTransactionsService', () => {
         );
         expect(transaction).toEqual(
             new TransactionModel({
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 data: encodeTransactionData('unstake@1000000000000000000'),
                 gasLimit: gasConfig.metabonding.unstake,
                 gasPrice: 1000000000,
@@ -121,7 +121,7 @@ describe('MetabondingTransactionsService', () => {
         const transaction = await service.unbond(senderAddress);
         expect(transaction).toEqual(
             new TransactionModel({
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 data: encodeTransactionData('unbond'),
                 gasLimit: gasConfig.metabonding.unbond,
                 gasPrice: 1000000000,

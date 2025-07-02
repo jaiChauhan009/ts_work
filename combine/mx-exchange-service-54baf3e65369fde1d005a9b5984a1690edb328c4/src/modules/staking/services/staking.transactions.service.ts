@@ -12,10 +12,10 @@ import { BigNumber } from 'bignumber.js';
 import { gasConfig, constantsConfig } from 'src/config';
 import { InputTokenModel } from 'src/models/inputToken.model';
 import { TransactionModel } from 'src/models/transaction.model';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { StakingAbiService } from './staking.abi.service';
 import { ErrorLoggerAsync } from '@terradharitri/sdk-nestjs-common';
-import { MXApiService } from 'src/services/dharitri-communication/mx.api.service';
+import { MXApiService } from 'src/services/dharitri-communication/drt.api.service';
 import { ContextGetterService } from 'src/services/context/context.getter.service';
 import { TransactionOptions } from 'src/modules/common/transaction.options';
 
@@ -23,8 +23,8 @@ import { TransactionOptions } from 'src/modules/common/transaction.options';
 export class StakingTransactionService {
     constructor(
         private readonly stakingAbi: StakingAbiService,
-        private readonly mxProxy: MXProxyService,
-        private readonly mxApi: MXApiService,
+        private readonly drtProxy: MXProxyService,
+        private readonly drtApi: MXApiService,
         private readonly contextGetter: ContextGetterService,
     ) {}
 
@@ -41,7 +41,7 @@ export class StakingTransactionService {
                 ? gasConfig.stake.stakeFarm.withTokenMerge
                 : gasConfig.stake.stakeFarm.default;
 
-        return this.mxProxy.getStakingSmartContractTransaction(
+        return this.drtProxy.getStakingSmartContractTransaction(
             stakeAddress,
             new TransactionOptions({
                 sender: sender,
@@ -66,7 +66,7 @@ export class StakingTransactionService {
         stakeAddress: string,
         payment: InputTokenModel,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getStakingSmartContractTransaction(
+        return this.drtProxy.getStakingSmartContractTransaction(
             stakeAddress,
             new TransactionOptions({
                 sender: sender,
@@ -90,7 +90,7 @@ export class StakingTransactionService {
         stakeAddress: string,
         payment: InputTokenModel,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getStakingSmartContractTransaction(
+        return this.drtProxy.getStakingSmartContractTransaction(
             stakeAddress,
             new TransactionOptions({
                 sender: sender,
@@ -114,7 +114,7 @@ export class StakingTransactionService {
         stakeAddress: string,
         payment: InputTokenModel,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getStakingSmartContractTransaction(
+        return this.drtProxy.getStakingSmartContractTransaction(
             stakeAddress,
             new TransactionOptions({
                 sender: sender,
@@ -139,7 +139,7 @@ export class StakingTransactionService {
         payment: InputTokenModel,
         newValue: string,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getStakingSmartContractTransaction(
+        return this.drtProxy.getStakingSmartContractTransaction(
             stakeAddress,
             new TransactionOptions({
                 sender: sender,
@@ -164,7 +164,7 @@ export class StakingTransactionService {
         stakeAddress: string,
         payment: InputTokenModel,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getStakingSmartContractTransaction(
+        return this.drtProxy.getStakingSmartContractTransaction(
             stakeAddress,
             new TransactionOptions({
                 sender: sender,
@@ -187,7 +187,7 @@ export class StakingTransactionService {
         sender: string,
         stakeAddress: string,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getStakingSmartContractTransaction(
+        return this.drtProxy.getStakingSmartContractTransaction(
             stakeAddress,
             new TransactionOptions({
                 sender: sender,
@@ -205,7 +205,7 @@ export class StakingTransactionService {
             [
                 this.stakingAbi.farmTokenID(stakingAddress),
                 this.stakingAbi.farmPositionMigrationNonce(stakingAddress),
-                this.mxApi.getNftsCountForUser(userAddress),
+                this.drtApi.getNftsCountForUser(userAddress),
             ],
         );
 
@@ -246,7 +246,7 @@ export class StakingTransactionService {
         stakeAddress: string,
         payment: InputTokenModel,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getStakingSmartContractTransaction(
+        return this.drtProxy.getStakingSmartContractTransaction(
             stakeAddress,
             new TransactionOptions({
                 sender: sender,
@@ -269,7 +269,7 @@ export class StakingTransactionService {
         stakeAddress: string,
         payments: InputTokenModel[],
     ): Promise<TransactionModel> {
-        return this.mxProxy.getStakingSmartContractTransaction(
+        return this.drtProxy.getStakingSmartContractTransaction(
             stakeAddress,
             new TransactionOptions({
                 sender: sender,
@@ -295,7 +295,7 @@ export class StakingTransactionService {
         address: string,
         whitelist: boolean,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getStakingSmartContractTransaction(
+        return this.drtProxy.getStakingSmartContractTransaction(
             stakeAddress,
             new TransactionOptions({
                 sender: sender,
@@ -313,7 +313,7 @@ export class StakingTransactionService {
         stakeAddress: string,
         state: boolean,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getStakingSmartContractTransaction(
+        return this.drtProxy.getStakingSmartContractTransaction(
             stakeAddress,
             new TransactionOptions({
                 sender: sender,
@@ -328,7 +328,7 @@ export class StakingTransactionService {
         stakeAddress: string,
         address: string,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getStakingSmartContractTransaction(
+        return this.drtProxy.getStakingSmartContractTransaction(
             stakeAddress,
             new TransactionOptions({
                 sender: sender,
@@ -346,7 +346,7 @@ export class StakingTransactionService {
         tokenTicker: string,
         decimals: number,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getStakingSmartContractTransaction(
+        return this.drtProxy.getStakingSmartContractTransaction(
             stakeAddress,
             new TransactionOptions({
                 sender: sender,
@@ -366,7 +366,7 @@ export class StakingTransactionService {
         stakeAddress: string,
         perBlockAmount: string,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getStakingSmartContractTransaction(
+        return this.drtProxy.getStakingSmartContractTransaction(
             stakeAddress,
             new TransactionOptions({
                 sender: sender,
@@ -382,7 +382,7 @@ export class StakingTransactionService {
         stakeAddress: string,
         maxApr: number,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getStakingSmartContractTransaction(
+        return this.drtProxy.getStakingSmartContractTransaction(
             stakeAddress,
             new TransactionOptions({
                 sender: sender,
@@ -398,7 +398,7 @@ export class StakingTransactionService {
         stakeAddress: string,
         minUnboundEpoch: number,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getStakingSmartContractTransaction(
+        return this.drtProxy.getStakingSmartContractTransaction(
             stakeAddress,
             new TransactionOptions({
                 sender: sender,
@@ -414,7 +414,7 @@ export class StakingTransactionService {
         stakeAddress: string,
         rewards: boolean,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getStakingSmartContractTransaction(
+        return this.drtProxy.getStakingSmartContractTransaction(
             stakeAddress,
             new TransactionOptions({
                 sender: sender,

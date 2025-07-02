@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { KroganSwapAuctionEventEnum, ExternalAuctionEventEnum } from 'src/modules/assets/models';
 import { NumbatSwapAuctionTypeEnum } from 'src/modules/auctions/models';
 import { MarketplacesService } from 'src/modules/marketplaces/marketplaces.service';
@@ -22,7 +22,7 @@ export class ListingAuctionAnalyticsHandler {
 
     if (!marketplace) return;
 
-    const tokenData = await this.usdPriceService.getToken(topics.paymentToken ?? mxConfig.rewa);
+    const tokenData = await this.usdPriceService.getToken(topics.paymentToken ?? drtConfig.rewa);
     const tokenPrice = await this.usdPriceService.getTokenPriceFromDate(tokenData.identifier, timestamp);
 
     const data = [];

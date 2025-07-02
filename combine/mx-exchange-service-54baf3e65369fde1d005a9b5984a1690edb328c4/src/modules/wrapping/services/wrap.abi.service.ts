@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Interaction } from '@terradharitri/sdk-core/out/smartcontracts/interaction';
-import { MXProxyService } from '../../../services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from '../../../services/dharitri-communication/drt.proxy.service';
 import { GenericAbiService } from 'src/services/generics/generic.abi.service';
 import { GetOrSetCache } from 'src/helpers/decorators/caching.decorator';
 import { CacheTtlInfo } from 'src/services/caching/cache.ttl.info';
@@ -8,8 +8,8 @@ import { ErrorLoggerAsync } from '@terradharitri/sdk-nestjs-common';
 
 @Injectable()
 export class WrapAbiService extends GenericAbiService {
-    constructor(protected readonly mxProxy: MXProxyService) {
-        super(mxProxy);
+    constructor(protected readonly drtProxy: MXProxyService) {
+        super(drtProxy);
     }
 
     @ErrorLoggerAsync()
@@ -23,7 +23,7 @@ export class WrapAbiService extends GenericAbiService {
     }
 
     async getWrappedRewaTokenIDRaw(): Promise<string> {
-        const contract = await this.mxProxy.getWrapSmartContract();
+        const contract = await this.drtProxy.getWrapSmartContract();
         const interaction: Interaction =
             contract.methodsExplicit.getWrappedRewaTokenId();
         const response = await this.getGenericData(interaction);

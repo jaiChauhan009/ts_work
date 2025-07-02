@@ -2,10 +2,10 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { FeesCollectorTransactionService } from '../services/fees-collector.transaction.service';
 import { WeekTimekeepingAbiServiceProvider } from 'src/submodules/week-timekeeping/mocks/week.timekeeping.abi.service.mock';
 import { WeeklyRewardsSplittingAbiServiceProvider } from 'src/submodules/weekly-rewards-splitting/mocks/weekly.rewards.splitting.abi.mock';
-import { MXProxyServiceProvider } from 'src/services/dharitri-communication/mx.proxy.service.mock';
+import { MXProxyServiceProvider } from 'src/services/dharitri-communication/drt.proxy.service.mock';
 import { TransactionModel } from 'src/models/transaction.model';
 import { encodeTransactionData } from 'src/helpers/helpers';
-import { mxConfig, scAddress } from 'src/config';
+import { drtConfig, scAddress } from 'src/config';
 import { Address } from '@terradharitri/sdk-core/out';
 import { FeesCollectorTransactionModel } from '../models/fees-collector.model';
 import { WeeklyRewardsSplittingAbiService } from 'src/submodules/weekly-rewards-splitting/services/weekly-rewards-splitting.abi.service';
@@ -55,7 +55,7 @@ describe('FeesCollectorTransactionService', () => {
         const transaction = await service.claimRewards(senderAddress, 100000);
         expect(transaction).toEqual(
             new TransactionModel({
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: 100000,
                 gasPrice: 1000000000,
                 nonce: 0,
@@ -85,7 +85,7 @@ describe('FeesCollectorTransactionService', () => {
         expect(transaction).toEqual(
             new FeesCollectorTransactionModel({
                 transaction: {
-                    chainID: mxConfig.chainID,
+                    chainID: drtConfig.chainID,
                     gasLimit: 120000000,
                     gasPrice: 1000000000,
                     nonce: 0,
@@ -126,7 +126,7 @@ describe('FeesCollectorTransactionService', () => {
         expect(transaction).toEqual(
             new FeesCollectorTransactionModel({
                 transaction: {
-                    chainID: mxConfig.chainID,
+                    chainID: drtConfig.chainID,
                     gasLimit: 120000000,
                     gasPrice: 1000000000,
                     nonce: 0,
@@ -166,7 +166,7 @@ describe('FeesCollectorTransactionService', () => {
 
         expect(transaction).toEqual(
             new TransactionModel({
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: 10000000,
                 gasPrice: 1000000000,
                 nonce: 0,
@@ -202,7 +202,7 @@ describe('FeesCollectorTransactionService', () => {
 
         expect(transaction).toEqual(
             new TransactionModel({
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: 10000000,
                 gasPrice: 1000000000,
                 nonce: 0,

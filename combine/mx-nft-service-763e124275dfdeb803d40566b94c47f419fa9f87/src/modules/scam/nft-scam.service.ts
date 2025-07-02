@@ -21,8 +21,8 @@ export class NftScamService {
     private readonly documentDbService: DocumentDbService,
     private readonly assetByIdentifierService: AssetByIdentifierService,
     private readonly nftScamElasticService: NftScamElasticService,
-    private readonly mxElasticService: MxElasticService,
-    private readonly mxApiService: MxApiService,
+    private readonly drtElasticService: MxElasticService,
+    private readonly drtApiService: MxApiService,
     private readonly pluginsService: PluginService,
     private readonly cacheEventsPublisher: CacheEventsPublisherService,
     private readonly logger: Logger,
@@ -48,8 +48,8 @@ export class NftScamService {
       'updateAllNftsScamInfos: Update scam info for all existing NFTs',
       async () => {
         try {
-          const mxApiAbout = await this.mxApiService.getMxApiAbout();
-          const scamEngineVersion = mxApiAbout.scamEngineVersion;
+          const drtApiAbout = await this.drtApiService.getMxApiAbout();
+          const scamEngineVersion = drtApiAbout.scamEngineVersion;
 
           const collections = await this.nftScamElasticService.getAllCollectionsFromElastic();
 
@@ -74,7 +74,7 @@ export class NftScamService {
   async validateOrUpdateAllNftsScamInfoForCollection(collection: string, scamEngineVersion: string): Promise<void> {
     this.logger.log(`Processing scamInfo for ${collection}...`);
     const nftsQuery = getCollectionNftsQuery(collection);
-    await this.mxElasticService.getScrollableList(ELASTIC_TOKENS_INDEX, 'identifier', nftsQuery, async (nftsBatch) => {
+    await this.drtElasticService.getScrollableList(ELASTIC_TOKENS_INDEX, 'identifier', nftsQuery, async (nftsBatch) => {
       await this.validateOrUpdateNftsScamInfoBatch(nftsBatch, scamEngineVersion);
     });
   }
@@ -82,7 +82,7 @@ export class NftScamService {
   async markAllNftsForCollection(collection: string, scamEngineVersion: string, scamInfo: ScamInfo): Promise<void> {
     this.logger.log(`Processing scamInfo for ${collection}...`);
     const nftsQuery = getCollectionNftsQuery(collection);
-    await this.mxElasticService.getScrollableList(ELASTIC_TOKENS_INDEX, 'identifier', nftsQuery, async (nftsBatch) => {
+    await this.drtElasticService.getScrollableList(ELASTIC_TOKENS_INDEX, 'identifier', nftsQuery, async (nftsBatch) => {
       await this.markNftsScamInfoBatch(nftsBatch, scamEngineVersion, scamInfo);
     });
   }
@@ -136,14 +136,14 @@ export class NftScamService {
   }
 
   private async getNftScamInfo(nftFromApi: Asset): Promise<NftScamRelatedData> {
-    const [nftFromElastic, nftFromDb, mxApiAbout] = await Promise.all([
+    const [nftFromElastic, nftFromDb, drtApiAbout] = await Promise.all([
       this.nftScamElasticService.getNftWithScamInfoFromElastic(nftFromApi.identifier),
       this.documentDbService.getNftScamInfo(nftFromApi.identifier),
-      this.mxApiService.getMxApiAbout(),
+      this.drtApiService.getMxApiAbout(),
     ]);
 
     return new NftScamRelatedData({
-      mxApiAbout,
+      drtApiAbout,
       nftFromElastic,
       nftFromDb,
       nftFromApi,
@@ -156,7 +156,7 @@ export class NftScamService {
     const updateScamInfoInDb =
       !nftScamRelatedData.nftFromDb ||
       nftScamRelatedData.nftFromDb.type ||
-      nftScamRelatedData.nftFromDb.version !== nftScamRelatedData.mxApiAbout.scamEngineVersion;
+      nftScamRelatedData.nftFromDb.version !== nftScamRelatedData.drtApiAbout.scamEngineVersion;
 
     let updatePromises = [];
 
@@ -164,7 +164,7 @@ export class NftScamService {
       updatePromises.push(
         this.documentDbService.saveOrUpdateNftScamInfo(
           nftScamRelatedData.nftFromApi.identifier,
-          nftScamRelatedData.mxApiAbout.scamEngineVersion,
+          nftScamRelatedData.drtApiAbout.scamEngineVersion,
         ),
       );
     }
@@ -182,13 +182,13 @@ export class NftScamService {
       ScamInfo.areApiAndDbScamInfoDifferent(
         nftScamRelatedData.nftFromApi,
         nftScamRelatedData.nftFromDb,
-        nftScamRelatedData.mxApiAbout.scamEngineVersion,
+        nftScamRelatedData.drtApiAbout.scamEngineVersion,
       )
     ) {
       updatePromises.push(
         this.documentDbService.saveOrUpdateNftScamInfo(
           nftScamRelatedData.nftFromApi.identifier,
-          nftScamRelatedData.mxApiAbout.scamEngineVersion,
+          nftScamRelatedData.drtApiAbout.scamEngineVersion,
           new ScamInfo({
             type: ScamInfoTypeEnum[nftScamRelatedData.nftFromApi.scamInfo.type],
             info: nftScamRelatedData.nftFromApi.scamInfo.info,
@@ -220,7 +220,7 @@ export class NftScamService {
       scamEngineVersion,
     );
 
-    const apiNfts = await this.mxApiService.getNftsByIdentifiers(nftsMissingFromDb?.map((x) => x.identifier));
+    const apiNfts = await this.drtApiService.getNftsByIdentifiers(nftsMissingFromDb?.map((x) => x.identifier));
     const mappedNfts = apiNfts?.map((x) => Asset.fromNft(x));
     if (!mappedNfts) return;
     await this.pluginsService.computeScamInfo(mappedNfts);
@@ -243,7 +243,7 @@ export class NftScamService {
 
     const nftsMissingFromDb = await this.getOutdatedNfts(nftsFromElastic, scamEngineVersion, scamInfo);
 
-    const apiNfts = await this.mxApiService.getNftsByIdentifiers(nftsMissingFromDb?.map((x) => x.identifier));
+    const apiNfts = await this.drtApiService.getNftsByIdentifiers(nftsMissingFromDb?.map((x) => x.identifier));
     if (!apiNfts) return;
     let mappedNfts: Asset[] = apiNfts?.map((x) => new Asset({ ...Asset.fromNft(x), scamInfo }));
 

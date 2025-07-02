@@ -133,7 +133,7 @@ This package is for dApps that interacts with smart contracts
 
 #### Contract Loader
 
-Uses Singleton pattern and load a [SmartContract](https://github.com/TerraDharitri/mx-sdk-drtjs/blob/main/src/smartcontracts/smartContract.ts) from an abi path.
+Uses Singleton pattern and load a [SmartContract](https://github.com/TerraDharitri/drt-sdk-drtjs/blob/main/src/smartcontracts/smartContract.ts) from an abi path.
 You can also load multiple contracts with same abi.
 
 ```

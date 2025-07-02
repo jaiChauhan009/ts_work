@@ -1,8 +1,8 @@
 import LRU from 'lru-cache';
-import { mxConfig } from '../config';
+import { drtConfig } from '../config';
 
 export default new LRU({
-    max: mxConfig.localCacheMaxItems,
+    max: drtConfig.localCacheMaxItems,
     // for use with tracking overall storage size
     allowStale: false,
     updateAgeOnGet: false,

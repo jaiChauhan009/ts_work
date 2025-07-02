@@ -6,7 +6,7 @@ import { orderBy } from 'lodash';
 import { MxApiService, MxElasticService, MxIdentityService } from 'src/common';
 import { PersistenceService } from 'src/common/persistence/persistence.service';
 import { CacheInfo } from 'src/common/services/caching/entities/cache.info';
-import { CollectionElastic } from 'src/common/services/mx-communication/elastic-collection.model';
+import { CollectionElastic } from 'src/common/services/drt-communication/elastic-collection.model';
 import { constants, genericDescriptions } from 'src/config';
 import { DocumentDbService } from 'src/document-db/document-db.service';
 import { ELASTIC_TOKENS_INDEX } from 'src/utils/constants';

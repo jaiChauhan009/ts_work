@@ -23,7 +23,7 @@ export class FarmCustomAbiService
     }
 
     async getWhitelistRaw(farmAddress: string): Promise<string[]> {
-        const contract = await this.mxProxy.getFarmSmartContract(farmAddress);
+        const contract = await this.drtProxy.getFarmSmartContract(farmAddress);
 
         const interaction: Interaction =
             contract.methodsExplicit.getWhitelist();

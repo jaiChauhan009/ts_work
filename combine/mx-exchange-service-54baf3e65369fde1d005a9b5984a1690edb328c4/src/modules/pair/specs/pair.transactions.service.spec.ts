@@ -2,13 +2,13 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { WrapTransactionsService } from 'src/modules/wrapping/services/wrap.transactions.service';
 import { PairTransactionService } from '../services/pair.transactions.service';
 import { PairService } from '../services/pair.service';
-import { MXProxyServiceProvider } from 'src/services/dharitri-communication/mx.proxy.service.mock';
+import { MXProxyServiceProvider } from 'src/services/dharitri-communication/drt.proxy.service.mock';
 import { ApiConfigService } from 'src/helpers/api.config.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { InputTokenModel } from 'src/models/inputToken.model';
 import { Address } from '@terradharitri/sdk-core';
 import { encodeTransactionData } from 'src/helpers/helpers';
-import { mxConfig, gasConfig } from 'src/config';
+import { drtConfig, gasConfig } from 'src/config';
 import { WrapAbiServiceProvider } from 'src/modules/wrapping/mocks/wrap.abi.service.mock';
 import { TokenServiceProvider } from 'src/modules/tokens/mocks/token.service.mock';
 import { WrapService } from 'src/modules/wrapping/services/wrap.service';
@@ -20,7 +20,7 @@ import { WinstonModule } from 'nest-winston';
 import winston from 'winston';
 import { DynamicModuleUtils } from 'src/utils/dynamic.module.utils';
 import { ComposableTasksTransactionService } from 'src/modules/composable-tasks/services/composable.tasks.transaction';
-import { MXApiServiceProvider } from 'src/services/dharitri-communication/mx.api.service.mock';
+import { MXApiServiceProvider } from 'src/services/dharitri-communication/drt.api.service.mock';
 
 describe('TransactionPairService', () => {
     let module: TestingModule;
@@ -107,7 +107,7 @@ describe('TransactionPairService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.wrapREWA,
             data: encodeTransactionData('wrapRewa'),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -126,7 +126,7 @@ describe('TransactionPairService', () => {
                     '0000000000000000000000000000000000000000000000000000000000000012',
                 ).bech32()}@2@WREWA-123456@@9000000000000000000@MEX-123456@@10000000000000000000@addInitialLiquidity`,
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -174,7 +174,7 @@ describe('TransactionPairService', () => {
                     '0000000000000000000000000000000000000000000000000000000000000012',
                 ).bech32()}@02@WREWA-123456@@10000000000000000000@MEX-123456@@9000000000000000000@addInitialLiquidity`,
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -224,7 +224,7 @@ describe('TransactionPairService', () => {
                     '0000000000000000000000000000000000000000000000000000000000000012',
                 ).bech32()}@2@WREWA-123456@@9@MEX-123456@@10@addLiquidity@8@9`,
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -273,7 +273,7 @@ describe('TransactionPairService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.wrapREWA,
             data: encodeTransactionData('wrapRewa'),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -294,7 +294,7 @@ describe('TransactionPairService', () => {
                     '0000000000000000000000000000000000000000000000000000000000000012',
                 ).bech32()}@02@WREWA-123456@@10@MEX-123456@@09@addLiquidity@09@08`,
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -346,7 +346,7 @@ describe('TransactionPairService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.wrapREWA,
             data: encodeTransactionData('wrapRewa'),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -367,7 +367,7 @@ describe('TransactionPairService', () => {
                     '0000000000000000000000000000000000000000000000000000000000000012',
                 ).bech32()}@02@WREWA-123456@@09@MEX-123456@@10@addLiquidity@08@09`,
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -405,7 +405,7 @@ describe('TransactionPairService', () => {
                 data: encodeTransactionData(
                     'DCDTTransfer@1162300484@10@removeLiquidity@09@9900',
                 ),
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 version: 2,
                 options: undefined,
                 signature: undefined,
@@ -425,7 +425,7 @@ describe('TransactionPairService', () => {
                 data: encodeTransactionData(
                     'DCDTTransfer@WREWA-123456@09@unwrapRewa',
                 ),
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 version: 2,
                 options: undefined,
                 signature: undefined,
@@ -495,7 +495,7 @@ describe('TransactionPairService', () => {
             gasPrice: 1000000000,
             gasLimit: 40200000,
             data: 'RVNEVFRyYW5zZmVyQDRkNDU1ODJkMzEzMjMzMzQzNTM2QDA1QDYzNmY2ZDcwNmY3MzY1NTQ2MTczNmI3M0AwMDAwMDAwNDQ1NDc0YzQ0MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAxMDVAMDJAMDAwMDAwMTU3Mzc3NjE3MDU0NmY2YjY1NmU3MzQ2Njk3ODY1NjQ0Zjc1NzQ3MDc1NzQwMDAwMDAwYzU3NDU0NzRjNDQyZDMxMzIzMzM0MzUzNjAwMDAwMDAxMDVAMDFA',
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -583,7 +583,7 @@ describe('TransactionPairService', () => {
             data: encodeTransactionData(
                 'whitelist@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -618,7 +618,7 @@ describe('TransactionPairService', () => {
             data: encodeTransactionData(
                 'removeWhitelist@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -656,7 +656,7 @@ describe('TransactionPairService', () => {
             data: encodeTransactionData(
                 'addTrustedSwapPair@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z@WREWA-123456@MEX-123456',
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -693,7 +693,7 @@ describe('TransactionPairService', () => {
             data: encodeTransactionData(
                 'removeTrustedSwapPair@WREWA-123456@MEX-123456',
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -726,7 +726,7 @@ describe('TransactionPairService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.pairs.admin.pause,
             data: encodeTransactionData('pause'),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -759,7 +759,7 @@ describe('TransactionPairService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.pairs.admin.resume,
             data: encodeTransactionData('resume'),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -792,7 +792,7 @@ describe('TransactionPairService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.pairs.admin.setStateActiveNoSwaps,
             data: encodeTransactionData('setStateActiveNoSwaps'),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -827,7 +827,7 @@ describe('TransactionPairService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.pairs.admin.setFeePercents,
             data: encodeTransactionData('setFeePercents@03@05'),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -861,7 +861,7 @@ describe('TransactionPairService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.pairs.admin.setLockingDeadlineEpoch,
             data: encodeTransactionData('setLockingDeadlineEpoch@1000'),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -895,7 +895,7 @@ describe('TransactionPairService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.pairs.admin.setUnlockEpoch,
             data: encodeTransactionData('setUnlockEpoch@1005'),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -931,7 +931,7 @@ describe('TransactionPairService', () => {
             data: encodeTransactionData(
                 'setLockingScAddress@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -966,7 +966,7 @@ describe('TransactionPairService', () => {
             data: encodeTransactionData(
                 `setupFeesCollector@drt1qqqqqqqqqqqqqpgqagq2v9exkrn3wnauq3lw4xcetwsmgmwjd8ss0hz4aw@50000`,
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,

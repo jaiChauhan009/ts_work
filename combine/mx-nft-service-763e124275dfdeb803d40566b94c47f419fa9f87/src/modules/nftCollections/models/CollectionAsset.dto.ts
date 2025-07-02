@@ -1,5 +1,5 @@
 import { ObjectType, Field } from '@nestjs/graphql';
-import { Nft } from 'src/common/services/mx-communication/models/nft.dto';
+import { Nft } from 'src/common/services/drt-communication/models/nft.dto';
 import { ScamInfo } from 'src/modules/assets/models/ScamInfo.dto';
 
 @ObjectType()

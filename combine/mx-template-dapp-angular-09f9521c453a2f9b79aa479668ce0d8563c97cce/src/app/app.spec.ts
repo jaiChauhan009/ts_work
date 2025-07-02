@@ -18,6 +18,6 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, mx-template-dapp-angular');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, drt-template-dapp-angular');
   });
 });

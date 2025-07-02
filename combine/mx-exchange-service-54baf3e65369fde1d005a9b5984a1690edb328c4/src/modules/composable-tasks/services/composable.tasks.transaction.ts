@@ -1,6 +1,6 @@
 import { DcdtTokenPayment } from '@terradharitri/sdk-exchange';
 import { Injectable } from '@nestjs/common';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import {
     ComposableTaskEnumType,
     ComposableTaskType,
@@ -24,7 +24,7 @@ import {
     VariadicValue,
 } from '@terradharitri/sdk-core';
 import BigNumber from 'bignumber.js';
-import { gasConfig, mxConfig } from 'src/config';
+import { gasConfig, drtConfig } from 'src/config';
 import { RewaOrDcdtTokenPayment } from 'src/models/dcdtTokenPayment.model';
 import { decimalToHex } from 'src/utils/token.converters';
 import { WrapAbiService } from 'src/modules/wrapping/services/wrap.abi.service';
@@ -38,7 +38,7 @@ export type ComposableTask = {
 @Injectable()
 export class ComposableTasksTransactionService {
     constructor(
-        private readonly mxProxy: MXProxyService,
+        private readonly drtProxy: MXProxyService,
         private readonly wrapAbi: WrapAbiService,
     ) {}
 
@@ -72,7 +72,7 @@ export class ComposableTasksTransactionService {
 
         const transactionOptions = new TransactionOptions({
             sender: sender,
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             gasLimit: gasLimit,
             function: 'composeTasks',
             arguments: [
@@ -91,7 +91,7 @@ export class ComposableTasksTransactionService {
             ],
         });
 
-        if (payment.tokenIdentifier === mxConfig.REWAIdentifier) {
+        if (payment.tokenIdentifier === drtConfig.REWAIdentifier) {
             transactionOptions.nativeTransferAmount = payment.amount;
         } else {
             transactionOptions.tokenTransfers = [
@@ -104,7 +104,7 @@ export class ComposableTasksTransactionService {
             ];
         }
 
-        return this.mxProxy.getComposableTasksContractTransaction(
+        return this.drtProxy.getComposableTasksContractTransaction(
             transactionOptions,
         );
     }

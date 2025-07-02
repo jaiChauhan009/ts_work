@@ -1,6 +1,6 @@
 import { forwardRef, Module } from '@nestjs/common';
 import { WeeklyRewardsSplittingAbiService } from './services/weekly-rewards-splitting.abi.service';
-import { MXCommunicationModule } from '../../services/dharitri-communication/mx.communication.module';
+import { MXCommunicationModule } from '../../services/dharitri-communication/drt.communication.module';
 import { ApiConfigService } from '../../helpers/api.config.service';
 import { WeeklyRewardsSplittingComputeService } from './services/weekly-rewards-splitting.compute.service';
 import { WeekTimekeepingModule } from '../week-timekeeping/week-timekeeping.module';

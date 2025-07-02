@@ -11,7 +11,7 @@ import {
     LockedLpTokenV2,
 } from 'src/modules/tokens/models/lockedLpToken.model';
 import { NftToken } from 'src/modules/tokens/models/nftToken.model';
-import { MXApiService } from '../../../services/dharitri-communication/mx.api.service';
+import { MXApiService } from '../../../services/dharitri-communication/drt.api.service';
 import { LockedAssetService } from '../../locked-asset-factory/services/locked-asset.service';
 import { PairService } from 'src/modules/pair/services/pair.service';
 import { ProxyService } from '../../proxy/services/proxy.service';

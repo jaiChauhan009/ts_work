@@ -1,7 +1,7 @@
 import { Token, TokenTransfer } from '@terradharitri/sdk-core';
 import { Injectable } from '@nestjs/common';
 import BigNumber from 'bignumber.js';
-import { mxConfig, gasConfig } from 'src/config';
+import { drtConfig, gasConfig } from 'src/config';
 import { TransactionModel } from 'src/models/transaction.model';
 import { farmType } from 'src/utils/farm.utils';
 import { TransactionsFarmService } from '../../base-module/services/farm.transaction.service';
@@ -13,25 +13,25 @@ import {
 } from '../../models/farm.args';
 import { FarmRewardType, FarmVersion } from '../../models/farm.model';
 import { ErrorLoggerAsync } from '@terradharitri/sdk-nestjs-common';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { FarmAbiServiceV2 } from './farm.v2.abi.service';
 import { PairService } from 'src/modules/pair/services/pair.service';
 import { PairAbiService } from 'src/modules/pair/services/pair.abi.service';
-import { MXApiService } from 'src/services/dharitri-communication/mx.api.service';
+import { MXApiService } from 'src/services/dharitri-communication/drt.api.service';
 import { ContextGetterService } from 'src/services/context/context.getter.service';
 import { TransactionOptions } from 'src/modules/common/transaction.options';
 
 @Injectable()
 export class FarmTransactionServiceV2 extends TransactionsFarmService {
     constructor(
-        protected readonly mxProxy: MXProxyService,
+        protected readonly drtProxy: MXProxyService,
         protected readonly farmAbi: FarmAbiServiceV2,
         protected readonly pairService: PairService,
         protected readonly pairAbi: PairAbiService,
-        private readonly mxApi: MXApiService,
+        private readonly drtApi: MXApiService,
         private readonly contextGetter: ContextGetterService,
     ) {
-        super(mxProxy, farmAbi, pairService, pairAbi);
+        super(drtProxy, farmAbi, pairService, pairAbi);
     }
 
     @ErrorLoggerAsync({
@@ -48,11 +48,11 @@ export class FarmTransactionServiceV2 extends TransactionsFarmService {
                 ? gasConfig.farms[FarmVersion.V2].enterFarm.withTokenMerge
                 : gasConfig.farms[FarmVersion.V2].enterFarm.default;
 
-        return this.mxProxy.getFarmSmartContractTransaction(
+        return this.drtProxy.getFarmSmartContractTransaction(
             args.farmAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasLimit,
                 function: 'enterFarm',
                 tokenTransfers: args.tokens.map(
@@ -83,11 +83,11 @@ export class FarmTransactionServiceV2 extends TransactionsFarmService {
             farmType(args.farmAddress),
         );
 
-        return this.mxProxy.getFarmSmartContractTransaction(
+        return this.drtProxy.getFarmSmartContractTransaction(
             args.farmAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasLimit,
                 function: 'exitFarm',
                 tokenTransfers: [
@@ -117,11 +117,11 @@ export class FarmTransactionServiceV2 extends TransactionsFarmService {
             gasConfig.farms[FarmVersion.V2][type].claimRewards +
             lockedAssetCreateGas;
 
-        return this.mxProxy.getFarmSmartContractTransaction(
+        return this.drtProxy.getFarmSmartContractTransaction(
             args.farmAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasLimit,
                 function: 'claimRewards',
                 tokenTransfers: [
@@ -141,11 +141,11 @@ export class FarmTransactionServiceV2 extends TransactionsFarmService {
         sender: string,
         farmAddress: string,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getFarmSmartContractTransaction(
+        return this.drtProxy.getFarmSmartContractTransaction(
             farmAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.farms[FarmVersion.V2].claimBoostedRewards,
                 function: 'claimBoostedRewards',
             }),
@@ -166,7 +166,7 @@ export class FarmTransactionServiceV2 extends TransactionsFarmService {
         const [farmTokenID, migrationNonce, userNftsCount] = await Promise.all([
             this.farmAbi.farmTokenID(farmAddress),
             this.farmAbi.farmPositionMigrationNonce(farmAddress),
-            this.mxApi.getNftsCountForUser(userAddress),
+            this.drtApi.getNftsCountForUser(userAddress),
         ]);
 
         const userNfts = await this.contextGetter.getNftsForUser(

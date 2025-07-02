@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { CommonAppModule } from 'src/common.app.module';
 import { AnalyticsModule as AnalyticsServicesModule } from 'src/services/analytics/analytics.module';
 import { ContextModule } from 'src/services/context/context.module';
-import { MXCommunicationModule } from 'src/services/dharitri-communication/mx.communication.module';
+import { MXCommunicationModule } from 'src/services/dharitri-communication/drt.communication.module';
 import { PairModule } from '../pair/pair.module';
 import { AutoRouterService } from './services/auto-router.service';
 import { AutoRouterComputeService } from './services/auto-router.compute.service';

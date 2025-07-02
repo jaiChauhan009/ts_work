@@ -1,6 +1,6 @@
 import { forwardRef, Module } from '@nestjs/common';
 import { ContextModule } from 'src/services/context/context.module';
-import { MXCommunicationModule } from 'src/services/dharitri-communication/mx.communication.module';
+import { MXCommunicationModule } from 'src/services/dharitri-communication/drt.communication.module';
 import { PairModule } from '../pair/pair.module';
 import { RouterModule } from '../router/router.module';
 import { AnalyticsResolver } from './analytics.resolver';

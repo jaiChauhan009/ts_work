@@ -1,7 +1,7 @@
 import { Address, ApiNetworkProvider, TransactionOnNetwork } from '@terradharitri/sdk-core';
 import { HttpStatus, Injectable, Logger } from '@nestjs/common';
 import * as Agent from 'agentkeepalive';
-import { constants, mxConfig } from 'src/config';
+import { constants, drtConfig } from 'src/config';
 import { AssetsQuery } from 'src/modules/assets/assets-query';
 import { MetricsCollector } from 'src/modules/metrics/metrics.collector';
 import { PerformanceProfiler } from 'src/modules/metrics/performance.profiler';
@@ -9,8 +9,8 @@ import { CustomRank } from 'src/modules/nft-rarity/models/custom-rank.model';
 import { XOXNO_MINTING_MANAGER } from 'src/utils/constants';
 import { Token } from '../../../modules/usdPrice/Token.model';
 import { CollectionApi } from './models/collection.dto';
-import { MxApiAbout } from './models/mx-api-about.model';
-import { MxStats } from './models/mx-stats.model';
+import { MxApiAbout } from './models/drt-api-about.model';
+import { MxStats } from './models/drt-stats.model';
 import { Nft, NftMetadata, NftTag } from './models/nft.dto';
 import { OwnerApi } from './models/owner.api';
 import { SmartContractApi } from './models/smart-contract.api';
@@ -21,17 +21,17 @@ export class MxApiService {
 
   constructor(private readonly logger: Logger) {
     const keepAliveOptions = {
-      maxSockets: mxConfig.keepAliveMaxSockets,
-      maxFreeSockets: mxConfig.keepAliveMaxFreeSockets,
+      maxSockets: drtConfig.keepAliveMaxSockets,
+      maxFreeSockets: drtConfig.keepAliveMaxFreeSockets,
       timeout: parseInt(process.env.KEEPALIVE_TIMEOUT_DOWNSTREAM),
-      freeSocketTimeout: mxConfig.keepAliveFreeSocketTimeout,
+      freeSocketTimeout: drtConfig.keepAliveFreeSocketTimeout,
     };
     const httpAgent = new Agent(keepAliveOptions);
     const httpsAgent = new Agent.HttpsAgent(keepAliveOptions);
     this.apiProvider = new ApiNetworkProvider(process.env.NUMBAT_API, {
-      timeout: mxConfig.proxyTimeout,
-      httpAgent: mxConfig.keepAlive ? httpAgent : null,
-      httpsAgent: mxConfig.keepAlive ? httpsAgent : null,
+      timeout: drtConfig.proxyTimeout,
+      httpAgent: drtConfig.keepAlive ? httpAgent : null,
+      httpsAgent: drtConfig.keepAlive ? httpsAgent : null,
       headers: {
         origin: 'NftService',
       },
@@ -64,7 +64,7 @@ export class MxApiService {
         message: error.message,
         name: error.name,
       };
-      this.logger.error(`An error occurred while calling the mx api service on url ${resourceUrl}`, {
+      this.logger.error(`An error occurred while calling the drt api service on url ${resourceUrl}`, {
         path: `${MxApiService.name}.${name}`,
         error: customError,
       });
@@ -92,7 +92,7 @@ export class MxApiService {
         message: error.message,
         name: error.name,
       };
-      this.logger.error(`An error occurred while calling the mx api service on url ${resourceUrl}`, {
+      this.logger.error(`An error occurred while calling the drt api service on url ${resourceUrl}`, {
         path: `${MxApiService.name}.${name}`,
         error: customError,
       });

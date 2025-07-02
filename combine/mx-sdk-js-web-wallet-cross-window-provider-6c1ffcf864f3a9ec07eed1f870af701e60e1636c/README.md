@@ -1,4 +1,4 @@
-# mx-sdk-js-web-wallet-cross-window-provider
+# drt-sdk-js-web-wallet-cross-window-provider
 
 Signing provider for dApps: Web Wallet Cross Window Provider. 
 
@@ -8,7 +8,7 @@ The connection between the dApp and the Web Wallet is established through a cros
 
 Documentation is available on [docs.dharitri.org](https://docs.dharitri.org/sdk-and-tools/sdk-js/sdk-js-signing-providers/#the-web-wallet-cross-window-provider), while an integration example can be found [here](https://github.com/TerraDharitri/drt-js-sdk-examples/tree/main/signing-providers).
 
-Note that **we recommend using [sdk-dapp](https://github.com/TerraDharitri/mx-sdk-dapp)** instead of integrating the signing provider on your own.
+Note that **we recommend using [sdk-dapp](https://github.com/TerraDharitri/drt-sdk-dapp)** instead of integrating the signing provider on your own.
 
 ## Distribution
 

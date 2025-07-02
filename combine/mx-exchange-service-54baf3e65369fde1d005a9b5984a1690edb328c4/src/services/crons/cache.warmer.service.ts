@@ -2,7 +2,7 @@ import { Inject, Injectable } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
 import { CacheService } from 'src/services/caching/cache.service';
 import { generateCacheKeyFromParams } from 'src/utils/generate-cache-key';
-import { MXApiService } from '../dharitri-communication/mx.api.service';
+import { MXApiService } from '../dharitri-communication/drt.api.service';
 import { PUB_SUB } from '../redis.pubSub.module';
 import { RedisPubSub } from 'graphql-redis-subscriptions';
 import { Constants } from '@terradharitri/sdk-nestjs-common';
@@ -10,7 +10,7 @@ import axios from 'axios';
 import moment from 'moment';
 import { MetricsCollector } from 'src/utils/metrics.collector';
 import { PerformanceProfiler } from 'src/utils/performance.profiler';
-import { MXDataApiService } from '../dharitri-communication/mx.data.api.service';
+import { MXDataApiService } from '../dharitri-communication/drt.data.api.service';
 import { Locker } from '@terradharitri/sdk-nestjs-common';
 import { WINSTON_MODULE_PROVIDER } from 'nest-winston';
 import { Logger } from 'winston';
@@ -89,7 +89,7 @@ export class CacheWarmerService {
                     this.logger.info(
                         `Started warming up query '${JSON.stringify(
                             keyValue,
-                        )}' for url '${process.env.MX_DEX_URL}'`,
+                        )}' for url '${process.env.DRT_DEX_URL}'`,
                         { context: 'GuestCache' },
                     );
                     const profiler = new PerformanceProfiler();
@@ -97,7 +97,7 @@ export class CacheWarmerService {
                     try {
                         // Get new data without cache and update it
                         const response = await axios.post(
-                            `${process.env.MX_DEX_URL}/graphql`,
+                            `${process.env.DRT_DEX_URL}/graphql`,
                             keyValue,
                             {
                                 headers: {
@@ -114,7 +114,7 @@ export class CacheWarmerService {
                             `Finished warming up query '${JSON.stringify(
                                 keyValue,
                             )}' for url '${
-                                process.env.MX_DEX_URL
+                                process.env.DRT_DEX_URL
                             }'. Response size: ${
                                 JSON.stringify(data).length
                             }. Duration: ${profiler.duration}`,
@@ -131,7 +131,7 @@ export class CacheWarmerService {
                         this.logger.error(
                             `An error occurred while warming up query '${JSON.stringify(
                                 keyValue,
-                            )}' for url '${process.env.MX_DEX_URL}'`,
+                            )}' for url '${process.env.DRT_DEX_URL}'`,
                             { context: 'GuestCache', trace: error.stack },
                         );
                     } finally {

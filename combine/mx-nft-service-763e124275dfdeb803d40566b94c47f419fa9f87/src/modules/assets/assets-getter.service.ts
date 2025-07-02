@@ -18,7 +18,7 @@ import { CollectionsGetterService } from '../nftCollections/collections-getter.s
 import { ElasticQuery, ElasticSortOrder, QueryConditionOptions, QueryOperator, QueryType } from '@terradharitri/sdk-nestjs-elastic';
 import { Constants } from '@terradharitri/sdk-nestjs-common';
 import { RedisCacheService } from '@terradharitri/sdk-nestjs-cache';
-import { QueryPagination } from 'src/common/services/mx-communication/models/query-pagination';
+import { QueryPagination } from 'src/common/services/drt-communication/models/query-pagination';
 import { constants } from 'src/config';
 import { ELASTIC_TOKENS_INDEX } from 'src/utils/constants';
 

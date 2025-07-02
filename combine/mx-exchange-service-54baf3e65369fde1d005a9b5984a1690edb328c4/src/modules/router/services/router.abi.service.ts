@@ -7,7 +7,7 @@ import { Injectable } from '@nestjs/common';
 import BigNumber from 'bignumber.js';
 import { PairTokens } from 'src/modules/pair/models/pair.model';
 import { GenericAbiService } from 'src/services/generics/generic.abi.service';
-import { MXProxyService } from '../../../services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from '../../../services/dharitri-communication/drt.proxy.service';
 import { EnableSwapByUserConfig } from '../models/factory.model';
 import { PairMetadata } from '../models/pair.metadata.model';
 import { ErrorLoggerAsync } from '@terradharitri/sdk-nestjs-common';
@@ -22,8 +22,8 @@ export class RouterAbiService
     extends GenericAbiService
     implements IRouterAbiService
 {
-    constructor(protected readonly mxProxy: MXProxyService) {
-        super(mxProxy);
+    constructor(protected readonly drtProxy: MXProxyService) {
+        super(drtProxy);
     }
 
     @ErrorLoggerAsync()
@@ -37,7 +37,7 @@ export class RouterAbiService
     }
 
     async getAllPairsAddressRaw(): Promise<string[]> {
-        const contract = await this.mxProxy.getRouterSmartContract();
+        const contract = await this.drtProxy.getRouterSmartContract();
         const interaction: Interaction =
             contract.methodsExplicit.getAllPairsManagedAddresses();
 
@@ -58,7 +58,7 @@ export class RouterAbiService
     }
 
     async getPairsMetadataRaw(): Promise<PairMetadata[]> {
-        const contract = await this.mxProxy.getRouterSmartContract();
+        const contract = await this.drtProxy.getRouterSmartContract();
         const interaction: Interaction =
             contract.methodsExplicit.getAllPairContractMetadata();
 
@@ -82,7 +82,7 @@ export class RouterAbiService
     }
 
     async getPairCreationEnabledRaw(): Promise<boolean> {
-        const contract = await this.mxProxy.getRouterSmartContract();
+        const contract = await this.drtProxy.getRouterSmartContract();
         const interaction: Interaction =
             contract.methodsExplicit.getPairCreationEnabled();
         const response = await this.getGenericData(interaction);
@@ -99,7 +99,7 @@ export class RouterAbiService
     }
 
     async getStateRaw(): Promise<boolean> {
-        const contract = await this.mxProxy.getRouterSmartContract();
+        const contract = await this.drtProxy.getRouterSmartContract();
         const interaction: Interaction = contract.methodsExplicit.getState();
         const response = await this.getGenericData(interaction);
         return response.firstValue.valueOf();
@@ -115,7 +115,7 @@ export class RouterAbiService
     }
 
     async getOwnerRaw(): Promise<string> {
-        const contract = await this.mxProxy.getRouterSmartContract();
+        const contract = await this.drtProxy.getRouterSmartContract();
         const interaction: Interaction = contract.methodsExplicit.getOwner();
         const response = await this.getGenericData(interaction);
         return response.firstValue.valueOf().bech32();
@@ -131,7 +131,7 @@ export class RouterAbiService
     }
 
     async getAllPairTokensRaw(): Promise<PairTokens[]> {
-        const contract = await this.mxProxy.getRouterSmartContract();
+        const contract = await this.drtProxy.getRouterSmartContract();
         const interaction: Interaction =
             contract.methodsExplicit.getAllPairTokens();
         const response = await this.getGenericData(interaction);
@@ -153,7 +153,7 @@ export class RouterAbiService
     }
 
     async getPairTemplateAddressRaw(): Promise<string> {
-        const contract = await this.mxProxy.getRouterSmartContract();
+        const contract = await this.drtProxy.getRouterSmartContract();
         const interaction: Interaction =
             contract.methodsExplicit.getPairTemplateAddress();
         const response = await this.getGenericData(interaction);
@@ -170,7 +170,7 @@ export class RouterAbiService
     }
 
     async getTemporaryOwnerPeriodRaw(): Promise<string> {
-        const contract = await this.mxProxy.getRouterSmartContract();
+        const contract = await this.drtProxy.getRouterSmartContract();
         const interaction: Interaction =
             contract.methodsExplicit.getTemporaryOwnerPeriod();
         const response = await this.getGenericData(interaction);
@@ -191,7 +191,7 @@ export class RouterAbiService
     async getEnableSwapByUserConfigRaw(
         tokenID: string,
     ): Promise<EnableSwapByUserConfig> {
-        const contract = await this.mxProxy.getRouterSmartContract();
+        const contract = await this.drtProxy.getRouterSmartContract();
         const interaction: Interaction =
             contract.methodsExplicit.getEnableSwapByUserConfig([
                 TokenIdentifierValue.dcdtTokenIdentifier(tokenID),
@@ -228,7 +228,7 @@ export class RouterAbiService
     }
 
     async getCommonTokensForUserPairsRaw(): Promise<string[]> {
-        const contract = await this.mxProxy.getRouterSmartContract();
+        const contract = await this.drtProxy.getRouterSmartContract();
         const interaction: Interaction =
             contract.methodsExplicit.getCommonTokensForUserPairs();
 

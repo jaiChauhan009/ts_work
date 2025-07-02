@@ -1,5 +1,5 @@
 import { Inject, Injectable, Logger, forwardRef } from '@nestjs/common';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { AuctionEntity } from 'src/db/auctions';
 import { AssetByIdentifierService } from 'src/modules/assets';
 import { ExternalAuctionEventEnum, KroganSwapAuctionEventEnum } from 'src/modules/assets/models';
@@ -69,9 +69,9 @@ export class StartAuctionEventHandler {
     hash: string,
     auctionTokenEventMarketplace: Marketplace,
   ) {
-    let decimals = mxConfig.decimals;
+    let decimals = drtConfig.decimals;
     const asset = await this.assetByIdentifierService.getAsset(auctionIdentifier);
-    if (topics.paymentToken !== mxConfig.rewa) {
+    if (topics.paymentToken !== drtConfig.rewa) {
       const paymentToken = await this.usdPriceService.getToken(topics.paymentToken);
       decimals = paymentToken.decimals;
     }

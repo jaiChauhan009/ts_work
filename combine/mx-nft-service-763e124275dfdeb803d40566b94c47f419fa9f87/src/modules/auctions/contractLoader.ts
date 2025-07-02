@@ -6,7 +6,7 @@ import {
   TransactionsFactoryConfig,
 } from '@terradharitri/sdk-core';
 import * as fs from 'fs';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { MarketplaceUtils } from './marketplaceUtils';
 
 export class ContractLoader {
@@ -25,14 +25,14 @@ export class ContractLoader {
 
   static async getFactory(abiPath?: string): Promise<SmartContractTransactionsFactory> {
     return new SmartContractTransactionsFactory({
-      config: new TransactionsFactoryConfig({ chainID: mxConfig.chainID }),
+      config: new TransactionsFactoryConfig({ chainID: drtConfig.chainID }),
       abi: await ContractLoader.load(abiPath ?? MarketplaceUtils.commonMarketplaceAbiPath),
     });
   }
 
   static async getController(networkProvider: INetworkProvider, abiPath?: string): Promise<SmartContractController> {
     return new SmartContractController({
-      chainID: mxConfig.chainID,
+      chainID: drtConfig.chainID,
       networkProvider: networkProvider,
       abi: await ContractLoader.load(abiPath ?? MarketplaceUtils.commonMarketplaceAbiPath),
     });

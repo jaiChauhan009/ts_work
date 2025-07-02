@@ -6,7 +6,7 @@ import {
 import { ApiModule, ApiModuleOptions } from '@terradharitri/sdk-nestjs-http';
 import { DynamicModule } from '@nestjs/common';
 import { CommonAppModule } from 'src/common.app.module';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { ApiConfigService } from 'src/helpers/api.config.service';
 import { CacheModule } from 'src/services/caching/cache.module';
 
@@ -48,7 +48,7 @@ export class DynamicModuleUtils {
                         configService.getRateLimiterSecret() ?? '',
                     serverTimeout:
                         configService.getKeepAliveTimeoutDownstream() ?? 60000,
-                    useKeepAliveAgent: mxConfig.keepAlive,
+                    useKeepAliveAgent: drtConfig.keepAlive,
                 }),
         });
     }

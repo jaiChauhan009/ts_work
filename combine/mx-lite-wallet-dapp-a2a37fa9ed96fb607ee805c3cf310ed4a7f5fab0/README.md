@@ -157,7 +157,7 @@ With the PostMessageListener, the HookOutcomeComponent is skipped and the user i
 
 ## Roadmap
 
-See the [open issues](https://github.com/TerraDharitri/mx-template-dapp/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/TerraDharitri/drt-template-dapp/issues) for a list of proposed features (and known issues).
 
 ## Contributing
 

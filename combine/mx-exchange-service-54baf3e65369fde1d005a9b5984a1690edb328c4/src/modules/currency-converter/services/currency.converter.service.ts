@@ -13,7 +13,7 @@ import BigNumber from 'bignumber.js';
 import {
     constantsConfig,
     cryptoRatesIdentifiers,
-    mxConfig,
+    drtConfig,
     tokenProviderUSD,
 } from 'src/config';
 import { TokenService } from 'src/modules/tokens/services/token.service';
@@ -72,7 +72,7 @@ export class CurrencyConverterService {
                 const price = tokenPrices[index];
                 const [symbol, name] =
                     identifier === tokenProviderUSD
-                        ? [mxConfig.REWAIdentifier, mxConfig.REWAIdentifier]
+                        ? [drtConfig.REWAIdentifier, drtConfig.REWAIdentifier]
                         : [identifier.split('-')[0], token.name];
 
                 const rate = new BigNumber(usdcPrice)
@@ -96,7 +96,7 @@ export class CurrencyConverterService {
 
         return allCurrencyRates.filter((rate) => {
             if (
-                symbols.includes(mxConfig.REWAIdentifier) &&
+                symbols.includes(drtConfig.REWAIdentifier) &&
                 rate.symbol === tokenProviderUSD
             ) {
                 return true;
@@ -157,7 +157,7 @@ export class CurrencyConverterService {
     getCryptoSymbols(): string[] {
         return cryptoRatesIdentifiers.map((identifier) =>
             identifier === tokenProviderUSD
-                ? mxConfig.REWAIdentifier
+                ? drtConfig.REWAIdentifier
                 : identifier.split('-')[0],
         );
     }

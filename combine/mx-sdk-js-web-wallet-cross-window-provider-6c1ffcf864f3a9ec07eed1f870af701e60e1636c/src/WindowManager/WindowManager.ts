@@ -22,7 +22,7 @@ export class WindowManager {
   public walletWindow: Window | null = null;
   private activeListeners: Map<string, (event: MessageEvent) => void> =
     new Map();
-  private static readonly SESSION_STORAGE_KEY = 'mx-wallet-session-id';
+  private static readonly SESSION_STORAGE_KEY = 'drt-wallet-session-id';
 
   constructor() {
     safeWindow.addEventListener?.('beforeunload', () => {

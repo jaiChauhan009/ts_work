@@ -13,7 +13,7 @@ import { UpdateAttributesEvent } from '../entities/auction/update-attributes.eve
 export class NftEventsService {
   constructor(
     private feedEventsSenderService: FeedEventsSenderService,
-    private mxApiService: MxApiService,
+    private drtApiService: MxApiService,
     private readonly cacheEventsPublisherService: CacheEventsPublisherService,
   ) { }
 
@@ -24,7 +24,7 @@ export class NftEventsService {
           const mintEvent = new MintEvent(event);
           const createTopics = mintEvent.getTopics();
           const identifier = `${createTopics.collection}-${createTopics.nonce}`;
-          const collection = await this.mxApiService.getCollectionByIdentifierForQuery(createTopics.collection, 'fields=name,type');
+          const collection = await this.drtApiService.getCollectionByIdentifierForQuery(createTopics.collection, 'fields=name,type');
           if (collection?.type === NftTypeEnum.NonFungibleDCDT || collection?.type === NftTypeEnum.SemiFungibleDCDT) {
             await this.feedEventsSenderService.sendMintEvent(identifier, mintEvent, createTopics, collection);
             this.triggerCacheInvalidation(createTopics.collection, CacheEventTypeEnum.Mint);
@@ -34,7 +34,7 @@ export class NftEventsService {
         case NftEventEnum.DCDTNFTTransfer:
           const transferEvent = new TransferEvent(event);
           const transferTopics = transferEvent.getTopics();
-          const collectionInfo = await this.mxApiService.getCollectionByIdentifierForQuery(transferTopics.collection, 'fields=name,type');
+          const collectionInfo = await this.drtApiService.getCollectionByIdentifierForQuery(transferTopics.collection, 'fields=name,type');
           if (collectionInfo?.type === NftTypeEnum.NonFungibleDCDT || collectionInfo?.type === NftTypeEnum.SemiFungibleDCDT) {
             await this.triggerCacheInvalidationWithOwner(
               `${transferTopics.collection}-${transferTopics.nonce}`,
@@ -49,7 +49,7 @@ export class NftEventsService {
           const burnEvent = new BurnEvent(event);
           const burnTopics = burnEvent.getTopics();
           await new Promise((resolve) => setTimeout(resolve, 500));
-          const burnCollection = await this.mxApiService.getCollectionByIdentifierForQuery(burnTopics.collection, 'fields=name,type');
+          const burnCollection = await this.drtApiService.getCollectionByIdentifierForQuery(burnTopics.collection, 'fields=name,type');
           if (burnCollection?.type === NftTypeEnum.NonFungibleDCDT || burnCollection?.type === NftTypeEnum.SemiFungibleDCDT) {
             await this.triggerCacheInvalidation(`${burnTopics.collection}-${burnTopics.nonce}`, CacheEventTypeEnum.AssetRefresh);
           }
@@ -61,7 +61,7 @@ export class NftEventsService {
           const multiTransferTopics = multiTransferEvent.getTopics();
           for (const pair of multiTransferTopics.pairs) {
             if (pair.nonce !== '') {
-              const collectionDetails = await this.mxApiService.getCollectionByIdentifierForQuery(pair.collection, 'fields=name,type');
+              const collectionDetails = await this.drtApiService.getCollectionByIdentifierForQuery(pair.collection, 'fields=name,type');
               if (collectionDetails?.type === NftTypeEnum.NonFungibleDCDT || collectionDetails?.type === NftTypeEnum.SemiFungibleDCDT) {
                 this.triggerCacheInvalidationWithOwner(
                   `${pair.collection}-${pair.nonce}`,
@@ -80,7 +80,7 @@ export class NftEventsService {
         case NftEventEnum.DCDTNFTUpdateAttributes:
           const updateEvent = new UpdateAttributesEvent(event);
           const updateTopics = updateEvent.getTopics();
-          const collectionUpdateInfo = await this.mxApiService.getCollectionByIdentifierForQuery(updateTopics.collection, 'fields=name,type');
+          const collectionUpdateInfo = await this.drtApiService.getCollectionByIdentifierForQuery(updateTopics.collection, 'fields=name,type');
           if (collectionUpdateInfo?.type === NftTypeEnum.NonFungibleDCDT || collectionUpdateInfo?.type === NftTypeEnum.SemiFungibleDCDT) {
             await this.triggerCacheInvalidation(
               `${updateTopics.collection}-${updateTopics.nonce}`,

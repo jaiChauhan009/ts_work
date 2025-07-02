@@ -16,7 +16,7 @@ import {
     EnterFarmProxyArgs,
     ExitFarmProxyArgs,
 } from '../../models/proxy-farm.args';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { InputTokenModel } from 'src/models/inputToken.model';
 import { farmType, farmVersion } from 'src/utils/farm.utils';
 import {
@@ -28,7 +28,7 @@ import { proxyVersion } from 'src/utils/proxy.utils';
 import { PairAbiService } from 'src/modules/pair/services/pair.abi.service';
 import { FarmAbiFactory } from 'src/modules/farm/farm.abi.factory';
 import { ProxyFarmAbiService } from './proxy.farm.abi.service';
-import { MXApiService } from 'src/services/dharitri-communication/mx.api.service';
+import { MXApiService } from 'src/services/dharitri-communication/drt.api.service';
 import {
     WrappedFarmTokenAttributes,
     WrappedFarmTokenAttributesV2,
@@ -40,8 +40,8 @@ import { TransactionOptions } from 'src/modules/common/transaction.options';
 @Injectable()
 export class ProxyFarmTransactionsService {
     constructor(
-        private readonly mxProxy: MXProxyService,
-        private readonly mxApi: MXApiService,
+        private readonly drtProxy: MXProxyService,
+        private readonly drtApi: MXApiService,
         private readonly farmAbi: FarmAbiFactory,
         private readonly farmAbiV2: FarmAbiServiceV2,
         private readonly pairService: PairService,
@@ -67,7 +67,7 @@ export class ProxyFarmTransactionsService {
                 ? gasConfig.proxy.farms[version].enterFarm.withTokenMerge
                 : gasConfig.proxy.farms[version].enterFarm.default;
 
-        return this.mxProxy.getProxyDexSmartContractTransaction(
+        return this.drtProxy.getProxyDexSmartContractTransaction(
             proxyAddress,
             new TransactionOptions({
                 sender: sender,
@@ -99,7 +99,7 @@ export class ProxyFarmTransactionsService {
     ): Promise<TransactionModel> {
         const gasLimit = await this.getExitFarmProxyGasLimit(args);
 
-        return this.mxProxy.getProxyDexSmartContractTransaction(
+        return this.drtProxy.getProxyDexSmartContractTransaction(
             proxyAddress,
             new TransactionOptions({
                 sender: sender,
@@ -143,7 +143,7 @@ export class ProxyFarmTransactionsService {
             gasConfig.proxy.farms[version][type].claimRewards +
             lockedAssetCreateGas;
 
-        return this.mxProxy.getProxyDexSmartContractTransaction(
+        return this.drtProxy.getProxyDexSmartContractTransaction(
             proxyAddress,
             new TransactionOptions({
                 sender: sender,
@@ -174,7 +174,7 @@ export class ProxyFarmTransactionsService {
     ): Promise<TransactionModel> {
         const version = farmVersion(args.farmAddress);
 
-        return this.mxProxy.getProxyDexSmartContractTransaction(
+        return this.drtProxy.getProxyDexSmartContractTransaction(
             proxyAddress,
             new TransactionOptions({
                 sender: sender,
@@ -205,7 +205,7 @@ export class ProxyFarmTransactionsService {
     ): Promise<TransactionModel> {
         const version = farmVersion(args.farmAddress);
 
-        return this.mxProxy.getProxyDexSmartContractTransaction(
+        return this.drtProxy.getProxyDexSmartContractTransaction(
             proxyAddress,
             new TransactionOptions({
                 sender: sender,
@@ -244,7 +244,7 @@ export class ProxyFarmTransactionsService {
 
         const gasLimit = gasConfig.proxy.farms.defaultMergeWFMT * tokens.length;
 
-        return this.mxProxy.getProxyDexSmartContractTransaction(
+        return this.drtProxy.getProxyDexSmartContractTransaction(
             proxyAddress,
             new TransactionOptions({
                 sender: sender,
@@ -276,7 +276,7 @@ export class ProxyFarmTransactionsService {
         const wrappedFarmTokenID = await this.proxyFarmAbi.wrappedFarmTokenID(
             proxyAddress,
         );
-        const userNftsCount = await this.mxApi.getNftsCountForUser(sender);
+        const userNftsCount = await this.drtApi.getNftsCountForUser(sender);
         const userNfts = await this.contextGetter.getNftsForUser(
             sender,
             0,
@@ -331,7 +331,7 @@ export class ProxyFarmTransactionsService {
         payment: InputTokenModel,
         lockEpochs: number,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getProxyDexSmartContractTransaction(
+        return this.drtProxy.getProxyDexSmartContractTransaction(
             proxyAddress,
             new TransactionOptions({
                 sender: sender,

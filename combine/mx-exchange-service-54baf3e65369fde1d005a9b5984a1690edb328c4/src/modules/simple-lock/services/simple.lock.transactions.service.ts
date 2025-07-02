@@ -7,7 +7,7 @@ import {
 } from '@terradharitri/sdk-core';
 import { Injectable } from '@nestjs/common';
 import BigNumber from 'bignumber.js';
-import { mxConfig, gasConfig } from 'src/config';
+import { drtConfig, gasConfig } from 'src/config';
 import { InputTokenModel } from 'src/models/inputToken.model';
 import { TransactionModel } from 'src/models/transaction.model';
 import {
@@ -18,7 +18,7 @@ import { PairService } from 'src/modules/pair/services/pair.service';
 import { DecodeAttributesModel } from 'src/modules/proxy/models/proxy.args';
 import { WrapTransactionsService } from 'src/modules/wrapping/services/wrap.transactions.service';
 import { ContextGetterService } from 'src/services/context/context.getter.service';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { farmType, farmVersion } from 'src/utils/farm.utils';
 import { FarmTypeEnumType } from '../models/simple.lock.model';
 import { SimpleLockService } from './simple.lock.service';
@@ -37,7 +37,7 @@ export class SimpleLockTransactionService {
         protected readonly wrapAbi: WrapAbiService,
         protected readonly wrapTransaction: WrapTransactionsService,
         protected readonly contextGetter: ContextGetterService,
-        protected readonly mxProxy: MXProxyService,
+        protected readonly drtProxy: MXProxyService,
     ) {}
 
     async lockTokens(
@@ -49,7 +49,7 @@ export class SimpleLockTransactionService {
         const currentEpoch = await this.contextGetter.getCurrentEpoch();
         const unlockEpoch = currentEpoch + lockEpochs;
 
-        return this.mxProxy.getSimpleLockSmartContractTransaction(
+        return this.drtProxy.getSimpleLockSmartContractTransaction(
             simpleLockAddress,
             new TransactionOptions({
                 sender: sender,
@@ -73,7 +73,7 @@ export class SimpleLockTransactionService {
         sender: string,
         inputTokens: InputTokenModel,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getSimpleLockSmartContractTransaction(
+        return this.drtProxy.getSimpleLockSmartContractTransaction(
             simpleLockAddress,
             new TransactionOptions({
                 sender: sender,
@@ -108,7 +108,7 @@ export class SimpleLockTransactionService {
 
         const [firstTokenInput, secondTokenInput] = inputTokens;
 
-        switch (mxConfig.REWAIdentifier) {
+        switch (drtConfig.REWAIdentifier) {
             case firstTokenInput.tokenID:
                 firstTokenInput.tokenID = wrappedTokenID;
                 transactions.push(
@@ -193,7 +193,7 @@ export class SimpleLockTransactionService {
         const amount0Min = amount0.multipliedBy(1 - tolerance).integerValue();
         const amount1Min = amount1.multipliedBy(1 - tolerance).integerValue();
 
-        return this.mxProxy.getSimpleLockSmartContractTransaction(
+        return this.drtProxy.getSimpleLockSmartContractTransaction(
             simpleLockAddress,
             new TransactionOptions({
                 sender: sender,
@@ -258,7 +258,7 @@ export class SimpleLockTransactionService {
             .integerValue();
 
         const transaction =
-            await this.mxProxy.getSimpleLockSmartContractTransaction(
+            await this.drtProxy.getSimpleLockSmartContractTransaction(
                 simpleLockAddress,
                 new TransactionOptions({
                     sender: sender,
@@ -316,7 +316,7 @@ export class SimpleLockTransactionService {
                 ? gasConfig.simpleLock.enterFarmLockedToken.withTokenMerge
                 : gasConfig.simpleLock.enterFarmLockedToken.default;
 
-        return this.mxProxy.getSimpleLockSmartContractTransaction(
+        return this.drtProxy.getSimpleLockSmartContractTransaction(
             simpleLockAddress,
             new TransactionOptions({
                 sender: sender,
@@ -355,7 +355,7 @@ export class SimpleLockTransactionService {
 
         await this.validateInputFarmProxyToken(inputTokens, simpleLockAddress);
 
-        return this.mxProxy.getSimpleLockSmartContractTransaction(
+        return this.drtProxy.getSimpleLockSmartContractTransaction(
             simpleLockAddress,
             new TransactionOptions({
                 sender: sender,
@@ -385,7 +385,7 @@ export class SimpleLockTransactionService {
     ): Promise<TransactionModel> {
         await this.validateInputFarmProxyToken(inputTokens, simpleLockAddress);
 
-        return this.mxProxy.getSimpleLockSmartContractTransaction(
+        return this.drtProxy.getSimpleLockSmartContractTransaction(
             simpleLockAddress,
             new TransactionOptions({
                 sender: sender,
@@ -411,7 +411,7 @@ export class SimpleLockTransactionService {
     ): Promise<TransactionModel> {
         await this.validateInputFarmProxyToken(inputTokens, simpleLockAddress);
 
-        return this.mxProxy.getSimpleLockSmartContractTransaction(
+        return this.drtProxy.getSimpleLockSmartContractTransaction(
             simpleLockAddress,
             new TransactionOptions({
                 sender: sender,

@@ -10,8 +10,8 @@ import BigNumber from 'bignumber.js';
 import { scAddress } from 'src/config';
 import { DcdtTokenPaymentModel } from 'src/modules/tokens/models/dcdt.token.payment.model';
 import { GenericAbiService } from 'src/services/generics/generic.abi.service';
-import { MXGatewayService } from 'src/services/dharitri-communication/mx.gateway.service';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXGatewayService } from 'src/services/dharitri-communication/drt.gateway.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { SCPermissions, ScheduledTransferModel } from '../models/escrow.model';
 import { ErrorLoggerAsync } from '@terradharitri/sdk-nestjs-common';
 import { GetOrSetCache } from 'src/helpers/decorators/caching.decorator';
@@ -27,12 +27,12 @@ export class EscrowAbiService
     implements EscrowAbiServiceInterface
 {
     constructor(
-        protected readonly mxProxy: MXProxyService,
-        private readonly mxGateway: MXGatewayService,
+        protected readonly drtProxy: MXProxyService,
+        private readonly drtGateway: MXGatewayService,
         private readonly cachingService: CacheService,
         private readonly escrowSetter: EscrowSetterService,
     ) {
-        super(mxProxy);
+        super(drtProxy);
     }
 
     @ErrorLoggerAsync({
@@ -51,7 +51,7 @@ export class EscrowAbiService
     async getScheduledTransfersRaw(
         receiverAddress: string,
     ): Promise<ScheduledTransferModel[]> {
-        const contract = await this.mxProxy.getEscrowContract();
+        const contract = await this.drtProxy.getEscrowContract();
         const interaction: Interaction =
             contract.methodsExplicit.getScheduledTransfers([
                 new AddressValue(Address.fromString(receiverAddress)),
@@ -93,7 +93,7 @@ export class EscrowAbiService
     }
 
     async getAllSendersRaw(receiverAddress: string): Promise<string[]> {
-        const contract = await this.mxProxy.getEscrowContract();
+        const contract = await this.drtProxy.getEscrowContract();
         const interaction: Interaction = contract.methodsExplicit.getAllSenders(
             [new AddressValue(Address.fromString(receiverAddress))],
         );
@@ -150,7 +150,7 @@ export class EscrowAbiService
     }
 
     async getSenderLastTransferEpochRaw(address: string): Promise<number> {
-        const hexValue = await this.mxGateway.getSCStorageKeys(
+        const hexValue = await this.drtGateway.getSCStorageKeys(
             scAddress.escrow,
             ['senderLastTransferEpoch', Address.fromString(address)],
         );
@@ -169,7 +169,7 @@ export class EscrowAbiService
     }
 
     async getReceiverLastTransferEpochRaw(address: string): Promise<number> {
-        const hexValue = await this.mxGateway.getSCStorageKeys(
+        const hexValue = await this.drtGateway.getSCStorageKeys(
             scAddress.escrow,
             ['receiverLastTransferEpoch', Address.fromString(address)],
         );
@@ -187,7 +187,7 @@ export class EscrowAbiService
     }
 
     async getEnergyFactoryAddressRaw(): Promise<string> {
-        const hexValue = await this.mxGateway.getSCStorageKeys(
+        const hexValue = await this.drtGateway.getSCStorageKeys(
             scAddress.escrow,
             ['energyFactoryAddress'],
         );
@@ -205,7 +205,7 @@ export class EscrowAbiService
     }
 
     async getLockedTokenIDRaw(): Promise<string> {
-        const hexValue = await this.mxGateway.getSCStorageKeys(
+        const hexValue = await this.drtGateway.getSCStorageKeys(
             scAddress.escrow,
             ['lockedTokenId'],
         );
@@ -223,7 +223,7 @@ export class EscrowAbiService
     }
 
     async getMinLockEpochsRaw(): Promise<number> {
-        const hexValue = await this.mxGateway.getSCStorageKeys(
+        const hexValue = await this.drtGateway.getSCStorageKeys(
             scAddress.escrow,
             ['minLockEpochs'],
         );
@@ -242,7 +242,7 @@ export class EscrowAbiService
     }
 
     async getEpochCooldownDurationRaw(): Promise<number> {
-        const hexValue = await this.mxGateway.getSCStorageKeys(
+        const hexValue = await this.drtGateway.getSCStorageKeys(
             scAddress.escrow,
             ['epochsCooldownDuration'],
         );
@@ -268,7 +268,7 @@ export class EscrowAbiService
     }
 
     async getAddressPermissionRaw(address: string): Promise<SCPermissions[]> {
-        const contract = await this.mxProxy.getEscrowContract();
+        const contract = await this.drtProxy.getEscrowContract();
         const interaction: Interaction =
             contract.methodsExplicit.getPermissions([
                 new AddressValue(Address.fromString(address)),
@@ -331,6 +331,6 @@ export class EscrowAbiService
     }
 
     async scKeysRaw(): Promise<object> {
-        return await this.mxGateway.getSCStorageKeys(scAddress.escrow, []);
+        return await this.drtGateway.getSCStorageKeys(scAddress.escrow, []);
     }
 }

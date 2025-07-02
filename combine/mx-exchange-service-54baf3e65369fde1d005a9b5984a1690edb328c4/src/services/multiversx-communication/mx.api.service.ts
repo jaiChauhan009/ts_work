@@ -1,4 +1,4 @@
-import { constantsConfig, mxConfig } from '../../config';
+import { constantsConfig, drtConfig } from '../../config';
 import { Inject, Injectable } from '@nestjs/common';
 import { DcdtToken } from 'src/modules/tokens/models/dcdtToken.model';
 import { NftCollection } from 'src/modules/tokens/models/nftCollection.model';
@@ -18,7 +18,7 @@ import {
     isNftCollectionValid,
 } from 'src/utils/token.type.compare';
 import { PendingExecutor } from 'src/utils/pending.executor';
-import { MXProxyService } from './mx.proxy.service';
+import { MXProxyService } from './drt.proxy.service';
 import { ContextTracker } from '@terradharitri/sdk-nestjs-common';
 
 type GenericGetArgs = {
@@ -35,13 +35,13 @@ export class MXApiService {
     constructor(
         private readonly apiConfigService: ApiConfigService,
         @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: Logger,
-        private readonly mxProxy: MXProxyService,
+        private readonly drtProxy: MXProxyService,
     ) {
         const keepAliveOptions = {
-            maxSockets: mxConfig.keepAliveMaxSockets,
-            maxFreeSockets: mxConfig.keepAliveMaxFreeSockets,
+            maxSockets: drtConfig.keepAliveMaxSockets,
+            maxFreeSockets: drtConfig.keepAliveMaxFreeSockets,
             timeout: this.apiConfigService.getKeepAliveTimeoutDownstream(),
-            freeSocketTimeout: mxConfig.keepAliveFreeSocketTimeout,
+            freeSocketTimeout: drtConfig.keepAliveFreeSocketTimeout,
             keepAlive: true,
         };
         const httpAgent = new Agent(keepAliveOptions);
@@ -50,9 +50,9 @@ export class MXApiService {
         this.apiProvider = new ApiNetworkProvider(
             this.apiConfigService.getApiUrl(),
             {
-                timeout: mxConfig.proxyTimeout,
-                httpAgent: mxConfig.keepAlive ? httpAgent : null,
-                httpsAgent: mxConfig.keepAlive ? httpsAgent : null,
+                timeout: drtConfig.proxyTimeout,
+                httpAgent: drtConfig.keepAlive ? httpAgent : null,
+                httpsAgent: drtConfig.keepAlive ? httpsAgent : null,
                 headers: {
                     origin: 'xExchangeService',
                 },
@@ -166,7 +166,7 @@ export class MXApiService {
             }
 
             if (!isDcdtTokenValid(dcdtToken)) {
-                const gatewayToken = await this.mxProxy
+                const gatewayToken = await this.drtProxy
                     .getService()
                     .getDefinitionOfFungibleToken(tokenID);
                 dcdtToken.identifier = gatewayToken.identifier;
@@ -190,7 +190,7 @@ export class MXApiService {
                 return undefined;
             }
             if (!isNftCollectionValid(collection)) {
-                const gatewayCollection = await this.mxProxy
+                const gatewayCollection = await this.drtProxy
                     .getService()
                     .getDefinitionOfTokenCollection(tokenID);
                 collection.decimals = gatewayCollection.decimals;
@@ -235,7 +235,7 @@ export class MXApiService {
 
         for (const token of userTokens) {
             if (!isDcdtTokenValid(token)) {
-                const gatewayToken = await this.mxProxy
+                const gatewayToken = await this.drtProxy
                     .getService()
                     .getDefinitionOfFungibleToken(token.identifier);
                 token.decimals = gatewayToken.decimals;
@@ -278,7 +278,7 @@ export class MXApiService {
 
         for (const nft of nfts) {
             if (!isNftCollectionValid(nft)) {
-                const gatewayCollection = await this.mxProxy
+                const gatewayCollection = await this.drtProxy
                     .getService()
                     .getDefinitionOfTokenCollection(nft.collection);
                 nft.decimals = gatewayCollection.decimals;

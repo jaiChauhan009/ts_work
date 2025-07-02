@@ -11,7 +11,7 @@ import {
 } from '@terradharitri/sdk-core';
 import { Injectable } from '@nestjs/common';
 import { MxApiService } from 'src/common';
-import { gas, mxConfig } from 'src/config';
+import { gas, drtConfig } from 'src/config';
 import { ContractLoader } from '../auctions/contractLoader';
 import { MarketplaceUtils } from '../auctions/marketplaceUtils';
 import { TransactionNode } from '../common/transaction';
@@ -19,18 +19,18 @@ import { DeployMinterRequest, UpgradeMinterRequest } from './models/requests/Dep
 
 @Injectable()
 export class ProxyDeployerAbiService {
-  constructor(private mxApiService: MxApiService) {}
+  constructor(private drtApiService: MxApiService) {}
   async getFactory(abiPath?: string): Promise<SmartContractTransactionsFactory> {
     return new SmartContractTransactionsFactory({
-      config: new TransactionsFactoryConfig({ chainID: mxConfig.chainID }),
+      config: new TransactionsFactoryConfig({ chainID: drtConfig.chainID }),
       abi: await ContractLoader.load(abiPath ?? MarketplaceUtils.commonMarketplaceAbiPath),
     });
   }
 
   async getController(abiPath?: string): Promise<SmartContractController> {
     return new SmartContractController({
-      chainID: mxConfig.chainID,
-      networkProvider: this.mxApiService.getService(),
+      chainID: drtConfig.chainID,
+      networkProvider: this.drtApiService.getService(),
       abi: await ContractLoader.load(abiPath ?? MarketplaceUtils.commonMarketplaceAbiPath),
     });
   }

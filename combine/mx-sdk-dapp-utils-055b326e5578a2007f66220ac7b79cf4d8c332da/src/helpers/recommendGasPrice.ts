@@ -4,7 +4,7 @@ export type RecommendGasPriceParamsType = {
   ppu: number;
 };
 
-// reference to original file: https://github.com/TerraDharitri/mx-chain-go/blob/MX-16624-sandbox/txcache/sandbox/sandbox.js#L1
+// reference to original file: https://github.com/TerraDharitri/drt-chain-go/blob/DRT-16624-sandbox/txcache/sandbox/sandbox.js#L1
 export function recommendGasPrice({
   transactionDataLength,
   transactionGasLimit,

@@ -46,7 +46,7 @@
     color: var(--mvx-text-color-primary);
 
     @media (min-width: 576px) {
-      @apply mvx:p-0 mvx:my-0 mvx:mx-1 mvx:flex;
+      @apply mvx:p-0 mvx:my-0 mvx:drt-1 mvx:flex;
     }
 
     &.inactive,
@@ -82,7 +82,7 @@
   }
 
   .pagination-items {
-    @apply mvx:flex mvx:gap-2 mvx:my-0 mvx:mx-1 mvx:items-center;
+    @apply mvx:flex mvx:gap-2 mvx:my-0 mvx:drt-1 mvx:items-center;
 
     .pagination-item-wrapper {
       @apply mvx:cursor-pointer mvx:text-center mvx:h-7 mvx:w-7 mvx:flex mvx:items-center mvx:justify-center;

@@ -2,9 +2,9 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  &.mx-spacing {
+  &.drt-spacing {
     @extend .px-2;
-    @extend .mx-lg-3;
+    @extend .drt-lg-3;
   }
 }
 

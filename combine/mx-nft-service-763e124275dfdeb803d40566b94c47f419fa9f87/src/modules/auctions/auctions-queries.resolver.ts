@@ -20,7 +20,7 @@ import { MyClaimableAuctionsFilters } from './models/MyClaimable.Filter';
 import { Marketplace } from '../marketplaces/models';
 import { MarketplaceProvider } from '../marketplaces/loaders/marketplace.loader';
 import { TokenFilter } from './models/Token.Filter';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { XOXNO_KEY } from 'src/utils/constants';
 import { CurrentPaymentTokensFilters } from './models/CurrentPaymentTokens.Filter';
 import { Fields } from '../common/fields.decorator';
@@ -117,7 +117,7 @@ export class AuctionsQueriesResolver extends BaseResolver(Auction) {
     })
     filters: TokenFilter,
   ) {
-    const { minBid, maxBid } = await this.auctionsGetterService.getMinMaxPrice(filters?.token ?? mxConfig.rewa);
+    const { minBid, maxBid } = await this.auctionsGetterService.getMinMaxPrice(filters?.token ?? drtConfig.rewa);
     return PriceRange.fromEntity(minBid, maxBid);
   }
 

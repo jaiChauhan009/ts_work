@@ -13,7 +13,7 @@ import { Locker } from '@terradharitri/sdk-nestjs-common';
 export class NftRarityService {
   constructor(
     private readonly logger: Logger,
-    private readonly mxApiService: MxApiService,
+    private readonly drtApiService: MxApiService,
     private readonly nftRarityElasticService: NftRarityElasticService,
     private readonly persistenceService: PersistenceService,
     private readonly nftRarityComputeService: NftRarityComputeService,
@@ -29,7 +29,7 @@ export class NftRarityService {
     const [elasticNfts, dbNfts, preferredAlgorithm]: [NftRarityData[], NftRarityEntity[], string] = await Promise.all([
       this.nftRarityElasticService.getAllCollectionNftsFromElastic(collectionTicker),
       this.persistenceService.findNftRarityByCollection(collectionTicker),
-      this.mxApiService.getCollectionPreferredAlgorithm(collectionTicker),
+      this.drtApiService.getCollectionPreferredAlgorithm(collectionTicker),
     ]);
 
     const areIdenticalRarities = this.areIdenticalRarities(elasticNfts, dbNfts);
@@ -48,7 +48,7 @@ export class NftRarityService {
 
     if (preferredAlgorithm === 'custom') {
       const [customRanks, customRanksElasticHash]: [CustomRank[], string] = await Promise.all([
-        this.mxApiService.getCollectionCustomRanks(collectionTicker),
+        this.drtApiService.getCollectionCustomRanks(collectionTicker),
         this.nftRarityElasticService.getCollectionCustomRanksHash(collectionTicker),
       ]);
       if (customRanks && !CustomRank.areIdenticalHashes(customRanks, customRanksElasticHash)) {
@@ -234,7 +234,7 @@ export class NftRarityService {
       let allNfts: NftRarityData[] = [];
       let nfts: NftRarityData[];
 
-      await this.mxApiService.getScrollableNftsByCollectionAfterNonceDesc(
+      await this.drtApiService.getScrollableNftsByCollectionAfterNonceDesc(
         collectionTicker,
         'identifier,nonce,metadata,score,rank,rarities,timestamp',
         async (nftsBatch) => {
@@ -249,9 +249,9 @@ export class NftRarityService {
       }
       allNfts = this.sortDescNftsByNonce(allNfts);
 
-      const preferredAlgorithm = await this.mxApiService.getCollectionPreferredAlgorithm(collectionTicker);
+      const preferredAlgorithm = await this.drtApiService.getCollectionPreferredAlgorithm(collectionTicker);
       if (preferredAlgorithm === 'custom') {
-        const customRanks = await this.mxApiService.getCollectionCustomRanks(collectionTicker);
+        const customRanks = await this.drtApiService.getCollectionCustomRanks(collectionTicker);
         return [NftRarityData.setCustomRanks(allNfts, customRanks), customRanks];
       }
       return [allNfts, []];
@@ -281,7 +281,7 @@ export class NftRarityService {
 
   private async isCollectionTooBig(collection: string, nftsCount?: number): Promise<[boolean, number]> {
     if (!nftsCount) {
-      nftsCount = await this.mxApiService.getCollectionNftsCount(collection);
+      nftsCount = await this.drtApiService.getCollectionNftsCount(collection);
     }
     if (nftsCount > constants.nftsCountThresholdForTraitAndRarityIndexing) {
       this.logger.log(

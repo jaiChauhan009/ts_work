@@ -25,7 +25,7 @@ export class MxFeedService {
         );
         return response.data;
       } catch (error) {
-        this.logger.error(`An error occurred while calling the mx feed api on url ${removeCredentialsFromUrl(url)}`, {
+        this.logger.error(`An error occurred while calling the drt feed api on url ${removeCredentialsFromUrl(url)}`, {
           path: `${MxFeedService.name}.${this.subscribe.name}`,
           identifier,
           exception: error,
@@ -53,7 +53,7 @@ export class MxFeedService {
         );
         return response.data;
       } catch (error) {
-        this.logger.error(`An error occurred while calling the mx feed api on url ${removeCredentialsFromUrl(url)}`, {
+        this.logger.error(`An error occurred while calling the drt feed api on url ${removeCredentialsFromUrl(url)}`, {
           path: `${MxFeedService.name}.${this.unsubscribe.name}`,
           reference,
           exception: error,
@@ -72,7 +72,7 @@ export class MxFeedService {
         const response = await this.apiService.post(url, feed, new ApiSettings({ apiKey: process.env.NUMBAT_FEED_API_KEY }));
         return response.data;
       } catch (error) {
-        this.logger.error(`An error occurred while calling the mx feed api on url ${removeCredentialsFromUrl(url)}`, {
+        this.logger.error(`An error occurred while calling the drt feed api on url ${removeCredentialsFromUrl(url)}`, {
           path: `${MxFeedService.name}.${this.addFeed.name}`,
           feed: feed,
           exception: error,

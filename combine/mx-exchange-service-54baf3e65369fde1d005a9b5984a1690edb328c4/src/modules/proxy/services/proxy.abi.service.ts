@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Interaction } from '@terradharitri/sdk-core/out/smartcontracts/interaction';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { GenericAbiService } from 'src/services/generics/generic.abi.service';
 import { ErrorLoggerAsync } from '@terradharitri/sdk-nestjs-common';
 import { GetOrSetCache } from 'src/helpers/decorators/caching.decorator';
@@ -12,8 +12,8 @@ export class ProxyAbiService
     extends GenericAbiService
     implements IProxyAbiService
 {
-    constructor(protected readonly mxProxy: MXProxyService) {
-        super(mxProxy);
+    constructor(protected readonly drtProxy: MXProxyService) {
+        super(drtProxy);
     }
 
     @ErrorLoggerAsync({
@@ -29,7 +29,7 @@ export class ProxyAbiService
     }
 
     async getAssetTokenIDRaw(proxyAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getProxyDexSmartContract(
+        const contract = await this.drtProxy.getProxyDexSmartContract(
             proxyAddress,
         );
         const interaction: Interaction =
@@ -51,7 +51,7 @@ export class ProxyAbiService
     }
 
     async getLockedAssetTokenIDRaw(proxyAddress: string): Promise<string[]> {
-        const contract = await this.mxProxy.getProxyDexSmartContract(
+        const contract = await this.drtProxy.getProxyDexSmartContract(
             proxyAddress,
         );
         const interaction: Interaction =

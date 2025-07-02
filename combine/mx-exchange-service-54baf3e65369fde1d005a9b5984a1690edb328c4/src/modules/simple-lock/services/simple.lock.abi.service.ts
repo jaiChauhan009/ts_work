@@ -1,6 +1,6 @@
 import { Interaction, TypedValue } from '@terradharitri/sdk-core';
 import { Injectable } from '@nestjs/common';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { GenericAbiService } from 'src/services/generics/generic.abi.service';
 import { ErrorLoggerAsync } from '@terradharitri/sdk-nestjs-common';
 import { GetOrSetCache } from 'src/helpers/decorators/caching.decorator';
@@ -12,8 +12,8 @@ export class SimpleLockAbiService
     extends GenericAbiService
     implements ISimpleLockAbiService
 {
-    constructor(protected readonly mxProxy: MXProxyService) {
-        super(mxProxy);
+    constructor(protected readonly drtProxy: MXProxyService) {
+        super(drtProxy);
     }
 
     @ErrorLoggerAsync({
@@ -29,7 +29,7 @@ export class SimpleLockAbiService
     }
 
     async getlockedTokenIDRaw(simpleLockAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getSimpleLockSmartContract(
+        const contract = await this.drtProxy.getSimpleLockSmartContract(
             simpleLockAddress,
         );
         const interaction: Interaction =
@@ -52,7 +52,7 @@ export class SimpleLockAbiService
     }
 
     async getLpProxyTokenIDRaw(simpleLockAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getSimpleLockSmartContract(
+        const contract = await this.drtProxy.getSimpleLockSmartContract(
             simpleLockAddress,
         );
         const interaction: Interaction =
@@ -75,7 +75,7 @@ export class SimpleLockAbiService
     }
 
     async getFarmProxyTokenIDRaw(simpleLockAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getSimpleLockSmartContract(
+        const contract = await this.drtProxy.getSimpleLockSmartContract(
             simpleLockAddress,
         );
         const interaction: Interaction =
@@ -100,7 +100,7 @@ export class SimpleLockAbiService
     async getIntermediatedPairsRaw(
         simpleLockAddress: string,
     ): Promise<string[]> {
-        const contract = await this.mxProxy.getSimpleLockSmartContract(
+        const contract = await this.drtProxy.getSimpleLockSmartContract(
             simpleLockAddress,
         );
         const interaction: Interaction =
@@ -127,7 +127,7 @@ export class SimpleLockAbiService
     async getIntermediatedFarmsRaw(
         simpleLockAddress: string,
     ): Promise<string[]> {
-        const contract = await this.mxProxy.getSimpleLockSmartContract(
+        const contract = await this.drtProxy.getSimpleLockSmartContract(
             simpleLockAddress,
         );
         const interaction: Interaction =

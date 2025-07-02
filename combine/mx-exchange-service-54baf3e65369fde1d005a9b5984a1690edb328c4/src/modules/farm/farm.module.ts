@@ -1,7 +1,7 @@
 import { Module, forwardRef } from '@nestjs/common';
 import { PairModule } from '../pair/pair.module';
 import { ContextModule } from '../../services/context/context.module';
-import { MXCommunicationModule } from '../../services/dharitri-communication/mx.communication.module';
+import { MXCommunicationModule } from '../../services/dharitri-communication/drt.communication.module';
 import { CommonAppModule } from 'src/common.app.module';
 import { TokenModule } from '../tokens/token.module';
 import { FarmQueryResolver } from './farm.query.resolver';

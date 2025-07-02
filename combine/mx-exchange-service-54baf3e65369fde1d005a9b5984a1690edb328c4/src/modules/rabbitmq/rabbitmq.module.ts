@@ -7,7 +7,7 @@ import { FarmHandlerService } from './handlers/farm.handler.service';
 import { RabbitMQProxyHandlerService } from './rabbitmq.proxy.handler.service';
 import { RabbitMqConsumer } from './rabbitmq.consumer';
 import { RabbitMQDcdtTokenHandlerService } from './rabbitmq.dcdtToken.handler.service';
-import { MXCommunicationModule } from 'src/services/dharitri-communication/mx.communication.module';
+import { MXCommunicationModule } from 'src/services/dharitri-communication/drt.communication.module';
 import { ContextModule } from 'src/services/context/context.module';
 import { RouterModule } from '../router/router.module';
 import { RouterHandlerService } from './handlers/router.handler.service';

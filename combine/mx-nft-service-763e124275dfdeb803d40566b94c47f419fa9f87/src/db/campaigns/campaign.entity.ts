@@ -1,4 +1,4 @@
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { BrandInfoViewResultType } from 'src/modules/campaigns/models/abi/BrandInfoViewAbi';
 import { Column, Entity, Index, OneToMany, Unique } from 'typeorm';
 import { BaseEntity } from '../base-entity';
@@ -59,7 +59,7 @@ export class CampaignEntity extends BaseEntity {
     campaign: BrandInfoViewResultType,
     address: string,
     maxNftsPerTransaction: number,
-    decimals: number = mxConfig.decimals,
+    decimals: number = drtConfig.decimals,
   ) {
     return campaign
       ? new CampaignEntity({

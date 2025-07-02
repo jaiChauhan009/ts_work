@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { ApiConfigService } from 'src/helpers/api.config.service';
-import { MXApiService } from './mx.api.service';
-import { MXGatewayService } from './mx.gateway.service';
-import { MXProxyService } from './mx.proxy.service';
+import { MXApiService } from './drt.api.service';
+import { MXGatewayService } from './drt.gateway.service';
+import { MXProxyService } from './drt.proxy.service';
 import { DynamicModuleUtils } from 'src/utils/dynamic.module.utils';
 
 @Module({

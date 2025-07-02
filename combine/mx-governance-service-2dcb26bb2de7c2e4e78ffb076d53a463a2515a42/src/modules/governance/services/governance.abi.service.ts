@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { GenericAbiService } from 'src/services/generics/generic.abi.service';
 import { ErrorLoggerAsync } from '@terradharitri/sdk-nestjs-common';
 import { ProposalVotes } from '../models/governance.proposal.votes.model';
@@ -9,7 +9,7 @@ import { DcdtTokenPaymentModel } from '../../tokens/models/dcdt.token.payment.mo
 import { DcdtTokenPayment } from '@terradharitri/sdk-exchange';
 import { GovernanceType, toGovernanceProposalStatus, } from '../../../utils/governance';
 import { TransactionModel } from '../../../models/transaction.model';
-import { gasConfig, mxConfig } from '../../../config';
+import { gasConfig, drtConfig } from '../../../config';
 import BigNumber from 'bignumber.js';
 import { BytesValue, U64Value, } from '@terradharitri/sdk-core/out/smartcontracts/typesystem';
 import { GovernanceTokenSnapshotMerkleService } from './governance.token.snapshot.merkle.service';
@@ -23,11 +23,11 @@ import { ResultsParser } from '@terradharitri/sdk-core/out';
 export class GovernanceTokenSnapshotAbiService extends GenericAbiService {
     protected type = GovernanceType.TOKEN_SNAPSHOT;
     constructor(
-        protected readonly mxProxy: MXProxyService,
+        protected readonly drtProxy: MXProxyService,
         protected readonly governanceMerkle: GovernanceTokenSnapshotMerkleService,
         protected readonly governanceDescription: GovernanceDescriptionService,
     ) {
-        super(mxProxy);
+        super(drtProxy);
     }
 
     @ErrorLoggerAsync()
@@ -37,7 +37,7 @@ export class GovernanceTokenSnapshotAbiService extends GenericAbiService {
         localTtl: CacheTtlInfo.ContractState.localTtl,
     })
     async getAddressShardID(scAddress: string): Promise<number> {
-        return await this.mxProxy.getAddressShardID(scAddress);
+        return await this.drtProxy.getAddressShardID(scAddress);
     }
 
     @ErrorLoggerAsync()
@@ -51,7 +51,7 @@ export class GovernanceTokenSnapshotAbiService extends GenericAbiService {
     }
 
     async minFeeForProposeRaw(scAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getGovernanceSmartContract(
+        const contract = await this.drtProxy.getGovernanceSmartContract(
             scAddress,
             this.type,
         );
@@ -72,7 +72,7 @@ export class GovernanceTokenSnapshotAbiService extends GenericAbiService {
     }
 
     async quorumRaw(scAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getGovernanceSmartContract(
+        const contract = await this.drtProxy.getGovernanceSmartContract(
             scAddress,
             this.type,
         );
@@ -93,7 +93,7 @@ export class GovernanceTokenSnapshotAbiService extends GenericAbiService {
     }
 
     async votingDelayInBlocksRaw(scAddress: string): Promise<number> {
-        const contract = await this.mxProxy.getGovernanceSmartContract(
+        const contract = await this.drtProxy.getGovernanceSmartContract(
             scAddress,
             this.type,
         );
@@ -114,7 +114,7 @@ export class GovernanceTokenSnapshotAbiService extends GenericAbiService {
     }
 
     async votingPeriodInBlocksRaw(scAddress: string): Promise<number> {
-        const contract = await this.mxProxy.getGovernanceSmartContract(
+        const contract = await this.drtProxy.getGovernanceSmartContract(
             scAddress,
             this.type,
         );
@@ -135,7 +135,7 @@ export class GovernanceTokenSnapshotAbiService extends GenericAbiService {
     }
 
     async feeTokenIdRaw(scAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getGovernanceSmartContract(
+        const contract = await this.drtProxy.getGovernanceSmartContract(
             scAddress,
             this.type,
         );
@@ -156,7 +156,7 @@ export class GovernanceTokenSnapshotAbiService extends GenericAbiService {
     }
 
     async withdrawPercentageDefeatedRaw(scAddress: string): Promise<number> {
-        const contract = await this.mxProxy.getGovernanceSmartContract(
+        const contract = await this.drtProxy.getGovernanceSmartContract(
             scAddress,
             this.type,
         );
@@ -177,14 +177,14 @@ export class GovernanceTokenSnapshotAbiService extends GenericAbiService {
     }
 
     async proposalsRaw(scAddress: string): Promise<GovernanceProposalModel[]> {
-        const contract = await this.mxProxy.getGovernanceSmartContract(
+        const contract = await this.drtProxy.getGovernanceSmartContract(
             scAddress,
             this.type,
         );
         const interaction = contract.methodsExplicit.getProposals();
 
         const query = interaction.check().buildQuery();
-        const queryResponse = await this.mxProxy
+        const queryResponse = await this.drtProxy
             .getService()
             .queryContract(query);
         const endpointDefinition = interaction.getEndpoint();
@@ -258,7 +258,7 @@ export class GovernanceTokenSnapshotAbiService extends GenericAbiService {
         scAddress: string,
         userAddress: string,
     ): Promise<number[]> {
-        const contract = await this.mxProxy.getGovernanceSmartContract(
+        const contract = await this.drtProxy.getGovernanceSmartContract(
             scAddress,
             this.type,
         );
@@ -289,7 +289,7 @@ export class GovernanceTokenSnapshotAbiService extends GenericAbiService {
         scAddress: string,
         proposalId: number,
     ): Promise<ProposalVotes> {
-        const contract = await this.mxProxy.getGovernanceSmartContract(
+        const contract = await this.drtProxy.getGovernanceSmartContract(
             scAddress,
             this.type,
         );
@@ -360,7 +360,7 @@ export class GovernanceTokenSnapshotAbiService extends GenericAbiService {
         scAddress: string,
         proposalId: number,
     ): Promise<GovernanceProposalStatus> {
-        const contract = await this.mxProxy.getGovernanceSmartContract(
+        const contract = await this.drtProxy.getGovernanceSmartContract(
             scAddress,
             this.type,
         );
@@ -387,7 +387,7 @@ export class GovernanceTokenSnapshotAbiService extends GenericAbiService {
         scAddress: string,
         proposalId: number,
     ): Promise<string> {
-        const contract = await this.mxProxy.getGovernanceSmartContract(
+        const contract = await this.drtProxy.getGovernanceSmartContract(
             scAddress,
             this.type,
         );
@@ -404,7 +404,7 @@ export class GovernanceTokenSnapshotAbiService extends GenericAbiService {
         logArgs: true,
     })
     async vote(sender: string, args: VoteArgs): Promise<TransactionModel> {
-        const contract = await this.mxProxy.getGovernanceSmartContract(
+        const contract = await this.drtProxy.getGovernanceSmartContract(
             args.contractAddress,
             this.type,
         );
@@ -426,7 +426,7 @@ export class GovernanceTokenSnapshotAbiService extends GenericAbiService {
                 new BytesValue(governanceMerkle.getProofBuffer(addressLeaf)),
             ])
             .withGasLimit(gasConfig.governance.vote.tokenSnapshot)
-            .withChainID(mxConfig.chainID)
+            .withChainID(drtConfig.chainID)
             .buildTransaction()
             .toPlainObject();
     }
@@ -435,11 +435,11 @@ export class GovernanceTokenSnapshotAbiService extends GenericAbiService {
 @Injectable()
 export class GovernanceEnergyAbiService extends GovernanceTokenSnapshotAbiService {
     constructor(
-        protected readonly mxProxy: MXProxyService,
+        protected readonly drtProxy: MXProxyService,
         protected readonly governanceMerkle: GovernanceTokenSnapshotMerkleService,
         protected readonly governanceDescription: GovernanceDescriptionService,
     ) {
-        super(mxProxy, governanceMerkle, governanceDescription);
+        super(drtProxy, governanceMerkle, governanceDescription);
         this.type = GovernanceType.ENERGY;
     }
 
@@ -454,7 +454,7 @@ export class GovernanceEnergyAbiService extends GovernanceTokenSnapshotAbiServic
     }
 
     async minEnergyForProposeRaw(scAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getGovernanceSmartContract(
+        const contract = await this.drtProxy.getGovernanceSmartContract(
             scAddress,
             this.type,
         );
@@ -475,7 +475,7 @@ export class GovernanceEnergyAbiService extends GovernanceTokenSnapshotAbiServic
     }
 
     async feesCollectorAddressRaw(scAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getGovernanceSmartContract(
+        const contract = await this.drtProxy.getGovernanceSmartContract(
             scAddress,
             this.type,
         );
@@ -496,7 +496,7 @@ export class GovernanceEnergyAbiService extends GovernanceTokenSnapshotAbiServic
     }
 
     async energyFactoryAddressRaw(scAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getGovernanceSmartContract(
+        const contract = await this.drtProxy.getGovernanceSmartContract(
             scAddress,
             this.type,
         );
@@ -510,7 +510,7 @@ export class GovernanceEnergyAbiService extends GovernanceTokenSnapshotAbiServic
         logArgs: true,
     })
     async vote(sender: string, args: VoteArgs): Promise<TransactionModel> {
-        const contract = await this.mxProxy.getGovernanceSmartContract(
+        const contract = await this.drtProxy.getGovernanceSmartContract(
             args.contractAddress,
             this.type,
         );
@@ -521,7 +521,7 @@ export class GovernanceEnergyAbiService extends GovernanceTokenSnapshotAbiServic
                 new U64Value(new BigNumber(args.vote)),
             ])
             .withGasLimit(gasConfig.governance.vote.energy)
-            .withChainID(mxConfig.chainID)
+            .withChainID(drtConfig.chainID)
             .buildTransaction()
             .toPlainObject();
     }

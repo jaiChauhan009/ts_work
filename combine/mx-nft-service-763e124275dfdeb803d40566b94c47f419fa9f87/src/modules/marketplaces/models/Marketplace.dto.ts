@@ -1,5 +1,5 @@
 import { ObjectType, Field, ID } from '@nestjs/graphql';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { MarketplaceEntity } from 'src/db/marketplaces';
 import { NftTypeEnum } from 'src/modules/assets/models';
 import { Token } from 'src/modules/usdPrice/Token.model';
@@ -109,7 +109,7 @@ export class Marketplace {
 
   private static getMarketplaceIconPath(entity: MarketplaceEntity): string {
     const svgName = entity.type === MarketplaceTypeEnum.Internal ? 'metaspace.svg' : `${entity.key}.svg`;
-    return `${mxConfig.marketplacesIconsBaseUrl}/${svgName}`;
+    return `${drtConfig.marketplacesIconsBaseUrl}/${svgName}`;
   }
 
   static fromEntityForXoxno(entity: MarketplaceEntity, identifier: string, marketplaceAuctionId: number, nftType: NftTypeEnum) {

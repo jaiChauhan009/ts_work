@@ -1,7 +1,7 @@
 import { Interaction, SmartContract } from '@terradharitri/sdk-core';
 import { Injectable } from '@nestjs/common';
 import { scAddress } from 'src/config';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { GenericAbiService } from '../../../services/generics/generic.abi.service';
 import { IWeekTimekeepingAbiService } from '../interfaces';
 import { ErrorLoggerAsync } from '@terradharitri/sdk-nestjs-common';
@@ -15,10 +15,10 @@ export class WeekTimekeepingAbiService
     implements IWeekTimekeepingAbiService
 {
     constructor(
-        protected readonly mxProxy: MXProxyService,
+        protected readonly drtProxy: MXProxyService,
         private readonly remoteConfig: RemoteConfigGetterService,
     ) {
-        super(mxProxy);
+        super(drtProxy);
     }
 
     @ErrorLoggerAsync({
@@ -65,14 +65,14 @@ export class WeekTimekeepingAbiService
         contractAddress: string,
     ): Promise<SmartContract> {
         if (scAddress.feesCollector === contractAddress) {
-            return this.mxProxy.getFeesCollectorContract();
+            return this.drtProxy.getFeesCollectorContract();
         }
 
         const stakingAddresses = await this.remoteConfig.getStakingAddresses();
         if (stakingAddresses.includes(contractAddress)) {
-            return this.mxProxy.getStakingSmartContract(contractAddress);
+            return this.drtProxy.getStakingSmartContract(contractAddress);
         }
 
-        return this.mxProxy.getFarmSmartContract(contractAddress);
+        return this.drtProxy.getFarmSmartContract(contractAddress);
     }
 }

@@ -2,7 +2,7 @@ import { forwardRef, Inject, Injectable } from '@nestjs/common';
 import { BigNumber } from 'bignumber.js';
 import { constantsConfig } from 'src/config';
 import { TokenComputeService } from 'src/modules/tokens/services/token.compute.service';
-import { MXDataApiService } from 'src/services/dharitri-communication/mx.data.api.service';
+import { MXDataApiService } from 'src/services/dharitri-communication/drt.data.api.service';
 import { leastType } from 'src/utils/token.type.compare';
 import { PairService } from './pair.service';
 import { PairAbiService } from './pair.abi.service';
@@ -17,7 +17,7 @@ import { computeValueUSD, denominateAmount } from 'src/utils/token.converters';
 import { farmsAddresses, farmType } from 'src/utils/farm.utils';
 import { RemoteConfigGetterService } from 'src/modules/remote-config/remote-config.getter.service';
 import { StakingProxyAbiService } from 'src/modules/staking-proxy/services/staking.proxy.abi.service';
-import { MXApiService } from 'src/services/dharitri-communication/mx.api.service';
+import { MXApiService } from 'src/services/dharitri-communication/drt.api.service';
 import {
     FarmRewardType,
     FarmVersion,

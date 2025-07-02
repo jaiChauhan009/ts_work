@@ -6,10 +6,10 @@ import {
     TokenTransfer,
 } from '@terradharitri/sdk-core';
 import { Injectable } from '@nestjs/common';
-import { mxConfig, gasConfig } from 'src/config';
+import { drtConfig, gasConfig } from 'src/config';
 import { TransactionModel } from 'src/models/transaction.model';
 import { PairService } from 'src/modules/pair/services/pair.service';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import {
     ClaimRewardsArgs,
     CompoundRewardsArgs,
@@ -28,12 +28,12 @@ import { TransactionOptions } from 'src/modules/common/transaction.options';
 @Injectable()
 export class FarmTransactionServiceV1_2 extends TransactionsFarmService {
     constructor(
-        protected readonly mxProxy: MXProxyService,
+        protected readonly drtProxy: MXProxyService,
         protected readonly farmAbi: FarmAbiServiceV1_2,
         protected readonly pairService: PairService,
         protected readonly pairAbi: PairAbiService,
     ) {
-        super(mxProxy, farmAbi, pairService, pairAbi);
+        super(drtProxy, farmAbi, pairService, pairAbi);
     }
 
     @ErrorLoggerAsync({
@@ -50,11 +50,11 @@ export class FarmTransactionServiceV1_2 extends TransactionsFarmService {
                 ? gasConfig.farms[FarmVersion.V1_2].enterFarm.withTokenMerge
                 : gasConfig.farms[FarmVersion.V1_2].enterFarm.default;
 
-        return this.mxProxy.getFarmSmartContractTransaction(
+        return this.drtProxy.getFarmSmartContractTransaction(
             args.farmAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasLimit,
                 function: args.lockRewards
                     ? 'enterFarmAndLockRewards'
@@ -87,11 +87,11 @@ export class FarmTransactionServiceV1_2 extends TransactionsFarmService {
             type,
         );
 
-        return this.mxProxy.getFarmSmartContractTransaction(
+        return this.drtProxy.getFarmSmartContractTransaction(
             args.farmAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasLimit,
                 function: 'exitFarm',
                 tokenTransfers: [
@@ -123,11 +123,11 @@ export class FarmTransactionServiceV1_2 extends TransactionsFarmService {
             gasConfig.farms[FarmVersion.V1_2][type].claimRewards +
             lockedAssetCreateGas;
 
-        return this.mxProxy.getFarmSmartContractTransaction(
+        return this.drtProxy.getFarmSmartContractTransaction(
             args.farmAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasLimit,
                 function: 'claimRewards',
                 tokenTransfers: [
@@ -156,11 +156,11 @@ export class FarmTransactionServiceV1_2 extends TransactionsFarmService {
             throw new Error('failed to compound different tokens');
         }
 
-        return this.mxProxy.getFarmSmartContractTransaction(
+        return this.drtProxy.getFarmSmartContractTransaction(
             args.farmAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.farms[FarmVersion.V1_2].compoundRewards,
                 function: 'compoundRewards',
                 tokenTransfers: [
@@ -180,11 +180,11 @@ export class FarmTransactionServiceV1_2 extends TransactionsFarmService {
         sender: string,
         args: ExitFarmArgs,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getFarmSmartContractTransaction(
+        return this.drtProxy.getFarmSmartContractTransaction(
             args.farmAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.farms[FarmVersion.V1_2].migrateToNewFarm,
                 function: 'migrateToNewFarm',
                 arguments: [new AddressValue(Address.newFromBech32(sender))],
@@ -205,11 +205,11 @@ export class FarmTransactionServiceV1_2 extends TransactionsFarmService {
         sender: string,
         farmAddress: string,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getFarmSmartContractTransaction(
+        return this.drtProxy.getFarmSmartContractTransaction(
             farmAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.farms[FarmVersion.V1_2].stopRewards,
                 function: 'stopRewardsAndMigrateRps',
             }),
@@ -220,11 +220,11 @@ export class FarmTransactionServiceV1_2 extends TransactionsFarmService {
         sender: string,
         args: FarmMigrationConfigArgs,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getFarmSmartContractTransaction(
+        return this.drtProxy.getFarmSmartContractTransaction(
             args.oldFarmAddress,
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.farms.admin.setFarmMigrationConfig,
                 function: 'setFarmMigrationConfig',
                 arguments: [

@@ -1,4 +1,4 @@
-name: Publish mx-mcp
+name: Publish drt-mcp
 
 on:
   workflow_dispatch:

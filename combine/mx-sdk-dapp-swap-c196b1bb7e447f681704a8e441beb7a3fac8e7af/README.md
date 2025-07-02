@@ -277,7 +277,7 @@ import {
 
 ## Roadmap
 
-See the [open issues](https://github.com/TerraDharitri/mx-sdk-dapp-swap/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/TerraDharitri/drt-sdk-dapp-swap/issues) for a list of proposed features (and known issues).
 
 ## Contributing
 

@@ -12,7 +12,7 @@ import { XOXNO_MINTING_MANAGER } from 'src/utils/constants';
 export class XoxnoArtistsWarmerService {
   constructor(
     @Inject('PUBSUB_SERVICE') private clientProxy: ClientProxy,
-    private mxApiService: MxApiService,
+    private drtApiService: MxApiService,
     private cacheService: CacheService,
   ) {}
 
@@ -39,13 +39,13 @@ export class XoxnoArtistsWarmerService {
     const cachedScCount = await this.getCachedXoxnoScCount();
     const smartContractsCount = await this.getOrSetXoxnoScCount(address);
     if (cachedScCount || cachedScCount === smartContractsCount) return;
-    const smartContracts = await this.mxApiService.getAccountSmartContracts(address, smartContractsCount);
+    const smartContracts = await this.drtApiService.getAccountSmartContracts(address, smartContractsCount);
 
     const response = [];
     for (const contract of smartContracts) {
       const cachedArtist = await this.getArtistAddress(contract.address);
       if (cachedArtist) continue;
-      const transaction = await this.mxApiService.getTransactionByHash(contract.deployTxHash);
+      const transaction = await this.drtApiService.getTransactionByHash(contract.deployTxHash);
       response.push({
         address: contract.address,
         owner: transaction.sender.toBech32(),
@@ -58,7 +58,7 @@ export class XoxnoArtistsWarmerService {
   private async getOrSetXoxnoScCount(address: string) {
     return this.cacheService.getOrSet(
       CacheInfo.XoxnoScCount.key,
-      async () => this.mxApiService.getAccountSmartContractsCount(address),
+      async () => this.drtApiService.getAccountSmartContractsCount(address),
       CacheInfo.XoxnoScCount.ttl,
     );
   }

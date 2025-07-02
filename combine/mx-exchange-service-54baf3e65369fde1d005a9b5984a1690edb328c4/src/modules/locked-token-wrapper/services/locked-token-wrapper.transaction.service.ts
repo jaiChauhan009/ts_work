@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { MXProxyService } from '../../../services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from '../../../services/dharitri-communication/drt.proxy.service';
 import { TransactionModel } from '../../../models/transaction.model';
 import { Token, TokenTransfer } from '@terradharitri/sdk-core';
 import { gasConfig } from '../../../config';
@@ -8,13 +8,13 @@ import { TransactionOptions } from 'src/modules/common/transaction.options';
 
 @Injectable()
 export class LockedTokenWrapperTransactionService {
-    constructor(private readonly mxProxy: MXProxyService) {}
+    constructor(private readonly drtProxy: MXProxyService) {}
 
     async unwrapLockedToken(
         sender: string,
         inputToken: InputTokenModel,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getLockedTokenWrapperSmartContractTransaction(
+        return this.drtProxy.getLockedTokenWrapperSmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
                 gasLimit: gasConfig.lockedTokenWrapper.unwrapLockedToken,
@@ -36,7 +36,7 @@ export class LockedTokenWrapperTransactionService {
         sender: string,
         inputToken: InputTokenModel,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getLockedTokenWrapperSmartContractTransaction(
+        return this.drtProxy.getLockedTokenWrapperSmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
                 gasLimit: gasConfig.lockedTokenWrapper.wrapLockedToken,

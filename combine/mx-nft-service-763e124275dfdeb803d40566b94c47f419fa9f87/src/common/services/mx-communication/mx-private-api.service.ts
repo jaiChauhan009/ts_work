@@ -2,7 +2,7 @@ import { HttpStatus, Injectable, Logger } from '@nestjs/common';
 import { PerformanceProfiler } from 'src/modules/metrics/performance.profiler';
 import { MetricsCollector } from 'src/modules/metrics/metrics.collector';
 import * as Agent from 'agentkeepalive';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { ApiNetworkProvider } from '@terradharitri/sdk-core';
 
 @Injectable()
@@ -11,18 +11,18 @@ export class MxPrivateApiService {
 
   constructor(private readonly logger: Logger) {
     const keepAliveOptions = {
-      maxSockets: mxConfig.keepAliveMaxSockets,
-      maxFreeSockets: mxConfig.keepAliveMaxFreeSockets,
+      maxSockets: drtConfig.keepAliveMaxSockets,
+      maxFreeSockets: drtConfig.keepAliveMaxFreeSockets,
       timeout: parseInt(process.env.KEEPALIVE_TIMEOUT_DOWNSTREAM),
-      freeSocketTimeout: mxConfig.keepAliveFreeSocketTimeout,
+      freeSocketTimeout: drtConfig.keepAliveFreeSocketTimeout,
     };
     const httpAgent = new Agent(keepAliveOptions);
     const httpsAgent = new Agent.HttpsAgent(keepAliveOptions);
 
     this.privateApiProvider = new ApiNetworkProvider(process.env.NUMBAT_PRIVATE_API, {
-      timeout: mxConfig.proxyTimeout,
-      httpAgent: mxConfig.keepAlive ? httpAgent : null,
-      httpsAgent: mxConfig.keepAlive ? httpsAgent : null,
+      timeout: drtConfig.proxyTimeout,
+      httpAgent: drtConfig.keepAlive ? httpAgent : null,
+      httpsAgent: drtConfig.keepAlive ? httpsAgent : null,
       headers: {
         origin: 'NftService',
       },
@@ -56,7 +56,7 @@ export class MxPrivateApiService {
         message: error.message,
         name: error.name,
       };
-      this.logger.error(`An error occurred while calling the mx private-api service on url ${resourceUrl}`, {
+      this.logger.error(`An error occurred while calling the drt private-api service on url ${resourceUrl}`, {
         path: `${MxPrivateApiService.name}.${this.doPostGeneric.name}`,
         error: customError,
       });

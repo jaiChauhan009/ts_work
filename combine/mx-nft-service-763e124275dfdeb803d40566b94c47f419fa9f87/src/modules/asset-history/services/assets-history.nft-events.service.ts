@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { NftEventEnum, AssetActionEnum } from 'src/modules/assets/models';
 import { AssetHistoryInput as AssetHistoryLogInput } from '../models/asset-history-log-input';
 
@@ -37,7 +37,7 @@ export class AssetsHistoryNftEventService {
       case NftEventEnum.DCDTNFTTransfer: {
         if (
           mainEvent.address === mainEvent?.events[0].address &&
-          transferEvent.topics[3].base64ToBech32() !== mxConfig.nftMarketplaceAddress
+          transferEvent.topics[3].base64ToBech32() !== drtConfig.nftMarketplaceAddress
         ) {
           return new AssetHistoryLogInput({
             event: mainEvent,

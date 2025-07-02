@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import {
   AuctionEventEnum,
   KroganSwapAuctionEventEnum,
@@ -107,7 +107,7 @@ export class AssetsHistoryService {
         price: totalPrice
           ? new Price({
               nonce: 0,
-              token: mxConfig.rewa,
+              token: drtConfig.rewa,
               amount: totalPrice.toFixed(),
               timestamp: input.event.timestamp,
             })

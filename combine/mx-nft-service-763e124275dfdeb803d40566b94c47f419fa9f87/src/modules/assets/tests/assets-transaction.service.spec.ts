@@ -2,7 +2,7 @@ import { RedisCacheService } from '@terradharitri/sdk-nestjs-cache';
 import { Logger, NotFoundException } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { MxApiService } from 'src/common';
-import { MxStats } from 'src/common/services/mx-communication/models/mx-stats.model';
+import { MxStats } from 'src/common/services/drt-communication/models/drt-stats.model';
 import { UploadToIpfsResult } from 'src/modules/ipfs/ipfs.model';
 import { PinataService } from 'src/modules/ipfs/pinata.service';
 import { S3Service } from 'src/modules/s3/s3.service';

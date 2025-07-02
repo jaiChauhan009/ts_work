@@ -1,4 +1,4 @@
-import { mxConfig } from '../../config';
+import { drtConfig } from '../../config';
 import { Inject, Injectable } from '@nestjs/common';
 import { DcdtToken } from 'src/modules/tokens/models/dcdtToken.model';
 import Agent, { HttpsAgent } from 'agentkeepalive';
@@ -11,7 +11,7 @@ import { ApiConfigService } from 'src/helpers/api.config.service';
 import { ApiNetworkProvider } from '@terradharitri/sdk-network-providers/out';
 import { isDcdtToken, isDcdtTokenValid } from 'src/utils/token.type.compare';
 import { PendingExecutor } from 'src/utils/pending.executor';
-import { MXProxyService } from './mx.proxy.service';
+import { MXProxyService } from './drt.proxy.service';
 
 type GenericGetArgs = {
     methodName: string;
@@ -27,13 +27,13 @@ export class MXApiService {
     constructor(
         private readonly apiConfigService: ApiConfigService,
         @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: Logger,
-        private readonly mxProxy: MXProxyService,
+        private readonly drtProxy: MXProxyService,
     ) {
         const keepAliveOptions = {
-            maxSockets: mxConfig.keepAliveMaxSockets,
-            maxFreeSockets: mxConfig.keepAliveMaxFreeSockets,
+            maxSockets: drtConfig.keepAliveMaxSockets,
+            maxFreeSockets: drtConfig.keepAliveMaxFreeSockets,
             timeout: this.apiConfigService.getKeepAliveTimeoutDownstream(),
-            freeSocketTimeout: mxConfig.keepAliveFreeSocketTimeout,
+            freeSocketTimeout: drtConfig.keepAliveFreeSocketTimeout,
             keepAlive: true,
         };
         const httpAgent = new Agent(keepAliveOptions);
@@ -42,9 +42,9 @@ export class MXApiService {
         this.apiProvider = new ApiNetworkProvider(
             this.apiConfigService.getApiUrl(),
             {
-                timeout: mxConfig.proxyTimeout,
-                httpAgent: mxConfig.keepAlive ? httpAgent : null,
-                httpsAgent: mxConfig.keepAlive ? httpsAgent : null,
+                timeout: drtConfig.proxyTimeout,
+                httpAgent: drtConfig.keepAlive ? httpAgent : null,
+                httpsAgent: drtConfig.keepAlive ? httpsAgent : null,
                 headers: {
                     origin: 'GovernanceService',
                 },
@@ -121,7 +121,7 @@ export class MXApiService {
             }
 
             if (!isDcdtTokenValid(dcdtToken)) {
-                const gatewayToken = await this.mxProxy
+                const gatewayToken = await this.drtProxy
                     .getService()
                     .getDefinitionOfFungibleToken(tokenID);
                 dcdtToken.identifier = gatewayToken.identifier;

@@ -1,6 +1,6 @@
 import { AbiRegistry, Address, SmartContract } from '@terradharitri/sdk-core';
 import { promises } from 'fs';
-import { MXProxyService } from './mx.proxy.service';
+import { MXProxyService } from './drt.proxy.service';
 
 export class MXProxyServiceMock extends MXProxyService {
     async getAddressShardID(address: string): Promise<number> {

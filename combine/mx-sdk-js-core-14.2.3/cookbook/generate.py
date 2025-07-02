@@ -35,7 +35,7 @@ TO_REMOVE = [
     console.log({ e });
 });"""]
 
-API_URL = "https://TerraDharitri.github.io/mx-sdk-js-core"
+API_URL = "https://TerraDharitri.github.io/drt-sdk-js-core"
 API_DEFAULT_VERSION = "v14"
 DOCS_URL = "https://docs.dharitri.org"
 

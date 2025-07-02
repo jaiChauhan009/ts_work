@@ -1,4 +1,4 @@
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { IssueCampaignArgs as IssueCampaignArgs } from '../IssueCampaignArgs';
 
 export class IssueCampaignRequest {
@@ -9,7 +9,7 @@ export class IssueCampaignRequest {
   mintStartTime: number;
   mintEndTime: number;
   whitelistEndTime: number;
-  mintPriceToken: string = mxConfig.rewa;
+  mintPriceToken: string = drtConfig.rewa;
   collectionName: string;
   collectionTicker: string;
   tags: string[];

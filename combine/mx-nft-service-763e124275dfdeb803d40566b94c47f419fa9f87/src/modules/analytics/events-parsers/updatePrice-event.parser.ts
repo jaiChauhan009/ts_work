@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { MarketplacesService } from 'src/modules/marketplaces/marketplaces.service';
 import { UsdPriceService } from 'src/modules/usdPrice/usd-price.service';
 import { computeUsd } from 'src/utils/helpers';
@@ -18,7 +18,7 @@ export class UpdatePriceEventParser {
 
     if (!marketplace) return;
     const paymentToken = this.getPaymentToken(marketplace.key, event.topics);
-    const tokenData = await this.usdPriceService.getToken(paymentToken ?? mxConfig.rewa);
+    const tokenData = await this.usdPriceService.getToken(paymentToken ?? drtConfig.rewa);
     const tokenPrice = await this.usdPriceService.getTokenPriceFromDate(tokenData.identifier, timestamp);
 
     const data = [];

@@ -10,7 +10,7 @@ import { CacheTtlInfo } from 'src/services/caching/cache.ttl.info';
 import { IPriceDiscoveryComputeService } from './interfaces';
 import { AnalyticsQueryService } from 'src/services/analytics/services/analytics.query.service';
 import { HistoricDataModel } from 'src/modules/analytics/models/analytics.model';
-import { MXApiService } from 'src/services/dharitri-communication/mx.api.service';
+import { MXApiService } from 'src/services/dharitri-communication/drt.api.service';
 import moment from 'moment';
 
 @Injectable()

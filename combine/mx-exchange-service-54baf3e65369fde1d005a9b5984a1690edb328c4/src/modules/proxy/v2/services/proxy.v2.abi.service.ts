@@ -9,7 +9,7 @@ export class ProxyAbiServiceV2
     implements IProxyAbiService
 {
     async getLockedAssetTokenIDRaw(proxyAddress: string): Promise<string[]> {
-        const contract = await this.mxProxy.getProxyDexSmartContract(
+        const contract = await this.drtProxy.getProxyDexSmartContract(
             proxyAddress,
         );
         const interaction: Interaction =

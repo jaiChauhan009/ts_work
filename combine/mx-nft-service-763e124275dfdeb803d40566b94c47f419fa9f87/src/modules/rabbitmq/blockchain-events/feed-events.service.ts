@@ -1,7 +1,7 @@
 import { forwardRef, Inject, Injectable } from '@nestjs/common';
 import { CollectionApi } from 'src/common';
-import { EventEnum, Feed } from 'src/common/services/mx-communication/models/feed.dto';
-import { MxFeedService } from 'src/common/services/mx-communication/mx-feed.service';
+import { EventEnum, Feed } from 'src/common/services/drt-communication/models/feed.dto';
+import { MxFeedService } from 'src/common/services/drt-communication/drt-feed.service';
 import { AuctionEntity } from 'src/db/auctions';
 import { OfferEntity } from 'src/db/offers';
 import { OrderEntity } from 'src/db/orders';

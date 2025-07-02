@@ -1,6 +1,6 @@
 import { ObjectType, Field } from '@nestjs/graphql';
 import { NftMetadata } from 'src/common';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 
 @ObjectType()
 export class Metadata {
@@ -32,9 +32,9 @@ export class Metadata {
   static getInteractiveUrl(url: string): string {
     if (!url) return null;
     let isAcceptedUrl = false;
-    isAcceptedUrl = isAcceptedUrl || url.startsWith(mxConfig.dwebLink);
-    isAcceptedUrl = isAcceptedUrl || (url.includes(mxConfig.pinata) && url.startsWith('https://'));
-    isAcceptedUrl = isAcceptedUrl || (url.includes(mxConfig.ipfs) && url.startsWith('https://'));
+    isAcceptedUrl = isAcceptedUrl || url.startsWith(drtConfig.dwebLink);
+    isAcceptedUrl = isAcceptedUrl || (url.includes(drtConfig.pinata) && url.startsWith('https://'));
+    isAcceptedUrl = isAcceptedUrl || (url.includes(drtConfig.ipfs) && url.startsWith('https://'));
 
     return isAcceptedUrl ? url : null;
   }

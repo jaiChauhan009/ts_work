@@ -9,7 +9,7 @@ import { CacheService } from '@terradharitri/sdk-nestjs-cache';
 import { PriceRange } from 'src/db/auctions/price-range';
 import { AuctionsCachingService } from './caching/auctions-caching.service';
 import { Constants } from '@terradharitri/sdk-nestjs-common';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { AuctionCustomEnum } from '../common/filters/AuctionCustomFilters';
 import { PersistenceService } from 'src/common/persistence/persistence.service';
 import { UsdPriceService } from '../usdPrice/usd-price.service';
@@ -161,10 +161,10 @@ export class AuctionsGetterService {
   async getAuctionsGroupByIdentifier(queryRequest: QueryRequest): Promise<[Auction[], number, PriceRange]> {
     const collectionFilter = queryRequest.getFilterName('collection');
     const paymentTokenFilter = queryRequest.getFilterName('paymentToken');
-    let paymentDecimals = mxConfig.decimals;
+    let paymentDecimals = drtConfig.decimals;
     const sort = queryRequest.getSort();
     const allFilters = queryRequest.getAllFilters();
-    if (collectionFilter && (!paymentTokenFilter || paymentTokenFilter === mxConfig.rewa)) {
+    if (collectionFilter && (!paymentTokenFilter || paymentTokenFilter === drtConfig.rewa)) {
       return await this.retriveCollectionAuctions(collectionFilter, queryRequest, sort);
     }
 
@@ -218,7 +218,7 @@ export class AuctionsGetterService {
       priceRange = await this.computePriceRange(allAuctions, paymentTokenFilter, paymentToken);
       allAuctions = this.filterByPriceRange(queryRequest, paymentToken, allAuctions);
     } else {
-      priceRange = await this.computePriceRange(allAuctions, mxConfig.rewa);
+      priceRange = await this.computePriceRange(allAuctions, drtConfig.rewa);
     }
 
     if (sort) {

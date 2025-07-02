@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Interaction } from '@terradharitri/sdk-core/out/smartcontracts/interaction';
-import { MXProxyService } from '../../../../services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from '../../../../services/dharitri-communication/drt.proxy.service';
 import { GenericAbiService } from 'src/services/generics/generic.abi.service';
 import { ErrorLoggerAsync } from '@terradharitri/sdk-nestjs-common';
 import { GetOrSetCache } from 'src/helpers/decorators/caching.decorator';
@@ -14,8 +14,8 @@ export class ProxyFarmAbiService
     extends GenericAbiService
     implements IProxyFarmAbiService
 {
-    constructor(protected readonly mxProxy: MXProxyService) {
-        super(mxProxy);
+    constructor(protected readonly drtProxy: MXProxyService) {
+        super(drtProxy);
     }
 
     @ErrorLoggerAsync({
@@ -31,7 +31,7 @@ export class ProxyFarmAbiService
     }
 
     async getWrappedFarmTokenIDRaw(proxyAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getProxyDexSmartContract(
+        const contract = await this.drtProxy.getProxyDexSmartContract(
             proxyAddress,
         );
         const interaction: Interaction =
@@ -52,7 +52,7 @@ export class ProxyFarmAbiService
     }
 
     async getIntermediatedFarmsRaw(proxyAddress: string): Promise<string[]> {
-        const contract = await this.mxProxy.getProxyDexSmartContract(
+        const contract = await this.drtProxy.getProxyDexSmartContract(
             proxyAddress,
         );
 

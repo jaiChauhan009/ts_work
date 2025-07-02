@@ -19,7 +19,7 @@ import { ReindexOfferCreatedHandler } from './marketplaces-reindex-handlers/rein
 import { ReindexAuctionPriceUpdatedHandler } from './marketplaces-reindex-handlers/reindex-auction-price-updated.handler';
 import { ReindexGlobalOfferAcceptedHandler } from './marketplaces-reindex-handlers/reindex-global-offer-accepted.handler';
 import { ReindexAuctionUpdatedHandler } from './marketplaces-reindex-handlers/reindex-auction-updated.handler';
-import { constants, mxConfig } from 'src/config';
+import { constants, drtConfig } from 'src/config';
 import { MarketplaceReindexState } from './models/MarketplaceReindexState';
 import { MxApiService } from 'src/common';
 import { MarketplaceReindexDataArgs } from './models/MarketplaceReindexDataArgs';
@@ -49,7 +49,7 @@ export class MarketplacesReindexService {
     private readonly reindexOfferAcceptedHandler: ReindexOfferAcceptedHandler,
     private readonly reindexOfferClosedHandler: ReindexOfferClosedHandler,
     private readonly reindexGlobalOfferAcceptedHandler: ReindexGlobalOfferAcceptedHandler,
-    private readonly mxApiService: MxApiService,
+    private readonly drtApiService: MxApiService,
     private readonly logger: Logger,
   ) {}
 
@@ -384,11 +384,11 @@ export class MarketplacesReindexService {
       const paymentNonceValue = input.paymentNonce ?? marketplaceReindexState.auctions[auctionIndex]?.paymentNonce;
       const paymentNonce = !Number.isNaN(paymentNonceValue) ? paymentNonceValue : 0;
       const paymentTokenIdentifier = input.paymentToken ?? marketplaceReindexState.auctions[auctionIndex]?.paymentToken;
-      if (paymentTokenIdentifier === mxConfig.rewa) {
+      if (paymentTokenIdentifier === drtConfig.rewa) {
         return [
           new Token({
-            identifier: mxConfig.rewa,
-            decimals: mxConfig.decimals,
+            identifier: drtConfig.rewa,
+            decimals: drtConfig.decimals,
           }),
           0,
         ];
@@ -397,8 +397,8 @@ export class MarketplacesReindexService {
       if (!paymentToken) {
         return [
           new Token({
-            identifier: paymentTokenIdentifier ?? mxConfig.rewa,
-            decimals: mxConfig.decimals,
+            identifier: paymentTokenIdentifier ?? drtConfig.rewa,
+            decimals: drtConfig.decimals,
           }),
           paymentNonce,
         ];
@@ -508,7 +508,7 @@ export class MarketplacesReindexService {
             .map((a) => a.identifier),
         ),
       ];
-      const assets = await this.mxApiService.getNftsByIdentifiers(assetsWithNoTagsIdentifiers, 0, 'fields=identifier,tags');
+      const assets = await this.drtApiService.getNftsByIdentifiers(assetsWithNoTagsIdentifiers, 0, 'fields=identifier,tags');
       const tags = assets.filter((a) => a.tags);
       for (let j = 0; j < assets?.length; j++) {
         auctions.filter((a) => a.identifier === assets[j].identifier).map((a) => (a.tags = assets[j]?.tags?.join(',') ?? ''));

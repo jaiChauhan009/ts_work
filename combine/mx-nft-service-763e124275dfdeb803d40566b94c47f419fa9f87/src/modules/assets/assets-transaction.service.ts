@@ -15,8 +15,8 @@ import { Injectable, Logger, NotFoundException } from '@nestjs/common';
 import BigNumber from 'bignumber.js';
 import { FileUpload } from 'graphql-upload-ts';
 import { MxApiService } from 'src/common';
-import { MxStats } from 'src/common/services/mx-communication/models/mx-stats.model';
-import { gas, mxConfig } from 'src/config';
+import { MxStats } from 'src/common/services/drt-communication/models/drt-stats.model';
+import { gas, drtConfig } from 'src/config';
 import { generateCacheKeyFromParams } from 'src/utils/generate-cache-key';
 import { getCollectionAndNonceFromIdentifier, timestampToEpochAndRound } from 'src/utils/helpers';
 import '../../utils/extensions';
@@ -32,14 +32,14 @@ export class AssetsTransactionService {
   constructor(
     private pinataService: PinataService,
     private s3Service: S3Service,
-    private mxApiService: MxApiService,
+    private drtApiService: MxApiService,
     private readonly logger: Logger,
     private redisCacheService: RedisCacheService,
   ) {}
 
   async updateQuantity(ownerAddress: string, request: UpdateQuantityRequest): Promise<TransactionNode> {
     const { collection, nonce } = getCollectionAndNonceFromIdentifier(request.identifier);
-    const factory = new SmartContractTransactionsFactory({ config: new TransactionsFactoryConfig({ chainID: mxConfig.chainID }) });
+    const factory = new SmartContractTransactionsFactory({ config: new TransactionsFactoryConfig({ chainID: drtConfig.chainID }) });
     const transaction = factory.createTransactionForExecute(Address.newFromBech32(ownerAddress), {
       function: request.functionName,
       arguments: [BytesValue.fromUTF8(collection), BytesValue.fromHex(nonce), new U64Value(new BigNumber(request.quantity))],
@@ -50,18 +50,18 @@ export class AssetsTransactionService {
   }
 
   async burnQuantity(ownerAddress: string, request: UpdateQuantityRequest): Promise<TransactionNode> {
-    const [nft, mxStats] = await Promise.all([this.mxApiService.getNftByIdentifier(request.identifier), this.getOrSetAproximateMxStats()]);
+    const [nft, drtStats] = await Promise.all([this.drtApiService.getNftByIdentifier(request.identifier), this.getOrSetAproximateMxStats()]);
     if (!nft) {
       throw new NotFoundException('NFT not found');
     }
     const [epoch] = timestampToEpochAndRound(
       nft.timestamp,
-      mxStats.epoch,
-      mxStats.roundsPassed,
-      mxStats.roundsPerEpoch,
-      mxStats.refreshRate,
+      drtStats.epoch,
+      drtStats.roundsPassed,
+      drtStats.roundsPerEpoch,
+      drtStats.refreshRate,
     );
-    if (epoch > mxConfig.burnNftActivationEpoch) {
+    if (epoch > drtConfig.burnNftActivationEpoch) {
       return await this.updateQuantity(ownerAddress, request);
     }
 
@@ -70,7 +70,7 @@ export class AssetsTransactionService {
       new TransferNftRequest({
         identifier: request.identifier,
         quantity: request.quantity,
-        destinationAddress: mxConfig.burnAddress,
+        destinationAddress: drtConfig.burnAddress,
       }),
     );
   }
@@ -97,7 +97,7 @@ export class AssetsTransactionService {
     const nonceDecimal = BigInt(parseInt(nonce, 16));
     const nft = new Token({ identifier: collection, nonce: nonceDecimal });
     const transfer = new TokenTransfer({ token: nft, amount: BigInt(transferRequest.quantity) });
-    const factory = new TransferTransactionsFactory({ config: new TransactionsFactoryConfig({ chainID: mxConfig.chainID }) });
+    const factory = new TransferTransactionsFactory({ config: new TransactionsFactoryConfig({ chainID: drtConfig.chainID }) });
     const transaction = factory.createTransactionForTransfer(Address.newFromBech32(ownerAddress), {
       receiver: Address.newFromBech32(transferRequest.destinationAddress),
       tokenTransfers: [transfer],
@@ -112,7 +112,7 @@ export class AssetsTransactionService {
   ) {
     const assetMetadata = await this.uploadFileMetadata(request.attributes.description);
     const attributes = `tags:${request.attributes.tags};metadata:${assetMetadata.hash}`;
-    const factory = new TokenManagementTransactionsFactory({ config: new TransactionsFactoryConfig({ chainID: mxConfig.chainID }) });
+    const factory = new TokenManagementTransactionsFactory({ config: new TransactionsFactoryConfig({ chainID: drtConfig.chainID }) });
     const uris = [];
     for (const file of filesData) {
       uris.push(file.url);
@@ -149,10 +149,10 @@ export class AssetsTransactionService {
   private async getOrSetAproximateMxStats(): Promise<MxStats> {
     try {
       const cacheKey = this.getApproximateMxStatsCacheKey();
-      const getMxStats = () => this.mxApiService.getMxStats();
+      const getMxStats = () => this.drtApiService.getMxStats();
       return this.redisCacheService.getOrSet(cacheKey, getMxStats, Constants.oneDay());
     } catch (error) {
-      this.logger.error('An error occurred while getting mx stats', {
+      this.logger.error('An error occurred while getting drt stats', {
         path: `${AssetsTransactionService.name}.${this.getOrSetAproximateMxStats.name}`,
         exception: error,
       });

@@ -1,4 +1,4 @@
-# mx-sdk-dapp-utils
+# drt-sdk-dapp-utils
 
 This package provides a set of utilities and models for dApp development.
 

@@ -5,7 +5,7 @@
     "author": "DharitrI",
     "repository": {
         "type": "git",
-        "url": "https://github.com/TerraDharitri/mx-sdk-js-exchange.git"
+        "url": "https://github.com/TerraDharitri/drt-sdk-js-exchange.git"
     },
     "license": "MIT",
     "files": [

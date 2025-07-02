@@ -18,9 +18,9 @@ import { MultiSwapTokensArgs } from 'src/modules/auto-router/models/multi-swap-t
 import { PairService } from 'src/modules/pair/services/pair.service';
 import { WrapTransactionsService } from 'src/modules/wrapping/services/wrap.transactions.service';
 import { ContextGetterService } from 'src/services/context/context.getter.service';
-import { constantsConfig, mxConfig, gasConfig } from '../../../config';
+import { constantsConfig, drtConfig, gasConfig } from '../../../config';
 import { TransactionModel } from '../../../models/transaction.model';
-import { MXProxyService } from '../../../services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from '../../../services/dharitri-communication/drt.proxy.service';
 import { SetLocalRoleOwnerArgs } from '../models/router.args';
 import { PairAbiService } from 'src/modules/pair/services/pair.abi.service';
 import { RouterAbiService } from './router.abi.service';
@@ -30,7 +30,7 @@ import { TransactionOptions } from 'src/modules/common/transaction.options';
 @Injectable()
 export class RouterTransactionService {
     constructor(
-        private readonly mxProxy: MXProxyService,
+        private readonly drtProxy: MXProxyService,
         private readonly pairAbi: PairAbiService,
         private readonly routerAbi: RouterAbiService,
         private readonly pairService: PairService,
@@ -52,10 +52,10 @@ export class RouterTransactionService {
             throw new Error('Pair already exists');
         }
 
-        return this.mxProxy.getRouterSmartContractTransaction(
+        return this.drtProxy.getRouterSmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.router.createPair,
                 function: 'createPair',
                 arguments: [
@@ -100,10 +100,10 @@ export class RouterTransactionService {
             endpointArgs.push(new BigUIntValue(new BigNumber(fee)));
         }
 
-        return this.mxProxy.getRouterSmartContractTransaction(
+        return this.drtProxy.getRouterSmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.router.admin.upgradePair,
                 function: 'upgradePair',
                 arguments: endpointArgs,
@@ -125,10 +125,10 @@ export class RouterTransactionService {
             throw new Error('Pair does not exist');
         }
 
-        return this.mxProxy.getRouterSmartContractTransaction(
+        return this.drtProxy.getRouterSmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.router.admin.removePair,
                 function: 'removePair',
                 arguments: [
@@ -150,10 +150,10 @@ export class RouterTransactionService {
             throw new Error('LP Token already issued');
         }
 
-        return this.mxProxy.getRouterSmartContractTransaction(
+        return this.drtProxy.getRouterSmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.router.issueToken,
                 function: 'issueLpToken',
                 arguments: [
@@ -172,10 +172,10 @@ export class RouterTransactionService {
         sender: string,
         pairAddress: string,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getRouterSmartContractTransaction(
+        return this.drtProxy.getRouterSmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.router.setLocalRoles,
                 function: 'setLocalRoles',
                 arguments: [BytesValue.fromHex(new Address(pairAddress).hex())],
@@ -187,10 +187,10 @@ export class RouterTransactionService {
         sender: string,
         args: SetLocalRoleOwnerArgs,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getRouterSmartContractTransaction(
+        return this.drtProxy.getRouterSmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.router.admin.setLocalRolesOwner,
                 function: 'setLocalRolesOwner',
                 arguments: [
@@ -211,10 +211,10 @@ export class RouterTransactionService {
         address: string,
         enable: boolean,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getRouterSmartContractTransaction(
+        return this.drtProxy.getRouterSmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.router.admin.setState,
                 function: enable ? 'resume' : 'pause',
                 arguments: [new AddressValue(Address.newFromBech32(address))],
@@ -226,10 +226,10 @@ export class RouterTransactionService {
         sender: string,
         enable: boolean,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getRouterSmartContractTransaction(
+        return this.drtProxy.getRouterSmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.router.admin.setPairCreationEnabled,
                 function: 'setPairCreationEnabled',
                 arguments: [new BooleanValue(enable)],
@@ -244,10 +244,10 @@ export class RouterTransactionService {
         feeTokenID: string,
         enable: boolean,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getRouterSmartContractTransaction(
+        return this.drtProxy.getRouterSmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.router.admin.setFee,
                 function: enable ? 'setFeeOn' : 'setFeeOff',
                 arguments: [
@@ -277,10 +277,10 @@ export class RouterTransactionService {
             throw new Error('Invalid sender address');
         }
 
-        return this.mxProxy.getRouterSmartContractTransaction(
+        return this.drtProxy.getRouterSmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.router.swapEnableByUser,
                 function: 'setSwapEnabledByUser',
                 arguments: [
@@ -302,10 +302,10 @@ export class RouterTransactionService {
     async clearPairTemporaryOwnerStorage(
         sender: string,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getRouterSmartContractTransaction(
+        return this.drtProxy.getRouterSmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.router.admin.clearPairTemporaryOwnerStorage,
                 function: 'clearPairTemporaryOwnerStorage',
             }),
@@ -316,10 +316,10 @@ export class RouterTransactionService {
         sender: string,
         periodBlocks: string,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getRouterSmartContractTransaction(
+        return this.drtProxy.getRouterSmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.router.admin.setTemporaryOwnerPeriod,
                 function: 'setTemporaryOwnerPeriod',
                 arguments: [new BigUIntValue(new BigNumber(periodBlocks))],
@@ -331,10 +331,10 @@ export class RouterTransactionService {
         sender: string,
         address: string,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getRouterSmartContractTransaction(
+        return this.drtProxy.getRouterSmartContractTransaction(
             new TransactionOptions({
                 sender: sender,
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 gasLimit: gasConfig.router.admin.setPairTemplateAddress,
                 function: 'setPairTemplateAddress',
                 arguments: [new AddressValue(Address.newFromBech32(address))],
@@ -347,7 +347,7 @@ export class RouterTransactionService {
         args: MultiSwapTokensArgs,
     ): Promise<TransactionModel[]> {
         const transactions = [];
-        const contract = await this.mxProxy.getRouterSmartContract();
+        const contract = await this.drtProxy.getRouterSmartContract();
 
         const wrapTransaction = await this.wrapIfNeeded(
             sender,
@@ -385,7 +385,7 @@ export class RouterTransactionService {
                     args.addressRoute.length *
                         gasConfig.router.multiPairSwapMultiplier,
                 )
-                .withChainID(mxConfig.chainID)
+                .withChainID(drtConfig.chainID)
                 .buildTransaction()
                 .toPlainObject(),
         );
@@ -423,7 +423,7 @@ export class RouterTransactionService {
         tokenID: string,
         amount: string,
     ): Promise<TransactionModel> {
-        if (tokenID === mxConfig.REWAIdentifier) {
+        if (tokenID === drtConfig.REWAIdentifier) {
             return this.transactionsWrapService.wrapRewa(sender, amount);
         }
     }
@@ -433,7 +433,7 @@ export class RouterTransactionService {
         tokenID: string,
         amount: string,
     ): Promise<TransactionModel> {
-        if (tokenID === mxConfig.REWAIdentifier) {
+        if (tokenID === drtConfig.REWAIdentifier) {
             return this.transactionsWrapService.unwrapRewa(sender, amount);
         }
     }

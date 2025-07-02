@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TerraDharitri/mx-sdk-nestjs.git"
+    "url": "git+https://github.com/TerraDharitri/drt-sdk-nestjs.git"
   },
   "keywords": [
     "dharitri",

@@ -149,7 +149,7 @@ describe('IdentityController', () => {
       identity: "dharitri" + (index ? `_${index}` : ''),
       name: `Name ${index}`,
       description: `Description for identity ${index}`,
-      avatar: "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/dharitri/logo.png",
+      avatar: "https://raw.githubusercontent.com/TerraDharitri/drt-assets/master/identities/dharitri/logo.png",
       website: "http://dharitri.org",
       twitter: `@identity${index} `,
       location: `Location ${index} `,

@@ -12,7 +12,7 @@
       @apply mvx:flex mvx:flex-col mvx:items-center mvx:gap-6 mvx:text-center mvx:text-base mvx:mb-auto;
 
       .ledger-intro-icon {
-        @apply mvx:mx-auto mvx:self-start mvx:w-auto! mvx:h-auto!;
+        @apply mvx:drt-auto mvx:self-start mvx:w-auto! mvx:h-auto!;
       }
 
       .ledger-intro-description {
@@ -49,7 +49,7 @@
     }
 
     .ledger-intro-issues {
-      @apply mvx:text-base mvx:mt-10 mvx:mx-auto mvx:text-center mvx:relative mvx:pb-1;
+      @apply mvx:text-base mvx:mt-10 mvx:drt-auto mvx:text-center mvx:relative mvx:pb-1;
       color: var(--mvx-text-color-secondary);
 
       &:after {

@@ -1,17 +1,17 @@
 import { Logger, Module } from '@nestjs/common';
 import { ApiService } from './api.service';
-import { MxApiService } from './mx-api.service';
-import { MxElasticService } from './mx-elastic.service';
-import { MxFeedService } from './mx-feed.service';
-import { MxIdentityService } from './mx-identity.service';
-import { MxPrivateApiService } from './mx-private-api.service';
-import { MxProxyService } from './mx-proxy.service';
-import { MxStatsService } from './mx-stats.service';
+import { MxApiService } from './drt-api.service';
+import { MxElasticService } from './drt-elastic.service';
+import { MxFeedService } from './drt-feed.service';
+import { MxIdentityService } from './drt-identity.service';
+import { MxPrivateApiService } from './drt-private-api.service';
+import { MxProxyService } from './drt-proxy.service';
+import { MxStatsService } from './drt-stats.service';
 import { SlackReportService } from './slack-report.service';
 import { ConfigService } from '@nestjs/config';
 import { ApiConfigService } from 'src/modules/common/api-config/api.config.service';
-import { MxDataApiService } from './mx-data.service';
-import { MxToolsService } from './mx-tools.service';
+import { MxDataApiService } from './drt-data.service';
+import { MxToolsService } from './drt-tools.service';
 
 @Module({
   providers: [

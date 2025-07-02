@@ -31,7 +31,7 @@ import { Constants, ErrorLoggerAsync } from '@terradharitri/sdk-nestjs-common';
 import { EnergyAbiService } from 'src/modules/energy/services/energy.abi.service';
 import { RemoteConfigGetterService } from 'src/modules/remote-config/remote-config.getter.service';
 import { StakingService } from 'src/modules/staking/services/staking.service';
-import { MXApiService } from 'src/services/dharitri-communication/mx.api.service';
+import { MXApiService } from 'src/services/dharitri-communication/drt.api.service';
 import { tokenIdentifier } from 'src/utils/token.converters';
 import { ProxyPairAbiService } from 'src/modules/proxy/services/proxy-pair/proxy.pair.abi.service';
 import { ProxyFarmAbiService } from 'src/modules/proxy/services/proxy-farm/proxy.farm.abi.service';
@@ -58,7 +58,7 @@ export class UserEnergyComputeService {
         private readonly proxyPairAbi: ProxyPairAbiService,
         private readonly proxyFarmAbi: ProxyFarmAbiService,
         private readonly metabondingAbi: MetabondingAbiService,
-        private readonly mxApi: MXApiService,
+        private readonly drtApi: MXApiService,
         private readonly remoteConfig: RemoteConfigGetterService,
         private readonly userMetaDcdtService: UserMetaDcdtService,
     ) {}
@@ -375,7 +375,7 @@ export class UserEnergyComputeService {
     async computeNegativeEnergyCheck(
         userAddress: string,
     ): Promise<UserNegativeEnergyCheck> {
-        const userNftsCount = await this.mxApi.getNftsCountForUser(userAddress);
+        const userNftsCount = await this.drtApi.getNftsCountForUser(userAddress);
 
         if (userNftsCount === 0) {
             return new UserNegativeEnergyCheck({
@@ -406,10 +406,10 @@ export class UserEnergyComputeService {
             this.proxyFarmAbi.wrappedFarmTokenID(scAddress.proxyDexAddress.v1),
             this.proxyFarmAbi.wrappedFarmTokenID(scAddress.proxyDexAddress.v2),
             this.lockedAssetGetter.getExtendedAttributesActivationNonce(),
-            this.mxApi.getStats(),
+            this.drtApi.getStats(),
         ]);
 
-        const userNfts = await this.mxApi.getNftsForUser(
+        const userNfts = await this.drtApi.getNftsForUser(
             userAddress,
             'MetaDCDT',
         );
@@ -500,7 +500,7 @@ export class UserEnergyComputeService {
 
             if (userMetabondingEntry.tokenNonce > 0) {
                 const metabondingTokensAttributes =
-                    await this.mxApi.getNftAttributesByTokenIdentifier(
+                    await this.drtApi.getNftAttributesByTokenIdentifier(
                         scAddress.metabondingStakingAddress,
                         tokenIdentifier(
                             lkmexTokenID,
@@ -569,7 +569,7 @@ export class UserEnergyComputeService {
             tokenIdentifier(lkmexTokenID, attribute.lockedAssetsNonce),
         );
         const lockedTokensAttributes =
-            await this.mxApi.getNftsAttributesForUser(
+            await this.drtApi.getNftsAttributesForUser(
                 scAddress.proxyDexAddress.v1,
                 'MetaDCDT',
                 identifiers,
@@ -603,7 +603,7 @@ export class UserEnergyComputeService {
         );
 
         const [lkmexAttributesRaw, xmexAttributesRaw] = await Promise.all([
-            this.mxApi.getNftsAttributesForUser(
+            this.drtApi.getNftsAttributesForUser(
                 scAddress.proxyDexAddress.v2,
                 'MetaDCDT',
                 lockedLPWithLKMEX.map((attribute) =>
@@ -613,7 +613,7 @@ export class UserEnergyComputeService {
                     ),
                 ),
             ),
-            this.mxApi.getNftsAttributesForUser(
+            this.drtApi.getNftsAttributesForUser(
                 scAddress.proxyDexAddress.v2,
                 'MetaDCDT',
                 lockedLPWithXMEX.map((attribute) =>
@@ -659,7 +659,7 @@ export class UserEnergyComputeService {
         );
 
         const [lkmexAttributesRaw, lklpAttributesRaw] = await Promise.all([
-            this.mxApi.getNftsAttributesForUser(
+            this.drtApi.getNftsAttributesForUser(
                 scAddress.proxyDexAddress.v1,
                 'MetaDCDT',
                 lockedFarmTokensWithLKMEX.map((attribute) =>
@@ -669,7 +669,7 @@ export class UserEnergyComputeService {
                     ),
                 ),
             ),
-            this.mxApi.getNftsAttributesForUser(
+            this.drtApi.getNftsAttributesForUser(
                 scAddress.proxyDexAddress.v1,
                 'MetaDCDT',
                 lockedFarmTokensWithLKLP.map((attribute) =>
@@ -711,7 +711,7 @@ export class UserEnergyComputeService {
         lkmexTokenID: string,
         attributes: WrappedFarmTokenAttributesV2[],
     ): Promise<boolean> {
-        const lklpAttributesRaw = await this.mxApi.getNftsAttributesForUser(
+        const lklpAttributesRaw = await this.drtApi.getNftsAttributesForUser(
             scAddress.proxyDexAddress.v2,
             'MetaDCDT',
             attributes.map((attribute) =>

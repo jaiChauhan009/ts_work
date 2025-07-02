@@ -62,9 +62,9 @@ import {
     }
     // ```
 
-    // A full list of available methods for `ApiNetworkProvider` can be found [here](https://TerraDharitri.github.io/mx-sdk-js-core/v14/classes/ApiNetworkProvider.html).
+    // A full list of available methods for `ApiNetworkProvider` can be found [here](https://TerraDharitri.github.io/drt-sdk-js-core/v14/classes/ApiNetworkProvider.html).
 
-    // Both `ApiNetworkProvider` and `ProxyNetworkProvider` implement a common interface, which can be found [here](https://TerraDharitri.github.io/mx-sdk-js-core/v14/interfaces/INetworkProvider.html). This allows them to be used interchangeably.
+    // Both `ApiNetworkProvider` and `ProxyNetworkProvider` implement a common interface, which can be found [here](https://TerraDharitri.github.io/drt-sdk-js-core/v14/interfaces/INetworkProvider.html). This allows them to be used interchangeably.
 
     // The classes returned by the API expose the most commonly used fields directly for convenience. However, each object also contains a `raw` field that stores the original API response, allowing access to additional fields if needed.
 

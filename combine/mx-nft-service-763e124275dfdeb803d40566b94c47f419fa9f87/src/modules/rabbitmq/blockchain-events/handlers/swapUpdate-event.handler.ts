@@ -1,5 +1,5 @@
 import { Inject, Injectable, Logger, forwardRef } from '@nestjs/common';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { AuctionEntity } from 'src/db/auctions';
 import { KroganSwapAuctionEventEnum } from 'src/modules/assets/models';
 import { AuctionsGetterService, AuctionsSetterService } from 'src/modules/auctions';
@@ -47,7 +47,7 @@ export class SwapUpdateEventHandler {
     hash: string,
   ) {
     const paymentToken = await this.usdPriceService.getToken(auction.paymentToken);
-    const decimals = paymentToken?.decimals ?? mxConfig.decimals;
+    const decimals = paymentToken?.decimals ?? drtConfig.decimals;
     auction.minBid = topics.price;
     auction.minBidDenominated = BigNumberUtils.denominateAmount(topics.price, decimals);
     auction.maxBid = auction.minBid;

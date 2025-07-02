@@ -22,7 +22,7 @@ export class ElasticUpdatesEventsService {
     private readonly nftScamInfoService: NftScamService,
     private readonly documentDbService: DocumentDbService,
     private readonly redisCacheService: RedisCacheService,
-    private readonly mxApiService: MxApiService,
+    private readonly drtApiService: MxApiService,
   ) { }
 
   public async handleNftMintEvents(mintEvents: any[], hash: string): Promise<void> {
@@ -32,7 +32,7 @@ export class ElasticUpdatesEventsService {
         case NftEventEnum.DCDTNFTCreate:
           const mintEvent = new MintEvent(event);
           const createTopics = mintEvent.getTopics();
-          const collection = await this.mxApiService.getCollectionByIdentifierForQuery(createTopics.collection, 'fields=name,type');
+          const collection = await this.drtApiService.getCollectionByIdentifierForQuery(createTopics.collection, 'fields=name,type');
           if (collection?.type === NftTypeEnum.NonFungibleDCDT || collection?.type === NftTypeEnum.SemiFungibleDCDT) {
             const identifier = `${createTopics.collection}-${createTopics.nonce}`;
             await this.nftFlagsService.updateNftFlag(identifier);
@@ -203,7 +203,7 @@ export class ElasticUpdatesEventsService {
   }
 
   private async getCollectionTypeFromApi(ticker: string): Promise<string> {
-    const collection = await this.mxApiService.getCollectionByIdentifierForQuery(ticker, 'fields=type');
+    const collection = await this.drtApiService.getCollectionByIdentifierForQuery(ticker, 'fields=type');
     return collection.type;
   }
 

@@ -1,5 +1,5 @@
 import { Query, Resolver, Args, ResolveField, Int, Parent } from '@nestjs/graphql';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { UsdPriceService } from '../usdPrice/usd-price.service';
 import { CollectionsStatsService } from './collections-stats.service';
 import { CollectionStats } from './models';
@@ -14,11 +14,11 @@ export class CollectionsStatsResolver {
     @Args({ name: 'filters', type: () => CollectionStatsFilter })
     filters: CollectionStatsFilter,
   ): Promise<CollectionStats> {
-    let decimals = mxConfig.decimals;
+    let decimals = drtConfig.decimals;
     const collection = await this.collectionsStatsService.getStats(filters.identifier, filters.marketplaceKey, filters.paymentToken);
     if (filters.paymentToken) {
       const paymentToken = await this.usdPriceService.getToken(filters.paymentToken);
-      decimals = paymentToken?.decimals ?? mxConfig.decimals;
+      decimals = paymentToken?.decimals ?? drtConfig.decimals;
     }
     return CollectionStats.fromEntity(collection, decimals, filters?.identifier);
   }

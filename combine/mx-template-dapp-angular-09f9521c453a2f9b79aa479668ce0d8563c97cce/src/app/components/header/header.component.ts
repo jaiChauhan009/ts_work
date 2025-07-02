@@ -5,7 +5,7 @@ import { AuthService } from '../../services/auth.service';
 import { EnvironmentService } from '../../services/environment.service';
 import { RouteNamesEnum } from '../../route-names.enum';
 import { ButtonComponent } from '../button/button.component';
-import { MxLinkComponent } from '../mx-link/mx-link.component';
+import { MxLinkComponent } from '../drt-link/drt-link.component';
 import { NotificationsButtonComponent } from '../notifications-button/notifications-button.component';
 import { ConnectButtonComponent } from '../connect-button/connect-button.component';
 

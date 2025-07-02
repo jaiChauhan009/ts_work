@@ -9,7 +9,7 @@ import { CollectionsGetterService } from '../nftCollections/collections-getter.s
 import { Price } from '../assets/models';
 import { UsdPriceService } from '../usdPrice/usd-price.service';
 import { BigNumberUtils } from 'src/utils/bigNumber-utils';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { OffersService } from '../offers/offers.service';
 import { OffersFilters } from '../offers/models/Offers-Filters';
 
@@ -154,7 +154,7 @@ export class AccountsStatsService {
 
     biddings.push(
       new Price({
-        amount: BigNumberUtils.nominateAmount(price.biddingBalance, paymentToken.decimals ?? mxConfig.decimals),
+        amount: BigNumberUtils.nominateAmount(price.biddingBalance, paymentToken.decimals ?? drtConfig.decimals),
         token: price.priceToken,
 
         tokenData: paymentToken,

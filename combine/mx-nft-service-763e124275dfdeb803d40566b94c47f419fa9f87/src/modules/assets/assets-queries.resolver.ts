@@ -1,6 +1,6 @@
 import { Address } from '@terradharitri/sdk-core';
 import { Args, Int, Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
-import { genericDescriptions, mxConfig } from 'src/config';
+import { genericDescriptions, drtConfig } from 'src/config';
 import { randomBetween } from 'src/utils/helpers';
 import { AccountsProvider } from '../account-stats/loaders/accounts.loader';
 import { Account } from '../account-stats/models/Account.dto';
@@ -241,7 +241,7 @@ export class AssetsQueriesResolver extends BaseResolver(Asset) {
   private async getMarketplaceForNft(ownerAddress: string, collection: string, identifier: string): Promise<Marketplace[]> {
     if (!ownerAddress) return null;
     const address = Address.newFromBech32(ownerAddress);
-    if (address.isSmartContract() && !address.equals(Address.newFromBech32(mxConfig.nftMarketplaceAddress))) {
+    if (address.isSmartContract() && !address.equals(Address.newFromBech32(drtConfig.nftMarketplaceAddress))) {
       const marketplace = await this.marketplaceProvider.load(ownerAddress);
 
       const mappedMarketplace = Marketplace.fromEntity(marketplace?.value, identifier);

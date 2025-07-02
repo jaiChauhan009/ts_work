@@ -2,14 +2,14 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { PairService } from '../../pair/services/pair.service';
 import { Address } from '@terradharitri/sdk-core';
 import { ApiConfigService } from '../../../helpers/api.config.service';
-import { MXProxyServiceProvider } from '../../../services/dharitri-communication/mx.proxy.service.mock';
-import { MXApiService } from '../../../services/dharitri-communication/mx.api.service';
+import { MXProxyServiceProvider } from '../../../services/dharitri-communication/drt.proxy.service.mock';
+import { MXApiService } from '../../../services/dharitri-communication/drt.api.service';
 import { encodeTransactionData } from '../../../helpers/helpers';
-import { mxConfig, gasConfig } from '../../../config';
+import { drtConfig, gasConfig } from '../../../config';
 import { TokenComputeService } from 'src/modules/tokens/services/token.compute.service';
 import { TokenServiceProvider } from 'src/modules/tokens/mocks/token.service.mock';
 import { FarmTransactionServiceV1_2 } from '../v1.2/services/farm.v1.2.transaction.service';
-import { MXDataApiServiceProvider } from 'src/services/dharitri-communication/mx.data.api.service.mock';
+import { MXDataApiServiceProvider } from 'src/services/dharitri-communication/drt.data.api.service.mock';
 import { WrapAbiServiceProvider } from 'src/modules/wrapping/mocks/wrap.abi.service.mock';
 import { ContextGetterServiceProvider } from 'src/services/context/mocks/context.getter.service.mock';
 import { PairAbiServiceProvider } from 'src/modules/pair/mocks/pair.abi.service.mock';
@@ -99,7 +99,7 @@ describe('FarmService', () => {
             data: encodeTransactionData(
                 'DCDTTransfer@REWAMEXLP-abcdef@1000000000000@enterFarmAndLockRewards',
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -136,7 +136,7 @@ describe('FarmService', () => {
             data: encodeTransactionData(
                 'DCDTNFTTransfer@REWAMEXFL-abcdef@01@1000000000000@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42@07311709943153914477',
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -172,7 +172,7 @@ describe('FarmService', () => {
             data: encodeTransactionData(
                 'DCDTNFTTransfer@REWATOK4FL-abcdef@01@1000000000000@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqescr4954@claimRewards',
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -228,7 +228,7 @@ describe('FarmService', () => {
             data: encodeTransactionData(
                 'DCDTNFTTransfer@REWAMEXFL-abcdef@01@1000000000000@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42@migrateToNewFarm@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -263,7 +263,7 @@ describe('FarmService', () => {
             data: encodeTransactionData(
                 'setFarmMigrationConfig@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42@REWAMEXFL-abcdef@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -292,7 +292,7 @@ describe('FarmService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.farms['v1.2'].stopRewards,
             data: encodeTransactionData('stopRewardsAndMigrateRps'),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -332,7 +332,7 @@ describe('FarmService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.farms.admin.end_produce_rewards,
             data: encodeTransactionData('end_produce_rewards'),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -372,7 +372,7 @@ describe('FarmService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.farms.admin.start_produce_rewards,
             data: encodeTransactionData('start_produce_rewards'),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -416,7 +416,7 @@ describe('FarmService', () => {
             data: encodeTransactionData(
                 'setPerBlockRewardAmount@1000000000000',
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -458,7 +458,7 @@ describe('FarmService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.farms.admin.set_penalty_percent,
             data: encodeTransactionData('set_penalty_percent@05'),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -500,7 +500,7 @@ describe('FarmService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.farms.admin.set_minimum_farming_epochs,
             data: encodeTransactionData('set_minimum_farming_epochs@10'),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -544,7 +544,7 @@ describe('FarmService', () => {
             data: encodeTransactionData(
                 'set_transfer_exec_gas_limit@0100000000',
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -586,7 +586,7 @@ describe('FarmService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.farms.admin.set_burn_gas_limit,
             data: encodeTransactionData('set_burn_gas_limit@0100000000'),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -626,7 +626,7 @@ describe('FarmService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.farms.admin.pause,
             data: encodeTransactionData('pause'),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -666,7 +666,7 @@ describe('FarmService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.farms.admin.resume,
             data: encodeTransactionData('resume'),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -714,7 +714,7 @@ describe('FarmService', () => {
             data: encodeTransactionData(
                 'registerFarmToken@FarmingToken12@T1T2-1234@18',
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -754,7 +754,7 @@ describe('FarmService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.farms.admin.setLocalRolesFarmToken,
             data: encodeTransactionData('setLocalRolesFarmToken'),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,
@@ -818,7 +818,7 @@ describe('FarmService', () => {
             data: encodeTransactionData(
                 'MultiDCDTNFTTransfer@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42@02@REWAMEXFL-abcdef@@01000000000000@REWAMEXFL-abcdef@@01000000000000@mergeFarmTokens',
             ),
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             version: 2,
             options: undefined,
             signature: undefined,

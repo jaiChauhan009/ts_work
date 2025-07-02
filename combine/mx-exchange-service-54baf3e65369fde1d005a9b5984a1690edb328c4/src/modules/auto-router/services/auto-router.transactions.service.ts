@@ -10,11 +10,11 @@ import {
 } from '@terradharitri/sdk-core';
 import { Injectable } from '@nestjs/common';
 import BigNumber from 'bignumber.js';
-import { mxConfig, gasConfig } from 'src/config';
+import { drtConfig, gasConfig } from 'src/config';
 import { MultiSwapTokensArgs } from 'src/modules/auto-router/models/multi-swap-tokens.args';
 import { WrapTransactionsService } from 'src/modules/wrapping/services/wrap.transactions.service';
 import { TransactionModel } from '../../../models/transaction.model';
-import { MXProxyService } from '../../../services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from '../../../services/dharitri-communication/drt.proxy.service';
 import { SWAP_TYPE } from '../models/auto-route.model';
 import { ComposableTaskType } from 'src/modules/composable-tasks/models/composable.tasks.model';
 import { ComposableTasksTransactionService } from 'src/modules/composable-tasks/services/composable.tasks.transaction';
@@ -26,7 +26,7 @@ import { TransactionOptions } from 'src/modules/common/transaction.options';
 @Injectable()
 export class AutoRouterTransactionService {
     constructor(
-        private readonly mxProxy: MXProxyService,
+        private readonly drtProxy: MXProxyService,
         private readonly transactionsWrapService: WrapTransactionsService,
         private readonly composeTasksTransactionService: ComposableTasksTransactionService,
     ) {}
@@ -43,7 +43,7 @@ export class AutoRouterTransactionService {
             ),
         );
 
-        if (args.tokenInID === mxConfig.REWAIdentifier) {
+        if (args.tokenInID === drtConfig.REWAIdentifier) {
             return [
                 await this.wrapRewaAndMultiSwapTransaction(
                     sender,
@@ -53,7 +53,7 @@ export class AutoRouterTransactionService {
             ];
         }
 
-        if (args.tokenOutID === mxConfig.REWAIdentifier) {
+        if (args.tokenOutID === drtConfig.REWAIdentifier) {
             return [
                 await this.multiSwapAndUnwrapRewaTransaction(
                     sender,
@@ -68,7 +68,7 @@ export class AutoRouterTransactionService {
 
         const transactionOptions = new TransactionOptions({
             sender: sender,
-            chainID: mxConfig.chainID,
+            chainID: drtConfig.chainID,
             gasLimit: gasLimit,
             function: 'multiPairSwap',
             arguments:
@@ -94,12 +94,12 @@ export class AutoRouterTransactionService {
         });
 
         const transaction =
-            await this.mxProxy.getRouterSmartContractTransaction(
+            await this.drtProxy.getRouterSmartContractTransaction(
                 transactionOptions,
             );
         transactions.push(transaction);
 
-        if (args.tokenOutID === mxConfig.REWAIdentifier) {
+        if (args.tokenOutID === drtConfig.REWAIdentifier) {
             transactions.push(
                 await this.transactionsWrapService.unwrapRewa(
                     sender,

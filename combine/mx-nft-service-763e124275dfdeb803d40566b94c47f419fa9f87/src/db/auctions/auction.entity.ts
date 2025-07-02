@@ -1,5 +1,5 @@
 import { U64Value } from '@terradharitri/sdk-core';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { AuctionTypeEnum, AuctionStatusEnum, AuctionAbi, ExternalAuctionAbi, NumbatSwapAuctionTypeEnum } from 'src/modules/auctions/models';
 import { BigNumberUtils } from 'src/utils/bigNumber-utils';
 import { ENEFTOR_KEY } from 'src/utils/constants';
@@ -97,7 +97,7 @@ export class AuctionEntity extends BaseEntity {
     tags: string,
     hash: string,
     marketplaceKey: string,
-    decimals: number = mxConfig.decimals,
+    decimals: number = drtConfig.decimals,
   ) {
     if (!auction) {
       return null;

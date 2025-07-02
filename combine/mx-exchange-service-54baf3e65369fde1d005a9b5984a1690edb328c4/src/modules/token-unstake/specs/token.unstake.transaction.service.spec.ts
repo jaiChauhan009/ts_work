@@ -1,10 +1,10 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { TokenUnstakeTransactionService } from '../services/token.unstake.transaction.service';
 import { TokenUnstakeAbiServiceProvider } from '../mocks/token.unstake.abi.service.mock';
-import { MXProxyServiceProvider } from 'src/services/dharitri-communication/mx.proxy.service.mock';
+import { MXProxyServiceProvider } from 'src/services/dharitri-communication/drt.proxy.service.mock';
 import { Address } from '@terradharitri/sdk-core/out';
 import { TransactionModel } from 'src/models/transaction.model';
-import { mxConfig, scAddress } from 'src/config';
+import { drtConfig, scAddress } from 'src/config';
 import { encodeTransactionData } from 'src/helpers/helpers';
 import { ApiConfigService } from 'src/helpers/api.config.service';
 import { ConfigModule } from '@nestjs/config';
@@ -50,7 +50,7 @@ describe('TokenUnstakeTransactionService', () => {
 
         expect(transaction).toEqual(
             new TransactionModel({
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 data: encodeTransactionData('claimUnlockedTokens'),
                 gasLimit: 13500000,
                 gasPrice: 1000000000,
@@ -78,7 +78,7 @@ describe('TokenUnstakeTransactionService', () => {
 
         expect(transaction).toEqual(
             new TransactionModel({
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 data: encodeTransactionData('cancelUnbond'),
                 gasLimit: 9500000,
                 gasPrice: 1000000000,

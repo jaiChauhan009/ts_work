@@ -17,7 +17,7 @@ import { StakingPositionSingleTokenModel } from '../models/position.creator.mode
 import { StakingAbiService } from 'src/modules/staking/services/staking.abi.service';
 import { denominateAmount } from 'src/utils/token.converters';
 import { DcdtToken } from 'src/modules/tokens/models/dcdtToken.model';
-import { constantsConfig, mxConfig } from 'src/config';
+import { constantsConfig, drtConfig } from 'src/config';
 import { WrapAbiService } from 'src/modules/wrapping/services/wrap.abi.service';
 
 export type PositionCreatorSingleTokenInput = {
@@ -91,7 +91,7 @@ export class PositionCreatorComputeService {
         const profiler = new PerformanceProfiler();
 
         const paymentTokenID =
-            payment.tokenIdentifier === mxConfig.REWAIdentifier
+            payment.tokenIdentifier === drtConfig.REWAIdentifier
                 ? wrappedTokenID
                 : payment.tokenIdentifier;
 

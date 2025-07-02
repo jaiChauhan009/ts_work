@@ -1088,9 +1088,9 @@ describe('Token Service', () => {
         description: '',
         tags: ['exchange', 'tests'],
         iconPng:
-          'https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/accounts/icons/test.png',
+          'https://raw.githubusercontent.com/TerraDharitri/drt-assets/master/accounts/icons/test.png',
         iconSvg:
-          'https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/accounts/icons/test.svg',
+          'https://raw.githubusercontent.com/TerraDharitri/drt-assets/master/accounts/icons/test.svg',
       }),
     };
 

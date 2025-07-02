@@ -2,9 +2,9 @@ import { Interaction } from '@terradharitri/sdk-core';
 import { Injectable } from '@nestjs/common';
 import { FarmMigrationConfig } from '../../models/farm.model';
 import { FarmAbiService } from '../../base-module/services/farm.abi.service';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
-import { MXGatewayService } from 'src/services/dharitri-communication/mx.gateway.service';
-import { MXApiService } from 'src/services/dharitri-communication/mx.api.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
+import { MXGatewayService } from 'src/services/dharitri-communication/drt.gateway.service';
+import { MXApiService } from 'src/services/dharitri-communication/drt.api.service';
 import { ErrorLoggerAsync } from '@terradharitri/sdk-nestjs-common';
 import { GetOrSetCache } from 'src/helpers/decorators/caching.decorator';
 import { CacheTtlInfo } from 'src/services/caching/cache.ttl.info';
@@ -18,12 +18,12 @@ export class FarmAbiServiceV1_2
     implements IFarmAbiServiceV1_2
 {
     constructor(
-        protected readonly mxProxy: MXProxyService,
+        protected readonly drtProxy: MXProxyService,
         protected readonly gatewayService: MXGatewayService,
-        protected readonly mxApi: MXApiService,
+        protected readonly drtApi: MXApiService,
         protected readonly cacheService: CacheService,
     ) {
-        super(mxProxy, gatewayService, mxApi, cacheService);
+        super(drtProxy, gatewayService, drtApi, cacheService);
     }
 
     @ErrorLoggerAsync({
@@ -41,7 +41,7 @@ export class FarmAbiServiceV1_2
     async getLockedAssetFactoryAddressRaw(
         farmAddress: string,
     ): Promise<string> {
-        const contract = await this.mxProxy.getFarmSmartContract(farmAddress);
+        const contract = await this.drtProxy.getFarmSmartContract(farmAddress);
         const interaction: Interaction =
             contract.methodsExplicit.getLockedAssetFactoryManagedAddress();
         const response = await this.getGenericData(interaction);
@@ -61,7 +61,7 @@ export class FarmAbiServiceV1_2
     }
 
     async getFarmingTokenReserveRaw(farmAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getFarmSmartContract(farmAddress);
+        const contract = await this.drtProxy.getFarmSmartContract(farmAddress);
 
         const interaction: Interaction =
             contract.methodsExplicit.getFarmingTokenReserve();
@@ -82,7 +82,7 @@ export class FarmAbiServiceV1_2
     }
 
     async getUndistributedFeesRaw(farmAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getFarmSmartContract(farmAddress);
+        const contract = await this.drtProxy.getFarmSmartContract(farmAddress);
 
         const interaction: Interaction =
             contract.methodsExplicit.getUndistributedFees();
@@ -103,7 +103,7 @@ export class FarmAbiServiceV1_2
     }
 
     async getCurrentBlockFeeRaw(farmAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getFarmSmartContract(farmAddress);
+        const contract = await this.drtProxy.getFarmSmartContract(farmAddress);
 
         const interaction: Interaction =
             contract.methodsExplicit.getCurrentBlockFee();
@@ -125,7 +125,7 @@ export class FarmAbiServiceV1_2
     }
 
     async getLockedRewardAprMuliplierRaw(farmAddress: string): Promise<number> {
-        const contract = await this.mxProxy.getFarmSmartContract(farmAddress);
+        const contract = await this.drtProxy.getFarmSmartContract(farmAddress);
 
         const interaction: Interaction =
             contract.methodsExplicit.getLockedRewardAprMuliplier();
@@ -149,7 +149,7 @@ export class FarmAbiServiceV1_2
     async getFarmMigrationConfigurationRaw(
         farmAddress: string,
     ): Promise<FarmMigrationConfig | undefined> {
-        const contract = await this.mxProxy.getFarmSmartContract(farmAddress);
+        const contract = await this.drtProxy.getFarmSmartContract(farmAddress);
 
         const interaction: Interaction =
             contract.methodsExplicit.getFarmMigrationConfiguration();

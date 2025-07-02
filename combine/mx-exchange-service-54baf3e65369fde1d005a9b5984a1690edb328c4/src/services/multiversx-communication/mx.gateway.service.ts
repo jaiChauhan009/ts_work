@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { WINSTON_MODULE_PROVIDER } from 'nest-winston';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { ApiConfigService } from 'src/helpers/api.config.service';
 import { Logger } from 'winston';
 import Agent, { HttpsAgent } from 'agentkeepalive';
@@ -19,20 +19,20 @@ export class MXGatewayService {
         @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: Logger,
     ) {
         const keepAliveOptions = {
-            maxSockets: mxConfig.keepAliveMaxSockets,
-            maxFreeSockets: mxConfig.keepAliveMaxFreeSockets,
+            maxSockets: drtConfig.keepAliveMaxSockets,
+            maxFreeSockets: drtConfig.keepAliveMaxFreeSockets,
             timeout: this.apiConfigService.getKeepAliveTimeoutDownstream(),
-            freeSocketTimeout: mxConfig.keepAliveFreeSocketTimeout,
+            freeSocketTimeout: drtConfig.keepAliveFreeSocketTimeout,
             keepAlive: true,
         };
         const httpAgent = new Agent(keepAliveOptions);
         const httpsAgent = new HttpsAgent(keepAliveOptions);
-        this.url = process.env.MX_GATEWAY_URL;
+        this.url = process.env.DRT_GATEWAY_URL;
 
         this.config = {
-            timeout: mxConfig.proxyTimeout,
-            httpAgent: mxConfig.keepAlive ? httpAgent : null,
-            httpsAgent: mxConfig.keepAlive ? httpsAgent : null,
+            timeout: drtConfig.proxyTimeout,
+            httpAgent: drtConfig.keepAlive ? httpAgent : null,
+            httpsAgent: drtConfig.keepAlive ? httpsAgent : null,
         };
     }
 

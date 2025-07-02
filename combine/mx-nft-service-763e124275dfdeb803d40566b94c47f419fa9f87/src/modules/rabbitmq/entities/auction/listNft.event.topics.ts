@@ -1,5 +1,5 @@
 import { Address } from '@terradharitri/sdk-core';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 
 export class ListNftEventsTopics {
   private collection: string;
@@ -8,7 +8,7 @@ export class ListNftEventsTopics {
   private nrAuctionTokens: string = '1';
   private originalOwner: Address;
   private price: string;
-  private paymentToken: string = mxConfig.rewa;
+  private paymentToken: string = drtConfig.rewa;
   private paymentTokenNonce: string = '0';
   private auctionType: string = '';
   private deadline: number = 0;

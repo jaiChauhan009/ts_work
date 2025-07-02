@@ -1,5 +1,5 @@
 import { isEmpty, map } from 'lodash';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { BigNumberUtils } from 'src/utils/bigNumber-utils';
 import denominate from 'src/utils/formatters';
 import { SelectQueryBuilder } from 'typeorm/query-builder/SelectQueryBuilder';
@@ -40,7 +40,7 @@ export default class WhereBuilder<Entity> {
     let filterValues = filter.values;
     if (['priceAmount', 'minBid', 'maxBid'].includes(filter.field)) {
       filterName = `${filter.field}Denominated`;
-      filterValues = filter.values.map((value) => BigNumberUtils.denominateAmount(value, mxConfig.decimals).toString());
+      filterValues = filter.values.map((value) => BigNumberUtils.denominateAmount(value, drtConfig.decimals).toString());
     }
     const sqlParamName = this.queryBuilderName ? `${this.queryBuilderName}.${filterName}` : filterName;
 

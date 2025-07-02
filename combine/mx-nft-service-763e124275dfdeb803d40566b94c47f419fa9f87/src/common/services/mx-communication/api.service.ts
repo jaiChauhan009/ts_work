@@ -1,7 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import axios, { AxiosRequestConfig } from 'axios';
 import * as Agent from 'agentkeepalive';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { PerformanceProfiler } from 'src/modules/metrics/performance.profiler';
 import { MetricsCollector } from 'src/modules/metrics/metrics.collector';
 import { ApiSettings } from './models/api-settings';
@@ -16,7 +16,7 @@ export class ApiService {
 
   private getKeepAliveAgent(): Agent | undefined {
     if (this.keepaliveAgent === null) {
-      if (mxConfig.keepAlive) {
+      if (drtConfig.keepAlive) {
         this.keepaliveAgent = new Agent({
           keepAlive: true,
           maxSockets: Infinity,

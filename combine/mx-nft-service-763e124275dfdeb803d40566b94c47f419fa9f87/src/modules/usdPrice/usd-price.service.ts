@@ -1,19 +1,19 @@
 import { Injectable } from '@nestjs/common';
 import { MxApiService } from 'src/common';
 import { CacheInfo } from 'src/common/services/caching/entities/cache.info';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { computeUsdAmount } from 'src/utils/helpers';
 import { CacheService } from '@terradharitri/sdk-nestjs-cache';
 import { Token } from './Token.model';
-import { MxDataApiService } from 'src/common/services/mx-communication/mx-data.service';
+import { MxDataApiService } from 'src/common/services/drt-communication/drt-data.service';
 import { DateUtils } from 'src/utils/date-utils';
 
 @Injectable()
 export class UsdPriceService {
   constructor(
     private readonly cacheService: CacheService,
-    private readonly mxApiService: MxApiService,
-    private readonly mxDataApi: MxDataApiService,
+    private readonly drtApiService: MxApiService,
+    private readonly drtDataApi: MxDataApiService,
   ) {}
 
   async getUsdAmountDenom(token: string, amount: string): Promise<string> {
@@ -41,12 +41,12 @@ export class UsdPriceService {
   }
 
   public async getToken(tokenId: string): Promise<Token> {
-    if (tokenId === mxConfig.rewa || tokenId === mxConfig.wrewa) {
+    if (tokenId === drtConfig.rewa || tokenId === drtConfig.wrewa) {
       return new Token({
-        identifier: mxConfig.rewa,
-        symbol: mxConfig.rewa,
-        name: mxConfig.rewa,
-        decimals: mxConfig.decimals,
+        identifier: drtConfig.rewa,
+        symbol: drtConfig.rewa,
+        name: drtConfig.rewa,
+        decimals: drtConfig.decimals,
         priceUsd: await this.getCurrentRewaPrice(),
       });
     }
@@ -59,13 +59,13 @@ export class UsdPriceService {
 
     return await this.cacheService.getOrSet(
       `token_${tokenId}`,
-      async () => await this.mxApiService.getTokenData(tokenId),
+      async () => await this.drtApiService.getTokenData(tokenId),
       CacheInfo.AllTokens.ttl,
     );
   }
 
   async getTokenPriceUsd(token: string): Promise<string | undefined> {
-    if (token === mxConfig.rewa || token === mxConfig.wrewa) {
+    if (token === drtConfig.rewa || token === drtConfig.wrewa) {
       return await this.getCurrentRewaPrice();
     }
     return await this.getDcdtPriceUsd(token);
@@ -81,10 +81,10 @@ export class UsdPriceService {
     let [apiTokens, rewaPriceUSD] = await Promise.all([this.getCachedApiTokens(), this.getCurrentRewaPrice()]);
 
     const rewaToken: Token = new Token({
-      identifier: mxConfig.rewa,
-      symbol: mxConfig.rewa,
-      name: mxConfig.rewa,
-      decimals: mxConfig.decimals,
+      identifier: drtConfig.rewa,
+      symbol: drtConfig.rewa,
+      name: drtConfig.rewa,
+      decimals: drtConfig.decimals,
       priceUsd: rewaPriceUSD,
     });
     return apiTokens.concat([rewaToken]);
@@ -95,17 +95,17 @@ export class UsdPriceService {
 
     if (cexTokens?.includes(tokenId)) {
       {
-        return await this.mxDataApi.getCexPrice(DateUtils.timestampToIsoStringWithHour(timestamp));
+        return await this.drtDataApi.getCexPrice(DateUtils.timestampToIsoStringWithHour(timestamp));
       }
     } else if (xExchangeTokens.includes(tokenId)) {
-      return await this.mxDataApi.getXechangeTokenPrice(tokenId, DateUtils.timestampToIsoStringWithHour(timestamp));
+      return await this.drtDataApi.getXechangeTokenPrice(tokenId, DateUtils.timestampToIsoStringWithHour(timestamp));
     }
   }
 
   private async getCachedDexTokens(): Promise<Token[]> {
     return await this.cacheService.getOrSet(
       CacheInfo.AllDexTokens.key,
-      async () => await this.mxApiService.getAllDexTokens(),
+      async () => await this.drtApiService.getAllDexTokens(),
       CacheInfo.AllDexTokens.ttl,
     );
   }
@@ -113,7 +113,7 @@ export class UsdPriceService {
   private async getCachedApiTokens(): Promise<Token[]> {
     return await this.cacheService.getOrSet(
       CacheInfo.AllApiTokens.key,
-      async () => await this.mxApiService.getAllTokens(),
+      async () => await this.drtApiService.getAllTokens(),
       CacheInfo.AllApiTokens.ttl,
     );
   }
@@ -121,7 +121,7 @@ export class UsdPriceService {
   private async getCurrentRewaPrice(): Promise<string> {
     return await this.cacheService.getOrSet(
       CacheInfo.RewaToken.key,
-      async () => await this.mxApiService.getRewaPriceFromEconomics(),
+      async () => await this.drtApiService.getRewaPriceFromEconomics(),
       CacheInfo.RewaToken.ttl,
     );
   }
@@ -129,7 +129,7 @@ export class UsdPriceService {
   private async getCexTokens(): Promise<string[]> {
     return await this.cacheService.getOrSet(
       CacheInfo.CexTokens.key,
-      async () => await this.mxDataApi.getCexTokens(),
+      async () => await this.drtDataApi.getCexTokens(),
       CacheInfo.CexTokens.ttl,
     );
   }
@@ -137,7 +137,7 @@ export class UsdPriceService {
   private async getXexchangeTokens(): Promise<string[]> {
     return await this.cacheService.getOrSet(
       CacheInfo.xExchangeTokens.key,
-      async () => await this.mxDataApi.getXexchangeTokens(),
+      async () => await this.drtDataApi.getXexchangeTokens(),
       CacheInfo.xExchangeTokens.ttl,
     );
   }

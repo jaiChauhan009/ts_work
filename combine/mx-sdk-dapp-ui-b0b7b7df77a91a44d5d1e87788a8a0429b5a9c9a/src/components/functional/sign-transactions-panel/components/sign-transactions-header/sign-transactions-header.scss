@@ -5,7 +5,7 @@
     @apply mvx:flex mvx:flex-1 mvx:flex-col mvx:gap-5 mvx:py-5;
 
     .sign-transactions-header-pager {
-      @apply mvx:flex mvx:relative mvx:rounded-2xl mvx:h-9 mvx:items-center mvx:px-5 mvx:justify-center mvx:mx-auto mvx:gap-5;
+      @apply mvx:flex mvx:relative mvx:rounded-2xl mvx:h-9 mvx:items-center mvx:px-5 mvx:justify-center mvx:drt-auto mvx:gap-5;
       background-color: var(--mvx-bg-color-secondary);
 
       .sign-transactions-header-pager-icon {
@@ -41,7 +41,7 @@
     }
 
     .sign-transactions-header-origin {
-      @apply mvx:py-6 mvx:flex mvx:flex-col mvx:mx-auto mvx:text-center mvx:justify-center mvx:items-center;
+      @apply mvx:py-6 mvx:flex mvx:flex-col mvx:drt-auto mvx:text-center mvx:justify-center mvx:items-center;
       @apply mvx:select-none mvx:gap-3 mvx:leading-none mvx:text-base;
 
       &.centered {

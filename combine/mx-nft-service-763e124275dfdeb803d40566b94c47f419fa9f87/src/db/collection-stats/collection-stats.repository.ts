@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { EntityManager } from 'typeorm';
 import { CollectionStatsEntity } from './collection-stats';
 import { getCollectionStats } from './collection-stats.querries';
@@ -10,7 +10,7 @@ export class CollectionStatsRepository {
   async getStats(
     identifier: string,
     marketplaceKey: string = undefined,
-    paymentToken: string = mxConfig.rewa,
+    paymentToken: string = drtConfig.rewa,
   ): Promise<CollectionStatsEntity> {
     const response = await this.manager.query(getCollectionStats(identifier, marketplaceKey, paymentToken));
     return response?.length > 0 ? response[0] : new CollectionStatsEntity();
@@ -19,7 +19,7 @@ export class CollectionStatsRepository {
   async getFloorPriceForCollection(
     identifier: string,
     marketplaceKey: string = undefined,
-    paymentToken: string = mxConfig.rewa,
+    paymentToken: string = drtConfig.rewa,
   ): Promise<number> {
     const response = await this.manager.query(getCollectionStats(identifier, marketplaceKey, paymentToken));
     return response?.length > 0 ? response[0]?.minPrice ?? 0 : 0;

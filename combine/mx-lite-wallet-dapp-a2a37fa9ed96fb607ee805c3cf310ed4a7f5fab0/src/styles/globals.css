@@ -11,16 +11,16 @@
   }
 }
 
-.mx-transactions > td {
+.drt-transactions > td {
   @apply p-2;
 }
 
-.mx-transactions td > span,
-.mx-transactions td > div {
+.drt-transactions td > span,
+.drt-transactions td > div {
   @apply flex w-max;
 }
 
-.mx-transactions td > div > a {
+.drt-transactions td > div > a {
   @apply text-blue-600;
 }
 

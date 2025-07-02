@@ -1,5 +1,5 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { mxConfig } from 'src/config';
+import { drtConfig } from 'src/config';
 import { NativeAuthSigner } from '@terradharitri/sdk-nestjs-http';
 import { ApiService } from './api.service';
 import { ApiSettings } from './models/api-settings';
@@ -23,7 +23,7 @@ export class MxToolsService {
     this.nativeAuthSigner = new NativeAuthSigner({
       origin: 'NftService',
       apiUrl: this.apiConfigService.getApiUrl(),
-      signerPrivateKeyPath: getFilePathFromDist(mxConfig.pemFileName),
+      signerPrivateKeyPath: getFilePathFromDist(drtConfig.pemFileName),
     });
   }
 

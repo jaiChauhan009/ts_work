@@ -1,18 +1,18 @@
 import { Injectable } from '@nestjs/common';
 import { Interaction } from '@terradharitri/sdk-core/out/smartcontracts/interaction';
 import { UnlockMileStoneModel } from '../models/locked-asset.model';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { GenericAbiService } from 'src/services/generics/generic.abi.service';
 
 @Injectable()
 export class AbiLockedAssetService extends GenericAbiService {
-    constructor(protected readonly mxProxy: MXProxyService) {
-        super(mxProxy);
+    constructor(protected readonly drtProxy: MXProxyService) {
+        super(drtProxy);
     }
 
     async getAssetTokenID(): Promise<string> {
         const contract =
-            await this.mxProxy.getLockedAssetFactorySmartContract();
+            await this.drtProxy.getLockedAssetFactorySmartContract();
         const interaction: Interaction =
             contract.methodsExplicit.getAssetTokenId();
         const response = await this.getGenericData(interaction);
@@ -21,7 +21,7 @@ export class AbiLockedAssetService extends GenericAbiService {
 
     async getLockedTokenID(): Promise<string> {
         const contract =
-            await this.mxProxy.getLockedAssetFactorySmartContract();
+            await this.drtProxy.getLockedAssetFactorySmartContract();
         const interaction: Interaction =
             contract.methodsExplicit.getLockedAssetTokenId();
         const response = await this.getGenericData(interaction);
@@ -30,7 +30,7 @@ export class AbiLockedAssetService extends GenericAbiService {
 
     async getDefaultUnlockPeriod(): Promise<UnlockMileStoneModel[]> {
         const contract =
-            await this.mxProxy.getLockedAssetFactorySmartContract();
+            await this.drtProxy.getLockedAssetFactorySmartContract();
         const interaction: Interaction =
             contract.methodsExplicit.getDefaultUnlockPeriod();
         const response = await this.getGenericData(interaction);
@@ -46,7 +46,7 @@ export class AbiLockedAssetService extends GenericAbiService {
 
     async getInitEpoch(): Promise<number> {
         const contract =
-            await this.mxProxy.getLockedAssetFactorySmartContract();
+            await this.drtProxy.getLockedAssetFactorySmartContract();
         const interaction: Interaction =
             contract.methodsExplicit.getInitEpoch();
         const response = await this.getGenericData(interaction);
@@ -55,7 +55,7 @@ export class AbiLockedAssetService extends GenericAbiService {
 
     async getExtendedAttributesActivationNonce(): Promise<number> {
         const contract =
-            await this.mxProxy.getLockedAssetFactorySmartContract();
+            await this.drtProxy.getLockedAssetFactorySmartContract();
         const interaction: Interaction =
             contract.methodsExplicit.getExtendedAttributesActivationNonce();
         const response = await this.getGenericData(interaction);

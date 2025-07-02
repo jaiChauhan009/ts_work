@@ -3,7 +3,7 @@ import { PairService } from '../../pair/services/pair.service';
 import { ProxyService } from '../../proxy/services/proxy.service';
 import { UserMetaDcdtService } from '../services/user.metaDcdt.service';
 import { LockedAssetService } from '../../locked-asset-factory/services/locked-asset.service';
-import { MXApiServiceProvider } from '../../../services/dharitri-communication/mx.api.service.mock';
+import { MXApiServiceProvider } from '../../../services/dharitri-communication/drt.api.service.mock';
 import { UserFarmToken, UserToken } from '../models/user.model';
 import { FarmTokenAttributesModelV1_2 } from '../../farm/models/farmTokenAttributes.model';
 import { UserMetaDcdtComputeService } from '../services/metaDcdt.compute.service';
@@ -31,7 +31,7 @@ import { FarmAbiServiceV2 } from 'src/modules/farm/v2/services/farm.v2.abi.servi
 import { WeekTimekeepingComputeService } from '../../../submodules/week-timekeeping/services/week-timekeeping.compute.service';
 import { ProgressComputeService } from '../../../submodules/weekly-rewards-splitting/services/progress.compute.service';
 import { LockedTokenWrapperService } from '../../locked-token-wrapper/services/locked-token-wrapper.service';
-import { MXDataApiServiceProvider } from 'src/services/dharitri-communication/mx.data.api.service.mock';
+import { MXDataApiServiceProvider } from 'src/services/dharitri-communication/drt.data.api.service.mock';
 import { EnergyAbiServiceProvider } from 'src/modules/energy/mocks/energy.abi.service.mock';
 import { WrapAbiServiceProvider } from 'src/modules/wrapping/mocks/wrap.abi.service.mock';
 import { WeekTimekeepingAbiServiceProvider } from 'src/submodules/week-timekeeping/mocks/week.timekeeping.abi.service.mock';

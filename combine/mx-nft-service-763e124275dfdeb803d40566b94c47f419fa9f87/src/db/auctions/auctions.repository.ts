@@ -1,7 +1,7 @@
 import { forwardRef, Inject, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { PersistenceService } from 'src/common/persistence/persistence.service';
-import { constants, mxConfig } from 'src/config';
+import { constants, drtConfig } from 'src/config';
 import { AuctionStatusEnum } from 'src/modules/auctions/models/AuctionStatus.enum';
 import { AuctionCustomEnum, AuctionCustomSort } from 'src/modules/common/filters/AuctionCustomFilters';
 import FilterQueryBuilder from 'src/modules/common/filters/FilterQueryBuilder';
@@ -95,7 +95,7 @@ export class AuctionsRepository {
   private async handleCurrentPriceFilter(queryRequest: QueryRequest, queryBuilder: SelectQueryBuilder<AuctionEntity>) {
     const maxBidValue = '1000000000';
     const paymentTokenFilter = queryRequest.getFilterName('paymentToken');
-    let paymentDecimals = mxConfig.decimals;
+    let paymentDecimals = drtConfig.decimals;
 
     if (paymentTokenFilter) {
       const paymentToken = await this.usdPriceService.getToken(paymentTokenFilter);
@@ -274,7 +274,7 @@ export class AuctionsRepository {
   private async getMinMaxForQuery(queryRequest: QueryRequest): Promise<PriceRange> {
     const filterQueryBuilder = new FilterQueryBuilder<AuctionEntity>(this.auctionsRepository, queryRequest.filters, 'a');
     const paymentTokenFilter = queryRequest.getFilterName('paymentToken');
-    const paymentToken = paymentTokenFilter ?? mxConfig.rewa;
+    const paymentToken = paymentTokenFilter ?? drtConfig.rewa;
     const queryBuilder: SelectQueryBuilder<AuctionEntity> = filterQueryBuilder.build();
     const response = await queryBuilder
       .select(

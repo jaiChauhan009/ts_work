@@ -1,6 +1,6 @@
 import { forwardRef, Module } from '@nestjs/common';
 import { TokenModule } from 'src/modules/tokens/token.module';
-import { MXCommunicationModule } from 'src/services/dharitri-communication/mx.communication.module';
+import { MXCommunicationModule } from 'src/services/dharitri-communication/drt.communication.module';
 import { ProxyModule } from '../proxy.module';
 import { ProxyAbiServiceV2 } from './services/proxy.v2.abi.service';
 

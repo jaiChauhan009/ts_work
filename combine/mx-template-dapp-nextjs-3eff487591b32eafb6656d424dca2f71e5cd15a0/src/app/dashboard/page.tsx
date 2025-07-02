@@ -43,7 +43,7 @@ const WIDGETS: WidgetType[] = [
     widget: PingPongService,
     description:
       'Smart Contract interactions using the backend generated transactions',
-    reference: 'https://github.com/TerraDharitri/mx-ping-pong-service',
+    reference: 'https://github.com/TerraDharitri/drt-ping-pong-service',
     anchor: 'ping-pong-backend'
   },
   {
@@ -66,7 +66,7 @@ const WIDGETS: WidgetType[] = [
     description:
       'A secure authentication token can be used to interact with the backend',
     reference:
-      'https://github.com/TerraDharitri/mx-sdk-dapp#sending-transactions-synchronously-in-batches',
+      'https://github.com/TerraDharitri/drt-sdk-dapp#sending-transactions-synchronously-in-batches',
     anchor: 'batch-transactions'
   },
   {

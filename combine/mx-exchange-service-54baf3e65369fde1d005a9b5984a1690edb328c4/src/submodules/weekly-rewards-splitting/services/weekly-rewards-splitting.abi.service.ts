@@ -13,7 +13,7 @@ import { DcdtTokenPayment } from '../../../models/dcdtTokenPayment.model';
 import { VmQueryError } from '../../../utils/errors.constants';
 import { Energy, EnergyType } from '@terradharitri/sdk-exchange';
 import { ReturnCode } from '@terradharitri/sdk-core/out/smartcontracts/returnCode';
-import { MXProxyService } from '../../../services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from '../../../services/dharitri-communication/drt.proxy.service';
 import { scAddress } from 'src/config';
 import { ErrorLoggerAsync } from '@terradharitri/sdk-nestjs-common';
 import { GetOrSetCache } from 'src/helpers/decorators/caching.decorator';
@@ -28,11 +28,11 @@ export class WeeklyRewardsSplittingAbiService
     implements IWeeklyRewardsSplittingAbiService
 {
     constructor(
-        protected readonly mxProxy: MXProxyService,
+        protected readonly drtProxy: MXProxyService,
         private readonly remoteConfig: RemoteConfigGetterService,
         private readonly weekTimekeepCompute: WeekTimekeepingComputeService,
     ) {
-        super(mxProxy);
+        super(drtProxy);
     }
 
     @ErrorLoggerAsync({
@@ -282,14 +282,14 @@ export class WeeklyRewardsSplittingAbiService
         contractAddress: string,
     ): Promise<SmartContract> {
         if (scAddress.feesCollector === contractAddress) {
-            return this.mxProxy.getFeesCollectorContract();
+            return this.drtProxy.getFeesCollectorContract();
         }
 
         const stakingAddresses = await this.remoteConfig.getStakingAddresses();
         if (stakingAddresses.includes(contractAddress)) {
-            return this.mxProxy.getStakingSmartContract(contractAddress);
+            return this.drtProxy.getStakingSmartContract(contractAddress);
         }
 
-        return this.mxProxy.getFarmSmartContract(contractAddress);
+        return this.drtProxy.getFarmSmartContract(contractAddress);
     }
 }

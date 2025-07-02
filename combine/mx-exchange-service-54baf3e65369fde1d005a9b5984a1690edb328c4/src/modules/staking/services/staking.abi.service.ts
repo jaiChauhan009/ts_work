@@ -10,8 +10,8 @@ import {
 } from '@terradharitri/sdk-core';
 import { Injectable } from '@nestjs/common';
 import { BigNumber } from 'bignumber.js';
-import { MXGatewayService } from 'src/services/dharitri-communication/mx.gateway.service';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXGatewayService } from 'src/services/dharitri-communication/drt.gateway.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { GenericAbiService } from 'src/services/generics/generic.abi.service';
 import { ErrorLoggerAsync } from '@terradharitri/sdk-nestjs-common';
 import { GetOrSetCache } from 'src/helpers/decorators/caching.decorator';
@@ -19,7 +19,7 @@ import { Constants } from '@terradharitri/sdk-nestjs-common';
 import { CacheTtlInfo } from 'src/services/caching/cache.ttl.info';
 import { IStakingAbiService } from './interfaces';
 import { BoostedYieldsFactors } from 'src/modules/farm/models/farm.v2.model';
-import { MXApiService } from 'src/services/dharitri-communication/mx.api.service';
+import { MXApiService } from 'src/services/dharitri-communication/drt.api.service';
 import { CacheService } from 'src/services/caching/cache.service';
 import { getAllKeys } from 'src/utils/get.many.utils';
 
@@ -29,12 +29,12 @@ export class StakingAbiService
     implements IStakingAbiService
 {
     constructor(
-        protected readonly mxProxy: MXProxyService,
+        protected readonly drtProxy: MXProxyService,
         private readonly gatewayService: MXGatewayService,
         private readonly apiService: MXApiService,
         private readonly cachingService: CacheService,
     ) {
-        super(mxProxy);
+        super(drtProxy);
     }
 
     @ErrorLoggerAsync({
@@ -50,7 +50,7 @@ export class StakingAbiService
     }
 
     async getFarmTokenIDRaw(stakeAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             stakeAddress,
         );
         const interaction: Interaction =
@@ -82,7 +82,7 @@ export class StakingAbiService
     }
 
     async getFarmingTokenIDRaw(stakeAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             stakeAddress,
         );
         const interaction: Interaction =
@@ -114,7 +114,7 @@ export class StakingAbiService
     }
 
     async getRewardTokenIDRaw(stakeAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             stakeAddress,
         );
         const interaction: Interaction =
@@ -136,7 +136,7 @@ export class StakingAbiService
     }
 
     async getFarmTokenSupplyRaw(stakeAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             stakeAddress,
         );
         const interaction: Interaction =
@@ -158,7 +158,7 @@ export class StakingAbiService
     }
 
     async getRewardPerShareRaw(stakeAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             stakeAddress,
         );
         const interaction: Interaction =
@@ -180,7 +180,7 @@ export class StakingAbiService
     }
 
     async getAccumulatedRewardsRaw(stakeAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             stakeAddress,
         );
         const interaction: Interaction =
@@ -214,7 +214,7 @@ export class StakingAbiService
     }
 
     async getRewardCapacityRaw(stakeAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             stakeAddress,
         );
         const interaction: Interaction =
@@ -246,7 +246,7 @@ export class StakingAbiService
     }
 
     async getAnnualPercentageRewardsRaw(stakeAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             stakeAddress,
         );
         const interaction: Interaction =
@@ -268,7 +268,7 @@ export class StakingAbiService
     }
 
     async getMinUnbondEpochsRaw(stakeAddress: string): Promise<number> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             stakeAddress,
         );
         const interaction: Interaction =
@@ -290,7 +290,7 @@ export class StakingAbiService
     }
 
     async getPerBlockRewardsAmountRaw(stakeAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             stakeAddress,
         );
         const interaction: Interaction =
@@ -312,7 +312,7 @@ export class StakingAbiService
     }
 
     async getLastRewardBlockNonceRaw(stakeAddress: string): Promise<number> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             stakeAddress,
         );
         const interaction: Interaction =
@@ -334,7 +334,7 @@ export class StakingAbiService
     }
 
     async getDivisionSafetyConstantRaw(stakeAddress: string): Promise<number> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             stakeAddress,
         );
         const interaction: Interaction =
@@ -388,7 +388,7 @@ export class StakingAbiService
     }
 
     async getStateRaw(stakeAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             stakeAddress,
         );
         const interaction: Interaction = contract.methodsExplicit.getState([]);
@@ -401,7 +401,7 @@ export class StakingAbiService
         amount: string,
         attributes: string,
     ): Promise<BigNumber> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             stakeAddress,
         );
         const interaction: Interaction =
@@ -430,7 +430,7 @@ export class StakingAbiService
         stakeAddress: string,
     ): Promise<string> {
         try {
-            const contract = await this.mxProxy.getStakingSmartContract(
+            const contract = await this.drtProxy.getStakingSmartContract(
                 stakeAddress,
             );
             const interaction: Interaction =
@@ -460,7 +460,7 @@ export class StakingAbiService
         stakeAddress: string,
         scAddress: string,
     ): Promise<boolean> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             stakeAddress,
         );
         const transactionArgs: TypedValue[] = [
@@ -484,7 +484,7 @@ export class StakingAbiService
     }
 
     async getLastErrorMessageRaw(stakeAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             stakeAddress,
         );
         const interaction: Interaction =
@@ -506,7 +506,7 @@ export class StakingAbiService
     }
 
     async getEnergyFactoryAddressRaw(stakeAddress: string): Promise<string> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             stakeAddress,
         );
 
@@ -533,7 +533,7 @@ export class StakingAbiService
     async getBoostedYieldsRewardsPercenatageRaw(
         stakeAddress: string,
     ): Promise<number> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             stakeAddress,
         );
 
@@ -560,7 +560,7 @@ export class StakingAbiService
     async getBoostedYieldsFactorsRaw(
         stakeAddress: string,
     ): Promise<BoostedYieldsFactors> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             stakeAddress,
         );
         const interaction: Interaction =
@@ -599,7 +599,7 @@ export class StakingAbiService
         stakeAddress: string,
         week: number,
     ): Promise<string> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             stakeAddress,
         );
         const interaction: Interaction =
@@ -625,7 +625,7 @@ export class StakingAbiService
     async getUndistributedBoostedRewardsRaw(
         stakeAddress: string,
     ): Promise<string> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             stakeAddress,
         );
 
@@ -674,7 +674,7 @@ export class StakingAbiService
         stakeAddress: string,
         week: number,
     ): Promise<string> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             stakeAddress,
         );
         const interaction: Interaction =
@@ -704,7 +704,7 @@ export class StakingAbiService
         farmAddress: string,
         week: number,
     ): Promise<string> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             farmAddress,
         );
         const interaction: Interaction =
@@ -734,7 +734,7 @@ export class StakingAbiService
         stakeAddress: string,
         userAddress: string,
     ): Promise<string> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             stakeAddress,
         );
         const interaction: Interaction =
@@ -768,7 +768,7 @@ export class StakingAbiService
     async getFarmPositionMigrationNonceRaw(
         stakeAddress: string,
     ): Promise<number> {
-        const contract = await this.mxProxy.getStakingSmartContract(
+        const contract = await this.drtProxy.getStakingSmartContract(
             stakeAddress,
         );
 

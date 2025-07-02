@@ -1,1 +1,1 @@
-export * from './services/mx-communication';
+export * from './services/drt-communication';

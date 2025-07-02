@@ -1,10 +1,10 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { PairService } from '../../pair/services/pair.service';
-import { MXApiServiceProvider } from '../../../services/dharitri-communication/mx.api.service.mock';
+import { MXApiServiceProvider } from '../../../services/dharitri-communication/drt.api.service.mock';
 import { TokenComputeService } from 'src/modules/tokens/services/token.compute.service';
 import { TokenServiceProvider } from 'src/modules/tokens/mocks/token.service.mock';
 import { FarmComputeServiceV1_2 } from '../v1.2/services/farm.v1.2.compute.service';
-import { MXDataApiServiceProvider } from 'src/services/dharitri-communication/mx.data.api.service.mock';
+import { MXDataApiServiceProvider } from 'src/services/dharitri-communication/drt.data.api.service.mock';
 import { WrapAbiServiceProvider } from 'src/modules/wrapping/mocks/wrap.abi.service.mock';
 import { ContextGetterServiceProvider } from 'src/services/context/mocks/context.getter.service.mock';
 import { PairAbiServiceProvider } from 'src/modules/pair/mocks/pair.abi.service.mock';

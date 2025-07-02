@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { constantsConfig, mxConfig, gasConfig } from 'src/config';
+import { constantsConfig, drtConfig, gasConfig } from 'src/config';
 import {
     Address,
     BigUIntValue,
@@ -15,7 +15,7 @@ import {
     AddLiquidityProxyArgs,
     RemoveLiquidityProxyArgs,
 } from '../../models/proxy-pair.args';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { WrapTransactionsService } from 'src/modules/wrapping/services/wrap.transactions.service';
 import { InputTokenModel } from 'src/models/inputToken.model';
 import { WrapAbiService } from 'src/modules/wrapping/services/wrap.abi.service';
@@ -28,7 +28,7 @@ import { TransactionOptions } from 'src/modules/common/transaction.options';
 export class ProxyPairTransactionsService {
     constructor(
         private readonly proxyAbiV2: ProxyAbiServiceV2,
-        private readonly mxProxy: MXProxyService,
+        private readonly drtProxy: MXProxyService,
         private readonly pairService: PairService,
         private readonly pairAbi: PairAbiService,
         private readonly wrapAbi: WrapAbiService,
@@ -42,7 +42,7 @@ export class ProxyPairTransactionsService {
     ): Promise<TransactionModel[]> {
         const transactions: TransactionModel[] = [];
 
-        switch (mxConfig.REWAIdentifier) {
+        switch (drtConfig.REWAIdentifier) {
             case args.tokens[0].tokenID:
                 transactions.push(
                     await this.wrapTransaction.wrapRewa(
@@ -101,7 +101,7 @@ export class ProxyPairTransactionsService {
                 ? gasConfig.proxy.pairs.addLiquidity.withTokenMerge
                 : gasConfig.proxy.pairs.addLiquidity.default;
 
-        return this.mxProxy.getProxyDexSmartContractTransaction(
+        return this.drtProxy.getProxyDexSmartContractTransaction(
             proxyAddress,
             new TransactionOptions({
                 sender: sender,
@@ -156,7 +156,7 @@ export class ProxyPairTransactionsService {
             .integerValue();
 
         const removeLiquidityTransaction =
-            await this.mxProxy.getProxyDexSmartContractTransaction(
+            await this.drtProxy.getProxyDexSmartContractTransaction(
                 proxyAddress,
                 new TransactionOptions({
                     sender: sender,
@@ -218,7 +218,7 @@ export class ProxyPairTransactionsService {
 
         const gasLimit = gasConfig.proxy.pairs.defaultMergeWLPT * tokens.length;
 
-        return this.mxProxy.getProxyDexSmartContractTransaction(
+        return this.drtProxy.getProxyDexSmartContractTransaction(
             proxyAddress,
             new TransactionOptions({
                 sender: sender,
@@ -244,7 +244,7 @@ export class ProxyPairTransactionsService {
         payment: InputTokenModel,
         lockEpochs: number,
     ): Promise<TransactionModel> {
-        return this.mxProxy.getProxyDexSmartContractTransaction(
+        return this.drtProxy.getProxyDexSmartContractTransaction(
             proxyAddress,
             new TransactionOptions({
                 sender: sender,
@@ -269,7 +269,7 @@ export class ProxyPairTransactionsService {
     ): Promise<InputTokenModel[]> {
         const wrappedTokenID = await this.wrapAbi.wrappedRewaTokenID();
 
-        switch (mxConfig.REWAIdentifier) {
+        switch (drtConfig.REWAIdentifier) {
             case tokens[0].tokenID:
                 if (tokens[0].nonce > 0) {
                     throw new Error('Invalid nonce for REWA token!');

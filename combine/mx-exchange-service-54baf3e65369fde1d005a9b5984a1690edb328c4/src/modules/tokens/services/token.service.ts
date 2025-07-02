@@ -17,7 +17,7 @@ import { ErrorLoggerAsync } from '@terradharitri/sdk-nestjs-common';
 import { GetOrSetCache } from 'src/helpers/decorators/caching.decorator';
 import { CacheTtlInfo } from 'src/services/caching/cache.ttl.info';
 import { NftCollection } from '../models/nftCollection.model';
-import { MXApiService } from 'src/services/dharitri-communication/mx.api.service';
+import { MXApiService } from 'src/services/dharitri-communication/drt.api.service';
 import { CacheService } from 'src/services/caching/cache.service';
 import { CollectionType } from 'src/modules/common/collection.type';
 import { TokenComputeService } from './token.compute.service';

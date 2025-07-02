@@ -1,11 +1,11 @@
 import { Token, TokenTransfer } from '@terradharitri/sdk-core';
 import { Injectable } from '@nestjs/common';
 import BigNumber from 'bignumber.js';
-import { mxConfig, gasConfig } from 'src/config';
+import { drtConfig, gasConfig } from 'src/config';
 import { InputTokenModel } from 'src/models/inputToken.model';
 import { TransactionModel } from 'src/models/transaction.model';
 import { WrapTransactionsService } from 'src/modules/wrapping/services/wrap.transactions.service';
-import { MXProxyService } from 'src/services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from 'src/services/dharitri-communication/drt.proxy.service';
 import { WrapAbiService } from 'src/modules/wrapping/services/wrap.abi.service';
 import { PriceDiscoveryAbiService } from './price.discovery.abi.service';
 import { TransactionOptions } from 'src/modules/common/transaction.options';
@@ -14,7 +14,7 @@ import { TransactionOptions } from 'src/modules/common/transaction.options';
 export class PriceDiscoveryTransactionService {
     constructor(
         private readonly priceDiscoveryAbi: PriceDiscoveryAbiService,
-        private readonly mxProxy: MXProxyService,
+        private readonly drtProxy: MXProxyService,
         private readonly wrapAbi: WrapAbiService,
         private readonly wrappingTransactions: WrapTransactionsService,
     ) {}
@@ -26,7 +26,7 @@ export class PriceDiscoveryTransactionService {
     ): Promise<TransactionModel[]> {
         const wrappedTokenID = await this.wrapAbi.wrappedRewaTokenID();
         const transactions: TransactionModel[] = [];
-        if (inputToken.tokenID === mxConfig.REWAIdentifier) {
+        if (inputToken.tokenID === drtConfig.REWAIdentifier) {
             transactions.push(
                 await this.wrappingTransactions.wrapRewa(
                     sender,
@@ -62,7 +62,7 @@ export class PriceDiscoveryTransactionService {
             inputToken,
         );
 
-        return await this.mxProxy.getPriceDiscoverySmartContractTransaction(
+        return await this.drtProxy.getPriceDiscoverySmartContractTransaction(
             priceDiscoveryAddress,
             new TransactionOptions({
                 sender: sender,
@@ -130,7 +130,7 @@ export class PriceDiscoveryTransactionService {
     ): Promise<TransactionModel> {
         await this.validateRedeemInputTokens(priceDiscoveryAddress, inputToken);
 
-        return await this.mxProxy.getPriceDiscoverySmartContractTransaction(
+        return await this.drtProxy.getPriceDiscoverySmartContractTransaction(
             priceDiscoveryAddress,
             new TransactionOptions({
                 sender: sender,

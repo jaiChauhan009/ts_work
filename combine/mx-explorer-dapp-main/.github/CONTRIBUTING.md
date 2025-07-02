@@ -1,4 +1,4 @@
-# Contributing to dharitri/mx-explorer-dapp
+# Contributing to dharitri/drt-explorer-dapp
 
 If you are unfamiliar with the workflow of contributing to github, you can refer to this [this article](https://github.com/firstcontributions/first-contributions/blob/master/README.md)
 

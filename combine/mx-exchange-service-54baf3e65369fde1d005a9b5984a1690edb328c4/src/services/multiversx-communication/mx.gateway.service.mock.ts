@@ -1,4 +1,4 @@
-import { MXGatewayService } from './mx.gateway.service';
+import { MXGatewayService } from './drt.gateway.service';
 
 export class MXGatewayServiceMock {
     async getSCStorageKey(address: string, key: string): Promise<any> {

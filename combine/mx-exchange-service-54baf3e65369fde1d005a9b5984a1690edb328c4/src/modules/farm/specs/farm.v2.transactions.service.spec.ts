@@ -4,18 +4,18 @@ import { ConfigModule } from '@nestjs/config';
 import { WinstonModule } from 'nest-winston';
 import winston from 'winston';
 import { DynamicModuleUtils } from 'src/utils/dynamic.module.utils';
-import { MXProxyServiceProvider } from 'src/services/dharitri-communication/mx.proxy.service.mock';
+import { MXProxyServiceProvider } from 'src/services/dharitri-communication/drt.proxy.service.mock';
 import { FarmAbiServiceProviderV2 } from '../mocks/farm.v2.abi.service.mock';
 import { PairService } from 'src/modules/pair/services/pair.service';
 import { PairAbiServiceProvider } from 'src/modules/pair/mocks/pair.abi.service.mock';
 import { PairComputeServiceProvider } from 'src/modules/pair/mocks/pair.compute.service.mock';
 import { RouterAbiServiceProvider } from 'src/modules/router/mocks/router.abi.service.mock';
-import { MXApiServiceProvider } from 'src/services/dharitri-communication/mx.api.service.mock';
+import { MXApiServiceProvider } from 'src/services/dharitri-communication/drt.api.service.mock';
 import { WrapAbiServiceProvider } from 'src/modules/wrapping/mocks/wrap.abi.service.mock';
 import { ApiConfigService } from 'src/helpers/api.config.service';
 import { TokenServiceProvider } from 'src/modules/tokens/mocks/token.service.mock';
 import { ContextGetterServiceProvider } from 'src/services/context/mocks/context.getter.service.mock';
-import { MXApiService } from 'src/services/dharitri-communication/mx.api.service';
+import { MXApiService } from 'src/services/dharitri-communication/drt.api.service';
 import { Address } from '@terradharitri/sdk-core/out';
 import { encodeTransactionData } from 'src/helpers/helpers';
 
@@ -59,8 +59,8 @@ describe('FarmTransactionsServiceV2', () => {
         const service = module.get<FarmTransactionServiceV2>(
             FarmTransactionServiceV2,
         );
-        const mxApi = module.get<MXApiService>(MXApiService);
-        jest.spyOn(mxApi, 'getNftsForUser').mockResolvedValue([
+        const drtApi = module.get<MXApiService>(MXApiService);
+        jest.spyOn(drtApi, 'getNftsForUser').mockResolvedValue([
             {
                 identifier: 'REWAMEXFL-ghijkl-0a',
                 collection: 'REWAMEXFL-ghijkl',
@@ -91,8 +91,8 @@ describe('FarmTransactionsServiceV2', () => {
         const service = module.get<FarmTransactionServiceV2>(
             FarmTransactionServiceV2,
         );
-        const mxApi = module.get<MXApiService>(MXApiService);
-        jest.spyOn(mxApi, 'getNftsForUser').mockResolvedValue([
+        const drtApi = module.get<MXApiService>(MXApiService);
+        jest.spyOn(drtApi, 'getNftsForUser').mockResolvedValue([
             {
                 identifier: 'REWAMEXFL-ghijkl-01',
                 collection: 'REWAMEXFL-ghijkl',

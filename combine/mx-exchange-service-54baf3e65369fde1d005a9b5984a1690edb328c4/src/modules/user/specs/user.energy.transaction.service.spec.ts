@@ -3,7 +3,7 @@ import { PairService } from '../../pair/services/pair.service';
 import { ProxyService } from '../../proxy/services/proxy.service';
 import { UserMetaDcdtService } from '../services/user.metaDcdt.service';
 import { LockedAssetService } from '../../locked-asset-factory/services/locked-asset.service';
-import { MXApiServiceProvider } from '../../../services/dharitri-communication/mx.api.service.mock';
+import { MXApiServiceProvider } from '../../../services/dharitri-communication/drt.api.service.mock';
 import { UserMetaDcdtComputeService } from '../services/metaDcdt.compute.service';
 import { LockedAssetGetterService } from '../../locked-asset-factory/services/locked.asset.getter.service';
 import { AbiLockedAssetServiceProvider } from '../../locked-asset-factory/mocks/abi.locked.asset.service.mock';
@@ -25,7 +25,7 @@ import { FarmComputeServiceV2 } from 'src/modules/farm/v2/services/farm.v2.compu
 import { FarmAbiServiceV2 } from 'src/modules/farm/v2/services/farm.v2.abi.service';
 import { WeekTimekeepingComputeService } from '../../../submodules/week-timekeeping/services/week-timekeeping.compute.service';
 import { LockedTokenWrapperService } from '../../locked-token-wrapper/services/locked-token-wrapper.service';
-import { MXDataApiServiceProvider } from 'src/services/dharitri-communication/mx.data.api.service.mock';
+import { MXDataApiServiceProvider } from 'src/services/dharitri-communication/drt.data.api.service.mock';
 import { EnergyAbiServiceProvider } from 'src/modules/energy/mocks/energy.abi.service.mock';
 import { WrapAbiServiceProvider } from 'src/modules/wrapping/mocks/wrap.abi.service.mock';
 import { WeekTimekeepingAbiServiceProvider } from 'src/submodules/week-timekeeping/mocks/week.timekeeping.abi.service.mock';
@@ -53,9 +53,9 @@ import { FarmAbiFactory } from 'src/modules/farm/farm.abi.factory';
 import { StakingProxyService } from '../../staking-proxy/services/staking.proxy.service';
 import { StakingProxyAbiService } from '../../staking-proxy/services/staking.proxy.abi.service';
 import { UserEnergyComputeService } from '../services/userEnergy/user.energy.compute.service';
-import { MXProxyServiceProvider } from '../../../services/dharitri-communication/mx.proxy.service.mock';
+import { MXProxyServiceProvider } from '../../../services/dharitri-communication/drt.proxy.service.mock';
 import { Address } from '@terradharitri/sdk-core/out';
-import { gasConfig, mxConfig, scAddress } from 'src/config';
+import { gasConfig, drtConfig, scAddress } from 'src/config';
 import { ConfigModule } from '@nestjs/config';
 import { WinstonModule } from 'nest-winston';
 import { ApiConfigService } from 'src/helpers/api.config.service';
@@ -185,7 +185,7 @@ describe('UserEnergyTransactionService', () => {
 
         expect(transaction).toEqual(
             new TransactionModel({
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 nonce: 0,
                 gasLimit: gasConfig.energyUpdate.updateFarmsEnergyForUser * 2,
                 gasPrice: 1000000000,
@@ -233,7 +233,7 @@ describe('UserEnergyTransactionService', () => {
 
         expect(transaction).toEqual(
             new TransactionModel({
-                chainID: mxConfig.chainID,
+                chainID: drtConfig.chainID,
                 nonce: 0,
                 gasLimit: gasConfig.energyUpdate.updateFarmsEnergyForUser,
                 gasPrice: 1000000000,

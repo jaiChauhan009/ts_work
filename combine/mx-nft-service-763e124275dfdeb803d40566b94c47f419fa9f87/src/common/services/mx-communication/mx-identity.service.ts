@@ -23,7 +23,7 @@ export class MxIdentityService {
         return accounts[key];
       });
     } catch (error) {
-      this.logger.error(`An error occurred while calling the mx identity service on url ${removeCredentialsFromUrl(url)}`, {
+      this.logger.error(`An error occurred while calling the drt identity service on url ${removeCredentialsFromUrl(url)}`, {
         path: this.getProfiles.name,
         addresses: addresses,
         exception: error,
@@ -48,7 +48,7 @@ export class MxIdentityService {
           privacy: Privacy.private,
         });
       }
-      this.logger.error(`An error occurred while calling the mx identity service on url ${removeCredentialsFromUrl(url)}`, {
+      this.logger.error(`An error occurred while calling the drt identity service on url ${removeCredentialsFromUrl(url)}`, {
         path: this.getProfile.name,
         address: address,
         exception: error,
@@ -64,7 +64,7 @@ export class MxIdentityService {
       let response = await this.apiService.get(url);
       return response?.data;
     } catch (error) {
-      this.logger.error(`An error occurred while calling the mx identity service on url ${removeCredentialsFromUrl(url)}`, {
+      this.logger.error(`An error occurred while calling the drt identity service on url ${removeCredentialsFromUrl(url)}`, {
         path: this.getFollowersCount.name,
         address: address,
         exception: error,
@@ -87,7 +87,7 @@ export class MxIdentityService {
           privacy: Privacy.private,
         });
       }
-      this.logger.error(`An error occurred while calling the mx identity service on url ${removeCredentialsFromUrl(url)}`, {
+      this.logger.error(`An error occurred while calling the drt identity service on url ${removeCredentialsFromUrl(url)}`, {
         path: this.getAcountsByHerotag.name,
         address: searchTerm,
         exception: error,
@@ -113,7 +113,7 @@ export class MxIdentityService {
           privacy: Privacy.private,
         });
       }
-      this.logger.error(`An error occurred while calling the mx identity service on url ${removeCredentialsFromUrl(url)}`, {
+      this.logger.error(`An error occurred while calling the drt identity service on url ${removeCredentialsFromUrl(url)}`, {
         path: this.getAddressByHerotag.name,
         herotag: herotag,
         exception: error,

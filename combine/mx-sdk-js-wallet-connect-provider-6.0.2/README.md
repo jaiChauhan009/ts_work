@@ -1,12 +1,12 @@
-# mx-sdk-js-wallet-connect-provider
+# drt-sdk-js-wallet-connect-provider
 
 Signing provider for dApps: WalletConnect.
 
-Documentation is available on [docs.dharitri.org](https://docs.dharitri.org/sdk-and-tools/sdk-js/sdk-js-signing-providers/#the-wallet-connect-provider), while an integration example can be found [here](https://github.com/TerraDharitri/mx-sdk-js-examples/tree/main/signing-providers).
+Documentation is available on [docs.dharitri.org](https://docs.dharitri.org/sdk-and-tools/sdk-js/sdk-js-signing-providers/#the-wallet-connect-provider), while an integration example can be found [here](https://github.com/TerraDharitri/drt-sdk-js-examples/tree/main/signing-providers).
 
-Note that **we recommend using [sdk-dapp](https://github.com/TerraDharitri/mx-sdk-dapp)** instead of integrating the signing provider on your own.
+Note that **we recommend using [sdk-dapp](https://github.com/TerraDharitri/drt-sdk-dapp)** instead of integrating the signing provider on your own.
 
-You can check out the integration with `sdk-dapp` in the [Template dApp](https://github.com/TerraDharitri/mx-template-dapp) repository with a live example [here](https://devnet.template-dapp.dharitri.org).
+You can check out the integration with `sdk-dapp` in the [Template dApp](https://github.com/TerraDharitri/drt-template-dapp) repository with a live example [here](https://devnet.template-dapp.dharitri.org).
 
 ## Distribution
 

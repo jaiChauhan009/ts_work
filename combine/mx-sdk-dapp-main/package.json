@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TerraDharitri/mx-sdk-dapp.git"
+    "url": "git+https://github.com/TerraDharitri/drt-sdk-dapp.git"
   },
   "scripts": {
     "unpublish-verdaccio": "npm unpublish @terradharitri/sdk-dapp --force --registry http://localhost:4873",

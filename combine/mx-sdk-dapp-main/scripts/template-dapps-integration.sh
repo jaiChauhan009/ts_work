@@ -10,54 +10,54 @@ echo "Installing yalc..."
 npm install -global yalc
 
 
-# Prepare mx-sdk-dapp for publishing
-git clone https://github.com/TerraDharitri/mx-sdk-dapp.git
+# Prepare drt-sdk-dapp for publishing
+git clone https://github.com/TerraDharitri/drt-sdk-dapp.git
 
-echo "cd mx-sdk-dapp..."
-cd mx-sdk-dapp
+echo "cd drt-sdk-dapp..."
+cd drt-sdk-dapp
 git checkout development
 
-echo "Installing dependencies for mx-sdk-dapp..."
+echo "Installing dependencies for drt-sdk-dapp..."
 yarn install
 
-echo "Building mx-sdk-dapp..."
+echo "Building drt-sdk-dapp..."
 yarn build
 
-echo "Publishing mx-sdk-dapp..."
+echo "Publishing drt-sdk-dapp..."
 yalc publish
 cd ../..
 
 
-# Consume mx-sdk-dapp in mx-template-dapp
-git clone https://github.com/TerraDharitri/mx-template-dapp.git
+# Consume drt-sdk-dapp in drt-template-dapp
+git clone https://github.com/TerraDharitri/drt-template-dapp.git
 
-echo "cd mx-template-dapp..."
-cd mx-template-dapp
+echo "cd drt-template-dapp..."
+cd drt-template-dapp
 git checkout development
 
-echo "Installing dependencies mx-template-dapp..."
+echo "Installing dependencies drt-template-dapp..."
 yarn install
 
-echo "Linking mx-sdk-dapp..."
+echo "Linking drt-sdk-dapp..."
 yalc add @terradharitri/sdk-dapp
 
-echo "Building mx-template-dapp..."
+echo "Building drt-template-dapp..."
 yarn build:devnet
 
 
-# Consume mx-sdk-dapp in mx-template-dapp-nextjs
-git clone https://github.com/TerraDharitri/mx-template-dapp-nextjs.git
+# Consume drt-sdk-dapp in drt-template-dapp-nextjs
+git clone https://github.com/TerraDharitri/drt-template-dapp-nextjs.git
 
-echo "cd mx-template-dapp-nextjs..."
-cd mx-template-dapp-nextjs
+echo "cd drt-template-dapp-nextjs..."
+cd drt-template-dapp-nextjs
 
-echo "Installing dependencies mx-template-dapp-nextjs..."
+echo "Installing dependencies drt-template-dapp-nextjs..."
 yarn install
 
-echo "Linking mx-sdk-dapp..."
+echo "Linking drt-sdk-dapp..."
 yalc add @terradharitri/sdk-dapp
 
-echo "Building mx-template-dapp-nextjs..."
+echo "Building drt-template-dapp-nextjs..."
 yarn build:devnet
 
 echo "Script executed successfully!"

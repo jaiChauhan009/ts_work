@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { GenericAbiService } from '../../../services/generics/generic.abi.service';
-import { MXProxyService } from '../../../services/dharitri-communication/mx.proxy.service';
+import { MXProxyService } from '../../../services/dharitri-communication/drt.proxy.service';
 import {
     Interaction,
     TokenIdentifierValue,
@@ -18,8 +18,8 @@ export class FeesCollectorAbiService
     extends GenericAbiService
     implements IFeesCollectorAbiService
 {
-    constructor(protected readonly mxProxy: MXProxyService) {
-        super(mxProxy);
+    constructor(protected readonly drtProxy: MXProxyService) {
+        super(drtProxy);
     }
 
     @ErrorLoggerAsync({
@@ -35,7 +35,7 @@ export class FeesCollectorAbiService
     }
 
     async getAccumulatedFeesRaw(week: number, token: string): Promise<string> {
-        const contract = await this.mxProxy.getFeesCollectorContract();
+        const contract = await this.drtProxy.getFeesCollectorContract();
         const interaction: Interaction =
             contract.methodsExplicit.getAccumulatedFees([
                 new U32Value(new BigNumber(week)),
@@ -56,7 +56,7 @@ export class FeesCollectorAbiService
     }
 
     async getLockedTokenIDRaw(): Promise<string> {
-        const contract = await this.mxProxy.getFeesCollectorContract();
+        const contract = await this.drtProxy.getFeesCollectorContract();
         const interaction: Interaction =
             contract.methodsExplicit.getLockedTokenId();
         const response = await this.getGenericData(interaction);
@@ -74,7 +74,7 @@ export class FeesCollectorAbiService
     }
 
     async getLockedTokensPerBlockRaw(): Promise<string> {
-        const contract = await this.mxProxy.getFeesCollectorContract();
+        const contract = await this.drtProxy.getFeesCollectorContract();
         const interaction: Interaction =
             contract.methodsExplicit.getLockedTokensPerBlock();
         const response = await this.getGenericData(interaction);
@@ -92,7 +92,7 @@ export class FeesCollectorAbiService
     }
 
     async getAllTokensRaw(): Promise<string[]> {
-        const contract = await this.mxProxy.getFeesCollectorContract();
+        const contract = await this.drtProxy.getFeesCollectorContract();
         const interaction: Interaction =
             contract.methodsExplicit.getAllTokens();
         const response = await this.getGenericData(interaction);
@@ -110,7 +110,7 @@ export class FeesCollectorAbiService
     }
 
     async getKnownContractsRaw(): Promise<string[]> {
-        const contract = await this.mxProxy.getFeesCollectorContract();
+        const contract = await this.drtProxy.getFeesCollectorContract();
         const interaction: Interaction =
             contract.methodsExplicit.getAllKnownContracts();
         const response = await this.getGenericData(interaction);

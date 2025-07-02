@@ -1,7 +1,7 @@
 import { forwardRef, Module } from '@nestjs/common';
 import { TokenModule } from 'src/modules/tokens/token.module';
 import { ContextModule } from 'src/services/context/context.module';
-import { MXCommunicationModule } from 'src/services/dharitri-communication/mx.communication.module';
+import { MXCommunicationModule } from 'src/services/dharitri-communication/drt.communication.module';
 import { FarmAbiServiceV2 } from './services/farm.v2.abi.service';
 import { FarmBoostedRewardsResolver, FarmResolverV2 } from './farm.v2.resolver';
 import { FarmServiceV2 } from './services/farm.v2.service';
