@@ -156,7 +156,7 @@ export class PersistenceService {
   async getCollectionStats(
     identifier: string,
     marketplaceKey: string = undefined,
-    paymentToken: string = mxConfig.egld,
+    paymentToken: string = mxConfig.rewa,
   ): Promise<CollectionStatsEntity> {
     return await this.execute(
       this.getCollectionStats.name,
@@ -167,7 +167,7 @@ export class PersistenceService {
   async getCollectionFloorPrice(
     identifier: string,
     marketplaceKey: string = undefined,
-    paymentToken: string = mxConfig.egld,
+    paymentToken: string = mxConfig.rewa,
   ): Promise<number> {
     return await this.execute(
       this.getCollectionStats.name,

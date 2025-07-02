@@ -14,7 +14,7 @@ describe('test router events decoder', () => {
             block: 25574671,
             epoch: 1777,
             timestamp: 1749709740,
-            tokenInID: 'WEGLD-bd4d79',
+            tokenInID: 'WREWA-bd4d79',
             amountIn: '700000000000000000',
             tokenOutID: 'USDC-c76f1f',
             amountOut: '10567308',

@@ -3,13 +3,13 @@ import { TokenArgumentType } from 'types/serverTransactions.types';
 import { getIdentifierType } from 'utils/validation/getIdentifierType';
 import { getTransactionActionNftText } from './getTransactionActionNftText';
 import {
-  EgldValueDataType,
+  RewaValueDataType,
   NFTValueDataType,
   TokenValueDataType
 } from '../types';
 
 export interface GetTransactionValueReturnType {
-  egldValueData?: EgldValueDataType;
+  rewaValueData?: RewaValueDataType;
   tokenValueData?: TokenValueDataType;
   nftValueData?: NFTValueDataType;
 }

@@ -41,13 +41,13 @@ export class MexPair {
   @ApiProperty({ type: Number, example: 0.00020596180499578328 })
   basePrice: number = 0;
 
-  @ApiProperty({ type: String, example: 'WEGLD-bd4d79' })
+  @ApiProperty({ type: String, example: 'WREWA-bd4d79' })
   quoteId: string = '';
 
-  @ApiProperty({ type: String, example: 'WEGLD' })
+  @ApiProperty({ type: String, example: 'WREWA' })
   quoteSymbol: string = '';
 
-  @ApiProperty({ type: String, example: 'WrappedEGLD' })
+  @ApiProperty({ type: String, example: 'WrappedREWA' })
   quoteName: string = '';
 
   @ApiProperty({ type: Number, example: 145.26032 })

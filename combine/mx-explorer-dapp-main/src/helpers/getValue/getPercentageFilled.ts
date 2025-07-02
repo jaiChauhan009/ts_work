@@ -7,7 +7,7 @@ export const hasDelegationCap = (delegationCap: string) => {
 };
 
 export const getPercentageFilled = (locked: string, delegationCap: string) => {
-  const minDelegation = parseAmount('1'); // 1 EGLD
+  const minDelegation = parseAmount('1'); // 1 REWA
   const bnLocked = new BigNumber(locked);
   const bnDelegationCap = new BigNumber(delegationCap);
 

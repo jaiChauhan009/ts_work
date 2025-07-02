@@ -70,7 +70,7 @@ A service instance can be started with the following behavior:
 It depends on the following optional external systems:
 
 - events notifier rabbitmq: queue that pushes logs & events which are handled internally e.g. to trigger auctions indexing
-- data: provides eGLD price information for transactions
+- data: provides REWA price information for transactions
 - ipfs: ipfs gateway for uploading nft media and metadata
 - AWS S3: used to upload nft media for faster performance
 

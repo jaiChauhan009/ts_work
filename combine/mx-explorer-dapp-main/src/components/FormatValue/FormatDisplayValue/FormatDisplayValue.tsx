@@ -24,7 +24,7 @@ export const FormatDisplayValue = (props: FormatDisplayValueUIType) => {
     token,
     symbol,
     label,
-    egldLabel,
+    rewaLabel,
     details,
     digits = DIGITS,
     showLastNonZeroDecimal,
@@ -42,7 +42,7 @@ export const FormatDisplayValue = (props: FormatDisplayValueUIType) => {
 
   const valueParts = String(formattedValue).split('.');
   const isZero = Number(completeValue) === 0;
-  const displayLabel = label ?? (token ? token : egldLabel);
+  const displayLabel = label ?? (token ? token : rewaLabel);
 
   const DisplayValue = () => {
     if (hideLessThanOne) {

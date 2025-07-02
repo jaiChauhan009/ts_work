@@ -49,8 +49,8 @@ export const TransactionValue = ({
 
   if (transaction.action) {
     if (
-      transaction.action.name === TransactionActionEnum.wrapEgld ||
-      transaction.action.name === TransactionActionEnum.unwrapEgld
+      transaction.action.name === TransactionActionEnum.wrapRewa ||
+      transaction.action.name === TransactionActionEnum.unwrapRewa
     ) {
       return <FormatAmount value={transaction.value} />;
     }

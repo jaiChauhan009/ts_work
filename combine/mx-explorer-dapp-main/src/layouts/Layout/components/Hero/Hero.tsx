@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 import { BRAND_NAME } from 'appConstants';
-import { FormatEGLD, Search } from 'components';
+import { FormatREWA, Search } from 'components';
 import { getSubdomainNetwork, getCustomPageName } from 'helpers';
 import {
   useActiveRoute,
@@ -38,7 +38,7 @@ export const Hero = () => {
   const activeRoute = useActiveRoute();
   const isMainnet = useIsMainnet();
   const hasGrowthWidgets = useHasGrowthWidgets();
-  const { id: activeNetworkId, egldLabel = '' } = useSelector(
+  const { id: activeNetworkId, rewaLabel = '' } = useSelector(
     activeNetworkSelector
   );
   const { id: defaultNetworkId } = useSelector(defaultNetworkSelector);
@@ -118,8 +118,8 @@ export const Hero = () => {
                     subTitle={item.subTitle}
                     icon={item.icon}
                     value={
-                      String(item.value).includes(egldLabel) ? (
-                        <FormatEGLD value={item.value} superSuffix />
+                      String(item.value).includes(rewaLabel) ? (
+                        <FormatREWA value={item.value} superSuffix />
                       ) : (
                         item.value
                       )

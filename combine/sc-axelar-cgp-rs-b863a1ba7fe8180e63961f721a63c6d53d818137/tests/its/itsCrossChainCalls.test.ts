@@ -31,7 +31,7 @@ import {
   OTHER_CHAIN_ADDRESS,
   OTHER_CHAIN_NAME,
   OTHER_CHAIN_TOKEN_ADDRESS,
-  TOKEN_IDENTIFIER_EGLD,
+  TOKEN_IDENTIFIER_REWA,
   TOKEN_SALT,
 } from '../helpers';
 import { AbiCoder } from 'ethers';
@@ -274,7 +274,7 @@ test(
       ],
       dcdts: [
         { id: tokenIdentifier, amount: 10n ** 17n },
-        { id: TOKEN_IDENTIFIER_EGLD, amount: 10n ** 16n },
+        { id: TOKEN_IDENTIFIER_REWA, amount: 10n ** 16n },
       ],
     });
 
@@ -582,16 +582,16 @@ test(
 );
 
 describe('Execute interchain transfer with data', () => {
-  const registerEgldCanonical = async () => {
-    // Register EGLD canonical token
-    const deploySalt = computeCanonicalInterchainTokenDeploySalt('EGLD');
+  const registerRewaCanonical = async () => {
+    // Register REWA canonical token
+    const deploySalt = computeCanonicalInterchainTokenDeploySalt('REWA');
     const computedTokenId = computeInterchainTokenIdRaw(deploySalt);
 
     const result = await user.callContract({
       callee: fsIts,
       funcName: 'registerCanonicalInterchainToken',
       gasLimit: 20_000_000,
-      funcArgs: [e.Str('EGLD')],
+      funcArgs: [e.Str('REWA')],
     });
     assert(result.returnData[0] === computedTokenId);
 
@@ -662,7 +662,7 @@ describe('Execute interchain transfer with data', () => {
         codeArgs: [fsIts, e.U(1_000), e.U64(10), e.Option(null)],
       }));
 
-      const computedTokenId = await registerEgldCanonical();
+      const computedTokenId = await registerRewaCanonical();
 
       const { payload } = await mockExecuteInterchainTransferWithDataGatewayCall(computedTokenId, fsPingPong);
 
@@ -710,7 +710,7 @@ describe('Execute interchain transfer with data', () => {
         codeArgs: [fsIts, e.U(1_000), e.U64(10), e.Option(null)],
       }));
 
-      const computedTokenId = await registerEgldCanonical();
+      const computedTokenId = await registerRewaCanonical();
 
       const { payload } = await mockExecuteInterchainTransferWithDataGatewayCall(computedTokenId, fsPingPong);
 
@@ -762,7 +762,7 @@ describe('Execute interchain transfer with data', () => {
         gasLimit: 10_000_000,
       });
 
-      const computedTokenId = await registerEgldCanonical();
+      const computedTokenId = await registerRewaCanonical();
 
       // Need to call proxy contract from other chain instead
       const { payload, contractPayload } = await mockExecuteInterchainTransferWithDataGatewayCall(
@@ -886,7 +886,7 @@ describe('Execute interchain transfer with data', () => {
               e.Buffer(contractPayload),
               e.TopBuffer(computedTokenId)
             )
-            .Value(e.Tuple(e.Str('EGLD'), e.U(1_000))),
+            .Value(e.Tuple(e.Str('REWA'), e.U(1_000))),
         ],
       });
 
@@ -927,7 +927,7 @@ describe('Execute interchain transfer with data', () => {
               e.Buffer(contractPayload),
               e.TopBuffer(computedTokenId)
             )
-            .Value(e.Tuple(e.Str('EGLD'), e.U(1_000))),
+            .Value(e.Tuple(e.Str('REWA'), e.U(1_000))),
         ],
       });
 

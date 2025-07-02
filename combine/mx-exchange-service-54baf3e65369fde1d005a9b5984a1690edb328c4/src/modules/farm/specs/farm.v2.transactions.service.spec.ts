@@ -62,18 +62,18 @@ describe('FarmTransactionsServiceV2', () => {
         const mxApi = module.get<MXApiService>(MXApiService);
         jest.spyOn(mxApi, 'getNftsForUser').mockResolvedValue([
             {
-                identifier: 'EGLDMEXFL-ghijkl-0a',
-                collection: 'EGLDMEXFL-ghijkl',
+                identifier: 'REWAMEXFL-ghijkl-0a',
+                collection: 'REWAMEXFL-ghijkl',
                 attributes:
                     'AAAACBEpiw/pcSUIAAAAAAAADNIAAAAAAAAABysPQGpo9rtgu2ARp4Hri1PWHXkEdFCtqkaXfiAjkxKVEmLBBX0QkA==',
                 nonce: 10,
                 type: 'MetaDCDT',
-                name: 'EGLDMEXLPStakedLK',
+                name: 'REWAMEXLPStakedLK',
                 creator:
                     'erd1qqqqqqqqqqqqqpgqna8cqqzdtdg849hr0pd5cmft8ujaguhv295qgchtqa',
                 balance: '12120193336145595',
                 decimals: 18,
-                ticker: 'EGLDMEXFL-2d2bba',
+                ticker: 'REWAMEXFL-2d2bba',
             },
         ]);
 
@@ -94,18 +94,18 @@ describe('FarmTransactionsServiceV2', () => {
         const mxApi = module.get<MXApiService>(MXApiService);
         jest.spyOn(mxApi, 'getNftsForUser').mockResolvedValue([
             {
-                identifier: 'EGLDMEXFL-ghijkl-01',
-                collection: 'EGLDMEXFL-ghijkl',
+                identifier: 'REWAMEXFL-ghijkl-01',
+                collection: 'REWAMEXFL-ghijkl',
                 attributes:
                     'AAAACBEpiw/pcSUIAAAAAAAADNIAAAAAAAAABysPQGpo9rtgu2ARp4Hri1PWHXkEdFCtqkaXfiAjkxKVEmLBBX0QkA==',
                 nonce: 1,
                 type: 'MetaDCDT',
-                name: 'EGLDMEXLPStakedLK',
+                name: 'REWAMEXLPStakedLK',
                 creator:
                     'erd1qqqqqqqqqqqqqpgqna8cqqzdtdg849hr0pd5cmft8ujaguhv295qgchtqa',
                 balance: '12120193336145595',
                 decimals: 18,
-                ticker: 'EGLDMEXFL-2d2bba',
+                ticker: 'REWAMEXFL-2d2bba',
             },
         ]);
 
@@ -118,7 +118,7 @@ describe('FarmTransactionsServiceV2', () => {
 
         expect(transactions[0].data).toEqual(
             encodeTransactionData(
-                `DCDTNFTTransfer@EGLDMEXFL-ghijkl@01@12120193336145595@${Address.fromHex(
+                `DCDTNFTTransfer@REWAMEXFL-ghijkl@01@12120193336145595@${Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000041',
                 ).bech32()}@claimRewards`,
             ),

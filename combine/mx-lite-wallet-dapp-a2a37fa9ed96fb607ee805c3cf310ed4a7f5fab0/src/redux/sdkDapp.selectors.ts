@@ -5,7 +5,7 @@ export {
 export { customToastsSelector } from '@terradharitri/sdk-dapp/reduxStore/selectors/toastsSelectors';
 export { addressSelector } from '@terradharitri/sdk-dapp/reduxStore/selectors/accountInfoSelectors';
 export {
-  egldLabelSelector,
+  rewaLabelSelector,
   networkSelector
 } from '@terradharitri/sdk-dapp/reduxStore/selectors/networkConfigSelectors';
 export { accountSelector } from '@terradharitri/sdk-dapp/reduxStore/selectors';

@@ -5,12 +5,12 @@ describe('FormatAmountController', () => {
     it('handles empty input with default decimals', () => {
       const result = FormatAmountController.getData({
         input: '',
-        egldLabel: 'EGLD'
+        rewaLabel: 'REWA'
       });
 
       expect(result).toEqual({
         isValid: false,
-        label: ' EGLD',
+        label: ' REWA',
         valueInteger: '0',
         valueDecimal: '.00'
       });
@@ -21,12 +21,12 @@ describe('FormatAmountController', () => {
         input: '',
         decimals: 4,
         digits: 3,
-        egldLabel: 'EGLD'
+        rewaLabel: 'REWA'
       });
 
       expect(result).toEqual({
         isValid: false,
-        label: ' EGLD',
+        label: ' REWA',
         valueInteger: '0',
         valueDecimal: '.000'
       });
@@ -46,17 +46,17 @@ describe('FormatAmountController', () => {
       });
     });
 
-    it('formats valid EGLD amount', () => {
+    it('formats valid REWA amount', () => {
       const result = FormatAmountController.getData({
-        input: '1000000000000000000', // 1 EGLD
+        input: '1000000000000000000', // 1 REWA
         decimals: 18,
         digits: 2,
-        egldLabel: 'EGLD'
+        rewaLabel: 'REWA'
       });
 
       expect(result).toEqual({
         isValid: true,
-        label: ' EGLD',
+        label: ' REWA',
         valueInteger: '1',
         valueDecimal: '.00'
       });
@@ -92,12 +92,12 @@ describe('FormatAmountController', () => {
   it('handles non-integer input', () => {
     const result = FormatAmountController.getData({
       input: 'abc123',
-      egldLabel: 'EGLD'
+      rewaLabel: 'REWA'
     });
 
     expect(result).toEqual({
       isValid: false,
-      label: ' EGLD',
+      label: ' REWA',
       valueInteger: '0',
       valueDecimal: '.00'
     });

@@ -48,10 +48,10 @@ export class PairTransactionService {
     ): Promise<TransactionModel[]> {
         const transactions: TransactionModel[] = [];
 
-        switch (mxConfig.EGLDIdentifier) {
+        switch (mxConfig.REWAIdentifier) {
             case args.tokens[0].tokenID:
                 transactions.push(
-                    await this.wrapTransaction.wrapEgld(
+                    await this.wrapTransaction.wrapRewa(
                         sender,
                         args.tokens[0].amount,
                     ),
@@ -59,7 +59,7 @@ export class PairTransactionService {
                 break;
             case args.tokens[1].tokenID:
                 transactions.push(
-                    await this.wrapTransaction.wrapEgld(
+                    await this.wrapTransaction.wrapRewa(
                         sender,
                         args.tokens[1].amount,
                     ),
@@ -80,10 +80,10 @@ export class PairTransactionService {
     ): Promise<TransactionModel[]> {
         const transactions: TransactionModel[] = [];
 
-        switch (mxConfig.EGLDIdentifier) {
+        switch (mxConfig.REWAIdentifier) {
             case args.tokens[0].tokenID:
                 transactions.push(
-                    await this.wrapTransaction.wrapEgld(
+                    await this.wrapTransaction.wrapRewa(
                         sender,
                         args.tokens[0].amount,
                     ),
@@ -91,7 +91,7 @@ export class PairTransactionService {
                 break;
             case args.tokens[1].tokenID:
                 transactions.push(
-                    await this.wrapTransaction.wrapEgld(
+                    await this.wrapTransaction.wrapRewa(
                         sender,
                         args.tokens[1].amount,
                     ),
@@ -231,7 +231,7 @@ export class PairTransactionService {
         const transactions = [];
         const [wrappedTokenID, firstTokenID, secondTokenID, liquidityPosition] =
             await Promise.all([
-                this.wrapAbi.wrappedEgldTokenID(),
+                this.wrapAbi.wrappedRewaTokenID(),
                 this.pairAbi.firstTokenID(args.pairAddress),
                 this.pairAbi.secondTokenID(args.pairAddress),
                 this.pairService.getLiquidityPosition(
@@ -273,7 +273,7 @@ export class PairTransactionService {
         switch (wrappedTokenID) {
             case firstTokenID:
                 transactions.push(
-                    await this.wrapTransaction.unwrapEgld(
+                    await this.wrapTransaction.unwrapRewa(
                         sender,
                         amount0Min.toString(),
                     ),
@@ -281,7 +281,7 @@ export class PairTransactionService {
                 break;
             case secondTokenID:
                 transactions.push(
-                    await this.wrapTransaction.unwrapEgld(
+                    await this.wrapTransaction.unwrapRewa(
                         sender,
                         amount1Min.toString(),
                     ),
@@ -316,8 +316,8 @@ export class PairTransactionService {
             .multipliedBy(amountOut)
             .integerValue();
 
-        if (args.tokenInID === mxConfig.EGLDIdentifier) {
-            return this.composableTasksTransaction.wrapEgldAndSwapTransaction(
+        if (args.tokenInID === mxConfig.REWAIdentifier) {
+            return this.composableTasksTransaction.wrapRewaAndSwapTransaction(
                 sender,
                 args.amountIn,
                 args.tokenOutID,
@@ -326,8 +326,8 @@ export class PairTransactionService {
             );
         }
 
-        if (args.tokenOutID === mxConfig.EGLDIdentifier) {
-            return this.composableTasksTransaction.swapAndUnwrapEgldTransaction(
+        if (args.tokenOutID === mxConfig.REWAIdentifier) {
+            return this.composableTasksTransaction.swapAndUnwrapRewaTransaction(
                 sender,
                 new DcdtTokenPayment({
                     tokenIdentifier: args.tokenInID,
@@ -392,8 +392,8 @@ export class PairTransactionService {
         const amountIn = new BigNumber(args.amountIn);
         const amountOut = new BigNumber(args.amountOut);
 
-        if (args.tokenInID === mxConfig.EGLDIdentifier) {
-            return this.composableTasksTransaction.wrapEgldAndSwapTransaction(
+        if (args.tokenInID === mxConfig.REWAIdentifier) {
+            return this.composableTasksTransaction.wrapRewaAndSwapTransaction(
                 sender,
                 args.amountIn,
                 args.tokenOutID,
@@ -402,8 +402,8 @@ export class PairTransactionService {
             );
         }
 
-        if (args.tokenOutID === mxConfig.EGLDIdentifier) {
-            return this.composableTasksTransaction.swapAndUnwrapEgldTransaction(
+        if (args.tokenOutID === mxConfig.REWAIdentifier) {
+            return this.composableTasksTransaction.swapAndUnwrapRewaTransaction(
                 sender,
                 new DcdtTokenPayment({
                     tokenIdentifier: args.tokenInID,
@@ -461,10 +461,10 @@ export class PairTransactionService {
         }
 
         if (
-            tokens[0].tokenID === mxConfig.EGLDIdentifier ||
-            tokens[1].tokenID === mxConfig.EGLDIdentifier
+            tokens[0].tokenID === mxConfig.REWAIdentifier ||
+            tokens[1].tokenID === mxConfig.REWAIdentifier
         ) {
-            return this.getTokensWithEGLD(tokens, firstTokenID, secondTokenID);
+            return this.getTokensWithREWA(tokens, firstTokenID, secondTokenID);
         }
 
         if (
@@ -484,12 +484,12 @@ export class PairTransactionService {
         throw new Error('invalid tokens received');
     }
 
-    private async getTokensWithEGLD(
+    private async getTokensWithREWA(
         tokens: InputTokenModel[],
         firstTokenID: string,
         secondTokenID: string,
     ): Promise<InputTokenModel[]> {
-        switch (mxConfig.EGLDIdentifier) {
+        switch (mxConfig.REWAIdentifier) {
             case tokens[0].tokenID:
                 return this.getTokensInOrder(
                     tokens[1],
@@ -505,7 +505,7 @@ export class PairTransactionService {
                     secondTokenID,
                 );
             default:
-                throw new Error('Invalid tokens with EGLD');
+                throw new Error('Invalid tokens with REWA');
         }
     }
 
@@ -515,7 +515,7 @@ export class PairTransactionService {
         firstTokenID: string,
         secondTokenID: string,
     ): Promise<InputTokenModel[]> {
-        const wrappedTokenID = await this.wrapAbi.wrappedEgldTokenID();
+        const wrappedTokenID = await this.wrapAbi.wrappedRewaTokenID();
         if (firstToken.tokenID === firstTokenID) {
             return [
                 firstToken,

@@ -4,13 +4,13 @@ const nftParts = 3;
 const defaultResult = {
   isDcdt: false,
   isNft: false,
-  isEgld: false
+  isRewa: false
 };
 
 export function getIdentifierType(identifier?: string): {
   isDcdt: boolean;
   isNft: boolean;
-  isEgld: boolean;
+  isRewa: boolean;
 } {
   const parts = identifier?.split('-').length;
 
@@ -28,6 +28,6 @@ export function getIdentifierType(identifier?: string): {
   }
   return {
     ...defaultResult,
-    isEgld: true
+    isRewa: true
   };
 }

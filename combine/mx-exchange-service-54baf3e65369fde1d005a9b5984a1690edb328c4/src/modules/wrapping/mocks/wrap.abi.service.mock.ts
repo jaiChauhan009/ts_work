@@ -2,8 +2,8 @@ import { IWrapAbiService } from '../services/interfaces';
 import { WrapAbiService } from '../services/wrap.abi.service';
 
 export class WrapAbiServiceMock implements IWrapAbiService {
-    async wrappedEgldTokenID(): Promise<string> {
-        return 'WEGLD-123456';
+    async wrappedRewaTokenID(): Promise<string> {
+        return 'WREWA-123456';
     }
 }
 

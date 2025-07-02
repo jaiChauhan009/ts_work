@@ -2,7 +2,7 @@
 
 [![smithery badge](https://smithery.ai/badge/@terradharitri/mx-mcp)](https://smithery.ai/server/@terradharitri/mx-mcp)
 
-This is an MCP Server created to work with the DharitrI blockchain. It provides basic functionality like creating PEM wallets, getting the wallet address, getting the balance of the wallet and sending tokens (EGLD, Fungible, SFT, NFT, MetaDCDT).
+This is an MCP Server created to work with the DharitrI blockchain. It provides basic functionality like creating PEM wallets, getting the wallet address, getting the balance of the wallet and sending tokens (REWA, Fungible, SFT, NFT, MetaDCDT).
 
 ## Overview
 

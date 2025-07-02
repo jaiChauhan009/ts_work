@@ -3,6 +3,6 @@ export class MexSettingsPairContracts {
     Object.assign(this, init);
   }
 
-  egldMex: string = '';
-  egldUsd: string = '';
+  rewaMex: string = '';
+  rewaUsd: string = '';
 }

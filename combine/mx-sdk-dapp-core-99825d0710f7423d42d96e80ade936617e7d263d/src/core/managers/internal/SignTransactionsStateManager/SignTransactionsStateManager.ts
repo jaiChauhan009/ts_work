@@ -31,7 +31,7 @@ export class SignTransactionsStateManager extends SidePanelBaseManager<
   protected initialData: ISignTransactionsPanelData = {
     commonData: {
       transactionsCount: 0,
-      egldLabel: '',
+      rewaLabel: '',
       currentIndex: 0,
       ppuOptions: []
     },

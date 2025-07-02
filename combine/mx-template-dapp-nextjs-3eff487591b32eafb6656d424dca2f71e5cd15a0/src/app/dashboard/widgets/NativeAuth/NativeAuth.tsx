@@ -24,7 +24,7 @@ export const NativeAuth = () => {
     FormatAmountController.getData({
       digits: DIGITS,
       decimals: DECIMALS,
-      egldLabel: network.egldLabel,
+      rewaLabel: network.rewaLabel,
       input: profile?.balance ?? '0'
     });
 

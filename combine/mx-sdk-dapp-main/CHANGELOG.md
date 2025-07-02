@@ -404,11 +404,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [[v3.0.21](https://github.com/TerraDharitri/mx-sdk-dapp/pull/1332)] - 2024-11-29
 
-- [Removed hardcoded `EGLD-000000` token](https://github.com/TerraDharitri/mx-sdk-dapp/pull/1331)
+- [Removed hardcoded `REWA-000000` token](https://github.com/TerraDharitri/mx-sdk-dapp/pull/1331)
 
 ## [[v3.0.20](https://github.com/TerraDharitri/mx-sdk-dapp/pull/1330)] - 2024-11-28
 
-- [Fixed EGLD-000000 token is not found](https://github.com/TerraDharitri/mx-sdk-dapp/pull/1329)
+- [Fixed REWA-000000 token is not found](https://github.com/TerraDharitri/mx-sdk-dapp/pull/1329)
 - [Fixed address is not shown on ledger login](https://github.com/TerraDharitri/mx-sdk-dapp/pull/1328)
 - [Added support for custom web socket url](https://github.com/TerraDharitri/mx-sdk-dapp/pull/1327)
 
@@ -515,7 +515,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [[v2.40.7](https://github.com/TerraDharitri/mx-sdk-dapp/pull/1267)] - 2024-09-23
 
-- [Remove hardcoded "erd" check when validating an address](https://github.com/TerraDharitri/mx-sdk-dapp/pull/1267)
+- [Remove hardcoded "drt" check when validating an address](https://github.com/TerraDharitri/mx-sdk-dapp/pull/1267)
 
 ## [[v2.40.6](https://github.com/TerraDharitri/mx-sdk-dapp/pull/1266)] - 2024-09-20
 
@@ -672,7 +672,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [[v2.32.7](https://github.com/TerraDharitri/mx-sdk-dapp/pull/1177)] - 2024-05-23
 
-- [Use egld label from active network for FromatAmount component](https://github.com/TerraDharitri/mx-sdk-dapp/pull/1176)
+- [Use rewa label from active network for FromatAmount component](https://github.com/TerraDharitri/mx-sdk-dapp/pull/1176)
 
 ## [[v2.32.6](https://github.com/TerraDharitri/mx-sdk-dapp/pull/1175)] - 2024-05-22
 
@@ -1279,7 +1279,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [[v2.13.7](https://github.com/TerraDharitri/mx-sdk-dapp/pull/792)] - 2023-05-17
 
-- [Added `type` to token data on sign screen, `getEconomicsInfo`, and `useGetEgldPrice` hook](https://github.com/TerraDharitri/mx-sdk-dapp/pull/791)
+- [Added `type` to token data on sign screen, `getEconomicsInfo`, and `useGetRewaPrice` hook](https://github.com/TerraDharitri/mx-sdk-dapp/pull/791)
 - [Fix batch transactions fallbacks](https://github.com/TerraDharitri/mx-sdk-dapp/pull/779)
 
 ## [[v2.13.6](https://github.com/TerraDharitri/mx-sdk-dapp/pull/790)] - 2023-05-17
@@ -1524,7 +1524,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [[v2.8.1](https://github.com/TerraDharitri/mx-sdk-dapp/pull/637)] - 2023-02-14
 
-- [Fix mainnet EGLD Label](https://github.com/TerraDharitri/mx-sdk-dapp/pull/635)
+- [Fix mainnet REWA Label](https://github.com/TerraDharitri/mx-sdk-dapp/pull/635)
 
 ## [[v2.8.](https://github.com/TerraDharitri/mx-sdk-dapp/pull/634)] - 2023-02-14
 
@@ -1669,7 +1669,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [Added Axios interceptor wrapper to be used with `nativeAuth`](https://github.com/TerraDharitri/mx-sdk-dapp/pull/506)
 - [Changed `signTransactions.ts` import to resolve Next.js support](https://github.com/TerraDharitri/mx-sdk-dapp/pull/505)
-- [Upgraded `@terradharitri/erdjs-web-wallet-provider` to vesion 2.1.2](https://github.com/TerraDharitri/mx-sdk-dapp/pull/503)
+- [Upgraded `@terradharitri/drtjs-web-wallet-provider` to vesion 2.1.2](https://github.com/TerraDharitri/mx-sdk-dapp/pull/503)
 - [Added `nativeAuth` and Storybook](https://github.com/TerraDharitri/mx-sdk-dapp/pull/504)
 
 ## [[2.1.20](https://github.com/TerraDharitri/mx-sdk-dapp/pull/500)] - 2022-12-07
@@ -1780,7 +1780,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [[2.1.0-rc1](https://github.com/TerraDharitri/mx-sdk-dapp/pull/424)] - 2022-09-21
 
 - [Added documentation about registering a websocket listener](https://github.com/TerraDharitri/mx-sdk-dapp/pull/423)
-- [Updated @terradharitri/erdjs-wallet-connect-provider to 2.1.0-beta.1 with @walletconnect 2.0.0-rc.3](https://github.com/TerraDharitri/mx-sdk-dapp/pull/422)
+- [Updated @terradharitri/drtjs-wallet-connect-provider to 2.1.0-beta.1 with @walletconnect 2.0.0-rc.3](https://github.com/TerraDharitri/mx-sdk-dapp/pull/422)
 - [Added option for showing equal sign in front of computed USD value by `getUsdValue` function](https://github.com/TerraDharitri/mx-sdk-dapp/pull/421)
 - [Fixed fetching transaction count and smart contract results count from accounts endpoint](https://github.com/TerraDharitri/mx-sdk-dapp/pull/420)
 - [Added extra actions names](https://github.com/TerraDharitri/mx-sdk-dapp/pull/419)

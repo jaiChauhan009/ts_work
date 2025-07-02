@@ -16,7 +16,7 @@ describe('getOperationsMessages', () => {
   it('receive an array with all operations messages', () => {
     const baseTransactionOperation = {
       name: 'send',
-      type: VisibleTransactionOperationType.egld,
+      type: VisibleTransactionOperationType.rewa,
       action: TransactionOperationActionTypeEnum.transfer,
       dcdtType: 'FungibleDCDT',
       receiver:
@@ -24,7 +24,7 @@ describe('getOperationsMessages', () => {
       sender: 'erd1axhx4kenjlae6sknq7zjg2g4fvzavv979r2fg425p62wkl84avtqsf7vvv',
       value: '1',
       decimals: 4,
-      identifier: 'EGLD'
+      identifier: 'REWA'
     };
 
     const transaction = {

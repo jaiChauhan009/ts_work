@@ -17,7 +17,7 @@ import { FormatAmountController } from '../FormatAmountController';
 
 interface TransactionsTableProcessTransactionsParamsType {
   address: string;
-  egldLabel: string;
+  rewaLabel: string;
   explorerAddress: string;
   transactions: ServerTransactionType[];
 }
@@ -25,7 +25,7 @@ interface TransactionsTableProcessTransactionsParamsType {
 export class TransactionsTableController {
   public static async processTransactions({
     address,
-    egldLabel,
+    rewaLabel,
     explorerAddress,
     transactions
   }: TransactionsTableProcessTransactionsParamsType): Promise<
@@ -58,7 +58,7 @@ export class TransactionsTableController {
             tokenId: transaction.tokenIdentifier
           });
 
-        const { egldValueData, tokenValueData, nftValueData } =
+        const { rewaValueData, tokenValueData, nftValueData } =
           getTransactionValue({
             transaction
           });
@@ -72,12 +72,12 @@ export class TransactionsTableController {
 
         const formattedAmount = FormatAmountController.getData({
           input:
-            egldValueData?.value ??
+            rewaValueData?.value ??
             tokenValueData?.value ??
             nftValueData?.value ??
             '',
           decimals:
-            egldValueData?.decimals ??
+            rewaValueData?.decimals ??
             tokenValueData?.decimals ??
             nftValueData?.decimals ??
             DECIMALS,
@@ -88,7 +88,7 @@ export class TransactionsTableController {
           badge: badge ?? undefined,
           collection:
             tokenValueData?.token.collection ?? nftValueData?.token.collection,
-          egldLabel: egldValueData ? egldLabel : '',
+          rewaLabel: rewaValueData ? rewaLabel : '',
           link:
             tokenValueData?.tokenExplorerLink ??
             nftValueData?.tokenExplorerLink,
@@ -96,7 +96,7 @@ export class TransactionsTableController {
             tokenValueData?.tokenLinkText ?? nftValueData?.tokenLinkText,
           name: tokenValueData?.token.name ?? nftValueData?.token.name,
           showFormattedAmount: Boolean(
-            egldValueData ||
+            rewaValueData ||
               tokenValueData?.tokenFormattedAmount ||
               nftValueData?.tokenFormattedAmount
           ),

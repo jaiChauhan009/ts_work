@@ -10,9 +10,9 @@ if [ -n "$START_CHAIN_ID_STOP" ]; then
   find /usr/share/nginx/html/ -type f -exec sed -i 's|START_CHAIN_ID_STOP|'${START_CHAIN_ID_STOP}'|g' {} +
 fi
 
-if [ -n "$START_EGLD_LABEL_STOP" ]; then
-  echo "egldLabel defined: ${START_EGLD_LABEL_STOP}, replacing in config"
-  find /usr/share/nginx/html/ -type f -exec sed -i 's|START_EGLD_LABEL_STOP|'${START_EGLD_LABEL_STOP}'|g' {} +
+if [ -n "$START_REWA_LABEL_STOP" ]; then
+  echo "rewaLabel defined: ${START_REWA_LABEL_STOP}, replacing in config"
+  find /usr/share/nginx/html/ -type f -exec sed -i 's|START_REWA_LABEL_STOP|'${START_REWA_LABEL_STOP}'|g' {} +
 fi
 
 if [ -n "$START_WALLET_ADDRESS_STOP" ]; then

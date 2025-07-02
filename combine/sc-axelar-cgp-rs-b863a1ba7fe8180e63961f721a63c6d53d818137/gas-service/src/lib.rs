@@ -48,7 +48,7 @@ pub trait GasService: events::Events {
         );
     }
 
-    #[payable("EGLD")]
+    #[payable("REWA")]
     #[endpoint(payNativeGasForContractCall)]
     fn pay_native_gas_for_contract_call(
         &self,
@@ -58,7 +58,7 @@ pub trait GasService: events::Events {
         payload: ManagedBuffer,
         refund_address: ManagedAddress,
     ) {
-        let value = self.call_value().egld_value().clone_value();
+        let value = self.call_value().rewa_value().clone_value();
 
         require!(value > 0, "Nothing received");
 
@@ -105,7 +105,7 @@ pub trait GasService: events::Events {
         );
     }
 
-    #[payable("EGLD")]
+    #[payable("REWA")]
     #[endpoint(payNativeGasForExpressCall)]
     fn pay_native_gas_for_express_call(
         &self,
@@ -115,7 +115,7 @@ pub trait GasService: events::Events {
         payload: ManagedBuffer,
         refund_address: ManagedAddress,
     ) {
-        let value = self.call_value().egld_value().clone_value();
+        let value = self.call_value().rewa_value().clone_value();
 
         require!(value > 0, "Nothing received");
 
@@ -151,7 +151,7 @@ pub trait GasService: events::Events {
         );
     }
 
-    #[payable("EGLD")]
+    #[payable("REWA")]
     #[endpoint(addNativeGas)]
     fn add_native_gas(
         &self,
@@ -159,7 +159,7 @@ pub trait GasService: events::Events {
         log_index: BigUint,
         refund_address: ManagedAddress,
     ) {
-        let value = self.call_value().egld_value().clone_value();
+        let value = self.call_value().rewa_value().clone_value();
 
         require!(value > 0, "Nothing received");
 
@@ -196,7 +196,7 @@ pub trait GasService: events::Events {
         );
     }
 
-    #[payable("EGLD")]
+    #[payable("REWA")]
     #[endpoint(addNativeExpressGas)]
     fn add_native_express_gas(
         &self,
@@ -204,7 +204,7 @@ pub trait GasService: events::Events {
         log_index: BigUint,
         refund_address: ManagedAddress,
     ) {
-        let value = self.call_value().egld_value().clone_value();
+        let value = self.call_value().rewa_value().clone_value();
 
         require!(value > 0, "Nothing received");
 
@@ -223,7 +223,7 @@ pub trait GasService: events::Events {
     fn collect_fees(
         &self,
         receiver: &ManagedAddress,
-        tokens: MultiValueManagedVecCounted<EgldOrDcdtTokenIdentifier>,
+        tokens: MultiValueManagedVecCounted<RewaOrDcdtTokenIdentifier>,
         amounts: MultiValueManagedVecCounted<BigUint>,
     ) {
         self.require_only_collector();
@@ -237,16 +237,16 @@ pub trait GasService: events::Events {
         let amounts_vec = amounts.into_vec();
 
         for index in 0..tokens_length {
-            let token: EgldOrDcdtTokenIdentifier = tokens_vec.get(index);
+            let token: RewaOrDcdtTokenIdentifier = tokens_vec.get(index);
             let amount = amounts_vec.get(index).clone_value();
 
             require!(amount > 0, "Invalid amounts");
 
             let balance = self.blockchain().get_sc_balance(&token, 0);
 
-            if token.is_egld() {
+            if token.is_rewa() {
                 if amount <= balance {
-                    self.send().direct_egld(receiver, &amount);
+                    self.send().direct_rewa(receiver, &amount);
                 }
             } else if amount <= balance {
                 self.send().direct_dcdt(receiver, &token.unwrap_dcdt(), 0, &amount)
@@ -260,7 +260,7 @@ pub trait GasService: events::Events {
         tx_hash: ManagedBuffer,
         log_index: BigUint,
         receiver: ManagedAddress,
-        token: EgldOrDcdtTokenIdentifier,
+        token: RewaOrDcdtTokenIdentifier,
         amount: BigUint,
     ) {
         self.require_only_collector();

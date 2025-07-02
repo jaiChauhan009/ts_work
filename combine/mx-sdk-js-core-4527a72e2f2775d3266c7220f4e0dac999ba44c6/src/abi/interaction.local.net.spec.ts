@@ -135,17 +135,17 @@ describe("test smart contract interactor", function () {
         let deployResponse = await controller.awaitCompletedDeploy(deployTxHash);
         assert.isTrue(deployResponse.returnCode == "ok");
 
-        let returnEgldInteraction = <Interaction>(
+        let returnRewaInteraction = <Interaction>(
             contract.methods
-                .returns_egld_decimal([])
+                .returns_rewa_decimal([])
                 .withGasLimit(10000000n)
                 .withChainID(network.chainID)
                 .withSender(alice.address)
                 .withValue(1n)
         );
 
-        // returnEgld()
-        let returnEgldTransaction = returnEgldInteraction
+        // returnRewa()
+        let returnRewaTransaction = returnRewaInteraction
             .withSender(alice.address)
             .useThenIncrementNonceOf(alice)
             .buildTransaction();
@@ -206,9 +206,9 @@ describe("test smart contract interactor", function () {
             .useThenIncrementNonceOf(alice)
             .buildTransaction();
 
-        // returnEgld()
-        await signTransaction({ transaction: returnEgldTransaction, wallet: alice });
-        let txHash = await provider.sendTransaction(returnEgldTransaction);
+        // returnRewa()
+        await signTransaction({ transaction: returnRewaTransaction, wallet: alice });
+        let txHash = await provider.sendTransaction(returnRewaTransaction);
         let response = await controller.awaitCompletedExecute(txHash);
         assert.isTrue(response.returnCode == "ok");
         assert.lengthOf(response.values, 1);
@@ -380,7 +380,7 @@ describe("test smart contract interactor", function () {
         let startTransaction = factory.createTransactionForExecute(alice.address, {
             contract: contractAddress,
             function: "start",
-            arguments: ["lucky", "EGLD", 1, null, null, 1, null, null],
+            arguments: ["lucky", "REWA", 1, null, null, 1, null, null],
             gasLimit: 30000000n,
         });
         startTransaction.nonce = alice.getNonceThenIncrement();
@@ -430,7 +430,7 @@ describe("test smart contract interactor", function () {
         delete info.deadline;
 
         assert.deepEqual(info, {
-            token_identifier: "EGLD",
+            token_identifier: "REWA",
             ticket_price: new BigNumber("1"),
             tickets_left: new BigNumber(800),
             max_entries_per_user: new BigNumber(1),

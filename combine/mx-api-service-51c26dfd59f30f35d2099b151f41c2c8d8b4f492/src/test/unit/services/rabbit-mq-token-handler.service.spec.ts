@@ -41,11 +41,11 @@ describe('RabbitMqTokenHandlerService', () => {
   });
 
   it('should handle transfer ownership event with valid token properties', async () => {
-    const tokenIdentifier = 'WEGLD-bd4d79';
+    const tokenIdentifier = 'WREWA-bd4d79';
     const event: NotifierEvent = {
       topics: [Buffer.from(tokenIdentifier).toString('base64')],
       address: "erd1",
-      identifier: "WEGLD-bd4d79",
+      identifier: "WREWA-bd4d79",
     };
 
     const dcdtProperties = { someProperty: 'value' };
@@ -61,11 +61,11 @@ describe('RabbitMqTokenHandlerService', () => {
   });
 
   it('should handle transfer ownership event with no token properties', async () => {
-    const tokenIdentifier = 'WEGLD-bd4d79';
+    const tokenIdentifier = 'WREWA-bd4d79';
     const event: NotifierEvent = {
       topics: [Buffer.from(tokenIdentifier).toString('base64')],
       address: "erd1",
-      identifier: "WEGLD-bd4d79",
+      identifier: "WREWA-bd4d79",
     };
 
     dcdtServiceMock.getDcdtTokenPropertiesRaw.mockResolvedValue(null);
@@ -79,17 +79,17 @@ describe('RabbitMqTokenHandlerService', () => {
   });
 
   it('should handle transfer ownership event with exception', async () => {
-    const tokenIdentifier = 'WEGLD-bd4d79';
+    const tokenIdentifier = 'WREWA-bd4d79';
     const event: NotifierEvent = {
       topics: [Buffer.from(tokenIdentifier).toString('base64')],
       address: "erd1",
-      identifier: "WEGLD-bd4d79",
+      identifier: "WREWA-bd4d79",
     };
 
     dcdtServiceMock.getDcdtTokenPropertiesRaw.mockRejectedValue(new Error('Test error'));
 
     const loggerSpy = jest.spyOn(service['logger'], 'error').mockImplementation(() =>
-      "An unhandled error occurred when processing transferOwnership event for token with identifier 'WEGLD-bd4d79'");
+      "An unhandled error occurred when processing transferOwnership event for token with identifier 'WREWA-bd4d79'");
 
     const result = await service.handleTransferOwnershipEvent(event);
 

@@ -117,7 +117,7 @@ export class AuctionsQueriesResolver extends BaseResolver(Auction) {
     })
     filters: TokenFilter,
   ) {
-    const { minBid, maxBid } = await this.auctionsGetterService.getMinMaxPrice(filters?.token ?? mxConfig.egld);
+    const { minBid, maxBid } = await this.auctionsGetterService.getMinMaxPrice(filters?.token ?? mxConfig.rewa);
     return PriceRange.fromEntity(minBid, maxBid);
   }
 

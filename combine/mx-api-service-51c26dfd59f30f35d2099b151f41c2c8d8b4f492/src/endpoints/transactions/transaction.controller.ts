@@ -51,7 +51,7 @@ export class TransactionController {
   @ApiQuery({ name: 'relayer', description: 'Search by a relayer address', required: false })
   @ApiQuery({ name: 'isRelayed', description: 'Returns relayed transactions details', required: false, type: Boolean })
   @ApiQuery({ name: 'isScCall', description: 'Returns sc call transactions details', required: false, type: Boolean })
-  @ApiQuery({ name: 'withActionTransferValue', description: 'Returns value in USD and EGLD for transferred tokens within the action attribute', required: false })
+  @ApiQuery({ name: 'withActionTransferValue', description: 'Returns value in USD and REWA for transferred tokens within the action attribute', required: false })
   @ApiQuery({ name: 'withRelayedScresults', description: 'If set to true, will include smart contract results that resemble relayed transactions', required: false, type: Boolean })
   getTransactions(
     @Query('from', new DefaultValuePipe(0), ParseIntPipe) from: number,
@@ -221,7 +221,7 @@ export class TransactionController {
   @ApiOkResponse({ type: TransactionDetailed })
   @ApiNotFoundResponse({ description: 'Transaction not found' })
   @ApiQuery({ name: 'fields', description: 'List of fields to filter by', required: false, isArray: true, style: 'form', explode: false })
-  @ApiQuery({ name: 'withActionTransferValue', description: 'Returns value in USD and EGLD for transferred tokens within the action attribute', required: false })
+  @ApiQuery({ name: 'withActionTransferValue', description: 'Returns value in USD and REWA for transferred tokens within the action attribute', required: false })
   async getTransaction(
     @Param('txHash', ParseTransactionHashPipe) txHash: string,
     @Query('fields', ParseArrayPipe) fields?: string[],

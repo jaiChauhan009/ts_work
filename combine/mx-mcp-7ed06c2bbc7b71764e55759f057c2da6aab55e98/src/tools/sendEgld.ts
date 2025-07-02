@@ -2,18 +2,18 @@ import { CallToolResult } from "@modelcontextprotocol/sdk/types.js";
 import { Account, Address } from "@terradharitri/sdk-core";
 import { z } from "zod";
 import {
-  denominateEgldValue,
+  denominateRewaValue,
   getEntrypoint,
   getExplorerUrl,
   loadNetworkFromEnv,
   loadPemWalletFromEnv,
 } from "./utils.js";
 
-export async function sendEgld(
+export async function sendRewa(
   amount: string,
   receiver: string
 ): Promise<CallToolResult> {
-  const denominated = denominateEgldValue(amount);
+  const denominated = denominateRewaValue(amount);
   const pem = loadPemWalletFromEnv();
   const receiverAddress = Address.newFromBech32(receiver);
   const account = new Account(pem.secretKey);
@@ -26,7 +26,7 @@ export async function sendEgld(
     .getAccount(account.address);
 
   if (denominated > accountOnNetwork.balance) {
-    throw new Error("Not enough EGLD balance");
+    throw new Error("Not enough REWA balance");
   }
 
   account.nonce = accountOnNetwork.nonce;
@@ -47,20 +47,20 @@ export async function sendEgld(
     content: [
       {
         type: "text",
-        text: `${amount} EGLD have been sent to ${receiverAddress.toBech32()}. Check out the transaction here: ${explorer}/transactions/${hash}`,
+        text: `${amount} REWA have been sent to ${receiverAddress.toBech32()}. Check out the transaction here: ${explorer}/transactions/${hash}`,
       },
     ],
   };
 }
 
-export const sendEgldToolName = "send-egld";
-export const sendEgldToolDescription =
-  "Create a move balance transaction and send it. Will send EGLD using the wallet set in the env to the specified receiver.";
-export const sendEgldParamScheme = {
+export const sendRewaToolName = "send-rewa";
+export const sendRewaToolDescription =
+  "Create a move balance transaction and send it. Will send REWA using the wallet set in the env to the specified receiver.";
+export const sendRewaParamScheme = {
   amount: z
     .string()
     .describe(
-      "The amount of EGLD to send. This amount will then be denominated (1 EGLD=1000000000000000000)"
+      "The amount of REWA to send. This amount will then be denominated (1 REWA=1000000000000000000)"
     ),
   receiver: z.string().describe("The bech32 address of the receiver (erd1...)"),
 };

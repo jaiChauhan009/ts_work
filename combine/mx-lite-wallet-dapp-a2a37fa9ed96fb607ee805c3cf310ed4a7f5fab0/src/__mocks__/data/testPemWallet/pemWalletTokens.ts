@@ -21,12 +21,12 @@ export const pemWalletTokens = [
           'Locked Account #1'
       },
       extraTokens: [
-        'ASHWEGLD-38545c',
+        'ASHWREWA-38545c',
         'METAASHLK-ef49bd',
         'METAASH-05e858',
         'SASH-3671bd',
-        'ASHWEGLDFL-cf0194',
-        'ASHWEGLDF-092a4e',
+        'ASHWREWAFL-cf0194',
+        'ASHWREWAF-092a4e',
         'LKASH-10bd00'
       ],
       ledgerSignature:
@@ -67,21 +67,21 @@ export const pemWalletTokens = [
   },
   {
     type: 'FungibleDCDT',
-    identifier: 'WEGLD-a28c59',
-    name: 'WrappedEGLD',
-    ticker: 'WEGLD',
+    identifier: 'WREWA-a28c59',
+    name: 'WrappedREWA',
+    ticker: 'WREWA',
     owner: 'erd1x39tc3q3nn72ecjnmcz7x0qp09kp97t080x99dgyhx7zh95j0n4szskhlv',
     decimals: 18,
     isPaused: false,
     assets: {
       website: 'https://xexchange.com',
       description:
-        'wEGLD is an DCDT token that has the same value as EGLD, the native coin of the DharitrI blockchain.',
+        'wREWA is an DCDT token that has the same value as REWA, the native coin of the DharitrI blockchain.',
       status: 'active',
       pngUrl:
-        'https://devnet-media.dharitri.org/tokens/asset/WEGLD-a28c59/logo.png',
+        'https://devnet-media.dharitri.org/tokens/asset/WREWA-a28c59/logo.png',
       svgUrl:
-        'https://devnet-media.dharitri.org/tokens/asset/WEGLD-a28c59/logo.svg'
+        'https://devnet-media.dharitri.org/tokens/asset/WREWA-a28c59/logo.svg'
     },
     transactions: 51722,
     transactionsLastUpdatedAt: 1718723498,

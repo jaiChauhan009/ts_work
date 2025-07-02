@@ -60,7 +60,7 @@ export const useFilteredTokens = (options?: UseTokensType) => {
   const [loadedCursors, setLoadedCursors] = useState<Set<string>>(new Set());
 
   const [tokens, setTokens] = useState<UserDcdtType[]>([]);
-  const [wrappedEgld, setWrappedEgld] = useState<DcdtType>();
+  const [wrappedRewa, setWrappedRewa] = useState<DcdtType>();
   const [swapConfig, setSwapConfig] = useState<FactoryType>();
   const [tokensCount, setTokensCount] = useState<number>();
   let ignoreNextHasMore = false;
@@ -78,11 +78,11 @@ export const useFilteredTokens = (options?: UseTokensType) => {
     setTokensCount(pageData?.count);
     if (factory) setSwapConfig(factory);
 
-    const newWrappedEgld =
+    const newWrappedRewa =
       wrappingInfo && wrappingInfo.length
         ? wrappingInfo[0].wrappedToken
         : undefined;
-    setWrappedEgld(newWrappedEgld);
+    setWrappedRewa(newWrappedRewa);
 
     if (!edges) return;
 
@@ -96,7 +96,7 @@ export const useFilteredTokens = (options?: UseTokensType) => {
     const mergedTokens = mergeTokens(tokensWithBalance, userTokens);
     const sortedTokensWithBalance = getSortedTokensByUsdValue({
       tokens: mergedTokens,
-      wrappedEgld: newWrappedEgld
+      wrappedRewa: newWrappedRewa
     });
 
     setTokens((prevTokens) => mergeTokens(prevTokens, sortedTokensWithBalance));
@@ -186,7 +186,7 @@ export const useFilteredTokens = (options?: UseTokensType) => {
 
   return {
     swapConfig,
-    wrappedEgld,
+    wrappedRewa,
     isTokensError: isError,
     isTokensLoading: isLoading,
     tokens: tokensWithUpdatedPrice,

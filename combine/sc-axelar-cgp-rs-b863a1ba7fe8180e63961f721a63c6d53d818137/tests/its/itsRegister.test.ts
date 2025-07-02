@@ -85,12 +85,12 @@ describe('Register token metadata', () => {
     });
   });
 
-  test('Register token metadata egld', async () => {
+  test('Register token metadata rewa', async () => {
     await user.callContract({
       callee: its,
       funcName: 'registerTokenMetadata',
       gasLimit: 100_000_000,
-      funcArgs: [e.Str('EGLD')],
+      funcArgs: [e.Str('REWA')],
       value: 100,
     });
 

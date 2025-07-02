@@ -16,7 +16,7 @@ import {
   socketResponse,
   websocketConfig
 } from './data';
-import { wrapEgldContract } from './data/wrapEgldContract';
+import { wrapRewaContract } from './data/wrapRewaContract';
 
 export const mockResponse =
   <T extends DefaultBodyType>(body: T) =>
@@ -48,8 +48,8 @@ const handlers = [
     mockResponse(account)
   ),
   rest.get(
-    `${testNetwork.apiAddress}/accounts/${wrapEgldContract.address}`,
-    mockResponse(wrapEgldContract)
+    `${testNetwork.apiAddress}/accounts/${wrapRewaContract.address}`,
+    mockResponse(wrapRewaContract)
   ),
   rest.get(`${testNetwork.apiAddress}/blocks`, mockResponse(blocks))
 ];

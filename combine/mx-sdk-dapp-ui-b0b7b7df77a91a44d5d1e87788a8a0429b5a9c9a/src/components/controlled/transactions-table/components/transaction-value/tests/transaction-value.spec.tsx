@@ -7,7 +7,7 @@ import { TransactionValue } from '../transaction-value';
 describe('TransactionValue', () => {
   it('renders with minimal props', async () => {
     const value: TransactionValueType = {
-      egldLabel: '',
+      rewaLabel: '',
       link: '',
       linkText: '',
       name: '',
@@ -31,7 +31,7 @@ describe('TransactionValue', () => {
   it('renders with badge', async () => {
     const value: TransactionValueType = {
       badge: 'NFT',
-      egldLabel: '',
+      rewaLabel: '',
       link: '',
       linkText: '',
       name: '',
@@ -59,7 +59,7 @@ describe('TransactionValue', () => {
   it('renders with formatted amount', async () => {
     const value: TransactionValueType = {
       showFormattedAmount: true,
-      egldLabel: 'xEGLD',
+      rewaLabel: 'xREWA',
       valueDecimal: '123',
       valueInteger: '123',
       link: '',
@@ -76,7 +76,7 @@ describe('TransactionValue', () => {
     expect(page.root).toEqualHtml(`
       <mvx-transaction-value>
           <div class="transaction-value">
-            <mvx-format-amount class="mr-1" datatestid="transactionActionFormattedAmount" isvalid="" label="xEGLD" valuedecimal="123" valueinteger="123"></mvx-format-amount>
+            <mvx-format-amount class="mr-1" datatestid="transactionActionFormattedAmount" isvalid="" label="xREWA" valuedecimal="123" valueinteger="123"></mvx-format-amount>
           </div>
       </mvx-transaction-value>
     `);
@@ -84,7 +84,7 @@ describe('TransactionValue', () => {
 
   it('renders with explorer link', async () => {
     const value: TransactionValueType = {
-      egldLabel: '',
+      rewaLabel: '',
       link: 'https://example.com',
       linkText: 'Example Link',
       name: 'Example',
@@ -113,7 +113,7 @@ describe('TransactionValue', () => {
 
   it('renders with SVG icon', async () => {
     const value: TransactionValueType = {
-      egldLabel: '',
+      rewaLabel: '',
       link: 'https://example.com',
       linkText: 'Example Link',
       svgUrl: 'https://example.com/icon.svg',
@@ -144,7 +144,7 @@ describe('TransactionValue', () => {
 
   it('renders with truncated text', async () => {
     const value: TransactionValueType = {
-      egldLabel: '',
+      rewaLabel: '',
       link: 'https://example.com',
       linkText: 'Example Link',
       ticker: 'EXM',
@@ -174,7 +174,7 @@ describe('TransactionValue', () => {
 
   it('renders with titleText', async () => {
     const value: TransactionValueType = {
-      egldLabel: '',
+      rewaLabel: '',
       link: 'https://example.com',
       linkText: 'Example Link',
       name: 'Example',

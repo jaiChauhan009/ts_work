@@ -100,7 +100,7 @@ export class SimpleLockTransactionService {
         tolerance: number,
     ): Promise<TransactionModel[]> {
         const transactions: TransactionModel[] = [];
-        const wrappedTokenID = await this.wrapAbi.wrappedEgldTokenID();
+        const wrappedTokenID = await this.wrapAbi.wrappedRewaTokenID();
 
         if (inputTokens.length !== 2) {
             throw new Error('Invalid input tokens length');
@@ -108,11 +108,11 @@ export class SimpleLockTransactionService {
 
         const [firstTokenInput, secondTokenInput] = inputTokens;
 
-        switch (mxConfig.EGLDIdentifier) {
+        switch (mxConfig.REWAIdentifier) {
             case firstTokenInput.tokenID:
                 firstTokenInput.tokenID = wrappedTokenID;
                 transactions.push(
-                    await this.wrapTransaction.wrapEgld(
+                    await this.wrapTransaction.wrapRewa(
                         sender,
                         firstTokenInput.amount,
                     ),
@@ -121,7 +121,7 @@ export class SimpleLockTransactionService {
             case secondTokenInput.tokenID:
                 secondTokenInput.tokenID = wrappedTokenID;
                 transactions.push(
-                    await this.wrapTransaction.wrapEgld(
+                    await this.wrapTransaction.wrapRewa(
                         sender,
                         secondTokenInput.amount,
                     ),

@@ -164,8 +164,8 @@ export class CacheInfo {
     ttl: Constants.oneMinute(),
   };
 
-  static EgldToken: CacheInfo = {
-    key: 'egldToken',
+  static RewaToken: CacheInfo = {
+    key: 'rewaToken',
     ttl: 10 * Constants.oneMinute(),
   };
 

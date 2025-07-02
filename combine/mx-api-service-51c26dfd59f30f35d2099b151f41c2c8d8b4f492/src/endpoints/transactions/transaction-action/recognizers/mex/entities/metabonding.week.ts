@@ -3,6 +3,6 @@ export class MetabondingWeek {
     Object.assign(this, init);
   }
   week: number = 0;
-  egldStaked: string = '';
+  rewaStaked: string = '';
   lkmexStaked: string = '';
 }

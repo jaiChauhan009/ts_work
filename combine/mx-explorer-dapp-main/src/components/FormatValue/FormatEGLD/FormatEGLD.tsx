@@ -6,19 +6,19 @@ import { ELLIPSIS } from 'appConstants';
 import { NativeTokenSymbol } from 'components';
 import { FormatAmountUIType, FormatUSD } from 'components';
 import { DIGITS } from 'config';
-import { formatBigNumber, stringIsFloat, isEgldToken } from 'helpers';
+import { formatBigNumber, stringIsFloat, isRewaToken } from 'helpers';
 import { activeNetworkSelector, economicsSelector } from 'redux/selectors';
 
 import { FormatDisplayValue } from '../FormatDisplayValue';
 
-export interface FormatEGLDUIType extends Omit<FormatAmountUIType, 'value'> {
+export interface FormatREWAUIType extends Omit<FormatAmountUIType, 'value'> {
   value: string | number;
   showUsdValue?: boolean;
   usd?: string | number;
 }
 
-export const FormatEGLD = (props: FormatEGLDUIType) => {
-  const { egldLabel = '' } = useSelector(activeNetworkSelector);
+export const FormatREWA = (props: FormatREWAUIType) => {
+  const { rewaLabel = '' } = useSelector(activeNetworkSelector);
   const { isFetched, unprocessed } = useSelector(economicsSelector);
   const {
     value,
@@ -29,7 +29,7 @@ export const FormatEGLD = (props: FormatEGLDUIType) => {
     className
   } = props;
   const numberValue = String(value).replace(/[^\d.-]/g, '');
-  const isCustomIcon = !isEgldToken(egldLabel);
+  const isCustomIcon = !isRewaToken(rewaLabel);
 
   if (!stringIsFloat(numberValue)) {
     <span
@@ -56,7 +56,7 @@ export const FormatEGLD = (props: FormatEGLDUIType) => {
       {...props}
       formattedValue={formattedValue}
       completeValue={completeValue}
-      label={egldLabel}
+      label={rewaLabel}
       showTooltipLabel
       spacedLabel
       {...(showSymbol && !props.token

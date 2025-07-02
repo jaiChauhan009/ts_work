@@ -12,7 +12,7 @@ import { pairCountQuery } from "./graphql/pairs.count.query";
 
 @Injectable()
 export class MexSettingsService {
-  private wegldId: string | undefined;
+  private wrewaId: string | undefined;
 
   constructor(
     private readonly cachingService: CacheService,
@@ -56,7 +56,7 @@ export class MexSettingsService {
       Constants.oneMinute() * 10,
     );
 
-    this.wegldId = settings?.wegldId;
+    this.wrewaId = settings?.wrewaId;
 
     return settings;
   }
@@ -105,8 +105,8 @@ export class MexSettingsService {
     return settings;
   }
 
-  getWegldId(): string | undefined {
-    return this.wegldId;
+  getWrewaId(): string | undefined {
+    return this.wrewaId;
   }
 
   private async getPairLimitCount(): Promise<number> {

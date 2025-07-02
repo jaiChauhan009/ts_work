@@ -889,7 +889,7 @@ export class AccountController {
   @ApiQuery({ name: 'senderOrReceiver', description: 'One address that current address interacted with', required: false })
   @ApiQuery({ name: 'isRelayed', description: 'Returns isRelayed transactions details', required: false, type: Boolean })
   @ApiQuery({ name: 'isScCall', description: 'Returns sc call transactions details', required: false, type: Boolean })
-  @ApiQuery({ name: 'withActionTransferValue', description: 'Returns value in USD and EGLD for transferred tokens within the action attribute', required: false })
+  @ApiQuery({ name: 'withActionTransferValue', description: 'Returns value in USD and REWA for transferred tokens within the action attribute', required: false })
   @ApiQuery({ name: 'withRelayedScresults', description: 'If set to true, will include smart contract results that resemble relayed transactions', required: false, type: Boolean })
   async getAccountTransactions(
     @Param('address', ParseAddressPipe) address: string,
@@ -1034,7 +1034,7 @@ export class AccountController {
   @ApiQuery({ name: 'senderOrReceiver', description: 'One address that current address interacted with', required: false })
   @ApiQuery({ name: 'withLogs', description: 'Return logs for transfers. When "withLogs" parameter is applied, complexity estimation is 200', required: false })
   @ApiQuery({ name: 'withOperations', description: 'Return operations for transfers. When "withOperations" parameter is applied, complexity estimation is 200', required: false })
-  @ApiQuery({ name: 'withActionTransferValue', description: 'Returns value in USD and EGLD for transferred tokens within the action attribute', required: false })
+  @ApiQuery({ name: 'withActionTransferValue', description: 'Returns value in USD and REWA for transferred tokens within the action attribute', required: false })
   @ApiQuery({ name: 'withRefunds', description: 'Include refund transactions', required: false })
   @ApiQuery({ name: 'withTxsRelayedByAddress', description: 'Include transactions that were relayed by the address', required: false })
   async getAccountTransfers(
@@ -1296,7 +1296,7 @@ export class AccountController {
   }
 
   @Get("/accounts/:address/history")
-  @ApiOperation({ summary: 'Account history', description: 'Return account EGLD balance history' })
+  @ApiOperation({ summary: 'Account history', description: 'Return account REWA balance history' })
   @ApiQuery({ name: 'from', description: 'Number of items to skip for the result set', required: false })
   @ApiQuery({ name: 'size', description: 'Number of items to retrieve', required: false })
   @ApiQuery({ name: 'before', description: 'Before timestamp', required: false })
@@ -1316,7 +1316,7 @@ export class AccountController {
   }
 
   @Get("/accounts/:address/history/count")
-  @ApiOperation({ summary: 'Account history count', description: 'Return account EGLD balance history count' })
+  @ApiOperation({ summary: 'Account history count', description: 'Return account REWA balance history count' })
   @ApiQuery({ name: 'before', description: 'Before timestamp', required: false })
   @ApiQuery({ name: 'after', description: 'After timestamp', required: false })
   @ApiOkResponse({ type: Number })

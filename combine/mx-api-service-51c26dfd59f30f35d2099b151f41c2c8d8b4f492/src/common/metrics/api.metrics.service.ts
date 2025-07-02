@@ -221,6 +221,6 @@ export class ApiMetricsService {
 
   async getCurrentNonce(shardId: number): Promise<number> {
     const shardInfo = await this.gatewayService.getNetworkStatus(shardId);
-    return shardInfo.erd_nonce;
+    return shardInfo.drt_nonce;
   }
 }

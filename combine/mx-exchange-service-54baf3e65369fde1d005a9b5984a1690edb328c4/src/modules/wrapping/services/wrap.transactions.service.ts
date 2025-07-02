@@ -13,41 +13,41 @@ export class WrapTransactionsService {
         private readonly wrapService: WrapService,
     ) {}
 
-    async wrapEgld(sender: string, amount: string): Promise<TransactionModel> {
+    async wrapRewa(sender: string, amount: string): Promise<TransactionModel> {
         const shardID = await this.mxProxy.getAddressShardID(sender);
 
         return this.mxProxy.getWrapSmartContractTransaction(
             shardID,
             new TransactionOptions({
-                function: 'wrapEgld',
+                function: 'wrapRewa',
                 chainID: mxConfig.chainID,
-                gasLimit: gasConfig.wrapeGLD,
+                gasLimit: gasConfig.wrapREWA,
                 sender: sender,
                 nativeTransferAmount: amount,
             }),
         );
     }
 
-    async unwrapEgld(
+    async unwrapRewa(
         sender: string,
         amount: string,
     ): Promise<TransactionModel> {
-        const [shardID, wrappedEgldToken] = await Promise.all([
+        const [shardID, wrappedRewaToken] = await Promise.all([
             this.mxProxy.getAddressShardID(sender),
-            this.wrapService.wrappedEgldToken(),
+            this.wrapService.wrappedRewaToken(),
         ]);
 
         return this.mxProxy.getWrapSmartContractTransaction(
             shardID,
             new TransactionOptions({
-                function: 'unwrapEgld',
+                function: 'unwrapRewa',
                 chainID: mxConfig.chainID,
-                gasLimit: gasConfig.wrapeGLD,
+                gasLimit: gasConfig.wrapREWA,
                 sender: sender,
                 tokenTransfers: [
                     new TokenTransfer({
                         token: new Token({
-                            identifier: wrappedEgldToken.identifier,
+                            identifier: wrappedRewaToken.identifier,
                         }),
                         amount: BigInt(amount),
                     }),

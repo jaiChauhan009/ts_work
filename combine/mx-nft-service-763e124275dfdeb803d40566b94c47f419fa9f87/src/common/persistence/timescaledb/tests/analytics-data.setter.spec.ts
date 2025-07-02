@@ -18,7 +18,7 @@ describe('Analytics Data Setter Service', () => {
         usdPrice: 37.64373293576205,
         volume: 0.367,
         volumeUSD: '13.81524998742467235',
-        paymentToken: 'EGLD',
+        paymentToken: 'REWA',
         marketplaceKey: 'xoxno',
       },
     },

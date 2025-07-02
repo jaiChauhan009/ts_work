@@ -16,7 +16,7 @@ export const AccountDelegation = ({
   delegation: AccountDelegationType;
   provider?: ProviderType;
 }) => {
-  const { egldLabel } = useSelector(activeNetworkSelector);
+  const { rewaLabel } = useSelector(activeNetworkSelector);
 
   const { userActiveStake } = delegation;
   const claimableRewards = delegation.claimableRewards || ZERO;
@@ -57,7 +57,7 @@ export const AccountDelegation = ({
           {claimableRewards ? (
             <FormatAmount value={claimableRewards} />
           ) : (
-            <>0 {egldLabel}</>
+            <>0 {rewaLabel}</>
           )}
         </strong>
         <small>Rewards</small>

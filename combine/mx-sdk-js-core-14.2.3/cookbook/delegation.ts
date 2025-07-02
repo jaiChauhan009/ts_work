@@ -274,7 +274,7 @@ import { Account, Address, DevnetEntrypoint, TokenManagementTransactionsOutcomeP
 
         const transaction = await controller.createTransactionForUndelegating(alice, alice.getNonceThenIncrement(), {
             delegationContract: contract,
-            amount: 1000000000000000000000n, // 1000 EGLD // md-as-comment
+            amount: 1000000000000000000000n, // 1000 REWA // md-as-comment
         });
 
         // sending the transaction // md-as-comment
@@ -296,7 +296,7 @@ import { Account, Address, DevnetEntrypoint, TokenManagementTransactionsOutcomeP
 
         const transaction = await factory.createTransactionForUndelegating(alice.address, {
             delegationContract: contract,
-            amount: 1000000000000000000000n, // 1000 EGLD // md-as-comment
+            amount: 1000000000000000000000n, // 1000 REWA // md-as-comment
         });
         // fetch the nonce of the network // md-as-comment
         alice.nonce = await entrypoint.recallAccountNonce(alice.address);

@@ -21,10 +21,10 @@ pub const ITS_HUB_CHAIN_NAME: &[u8] = b"axelar";
 pub type Hash<M> = ManagedByteArray<M, KECCAK256_RESULT_LEN>;
 pub type TokenId<M> = ManagedByteArray<M, KECCAK256_RESULT_LEN>;
 
-pub const DCDT_EGLD_IDENTIFIER: &str = "EGLD-000000";
+pub const DCDT_REWA_IDENTIFIER: &str = "REWA-000000";
 
 pub struct TransferAndGasTokens<M: ManagedTypeApi> {
-    pub transfer_token: EgldOrDcdtTokenIdentifier<M>,
+    pub transfer_token: RewaOrDcdtTokenIdentifier<M>,
     pub transfer_amount: BigUint<M>,
     pub gas_amount: BigUint<M>,
 }
@@ -68,4 +68,4 @@ pub enum InterchainTokenStatus {
     AlreadyMinted,
 }
 
-pub const EGLD_DECIMALS: u8 = 18;
+pub const REWA_DECIMALS: u8 = 18;

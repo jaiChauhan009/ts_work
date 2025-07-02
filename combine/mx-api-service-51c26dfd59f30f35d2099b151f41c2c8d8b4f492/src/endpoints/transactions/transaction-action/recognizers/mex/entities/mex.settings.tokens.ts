@@ -3,13 +3,13 @@ export class MexSettingsToken {
     Object.assign(this, init);
   }
 
-  wegld: string = '';
+  wrewa: string = '';
   mex: string = '';
   busd: string = '';
-  egldMex: string = '';
-  egldUsd: string = '';
+  rewaMex: string = '';
+  rewaUsd: string = '';
 
   mexFarm: string = '';
-  egldMexFarm: string = '';
-  egldUsdFarm: string = '';
+  rewaMexFarm: string = '';
+  rewaUsdFarm: string = '';
 }

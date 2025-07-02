@@ -15,7 +15,7 @@ describe('getToastProceededStatus', () => {
     hash: '123',
     interactor: testAddress,
     directionLabel: 'To',
-    amount: '1 EGLD',
+    amount: '1 REWA',
     timestamp: Date.now()
   };
 

@@ -3,8 +3,8 @@ export class MexSettingsFarmContracts {
     Object.assign(this, init);
   }
 
-  egldMex: string = '';
-  egldUsd: string = '';
+  rewaMex: string = '';
+  rewaUsd: string = '';
   mex: string = '';
   exit: string = '';
 }

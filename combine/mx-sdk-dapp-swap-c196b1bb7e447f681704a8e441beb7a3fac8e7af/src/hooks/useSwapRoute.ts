@@ -5,8 +5,8 @@ import { FIXED_INPUT, FIXED_OUTPUT } from 'constants/general';
 import { IPlainTransactionObject } from 'lib';
 import {
   swapQuery,
-  wrapEgldQuery,
-  unwrapEgldQuery,
+  wrapRewaQuery,
+  unwrapRewaQuery,
   SwapRouteQueryResponseType,
   swapWithoutTransactionsQuery
 } from 'queries';
@@ -50,10 +50,10 @@ export interface UseSwapRouteType {
 }
 
 export const useSwapRoute = ({
-  wrappedEgld,
+  wrappedRewa,
   isPollingEnabled = false
 }: {
-  wrappedEgld?: DcdtType;
+  wrappedRewa?: DcdtType;
   isPollingEnabled?: boolean;
 }): UseSwapRouteType => {
   const { client, isAuthenticated } = useAuthorizationContext();
@@ -73,14 +73,14 @@ export const useSwapRoute = ({
       getSwapActionType({
         firstTokenId: variables?.tokenInID,
         secondTokenId: variables?.tokenOutID,
-        wrappedEgld
+        wrappedRewa
       }),
-    [variables, wrappedEgld]
+    [variables, wrappedRewa]
   );
 
   const query = useMemo(() => {
-    if (swapActionType === SwapActionTypesEnum.wrap) return wrapEgldQuery;
-    if (swapActionType === SwapActionTypesEnum.unwrap) return unwrapEgldQuery;
+    if (swapActionType === SwapActionTypesEnum.wrap) return wrapRewaQuery;
+    if (swapActionType === SwapActionTypesEnum.unwrap) return unwrapRewaQuery;
 
     return isAuthenticated ? swapQuery : swapWithoutTransactionsQuery;
   }, [isAuthenticated, swapActionType]);
@@ -117,8 +117,8 @@ export const useSwapRoute = ({
     switch (swapActionType) {
       case SwapActionTypesEnum.wrap:
       case SwapActionTypesEnum.unwrap:
-        const wrapTx = (data as WrappingQueryResponseType)?.wrapEgld;
-        const unwrapTx = (data as WrappingQueryResponseType)?.unwrapEgld;
+        const wrapTx = (data as WrappingQueryResponseType)?.wrapRewa;
+        const unwrapTx = (data as WrappingQueryResponseType)?.unwrapRewa;
         const tx = wrapTx ?? unwrapTx;
 
         const swapType = variables.amountIn ? FIXED_INPUT : FIXED_OUTPUT;
@@ -127,14 +127,14 @@ export const useSwapRoute = ({
         const wrappingSwapRoute: SwapRouteType = {
           amountIn: amount ?? '0',
           tokenInID: variables.tokenInID,
-          tokenInPriceUSD: wrappedEgld?.price ?? '0',
+          tokenInPriceUSD: wrappedRewa?.price ?? '0',
           tokenInExchangeRateDenom: '1',
           maxPriceDeviationPercent: 0,
           tokensPriceDeviationPercent: 0,
 
           amountOut: amount ?? '0',
           tokenOutID: variables.tokenOutID,
-          tokenOutPriceUSD: wrappedEgld?.price ?? '0',
+          tokenOutPriceUSD: wrappedRewa?.price ?? '0',
           tokenOutExchangeRateDenom: '1',
 
           fees: [],

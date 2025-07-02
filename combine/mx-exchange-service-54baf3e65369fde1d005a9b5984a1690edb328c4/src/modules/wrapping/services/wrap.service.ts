@@ -29,8 +29,8 @@ export class WrapService {
         ];
     }
 
-    async wrappedEgldToken(): Promise<DcdtToken> {
-        const wrappedEgldTokenID = await this.wrapAbi.wrappedEgldTokenID();
-        return this.tokenService.tokenMetadata(wrappedEgldTokenID);
+    async wrappedRewaToken(): Promise<DcdtToken> {
+        const wrappedRewaTokenID = await this.wrapAbi.wrappedRewaTokenID();
+        return this.tokenService.tokenMetadata(wrappedRewaTokenID);
     }
 }

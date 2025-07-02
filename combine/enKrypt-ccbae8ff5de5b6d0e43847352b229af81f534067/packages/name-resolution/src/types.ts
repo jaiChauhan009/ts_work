@@ -25,7 +25,7 @@ export type CoinType =
   | "ARK"
   | "ATOM"
   | "ZIL"
-  | "EGLD"
+  | "REWA"
   | "ZEN"
   | "XMR"
   | "ZEC"

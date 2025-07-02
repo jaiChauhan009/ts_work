@@ -13,7 +13,7 @@ export class StakingProxyAbiServiceMock implements IStakingProxyAbiService {
         return Address.Zero().bech32();
     }
     async stakingTokenID(stakingProxyAddress: string): Promise<string> {
-        return 'WEGLD-123456';
+        return 'WREWA-123456';
     }
     async farmTokenID(stakingProxyAddress: string): Promise<string> {
         return 'STAKETOK-1111';
@@ -22,7 +22,7 @@ export class StakingProxyAbiServiceMock implements IStakingProxyAbiService {
         return 'METASTAKE-123456';
     }
     async lpFarmTokenID(stakingProxyAddress: string): Promise<string> {
-        return 'EGLDTOK4FL-abcdef';
+        return 'REWATOK4FL-abcdef';
     }
 }
 

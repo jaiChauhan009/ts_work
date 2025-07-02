@@ -71,7 +71,7 @@ export class StartAuctionEventHandler {
   ) {
     let decimals = mxConfig.decimals;
     const asset = await this.assetByIdentifierService.getAsset(auctionIdentifier);
-    if (topics.paymentToken !== mxConfig.egld) {
+    if (topics.paymentToken !== mxConfig.rewa) {
       const paymentToken = await this.usdPriceService.getToken(topics.paymentToken);
       decimals = paymentToken.decimals;
     }

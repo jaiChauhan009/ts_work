@@ -71,7 +71,7 @@ describe('TransactionProxyPairService', () => {
         expect(service).toBeDefined();
     });
 
-    it('should get add liquidity batch transaction EGLD first token', async () => {
+    it('should get add liquidity batch transaction REWA first token', async () => {
         const firstTokenAmount = '10';
         const secondTokenAmount = '9';
 
@@ -86,7 +86,7 @@ describe('TransactionProxyPairService', () => {
             async () => 0,
         );
         jest.spyOn(pairAbi, 'firstTokenID').mockImplementation(
-            async () => 'WEGLD-123456',
+            async () => 'WREWA-123456',
         );
         jest.spyOn(pairAbi, 'secondTokenID').mockImplementation(
             async () => 'MEX-123456',
@@ -99,7 +99,7 @@ describe('TransactionProxyPairService', () => {
                 pairAddress: Address.Zero().bech32(),
                 tokens: [
                     {
-                        tokenID: 'EGLD',
+                        tokenID: 'REWA',
                         nonce: 0,
                         amount: firstTokenAmount,
                     },
@@ -113,17 +113,17 @@ describe('TransactionProxyPairService', () => {
             },
         );
 
-        const [wrapEgldTransaction, addLiquidityProxy] =
+        const [wrapRewaTransaction, addLiquidityProxy] =
             liquidityBatchTransactions;
-        expect(wrapEgldTransaction.value).toEqual(firstTokenAmount);
+        expect(wrapRewaTransaction.value).toEqual(firstTokenAmount);
         expect(addLiquidityProxy.data).toEqual(
             encodeTransactionData(
-                'MultiDCDTNFTTransfer@000000000000000005001e2a1428dd1e3a5146b3960d9e0f4a50369904ee5483@02@WEGLD-123456@@10@LKMEX-123456@01@09@addLiquidityProxy@0000000000000000000000000000000000000000000000000000000000000000@09@08',
+                'MultiDCDTNFTTransfer@000000000000000005001e2a1428dd1e3a5146b3960d9e0f4a50369904ee5483@02@WREWA-123456@@10@LKMEX-123456@01@09@addLiquidityProxy@0000000000000000000000000000000000000000000000000000000000000000@09@08',
             ),
         );
     });
 
-    it('should get add liquidity batch transaction EGLD second token', async () => {
+    it('should get add liquidity batch transaction REWA second token', async () => {
         const firstTokenAmount = '10';
         const secondTokenAmount = '9';
         const service: ProxyPairTransactionsService =
@@ -137,7 +137,7 @@ describe('TransactionProxyPairService', () => {
             async () => 0,
         );
         jest.spyOn(pairAbi, 'firstTokenID').mockImplementation(
-            async () => 'WEGLD-123456',
+            async () => 'WREWA-123456',
         );
         jest.spyOn(pairAbi, 'secondTokenID').mockImplementation(
             async () => 'MEX-123456',
@@ -155,7 +155,7 @@ describe('TransactionProxyPairService', () => {
                         amount: firstTokenAmount,
                     },
                     {
-                        tokenID: 'EGLD',
+                        tokenID: 'REWA',
                         nonce: 0,
                         amount: secondTokenAmount,
                     },
@@ -164,12 +164,12 @@ describe('TransactionProxyPairService', () => {
             },
         );
 
-        const [wrapEgldTransaction, addLiquidityProxy] =
+        const [wrapRewaTransaction, addLiquidityProxy] =
             liquidityBatchTransactions;
-        expect(wrapEgldTransaction.value).toEqual(secondTokenAmount);
+        expect(wrapRewaTransaction.value).toEqual(secondTokenAmount);
         expect(addLiquidityProxy.data).toEqual(
             encodeTransactionData(
-                'MultiDCDTNFTTransfer@000000000000000005001e2a1428dd1e3a5146b3960d9e0f4a50369904ee5483@02@WEGLD-123456@@09@LKMEX-123456@01@10@addLiquidityProxy@0000000000000000000000000000000000000000000000000000000000000000@08@09',
+                'MultiDCDTNFTTransfer@000000000000000005001e2a1428dd1e3a5146b3960d9e0f4a50369904ee5483@02@WREWA-123456@@09@LKMEX-123456@01@10@addLiquidityProxy@0000000000000000000000000000000000000000000000000000000000000000@08@09',
             ),
         );
     });

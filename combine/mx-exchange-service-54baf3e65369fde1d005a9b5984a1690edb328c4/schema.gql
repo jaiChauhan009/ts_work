@@ -216,7 +216,7 @@ type DcdtToken implements IDcdtToken {
   roles: RolesModel
   type: String!
   balance: String
-  derivedEGLD: String!
+  derivedREWA: String!
 }
 
 interface IDcdtToken {
@@ -665,7 +665,7 @@ type UserToken implements IDcdtToken {
   roles: RolesModel
   type: String!
   balance: String
-  derivedEGLD: String!
+  derivedREWA: String!
   valueUSD: String!
 }
 
@@ -1479,8 +1479,8 @@ type Query {
   """
   setupFeesCollector(pairAddress: String!): TransactionModel!
   wrappingInfo: [WrapModel!]!
-  wrapEgld(amount: String!): TransactionModel!
-  unwrapEgld(amount: String!): TransactionModel!
+  wrapRewa(amount: String!): TransactionModel!
+  unwrapRewa(amount: String!): TransactionModel!
   tokens(identifiers: [String!], type: String, enabledSwaps: Boolean! = false): [DcdtToken!]!
   nftToken(identifier: String!): NftToken!
   simpleLock: [SimpleLockModel!]!

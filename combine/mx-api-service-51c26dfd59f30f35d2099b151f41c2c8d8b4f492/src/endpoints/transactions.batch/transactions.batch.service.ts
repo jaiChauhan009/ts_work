@@ -1,4 +1,4 @@
-import { Address, Transaction as ErdJsTransaction, TransactionHash, TransactionOptions, TransactionPayload, TransactionVersion } from "@terradharitri/sdk-core/out";
+import { Address, Transaction as DrtJsTransaction, TransactionHash, TransactionOptions, TransactionPayload, TransactionVersion } from "@terradharitri/sdk-core/out";
 import { Signature } from "@terradharitri/sdk-core/out/signature";
 import { BinaryUtils } from "@terradharitri/sdk-nestjs-common";
 import { CacheService } from "@terradharitri/sdk-nestjs-cache";
@@ -36,7 +36,7 @@ export class TransactionsBatchService {
       for (const item of group.items) {
         const tx = item.transaction.tx;
 
-        const trans = new ErdJsTransaction({
+        const trans = new DrtJsTransaction({
           nonce: tx.nonce,
           value: tx.value,
           receiver: new Address(tx.receiver),

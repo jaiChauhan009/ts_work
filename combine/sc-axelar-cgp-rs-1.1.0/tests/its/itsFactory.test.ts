@@ -162,7 +162,7 @@ describe('Deploy interchain token', () => {
           user, // minter
         ],
       })
-      .assertFail({ code: 4, message: 'Can not send EGLD payment if not issuing DCDT' });
+      .assertFail({ code: 4, message: 'Can not send REWA payment if not issuing DCDT' });
 
     await user.callContract({
       callee: its,
@@ -433,7 +433,7 @@ describe('Deploy interchain token', () => {
         value: BigInt('50000000000000000'),
         funcArgs: [e.TopBuffer(TOKEN_SALT), e.Str('TokenName'), e.Str('SYMBOL'), e.U8(18), e.U(1_000), user],
       })
-      .assertFail({ code: 4, message: 'Can not send EGLD payment if not issuing DCDT' });
+      .assertFail({ code: 4, message: 'Can not send REWA payment if not issuing DCDT' });
 
     await user.callContract({
       callee: its,
@@ -736,8 +736,8 @@ describe('Deploy remote interchain token', () => {
     });
   });
 
-  test('EGLD with no minter', async () => {
-    const { computedTokenId } = await deployAndMockTokenManagerLockUnlock('EGLD');
+  test('REWA with no minter', async () => {
+    const { computedTokenId } = await deployAndMockTokenManagerLockUnlock('REWA');
 
     await user.callContract({
       callee: its,
@@ -1136,15 +1136,15 @@ describe('Deploy remote canonical interchain token', () => {
     });
   });
 
-  test('EGLD token', async () => {
-    const { computedTokenId } = await deployAndMockTokenManagerLockUnlock('EGLD', CANONICAL_INTERCHAIN_TOKEN_ID);
+  test('REWA token', async () => {
+    const { computedTokenId } = await deployAndMockTokenManagerLockUnlock('REWA', CANONICAL_INTERCHAIN_TOKEN_ID);
 
     await user.callContract({
       callee: its,
       funcName: 'deployRemoteCanonicalInterchainToken',
       gasLimit: 150_000_000,
       value: 100_000_000n,
-      funcArgs: [e.Str('EGLD'), e.Str(OTHER_CHAIN_NAME)],
+      funcArgs: [e.Str('REWA'), e.Str(OTHER_CHAIN_NAME)],
     });
 
     assertAccount(await its.getAccount(), {
@@ -1291,7 +1291,7 @@ describe('Register custom token', () => {
     });
   });
 
-  test('Register custom token egld', async () => {
+  test('Register custom token rewa', async () => {
     await deployContracts(deployer, collector);
 
     let result = await user.callContract({
@@ -1300,7 +1300,7 @@ describe('Register custom token', () => {
       gasLimit: 100_000_000,
       funcArgs: [
         e.TopBuffer(TOKEN_SALT),
-        e.Str('EGLD'),
+        e.Str('REWA'),
         e.U8(TOKEN_MANAGER_TYPE_LOCK_UNLOCK), // Lock/unlock
         user,
       ],
@@ -1330,7 +1330,7 @@ describe('Register custom token', () => {
         e.kvs.Mapper('interchain_token_id').Value(e.TopBuffer(computedTokenId)),
         e.kvs.Mapper('account_roles', user).Value(e.U32(0b00000110)), // flow limiter & operator roles
         e.kvs.Mapper('account_roles', its).Value(e.U32(0b00000110)),
-        e.kvs.Mapper('token_identifier').Value(e.Str('EGLD')),
+        e.kvs.Mapper('token_identifier').Value(e.Str('REWA')),
       ],
     });
 
@@ -1490,13 +1490,13 @@ describe('Link token', () => {
     });
   });
 
-  test('Link egld', async () => {
+  test('Link rewa', async () => {
     await deployContracts(deployer, collector);
 
     const userTokenId = computeLinkedTokenId(user);
 
     // Mock token manager exists on source chain
-    await deployTokenManagerLockUnlock(deployer, its, deployer, 'EGLD');
+    await deployTokenManagerLockUnlock(deployer, its, deployer, 'REWA');
     await its.setAccount({
       ...(await its.getAccount()),
       kvs: [

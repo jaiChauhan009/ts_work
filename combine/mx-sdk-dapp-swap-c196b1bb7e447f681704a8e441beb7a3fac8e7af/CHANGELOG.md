@@ -56,7 +56,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [[1.8.2](https://github.com/TerraDharitri/mx-sdk-dapp-swap/pull/26)] - 2024-09-12
 
-- [Fixes EGLD <-> WEGLD missing transactions](https://github.com/TerraDharitri/mx-sdk-dapp-swap/pull/26)
+- [Fixes REWA <-> WREWA missing transactions](https://github.com/TerraDharitri/mx-sdk-dapp-swap/pull/26)
 
 ## [[1.8.1](https://github.com/TerraDharitri/mx-sdk-dapp-swap/pull/25)] - 2024-09-03
 

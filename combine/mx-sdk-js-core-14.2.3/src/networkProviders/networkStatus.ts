@@ -44,11 +44,11 @@ export class NetworkStatus {
         let networkStatus = new NetworkStatus();
 
         networkStatus.raw = payload;
-        networkStatus.currentRound = BigInt(payload["erd_current_round"]);
-        networkStatus.currentEpoch = Number(payload["erd_epoch_number"]);
-        networkStatus.highestFinalNonce = BigInt(payload["erd_highest_final_nonce"]);
-        networkStatus.blockNonce = BigInt(payload["erd_nonce"]);
-        networkStatus.blockTimestamp = Number(payload["erd_block_timestamp"]);
+        networkStatus.currentRound = BigInt(payload["drt_current_round"]);
+        networkStatus.currentEpoch = Number(payload["drt_epoch_number"]);
+        networkStatus.highestFinalNonce = BigInt(payload["drt_highest_final_nonce"]);
+        networkStatus.blockNonce = BigInt(payload["drt_nonce"]);
+        networkStatus.blockTimestamp = Number(payload["drt_block_timestamp"]);
 
         return networkStatus;
     }

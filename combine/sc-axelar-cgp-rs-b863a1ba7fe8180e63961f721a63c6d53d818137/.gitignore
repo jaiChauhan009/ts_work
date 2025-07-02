@@ -3,7 +3,7 @@
 **/output/**
 **/testnet/**
 **/wallets/**
-**/erdpy.data-storage.json
+**/drtpy.data-storage.json
 **/*.interaction.json
 
 # Target

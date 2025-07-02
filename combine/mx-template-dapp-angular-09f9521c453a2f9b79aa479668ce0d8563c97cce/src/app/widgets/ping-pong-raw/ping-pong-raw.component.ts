@@ -102,10 +102,10 @@ export class PingPongRawComponent implements OnInit, OnDestroy {
   }
 
   formatAmount(amount: string): string {
-    // Convert from wei to EGLD (simple formatting)
+    // Convert from wei to REWA (simple formatting)
     const amountBN = new BigNumber(amount);
-    const egldAmount = amountBN.dividedBy(new BigNumber(10).pow(18));
-    return egldAmount.toFixed(4) + ' EGLD';
+    const rewaAmount = amountBN.dividedBy(new BigNumber(10).pow(18));
+    return rewaAmount.toFixed(4) + ' REWA';
   }
 
   async onSendPingTransaction(): Promise<void> {

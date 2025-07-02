@@ -224,13 +224,13 @@ describe('UserService', () => {
             ),
         ).toEqual([
             new UserFarmToken({
-                collection: 'EGLDMEXFL-abcdef',
-                ticker: 'EGLDMEXFL',
+                collection: 'REWAMEXFL-abcdef',
+                ticker: 'REWAMEXFL',
                 name: 'FarmToken',
                 type: 'SemiFungibleDCDT',
                 decimals: 18,
                 balance: '1000000000000000000',
-                identifier: 'EGLDMEXFL-abcdef-01',
+                identifier: 'REWAMEXFL-abcdef-01',
                 attributes: 'AAAABQeMCWDbAAAAAAAAAF8CAQ==',
                 creator: Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000021',
@@ -246,7 +246,7 @@ describe('UserService', () => {
                     attributes: 'AAAABQeMCWDbAAAAAAAAAF8CAQ==',
                     originalEnteringEpoch: 1,
                     enteringEpoch: 1,
-                    identifier: 'EGLDMEXFL-abcdef-01',
+                    identifier: 'REWAMEXFL-abcdef-01',
                     lockedRewards: false,
                     rewardPerShare: '3000',
                     initialFarmingAmount: '100',

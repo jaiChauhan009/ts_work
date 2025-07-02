@@ -14,5 +14,5 @@ export class TokenTransferProperties {
   name: string = '';
   svgUrl: string = '';
   valueUsd?: number;
-  valueEgld?: number;
+  valueRewa?: number;
 }

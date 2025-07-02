@@ -61,12 +61,12 @@ export class NetworkService {
   private async getConstantsRaw(): Promise<NetworkConstants> {
     const networkConfig = await this.gatewayService.getNetworkConfig();
 
-    const chainId = networkConfig.erd_chain_id;
-    const gasPerDataByte = networkConfig.erd_gas_per_data_byte;
-    const minGasLimit = networkConfig.erd_min_gas_limit;
-    const minGasPrice = networkConfig.erd_min_gas_price;
-    const minTransactionVersion = networkConfig.erd_min_transaction_version;
-    const gasPriceModifier = networkConfig.erd_gas_price_modifier;
+    const chainId = networkConfig.drt_chain_id;
+    const gasPerDataByte = networkConfig.drt_gas_per_data_byte;
+    const minGasLimit = networkConfig.drt_min_gas_limit;
+    const minGasPrice = networkConfig.drt_min_gas_price;
+    const minTransactionVersion = networkConfig.drt_min_transaction_version;
+    const gasPriceModifier = networkConfig.drt_gas_price_modifier;
 
     return {
       chainId,
@@ -82,19 +82,19 @@ export class NetworkService {
     const metaChainShard = this.apiConfigService.getMetaChainShardId();
     const [
       {
-        erd_round_duration, erd_rounds_per_epoch,
+        drt_round_duration, drt_rounds_per_epoch,
       },
       {
-        erd_rounds_passed_in_current_epoch,
+        drt_rounds_passed_in_current_epoch,
       },
     ] = await Promise.all([
       this.gatewayService.getNetworkConfig(),
       this.gatewayService.getNetworkStatus(metaChainShard),
     ]);
 
-    const roundsPassed = erd_rounds_passed_in_current_epoch;
-    const roundsPerEpoch = erd_rounds_per_epoch;
-    const roundDuration = erd_round_duration / 1000;
+    const roundsPassed = drt_rounds_passed_in_current_epoch;
+    const roundsPerEpoch = drt_rounds_per_epoch;
+    const roundDuration = drt_round_duration / 1000;
 
     return { roundsPassed, roundsPerEpoch, roundDuration };
   }
@@ -112,7 +112,7 @@ export class NetworkService {
 
   async getEconomicsRaw(): Promise<Economics> {
     const auctionContractBalance = await this.getAuctionContractBalance();
-    const egldPrice = await this.dataApiService.getEgldPrice();
+    const rewaPrice = await this.dataApiService.getRewaPrice();
     const tokenMarketCap = await this.tokenService.getTokenMarketCapRaw();
 
     const currentEpoch = await this.blockService.getCurrentEpoch();
@@ -127,7 +127,7 @@ export class NetworkService {
     const totalSupply = await this.getTotalSupply();
     const circulatingSupply = totalSupply;
 
-    const price = egldPrice?.toRounded(2);
+    const price = rewaPrice?.toRounded(2);
     const marketCap = price ? Math.round(price * circulatingSupply) : undefined;
 
     const aprInfo = await this.getApr();
@@ -166,9 +166,9 @@ export class NetworkService {
   private async getTotalSupply(): Promise<number> {
     const economics = await this.gatewayService.getNetworkEconomics();
 
-    const totalSupply = economics?.erd_total_supply;
+    const totalSupply = economics?.drt_total_supply;
     if (!totalSupply) {
-      throw new Error('Could not extract erd_total_supply from network economics');
+      throw new Error('Could not extract drt_total_supply from network economics');
     }
 
     return NumberUtils.denominate(BigInt(totalSupply)).toRounded();
@@ -213,8 +213,8 @@ export class NetworkService {
       this.smartContractResultService.getScResultsCount(new SmartContractResultFilter()),
     ]);
 
-    const { erd_num_shards_without_meta: shards, erd_round_duration: refreshRate } = networkConfig;
-    const { erd_epoch_number: epoch, erd_rounds_passed_in_current_epoch: roundsPassed, erd_rounds_per_epoch: roundsPerEpoch } = networkStatus;
+    const { drt_num_shards_without_meta: shards, drt_round_duration: refreshRate } = networkConfig;
+    const { drt_epoch_number: epoch, drt_rounds_passed_in_current_epoch: roundsPassed, drt_rounds_per_epoch: roundsPerEpoch } = networkStatus;
 
     return {
       shards,

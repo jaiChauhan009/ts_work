@@ -33,7 +33,7 @@ describe('Search', () => {
         .dividedBy('1000000000000000000')
         .toFixed(0);
     }).then(() => {
-      cy.getSelector('balance').first().should('contain', balance, 'xEGLD');
+      cy.getSelector('balance').first().should('contain', balance, 'xREWA');
     });
   });
 

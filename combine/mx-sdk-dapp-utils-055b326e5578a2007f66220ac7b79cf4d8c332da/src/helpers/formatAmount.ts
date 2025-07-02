@@ -13,19 +13,19 @@ export interface FormatAmountPropsType {
    * Must be a valid integer string (no decimals, may include leading "-").
    *
    * @example
-   * // For 1.5 EGLD (18 decimals): "1500000000000000000"
+   * // For 1.5 REWA (18 decimals): "1500000000000000000"
    * // For 1000 USDC (6 decimals): "1000000000"
    */
   input: string;
 
   /**
-   * Number of decimals defined by the token (e.g. 18 for EGLD, 6 for USDC).
+   * Number of decimals defined by the token (e.g. 18 for REWA, 6 for USDC).
    * This determines how many decimal places to shift when converting from
    * the smallest unit to the human-readable format.
    *
    * @default DECIMALS (typically 18)
    * @example
-   * // EGLD: 18, USDC: 6
+   * // REWA: 18, USDC: 6
    */
   decimals?: number;
 
@@ -37,7 +37,7 @@ export interface FormatAmountPropsType {
    *
    * @default DIGITS (typically 4)
    * @example
-   * // For 1.23456789 EGLD (18 decimals): "1234567890000000000"
+   * // For 1.23456789 REWA (18 decimals): "1234567890000000000"
    * // digits=4 with showLastNonZeroDecimal=false: "1.2345"
    * // digits=4 with showLastNonZeroDecimal=true: "1.23456789"
    */
@@ -49,7 +49,7 @@ export interface FormatAmountPropsType {
    *
    * @default false
    * @example
-   * // For 1000.5 EGLD (18 decimals, showLastNonZeroDecimal: true): "1000500000000000000000"
+   * // For 1000.5 REWA (18 decimals, showLastNonZeroDecimal: true): "1000500000000000000000"
    * // false: "1000"
    * // true: "1,000"
    */
@@ -61,7 +61,7 @@ export interface FormatAmountPropsType {
    *
    * @default false
    * @example
-   * // For 0.000000000000000001 EGLD (18 decimals, showIsLessThanDecimalsLabel: true): "1"
+   * // For 0.000000000000000001 REWA (18 decimals, showIsLessThanDecimalsLabel: true): "1"
    * // false: "0.0000"
    * // true: "<0.0001"
    */
@@ -78,19 +78,19 @@ export interface FormatAmountPropsType {
    *
    * @default true
    * @example
-   * // For 1.123456789 EGLD (18 decimals, digits=4): "1123456789000000000"
+   * // For 1.123456789 REWA (18 decimals, digits=4): "1123456789000000000"
    * // showLastNonZeroDecimal=true:  "1.123456789" (more than 4 digits, show all)
    * // showLastNonZeroDecimal=false: "1.1234"      (exactly 4 digits)
    *
-   * // For 1.1 EGLD (18 decimals, digits=4): "1100000000000000000"
+   * // For 1.1 REWA (18 decimals, digits=4): "1100000000000000000"
    * // showLastNonZeroDecimal=true:  "1.1"         (pad to 4 digits minimum)
    * // showLastNonZeroDecimal=false: "1.1000"      (exactly 4 digits)
    *
-   * // For 1 EGLD (18 decimals, digits=4): "1000000000000000000"
+   * // For 1 REWA (18 decimals, digits=4): "1000000000000000000"
    * // showLastNonZeroDecimal=true:  "1"           (integer, no decimals to pad)
    * // showLastNonZeroDecimal=false: "1.0000"      (integer, no decimals to pad)
    *
-   * // For 1.0000005 EGLD (18 decimals, digits=4): "1000000500000000000"
+   * // For 1.0000005 REWA (18 decimals, digits=4): "1000000500000000000"
    * // showLastNonZeroDecimal=true:  "1.0000005"   (more than 4 digits, show all)
    * // showLastNonZeroDecimal=false: "1.0000"      (exactly 4 digits)
    */
@@ -110,7 +110,7 @@ export interface FormatAmountPropsType {
  * @throws {Error} When input is not a valid integer string
  *
  * @example
- * // Basic usage - 1.5 EGLD
+ * // Basic usage - 1.5 REWA
  * formatAmount({ input: "1500000000000000000" })
  * // Returns: "1.5"
  *

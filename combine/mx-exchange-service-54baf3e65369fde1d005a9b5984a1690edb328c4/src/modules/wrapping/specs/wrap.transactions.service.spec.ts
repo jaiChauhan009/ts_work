@@ -47,16 +47,16 @@ describe('WrapTransactionsService', () => {
     it('should return wrap transaction', async () => {
         const service: WrapTransactionsService =
             module.get<WrapTransactionsService>(WrapTransactionsService);
-        const egldValue = '1000000000000000000';
-        const transaction = await service.wrapEgld(senderAddress, egldValue);
+        const rewaValue = '1000000000000000000';
+        const transaction = await service.wrapRewa(senderAddress, rewaValue);
 
         expect(transaction).toEqual(
             new TransactionModel({
                 nonce: 0,
                 chainID: mxConfig.chainID,
-                gasLimit: gasConfig.wrapeGLD,
-                value: egldValue,
-                data: encodeTransactionData('wrapEgld'),
+                gasLimit: gasConfig.wrapREWA,
+                value: rewaValue,
+                data: encodeTransactionData('wrapRewa'),
                 receiver:
                     'erd1qqqqqqqqqqqqqpgqd77fnev2sthnczp2lnfx0y5jdycynjfhzzgq6p3rax',
                 sender: senderAddress,
@@ -76,16 +76,16 @@ describe('WrapTransactionsService', () => {
         const service: WrapTransactionsService =
             module.get<WrapTransactionsService>(WrapTransactionsService);
         const dcdtValue = '1000000000000000000';
-        const transaction = await service.unwrapEgld(senderAddress, dcdtValue);
+        const transaction = await service.unwrapRewa(senderAddress, dcdtValue);
 
         expect(transaction).toEqual(
             new TransactionModel({
                 nonce: 0,
                 chainID: mxConfig.chainID,
-                gasLimit: gasConfig.wrapeGLD,
+                gasLimit: gasConfig.wrapREWA,
                 value: '0',
                 data: encodeTransactionData(
-                    `DCDTTransfer@WEGLD-123456@${dcdtValue}@unwrapEgld`,
+                    `DCDTTransfer@WREWA-123456@${dcdtValue}@unwrapRewa`,
                 ),
                 receiver:
                     'erd1qqqqqqqqqqqqqpgqd77fnev2sthnczp2lnfx0y5jdycynjfhzzgq6p3rax',

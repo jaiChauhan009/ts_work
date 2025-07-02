@@ -163,7 +163,7 @@ export const getNodes = async (args: any & { proxyUrl: () => string }) => {
 
     resultNode.issues = nodeIssues(
       resultNode,
-      (config as any).erd_latest_tag_software_version
+      (config as any).drt_latest_tag_software_version
     );
 
     data.push(resultNode);

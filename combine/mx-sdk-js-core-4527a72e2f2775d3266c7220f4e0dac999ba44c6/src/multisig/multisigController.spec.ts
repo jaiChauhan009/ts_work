@@ -281,7 +281,7 @@ describe("test multisig controller query methods", () => {
         assert.equal(result[1], mockProposerAddress);
     });
 
-    it("getActionData returns the action data as SendTransferExecuteEgld", async function () {
+    it("getActionData returns the action data as SendTransferExecuteRewa", async function () {
         networkProvider.mockQueryContractOnFunction(
             "getActionData",
             new SmartContractQueryResponse({
@@ -302,7 +302,7 @@ describe("test multisig controller query methods", () => {
             actionId: 42,
         });
 
-        const mappedRes = result as resources.SendTransferExecuteEgld;
+        const mappedRes = result as resources.SendTransferExecuteRewa;
         assert.equal(mappedRes.receiver.toBech32(), "erd1qqqqqqqqqqqqqpgq6qr0w0zzyysklfneh32eqp2cf383zc89d8sstnkl60");
         assert.equal(mappedRes.functionName, "add");
         assert.equal(mappedRes.amount, 42n);
@@ -503,7 +503,7 @@ describe("test multisig controller query methods", () => {
                 returnMessage: "ok",
             }),
         );
-        const amount = BigInt(50000000000000000); // 0.05 EGLD
+        const amount = BigInt(50000000000000000); // 0.05 REWA
         const metadata = new CodeMetadata(true, true, false);
         const sourceContract = Address.newFromBech32("erd1qqqqqqqqqqqqqpgqd273cw3hjndqzcpts4dvq0ncy8nx8rkgzeusnefvaq");
 

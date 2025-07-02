@@ -99,13 +99,13 @@ describe('Stake Service', () => {
       const expected = { validators: { totalValidators: 1, activeValidators: 1, inactiveValidators: 0, queueSize: 1 }, totalStaked: '123456' };
 
       const economicsMocks: NetworkEconomics = {
-        erd_dev_rewards: '100',
-        erd_epoch_for_economics_data: 10,
-        erd_inflation: '1',
-        erd_total_base_staked_value: '20',
-        erd_total_fees: '10',
-        erd_total_supply: '1000',
-        erd_total_top_up_value: '100',
+        drt_dev_rewards: '100',
+        drt_epoch_for_economics_data: 10,
+        drt_inflation: '1',
+        drt_total_base_staked_value: '20',
+        drt_total_fees: '10',
+        drt_total_supply: '1000',
+        drt_total_top_up_value: '100',
       };
 
       jest.spyOn(stakeService, 'getValidators').mockResolvedValue(expected.validators);
@@ -152,13 +152,13 @@ describe('Stake Service', () => {
       };
 
       const economicsMocks: NetworkEconomics = {
-        erd_dev_rewards: '100',
-        erd_epoch_for_economics_data: 10,
-        erd_inflation: '1',
-        erd_total_base_staked_value: '20',
-        erd_total_fees: '10',
-        erd_total_supply: '1000',
-        erd_total_top_up_value: '100',
+        drt_dev_rewards: '100',
+        drt_epoch_for_economics_data: 10,
+        drt_inflation: '1',
+        drt_total_base_staked_value: '20',
+        drt_total_fees: '10',
+        drt_total_supply: '1000',
+        drt_total_top_up_value: '100',
       };
 
       const expectedTotalStaked = '120';

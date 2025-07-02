@@ -1,9 +1,9 @@
 export const dappConfig = {
   id: 'devnet',
   name: 'Devnet',
-  egldLabel: 'xEGLD',
+  rewaLabel: 'xREWA',
   decimals: '4',
-  egldDenomination: '18',
+  rewaDenomination: '18',
   gasPerDataByte: '1500',
   apiTimeout: '4000',
   walletConnectDeepLink:

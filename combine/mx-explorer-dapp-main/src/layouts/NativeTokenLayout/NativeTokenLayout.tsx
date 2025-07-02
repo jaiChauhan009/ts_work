@@ -12,7 +12,7 @@ import { NativeTokenDetailsCard } from './NativeTokenDetailsCard';
 
 export const NativeTokenLayout = () => {
   const hasGrowthWidgets = useHasGrowthWidgets();
-  const { egldLabel } = useSelector(activeNetworkSelector);
+  const { rewaLabel } = useSelector(activeNetworkSelector);
   const { isFetched } = useSelector(economicsSelector);
 
   const loading = isFetched === undefined;
@@ -35,7 +35,7 @@ export const NativeTokenLayout = () => {
         title='Unable to load details'
         description={
           <div className='px-spacer'>
-            <span className='text-break-all'>{egldLabel}</span>
+            <span className='text-break-all'>{rewaLabel}</span>
           </div>
         }
         isError

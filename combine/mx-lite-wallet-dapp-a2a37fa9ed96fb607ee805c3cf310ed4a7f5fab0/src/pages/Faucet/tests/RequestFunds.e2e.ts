@@ -9,7 +9,7 @@ import {
 } from 'utils/testUtils/puppeteer';
 
 describe('Request funds tests', () => {
-  it('should receive 40 WEGLD successfully', async () => {
+  it('should receive 40 WREWA successfully', async () => {
     await page.goto(`${WALLET_SOURCE_ORIGIN}/logout`, {
       waitUntil: 'domcontentloaded'
     });
@@ -22,7 +22,7 @@ describe('Request funds tests', () => {
     await requestFundsButton.click();
     await expectElementToContainText({
       dataTestId: DataTestIdsEnum.faucetPage,
-      text: 'WEGLD FaucetYou can request 40 WEGLD every 24 hoursRequest TokensCancel'
+      text: 'WREWA FaucetYou can request 40 WREWA every 24 hoursRequest TokensCancel'
     });
 
     // Request funds
@@ -32,7 +32,7 @@ describe('Request funds tests', () => {
     // Verify success message
     await expectElementToContainText({
       dataTestId: DataTestIdsEnum.faucetSuccessMessage,
-      text: '40 WEGLD have been sent to your address.'
+      text: '40 WREWA have been sent to your address.'
     });
   });
 });

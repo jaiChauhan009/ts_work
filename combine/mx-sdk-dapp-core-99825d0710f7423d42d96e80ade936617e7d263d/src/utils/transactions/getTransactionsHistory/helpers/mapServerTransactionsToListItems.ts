@@ -11,7 +11,7 @@ interface IMapServerTransactionsToListItemsParams {
   transactions: SignedTransactionType[];
   address: string;
   explorerAddress: string;
-  egldLabel: string;
+  rewaLabel: string;
 }
 
 const sortTransactionsByTimestamp = (transactions: ITransactionListItem[]) =>
@@ -21,7 +21,7 @@ export const mapServerTransactionsToListItems = async ({
   transactions,
   address,
   explorerAddress,
-  egldLabel
+  rewaLabel
 }: IMapServerTransactionsToListItemsParams): Promise<
   ITransactionListItem[]
 > => {
@@ -79,7 +79,7 @@ export const mapServerTransactionsToListItems = async ({
       transaction,
       address,
       explorerAddress,
-      egldLabel
+      rewaLabel
     });
 
     if (transactionListItem.status !== TransactionServerStatusesEnum.pending) {

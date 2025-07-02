@@ -405,16 +405,16 @@ export class StakingComputeService {
             farmingToken.decimals,
         ).toNumber();
 
-        const farmingTokenPrice = await this.tokenCompute.tokenPriceDerivedEGLD(
+        const farmingTokenPrice = await this.tokenCompute.tokenPriceDerivedREWA(
             farmingToken.identifier,
         );
-        const egldPriceFarmingToken = new BigNumber(1).dividedBy(
+        const rewaPriceFarmingToken = new BigNumber(1).dividedBy(
             farmingTokenPrice,
         );
         const transactionFeesInFarmingToken = new BigNumber(
             constantsConfig.COMPOUND_TRANSACTION_FEE,
         )
-            .multipliedBy(egldPriceFarmingToken)
+            .multipliedBy(rewaPriceFarmingToken)
             .toNumber();
 
         // Express compound iterations in hours

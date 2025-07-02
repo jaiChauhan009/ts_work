@@ -12,7 +12,7 @@ It is based on the reference [CGP Axelar Gas Service implementation in Solidity]
 
 The most used endpoints are:
 - **payGasForContractCall** (sender, destination_chain, destination_address, payload, refund_address) - accepts DCDT payment
-- **payNativeGasForContractCall** (sender, destination_chain, destination_address, payload, refund_address) - accepts EGLD payment
+- **payNativeGasForContractCall** (sender, destination_chain, destination_address, payload, refund_address) - accepts REWA payment
 
 These endpoints look like this:
 ```rust
@@ -51,9 +51,9 @@ pub struct GasPaidForContractCallData<M: ManagedTypeApi> {
 }
 ```
 
-The endpoint for paying gas with native token (EGLD) is similar:
+The endpoint for paying gas with native token (REWA) is similar:
 ```rust
-#[payable("EGLD")]
+#[payable("REWA")]
 #[endpoint(payNativeGasForContractCall)]
 fn pay_native_gas_for_contract_call(
     &self,

@@ -1,6 +1,6 @@
 export interface ITokenComputeService {
-    getEgldPriceInUSD(): Promise<string>;
-    computeTokenPriceDerivedEGLD(
+    getRewaPriceInUSD(): Promise<string>;
+    computeTokenPriceDerivedREWA(
         tokenID: string,
         pairsNotToVisit: [],
     ): Promise<string>;

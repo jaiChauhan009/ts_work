@@ -1484,9 +1484,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@terradharitri/erdjs-network-providers@npm:^1.1.2":
+"@terradharitri/drtjs-network-providers@npm:^1.1.2":
   version: 1.2.0
-  resolution: "@terradharitri/erdjs-network-providers@npm:1.2.0"
+  resolution: "@terradharitri/drtjs-network-providers@npm:1.2.0"
   dependencies:
     axios: "npm:0.24.0"
     bech32: "npm:1.1.4"
@@ -1497,9 +1497,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@terradharitri/erdjs@npm:11.0.0":
+"@terradharitri/drtjs@npm:11.0.0":
   version: 11.0.0
-  resolution: "@terradharitri/erdjs@npm:11.0.0"
+  resolution: "@terradharitri/drtjs@npm:11.0.0"
   dependencies:
     "@terradharitri/transaction-decoder": "npm:1.0.0"
     bech32: "npm:1.1.4"
@@ -4125,8 +4125,8 @@ __metadata:
   version: 0.3.2
   resolution: "@ledgerhq/coin-numbat@npm:0.3.2"
   dependencies:
-    "@terradharitri/erdjs": "npm:11.0.0"
-    "@terradharitri/erdjs-network-providers": "npm:^1.1.2"
+    "@terradharitri/drtjs": "npm:11.0.0"
+    "@terradharitri/drtjs-network-providers": "npm:^1.1.2"
     "@ledgerhq/coin-framework": "npm:^0.25.0"
     "@ledgerhq/cryptoassets": "npm:^13.10.0"
     "@ledgerhq/devices": "npm:8.4.4"

@@ -7,7 +7,7 @@ import { getSelectedTokenBalance } from 'helpers';
 import { useSendTransactions, useTokenOptions } from 'hooks';
 import {
   prepareTransaction,
-  getEgldLabel,
+  getRewaLabel,
   useGetAccountInfo,
   useGetNetworkConfig,
   computeNftDataField,
@@ -38,7 +38,7 @@ export const useSendForm = () => {
     isNftParam ? SendTypeEnum.nft : SendTypeEnum.dcdt
   );
 
-  const egldLabel = getEgldLabel();
+  const rewaLabel = getRewaLabel();
   const isNFT = sendType === SendTypeEnum.nft;
   const { tokenOptions, isLoading, tokens } = useTokenOptions({ sendType });
   const defaultTokenOption = tokenIdParam
@@ -96,10 +96,10 @@ export const useSendForm = () => {
       [FormFieldsEnum.type]: string().required('Type is required')
     }),
     onSubmit: async (values) => {
-      const isEgldSend = values[FormFieldsEnum.token]?.value === egldLabel;
+      const isRewaSend = values[FormFieldsEnum.token]?.value === rewaLabel;
 
       const transaction = prepareTransaction({
-        amount: isEgldSend ? String(values.amount) : '0',
+        amount: isRewaSend ? String(values.amount) : '0',
         balance: account.balance,
         chainId,
         data: values[FormFieldsEnum.data].trim(),
@@ -120,7 +120,7 @@ export const useSendForm = () => {
     (token) => token.identifier === formik.values[FormFieldsEnum.token]?.value
   );
 
-  const isEgldToken = selectedToken?.identifier === egldLabel;
+  const isRewaToken = selectedToken?.identifier === rewaLabel;
   const availableAmount = getSelectedTokenBalance({
     isNFT,
     selectedToken: formik.values[FormFieldsEnum.token]?.value,
@@ -149,7 +149,7 @@ export const useSendForm = () => {
   const handleOnDataChange: ChangeEventHandler<HTMLTextAreaElement> = (
     event
   ) => {
-    if (!isEgldToken) {
+    if (!isRewaToken) {
       return;
     }
 
@@ -222,7 +222,7 @@ export const useSendForm = () => {
       });
 
       gasLimit = calculateNftGasLimit(data);
-    } else if (!isEgldToken) {
+    } else if (!isRewaToken) {
       data = computeTokenDataField({
         tokenId: selectedToken.identifier,
         amount: formik.values[FormFieldsEnum.amount],
@@ -250,7 +250,7 @@ export const useSendForm = () => {
     formik,
     handleOnDataChange,
     handleOnSendTypeChange,
-    isEgldToken,
+    isRewaToken,
     isLoading,
     isNFT,
     tokenOptions

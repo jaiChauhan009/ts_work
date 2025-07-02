@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { Button } from 'components';
-import { getEgldLabel } from 'lib';
+import { getRewaLabel } from 'lib';
 import { DataTestIdsEnum } from 'localConstants';
 import { FaucetSettingsReturnType } from 'redux/endpoints';
 
@@ -18,7 +18,7 @@ export const FaucetScreen = ({
 }: FaucetScreenPropsType) => {
   const [captcha, setCaptcha] = useState('');
   const [requestDisabled, setRequestDisabled] = useState(false);
-  const egldLabel = getEgldLabel();
+  const rewaLabel = getRewaLabel();
 
   const onRecaptchaChange = (value: string | null) => {
     setRequestDisabled(!value);
@@ -38,7 +38,7 @@ export const FaucetScreen = ({
         className='text-2xl whitespace-nowrap mt-5'
         data-testid={DataTestIdsEnum.modalTitle}
       >
-        {egldLabel} Faucet
+        {rewaLabel} Faucet
       </h1>
       <p
         className='text-sm text-gray-400 mb-10'

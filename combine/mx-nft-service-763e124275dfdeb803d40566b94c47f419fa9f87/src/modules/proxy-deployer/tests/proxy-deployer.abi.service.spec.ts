@@ -77,7 +77,7 @@ describe('Proxy  Deployer Abi Service', () => {
   describe('deployMarketplaceSc', () => {
     it('returns built transaction with right arguments', async () => {
       const result = await service.deployMarketplaceSc('erd1qqqqqqqqqqqqqpgq9ac9zvc4ugzrgqaqjqgjdhvxxtx7wu2eu00sxezym3', '1000', [
-        'WEGLD-a28c59',
+        'WREWA-a28c59',
       ]);
 
       const expectedResult = {
@@ -98,7 +98,7 @@ describe('Proxy  Deployer Abi Service', () => {
   });
 
   it('returns built transaction with right arguments including paymentTokens', async () => {
-    const result = await service.deployMarketplaceSc('erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha', '10000', ['EGLD']);
+    const result = await service.deployMarketplaceSc('erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha', '10000', ['REWA']);
 
     const expectedResult = {
       chainID: 'T',

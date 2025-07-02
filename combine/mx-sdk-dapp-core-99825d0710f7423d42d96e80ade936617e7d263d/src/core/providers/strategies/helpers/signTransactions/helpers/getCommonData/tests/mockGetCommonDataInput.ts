@@ -16,7 +16,7 @@ export const mockGetCommonDataInput = {
         version: 1
       },
       transactionIndex: 0,
-      multiTxData: 'wrapEgld',
+      multiTxData: 'wrapRewa',
       needsSigning: true
     },
     {
@@ -70,12 +70,12 @@ export const mockGetCommonDataInput = {
     }
   ],
   currentScreenIndex: 0,
-  egldLabel: 'xEGLD',
+  rewaLabel: 'xREWA',
   network: {
     id: 'devnet',
     chainId: 'D',
     name: 'Devnet',
-    egldLabel: 'xEGLD',
+    rewaLabel: 'xREWA',
     decimals: '18',
     digits: '4',
     gasPerDataByte: '1500',
@@ -97,7 +97,7 @@ export const mockGetCommonDataInput = {
   signedIndexes: [],
   parsedTransactionsByDataField: {
     '5745474c442d613238633539@@0de0b6b3a7640000': {
-      tokenId: 'WEGLD-a28c59',
+      tokenId: 'WREWA-a28c59',
       amount: '1000000000000000000',
       type: 'dcdtTransaction',
       nonce: '',

@@ -38,29 +38,29 @@ describe('getAmountParts', () => {
   });
 
   it('should return empty value and correct label when amount has only correct label', () => {
-    const amountParts = getAmountParts('bbbb xEGLD');
+    const amountParts = getAmountParts('bbbb xREWA');
     expect(amountParts).toEqual({
       amountInteger: '',
       amountDecimal: '',
-      label: 'xEGLD',
+      label: 'xREWA',
     });
   });
 
   it('should return correct amount when amount is a correct string with separation dot', () => {
-    const amountParts = getAmountParts('0.1 xEGLD');
+    const amountParts = getAmountParts('0.1 xREWA');
     expect(amountParts).toEqual({
       amountInteger: '0',
       amountDecimal: '.1',
-      label: 'xEGLD',
+      label: 'xREWA',
     });
   });
 
   it('should return correct integer value when amount is a correct string without separation dot', () => {
-    const amountParts = getAmountParts('9999 xEGLD');
+    const amountParts = getAmountParts('9999 xREWA');
     expect(amountParts).toEqual({
       amountInteger: '9999',
       amountDecimal: '',
-      label: 'xEGLD',
+      label: 'xREWA',
     });
   });
 });

@@ -16,11 +16,11 @@ export const TokenLayout = () => {
   const { getToken } = useAdapter();
   const { hash: tokenId } = useParams();
   const { firstPageRefreshTrigger } = useGetPage();
-  const { id: activeNetworkId, egldLabel } = useSelector(activeNetworkSelector);
+  const { id: activeNetworkId, rewaLabel } = useSelector(activeNetworkSelector);
 
   const isNativeToken =
     tokenId &&
-    (tokenId.toLowerCase() === egldLabel?.toLowerCase() ||
+    (tokenId.toLowerCase() === rewaLabel?.toLowerCase() ||
       tokenId.toLowerCase() === NATIVE_TOKEN_IDENTIFIER.toLowerCase());
 
   const [isDataReady, setIsDataReady] = useState<boolean | undefined>();
@@ -47,7 +47,7 @@ export const TokenLayout = () => {
   const failed = isDataReady === false;
 
   if (isNativeToken) {
-    return <Navigate replace to={`/${egldLabel?.toLowerCase()}`} />;
+    return <Navigate replace to={`/${rewaLabel?.toLowerCase()}`} />;
   }
 
   if (failed) {

@@ -23,7 +23,7 @@ export const AccountLegacyDelegation = ({
     isFetched,
     unprocessed: { baseApr, topUpApr }
   } = useSelector(economicsSelector);
-  const { egldLabel } = useSelector(activeNetworkSelector);
+  const { rewaLabel } = useSelector(activeNetworkSelector);
 
   const {
     userActiveStake,
@@ -124,7 +124,7 @@ export const AccountLegacyDelegation = ({
               value={new BigNumber(claimableRewards).toString(10)}
             />
           ) : (
-            <>0 {egldLabel}</>
+            <>0 {rewaLabel}</>
           )}
         </strong>
         <small>Rewards</small>

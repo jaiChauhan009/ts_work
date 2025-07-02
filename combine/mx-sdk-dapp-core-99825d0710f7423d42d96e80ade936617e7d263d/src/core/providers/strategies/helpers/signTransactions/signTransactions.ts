@@ -6,7 +6,7 @@ import {
   SignEventsEnum
 } from 'core/managers/internal/SignTransactionsStateManager/types';
 import { getAccountInfo } from 'core/methods/account/getAccountInfo';
-import { getEgldLabel } from 'core/methods/network/getEgldLabel';
+import { getRewaLabel } from 'core/methods/network/getRewaLabel';
 import { cancelCrossWindowAction } from 'core/providers/helpers/cancelCrossWindowAction';
 import { IProvider } from 'core/providers/types/providerFactory.types';
 import { Transaction } from 'lib/sdkCore';
@@ -35,7 +35,7 @@ export async function signTransactions({
   } = getAccountInfo();
   const network = networkSelector(getState());
 
-  const egldLabel = getEgldLabel();
+  const rewaLabel = getRewaLabel();
 
   const { allTransactions, parsedTransactionsByDataField } =
     getMultiDcdtTransferData(transactions);
@@ -69,7 +69,7 @@ export async function signTransactions({
         await getCommonData({
           allTransactions,
           currentScreenIndex,
-          egldLabel,
+          rewaLabel,
           network,
           gasPriceData: manager.ppuMap[currentNonce],
           price,

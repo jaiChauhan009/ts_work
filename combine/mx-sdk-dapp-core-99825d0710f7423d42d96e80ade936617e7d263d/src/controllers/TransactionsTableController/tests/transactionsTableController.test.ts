@@ -79,7 +79,7 @@ const mockTransactionBase: ServerTransactionType = {
 
 const mockParams = {
   address: 'erd1qqq...test',
-  egldLabel: 'EGLD',
+  rewaLabel: 'REWA',
   explorerAddress: 'https://explorer.example.com',
   transactions: [mockTransactionBase]
 };
@@ -108,7 +108,7 @@ describe('TransactionsTableController', () => {
 
     expect(result.value.valueInteger).toBe('1');
     expect(result.value.valueDecimal).toBe('.00');
-    expect(result.value.egldLabel).toBe('EGLD');
+    expect(result.value.rewaLabel).toBe('REWA');
   });
 
   it('should generate proper shard text', async () => {

@@ -15,9 +15,9 @@ describe('Dapp config e2e tests with chain simulator', () => {
       const requiredProps = [
         'id',
         'name',
-        'egldLabel',
+        'rewaLabel',
         'decimals',
-        'egldDenomination',
+        'rewaDenomination',
         'gasPerDataByte',
         'apiTimeout',
         'walletConnectDeepLink',

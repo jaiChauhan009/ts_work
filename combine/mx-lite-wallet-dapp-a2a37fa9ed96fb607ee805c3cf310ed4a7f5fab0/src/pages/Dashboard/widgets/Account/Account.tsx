@@ -51,7 +51,7 @@ export const Account = () => {
                 <span className='text-xl'>
                   <FormatAmount
                     value={account.balance}
-                    egldLabel={network.egldLabel}
+                    rewaLabel={network.rewaLabel}
                     data-testid='balance'
                   />
                 </span>

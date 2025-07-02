@@ -113,7 +113,7 @@ describe('RouterService', () => {
 
         const transaction = await service.upgradePair(
             senderAddress,
-            'WEGLD-123456',
+            'WREWA-123456',
             'USDC-123456',
             [300, 100],
         );
@@ -129,7 +129,7 @@ describe('RouterService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.router.admin.upgradePair,
             data: encodeTransactionData(
-                `upgradePair@WEGLD-123456@USDC-123456@${senderAddress}@300@100`,
+                `upgradePair@WREWA-123456@USDC-123456@${senderAddress}@300@100`,
             ),
             chainID: mxConfig.chainID,
             version: 2,
@@ -186,7 +186,7 @@ describe('RouterService', () => {
                     '0000000000000000000000000000000000000000000000000000000000000012',
                 ).toBech32(),
                 'LiquidityPoolTokenT1T4',
-                'EGLDMEXLP-abcdef',
+                'REWAMEXLP-abcdef',
             );
         } catch (error) {
             expect(error).toEqual(new Error('LP Token already issued'));
@@ -308,7 +308,7 @@ describe('RouterService', () => {
             senderAddress,
             pairAddress,
             Address.Zero().toBech32(),
-            'WEGLD-123456',
+            'WREWA-123456',
             false,
         );
         expect(transaction).toEqual({
@@ -323,7 +323,7 @@ describe('RouterService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.router.admin.setFee,
             data: encodeTransactionData(
-                `setFeeOff@${pairAddress}@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu@WEGLD-123456`,
+                `setFeeOff@${pairAddress}@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu@WREWA-123456`,
             ),
             chainID: mxConfig.chainID,
             version: 2,
@@ -345,7 +345,7 @@ describe('RouterService', () => {
             senderAddress,
             pairAddress,
             Address.Zero().bech32(),
-            'WEGLD-123456',
+            'WREWA-123456',
             true,
         );
         expect(transaction).toEqual({
@@ -360,7 +360,7 @@ describe('RouterService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.router.admin.setFee,
             data: encodeTransactionData(
-                `setFeeOn@${pairAddress}@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu@WEGLD-123456`,
+                `setFeeOn@${pairAddress}@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu@WREWA-123456`,
             ),
             chainID: mxConfig.chainID,
             version: 2,
@@ -377,7 +377,7 @@ describe('RouterService', () => {
         );
 
         const transaction = await service.setLocalRolesOwner(senderAddress, {
-            tokenID: 'WEGLD-123456',
+            tokenID: 'WREWA-123456',
             address: Address.Zero().bech32(),
             roles: [DcdtLocalRole.Mint],
         });
@@ -393,7 +393,7 @@ describe('RouterService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.router.admin.setLocalRolesOwner,
             data: encodeTransactionData(
-                'setLocalRolesOwner@WEGLD-123456@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu@01',
+                'setLocalRolesOwner@WREWA-123456@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu@01',
             ),
             chainID: mxConfig.chainID,
             version: 2,
@@ -411,7 +411,7 @@ describe('RouterService', () => {
 
         const transaction = await service.removePair(
             senderAddress,
-            'WEGLD-123456',
+            'WREWA-123456',
             'USDC-123456',
         );
         expect(transaction).toEqual({
@@ -425,7 +425,7 @@ describe('RouterService', () => {
             senderUsername: undefined,
             gasPrice: 1000000000,
             gasLimit: gasConfig.router.admin.removePair,
-            data: encodeTransactionData('removePair@WEGLD-123456@USDC-123456'),
+            data: encodeTransactionData('removePair@WREWA-123456@USDC-123456'),
             chainID: mxConfig.chainID,
             version: 2,
             options: undefined,

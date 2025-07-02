@@ -1,5 +1,5 @@
 import { Address } from "../core/address";
-import { EGLD_IDENTIFIER_FOR_MULTI_DCDTNFT_TRANSFER } from "../core/constants";
+import { REWA_IDENTIFIER_FOR_MULTI_DCDTNFT_TRANSFER } from "../core/constants";
 import { ErrBadUsage } from "../core/errors";
 import { TokenComputer, TokenTransfer } from "../core/tokens";
 import { TokenTransfersDataBuilder } from "../core/tokenTransfersDataBuilder";
@@ -20,7 +20,7 @@ interface IConfig {
 }
 
 /**
- * Use this class to create transactions for native token transfers (EGLD) or custom tokens transfers (DCDT/NTF/MetaDCDT).
+ * Use this class to create transactions for native token transfers (REWA) or custom tokens transfers (DCDT/NTF/MetaDCDT).
  */
 export class TransferTransactionsFactory {
     private readonly config?: IConfig;
@@ -129,7 +129,7 @@ export class TransferTransactionsFactory {
         let receiver = options.receiver;
 
         if (this.tokenComputer!.isFungible(transfer.token)) {
-            if (transfer.token.identifier === EGLD_IDENTIFIER_FOR_MULTI_DCDTNFT_TRANSFER) {
+            if (transfer.token.identifier === REWA_IDENTIFIER_FOR_MULTI_DCDTNFT_TRANSFER) {
                 ({ dataParts, extraGasForTransfer } = this.buildMultiDCDTNFTTransferData([transfer], receiver));
                 receiver = options.sender;
             } else {

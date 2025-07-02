@@ -53,7 +53,7 @@ describe('PairService', () => {
             Address.fromHex(
                 '0000000000000000000000000000000000000000000000000000000000000012',
             ).bech32(),
-            'WEGLD-123456',
+            'WREWA-123456',
             '1000000000000000000',
         );
         expect(amountIn).toEqual('1004013040121365096290');
@@ -66,7 +66,7 @@ describe('PairService', () => {
             Address.fromHex(
                 '0000000000000000000000000000000000000000000000000000000000000012',
             ).bech32(),
-            'WEGLD-123456',
+            'WREWA-123456',
             '1000000000000000000',
         );
         expect(amountOut).toEqual('996006981039903216493');
@@ -79,7 +79,7 @@ describe('PairService', () => {
             Address.fromHex(
                 '0000000000000000000000000000000000000000000000000000000000000012',
             ).bech32(),
-            'WEGLD-123456',
+            'WREWA-123456',
             '1000000000000000000',
         );
         expect(equivalent.toFixed()).toEqual('1000000000000000000000');
@@ -116,7 +116,7 @@ describe('PairService', () => {
         const service = module.get<PairService>(PairService);
 
         const address = await service.getPairAddressByLpTokenID(
-            'EGLDMEXLP-abcdef',
+            'REWAMEXLP-abcdef',
         );
         expect(address).toEqual(
             Address.fromHex(
@@ -128,7 +128,7 @@ describe('PairService', () => {
     it('should check if token is part of any pair', async () => {
         const service = module.get<PairService>(PairService);
 
-        const isPair0 = await service.isPairDcdtToken('EGLDMEXLP-abcdef');
+        const isPair0 = await service.isPairDcdtToken('REWAMEXLP-abcdef');
         expect(isPair0).toEqual(true);
 
         const isPair1 = await service.isPairDcdtToken('LPT-4321');

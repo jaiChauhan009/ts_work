@@ -11,20 +11,20 @@ import {
 interface FormatAmountPropsType
   extends Partial<MvxFormatAmountPropsType>,
     WithClassnameType {
-  egldLabel?: string;
+  rewaLabel?: string;
   value: string;
 }
 
 export const FormatAmount = (props: FormatAmountPropsType) => {
   const {
-    network: { egldLabel }
+    network: { rewaLabel }
   } = useGetNetworkConfig();
 
   const { isValid, valueDecimal, valueInteger, label } =
     FormatAmountController.getData({
       digits: DIGITS,
       decimals: DECIMALS,
-      egldLabel,
+      rewaLabel,
       ...props,
       input: props.value
     });

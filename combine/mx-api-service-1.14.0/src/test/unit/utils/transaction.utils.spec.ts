@@ -36,7 +36,7 @@ describe('Transaction Utils', () => {
     transaction = new ShardTransaction();
     transaction.data = 'Y2hhbmdlU0ZUVG9NZXRhRVNEVEA0NTQ3NGM0NDRkNDU1ODQ2MmQzNjM3NjE2MzM0MzlAMTJAOWFhNjNj';
     tryExtractSftChange = new SftChangeTransactionExtractor();
-    expect(tryExtractSftChange.extract(transaction)).toEqual('EGLDMEXF-67ac49');
+    expect(tryExtractSftChange.extract(transaction)).toEqual('REWAMEXF-67ac49');
   });
 
   it('tryExtractNftMetadataFromNftCreateTransaction from transaction', () => {

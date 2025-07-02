@@ -20,7 +20,7 @@ export const mapTransactionToListItem = ({
   transaction,
   address,
   explorerAddress,
-  egldLabel,
+  rewaLabel,
   isPending = false
 }: IMapTransactionToListItemParamsType): ITransactionListItem => {
   const { receiver, receiverAssets } = getReceiverData(transaction);
@@ -29,14 +29,14 @@ export const mapTransactionToListItem = ({
   const action = getTransactionAction({
     transaction,
     currentUserAddress: address,
-    egldLabel,
+    rewaLabel,
     isPending
   });
 
   const transactionAssets = getTransactionAssets({
     userIsReceiver: receiver === address,
     transaction,
-    egldLabel
+    rewaLabel
   });
 
   const hash = transaction.originalTxHash ?? transaction.txHash;

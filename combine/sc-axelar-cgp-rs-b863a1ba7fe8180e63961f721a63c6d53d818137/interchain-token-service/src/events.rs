@@ -138,7 +138,7 @@ pub trait EventsModule {
     #[event("token_metadata_registered_event")]
     fn token_metadata_registered_event(
         &self,
-        #[indexed] token_identifier: &EgldOrDcdtTokenIdentifier,
+        #[indexed] token_identifier: &RewaOrDcdtTokenIdentifier,
         decimals: u8,
     );
 

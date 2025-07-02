@@ -47,12 +47,12 @@ export const getSwapAndLockTransactions = ({
       gasPrice: BigInt(GAS_PRICE),
       nonce: BigInt(nonce),
       receiver: Address.newFromBech32(
-        BATCH_TRANSACTIONS_SC.egld_wEGLD.contract
+        BATCH_TRANSACTIONS_SC.rewa_wREWA.contract
       ),
       sender: Address.newFromBech32(address),
       value: BigInt(new BigNumber(1).shiftedBy(18).toFixed()),
       version: VERSION,
-      data: Uint8Array.from(Buffer.from(BATCH_TRANSACTIONS_SC.egld_wEGLD.data))
+      data: Uint8Array.from(Buffer.from(BATCH_TRANSACTIONS_SC.rewa_wREWA.data))
     }),
     new Transaction({
       chainID,
@@ -60,23 +60,23 @@ export const getSwapAndLockTransactions = ({
       gasPrice: BigInt(GAS_PRICE),
       nonce: BigInt(nonce),
       receiver: Address.newFromBech32(
-        BATCH_TRANSACTIONS_SC.wEGLD_USDC.contract
+        BATCH_TRANSACTIONS_SC.wREWA_USDC.contract
       ),
       sender: Address.newFromBech32(address),
       value: BigInt('0'),
       version: VERSION,
-      data: Uint8Array.from(Buffer.from(BATCH_TRANSACTIONS_SC.wEGLD_USDC.data))
+      data: Uint8Array.from(Buffer.from(BATCH_TRANSACTIONS_SC.wREWA_USDC.data))
     }),
     new Transaction({
       chainID,
       gasLimit: BigInt(25500000),
       gasPrice: BigInt(GAS_PRICE),
       nonce: BigInt(nonce),
-      receiver: Address.newFromBech32(BATCH_TRANSACTIONS_SC.wEGLD_MEX.contract),
+      receiver: Address.newFromBech32(BATCH_TRANSACTIONS_SC.wREWA_MEX.contract),
       sender: Address.newFromBech32(address),
       value: BigInt('0'),
       version: VERSION,
-      data: Uint8Array.from(Buffer.from(BATCH_TRANSACTIONS_SC.wEGLD_MEX.data))
+      data: Uint8Array.from(Buffer.from(BATCH_TRANSACTIONS_SC.wREWA_MEX.data))
     }),
     new Transaction({
       chainID,

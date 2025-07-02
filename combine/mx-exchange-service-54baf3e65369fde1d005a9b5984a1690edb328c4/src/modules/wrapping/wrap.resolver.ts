@@ -18,7 +18,7 @@ export class WrapResolver {
 
     @ResolveField()
     async wrappedToken(): Promise<DcdtToken> {
-        return this.wrapService.wrappedEgldToken();
+        return this.wrapService.wrappedRewaToken();
     }
 
     @Query(() => [WrapModel])
@@ -28,19 +28,19 @@ export class WrapResolver {
 
     @UseGuards(JwtOrNativeAuthGuard)
     @Query(() => TransactionModel)
-    async wrapEgld(
+    async wrapRewa(
         @Args('amount') amount: string,
         @AuthUser() user: UserAuthResult,
     ): Promise<TransactionModel> {
-        return this.transactionService.wrapEgld(user.address, amount);
+        return this.transactionService.wrapRewa(user.address, amount);
     }
 
     @UseGuards(JwtOrNativeAuthGuard)
     @Query(() => TransactionModel)
-    async unwrapEgld(
+    async unwrapRewa(
         @Args('amount') amount: string,
         @AuthUser() user: UserAuthResult,
     ): Promise<TransactionModel> {
-        return this.transactionService.unwrapEgld(user.address, amount);
+        return this.transactionService.unwrapRewa(user.address, amount);
     }
 }

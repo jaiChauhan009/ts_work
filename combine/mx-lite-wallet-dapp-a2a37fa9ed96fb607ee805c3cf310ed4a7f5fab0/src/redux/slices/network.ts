@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { networks } from 'config';
 
 export interface NetworkType {
-  WEGLDid?: string;
+  WREWAid?: string;
   apiAddress: string;
   default: boolean;
   extrasApi: string;
@@ -33,7 +33,7 @@ export const emptyNetwork: NetworkType = {
   sampleAuthenticatedDomains: [],
   sovereignContractAddress: '',
   walletAddress: '',
-  WEGLDid: ''
+  WREWAid: ''
 };
 
 export const getInitialState = (): NetworkSliceType => {

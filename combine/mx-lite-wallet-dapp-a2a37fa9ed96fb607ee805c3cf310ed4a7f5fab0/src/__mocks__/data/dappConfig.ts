@@ -1,9 +1,9 @@
 export const dappConfig = {
   id: 'sovereign',
   name: 'Sovereign',
-  egldLabel: 'WEGLD',
+  rewaLabel: 'WREWA',
   decimals: '4',
-  egldDenomination: '18',
+  rewaDenomination: '18',
   gasPerDataByte: '1500',
   apiTimeout: '4000',
   walletConnectDeepLink:

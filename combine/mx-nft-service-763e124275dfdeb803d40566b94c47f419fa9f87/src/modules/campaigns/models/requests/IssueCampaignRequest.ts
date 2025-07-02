@@ -9,7 +9,7 @@ export class IssueCampaignRequest {
   mintStartTime: number;
   mintEndTime: number;
   whitelistEndTime: number;
-  mintPriceToken: string = mxConfig.egld;
+  mintPriceToken: string = mxConfig.rewa;
   collectionName: string;
   collectionTicker: string;
   tags: string[];

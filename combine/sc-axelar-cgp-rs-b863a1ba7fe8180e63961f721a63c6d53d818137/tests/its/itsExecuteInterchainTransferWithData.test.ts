@@ -102,7 +102,7 @@ test('Transfer with data', async () => {
     world,
     user,
     true,
-    'EGLD'
+    'REWA'
   );
 
   const { payload, crossChainId } = await mockGatewayCall(computedTokenId);
@@ -170,7 +170,7 @@ test('Transfer with data contract error', async () => {
     world,
     user,
     true,
-    'EGLD'
+    'REWA'
   );
 
   const { payload, crossChainId, messageHash } = await mockGatewayCall(computedTokenId, 'wrong');

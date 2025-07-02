@@ -121,9 +121,9 @@ export const urlBuilder = {
   proofDetails: (identifier: string) => `/proofs/${identifier}`,
   proofDetailsAccounts: (identifier: string) =>
     `/proofs/${identifier}/accounts`,
-  nativeTokenDetails: (egldLabel: string) => `/${egldLabel.toLowerCase()}`,
-  nativeTokenDetailsAccounts: (egldLabel: string) =>
-    `/${egldLabel.toLowerCase()}/accounts`,
+  nativeTokenDetails: (rewaLabel: string) => `/${rewaLabel.toLowerCase()}`,
+  nativeTokenDetailsAccounts: (rewaLabel: string) =>
+    `/${rewaLabel.toLowerCase()}/accounts`,
   collections: (params?: GetCollectionsType) => {
     const urlSearch = params
       ? new URLSearchParams(params as Record<string, string>).toString()

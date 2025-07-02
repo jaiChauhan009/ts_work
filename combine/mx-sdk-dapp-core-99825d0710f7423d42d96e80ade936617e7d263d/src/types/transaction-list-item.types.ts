@@ -12,7 +12,7 @@ export enum TransactionIconTypeEnum {
 export interface IBaseTransactionParams {
   address: string;
   explorerAddress: string;
-  egldLabel: string;
+  rewaLabel: string;
 }
 
 export interface IGetHistoricalTransactionsParams
@@ -33,7 +33,7 @@ export enum TransactionActionMethodTypeEnum {
   swapTokensFixedOutput = 'Swap',
   swap = 'Swap',
   multiPairSwap = 'Multiple Pair Swap',
-  aggregateEgld = 'Aggregate EGLD',
+  aggregateRewa = 'Aggregate REWA',
   addLiquidity = 'Add Liquidity',
   addLiquidityProxy = 'Add Liquidity Proxy',
   removeLiquidity = 'Remove Liquidity',
@@ -50,8 +50,8 @@ export enum TransactionActionMethodTypeEnum {
   compoundRewardsProxy = 'Reinvest Rewards Proxy',
   createNftMinter = 'Create NFT Minter',
   scDeploy = 'Smart Contract Deploy',
-  wrapEgld = 'Wrap EGLD',
-  unwrapEgld = 'Unwrap EGLD',
+  wrapRewa = 'Wrap REWA',
+  unwrapRewa = 'Unwrap REWA',
   lockAssets = 'Lock Assets',
   unlockAssets = 'Unlock Assets',
   mergeLockedAssetTokens = 'Merge Locked Tokens',

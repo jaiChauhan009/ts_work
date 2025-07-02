@@ -22,7 +22,7 @@ describe('transaction-list-item', () => {
       name: 'Test Transaction',
       description: 'To',
     },
-    amount: '+100 EGLD',
+    amount: '+100 REWA',
     asset: {
       imageUrl: '/assets/icons/transaction.svg',
       text: 'Test Asset',
@@ -160,7 +160,7 @@ describe('transaction-list-item', () => {
     });
 
     it('renders amount with correct styling for negative value', async () => {
-      const transaction = { ...baseTransaction, amount: '-100 EGLD' };
+      const transaction = { ...baseTransaction, amount: '-100 REWA' };
       const page = await createPage(transaction);
       const amount = page.root.querySelector('.transaction-amount');
 

@@ -11,16 +11,16 @@ export const EconomicsCard = () => {
   const { developerRewards, applicationsDeployed, feesCaptured } = useSelector(
     growthEconomicsSelector
   );
-  const { egldLabel } = useSelector(activeNetworkSelector);
+  const { rewaLabel } = useSelector(activeNetworkSelector);
 
   const economics: StatisticType[] = [
     {
       label: EconomicsLabelsEnum.DeveloperRewards,
-      value: `${developerRewards} ${egldLabel}`
+      value: `${developerRewards} ${rewaLabel}`
     },
     {
       label: EconomicsLabelsEnum.FeesCaptured,
-      value: `${feesCaptured} ${egldLabel}`
+      value: `${feesCaptured} ${rewaLabel}`
     },
     {
       label: EconomicsLabelsEnum.ApplicationsDeployed,

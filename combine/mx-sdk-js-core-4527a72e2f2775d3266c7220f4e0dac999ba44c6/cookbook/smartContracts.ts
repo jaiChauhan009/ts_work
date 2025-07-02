@@ -305,7 +305,7 @@ import { loadAbiRegistry } from "../src/testutils";
 
     // #### Calling a smart contract and sending tokens (transfer & execute)
     // Additionally, if an endpoint requires a payment when called, we can send tokens to the contract while creating a smart contract call transaction.
-    // Both EGLD and DCDT tokens or a combination of both can be sent. This functionality is supported by both the controller and the factory.
+    // Both REWA and DCDT tokens or a combination of both can be sent. This functionality is supported by both the controller and the factory.
 
     // ```js
     {

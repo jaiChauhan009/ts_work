@@ -29,7 +29,7 @@ export class FormatAmountController {
   }
 
   private static getLabel(props: FormatAmountControllerPropsType): string {
-    return ` ${props.token ?? props.egldLabel ?? ''}`.trimEnd();
+    return ` ${props.token ?? props.rewaLabel ?? ''}`.trimEnd();
   }
 
   private static formatDecimalPart(decimalPart = '', digits = 2): string {

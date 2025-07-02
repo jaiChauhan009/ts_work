@@ -23,9 +23,9 @@ describe('Nft Marketplace Abi Service', () => {
     paymentToken: 'DCDT',
     ownerAddress: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
   });
-  const auctionWithEGLDPaymentToken = new AuctionEntity({
+  const auctionWithREWAPaymentToken = new AuctionEntity({
     marketplaceAuctionId: 1,
-    paymentToken: 'EGLD',
+    paymentToken: 'REWA',
     ownerAddress: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
   });
   const marketplace = new Marketplace({
@@ -87,12 +87,12 @@ describe('Nft Marketplace Abi Service', () => {
   });
 
   describe('createAuction', () => {
-    const createAuctionRequestWithEgld = new CreateAuctionRequest({
+    const createAuctionRequestWithRewa = new CreateAuctionRequest({
       identifier: 'GEN-8984e7-07',
       minBid: '1000000000',
       maxBid: '11111111',
       deadline: '12345654',
-      paymentToken: 'EGLD',
+      paymentToken: 'REWA',
     });
 
     const expectedResult = {
@@ -112,14 +112,14 @@ describe('Nft Marketplace Abi Service', () => {
     it('returns built transaction with right arguments', async () => {
       const marketplaceService = module.get<MarketplacesService>(MarketplacesService);
       marketplaceService.getMarketplaceByKey = jest.fn().mockReturnValueOnce(marketplace);
-      const result = await service.createAuction(ownerAddress, createAuctionRequestWithEgld);
+      const result = await service.createAuction(ownerAddress, createAuctionRequestWithRewa);
       expect(result).toMatchObject(expectedResult);
     });
 
     it('when no whitelisted marketplace throw expected error', async () => {
       const marketplaceService = module.get<MarketplacesService>(MarketplacesService);
       marketplaceService.getMarketplaceByKey = jest.fn().mockReturnValueOnce(null);
-      const result = service.createAuction(ownerAddress, createAuctionRequestWithEgld);
+      const result = service.createAuction(ownerAddress, createAuctionRequestWithRewa);
 
       await expect(result).rejects.toThrowError(new BadRequestError('No marketplace available for this collection'));
     });
@@ -127,7 +127,7 @@ describe('Nft Marketplace Abi Service', () => {
     it('when invalid payment token throw expected error', async () => {
       const marketplaceService = module.get<MarketplacesService>(MarketplacesService);
       marketplaceService.getMarketplaceByKey = jest.fn().mockReturnValueOnce(marketplaceWithDCDTPaymentTokens);
-      const result = service.createAuction(ownerAddress, createAuctionRequestWithEgld);
+      const result = service.createAuction(ownerAddress, createAuctionRequestWithRewa);
 
       await expect(result).rejects.toThrowError(new BadRequestError('Unaccepted payment token'));
     });
@@ -150,7 +150,7 @@ describe('Nft Marketplace Abi Service', () => {
         version: 2,
       };
       const result = await service.createAuction(ownerAddress, {
-        ...createAuctionRequestWithEgld,
+        ...createAuctionRequestWithRewa,
         paymentToken: 'DCDT',
       });
 
@@ -159,9 +159,9 @@ describe('Nft Marketplace Abi Service', () => {
   });
 
   describe('bid', () => {
-    const inputWithEgld = new BidRequest({
+    const inputWithRewa = new BidRequest({
       auctionId: 1,
-      paymentTokenIdentifier: 'EGLD',
+      paymentTokenIdentifier: 'REWA',
       identifier: 'GEN-8984e7-07',
       price: '111111111111111',
     });
@@ -179,17 +179,17 @@ describe('Nft Marketplace Abi Service', () => {
 
       const auctionsService = module.get<AuctionsGetterService>(AuctionsGetterService);
       auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithDcdtPaymentToken);
-      const result = service.bid(ownerAddress, inputWithEgld);
+      const result = service.bid(ownerAddress, inputWithRewa);
 
       await expect(result).rejects.toThrowError(new BadRequestError('Unaccepted payment token'));
     });
 
-    it('bid with egld payment token returns built transaction with right arguments', async () => {
+    it('bid with rewa payment token returns built transaction with right arguments', async () => {
       const marketplaceService = module.get<MarketplacesService>(MarketplacesService);
       marketplaceService.getMarketplaceAddressByKey = jest.fn().mockReturnValueOnce(marketplace.address);
 
       const auctionsService = module.get<AuctionsGetterService>(AuctionsGetterService);
-      auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithEGLDPaymentToken);
+      auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithREWAPaymentToken);
       const expectedResult = {
         chainID: 'T',
         data: 'YmlkQDAxQDQ3NDU0ZTJkMzgzOTM4MzQ2NTM3QDA3',
@@ -204,7 +204,7 @@ describe('Nft Marketplace Abi Service', () => {
         version: 2,
       };
 
-      const result = await service.bid(ownerAddress, inputWithEgld);
+      const result = await service.bid(ownerAddress, inputWithRewa);
 
       expect(result).toMatchObject(expectedResult);
     });
@@ -241,7 +241,7 @@ describe('Nft Marketplace Abi Service', () => {
       const auctionsService = module.get<AuctionsGetterService>(AuctionsGetterService);
       auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithDcdtPaymentToken);
 
-      const result = service.bid(ownerAddress, inputWithEgld);
+      const result = service.bid(ownerAddress, inputWithRewa);
       await expect(result).rejects.toThrowError(BadRequestError);
     });
   });
@@ -252,7 +252,7 @@ describe('Nft Marketplace Abi Service', () => {
       marketplaceService.getMarketplaceAddressByKey = jest.fn().mockReturnValueOnce(marketplace.address);
 
       const auctionsService = module.get<AuctionsGetterService>(AuctionsGetterService);
-      auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithEGLDPaymentToken);
+      auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithREWAPaymentToken);
       const expectedResult = {
         chainID: 'T',
         data: 'd2l0aGRyYXdAMDE=',
@@ -276,7 +276,7 @@ describe('Nft Marketplace Abi Service', () => {
   describe('createOffer', () => {
     const createOfferRequest = new CreateOfferRequest({
       auctionId: 1,
-      paymentToken: 'EGLD',
+      paymentToken: 'REWA',
       quantity: '1',
       identifier: 'GEN-8984e7-07',
       paymentAmount: '111111111111111',
@@ -286,7 +286,7 @@ describe('Nft Marketplace Abi Service', () => {
       const marketplaceService = module.get<MarketplacesService>(MarketplacesService);
       marketplaceService.getMarketplaceByKey = jest.fn().mockReturnValueOnce(null);
       const auctionsService = module.get<AuctionsGetterService>(AuctionsGetterService);
-      auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithEGLDPaymentToken);
+      auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithREWAPaymentToken);
 
       const result = service.createOffer(ownerAddress, createOfferRequest);
 
@@ -301,11 +301,11 @@ describe('Nft Marketplace Abi Service', () => {
       await expect(result).rejects.toThrowError(new BadRequestError('Unaccepted payment token'));
     });
 
-    it('with EGLD payment token returns built transaction with right arguments', async () => {
+    it('with REWA payment token returns built transaction with right arguments', async () => {
       const marketplaceService = module.get<MarketplacesService>(MarketplacesService);
       marketplaceService.getMarketplaceByKey = jest.fn().mockReturnValueOnce(marketplace);
       const auctionsService = module.get<AuctionsGetterService>(AuctionsGetterService);
-      auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithEGLDPaymentToken);
+      auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithREWAPaymentToken);
 
       const expectedResult = {
         chainID: 'T',
@@ -330,7 +330,7 @@ describe('Nft Marketplace Abi Service', () => {
       const marketplaceService = module.get<MarketplacesService>(MarketplacesService);
       marketplaceService.getMarketplaceByKey = jest.fn().mockReturnValueOnce(marketplace);
       const auctionsService = module.get<AuctionsGetterService>(AuctionsGetterService);
-      auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithEGLDPaymentToken);
+      auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithREWAPaymentToken);
 
       const expectedResult = {
         chainID: 'T',
@@ -491,7 +491,7 @@ describe('Nft Marketplace Abi Service', () => {
       const marketplaceService = module.get<MarketplacesService>(MarketplacesService);
       marketplaceService.getMarketplaceByKey = jest.fn().mockReturnValueOnce(null);
       const auctionsService = module.get<AuctionsGetterService>(AuctionsGetterService);
-      auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithEGLDPaymentToken);
+      auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithREWAPaymentToken);
       const offersService = module.get<OffersService>(OffersService);
       jest.spyOn(offersService, 'getOfferById').mockResolvedValueOnce(offerResponse);
 
@@ -504,7 +504,7 @@ describe('Nft Marketplace Abi Service', () => {
       const marketplaceService = module.get<MarketplacesService>(MarketplacesService);
       marketplaceService.getMarketplaceByKey = jest.fn().mockReturnValueOnce(null);
       const auctionsService = module.get<AuctionsGetterService>(AuctionsGetterService);
-      auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithEGLDPaymentToken);
+      auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithREWAPaymentToken);
       const offersService = module.get<OffersService>(OffersService);
       jest.spyOn(offersService, 'getOfferById').mockResolvedValueOnce(null);
 
@@ -533,7 +533,7 @@ describe('Nft Marketplace Abi Service', () => {
       const marketplaceService = module.get<MarketplacesService>(MarketplacesService);
       marketplaceService.getMarketplaceByKey = jest.fn().mockReturnValueOnce(marketplace);
       const auctionsService = module.get<AuctionsGetterService>(AuctionsGetterService);
-      auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithEGLDPaymentToken);
+      auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithREWAPaymentToken);
       const offersService = module.get<OffersService>(OffersService);
       jest.spyOn(offersService, 'getOfferById').mockResolvedValueOnce(offerResponse);
 
@@ -545,7 +545,7 @@ describe('Nft Marketplace Abi Service', () => {
       const marketplaceService = module.get<MarketplacesService>(MarketplacesService);
       marketplaceService.getMarketplaceByKey = jest.fn().mockReturnValueOnce(marketplace);
       const auctionsService = module.get<AuctionsGetterService>(AuctionsGetterService);
-      auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithEGLDPaymentToken);
+      auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithREWAPaymentToken);
       const offersService = module.get<OffersService>(OffersService);
       jest.spyOn(offersService, 'getOfferById').mockResolvedValueOnce(offerResponse);
 
@@ -575,7 +575,7 @@ describe('Nft Marketplace Abi Service', () => {
       marketplaceService.getMarketplaceAddressByKey = jest.fn().mockReturnValueOnce(marketplace.address);
 
       const auctionsService = module.get<AuctionsGetterService>(AuctionsGetterService);
-      auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithEGLDPaymentToken);
+      auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithREWAPaymentToken);
 
       const expectedResult = {
         chainID: 'T',
@@ -598,9 +598,9 @@ describe('Nft Marketplace Abi Service', () => {
   });
 
   describe('buySft', () => {
-    const buySftRequestWithEgld = new BuySftRequest({
+    const buySftRequestWithRewa = new BuySftRequest({
       auctionId: 1,
-      paymentTokenIdentifier: 'EGLD',
+      paymentTokenIdentifier: 'REWA',
       price: '1111111',
       quantity: '1',
       identifier: 'GEN-8984e7-01',
@@ -612,17 +612,17 @@ describe('Nft Marketplace Abi Service', () => {
       const auctionsService = module.get<AuctionsGetterService>(AuctionsGetterService);
       auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithDcdtPaymentToken);
 
-      const result = service.buySft(ownerAddress, buySftRequestWithEgld);
+      const result = service.buySft(ownerAddress, buySftRequestWithRewa);
 
       await expect(result).rejects.toThrowError(new BadRequestError('Unaccepted payment token'));
     });
 
-    it('with EGLD payment token returns built transaction with right arguments', async () => {
+    it('with REWA payment token returns built transaction with right arguments', async () => {
       const marketplaceService = module.get<MarketplacesService>(MarketplacesService);
       marketplaceService.getMarketplaceAddressByKey = jest.fn().mockReturnValueOnce(marketplace.address);
 
       const auctionsService = module.get<AuctionsGetterService>(AuctionsGetterService);
-      auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithEGLDPaymentToken);
+      auctionsService.getAuctionById = jest.fn().mockReturnValueOnce(auctionWithREWAPaymentToken);
 
       const expectedResult = {
         chainID: 'T',
@@ -638,7 +638,7 @@ describe('Nft Marketplace Abi Service', () => {
         version: 2,
       };
 
-      const result = await service.buySft(ownerAddress, buySftRequestWithEgld);
+      const result = await service.buySft(ownerAddress, buySftRequestWithRewa);
 
       expect(result).toMatchObject(expectedResult);
     });
@@ -665,7 +665,7 @@ describe('Nft Marketplace Abi Service', () => {
       };
 
       const result = await service.buySft(ownerAddress, {
-        ...buySftRequestWithEgld,
+        ...buySftRequestWithRewa,
         paymentTokenIdentifier: 'DCDT',
       });
 

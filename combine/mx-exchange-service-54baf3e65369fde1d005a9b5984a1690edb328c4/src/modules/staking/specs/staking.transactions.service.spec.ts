@@ -62,7 +62,7 @@ describe('StakingTransactionService', () => {
             Address.Zero().bech32(),
             [
                 new InputTokenModel({
-                    tokenID: 'WEGLD-123456',
+                    tokenID: 'WREWA-123456',
                     nonce: 0,
                     amount: '1000',
                 }),
@@ -77,7 +77,7 @@ describe('StakingTransactionService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.stake.stakeFarm.default,
             data: encodeTransactionData(
-                'DCDTTransfer@WEGLD-123456@1000@stakeFarm',
+                'DCDTTransfer@WREWA-123456@1000@stakeFarm',
             ),
             chainID: mxConfig.chainID,
             version: 2,
@@ -300,7 +300,7 @@ describe('StakingTransactionService', () => {
             senderAddress,
             Address.Zero().bech32(),
             new InputTokenModel({
-                tokenID: 'WEGLD-123456',
+                tokenID: 'WREWA-123456',
                 nonce: 0,
                 amount: '1000000',
             }),
@@ -316,7 +316,7 @@ describe('StakingTransactionService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.stake.admin.topUpRewards,
             data: encodeTransactionData(
-                'DCDTTransfer@WEGLD-123456@01000000@topUpRewards',
+                'DCDTTransfer@WREWA-123456@01000000@topUpRewards',
             ),
             chainID: 'T',
             version: 2,
@@ -337,12 +337,12 @@ describe('StakingTransactionService', () => {
             Address.Zero().bech32(),
             [
                 new InputTokenModel({
-                    tokenID: 'EGLDMEXFL-abcdef',
+                    tokenID: 'REWAMEXFL-abcdef',
                     nonce: 0,
                     amount: '1000000',
                 }),
                 new InputTokenModel({
-                    tokenID: 'EGLDMEXFL-abcdef',
+                    tokenID: 'REWAMEXFL-abcdef',
                     nonce: 0,
                     amount: '1000000',
                 }),
@@ -357,7 +357,7 @@ describe('StakingTransactionService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.stake.mergeTokens,
             data: encodeTransactionData(
-                'MultiDCDTNFTTransfer@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu@02@EGLDMEXFL-abcdef@@01000000@EGLDMEXFL-abcdef@@01000000@mergeFarmTokens',
+                'MultiDCDTNFTTransfer@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu@02@REWAMEXFL-abcdef@@01000000@REWAMEXFL-abcdef@@01000000@mergeFarmTokens',
             ),
             chainID: 'T',
             version: 2,

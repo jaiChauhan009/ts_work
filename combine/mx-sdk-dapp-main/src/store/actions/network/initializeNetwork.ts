@@ -47,7 +47,7 @@ export const initializeNetwork = async ({
       : null;
 
     if (networkConfig != null) {
-      localConfig.roundDuration = networkConfig.erd_round_duration;
+      localConfig.roundDuration = networkConfig.drt_round_duration;
     }
 
     if (dappConfig != null) {

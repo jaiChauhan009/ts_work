@@ -27,8 +27,8 @@ export class TokensResolver {
     ) {}
 
     @ResolveField(() => String)
-    async derivedEGLD(parent: DcdtToken): Promise<string> {
-        return this.tokenLoader.tokenPriceDerivedEGLDLoader.load(
+    async derivedREWA(parent: DcdtToken): Promise<string> {
+        return this.tokenLoader.tokenPriceDerivedREWALoader.load(
             parent.identifier,
         );
     }

@@ -18,14 +18,14 @@ export class WrapAbiService extends GenericAbiService {
         remoteTtl: CacheTtlInfo.TokenID.remoteTtl,
         localTtl: CacheTtlInfo.TokenID.localTtl,
     })
-    async wrappedEgldTokenID(): Promise<string> {
-        return this.getWrappedEgldTokenIDRaw();
+    async wrappedRewaTokenID(): Promise<string> {
+        return this.getWrappedRewaTokenIDRaw();
     }
 
-    async getWrappedEgldTokenIDRaw(): Promise<string> {
+    async getWrappedRewaTokenIDRaw(): Promise<string> {
         const contract = await this.mxProxy.getWrapSmartContract();
         const interaction: Interaction =
-            contract.methodsExplicit.getWrappedEgldTokenId();
+            contract.methodsExplicit.getWrappedRewaTokenId();
         const response = await this.getGenericData(interaction);
         return response.firstValue.valueOf().toString();
     }

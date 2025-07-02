@@ -176,7 +176,7 @@ export class PairService {
             pairInfo,
             totalFeePercent,
         ] = await Promise.all([
-            this.wrapAbi.wrappedEgldTokenID(),
+            this.wrapAbi.wrappedRewaTokenID(),
             this.pairAbi.firstTokenID(pairAddress),
             this.pairAbi.secondTokenID(pairAddress),
             this.pairAbi.pairInfoMetadata(pairAddress),
@@ -184,7 +184,7 @@ export class PairService {
         ]);
 
         const tokenIn =
-            tokenInID === mxConfig.EGLDIdentifier ? wrappedTokenID : tokenInID;
+            tokenInID === mxConfig.REWAIdentifier ? wrappedTokenID : tokenInID;
 
         switch (tokenIn) {
             case firstTokenID:
@@ -218,7 +218,7 @@ export class PairService {
             pairInfo,
             totalFeePercent,
         ] = await Promise.all([
-            this.wrapAbi.wrappedEgldTokenID(),
+            this.wrapAbi.wrappedRewaTokenID(),
             this.pairAbi.firstTokenID(pairAddress),
             this.pairAbi.secondTokenID(pairAddress),
             this.pairAbi.pairInfoMetadata(pairAddress),
@@ -226,7 +226,7 @@ export class PairService {
         ]);
 
         const tokenOut =
-            tokenOutID === mxConfig.EGLDIdentifier
+            tokenOutID === mxConfig.REWAIdentifier
                 ? wrappedTokenID
                 : tokenOutID;
 
@@ -257,14 +257,14 @@ export class PairService {
     ): Promise<BigNumber> {
         const [wrappedTokenID, firstTokenID, secondTokenID, pairInfo] =
             await Promise.all([
-                this.wrapAbi.wrappedEgldTokenID(),
+                this.wrapAbi.wrappedRewaTokenID(),
                 this.pairAbi.firstTokenID(pairAddress),
                 this.pairAbi.secondTokenID(pairAddress),
                 this.pairAbi.pairInfoMetadata(pairAddress),
             ]);
 
         const tokenIn =
-            tokenInID === mxConfig.EGLDIdentifier ? wrappedTokenID : tokenInID;
+            tokenInID === mxConfig.REWAIdentifier ? wrappedTokenID : tokenInID;
 
         switch (tokenIn) {
             case firstTokenID:

@@ -1,6 +1,6 @@
 import { assert } from "chai";
 import { Address, ErrBadUsage, Token, TokenTransfer } from "../core";
-import { EGLD_IDENTIFIER_FOR_MULTI_DCDTNFT_TRANSFER } from "../core/constants";
+import { REWA_IDENTIFIER_FOR_MULTI_DCDTNFT_TRANSFER } from "../core/constants";
 import { TransactionsFactoryConfig } from "../core/transactionsFactoryConfig";
 import { TransferTransactionsFactory } from "./transferTransactionsFactory";
 
@@ -264,8 +264,8 @@ describe("test transfer transactions factory", function () {
         );
     });
 
-    it("should create multi transfer for egld", async () => {
-        const firstNft = new Token({ identifier: EGLD_IDENTIFIER_FOR_MULTI_DCDTNFT_TRANSFER });
+    it("should create multi transfer for rewa", async () => {
+        const firstNft = new Token({ identifier: REWA_IDENTIFIER_FOR_MULTI_DCDTNFT_TRANSFER });
         const firstTransfer = new TokenTransfer({ token: firstNft, amount: 1000000000000000000n });
 
         const transaction = transferFactory.createTransactionForDCDTTokenTransfer(alice, {

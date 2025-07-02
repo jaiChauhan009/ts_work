@@ -93,11 +93,11 @@ describe("test user wallets", () => {
             "test1l8g9dk3gz035gkjhwegsjkqzdu3augrwhcfxrnucnyyrpc2220pqc6tnnf",
         );
         assert.equal(
-            mnemonic.deriveKey(1).generatePublicKey().toAddress("xerd").toBech32(),
+            mnemonic.deriveKey(1).generatePublicKey().toAddress("xdrt").toBech32(),
             "xerd1fmhwg84rldg0xzngf53m0y607wvefvamh07n2mkypedx27lcqntsj4adj4",
         );
         assert.equal(
-            mnemonic.deriveKey(2).generatePublicKey().toAddress("yerd").toBech32(),
+            mnemonic.deriveKey(2).generatePublicKey().toAddress("ydrt").toBech32(),
             "yerd1tyuyemt4xz2yjvc7rxxp8kyfmk2n3h8gv3aavzd9ru4v2vhrkcksn8p0n5",
         );
     });
@@ -511,11 +511,11 @@ describe("test user wallets", () => {
             "test1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ss5hqhtr",
         );
         assert.equal(
-            UserSigner.fromWallet(keyFileObjectWithMnemonic, password, 1).getAddress("xerd").toBech32(),
+            UserSigner.fromWallet(keyFileObjectWithMnemonic, password, 1).getAddress("xdrt").toBech32(),
             "xerd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruq9thc9j",
         );
         assert.equal(
-            UserSigner.fromWallet(keyFileObjectWithMnemonic, password, 2).getAddress("yerd").toBech32(),
+            UserSigner.fromWallet(keyFileObjectWithMnemonic, password, 2).getAddress("ydrt").toBech32(),
             "yerd1k2s324ww2g0yj38qn2ch2jwctdy8mnfxep94q9arncc6xecg3xaqgh23pp",
         );
     });

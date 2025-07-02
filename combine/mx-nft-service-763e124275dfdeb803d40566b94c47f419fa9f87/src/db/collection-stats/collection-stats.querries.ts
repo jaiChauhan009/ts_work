@@ -1,7 +1,7 @@
 import { mxConfig } from 'src/config';
 import { getMarketplaceKeyFilter } from './sqlUtils';
 
-export function getCollectionStats(identifier: string, marketplaceKey: string = undefined, paymentToken: string = mxConfig.egld) {
+export function getCollectionStats(identifier: string, marketplaceKey: string = undefined, paymentToken: string = mxConfig.rewa) {
   return `
   WITH
     endedAuctions AS (select  SUM(o.priceAmountDenominated) AS volumeTraded, 
@@ -31,7 +31,7 @@ export function getCollectionStats(identifier: string, marketplaceKey: string = 
   `;
 }
 
-export function getCollectionFloorPrice(identifier: string, marketplaceKey: string = undefined, paymentToken: string = mxConfig.egld) {
+export function getCollectionFloorPrice(identifier: string, marketplaceKey: string = undefined, paymentToken: string = mxConfig.rewa) {
   return `
   SELECT MIN(if(o.priceAmountDenominated, o.priceAmountDenominated , a.minBidDenominated)) AS minPrice
     FROM auctions a

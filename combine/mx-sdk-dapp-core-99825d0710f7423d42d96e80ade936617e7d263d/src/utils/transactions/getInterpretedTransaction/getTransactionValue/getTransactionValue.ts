@@ -3,14 +3,14 @@ import { InterpretedTransactionType } from 'types/serverTransactions.types';
 import { NftEnumType } from 'types/tokens.types';
 
 import {
-  ACTIONS_WITH_EGLD_VALUE,
+  ACTIONS_WITH_REWA_VALUE,
   ACTIONS_WITH_MANDATORY_OPERATIONS,
   ACTIONS_WITH_VALUE_IN_ACTION_FIELD,
   ACTIONS_WITH_VALUE_IN_DATA_FIELD
 } from './constants';
 
 import {
-  getEgldValueData,
+  getRewaValueData,
   getTitleText,
   getValueFromActions,
   getValueFromDataField,
@@ -19,14 +19,14 @@ import {
 import { getTransactionActionNftText } from './helpers/getTransactionActionNftText';
 import { getTransactionTokens } from './helpers/getTransactionTokens';
 import {
-  EgldValueDataType,
+  RewaValueDataType,
   NFTValueDataType,
   TokenValueDataType
 } from './types';
 import { explorerUrlBuilder } from '../../explorerUrlBuilder';
 
 export interface GetTransactionValueReturnType {
-  egldValueData?: EgldValueDataType;
+  rewaValueData?: RewaValueDataType;
   tokenValueData?: TokenValueDataType;
   nftValueData?: NFTValueDataType;
 }
@@ -41,8 +41,8 @@ export const getTransactionValue = ({
   hideMultipleBadge
 }: GetTransactionValueType): GetTransactionValueReturnType => {
   if (transaction.action) {
-    if (ACTIONS_WITH_EGLD_VALUE.includes(transaction.action.name)) {
-      return getEgldValueData(transaction.value);
+    if (ACTIONS_WITH_REWA_VALUE.includes(transaction.action.name)) {
+      return getRewaValueData(transaction.value);
     }
 
     if (ACTIONS_WITH_VALUE_IN_DATA_FIELD.includes(transaction.action.name)) {
@@ -120,5 +120,5 @@ export const getTransactionValue = ({
     }
   }
 
-  return getEgldValueData(transaction.value);
+  return getRewaValueData(transaction.value);
 };

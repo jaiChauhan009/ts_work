@@ -3,11 +3,11 @@ export class NetworkEconomics {
     Object.assign(this, init);
   }
 
-  erd_dev_rewards: string = '';
-  erd_epoch_for_economics_data: number = 0;
-  erd_inflation: string = '0';
-  erd_total_base_staked_value: string = '0';
-  erd_total_fees: string = '0';
-  erd_total_supply: string = '0';
-  erd_total_top_up_value: string = '0';
+  drt_dev_rewards: string = '';
+  drt_epoch_for_economics_data: number = 0;
+  drt_inflation: string = '0';
+  drt_total_base_staked_value: string = '0';
+  drt_total_fees: string = '0';
+  drt_total_supply: string = '0';
+  drt_total_top_up_value: string = '0';
 }

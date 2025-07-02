@@ -120,7 +120,7 @@ export class NotificationsFeedManager extends SidePanelBaseManager<
         transactionsSessions: transactions,
         address: account.address,
         explorerAddress: network.network.explorerAddress,
-        egldLabel: network.network.egldLabel
+        rewaLabel: network.network.rewaLabel
       });
 
     await this.updateNotificationsFeed();

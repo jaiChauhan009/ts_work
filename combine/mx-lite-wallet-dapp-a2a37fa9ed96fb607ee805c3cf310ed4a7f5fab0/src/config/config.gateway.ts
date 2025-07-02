@@ -16,6 +16,6 @@ export const networks: NetworkType[] = [
     sampleAuthenticatedDomains: [''],
     sovereignContractAddress: '',
     walletAddress: 'https://devnet-wallet.dharitri.org',
-    WEGLDid: ''
+    WREWAid: ''
   }
 ];

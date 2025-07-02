@@ -1,3 +1,3 @@
 export interface IWrapAbiService {
-    wrappedEgldTokenID(): Promise<string>;
+    wrappedRewaTokenID(): Promise<string>;
 }

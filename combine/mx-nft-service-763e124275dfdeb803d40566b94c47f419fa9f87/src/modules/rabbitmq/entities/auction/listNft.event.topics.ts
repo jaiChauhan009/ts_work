@@ -8,7 +8,7 @@ export class ListNftEventsTopics {
   private nrAuctionTokens: string = '1';
   private originalOwner: Address;
   private price: string;
-  private paymentToken: string = mxConfig.egld;
+  private paymentToken: string = mxConfig.rewa;
   private paymentTokenNonce: string = '0';
   private auctionType: string = '';
   private deadline: number = 0;

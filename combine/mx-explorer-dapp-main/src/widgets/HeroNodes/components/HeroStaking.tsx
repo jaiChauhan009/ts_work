@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
 
-import { FormatEGLD } from 'components';
+import { FormatREWA } from 'components';
 import { useFetchGrowthStaking } from 'hooks';
 import { growthStakingSelector } from 'redux/selectors';
 import {
@@ -17,7 +17,7 @@ export const HeroStaking = ({ className }: WithClassnameType) => {
   const statistics: StatisticType[] = [
     {
       label: StakingStatisticsLabelEnum.TotalStaked,
-      value: <FormatEGLD value={totalStaked} showLabel />,
+      value: <FormatREWA value={totalStaked} showLabel />,
       detail: stakingPercentage
     },
     {

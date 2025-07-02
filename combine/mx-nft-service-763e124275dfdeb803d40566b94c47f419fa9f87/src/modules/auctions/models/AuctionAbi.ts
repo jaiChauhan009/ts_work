@@ -37,7 +37,7 @@ export interface DcdtTokenPayment {
   amount: BigUIntValue;
 }
 
-export interface EgldOrDcdtTokenPayment {
+export interface RewaOrDcdtTokenPayment {
   token_identifier: TokenIdentifierValue;
   token_nonce: U64Value;
   amount: BigUIntValue;
@@ -45,7 +45,7 @@ export interface EgldOrDcdtTokenPayment {
 
 export interface OfferAbi {
   offer_token: DcdtTokenPayment;
-  payment: EgldOrDcdtTokenPayment;
+  payment: RewaOrDcdtTokenPayment;
   start_time: U64Value;
   deadline: U64Value;
   offer_owner: AddressValue;

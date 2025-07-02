@@ -6,15 +6,15 @@ export const faucetSettingEndpoint = `${faucetEndpoint}/settings`;
 export const transactionSize = 10;
 export const nativeAuth = true;
 export const BATCH_TRANSACTIONS_SC = {
-  egld_wEGLD: {
+  rewa_wREWA: {
     contract: 'erd1qqqqqqqqqqqqqpgqpv09kfzry5y4sj05udcngesat07umyj70n4sa2c0rp',
-    data: 'wrapEgld'
+    data: 'wrapRewa'
   },
-  wEGLD_USDC: {
+  wREWA_USDC: {
     contract: 'erd1qqqqqqqqqqqqqpgqtqfhy99su9xzjjrq59kpzpp25udtc9eq0n4sr90ax6',
     data: 'DCDTTransfer@5745474C442D613238633539@06f05b59d3b20000@73776170546f6b656e734669786564496e707574@555344432D333530633465@01'
   },
-  wEGLD_MEX: {
+  wREWA_MEX: {
     contract: 'erd1qqqqqqqqqqqqqpgqzw0d0tj25qme9e4ukverjjjqle6xamay0n4s5r0v9g',
     data: 'DCDTTransfer@5745474C442D613238633539@06f05b59d3b20000@73776170546f6b656e734669786564496e707574@4D45582D613635396430@01'
   },

@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import { ELLIPSIS } from 'appConstants';
 import { NativeTokenSymbol } from 'components';
 import { DECIMALS, DIGITS } from 'config';
-import { formatAmount, isEgldToken } from 'helpers';
+import { formatAmount, isRewaToken } from 'helpers';
 import { activeNetworkSelector, economicsSelector } from 'redux/selectors';
 import { FormatDisplayValue } from '../FormatDisplayValue';
 import { FormatUSD } from '../FormatUSD';
@@ -22,7 +22,7 @@ export interface FormatAmountUIType extends SdkDappFormatAmountType {
 }
 
 export const FormatAmount = (props: FormatAmountUIType) => {
-  const { egldLabel } = useSelector(activeNetworkSelector);
+  const { rewaLabel } = useSelector(activeNetworkSelector);
   const { isFetched, unprocessed } = useSelector(economicsSelector);
   const {
     value,
@@ -38,7 +38,7 @@ export const FormatAmount = (props: FormatAmountUIType) => {
     usd
   } = props;
   const dataTestId = props['data-testid'] ?? 'formatAmountComponent';
-  const isCustomIcon = !isEgldToken(egldLabel);
+  const isCustomIcon = !isRewaToken(rewaLabel);
 
   if (!stringIsInteger(value)) {
     return (
@@ -82,7 +82,7 @@ export const FormatAmount = (props: FormatAmountUIType) => {
       {...props}
       formattedValue={formattedValue}
       completeValue={completeValue}
-      label={egldLabel}
+      label={rewaLabel}
       data-testid={dataTestId}
       showSymbol={showSymbol}
       showLastNonZeroDecimal={showLastNonZeroDecimal}

@@ -14,4 +14,4 @@ services:
       START_API_ADDRESS_STOP: https://testnet-api.dharitri.org
       START_GATEWAY_URL_STOP: https://testnet-gateway.dharitri.org
       START_WALLET_ADDRESS_STOP: https://testnet-wallet.dharitri.org
-      START_WEGLD_ID_STOP: xEGLD
+      START_WREWA_ID_STOP: xREWA

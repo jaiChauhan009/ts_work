@@ -28,7 +28,7 @@ export const getFeeData = ({
   const feeInFiatLimit = price
     ? calculateFeeInFiat({
         feeLimit,
-        egldPriceInUsd: price,
+        rewaPriceInUsd: price,
         hideEqualSign: true
       })
     : null;

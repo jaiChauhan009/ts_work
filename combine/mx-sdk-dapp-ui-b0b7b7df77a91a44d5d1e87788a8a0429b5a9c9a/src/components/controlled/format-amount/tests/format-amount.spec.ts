@@ -32,7 +32,7 @@ describe('FormatAmount component', () => {
       isValid: true,
       valueInteger: '99999',
       valueDecimal: '.99',
-      label: 'EGLD',
+      label: 'REWA',
       showLabel: true,
     };
 
@@ -46,7 +46,7 @@ describe('FormatAmount component', () => {
       isValid: true,
       valueInteger: '90000',
       valueDecimal: '',
-      label: 'EGLD',
+      label: 'REWA',
       showLabel: true,
     };
 
@@ -72,7 +72,7 @@ describe('FormatAmount component', () => {
       isValid: true,
       valueInteger: '90000',
       valueDecimal: '.00',
-      label: 'EGLD',
+      label: 'REWA',
       showLabel: true,
     };
 
@@ -98,7 +98,7 @@ describe('FormatAmount component', () => {
       isValid: true,
       valueInteger: '90000',
       valueDecimal: '.00',
-      label: 'EGLD',
+      label: 'REWA',
       showLabel: false,
     };
 

@@ -32,7 +32,7 @@ export class DcdtToken extends BaseDcdtToken implements IDcdtToken {
     minted?: string;
     burnt?: string;
     initialMinted?: string;
-    derivedEGLD: string;
+    derivedREWA: string;
     price?: string;
     previous24hPrice?: string;
     previous7dPrice?: string;

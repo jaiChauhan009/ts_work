@@ -14,7 +14,7 @@ export const getInternalNetworks = (): NetworkType[] => {
           return {
             ...network,
             ...(!network?.adapter ? { adapter: NetworkAdapterEnum.api } : {}),
-            ...(!network?.egldLabel ? { egldLabel: 'xEGLD' } : {}),
+            ...(!network?.rewaLabel ? { rewaLabel: 'xREWA' } : {}),
             ...(!network?.chainId ? { chainId: 'T' } : {}),
             ...(!network?.hrp ? { hrp: DEFAULT_HRP } : {})
           };

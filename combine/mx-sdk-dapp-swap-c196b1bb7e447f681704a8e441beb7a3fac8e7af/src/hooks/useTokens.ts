@@ -33,7 +33,7 @@ export const useTokens = (options?: UseTokensType) => {
   const pricePolling = options?.pricePolling ?? DEFAULT_PRICE_POLLING;
 
   const [tokens, setTokens] = useState<UserDcdtType[]>([]);
-  const [wrappedEgld, setWrappedEgld] = useState<DcdtType>();
+  const [wrappedRewa, setWrappedRewa] = useState<DcdtType>();
   const [swapConfig, setSwapConfig] = useState<FactoryType>();
 
   const { tokenPrices } = useFetchTokenPrices({
@@ -51,12 +51,12 @@ export const useTokens = (options?: UseTokensType) => {
       setSwapConfig(factory);
     }
 
-    const newWrappedEgld =
+    const newWrappedRewa =
       wrappingInfo && wrappingInfo.length
         ? wrappingInfo[0].wrappedToken
         : undefined;
 
-    setWrappedEgld(newWrappedEgld);
+    setWrappedRewa(newWrappedRewa);
 
     if (!swapTokens) {
       setTokens([]);
@@ -77,7 +77,7 @@ export const useTokens = (options?: UseTokensType) => {
 
     const sortedTokensWithBalance = getSortedTokensByUsdValue({
       tokens: tokensWithBalance,
-      wrappedEgld: newWrappedEgld
+      wrappedRewa: newWrappedRewa
     });
 
     setTokens(sortedTokensWithBalance);
@@ -125,7 +125,7 @@ export const useTokens = (options?: UseTokensType) => {
 
   return {
     swapConfig,
-    wrappedEgld,
+    wrappedRewa,
     isTokensError: isError,
     isTokensLoading: isLoading,
     tokens: tokensWithUpdatedPrice,

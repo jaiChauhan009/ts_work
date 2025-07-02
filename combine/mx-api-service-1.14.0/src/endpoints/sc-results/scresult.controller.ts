@@ -22,7 +22,7 @@ export class SmartContractResultController {
   @ApiQuery({ name: 'sender', description: 'Sender address', required: false })
   @ApiQuery({ name: 'receiver', description: 'Receiver address', required: false })
   @ApiQuery({ name: 'function', description: 'Filter results by function name', required: false })
-  @ApiQuery({ name: 'withActionTransferValue', description: 'Returns value in USD and EGLD for transferred tokens within the action attribute', required: false })
+  @ApiQuery({ name: 'withActionTransferValue', description: 'Returns value in USD and REWA for transferred tokens within the action attribute', required: false })
   @ApiOkResponse({ type: [SmartContractResult] })
   getScResults(
     @Query('from', new DefaultValuePipe(0), ParseIntPipe) from: number,

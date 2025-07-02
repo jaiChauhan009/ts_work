@@ -196,7 +196,7 @@ describe('FeesCollectorTransactionService', () => {
             FeesCollectorTransactionService,
         );
         const transaction = await service.handleKnownTokens(senderAddress, [
-            'WEGLD-123456',
+            'WREWA-123456',
             'MEX-123456',
         ]);
 
@@ -212,7 +212,7 @@ describe('FeesCollectorTransactionService', () => {
                 senderUsername: undefined,
                 value: '0',
                 data: encodeTransactionData(
-                    `addKnownTokens@${'WEGLD-123456'}@${'MEX-123456'}`,
+                    `addKnownTokens@${'WREWA-123456'}@${'MEX-123456'}`,
                 ),
                 options: undefined,
                 signature: undefined,

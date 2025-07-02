@@ -73,7 +73,7 @@ export class AutoRouterService {
         if (args.amountIn && args.amountOut)
             throw new Error("Can't have both amountIn & amountOut");
 
-        const [tokenInID, tokenOutID] = await this.toWrappedIfEGLD([
+        const [tokenInID, tokenOutID] = await this.toWrappedIfREWA([
             args.tokenInID,
             args.tokenOutID,
         ]);
@@ -379,11 +379,11 @@ export class AutoRouterService {
         });
     }
 
-    private async toWrappedIfEGLD(tokensIDs: string[]) {
-        const wrappedEgldTokenID = await this.wrapAbi.wrappedEgldTokenID();
+    private async toWrappedIfREWA(tokensIDs: string[]) {
+        const wrappedRewaTokenID = await this.wrapAbi.wrappedRewaTokenID();
 
         return tokensIDs.map((t) => {
-            return mxConfig.EGLDIdentifier === t ? wrappedEgldTokenID : t;
+            return mxConfig.REWAIdentifier === t ? wrappedRewaTokenID : t;
         });
     }
 

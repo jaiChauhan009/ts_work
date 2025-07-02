@@ -586,7 +586,7 @@ describe('Account Service', () => {
 
   describe('getAccountTokenHistoryCount', () => {
     const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
-    const tokenIdentifier = 'WEGLD-bd4d79';
+    const tokenIdentifier = 'WREWA-bd4d79';
     const filter = new AccountHistoryFilter({});
     const tokenHistoryCount = 5;
 
@@ -632,7 +632,7 @@ describe('Account Service', () => {
 
   describe('getAccountTokenHistory', () => {
     const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
-    const token = 'WEGLD-bd4d79';
+    const token = 'WREWA-bd4d79';
     const pagination = { from: 0, size: 10 };
     const filter = new AccountHistoryFilter({});
 
@@ -641,8 +641,8 @@ describe('Account Service', () => {
         address: 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz',
         timestamp: 1640603532,
         balance: '0',
-        token: 'WEGLD-bd4d79',
-        identifier: 'WEGLD-bd4d79',
+        token: 'WREWA-bd4d79',
+        identifier: 'WREWA-bd4d79',
         tokenNonce: 10,
         isSender: true,
         shardID: 0,
@@ -652,8 +652,8 @@ describe('Account Service', () => {
         address: 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz',
         timestamp: 1640603532,
         balance: '0',
-        token: 'WEGLD-bd4d79',
-        identifier: 'WEGLD-bd4d79',
+        token: 'WREWA-bd4d79',
+        identifier: 'WREWA-bd4d79',
         tokenNonce: 10,
         isSender: true,
         shardID: 0,
@@ -683,8 +683,8 @@ describe('Account Service', () => {
         address: 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz',
         timestamp: 1640603532,
         balance: '0',
-        token: 'WEGLD-bd4d79',
-        identifier: 'WEGLD-bd4d79',
+        token: 'WREWA-bd4d79',
+        identifier: 'WREWA-bd4d79',
         tokenNonce: 10,
         isSender: true,
         shardID: 0,
@@ -694,8 +694,8 @@ describe('Account Service', () => {
         address: 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz',
         timestamp: 1640603532,
         balance: '0',
-        token: 'WEGLD-bd4d79',
-        identifier: 'WEGLD-bd4d79',
+        token: 'WREWA-bd4d79',
+        identifier: 'WREWA-bd4d79',
         tokenNonce: 10,
         isSender: true,
         shardID: 0,
@@ -903,7 +903,7 @@ describe('Account Service', () => {
     const assets: { [key: string]: AccountAssets } = {
       erd1qqqqqqqqqqqqqpgqykt0f03czqj2p9qltpygzu7jwlzkaxqaqpdq07cak6: {
         name: "System: Staking Module",
-        description: "Smart contract containing all staked eGLD on the network",
+        description: "Smart contract containing all staked REWA on the network",
         tags: [
           "system",
           "staking",
@@ -920,7 +920,7 @@ describe('Account Service', () => {
     const ownerAssets: { [key: string]: AccountAssets } = {
       erd1qqqqqqqqqqqqqpgqykt0f03czqj2p9qltpygzu7jwlzkaxqaqpdq07cak6: {
         name: "System: Staking Module",
-        description: "Smart contract containing all staked eGLD on the network",
+        description: "Smart contract containing all staked REWA on the network",
         tags: [
           "system",
           "staking",
@@ -944,7 +944,7 @@ describe('Account Service', () => {
         ownerAddress: 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqplllst77y4l',
         assets: {
           name: "System: Staking Module",
-          description: "Smart contract containing all staked eGLD on the network",
+          description: "Smart contract containing all staked REWA on the network",
           tags: [
             "system",
             "staking",

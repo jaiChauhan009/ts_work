@@ -423,8 +423,8 @@ export class RouterTransactionService {
         tokenID: string,
         amount: string,
     ): Promise<TransactionModel> {
-        if (tokenID === mxConfig.EGLDIdentifier) {
-            return this.transactionsWrapService.wrapEgld(sender, amount);
+        if (tokenID === mxConfig.REWAIdentifier) {
+            return this.transactionsWrapService.wrapRewa(sender, amount);
         }
     }
 
@@ -433,8 +433,8 @@ export class RouterTransactionService {
         tokenID: string,
         amount: string,
     ): Promise<TransactionModel> {
-        if (tokenID === mxConfig.EGLDIdentifier) {
-            return this.transactionsWrapService.unwrapEgld(sender, amount);
+        if (tokenID === mxConfig.REWAIdentifier) {
+            return this.transactionsWrapService.unwrapRewa(sender, amount);
         }
     }
 

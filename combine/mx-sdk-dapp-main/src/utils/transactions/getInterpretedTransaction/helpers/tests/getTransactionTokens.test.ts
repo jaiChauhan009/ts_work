@@ -24,16 +24,16 @@ describe('getTransactionTokens', () => {
       action: {
         name: TransactionActionsEnum.swap,
         category: TransactionActionCategoryEnum.mex,
-        description: 'Swap 1 WEGLD for a minimum of 45.117988 USDC',
+        description: 'Swap 1 WREWA for a minimum of 45.117988 USDC',
         arguments: {
           transfers: [
             {
               type: 'FungibleDCDT',
-              name: 'WrappedEGLD',
-              ticker: 'WEGLD',
+              name: 'WrappedREWA',
+              ticker: 'WREWA',
               svgUrl:
-                'https://devnet-media.dharitri.org/tokens/asset/WEGLD-d7c6bb/logo.svg',
-              token: 'WEGLD-d7c6bb',
+                'https://devnet-media.dharitri.org/tokens/asset/WREWA-d7c6bb/logo.svg',
+              token: 'WREWA-d7c6bb',
               decimals: 18,
               value: '1000000000000000000'
             },

@@ -9,9 +9,9 @@ export const CAROL_PUB_KEY = 'b2a11555ce521e4944e09ab17549d85b487dcd26c84b5017a3
 
 export const TOKEN_SALT: string = '91b44915de5f5bb438be952d4cda1bcc08829495e8704e40751dcee97aa83886';
 export const TOKEN_SALT2: string = '8be14915de5f5bb438be952d4cda1bcc08829495e8704e40751dcee97aa89854';
-export const TOKEN_IDENTIFIER: string = 'WEGLD-123456';
+export const TOKEN_IDENTIFIER: string = 'WREWA-123456';
 export const TOKEN_IDENTIFIER2: string = 'OTHER-654321';
-export const TOKEN_IDENTIFIER_EGLD: string = 'EGLD-000000';
+export const TOKEN_IDENTIFIER_REWA: string = 'REWA-000000';
 
 export const INTERCHAIN_TOKEN_ID: string = '01b3d64c8c6530a3aad5909ae7e0985d4438ce8eafd90e51ce48fbc809bced39';
 export const CANONICAL_INTERCHAIN_TOKEN_ID: string = 'ab13e48029a0672cd3a669e258a97696dc33b4f72f4d758f92ee4afc8a026dc1';

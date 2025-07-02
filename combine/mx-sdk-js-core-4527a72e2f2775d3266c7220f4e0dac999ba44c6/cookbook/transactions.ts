@@ -42,7 +42,7 @@ import {
     // ```
 
     // ### Token transfers
-    // We can send both native tokens (EGLD) and DCDT tokens using either the controller or the factory.
+    // We can send both native tokens (REWA) and DCDT tokens using either the controller or the factory.
     // #### Native Token Transfers Using the Controller
     // When using the controller, the transaction will be signed because we’ll be working with an Account.
 

@@ -25,12 +25,12 @@ export class TokenLoader {
         },
     );
 
-    public readonly tokenPriceDerivedEGLDLoader = new DataLoader<
+    public readonly tokenPriceDerivedREWALoader = new DataLoader<
         string,
         string
     >(
         async (tokenIDs: string[]) => {
-            return this.tokenCompute.getAllTokensPriceDerivedEGLD(tokenIDs);
+            return this.tokenCompute.getAllTokensPriceDerivedREWA(tokenIDs);
         },
         {
             cache: false,

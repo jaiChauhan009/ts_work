@@ -24,7 +24,7 @@ pub trait ProxyGmpModule: address_tracker::AddressTracker {
                 payload,
                 self.blockchain().get_caller(),
             )
-            .with_egld_transfer(gas_value)
+            .with_rewa_transfer(gas_value)
             .execute_on_dest_context::<()>();
     }
 

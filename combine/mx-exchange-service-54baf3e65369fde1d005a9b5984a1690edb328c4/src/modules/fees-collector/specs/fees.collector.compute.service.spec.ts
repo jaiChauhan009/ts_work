@@ -146,7 +146,7 @@ describe('FeesCollectorComputeService', () => {
                 new DcdtTokenPayment({
                     amount: '100',
                     nonce: 0,
-                    tokenID: 'WEGLD',
+                    tokenID: 'WREWA',
                     tokenType: 0,
                 }),
             ]),
@@ -173,7 +173,7 @@ describe('FeesCollectorComputeService', () => {
                 lastUpdateEpoch: 50,
                 totalLockedTokens: '500',
             };
-            const expectedTokenID = 'WEGLD';
+            const expectedTokenID = 'WREWA';
             const expectedTokenType = 0;
             const expectedTokenNonce = 0;
 
@@ -222,7 +222,7 @@ describe('FeesCollectorComputeService', () => {
             const user1 = 'erd1';
             const mex = 'MEX-123456';
             const priceMap = new Map<string, string>();
-            priceMap.set('WEGLD-123456', '10');
+            priceMap.set('WREWA-123456', '10');
             priceMap.set('MEX-123456', '20');
             priceMap.set('TOK4-123456', '30');
             priceMap.set(mex, '1');
@@ -290,7 +290,7 @@ describe('FeesCollectorComputeService', () => {
             const user1 = 'erd1';
             const mex = 'MEX-123456';
             const priceMap = new Map<string, string>();
-            priceMap.set('WEGLD-123456', '10');
+            priceMap.set('WREWA-123456', '10');
             priceMap.set('MEX-123456', '20');
             priceMap.set('TOK4-123456', '30');
             priceMap.set(mex, '1');
@@ -360,7 +360,7 @@ describe('FeesCollectorComputeService', () => {
             const user1 = 'erd1';
             const mex = 'MEX-123456';
             const priceMap = new Map<string, string>();
-            priceMap.set('WEGLD-123456', '10');
+            priceMap.set('WREWA-123456', '10');
             priceMap.set('MEX-123456', '20');
             priceMap.set('TOK4-123456', '30');
             priceMap.set(mex, '1');

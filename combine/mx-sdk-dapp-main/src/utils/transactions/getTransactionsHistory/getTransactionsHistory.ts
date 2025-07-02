@@ -10,7 +10,7 @@ export const getTransactionsHistory = async ({
   transactionsSessions,
   address,
   explorerAddress,
-  egldLabel
+  rewaLabel
 }: IGetHistoricalTransactionsParams): Promise<ITransactionListItem[]> => {
   if (isEmpty(transactionsSessions)) {
     return [];
@@ -23,6 +23,6 @@ export const getTransactionsHistory = async ({
     transactions: signedTransactions,
     address,
     explorerAddress,
-    egldLabel
+    rewaLabel
   });
 };

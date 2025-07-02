@@ -12,13 +12,13 @@ describe('test farm v2 event decoders', () => {
         const decodedEvent = new EnterFarmEventV2(rawEnterFarmEventV2);
         expect(decodedEvent.toJSON()).toEqual({
             farmingToken: {
-                tokenIdentifier: 'EGLDMEX-0be9e5',
+                tokenIdentifier: 'REWAMEX-0be9e5',
                 tokenNonce: 0,
                 amount: '7799008171247025659',
             },
             rewardTokenReserves: '178404389302049246029573056506',
             farmToken: {
-                tokenIdentifier: 'EGLDMEXFL-c2521e',
+                tokenIdentifier: 'REWAMEXFL-c2521e',
                 tokenNonce: 367987,
                 amount: '10384405708276779102',
             },
@@ -40,12 +40,12 @@ describe('test farm v2 event decoders', () => {
         const decodedEvent = new ExitFarmEventV2(rawExitFarmEventV2);
         expect(decodedEvent.toJSON()).toEqual({
             farmingToken: {
-                tokenIdentifier: 'EGLDMEX-0be9e5',
+                tokenIdentifier: 'REWAMEX-0be9e5',
                 tokenNonce: 0,
                 amount: '27118253941196305',
             },
             farmToken: {
-                tokenIdentifier: 'EGLDMEXFL-c2521e',
+                tokenIdentifier: 'REWAMEXFL-c2521e',
                 tokenNonce: 367969,
                 amount: '27118253941196305',
             },
@@ -71,12 +71,12 @@ describe('test farm v2 event decoders', () => {
         const decodedEvent = new ClaimRewardsEventV2(rawClaimRewardsEventV2);
         expect(decodedEvent.toJSON()).toEqual({
             oldFarmToken: {
-                tokenIdentifier: 'EGLDMEXFL-c2521e',
+                tokenIdentifier: 'REWAMEXFL-c2521e',
                 tokenNonce: 355083,
                 amount: '884549960938460528',
             },
             newFarmToken: {
-                tokenIdentifier: 'EGLDMEXFL-c2521e',
+                tokenIdentifier: 'REWAMEXFL-c2521e',
                 tokenNonce: 368031,
                 amount: '884549960938460528',
             },

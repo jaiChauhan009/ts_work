@@ -31,7 +31,7 @@ export interface ISignTransactionsPanelCommonData {
   gasLimit?: string;
   transactionsCount: number;
   tokenType?: TokenType;
-  egldLabel: string;
+  rewaLabel: string;
   feeLimit?: string;
   feeInFiatLimit?: string | null;
   currentIndex: number;

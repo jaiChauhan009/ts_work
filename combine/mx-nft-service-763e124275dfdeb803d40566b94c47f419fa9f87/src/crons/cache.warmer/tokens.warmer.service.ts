@@ -39,12 +39,12 @@ export class TokensWarmerService {
   }
 
   @Cron(CronExpression.EVERY_MINUTE)
-  async updateEgldTokens() {
+  async updateRewaTokens() {
     await Locker.lock(
-      'Egld Token invalidation',
+      'Rewa Token invalidation',
       async () => {
-        const tokens = await this.mxApiService.getEgldPriceFromEconomics();
-        await this.invalidateKey(CacheInfo.EgldToken.key, tokens, CacheInfo.EgldToken.ttl);
+        const tokens = await this.mxApiService.getRewaPriceFromEconomics();
+        await this.invalidateKey(CacheInfo.RewaToken.key, tokens, CacheInfo.RewaToken.ttl);
       },
       true,
     );

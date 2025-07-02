@@ -23,7 +23,7 @@ import { sortIdentities, SortIdentitesFieldEnum } from './helpers';
 export const Identities = () => {
   const dispatch = useDispatch();
   const { sort, order } = useGetSort();
-  const { egldLabel } = useSelector(activeNetworkSelector);
+  const { rewaLabel } = useSelector(activeNetworkSelector);
   const { isFetched: isStakeFetched, unprocessed } = useSelector(stakeSelector);
   const { isNodesIdentityCountFetched, unprocessed: stakeExtraUnprocessed } =
     useSelector(stakeExtraSelector);
@@ -123,7 +123,7 @@ export const Identities = () => {
                             {isStakeSorting ? (
                               <>
                                 The Cumulative Stake represents the total share
-                                of staked {egldLabel} that this and all previous
+                                of staked {rewaLabel} that this and all previous
                                 validators add up to.
                               </>
                             ) : (

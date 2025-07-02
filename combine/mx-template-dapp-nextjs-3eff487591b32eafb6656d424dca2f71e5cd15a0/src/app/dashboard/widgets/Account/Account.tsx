@@ -18,7 +18,7 @@ export const Account = () => {
     FormatAmountController.getData({
       digits: DIGITS,
       decimals: DECIMALS,
-      egldLabel: network.egldLabel,
+      rewaLabel: network.rewaLabel,
       input: account.balance
     });
 

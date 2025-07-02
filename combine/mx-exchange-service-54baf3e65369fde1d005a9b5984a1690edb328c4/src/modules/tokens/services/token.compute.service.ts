@@ -63,8 +63,8 @@ export class TokenComputeService implements ITokenComputeService {
         );
     }
 
-    async getEgldPriceInUSD(): Promise<string> {
-        return this.pairCompute.firstTokenPrice(scAddress.WEGLD_USDC);
+    async getRewaPriceInUSD(): Promise<string> {
+        return this.pairCompute.firstTokenPrice(scAddress.WREWA_USDC);
     }
 
     @ErrorLoggerAsync({
@@ -75,11 +75,11 @@ export class TokenComputeService implements ITokenComputeService {
         remoteTtl: CacheTtlInfo.Price.remoteTtl,
         localTtl: CacheTtlInfo.Price.localTtl,
     })
-    async tokenPriceDerivedEGLD(tokenID: string): Promise<string> {
-        return this.computeTokenPriceDerivedEGLD(tokenID, []);
+    async tokenPriceDerivedREWA(tokenID: string): Promise<string> {
+        return this.computeTokenPriceDerivedREWA(tokenID, []);
     }
 
-    async computeTokenPriceDerivedEGLD(
+    async computeTokenPriceDerivedREWA(
         tokenID: string,
         pairsNotToVisit: PairMetadata[],
     ): Promise<string> {
@@ -118,11 +118,11 @@ export class TokenComputeService implements ITokenComputeService {
 
         pairsNotToVisit.push(...tokenPairs);
 
-        let largestLiquidityEGLD = new BigNumber(0);
+        let largestLiquidityREWA = new BigNumber(0);
         let priceSoFar = '0';
 
         if (tokenID === constantsConfig.USDC_TOKEN_ID) {
-            const eglpPriceUSD = await this.getEgldPriceInUSD();
+            const eglpPriceUSD = await this.getRewaPriceInUSD();
             priceSoFar = new BigNumber(1).dividedBy(eglpPriceUSD).toFixed();
         } else {
             for (const pair of tokenPairs) {
@@ -130,12 +130,12 @@ export class TokenComputeService implements ITokenComputeService {
                 if (new BigNumber(liquidity).isGreaterThan(0)) {
                     if (pair.firstTokenID === tokenID) {
                         const [
-                            secondTokenDerivedEGLD,
+                            secondTokenDerivedREWA,
                             secondTokenReserves,
                             firstTokenPrice,
                             secondToken,
                         ] = await Promise.all([
-                            this.computeTokenPriceDerivedEGLD(
+                            this.computeTokenPriceDerivedREWA(
                                 pair.secondTokenID,
                                 pairsNotToVisit,
                             ),
@@ -143,27 +143,27 @@ export class TokenComputeService implements ITokenComputeService {
                             this.pairCompute.firstTokenPrice(pair.address),
                             this.pairService.getSecondToken(pair.address),
                         ]);
-                        const egldLocked = new BigNumber(secondTokenReserves)
+                        const rewaLocked = new BigNumber(secondTokenReserves)
                             .times(`1e-${secondToken.decimals}`)
-                            .times(secondTokenDerivedEGLD)
-                            .times(`1e${mxConfig.EGLDDecimals}`)
+                            .times(secondTokenDerivedREWA)
+                            .times(`1e${mxConfig.REWADecimals}`)
                             .integerValue();
 
-                        if (egldLocked.isGreaterThan(largestLiquidityEGLD)) {
-                            largestLiquidityEGLD = egldLocked;
+                        if (rewaLocked.isGreaterThan(largestLiquidityREWA)) {
+                            largestLiquidityREWA = rewaLocked;
                             priceSoFar = new BigNumber(firstTokenPrice)
-                                .times(secondTokenDerivedEGLD)
+                                .times(secondTokenDerivedREWA)
                                 .toFixed();
                         }
                     }
                     if (pair.secondTokenID === tokenID) {
                         const [
-                            firstTokenDerivedEGLD,
+                            firstTokenDerivedREWA,
                             firstTokenReserves,
                             secondTokenPrice,
                             firstToken,
                         ] = await Promise.all([
-                            this.computeTokenPriceDerivedEGLD(
+                            this.computeTokenPriceDerivedREWA(
                                 pair.firstTokenID,
                                 pairsNotToVisit,
                             ),
@@ -171,15 +171,15 @@ export class TokenComputeService implements ITokenComputeService {
                             this.pairCompute.secondTokenPrice(pair.address),
                             this.pairService.getFirstToken(pair.address),
                         ]);
-                        const egldLocked = new BigNumber(firstTokenReserves)
+                        const rewaLocked = new BigNumber(firstTokenReserves)
                             .times(`1e-${firstToken.decimals}`)
-                            .times(firstTokenDerivedEGLD)
-                            .times(`1e${mxConfig.EGLDDecimals}`)
+                            .times(firstTokenDerivedREWA)
+                            .times(`1e${mxConfig.REWADecimals}`)
                             .integerValue();
-                        if (egldLocked.isGreaterThan(largestLiquidityEGLD)) {
-                            largestLiquidityEGLD = egldLocked;
+                        if (rewaLocked.isGreaterThan(largestLiquidityREWA)) {
+                            largestLiquidityREWA = rewaLocked;
                             priceSoFar = new BigNumber(secondTokenPrice)
-                                .times(firstTokenDerivedEGLD)
+                                .times(firstTokenDerivedREWA)
                                 .toFixed();
                         }
                     }
@@ -189,12 +189,12 @@ export class TokenComputeService implements ITokenComputeService {
         return priceSoFar;
     }
 
-    async getAllTokensPriceDerivedEGLD(tokenIDs: string[]): Promise<string[]> {
+    async getAllTokensPriceDerivedREWA(tokenIDs: string[]): Promise<string[]> {
         return getAllKeys(
             this.cachingService,
             tokenIDs,
-            'token.tokenPriceDerivedEGLD',
-            this.tokenPriceDerivedEGLD.bind(this),
+            'token.tokenPriceDerivedREWA',
+            this.tokenPriceDerivedREWA.bind(this),
             CacheTtlInfo.Price,
         );
     }
@@ -220,14 +220,14 @@ export class TokenComputeService implements ITokenComputeService {
             return this.pairCompute.lpTokenPriceUSD(pairAddress);
         }
 
-        const [egldPriceUSD, derivedEGLD, usdcPrice] = await Promise.all([
-            this.getEgldPriceInUSD(),
-            this.computeTokenPriceDerivedEGLD(tokenID, []),
+        const [rewaPriceUSD, derivedREWA, usdcPrice] = await Promise.all([
+            this.getRewaPriceInUSD(),
+            this.computeTokenPriceDerivedREWA(tokenID, []),
             this.dataApi.getTokenPrice('USDC'),
         ]);
 
-        return new BigNumber(derivedEGLD)
-            .times(egldPriceUSD)
+        return new BigNumber(derivedREWA)
+            .times(rewaPriceUSD)
             .times(usdcPrice)
             .toFixed();
     }
@@ -266,13 +266,13 @@ export class TokenComputeService implements ITokenComputeService {
     }
 
     async computeMissingPrevious24hPrice(tokenID: string): Promise<string> {
-        const [wrappedEGLDPrev24hPrice, derivedEGLD] = await Promise.all([
+        const [wrappedREWAPrev24hPrice, derivedREWA] = await Promise.all([
             this.tokenPrevious24hPrice(tokenProviderUSD),
-            this.tokenPriceDerivedEGLD(tokenID),
+            this.tokenPriceDerivedREWA(tokenID),
         ]);
 
-        return new BigNumber(derivedEGLD)
-            .times(wrappedEGLDPrev24hPrice)
+        return new BigNumber(derivedREWA)
+            .times(wrappedREWAPrev24hPrice)
             .toFixed();
     }
 

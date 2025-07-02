@@ -111,7 +111,7 @@ pub trait ExecutableModule:
 
         // Support only DCDT tokens for custom linking of tokens
         let token_identifier =
-            EgldOrDcdtTokenIdentifier::parse(link_token_payload.destination_token_address);
+            RewaOrDcdtTokenIdentifier::parse(link_token_payload.destination_token_address);
 
         require!(token_identifier.is_valid(), "Invalid token identifier");
 
@@ -138,8 +138,8 @@ pub trait ExecutableModule:
         let token_manager_address_mapper = self.token_manager_address(&data.token_id);
         if token_manager_address_mapper.is_empty() {
             require!(
-                self.call_value().egld_value().deref() == &BigUint::zero(),
-                "Can not send EGLD payment if not issuing DCDT"
+                self.call_value().rewa_value().deref() == &BigUint::zero(),
+                "Can not send REWA payment if not issuing DCDT"
             );
 
             // Only check that the call is valid, since this needs to be called twice with the same parameters
@@ -195,7 +195,7 @@ pub trait ExecutableModule:
         &self,
         token_id: &TokenId<Self::Api>,
         token_manager_type: TokenManagerType,
-        token_identifier: Option<EgldOrDcdtTokenIdentifier>,
+        token_identifier: Option<RewaOrDcdtTokenIdentifier>,
         operator: ManagedBuffer,
     ) -> ManagedAddress {
         let token_manager_address_mapper = self.token_manager_address(token_id);

@@ -319,15 +319,15 @@ export class SwapEventHandler {
     }
 
     private async updateTokenPrices(tokenID: string): Promise<void> {
-        const [tokenPriceDerivedEGLD, tokenPriceDerivedUSD] = await Promise.all(
+        const [tokenPriceDerivedREWA, tokenPriceDerivedUSD] = await Promise.all(
             [
-                this.tokenCompute.computeTokenPriceDerivedEGLD(tokenID, []),
+                this.tokenCompute.computeTokenPriceDerivedREWA(tokenID, []),
                 this.tokenCompute.computeTokenPriceDerivedUSD(tokenID),
             ],
         );
 
         const cacheKeys = await Promise.all([
-            this.tokenSetter.setDerivedEGLD(tokenID, tokenPriceDerivedEGLD),
+            this.tokenSetter.setDerivedREWA(tokenID, tokenPriceDerivedREWA),
             this.tokenSetter.setDerivedUSD(tokenID, tokenPriceDerivedUSD),
         ]);
 

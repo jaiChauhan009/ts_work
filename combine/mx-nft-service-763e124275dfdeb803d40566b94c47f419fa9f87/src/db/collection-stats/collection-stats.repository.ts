@@ -10,7 +10,7 @@ export class CollectionStatsRepository {
   async getStats(
     identifier: string,
     marketplaceKey: string = undefined,
-    paymentToken: string = mxConfig.egld,
+    paymentToken: string = mxConfig.rewa,
   ): Promise<CollectionStatsEntity> {
     const response = await this.manager.query(getCollectionStats(identifier, marketplaceKey, paymentToken));
     return response?.length > 0 ? response[0] : new CollectionStatsEntity();
@@ -19,7 +19,7 @@ export class CollectionStatsRepository {
   async getFloorPriceForCollection(
     identifier: string,
     marketplaceKey: string = undefined,
-    paymentToken: string = mxConfig.egld,
+    paymentToken: string = mxConfig.rewa,
   ): Promise<number> {
     const response = await this.manager.query(getCollectionStats(identifier, marketplaceKey, paymentToken));
     return response?.length > 0 ? response[0]?.minPrice ?? 0 : 0;

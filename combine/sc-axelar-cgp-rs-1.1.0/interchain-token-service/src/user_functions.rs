@@ -7,7 +7,7 @@ use token_manager::constants::TokenManagerType;
 use crate::abi::AbiEncodeDecode;
 use crate::abi_types::LinkTokenPayload;
 use crate::constants::{
-    Hash, TokenId, TransferAndGasTokens, EGLD_DECIMALS, DCDT_EGLD_IDENTIFIER,
+    Hash, TokenId, TransferAndGasTokens, REWA_DECIMALS, DCDT_REWA_IDENTIFIER,
     MESSAGE_TYPE_LINK_TOKEN, PREFIX_INTERCHAIN_TOKEN_ID,
 };
 use crate::{address_tracker, events, executable, proxy_gmp, proxy_its, remote};
@@ -22,15 +22,15 @@ pub trait UserFunctionsModule:
     + dharitri_sc_modules::pause::PauseModule
     + executable::ExecutableModule
 {
-    #[payable("EGLD")]
+    #[payable("REWA")]
     #[endpoint(registerTokenMetadata)]
-    fn register_token_metadata(&self, token_identifier: EgldOrDcdtTokenIdentifier) {
+    fn register_token_metadata(&self, token_identifier: RewaOrDcdtTokenIdentifier) {
         require!(token_identifier.is_valid(), "Invalid token identifier");
 
-        let gas_value = self.call_value().egld_value().clone_value();
+        let gas_value = self.call_value().rewa_value().clone_value();
 
-        if token_identifier.is_egld() {
-            self.register_token_metadata_raw(token_identifier, EGLD_DECIMALS, gas_value);
+        if token_identifier.is_rewa() {
+            self.register_token_metadata_raw(token_identifier, REWA_DECIMALS, gas_value);
 
             return;
         }
@@ -41,7 +41,7 @@ pub trait UserFunctionsModule:
     fn register_custom_token_raw(
         &self,
         deploy_salt: Hash<Self::Api>,
-        token_identifier: EgldOrDcdtTokenIdentifier,
+        token_identifier: RewaOrDcdtTokenIdentifier,
         token_manager_type: TokenManagerType,
         link_params: ManagedBuffer,
     ) -> TokenId<Self::Api> {
@@ -137,7 +137,7 @@ pub trait UserFunctionsModule:
         symbol: ManagedBuffer,
         decimals: u8,
         minter: ManagedBuffer,
-        egld_value: BigUint,
+        rewa_value: BigUint,
         initial_caller: ManagedAddress,
     ) -> TokenId<Self::Api> {
         let token_id = self.interchain_token_id_raw(&deploy_salt);
@@ -150,8 +150,8 @@ pub trait UserFunctionsModule:
             let token_manager_address_mapper = self.token_manager_address(&token_id);
             if token_manager_address_mapper.is_empty() {
                 require!(
-                    egld_value == BigUint::zero(),
-                    "Can not send EGLD payment if not issuing DCDT"
+                    rewa_value == BigUint::zero(),
+                    "Can not send REWA payment if not issuing DCDT"
                 );
 
                 self.deploy_token_manager_raw(
@@ -182,7 +182,7 @@ pub trait UserFunctionsModule:
                 initial_caller,
             );
         } else {
-            let gas_value = egld_value;
+            let gas_value = rewa_value;
 
             require!(
                 self.chain_name().get() != destination_chain,
@@ -239,16 +239,16 @@ pub trait UserFunctionsModule:
         let payments = self.call_value().any_payment();
 
         match payments {
-            EgldOrMultiDcdtPayment::Egld(value) => {
+            RewaOrMultiDcdtPayment::Rewa(value) => {
                 require!(value > gas_amount, "Invalid gas value");
 
                 TransferAndGasTokens {
-                    transfer_token: EgldOrDcdtTokenIdentifier::egld(),
+                    transfer_token: RewaOrDcdtTokenIdentifier::rewa(),
                     transfer_amount: &value - &gas_amount,
                     gas_amount,
                 }
             }
-            EgldOrMultiDcdtPayment::MultiDcdt(dcdts) => {
+            RewaOrMultiDcdtPayment::MultiDcdt(dcdts) => {
                 require!(
                     dcdts.len() <= 2,
                     "A maximum of two dcdt payments are supported"
@@ -262,7 +262,7 @@ pub trait UserFunctionsModule:
                 );
 
                 let token_identifier =
-                    EgldOrDcdtTokenIdentifier::dcdt(first_payment.token_identifier);
+                    RewaOrDcdtTokenIdentifier::dcdt(first_payment.token_identifier);
                 let amount = first_payment.amount;
 
                 let second_payment = dcdts.try_get(1);
@@ -271,7 +271,7 @@ pub trait UserFunctionsModule:
                     // If only one DCDT is set, make sure gas_amount is set to zero
                     require!(gas_amount == 0, "Gas amount should be zero");
                 } else {
-                    // If two DCDTs are sent, 2nd one should always be egld
+                    // If two DCDTs are sent, 2nd one should always be rewa
                     let second_payment = second_payment.unwrap();
 
                     require!(
@@ -281,8 +281,8 @@ pub trait UserFunctionsModule:
                     require!(second_payment.amount == gas_amount, "Invalid gas value");
                     require!(
                         second_payment.token_identifier.as_managed_buffer()
-                            == &ManagedBuffer::from(DCDT_EGLD_IDENTIFIER),
-                        "Only egld is supported for paying gas"
+                            == &ManagedBuffer::from(DCDT_REWA_IDENTIFIER),
+                        "Only rewa is supported for paying gas"
                     );
                 }
 

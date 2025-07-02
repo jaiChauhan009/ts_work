@@ -12,7 +12,7 @@ export const defaultNetworkSelector = createSelector(stateSelector, (state) => {
   return state.defaultNetwork;
 });
 
-export const egldLabelSelector = createSelector(
+export const rewaLabelSelector = createSelector(
   stateSelector,
-  (state) => state.activeNetwork.egldLabel
+  (state) => state.activeNetwork.rewaLabel
 );

@@ -1,4 +1,4 @@
-import { EGLD_IDENTIFIER } from 'constants/general';
+import { REWA_IDENTIFIER } from 'constants/general';
 import { DECIMALS } from 'lib';
 import { DcdtType, PairType } from 'types';
 
@@ -9,11 +9,11 @@ export const getTokenDecimals = ({
   pairs: PairType[];
   identifier: string;
 }) => {
-  const isEgld =
-    identifier === EGLD_IDENTIFIER ||
-    identifier.startsWith(`W${EGLD_IDENTIFIER}-`);
+  const isRewa =
+    identifier === REWA_IDENTIFIER ||
+    identifier.startsWith(`W${REWA_IDENTIFIER}-`);
 
-  if (isEgld) {
+  if (isRewa) {
     return DECIMALS;
   }
 

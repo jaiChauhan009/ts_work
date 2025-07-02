@@ -1,7 +1,7 @@
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, MxLink } from 'components';
-import { getEgldLabel } from 'lib';
+import { getRewaLabel } from 'lib';
 import { DataTestIdsEnum } from 'localConstants';
 import { routeNames } from 'routes';
 import { isChromeIOS } from '../../../helpers';
@@ -16,7 +16,7 @@ export const CreateDisclaimerScreen = ({
   networkRef,
   isValidNetwork
 }: CreateDisclaimerReturnType) => {
-  const egldLabel = getEgldLabel();
+  const rewaLabel = getRewaLabel();
 
   return (
     <div className='flex flex-col items-center gap-4 mt-10'>
@@ -78,7 +78,7 @@ export const CreateDisclaimerScreen = ({
 
               <label htmlFor='check-testnet'>
                 I understand that by using this wallet I will be transfering{' '}
-                <>{egldLabel === 'EGLD' ? 'real' : ''}</> <>{egldLabel}</>{' '}
+                <>{rewaLabel === 'REWA' ? 'real' : ''}</> <>{rewaLabel}</>{' '}
                 tokens.
               </label>
             </div>

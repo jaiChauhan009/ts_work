@@ -94,7 +94,7 @@ describe('FeesCollectorService', () => {
 
         const energyToken = await feesCollectorAbi.lockedTokenID();
         const tokens = [];
-        const firstToken = 'WEGLD-abcabc';
+        const firstToken = 'WREWA-abcabc';
         tokens.push(firstToken);
         let rewards = await service.getAccumulatedFees(
             Address.Zero().bech32(),
@@ -123,7 +123,7 @@ describe('FeesCollectorService', () => {
     });
 
     it('getAccumulatedFees' + ' should work', async () => {
-        const firstToken = 'WEGLD-abcabc';
+        const firstToken = 'WREWA-abcabc';
         const secondToken = 'MEX-abcabc';
         const rewardsFirstToken = '100';
         const rewardsSecondToken = '300';

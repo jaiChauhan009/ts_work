@@ -6,11 +6,11 @@ import { RolesModel } from 'src/modules/tokens/models/roles.model';
 
 export const Tokens = (tokenID: string): DcdtToken => {
     switch (tokenID) {
-        case 'WEGLD-123456':
+        case 'WREWA-123456':
             return new DcdtToken({
-                identifier: 'WEGLD-123456',
-                ticker: 'WEGLD',
-                name: 'WrappedEgld',
+                identifier: 'WREWA-123456',
+                ticker: 'WREWA',
+                name: 'WrappedRewa',
                 owner: Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000001',
                 ).bech32(),
@@ -33,7 +33,7 @@ export const Tokens = (tokenID: string): DcdtToken => {
                 assets: new AssetsModel(),
                 initialMinted: '1',
                 price: '10',
-                derivedEGLD: '1',
+                derivedREWA: '1',
                 roles: new RolesModel(),
             });
         case 'MEX-123456':
@@ -201,12 +201,12 @@ export const Tokens = (tokenID: string): DcdtToken => {
                 transactions: 1,
                 assets: new AssetsModel(),
             });
-        case 'EGLDUSDCLP-abcdef':
+        case 'REWAUSDCLP-abcdef':
             return new DcdtToken({
-                identifier: 'EGLDUSDCLP-abcdef',
-                name: 'EGLDUSDCLPToken',
+                identifier: 'REWAUSDCLP-abcdef',
+                name: 'REWAUSDCLPToken',
                 owner: scAddress.routerAddress,
-                ticker: 'EGLDUSDCLP',
+                ticker: 'REWAUSDCLP',
                 supply: '1000000000000000000',
                 decimals: 18,
                 isPaused: false,
@@ -228,11 +228,11 @@ export const Tokens = (tokenID: string): DcdtToken => {
                 price: '1',
                 roles: new RolesModel(),
             });
-        case 'EGLDMEXLP-abcdef':
+        case 'REWAMEXLP-abcdef':
             return new DcdtToken({
-                identifier: 'EGLDMEXLP-abcdef',
-                name: 'EGLDMEXLPToken',
-                ticker: 'EGLDMEXLP',
+                identifier: 'REWAMEXLP-abcdef',
+                name: 'REWAMEXLPToken',
+                ticker: 'REWAMEXLP',
                 type: 'FungibleDCDT',
                 owner: scAddress.routerAddress,
                 supply: '0',
@@ -252,11 +252,11 @@ export const Tokens = (tokenID: string): DcdtToken => {
                 transactions: 1,
                 assets: new AssetsModel(),
             });
-        case 'EGLDTOK4LP-abcdef':
+        case 'REWATOK4LP-abcdef':
             return new DcdtToken({
-                identifier: 'EGLDTOK4LP-abcdef',
-                name: 'EGLDTOK4LP',
-                ticker: 'EGLDTOK4LP',
+                identifier: 'REWATOK4LP-abcdef',
+                name: 'REWATOK4LP',
+                ticker: 'REWATOK4LP',
                 type: 'FungibleDCDT',
                 owner: scAddress.routerAddress,
                 supply: '1000000000000000000000000',
@@ -279,11 +279,11 @@ export const Tokens = (tokenID: string): DcdtToken => {
                 price: '10',
                 roles: new RolesModel(),
             });
-        case 'EGLDTOK5LP-abcdef':
+        case 'REWATOK5LP-abcdef':
             return new DcdtToken({
-                identifier: 'EGLDTOK5LP-abcdef',
-                name: 'EGLDTOK5LP',
-                ticker: 'EGLDTOK5LP',
+                identifier: 'REWATOK5LP-abcdef',
+                name: 'REWATOK5LP',
+                ticker: 'REWATOK5LP',
                 type: 'FungibleDCDT',
                 owner: scAddress.routerAddress,
                 supply: '1000000000000000000000000',
@@ -387,11 +387,11 @@ export const Tokens = (tokenID: string): DcdtToken => {
                 price: '10',
                 roles: new RolesModel(),
             });
-        case 'EGLDUSDTLP-abcdef':
+        case 'REWAUSDTLP-abcdef':
             return new DcdtToken({
-                identifier: 'EGLDUSDTLP-abcdef',
-                name: 'EGLDUSDTLP',
-                ticker: 'EGLDUSDTLP',
+                identifier: 'REWAUSDTLP-abcdef',
+                name: 'REWAUSDTLP',
+                ticker: 'REWAUSDTLP',
                 type: 'FungibleDCDT',
                 owner: scAddress.routerAddress,
                 supply: '1000000000000000000000000',
@@ -414,16 +414,16 @@ export const Tokens = (tokenID: string): DcdtToken => {
                 price: '10',
                 roles: new RolesModel(),
             });
-        case 'EGLDMEXFL-abcdef':
+        case 'REWAMEXFL-abcdef':
             return {
-                identifier: 'EGLDMEXFL-abcdef',
-                name: 'EGLDMEXLPStaked',
-                ticker: 'EGLDMEXFL',
+                identifier: 'REWAMEXFL-abcdef',
+                name: 'REWAMEXLPStaked',
+                ticker: 'REWAMEXFL',
                 type: 'FungibleDCDT',
                 owner: Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000021',
                 ).bech32(),
-                derivedEGLD: '0',
+                derivedREWA: '0',
                 supply: '10000000000000000000000000000',
                 decimals: 18,
                 isPaused: false,
@@ -444,16 +444,16 @@ export const Tokens = (tokenID: string): DcdtToken => {
                 price: '1',
                 roles: new RolesModel(),
             };
-        case 'EGLDMEXF-abcdef':
+        case 'REWAMEXF-abcdef':
             return {
-                identifier: 'EGLDMEXF-abcdef',
-                name: 'EGLDMEXLPStaked',
-                ticker: 'EGLDMEXF',
+                identifier: 'REWAMEXF-abcdef',
+                name: 'REWAMEXLPStaked',
+                ticker: 'REWAMEXF',
                 type: 'FungibleDCDT',
                 owner: Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000022',
                 ).bech32(),
-                derivedEGLD: '0',
+                derivedREWA: '0',
                 supply: '10000000000000000000000000000',
                 decimals: 18,
                 isPaused: false,
@@ -474,16 +474,16 @@ export const Tokens = (tokenID: string): DcdtToken => {
                 price: '1',
                 roles: new RolesModel(),
             };
-        case 'EGLDMEXFL-bcdefg':
+        case 'REWAMEXFL-bcdefg':
             return {
-                identifier: 'EGLDMEXFL-bcdefg',
-                name: 'EGLDMEXLPStaked',
-                ticker: 'EGLDMEXFL',
+                identifier: 'REWAMEXFL-bcdefg',
+                name: 'REWAMEXLPStaked',
+                ticker: 'REWAMEXFL',
                 type: 'FungibleDCDT',
                 owner: Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000023',
                 ).bech32(),
-                derivedEGLD: '0',
+                derivedREWA: '0',
                 supply: '10000000000000000000000000000',
                 decimals: 18,
                 isPaused: false,
@@ -504,16 +504,16 @@ export const Tokens = (tokenID: string): DcdtToken => {
                 price: '1',
                 roles: new RolesModel(),
             };
-        case 'EGLDTOK4FL-abcdef':
+        case 'REWATOK4FL-abcdef':
             return {
-                identifier: 'EGLDTOK4FL-abcdef',
-                name: 'EGLDTOK4LPStaked',
-                ticker: 'EGLDTOK4FL',
+                identifier: 'REWATOK4FL-abcdef',
+                name: 'REWATOK4LPStaked',
+                ticker: 'REWATOK4FL',
                 type: 'FungibleDCDT',
                 owner: Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000024',
                 ).bech32(),
-                derivedEGLD: '0',
+                derivedREWA: '0',
                 supply: '0',
                 decimals: 18,
                 isPaused: false,
@@ -544,9 +544,9 @@ export const pairs = [
         address: Address.fromHex(
             '0000000000000000000000000000000000000000000000000000000000000012',
         ).bech32(),
-        firstToken: Tokens('WEGLD-123456'),
+        firstToken: Tokens('WREWA-123456'),
         secondToken: Tokens('MEX-123456'),
-        liquidityPoolToken: Tokens('EGLDMEXLP-abcdef'),
+        liquidityPoolToken: Tokens('REWAMEXLP-abcdef'),
         info: {
             reserves0: '1000000000000000000000',
             reserves1: '1000000000000000000000000',
@@ -572,9 +572,9 @@ export const pairs = [
         address: Address.fromHex(
             '0000000000000000000000000000000000000000000000000000000000000013',
         ).bech32(),
-        firstToken: Tokens('WEGLD-123456'),
+        firstToken: Tokens('WREWA-123456'),
         secondToken: Tokens('USDC-123456'),
-        liquidityPoolToken: Tokens('EGLDUSDCLP-abcdef'),
+        liquidityPoolToken: Tokens('REWAUSDCLP-abcdef'),
         info: {
             reserves0: '1000000000000000000000',
             reserves1: '10000000000',
@@ -601,8 +601,8 @@ export const pairs = [
             '0000000000000000000000000000000000000000000000000000000000000014',
         ).bech32(),
         firstToken: Tokens('TOK4-123456'),
-        secondToken: Tokens('WEGLD-123456'),
-        liquidityPoolToken: Tokens('EGLDTOK4LP-abcdef'),
+        secondToken: Tokens('WREWA-123456'),
+        liquidityPoolToken: Tokens('REWATOK4LP-abcdef'),
         info: {
             reserves0: '100000000000000000000000',
             reserves1: '1000000000000000000000',
@@ -628,9 +628,9 @@ export const pairs = [
         address: Address.fromHex(
             '0000000000000000000000000000000000000000000000000000000000000015',
         ).bech32(),
-        firstToken: Tokens('WEGLD-123456'),
+        firstToken: Tokens('WREWA-123456'),
         secondToken: Tokens('TOK5-123456'),
-        liquidityPoolToken: Tokens('EGLDTOK5LP-abcdef'),
+        liquidityPoolToken: Tokens('REWATOK5LP-abcdef'),
         info: {
             reserves0: '1000000000000000000000',
             reserves1: '100000000000000000000000',
@@ -740,9 +740,9 @@ export const pairs = [
         address: Address.fromHex(
             '0000000000000000000000000000000000000000000000000000000000000019',
         ).bech32(),
-        firstToken: Tokens('WEGLD-123456'),
+        firstToken: Tokens('WREWA-123456'),
         secondToken: Tokens('USDT-123456'),
-        liquidityPoolToken: Tokens('EGLDUSDTLP-abcdef'),
+        liquidityPoolToken: Tokens('REWAUSDTLP-abcdef'),
         info: {
             reserves0: '1000000000000000000000',
             reserves1: '10000000000',
@@ -768,10 +768,10 @@ export const pairs = [
 
 export async function PairsMap(): Promise<Map<string, string[]>> {
     const pairsMap: Map<string, string[]> = new Map();
-    pairsMap.set('WEGLD-123456', ['MEX-123456', 'USDC-123456', 'TOK4-123456']);
-    pairsMap.set('MEX-123456', ['WEGLD-123456']);
-    pairsMap.set('USDC-123456', ['WEGLD-123456']);
-    pairsMap.set('TOK4-123456', ['WEGLD-123456']);
+    pairsMap.set('WREWA-123456', ['MEX-123456', 'USDC-123456', 'TOK4-123456']);
+    pairsMap.set('MEX-123456', ['WREWA-123456']);
+    pairsMap.set('USDC-123456', ['WREWA-123456']);
+    pairsMap.set('TOK4-123456', ['WREWA-123456']);
     return pairsMap;
 }
 

@@ -49,9 +49,9 @@ export class TokenSetterService extends GenericSetterService {
         );
     }
 
-    async setDerivedEGLD(tokenID: string, value: string): Promise<string> {
+    async setDerivedREWA(tokenID: string, value: string): Promise<string> {
         return await this.setData(
-            this.getTokenCacheKey(tokenID, 'tokenPriceDerivedEGLD'),
+            this.getTokenCacheKey(tokenID, 'tokenPriceDerivedREWA'),
             value,
             CacheTtlInfo.Price.remoteTtl,
             CacheTtlInfo.Price.localTtl,

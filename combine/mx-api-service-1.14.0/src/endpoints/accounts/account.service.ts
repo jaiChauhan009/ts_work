@@ -397,7 +397,7 @@ export class AccountService {
       encodedUserDeferredPaymentList,
       [encodedNumBlocksBeforeUnBond],
       {
-        erd_nonce,
+        drt_nonce,
       },
     ] = await Promise.all([
       this.vmQueryService.vmQuery(
@@ -414,7 +414,7 @@ export class AccountService {
     ]);
 
     const numBlocksBeforeUnBond = parseInt(BinaryUtils.base64ToBigInt(encodedNumBlocksBeforeUnBond).toString());
-    const erdNonce = erd_nonce;
+    const erdNonce = drt_nonce;
 
     const data: AccountDeferred[] = encodedUserDeferredPaymentList.reduce((result: AccountDeferred[], _, index, array) => {
       if (index % 2 === 0) {

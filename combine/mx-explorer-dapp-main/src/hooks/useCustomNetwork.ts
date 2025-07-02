@@ -13,7 +13,7 @@ export interface CustomNetworkErrorType {
   apiAddress?: string;
   chainId?: string;
   adapter?: string;
-  egldLabel?: string;
+  rewaLabel?: string;
   explorerAddress?: string;
 }
 
@@ -65,10 +65,10 @@ export const useCustomNetwork = (customUrl: string) => {
 
     const { data, success } = await getNetworkConfig(apiAddress);
     if (data && success) {
-      const { chainId, egldLabel, explorerAddress, walletAddress, name } =
+      const { chainId, rewaLabel, explorerAddress, walletAddress, name } =
         data as DappNetworkConfigType;
 
-      if (chainId && egldLabel && walletAddress && explorerAddress) {
+      if (chainId && rewaLabel && walletAddress && explorerAddress) {
         const customNetwork = {
           id: CUSTOM_NETWORK_ID,
           name: `Custom ${name ?? 'Network'}`,
@@ -77,7 +77,7 @@ export const useCustomNetwork = (customUrl: string) => {
           isCustom: true,
           apiAddress,
           chainId,
-          egldLabel,
+          rewaLabel,
           walletAddress,
           explorerAddress
         };

@@ -107,7 +107,7 @@ export class MXProxyService {
         return this.getSmartContract(
             scAddress.wrappingAddress.get(`shardID-${shardID}`),
             abiConfig.wrap,
-            'EgldDcdtSwap',
+            'RewaDcdtSwap',
         );
     }
 
@@ -118,7 +118,7 @@ export class MXProxyService {
         return this.getSmartContractTransaction(
             scAddress.wrappingAddress.get(`shardID-${shardID}`),
             abiConfig.wrap,
-            'EgldDcdtSwap',
+            'RewaDcdtSwap',
             options,
         );
     }

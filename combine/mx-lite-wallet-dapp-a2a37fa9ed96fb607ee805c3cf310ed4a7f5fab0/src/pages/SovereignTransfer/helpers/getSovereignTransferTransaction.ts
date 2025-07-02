@@ -4,7 +4,7 @@ import {
   Token
 } from '@terradharitri/sdk-core';
 import {
-  getEgldLabel,
+  getRewaLabel,
   parseAmount,
   Address,
   AddressValue,
@@ -26,8 +26,8 @@ export const getSovereignTransferTransaction = ({
   values: SovereignTransferFormType;
   tokens: (PartialNftType | TokenType)[];
 }) => {
-  const egldLabel = getEgldLabel();
-  const { WEGLDid = '' } = getCurrentNetwork();
+  const rewaLabel = getRewaLabel();
+  const { WREWAid = '' } = getCurrentNetwork();
   const factoryConfig = new TransactionsFactoryConfig({ chainID: chainId });
   const factory = new SmartContractTransactionsFactory({
     config: factoryConfig
@@ -55,7 +55,7 @@ export const getSovereignTransferTransaction = ({
       return new TokenTransfer({
         token: new Token({
           identifier:
-            realToken.identifier === egldLabel ? WEGLDid : realToken.identifier,
+            realToken.identifier === rewaLabel ? WREWAid : realToken.identifier,
           nonce: nonce ? BigInt(nonce) : undefined
         }),
         amount: BigInt(

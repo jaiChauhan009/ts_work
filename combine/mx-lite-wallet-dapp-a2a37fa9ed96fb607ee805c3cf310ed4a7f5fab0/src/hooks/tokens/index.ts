@@ -1,2 +1,2 @@
-export * from './useGetTokensWithEgld';
+export * from './useGetTokensWithRewa';
 export * from './useTokenOptions';

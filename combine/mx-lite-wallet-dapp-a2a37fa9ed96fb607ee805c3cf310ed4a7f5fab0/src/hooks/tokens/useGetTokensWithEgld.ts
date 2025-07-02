@@ -22,15 +22,15 @@ const defaultValues = {
   accounts: 0
 };
 
-export const useGetTokensWithEgld = () => {
+export const useGetTokensWithRewa = () => {
   const { websocketEvent, address, account } = useGetAccountInfo();
   const { network } = useGetNetworkConfig();
   const [fetchTokens, { data: tokens, isLoading }] = useLazyGetTokensQuery();
 
-  const egldToken: TokenType = {
+  const rewaToken: TokenType = {
     ...defaultValues,
-    identifier: network.egldLabel,
-    name: network.egldLabel,
+    identifier: network.rewaLabel,
+    name: network.rewaLabel,
     balance: account?.balance
   };
 
@@ -38,7 +38,7 @@ export const useGetTokensWithEgld = () => {
     fetchTokens(address);
   }, [address, websocketEvent]);
 
-  const usedTokens = [egldToken, ...(tokens ?? [])];
+  const usedTokens = [rewaToken, ...(tokens ?? [])];
 
   return {
     tokens: uniqBy(usedTokens, 'identifier'),

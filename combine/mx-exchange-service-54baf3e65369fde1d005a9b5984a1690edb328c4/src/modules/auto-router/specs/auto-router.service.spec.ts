@@ -103,7 +103,7 @@ describe('AutoRouterService', () => {
     it('should get swap data for simple swap with default inputs', async () => {
         const swap = await service.swap({
             tokenInID: 'USDC-123456',
-            tokenOutID: 'WEGLD-123456',
+            tokenOutID: 'WREWA-123456',
             tolerance: 0.01,
         });
 
@@ -111,7 +111,7 @@ describe('AutoRouterService', () => {
             new AutoRouteModel({
                 swapType: 0,
                 tokenInID: 'USDC-123456',
-                tokenOutID: 'WEGLD-123456',
+                tokenOutID: 'WREWA-123456',
                 tokenInExchangeRate: '99690060900928177',
                 tokenOutExchangeRate: '10031090',
                 tokenInExchangeRateDenom: '0.099690060900928177',
@@ -121,15 +121,15 @@ describe('AutoRouterService', () => {
                 amountIn: '1000000',
                 amountOut: '99690060900928177',
                 intermediaryAmounts: ['1000000', '99690060900928177'],
-                tokenRoute: ['USDC-123456', 'WEGLD-123456'],
+                tokenRoute: ['USDC-123456', 'WREWA-123456'],
                 pairs: [
                     new PairModel({
                         address: Address.newFromHex(
                             '0000000000000000000000000000000000000000000000000000000000000013',
                         ).toBech32(),
                         firstToken: new DcdtToken({
-                            identifier: Tokens('WEGLD-123456').identifier,
-                            decimals: Tokens('WEGLD-123456').decimals,
+                            identifier: Tokens('WREWA-123456').identifier,
+                            decimals: Tokens('WREWA-123456').decimals,
                         }),
                         secondToken: new DcdtToken({
                             identifier: Tokens('USDC-123456').identifier,
@@ -154,14 +154,14 @@ describe('AutoRouterService', () => {
         const swap = await service.swap({
             amountIn: '2000000',
             tokenInID: 'USDC-123456',
-            tokenOutID: 'WEGLD-123456',
+            tokenOutID: 'WREWA-123456',
             tolerance: 0.01,
         });
         expect(swap).toEqual(
             new AutoRouteModel({
                 swapType: 0,
                 tokenInID: 'USDC-123456',
-                tokenOutID: 'WEGLD-123456',
+                tokenOutID: 'WREWA-123456',
                 tokenInExchangeRate: '99680123783317606',
                 tokenOutExchangeRate: '10032090',
                 tokenInExchangeRateDenom: '0.099680123783317606',
@@ -171,15 +171,15 @@ describe('AutoRouterService', () => {
                 amountIn: '2000000',
                 amountOut: '199360247566635212',
                 intermediaryAmounts: ['2000000', '199360247566635212'],
-                tokenRoute: ['USDC-123456', 'WEGLD-123456'],
+                tokenRoute: ['USDC-123456', 'WREWA-123456'],
                 pairs: [
                     new PairModel({
                         address: Address.newFromHex(
                             '0000000000000000000000000000000000000000000000000000000000000013',
                         ).toBech32(),
                         firstToken: new DcdtToken({
-                            identifier: Tokens('WEGLD-123456').identifier,
-                            decimals: Tokens('WEGLD-123456').decimals,
+                            identifier: Tokens('WREWA-123456').identifier,
+                            decimals: Tokens('WREWA-123456').decimals,
                         }),
                         secondToken: new DcdtToken({
                             identifier: Tokens('USDC-123456').identifier,
@@ -226,15 +226,15 @@ describe('AutoRouterService', () => {
                     '1004013040121365097',
                     '1000000000000000000000',
                 ],
-                tokenRoute: ['USDC-123456', 'WEGLD-123456', 'MEX-123456'],
+                tokenRoute: ['USDC-123456', 'WREWA-123456', 'MEX-123456'],
                 pairs: [
                     new PairModel({
                         address: Address.newFromHex(
                             '0000000000000000000000000000000000000000000000000000000000000013',
                         ).toBech32(),
                         firstToken: new DcdtToken({
-                            identifier: Tokens('WEGLD-123456').identifier,
-                            decimals: Tokens('WEGLD-123456').decimals,
+                            identifier: Tokens('WREWA-123456').identifier,
+                            decimals: Tokens('WREWA-123456').decimals,
                         }),
                         secondToken: new DcdtToken({
                             identifier: Tokens('USDC-123456').identifier,
@@ -252,8 +252,8 @@ describe('AutoRouterService', () => {
                             '0000000000000000000000000000000000000000000000000000000000000012',
                         ).toBech32(),
                         firstToken: new DcdtToken({
-                            identifier: Tokens('WEGLD-123456').identifier,
-                            decimals: Tokens('WEGLD-123456').decimals,
+                            identifier: Tokens('WREWA-123456').identifier,
+                            decimals: Tokens('WREWA-123456').decimals,
                         }),
                         secondToken: new DcdtToken({
                             identifier: Tokens('MEX-123456').identifier,
@@ -279,7 +279,7 @@ describe('AutoRouterService', () => {
             senderAddress,
             new AutoRouteModel({
                 swapType: 0,
-                tokenInID: 'EGLD',
+                tokenInID: 'REWA',
                 tokenOutID: 'USDC-123456',
                 tokenInExchangeRate: '4960273038901078',
                 tokenOutExchangeRate: '201601805416248751341',
@@ -291,7 +291,7 @@ describe('AutoRouterService', () => {
                     '1000000000000000000',
                     '4960273038901078',
                 ],
-                tokenRoute: ['USDC-123456', 'WEGLD-123456'],
+                tokenRoute: ['USDC-123456', 'WREWA-123456'],
                 pairs: [
                     new PairModel({
                         address: Address.newFromHex(
@@ -329,7 +329,7 @@ describe('AutoRouterService', () => {
             new AutoRouteModel({
                 swapType: 1,
                 tokenInID: 'USDC-123456',
-                tokenOutID: 'EGLD',
+                tokenOutID: 'REWA',
                 tokenInExchangeRate: '4962567499999999',
                 tokenOutExchangeRate: '201508594089652181902',
                 tokenInPriceUSD: '1',
@@ -341,7 +341,7 @@ describe('AutoRouterService', () => {
                     '626881033727',
                     '500000000000000000',
                 ],
-                tokenRoute: ['USDC-123456', 'WEGLD-123456', 'MEX-123456'],
+                tokenRoute: ['USDC-123456', 'WREWA-123456', 'MEX-123456'],
                 pairs: [
                     new PairModel({
                         address: Address.newFromHex(
@@ -398,7 +398,7 @@ describe('AutoRouterService', () => {
                     '1004013040121365097',
                     '1000000000000000000000',
                 ],
-                tokenRoute: ['USDC-123456', 'WEGLD-123456', 'MEX-123456'],
+                tokenRoute: ['USDC-123456', 'WREWA-123456', 'MEX-123456'],
                 pairs: [
                     new PairModel({
                         address: Address.newFromHex(

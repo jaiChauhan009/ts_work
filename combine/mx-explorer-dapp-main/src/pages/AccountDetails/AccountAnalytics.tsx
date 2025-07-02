@@ -20,7 +20,7 @@ export const AccountAnalytics = () => {
   const { account } = useSelector(accountSelector);
   const { address } = account;
   const [searchParams] = useSearchParams();
-  const { id: activeNetworkId, egldLabel } = useSelector(activeNetworkSelector);
+  const { id: activeNetworkId, rewaLabel } = useSelector(activeNetworkSelector);
   const { getAccountHistory } = useAdapter();
 
   const [dataReady, setDataReady] = useState<boolean | undefined>();
@@ -63,7 +63,7 @@ export const AccountAnalytics = () => {
       data: chartData,
       showUsdValue: true,
       yAxisConfig: {
-        currency: egldLabel,
+        currency: rewaLabel,
         orientation: 'left'
       }
     }
@@ -77,7 +77,7 @@ export const AccountAnalytics = () => {
         <div className='card-header-item table-card-header d-flex justify-content-between align-items-center flex-wrap gap-3'>
           <AccountTabs />
           <div className='d-flex align-items-center '>
-            Account {egldLabel} Balance{' '}
+            Account {rewaLabel} Balance{' '}
             {chartData.length > 1 && (
               <span className='text-neutral-400 ms-1'>
                 ( from {startDate} to {endDate} )

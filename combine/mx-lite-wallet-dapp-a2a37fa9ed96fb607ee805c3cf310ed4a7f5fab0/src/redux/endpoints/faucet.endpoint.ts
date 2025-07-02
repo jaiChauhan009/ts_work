@@ -2,7 +2,7 @@ import { PartialTokenType } from '@terradharitri/sdk-dapp-form';
 import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query';
 import { faucetSettingEndpoint, faucetEndpoint } from 'config';
 import { getAxiosConfig, getExtrasApi } from 'helpers';
-import { formatAmount, getEgldLabel, stringIsInteger } from 'lib';
+import { formatAmount, getRewaLabel, stringIsInteger } from 'lib';
 import { DECIMALS, DIGITS, TOKENS_ENDPOINT, ZERO } from 'localConstants';
 import { RootApi } from 'redux/rootApi';
 
@@ -24,7 +24,7 @@ const faucetEndpoints = RootApi.injectEndpoints({
   endpoints: (builder) => ({
     getFaucetSettings: builder.query<FaucetSettingsReturnType, void>({
       async queryFn(_, _queryApi, _extraOptions, fetchWithBQ) {
-        const egldLabel = getEgldLabel();
+        const rewaLabel = getRewaLabel();
 
         const settingsData = await fetchWithBQ({
           ...getAxiosConfig(faucetSettingEndpoint),
@@ -38,7 +38,7 @@ const faucetEndpoints = RootApi.injectEndpoints({
         const { token, tokenAmount, amount, recaptchaBypass } =
           settingsData.data as FaucetSettingsType;
 
-        const egldAmount = formatAmount({
+        const rewaAmount = formatAmount({
           input: stringIsInteger(amount) ? amount : ZERO,
           digits: DIGITS,
           decimals: DECIMALS,
@@ -46,7 +46,7 @@ const faucetEndpoints = RootApi.injectEndpoints({
           addCommas: true
         });
 
-        const faucetTokenList = `${egldAmount} ${egldLabel}`;
+        const faucetTokenList = `${rewaAmount} ${rewaLabel}`;
 
         if (!token || !tokenAmount) {
           return { data: { token: faucetTokenList, recaptchaBypass } };

@@ -42,10 +42,10 @@ export class ProxyPairTransactionsService {
     ): Promise<TransactionModel[]> {
         const transactions: TransactionModel[] = [];
 
-        switch (mxConfig.EGLDIdentifier) {
+        switch (mxConfig.REWAIdentifier) {
             case args.tokens[0].tokenID:
                 transactions.push(
-                    await this.wrapTransaction.wrapEgld(
+                    await this.wrapTransaction.wrapRewa(
                         sender,
                         args.tokens[0].amount,
                     ),
@@ -53,14 +53,14 @@ export class ProxyPairTransactionsService {
                 break;
             case args.tokens[1].tokenID:
                 transactions.push(
-                    await this.wrapTransaction.wrapEgld(
+                    await this.wrapTransaction.wrapRewa(
                         sender,
                         args.tokens[1].amount,
                     ),
                 );
                 break;
             default:
-                throw new Error('No EGLD to wrap found!');
+                throw new Error('No REWA to wrap found!');
         }
 
         transactions.push(
@@ -136,7 +136,7 @@ export class ProxyPairTransactionsService {
         const transactions = [];
         const [wrappedTokenID, firstTokenID, secondTokenID, liquidityPosition] =
             await Promise.all([
-                this.wrapAbi.wrappedEgldTokenID(),
+                this.wrapAbi.wrappedRewaTokenID(),
                 this.pairAbi.firstTokenID(args.pairAddress),
                 this.pairAbi.secondTokenID(args.pairAddress),
                 this.pairService.getLiquidityPosition(
@@ -186,7 +186,7 @@ export class ProxyPairTransactionsService {
         switch (wrappedTokenID) {
             case firstTokenID:
                 transactions.push(
-                    await this.wrapTransaction.unwrapEgld(
+                    await this.wrapTransaction.unwrapRewa(
                         sender,
                         amount0Min.toFixed(),
                     ),
@@ -194,7 +194,7 @@ export class ProxyPairTransactionsService {
                 break;
             case secondTokenID:
                 transactions.push(
-                    await this.wrapTransaction.unwrapEgld(
+                    await this.wrapTransaction.unwrapRewa(
                         sender,
                         amount1Min.toFixed(),
                     ),
@@ -267,12 +267,12 @@ export class ProxyPairTransactionsService {
     private async convertInputTokenstoDCDTTokens(
         tokens: InputTokenModel[],
     ): Promise<InputTokenModel[]> {
-        const wrappedTokenID = await this.wrapAbi.wrappedEgldTokenID();
+        const wrappedTokenID = await this.wrapAbi.wrappedRewaTokenID();
 
-        switch (mxConfig.EGLDIdentifier) {
+        switch (mxConfig.REWAIdentifier) {
             case tokens[0].tokenID:
                 if (tokens[0].nonce > 0) {
-                    throw new Error('Invalid nonce for EGLD token!');
+                    throw new Error('Invalid nonce for REWA token!');
                 }
                 return [
                     new InputTokenModel({
@@ -284,7 +284,7 @@ export class ProxyPairTransactionsService {
                 ];
             case tokens[1].tokenID:
                 if (tokens[1].nonce > 0) {
-                    throw new Error('Invalid nonce for EGLD token!');
+                    throw new Error('Invalid nonce for REWA token!');
                 }
                 return [
                     tokens[0],

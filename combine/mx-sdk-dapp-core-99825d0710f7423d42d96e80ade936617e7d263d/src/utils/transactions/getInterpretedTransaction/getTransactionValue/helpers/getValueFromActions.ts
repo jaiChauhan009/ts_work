@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js';
 import { InterpretedTransactionType } from 'types/serverTransactions.types';
-import { getEgldValueData } from './getEgldValueData';
+import { getRewaValueData } from './getRewaValueData';
 
 let warningLogged = false;
 
@@ -8,7 +8,7 @@ export function getValueFromActions(transaction: InterpretedTransactionType) {
   const value = new BigNumber(transaction.action?.arguments?.value);
 
   if (!value.isNaN()) {
-    return getEgldValueData(transaction.action?.arguments?.value);
+    return getRewaValueData(transaction.action?.arguments?.value);
   }
 
   if (!warningLogged) {
@@ -19,5 +19,5 @@ export function getValueFromActions(transaction: InterpretedTransactionType) {
   }
 
   // fallback on transaction value
-  return getEgldValueData(transaction.value);
+  return getRewaValueData(transaction.value);
 }

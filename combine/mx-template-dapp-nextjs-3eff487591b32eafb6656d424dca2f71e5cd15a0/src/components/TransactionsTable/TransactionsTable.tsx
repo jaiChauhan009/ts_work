@@ -30,7 +30,7 @@ export const TransactionsTable = ({
     const transactionsData =
       await TransactionsTableController.processTransactions({
         address,
-        egldLabel: network.egldLabel,
+        rewaLabel: network.rewaLabel,
         explorerAddress: network.explorerAddress,
         transactions
       });

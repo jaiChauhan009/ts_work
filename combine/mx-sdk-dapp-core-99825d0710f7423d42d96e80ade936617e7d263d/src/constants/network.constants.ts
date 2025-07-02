@@ -9,7 +9,7 @@ export const fallbackNetworkConfigurations: Record<
     id: 'devnet',
     chainId: 'D',
     name: 'Devnet',
-    egldLabel: 'xEGLD',
+    rewaLabel: 'xREWA',
     decimals: '18',
     digits: '4',
     gasPerDataByte: '1500',
@@ -25,7 +25,7 @@ export const fallbackNetworkConfigurations: Record<
     id: 'testnet',
     chainId: 'T',
     name: 'Testnet',
-    egldLabel: 'xEGLD',
+    rewaLabel: 'xREWA',
     decimals: '18',
     digits: '4',
     gasPerDataByte: '1500',
@@ -41,7 +41,7 @@ export const fallbackNetworkConfigurations: Record<
     id: 'mainnet',
     chainId: '1',
     name: 'Mainnet',
-    egldLabel: 'EGLD',
+    rewaLabel: 'REWA',
     decimals: '18',
     digits: '4',
     gasPerDataByte: '1500',
@@ -55,20 +55,20 @@ export const fallbackNetworkConfigurations: Record<
   }
 };
 
-const { chainId: DEVNET_CHAIN_ID, egldLabel: DEVNET_EGLD_LABEL } =
+const { chainId: DEVNET_CHAIN_ID, rewaLabel: DEVNET_REWA_LABEL } =
   fallbackNetworkConfigurations[EnvironmentsEnum.devnet];
-const { chainId: TESTNET_CHAIN_ID, egldLabel: TESTNET_EGLD_LABEL } =
+const { chainId: TESTNET_CHAIN_ID, rewaLabel: TESTNET_REWA_LABEL } =
   fallbackNetworkConfigurations[EnvironmentsEnum.testnet];
-const { chainId: MAINNET_CHAIN_ID, egldLabel: MAINNET_EGLD_LABEL } =
+const { chainId: MAINNET_CHAIN_ID, rewaLabel: MAINNET_REWA_LABEL } =
   fallbackNetworkConfigurations[EnvironmentsEnum.mainnet];
 
 export {
   DEVNET_CHAIN_ID,
-  DEVNET_EGLD_LABEL,
+  DEVNET_REWA_LABEL,
   MAINNET_CHAIN_ID,
-  MAINNET_EGLD_LABEL,
+  MAINNET_REWA_LABEL,
   TESTNET_CHAIN_ID,
-  TESTNET_EGLD_LABEL
+  TESTNET_REWA_LABEL
 };
 
 export const chainIdByEnvironment: Record<EnvironmentsEnum, string> = {

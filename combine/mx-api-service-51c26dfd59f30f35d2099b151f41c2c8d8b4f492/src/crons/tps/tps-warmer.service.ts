@@ -125,7 +125,7 @@ export class TpsWarmerService {
 
   private async getEndNonce(shardId: number): Promise<number> {
     const networkStatus = await this.gatewayService.getNetworkStatus(shardId);
-    return networkStatus.erd_nonce;
+    return networkStatus.drt_nonce;
   }
 
   private async processTpsForShardAndNonce(shardId: number, nonce: number): Promise<number> {

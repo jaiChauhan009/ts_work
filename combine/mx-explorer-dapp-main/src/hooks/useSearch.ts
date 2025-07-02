@@ -44,7 +44,7 @@ export const useSearch = (hash: string) => {
   const [searchRoute, setSearchRoute] = useState('');
   const [isSearching, setIsSearching] = useState<undefined | boolean>();
 
-  const { egldLabel } = useSelector(activeNetworkSelector);
+  const { rewaLabel } = useSelector(activeNetworkSelector);
   const notFoundRoute = networkRoute(`/search/${searchHash}`);
 
   const search = async () => {
@@ -77,16 +77,16 @@ export const useSearch = (hash: string) => {
           searchHash.length < 65 &&
           addressIsBech32(bech32.encode(searchHash, hrp));
       } catch {}
-      let isErdAddress = false;
+      let isDrtAddress = false;
       try {
-        const erdAddress = Address.newFromBech32(searchHash);
-        isErdAddress = erdAddress.getHrp() === DEFAULT_HRP;
+        const drtAddress = Address.newFromBech32(searchHash);
+        isDrtAddress = drtAddress.getHrp() === DEFAULT_HRP;
       } catch {}
 
       switch (true) {
         case isNativeToken:
           const newRoute = networkRoute(
-            urlBuilder.nativeTokenDetails(egldLabel ?? 'EGLD')
+            urlBuilder.nativeTokenDetails(rewaLabel ?? 'REWA')
           );
           setSearchRoute(newRoute);
 
@@ -100,16 +100,16 @@ export const useSearch = (hash: string) => {
           });
           break;
 
-        case isErdAddress:
+        case isDrtAddress:
         case isAccount:
           let searchAddress = searchHash;
-          if (isErdAddress) {
+          if (isDrtAddress) {
             try {
-              const erdAddress = new Address(
+              const drtAddress = new Address(
                 Address.newFromBech32(searchHash).getPublicKey(),
                 hrp
               ).toBech32();
-              searchAddress = erdAddress;
+              searchAddress = drtAddress;
             } catch {}
           }
 

@@ -320,7 +320,7 @@ If we only want to fetch a specific key, we can do so as follows:
 
 ### Waiting for an Account to Meet a Condition
 There are times when we need to wait for a specific condition to be met before proceeding with an action.
-For example, let's say we want to send 7 EGLD from Alice to Bob, but this can only happen once Alice's balance reaches at least 7 EGLD.
+For example, let's say we want to send 7 REWA from Alice to Bob, but this can only happen once Alice's balance reaches at least 7 REWA.
 This approach is useful in scenarios where you're waiting for external funds to be sent to Alice, enabling her to transfer the required amount to another recipient.
 
 To implement this, we need to define the condition to check each time the account is fetched from the network. We create a function that takes an `AccountOnNetwork` object as an argument and returns a `bool`.
@@ -332,7 +332,7 @@ Keep in mind that this method has a default timeout, which can be adjusted using
     const api = entrypoint.createNetworkProvider();
 
     const condition = (account: any) => {
-        return account.balance >= 7000000000000000000n; // 7 EGLD
+        return account.balance >= 7000000000000000000n; // 7 REWA
     };
     const alice = Address.newFromBech32("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th");
     const account = await api.awaitAccountOnCondition(alice, condition);
@@ -635,7 +635,7 @@ There are two ways to create controllers and factories:
 ```
 
 ### Token transfers
-We can send both native tokens (EGLD) and DCDT tokens using either the controller or the factory.
+We can send both native tokens (REWA) and DCDT tokens using either the controller or the factory.
 #### Native Token Transfers Using the Controller
 When using the controller, the transaction will be signed because we’ll be working with an Account.
 
@@ -1097,7 +1097,7 @@ In our case, calling the add endpoint does not return anything, but similar to t
 
 #### Calling a smart contract and sending tokens (transfer & execute)
 Additionally, if an endpoint requires a payment when called, we can send tokens to the contract while creating a smart contract call transaction.
-Both EGLD and DCDT tokens or a combination of both can be sent. This functionality is supported by both the controller and the factory.
+Both REWA and DCDT tokens or a combination of both can be sent. This functionality is supported by both the controller and the factory.
 
 ```js
 {
@@ -2257,7 +2257,7 @@ By **undelegating**, we signal the contract that we want to retrieve our staked 
 
     const transaction = await controller.createTransactionForUndelegating(alice, alice.getNonceThenIncrement(), {
         delegationContract: contract,
-        amount: 1000000000000000000000n, // 1000 EGLD
+        amount: 1000000000000000000000n, // 1000 REWA
     });
 
     // sending the transaction
@@ -2279,7 +2279,7 @@ By **undelegating**, we signal the contract that we want to retrieve our staked 
 
     const transaction = await factory.createTransactionForUndelegating(alice.address, {
         delegationContract: contract,
-        amount: 1000000000000000000000n, // 1000 EGLD
+        amount: 1000000000000000000000n, // 1000 REWA
     });
     // fetch the nonce of the network
     alice.nonce = await entrypoint.recallAccountNonce(alice.address);

@@ -819,18 +819,18 @@ export const keystoreWalletNfts = [
     isNsfw: false
   },
   {
-    identifier: 'EGLDMEXFL-2ed783-04',
-    collection: 'EGLDMEXFL-2ed783',
+    identifier: 'REWAMEXFL-2ed783-04',
+    collection: 'REWAMEXFL-2ed783',
     attributes:
       'AAAABhSeHDNSrwAAAAAAAASrAAAAAAAAAAgCsgKYUvWXVnXLh8JDUaZ7iS9X3OwOsrKgeq+rLxqrdBoQ/GEFny/o',
     nonce: 4,
     type: 'MetaDCDT',
-    name: 'EGLDMEXLPStakedLK',
+    name: 'REWAMEXLPStakedLK',
     creator: 'erd1qqqqqqqqqqqqqpgqqjpfmappkpzq6kdju3mkqepk3d2kcymu0n4srd45sa',
     isWhitelistedStorage: false,
     balance: '194220587180463958',
     decimals: 18,
-    ticker: 'EGLDMEXFL-2ed783',
+    ticker: 'REWAMEXFL-2ed783',
     price: 51.549192855952654,
     valueUsd: 10.011914505162101
   },

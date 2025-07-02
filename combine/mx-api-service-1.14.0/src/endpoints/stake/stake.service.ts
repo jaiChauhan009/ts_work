@@ -54,8 +54,8 @@ export class StakeService {
     const validators = await this.getValidators();
 
     const economics = await this.gatewayService.getNetworkEconomics();
-    const totalBaseStaked = economics.erd_total_base_staked_value;
-    const totalTopUp = economics.erd_total_top_up_value;
+    const totalBaseStaked = economics.drt_total_base_staked_value;
+    const totalTopUp = economics.drt_total_top_up_value;
 
     const totalStaked = BigInt(BigInt(totalBaseStaked) + BigInt(totalTopUp)).toString();
     const totalObservers = await this.nodeService.getNodeCount(new NodeFilter({ type: NodeType.observer }));

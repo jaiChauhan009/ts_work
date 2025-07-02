@@ -115,7 +115,7 @@ export enum MultisigActionEnum {
     AddProposer = "AddProposer",
     RemoveUser = "RemoveUser",
     ChangeQuorum = "ChangeQuorum",
-    SendTransferExecuteEgld = "SendTransferExecuteEgld",
+    SendTransferExecuteRewa = "SendTransferExecuteRewa",
     SendTransferExecuteDcdt = "SendTransferExecuteDcdt",
     SendAsyncCall = "SendAsyncCall",
     SCDeployFromSource = "SCDeployFromSource",
@@ -171,7 +171,7 @@ export class ChangeQuorum extends MultisigAction {
     }
 }
 
-export class SendTransferExecuteEgld extends MultisigAction {
+export class SendTransferExecuteRewa extends MultisigAction {
     receiver: Address;
     amount: bigint;
     optionalGasLimit?: bigint;
@@ -180,9 +180,9 @@ export class SendTransferExecuteEgld extends MultisigAction {
 
     constructor(data: any) {
         super();
-        this.type = MultisigActionEnum.SendTransferExecuteEgld;
+        this.type = MultisigActionEnum.SendTransferExecuteRewa;
         this.receiver = data.to;
-        this.amount = BigInt(data.egld_amount?.toFixed() ?? 0);
+        this.amount = BigInt(data.rewa_amount?.toFixed() ?? 0);
         this.optionalGasLimit = BigInt(data.opt_gas_limit?.toFixed() ?? 0);
         this.functionName = data.endpoint_name.toString();
         this.arguments = data.arguments;
@@ -224,7 +224,7 @@ export class SendAsyncCall extends MultisigAction {
         super();
         this.type = MultisigActionEnum.SendAsyncCall;
         this.receiver = data.to;
-        this.amount = BigInt(data.egld_amount?.toFixed() ?? 0);
+        this.amount = BigInt(data.rewa_amount?.toFixed() ?? 0);
         this.optionalGasLimit = BigInt(data.opt_gas_limit?.toFixed() ?? 0);
         this.funcionName = data.endpoint_name.toString();
         this.arguments = data.arguments;

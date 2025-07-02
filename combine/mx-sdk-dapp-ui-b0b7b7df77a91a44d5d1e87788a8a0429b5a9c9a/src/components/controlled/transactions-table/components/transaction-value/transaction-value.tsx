@@ -29,7 +29,7 @@ export class TransactionValue {
             class={classNames('mr-1', { 'text-truncate': this.value.svgUrl })}
             dataTestId={DataTestIdsEnum.transactionActionFormattedAmount}
             isValid={true}
-            label={this.value.egldLabel}
+            label={this.value.rewaLabel}
             valueDecimal={this.value.valueDecimal}
             valueInteger={this.value.valueInteger}
           />

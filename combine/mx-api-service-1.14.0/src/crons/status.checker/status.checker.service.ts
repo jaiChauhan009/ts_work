@@ -363,8 +363,8 @@ export class StatusCheckerService {
   async getCurrentRoundAndNonce(shardId: number): Promise<{ round: number, nonce: number }> {
     const result = await this.gatewayService.get(`network/status/${shardId}`, GatewayComponentRequest.networkStatus);
     return {
-      round: result.status.erd_current_round,
-      nonce: result.status.erd_nonce,
+      round: result.status.drt_current_round,
+      nonce: result.status.drt_nonce,
     };
   }
 

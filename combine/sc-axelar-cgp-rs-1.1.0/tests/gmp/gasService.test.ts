@@ -585,7 +585,7 @@ test('Collect fees', async () => {
 
       e.U32(2),
       e.Str(TOKEN_IDENTIFIER),
-      e.Str('EGLD'),
+      e.Str('REWA'),
 
       e.U32(2),
       e.U(1_000),
@@ -643,7 +643,7 @@ test('Collect fees too much asked', async () => {
       e.U32(3),
       e.Str(TOKEN_IDENTIFIER),
       e.Str(TOKEN_IDENTIFIER),
-      e.Str('EGLD'),
+      e.Str('REWA'),
 
       e.U32(3),
       e.U(750),
@@ -661,7 +661,7 @@ test('Collect fees too much asked', async () => {
 
       e.U32(2),
       e.Str(TOKEN_IDENTIFIER),
-      e.Str('EGLD'),
+      e.Str('REWA'),
 
       e.U32(2),
       e.U(10_000), // Higher than balance so will do nothing
@@ -719,7 +719,7 @@ test('Refund invalid address', async () => {
   }).assertFail({ code: 4, message: 'Invalid address' });
 });
 
-test('Refund egld', async () => {
+test('Refund rewa', async () => {
   await deployContract();
 
   await contract.setAccount({
@@ -738,7 +738,7 @@ test('Refund egld', async () => {
       e.Str('txHash'),
       e.U(1),
       e.Addr(deployer.toString()),
-      e.Str('EGLD'),
+      e.Str('REWA'),
       e.U(500),
     ],
   });

@@ -221,7 +221,7 @@ If you are using React, all hooks can be found under the `/out/react` folder. Al
 out/react/
 ├── account/useGetAccount ### access account data like address, balance and nonce
 ├── loginInfo/useGetLoginInfo ### access login data like accessToken and provider type
-├── network/useGetNetworkConfig ### access network information like chainId and egldLabel
+├── network/useGetNetworkConfig ### access network information like chainId and rewaLabel
 ├── store/useSelector ### make use of the useSelector hook for querying the store via selectors
 └── transactions/useGetTransactionSessions ### access all current and historic transaction sessions
 ```
@@ -234,11 +234,11 @@ import { useGetNetworkConfig } from '@terradharitri/sdk-dapp/out/react/network/u
 
 const account = useGetAccount();
 const {
-  network: { egldLabel }
+  network: { rewaLabel }
 } = useGetNetworkConfig();
 
 console.log(account.address);
-console.log(`${account.balance} ${egldLabel}`);
+console.log(`${account.balance} ${rewaLabel}`);
 ```
 
 #### 3.2 Store selector functions:
@@ -250,7 +250,7 @@ import { getAccount } from '@terradharitri/sdk-dapp/out/methods/account/getAccou
 import { getNetworkConfig } from '@terradharitri/sdk-dapp/out/methods/network/getNetworkConfig';
 
 const account = getAccount();
-const { egldLabel } = getNetworkConfig();
+const { rewaLabel } = getNetworkConfig();
 ```
 
 In order to get live updates you may need to subscribe to the store like this:
@@ -665,7 +665,7 @@ import { MvxTransactionsTable } from '@terradharitri/sdk-dapp-ui/react';
  
 const processedTransactions = await TransactionsTableController.processTransactions({
         address,
-        egldLabel: network.egldLabel,
+        rewaLabel: network.rewaLabel,
         explorerAddress: network.explorerAddress,
         transactions
       });
@@ -694,14 +694,14 @@ interface IFormatAmountProps
 
 export const FormatAmount = (props: IFormatAmountProps) => {
   const {
-    network: { egldLabel }
+    network: { rewaLabel }
   } = useGetNetworkConfig();
 
   const { isValid, valueDecimal, valueInteger, label } =
     FormatAmountController.getData({
       digits: DIGITS,
       decimals: DECIMALS,
-      egldLabel,
+      rewaLabel,
       ...props,
       input: props.value
     });

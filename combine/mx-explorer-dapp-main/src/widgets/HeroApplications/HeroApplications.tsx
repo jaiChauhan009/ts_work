@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 
-import { FormatEGLD } from 'components';
+import { FormatREWA } from 'components';
 import { useFetchGrowthEconomics } from 'hooks';
 import { growthEconomicsSelector } from 'redux/selectors';
 import { ChartContractsTransactions } from 'widgets';
@@ -18,13 +18,13 @@ export const HeroApplications = () => {
     {
       label: 'Fees Captured',
       value: (
-        <FormatEGLD value={unprocessed.feesCaptured} showLabel superSuffix />
+        <FormatREWA value={unprocessed.feesCaptured} showLabel superSuffix />
       )
     },
     {
       label: 'Developer Rewards',
       value: (
-        <FormatEGLD
+        <FormatREWA
           value={unprocessed.developerRewards}
           showLabel
           superSuffix

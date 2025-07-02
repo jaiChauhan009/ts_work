@@ -80,7 +80,7 @@ const getValidatorIndex = async ({
   const {
     data: {
       data: {
-        status: { erd_epoch_number: epoch }
+        status: { drt_epoch_number: epoch }
       }
     }
   } = await axios.get(`${proxyUrl()}/network/status/${shard}`);

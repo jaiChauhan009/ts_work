@@ -58,7 +58,7 @@ describe('TokenService', () => {
         const apiService = module.get<MXApiService>(MXApiService);
         const cachingService = module.get<CacheService>(CacheService);
 
-        const tokenID = 'WEGLD-123456';
+        const tokenID = 'WREWA-123456';
         const expectedToken = Tokens(tokenID);
         const cacheKey = `token.tokenMetadata.${tokenID}`;
         await cachingService.deleteInCache(cacheKey);

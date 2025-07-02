@@ -7,7 +7,7 @@ import winston from 'winston';
 import { ConfigModule } from '@nestjs/config';
 import { ApiConfigService } from 'src/helpers/api.config.service';
 import { DcdtTokenPayment } from '@terradharitri/sdk-exchange';
-import { EgldOrDcdtTokenPayment } from 'src/models/dcdtTokenPayment.model';
+import { RewaOrDcdtTokenPayment } from 'src/models/dcdtTokenPayment.model';
 import { ComposableTaskType } from '../models/composable.tasks.model';
 import { Address } from '@terradharitri/sdk-core/out';
 
@@ -47,12 +47,12 @@ describe('Composable Tasks Transaction', () => {
         );
 
         const payment = new DcdtTokenPayment({
-            tokenIdentifier: 'EGLD',
+            tokenIdentifier: 'REWA',
             tokenNonce: 0,
             amount: '1000000000000000000',
         });
-        const tokenOut = new EgldOrDcdtTokenPayment({
-            tokenIdentifier: 'WEGLD-123456',
+        const tokenOut = new RewaOrDcdtTokenPayment({
+            tokenIdentifier: 'WREWA-123456',
             nonce: 0,
             amount: '1000000000000000000',
         });
@@ -63,7 +63,7 @@ describe('Composable Tasks Transaction', () => {
             tokenOut,
             [
                 {
-                    type: ComposableTaskType.WRAP_EGLD,
+                    type: ComposableTaskType.WRAP_REWA,
                     arguments: [],
                 },
             ],
@@ -93,7 +93,7 @@ describe('Composable Tasks Transaction', () => {
             ComposableTasksTransactionService,
         );
 
-        const transaction = await service.wrapEgldAndSwapTransaction(
+        const transaction = await service.wrapRewaAndSwapTransaction(
             senderAddress,
             '1000000000000000000',
             'USDC-123456',
@@ -125,7 +125,7 @@ describe('Composable Tasks Transaction', () => {
             ComposableTasksTransactionService,
         );
 
-        const transaction = await service.swapAndUnwrapEgldTransaction(
+        const transaction = await service.swapAndUnwrapRewaTransaction(
             senderAddress,
             new DcdtTokenPayment({
                 tokenIdentifier: 'USDC-123456',

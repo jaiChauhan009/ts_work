@@ -12,7 +12,7 @@ export class MexSettings {
   lockedAssetIdentifier: string = '';
   lockedAssetIdentifierV2: string = '';
   mexId: string = '';
-  wegldId: string = '';
+  wrewaId: string = '';
 
   static fromQueryResponse(response: any): MexSettings {
     const settings = new MexSettings();
@@ -42,7 +42,7 @@ export class MexSettings {
     const wrappedToken = response.wrappingInfo[0].wrappedToken.identifier;
     const mexToken = response.simpleLockEnergy.baseAssetToken.identifier;
 
-    settings.wegldId = wrappedToken;
+    settings.wrewaId = wrappedToken;
     settings.mexId = mexToken;
 
     return settings;

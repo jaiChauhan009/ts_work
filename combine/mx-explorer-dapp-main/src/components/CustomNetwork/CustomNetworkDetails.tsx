@@ -122,10 +122,10 @@ export const CustomNetworkDetails = ({ className }: WithClassnameType) => {
                 }
               />
             )}
-            {existingCustomNetwork.egldLabel && (
+            {existingCustomNetwork.rewaLabel && (
               <NetworkDetail
                 title='Default Token Label'
-                description={existingCustomNetwork.egldLabel}
+                description={existingCustomNetwork.rewaLabel}
               />
             )}
             <div className='d-flex gap-3 align-items-center'>

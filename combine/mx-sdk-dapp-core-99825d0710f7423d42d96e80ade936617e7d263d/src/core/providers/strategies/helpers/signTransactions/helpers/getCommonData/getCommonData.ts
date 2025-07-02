@@ -1,5 +1,5 @@
 import { getPersistedTokenDetails } from 'apiCalls/tokens/getPersistedTokenDetails';
-import { MULTI_TRANSFER_EGLD_TOKEN } from 'constants/mvx.constants';
+import { MULTI_TRANSFER_REWA_TOKEN } from 'constants/mvx.constants';
 import {
   FungibleTransactionType,
   ISignTransactionsPanelCommonData
@@ -26,7 +26,7 @@ export type GetCommonDataPropsType = {
   price?: number;
   network: NetworkType;
   signedIndexes: number[];
-  egldLabel: string;
+  rewaLabel: string;
   address: string;
   shard?: number;
   parsedTransactionsByDataField: Record<string, TransactionDataTokenType>;
@@ -39,7 +39,7 @@ export type GetCommonDataPropsType = {
 export async function getCommonData({
   allTransactions,
   currentScreenIndex,
-  egldLabel,
+  rewaLabel,
   network,
   gasPriceData,
   price,
@@ -65,7 +65,7 @@ export async function getCommonData({
     | null = null;
 
   const extractTransactionsInfo = getExtractTransactionsInfo({
-    egldLabel,
+    rewaLabel,
     sender,
     apiAddress: network.apiAddress,
     address,
@@ -76,7 +76,7 @@ export async function getCommonData({
 
   const txInfo = await extractTransactionsInfo(currentTransaction);
 
-  const isEgld = !txInfo?.transactionTokenInfo?.tokenId;
+  const isRewa = !txInfo?.transactionTokenInfo?.tokenId;
   const { tokenId, nonce, amount = '' } = txInfo?.transactionTokenInfo ?? {};
 
   const isNftOrSft = tokenId && nonce && nonce.length > 0;
@@ -103,10 +103,10 @@ export async function getCommonData({
   } else {
     const getFormattedAmount = ({ addCommas }: { addCommas: boolean }) =>
       formatAmount({
-        input: isEgld
+        input: isRewa
           ? currentTransaction.transaction.getValue().toString()
           : amount,
-        decimals: isEgld ? Number(network.decimals) : tokenDecimals,
+        decimals: isRewa ? Number(network.decimals) : tokenDecimals,
         digits: Number(network.digits),
         showLastNonZeroDecimal: false,
         addCommas
@@ -114,7 +114,7 @@ export async function getCommonData({
 
     const formattedAmount = getFormattedAmount({ addCommas: true });
     const rawAmount = getFormattedAmount({ addCommas: false });
-    const tokenPrice = Number(isEgld ? price : dcdtPrice);
+    const tokenPrice = Number(isRewa ? price : dcdtPrice);
     const usdValue = getUsdValue({
       amount: rawAmount,
       usd: tokenPrice,
@@ -122,9 +122,9 @@ export async function getCommonData({
     });
 
     const dcdtIdentifier =
-      identifier === MULTI_TRANSFER_EGLD_TOKEN ? egldLabel : identifier;
+      identifier === MULTI_TRANSFER_REWA_TOKEN ? rewaLabel : identifier;
     tokenTransaction = {
-      identifier: dcdtIdentifier ?? egldLabel,
+      identifier: dcdtIdentifier ?? rewaLabel,
       amount: formattedAmount,
       usdValue
     };
@@ -154,7 +154,7 @@ export async function getCommonData({
     gasLimit: plainTransaction.gasLimit.toString(),
     ppu: gasPriceData.ppu,
     ppuOptions,
-    egldLabel,
+    rewaLabel,
     tokenType: getTokenType(type),
     feeLimit: feeLimitFormatted,
     feeInFiatLimit,

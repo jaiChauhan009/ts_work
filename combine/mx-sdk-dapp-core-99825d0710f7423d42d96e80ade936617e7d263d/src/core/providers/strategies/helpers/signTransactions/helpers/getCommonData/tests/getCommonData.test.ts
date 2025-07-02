@@ -29,8 +29,8 @@ describe('getCommonData', () => {
     expect(commonData).toStrictEqual({
       commonData: {
         currentIndex: 0,
-        data: 'wrapEgld',
-        egldLabel: 'xEGLD',
+        data: 'wrapRewa',
+        rewaLabel: 'xREWA',
         feeInFiatLimit: '$0.0018',
         feeLimit: '0.0001',
         gasLimit: '4200000',
@@ -49,7 +49,7 @@ describe('getCommonData', () => {
       fungibleTransaction: null,
       tokenTransaction: {
         amount: '1.0000',
-        identifier: 'xEGLD',
+        identifier: 'xREWA',
         usdValue: '≈ $17.82'
       }
     });
@@ -104,8 +104,8 @@ describe('when the gas limit is updated', () => {
     expect(commonData).toStrictEqual({
       commonData: {
         currentIndex: 0,
-        data: 'wrapEgld',
-        egldLabel: 'xEGLD',
+        data: 'wrapRewa',
+        rewaLabel: 'xREWA',
         feeInFiatLimit: '$0.0036',
         feeLimit: '0.0002',
         gasLimit: '20700000',
@@ -133,7 +133,7 @@ describe('when the gas limit is updated', () => {
       fungibleTransaction: null,
       tokenTransaction: {
         amount: '1.0000',
-        identifier: 'xEGLD',
+        identifier: 'xREWA',
         usdValue: '≈ $17.82'
       }
     });
@@ -155,7 +155,7 @@ describe('when the gas limit is updated', () => {
       commonData: {
         currentIndex: 3,
         data: 'MultiDCDTNFTTransfer@00000000000000000500139ed7ae4aa03792e6bcb332394a40fe746eefa47ceb@02@5745474c442d613238633539@@0de0b6b3a7640000@4d45582d613635396430@@e177704bc43f9bee3106@6164644c6971756964697479@0dbd2fc137a30000@df363e8872ed0d9235a7',
-        egldLabel: 'xEGLD',
+        rewaLabel: 'xREWA',
         feeInFiatLimit: '$0.0998',
         feeLimit: '0.0056',
         gasLimit: '520000000',
@@ -188,7 +188,7 @@ describe('when the gas limit is updated', () => {
       fungibleTransaction: null,
       tokenTransaction: {
         amount: '0',
-        identifier: 'xEGLD',
+        identifier: 'xREWA',
         usdValue: '= $0.00'
       }
     });

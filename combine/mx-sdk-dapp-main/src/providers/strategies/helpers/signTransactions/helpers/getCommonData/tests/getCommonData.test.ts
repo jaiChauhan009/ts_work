@@ -36,8 +36,8 @@ describe('getCommonData', () => {
       commonData: {
         currentIndex: 0,
         currentIndexToSign: 0,
-        data: 'wrapEgld',
-        egldLabel: 'xEGLD',
+        data: 'wrapRewa',
+        rewaLabel: 'xREWA',
         feeInFiatLimit: '$0.0018',
         feeLimit: '0.0001',
         gasLimit: '4.200.000',
@@ -49,7 +49,7 @@ describe('getCommonData', () => {
             validationWarnings: []
           },
           raw: {
-            displayValue: 'wrapEgld',
+            displayValue: 'wrapRewa',
             highlight: null,
             validationWarnings: []
           },
@@ -85,7 +85,7 @@ describe('getCommonData', () => {
       fungibleTransaction: null,
       tokenTransaction: {
         amount: '1.0000',
-        identifier: 'xEGLD',
+        identifier: 'xREWA',
         usdValue: '≈ $17.82'
       }
     });
@@ -141,7 +141,7 @@ describe('when the gas limit is updated', () => {
       commonData: {
         currentIndex: 0,
         currentIndexToSign: 0,
-        data: 'wrapEgld',
+        data: 'wrapRewa',
         decodedData: {
           decimal: {
             displayValue: 'NaN',
@@ -149,7 +149,7 @@ describe('when the gas limit is updated', () => {
             validationWarnings: []
           },
           raw: {
-            displayValue: 'wrapEgld',
+            displayValue: 'wrapRewa',
             highlight: null,
             validationWarnings: []
           },
@@ -164,7 +164,7 @@ describe('when the gas limit is updated', () => {
             validationWarnings: []
           }
         },
-        egldLabel: 'xEGLD',
+        rewaLabel: 'xREWA',
         feeInFiatLimit: '$0.0036',
         feeLimit: '0.0002',
         gasLimit: '20.700.000',
@@ -200,7 +200,7 @@ describe('when the gas limit is updated', () => {
       fungibleTransaction: null,
       tokenTransaction: {
         amount: '1.0000',
-        identifier: 'xEGLD',
+        identifier: 'xREWA',
         usdValue: '≈ $17.82'
       }
     });
@@ -223,7 +223,7 @@ describe('when the gas limit is updated', () => {
         currentIndex: 3,
         currentIndexToSign: 0,
         data: 'MultiDCDTNFTTransfer@00000000000000000500139ed7ae4aa03792e6bcb332394a40fe746eefa47ceb@02@5745474c442d613238633539@@0de0b6b3a7640000@4d45582d613635396430@@e177704bc43f9bee3106@6164644c6971756964697479@0dbd2fc137a30000@df363e8872ed0d9235a7',
-        egldLabel: 'xEGLD',
+        rewaLabel: 'xREWA',
         feeInFiatLimit: '$0.0998',
         feeLimit: '0.0056',
         gasLimit: '520.000.000',
@@ -237,7 +237,7 @@ describe('when the gas limit is updated', () => {
           },
           text: {
             displayValue:
-              'MultiDCDTNFTTransfer@\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0005\u0000\u0013�׮J�7�漳29J@�tn�|�@\u0002@WEGLD-a28c59@@\rඳ�d\u0000\u0000@MEX-a659d0@@�wpK�?��1\u0006@addLiquidity@\r�/�7�\u0000\u0000@�6>�r�\r�5�',
+              'MultiDCDTNFTTransfer@\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0005\u0000\u0013�׮J�7�漳29J@�tn�|�@\u0002@WREWA-a28c59@@\rඳ�d\u0000\u0000@MEX-a659d0@@�wpK�?��1\u0006@addLiquidity@\r�/�7�\u0000\u0000@�6>�r�\r�5�',
             validationWarnings: [],
             highlight: 'addLiquidity@\r�/�7�\u0000\u0000@�6>�r�\r�5�'
           },
@@ -250,7 +250,7 @@ describe('when the gas limit is updated', () => {
           },
           smart: {
             displayValue:
-              'MultiDCDTNFTTransfer@erd1qqqqqqqqqqqqqpgqzw0d0tj25qme9e4ukverjjjqle6xamay0n4s5r0v9g@\u0002@WEGLD-a28c59@@1000000000000000000@MEX-a659d0@@1064735712967374589014278@addLiquidity@990000000000000000@1054088355837700843124135',
+              'MultiDCDTNFTTransfer@erd1qqqqqqqqqqqqqpgqzw0d0tj25qme9e4ukverjjjqle6xamay0n4s5r0v9g@\u0002@WREWA-a28c59@@1000000000000000000@MEX-a659d0@@1064735712967374589014278@addLiquidity@990000000000000000@1054088355837700843124135',
             validationWarnings: [],
             highlight:
               'addLiquidity@990000000000000000@1054088355837700843124135'
@@ -292,7 +292,7 @@ describe('when the gas limit is updated', () => {
       fungibleTransaction: null,
       tokenTransaction: {
         amount: '0',
-        identifier: 'xEGLD',
+        identifier: 'xREWA',
         usdValue: '= $0.00'
       }
     });

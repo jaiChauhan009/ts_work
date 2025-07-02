@@ -1,4 +1,4 @@
-import { getEgldLabel } from 'core/methods/network/getEgldLabel';
+import { getRewaLabel } from 'core/methods/network/getRewaLabel';
 import { getExplorerAddress } from 'core/methods/network/getExplorerAddress';
 import {
   getIsTransactionFailed,
@@ -36,7 +36,7 @@ export const createToastsFromTransactions = async ({
     ...existingCompletedTransactions
   ];
   const explorerAddress = getExplorerAddress();
-  const egldLabel = getEgldLabel();
+  const rewaLabel = getRewaLabel();
 
   for (const toast of toastList.transactionToasts) {
     const transactionSession = transactionsSessions[toast.toastId];
@@ -51,7 +51,7 @@ export const createToastsFromTransactions = async ({
       transactions,
       address: account.address,
       explorerAddress,
-      egldLabel
+      rewaLabel
     });
 
     const isTimedOut = getIsTransactionTimedOut(status);

@@ -34,8 +34,8 @@ pub struct ExecutePayload<M: ManagedTypeApi> {
 }
 
 #[derive(TypeAbi, TopDecode, TopEncode, NestedDecode, NestedEncode, Clone)]
-pub struct EgldOrDcdtToken<M: ManagedTypeApi> {
-    pub token_identifier: EgldOrDcdtTokenIdentifier<M>,
+pub struct RewaOrDcdtToken<M: ManagedTypeApi> {
+    pub token_identifier: RewaOrDcdtTokenIdentifier<M>,
     pub token_nonce: u64,
 }
 
@@ -121,7 +121,7 @@ pub trait Governance: events::Events {
 
         let payments = self.call_value().any_payment();
 
-        if let EgldOrMultiDcdtPaymentRefs::MultiDcdt(payments) = payments.as_refs() {
+        if let RewaOrMultiDcdtPaymentRefs::MultiDcdt(payments) = payments.as_refs() {
             // Reserve extra gas for callback to make sure we can send back the tokens instead of async call error
             let gas_for_payments =
                 EXECUTE_PROPOSAL_CALLBACK_GAS_PER_PAYMENT * payments.len() as u64;
@@ -143,7 +143,7 @@ pub trait Governance: events::Events {
 
         self.send()
             .contract_call::<()>(target, decoded_call_data.endpoint_name)
-            .with_egld_transfer(native_value)
+            .with_rewa_transfer(native_value)
             .with_raw_arguments(decoded_call_data.arguments.into())
             .with_gas_limit(gas_limit)
             .async_call_promise()
@@ -201,7 +201,7 @@ pub trait Governance: events::Events {
 
         let payments = self.call_value().any_payment();
 
-        if let EgldOrMultiDcdtPaymentRefs::MultiDcdt(payments) = payments.as_refs() {
+        if let RewaOrMultiDcdtPaymentRefs::MultiDcdt(payments) = payments.as_refs() {
             // Reserve extra gas for callback to make sure we can send back the tokens instead of async call error
             let gas_for_payments =
                 EXECUTE_PROPOSAL_CALLBACK_GAS_PER_PAYMENT * payments.len() as u64;
@@ -223,7 +223,7 @@ pub trait Governance: events::Events {
 
         self.send()
             .contract_call::<()>(target, decoded_call_data.endpoint_name)
-            .with_egld_transfer(native_value)
+            .with_rewa_transfer(native_value)
             .with_raw_arguments(decoded_call_data.arguments.into())
             .with_gas_limit(gas_limit)
             .async_call_promise()
@@ -244,7 +244,7 @@ pub trait Governance: events::Events {
             "Not self"
         );
 
-        self.send().direct_egld(&recipient, &amount);
+        self.send().direct_rewa(&recipient, &amount);
     }
 
     #[endpoint(transferOperatorship)]
@@ -296,7 +296,7 @@ pub trait Governance: events::Events {
     }
 
     #[endpoint(withdrawRefundToken)]
-    fn withdraw_refund_token(&self, token: EgldOrDcdtToken<Self::Api>) {
+    fn withdraw_refund_token(&self, token: RewaOrDcdtToken<Self::Api>) {
         let caller = self.blockchain().get_caller();
         let value = self.refund_token(&caller, token.clone()).take();
 
@@ -446,7 +446,7 @@ pub trait Governance: events::Events {
         &self,
         hash: &ManagedByteArray<KECCAK256_RESULT_LEN>,
         caller: ManagedAddress,
-        payments: EgldOrMultiDcdtPayment<Self::Api>,
+        payments: RewaOrMultiDcdtPayment<Self::Api>,
         #[call_result] call_result: ManagedAsyncCallResult<MultiValueEncoded<ManagedBuffer>>,
     ) {
         self.time_lock_proposals_being_executed(hash).clear();
@@ -470,7 +470,7 @@ pub trait Governance: events::Events {
         &self,
         hash: &ManagedByteArray<KECCAK256_RESULT_LEN>,
         operator: ManagedAddress,
-        payments: EgldOrMultiDcdtPayment<Self::Api>,
+        payments: RewaOrMultiDcdtPayment<Self::Api>,
         #[call_result] call_result: ManagedAsyncCallResult<MultiValueEncoded<ManagedBuffer>>,
     ) {
         self.operator_proposals_being_executed(hash).clear();
@@ -492,25 +492,25 @@ pub trait Governance: events::Events {
     fn handle_callback_failure(
         &self,
         caller: ManagedAddress,
-        payments: EgldOrMultiDcdtPayment<Self::Api>,
+        payments: RewaOrMultiDcdtPayment<Self::Api>,
     ) {
         match payments {
-            EgldOrMultiDcdtPayment::Egld(egld_value) => {
+            RewaOrMultiDcdtPayment::Rewa(rewa_value) => {
                 self.refund_token(
                     &caller,
-                    EgldOrDcdtToken {
-                        token_identifier: EgldOrDcdtTokenIdentifier::egld(),
+                    RewaOrDcdtToken {
+                        token_identifier: RewaOrDcdtTokenIdentifier::rewa(),
                         token_nonce: 0,
                     },
                 )
-                .update(|old| *old += &egld_value);
+                .update(|old| *old += &rewa_value);
             }
-            EgldOrMultiDcdtPayment::MultiDcdt(dcdts) => {
+            RewaOrMultiDcdtPayment::MultiDcdt(dcdts) => {
                 for dcdt in dcdts.iter() {
                     self.refund_token(
                         &caller,
-                        EgldOrDcdtToken {
-                            token_identifier: EgldOrDcdtTokenIdentifier::dcdt(
+                        RewaOrDcdtToken {
+                            token_identifier: RewaOrDcdtTokenIdentifier::dcdt(
                                 dcdt.token_identifier,
                             ),
                             token_nonce: dcdt.token_nonce,
@@ -583,7 +583,7 @@ pub trait Governance: events::Events {
     fn refund_token(
         &self,
         user: &ManagedAddress,
-        token: EgldOrDcdtToken<Self::Api>,
+        token: RewaOrDcdtToken<Self::Api>,
     ) -> SingleValueMapper<BigUint>;
 
     #[view(getTimelockProposalsSubmitted)]

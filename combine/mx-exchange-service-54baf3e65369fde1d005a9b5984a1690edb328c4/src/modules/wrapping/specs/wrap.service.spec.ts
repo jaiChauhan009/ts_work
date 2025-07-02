@@ -24,7 +24,7 @@ describe('WrapService', () => {
 
     it('should return wrapped token', async () => {
         const service: WrapService = module.get<WrapService>(WrapService);
-        const token = await service.wrappedEgldToken();
-        expect(token).toEqual(Tokens('WEGLD-123456'));
+        const token = await service.wrappedRewaToken();
+        expect(token).toEqual(Tokens('WREWA-123456'));
     });
 });

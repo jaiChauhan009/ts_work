@@ -18,7 +18,7 @@ See the [Interchain Token Service Proxy](../interchain-token-service-proxy) for 
 - **interchainTransfer** (token_id, destination_chain, destination_address, metadata, gas_value) - initiates a new cross-chain transfer for the received token
   - it will call the appropriate token manager for the token id that will either burn or lock the tokens on DharitrI
   - it will then call the destination chain ITS contract execute receive token command using a cross chain call through the CGP Gateway contract
-  - accepts up to two DCDT tokens, with the 2nd one being used for gas, also supporting EGLD as DCDT to pay for cross chain gas
+  - accepts up to two DCDT tokens, with the 2nd one being used for gas, also supporting REWA as DCDT to pay for cross chain gas
 - **callContractWithInterchainToken** (token_id, destination_chain, destination_address, data, gas_value) - similar to **interchainTransfer**, but it will call a contract with token on the destination chain
 - **deployInterchainToken** (salt, name, symbol, decimals, initial_supply, minter) - deploys a new Token Manager, issues an DCDT and optionally mints the initial supply of tokens to the minter; **needs to be called 2 or 3 times**
   - 1st time it is called it will deploy a Mint/Burn Token Manager
@@ -34,12 +34,12 @@ See the [Interchain Token Service Proxy](../interchain-token-service-proxy) for 
   - similar with **deployRemoteInterchainToken** but a minter must be specified and the Token Manager of the token should have the minter the specified address
   - in case the **destination_minter** is specified, it must have been previously approved by using **approveDeployRemoteInterchainToken**
 - **registerCanonicalInterchainToken** (token_identifier) - registers an existing token for cross chain transfers as a canonical token
-  - supports native EGLD as well as DCDTs
+  - supports native REWA as well as DCDTs
   - it will deploy a new Lock/Unlock Token Manager if it wasn't already deployed
   - the caller does NOT have any permissions for the token or Token Manager
 - **deployRemoteCanonicalInterchainToken** (original_token_identifier, destination_chain) - deploys an already registered token and Token Manager on another chain as a canonical token
   - on the other chain it will create a new token with the same data as the existing token on DharitrI and it will deploy a Native Interchain Token Manager (which uses Mint/Burn mechanism)
-  - it also takes EGLD payment to pay for cross-chain gas costs
+  - it also takes REWA payment to pay for cross-chain gas costs
   - the caller does NOT have any permissions for the token or Token Manager
 - **registerCustomToken** (salt, token_identifier, token_manager_type, operator) - registers an existing token for cross chain transfers as a custom token
   - the token manager type can be specified; if Mint/Burn, it is the job of the caller to give the appropriate roles to the Token Manager
@@ -72,7 +72,7 @@ The Gateway contract is called to validate that this cross-chain contract call w
   - it can also async call a contract with the token if the payload includes any data
     - it will give the token to the ITS contract first, then it will call the contract with the token
 - **MESSAGE_TYPE_DEPLOY_INTERCHAIN_TOKEN (1)** - it will deploy a Mint Burn Token Manager and then issue a new DCDT token
-  - it also takes EGLD payment to pay for DCDT issue cost
+  - it also takes REWA payment to pay for DCDT issue cost
   - **needs to be called twice**, first time it will deploy the Token Manager and NOT mark the Gateway cross-chain call as executed
   - the second time it will issue the DCDT through the Token Manager and mark the Gateway cross-chain call as executed
 - **MESSAGE_TYPE_SEND_TO_HUB (3)** - this message is used to route an ITS message via the ITS Hub. The ITS Hub applies certain security checks, and then routes it to the true destination chain.

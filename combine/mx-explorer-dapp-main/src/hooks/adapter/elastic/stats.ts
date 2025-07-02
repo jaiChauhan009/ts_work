@@ -15,8 +15,8 @@ export const getStats = async ({
         data: {
           data: {
             config: {
-              erd_num_shards_without_meta: shards,
-              erd_round_duration: refreshRate
+              drt_num_shards_without_meta: shards,
+              drt_round_duration: refreshRate
             }
           }
         }
@@ -25,9 +25,9 @@ export const getStats = async ({
         data: {
           data: {
             status: {
-              erd_epoch_number: epoch,
-              erd_rounds_passed_in_current_epoch: roundsPassed,
-              erd_rounds_per_epoch: roundsPerEpoch
+              drt_epoch_number: epoch,
+              drt_rounds_passed_in_current_epoch: roundsPassed,
+              drt_rounds_per_epoch: roundsPerEpoch
             }
           }
         }

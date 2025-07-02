@@ -167,7 +167,7 @@ describe('PositionCreatorTransaction', () => {
                     gasPrice: 1000000000,
                     gasLimit: gasLimit,
                     data: encodeTransactionData(
-                        `DCDTTransfer@USDC-123456@100000000000000000000@createLpPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000012@329339339317295273252@329339339317295273252718@0000000000000000000000000000000000000000000000000000000000000013@swapTokensFixedInput@WEGLD-123456@989999999900702106327`,
+                        `DCDTTransfer@USDC-123456@100000000000000000000@createLpPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000012@329339339317295273252@329339339317295273252718@0000000000000000000000000000000000000000000000000000000000000013@swapTokensFixedInput@WREWA-123456@989999999900702106327`,
                     ),
                     chainID: 'T',
                     version: 2,
@@ -235,7 +235,7 @@ describe('PositionCreatorTransaction', () => {
                     gasPrice: 1000000000,
                     gasLimit: gasLimit,
                     data: encodeTransactionData(
-                        `DCDTTransfer@USDC-123456@100000000000000000000@createPairPosFromSingleToken@1440@329339339317295273252@329339339317295273252718@0000000000000000000000000000000000000000000000000000000000000013@swapTokensFixedInput@WEGLD-123456@989999999900702106327`,
+                        `DCDTTransfer@USDC-123456@100000000000000000000@createPairPosFromSingleToken@1440@329339339317295273252@329339339317295273252718@0000000000000000000000000000000000000000000000000000000000000013@swapTokensFixedInput@WREWA-123456@989999999900702106327`,
                     ),
                     chainID: 'T',
                     version: 2,
@@ -247,7 +247,7 @@ describe('PositionCreatorTransaction', () => {
             ]);
         });
 
-        it('should return transaction with EGLD payment', async () => {
+        it('should return transaction with REWA payment', async () => {
             const service = module.get<PositionCreatorTransactionService>(
                 PositionCreatorTransactionService,
             );
@@ -261,7 +261,7 @@ describe('PositionCreatorTransaction', () => {
                         '0000000000000000000000000000000000000000000000000000000000000012',
                     ).bech32(),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'EGLD',
+                        tokenIdentifier: 'REWA',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -275,7 +275,7 @@ describe('PositionCreatorTransaction', () => {
                         '0000000000000000000000000000000000000000000000000000000000000012',
                     ).bech32(),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'EGLD',
+                        tokenIdentifier: 'REWA',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -356,7 +356,7 @@ describe('PositionCreatorTransaction', () => {
                             amount: '100000000000000000000',
                         }),
                         new DcdtTokenPayment({
-                            tokenIdentifier: 'EGLDMEXFL-123456',
+                            tokenIdentifier: 'REWAMEXFL-123456',
                             tokenNonce: 1,
                             amount: '100000000000000000000',
                         }),
@@ -366,7 +366,7 @@ describe('PositionCreatorTransaction', () => {
             ).rejects.toThrowError('Invalid farm token payment');
         });
 
-        it('should return transaction with EGLD and no merge farm tokens', async () => {
+        it('should return transaction with REWA and no merge farm tokens', async () => {
             const service = module.get<PositionCreatorTransactionService>(
                 PositionCreatorTransactionService,
             );
@@ -380,7 +380,7 @@ describe('PositionCreatorTransaction', () => {
                         '0000000000000000000000000000000000000000000000000000000000000012',
                     ).bech32(),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'EGLD',
+                        tokenIdentifier: 'REWA',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -394,7 +394,7 @@ describe('PositionCreatorTransaction', () => {
                 ).bech32(),
                 [
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'EGLD',
+                        tokenIdentifier: 'REWA',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -488,7 +488,7 @@ describe('PositionCreatorTransaction', () => {
                     gasPrice: 1000000000,
                     gasLimit: gasLimit,
                     data: encodeTransactionData(
-                        `DCDTTransfer@USDC-123456@100000000000000000000@createFarmPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000021@329339339317295273252@329339339317295273252718@0000000000000000000000000000000000000000000000000000000000000013@swapTokensFixedInput@WEGLD-123456@989999999900702106327`,
+                        `DCDTTransfer@USDC-123456@100000000000000000000@createFarmPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000021@329339339317295273252@329339339317295273252718@0000000000000000000000000000000000000000000000000000000000000013@swapTokensFixedInput@WREWA-123456@989999999900702106327`,
                     ),
                     chainID: 'T',
                     version: 2,
@@ -500,7 +500,7 @@ describe('PositionCreatorTransaction', () => {
             ]);
         });
 
-        it('should return transaction with EGLD and merge farm tokens', async () => {
+        it('should return transaction with REWA and merge farm tokens', async () => {
             const service = module.get<PositionCreatorTransactionService>(
                 PositionCreatorTransactionService,
             );
@@ -514,7 +514,7 @@ describe('PositionCreatorTransaction', () => {
                         '0000000000000000000000000000000000000000000000000000000000000012',
                     ).bech32(),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'EGLD',
+                        tokenIdentifier: 'REWA',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -528,12 +528,12 @@ describe('PositionCreatorTransaction', () => {
                 ).bech32(),
                 [
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'EGLD',
+                        tokenIdentifier: 'REWA',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'EGLDMEXFL-abcdef',
+                        tokenIdentifier: 'REWAMEXFL-abcdef',
                         tokenNonce: 1,
                         amount: '100000000000000000000',
                     }),
@@ -559,7 +559,7 @@ describe('PositionCreatorTransaction', () => {
                     receiverUsername: undefined,
                     gasPrice: 1000000000,
                     gasLimit: 4200000,
-                    data: encodeTransactionData('wrapEgld'),
+                    data: encodeTransactionData('wrapRewa'),
                     chainID: 'T',
                     version: 2,
                     options: undefined,
@@ -577,7 +577,7 @@ describe('PositionCreatorTransaction', () => {
                     gasPrice: 1000000000,
                     gasLimit: gasLimit,
                     data: encodeTransactionData(
-                        `MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@WEGLD-123456@@100000000000000000000@EGLDMEXFL-abcdef@01@100000000000000000000@createFarmPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000021@47008144020574367766@47008144020574367766823`,
+                        `MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@WREWA-123456@@100000000000000000000@REWAMEXFL-abcdef@01@100000000000000000000@createFarmPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000021@47008144020574367766@47008144020574367766823`,
                     ),
                     chainID: 'T',
                     version: 2,
@@ -622,7 +622,7 @@ describe('PositionCreatorTransaction', () => {
                         amount: '100000000000000000000',
                     }),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'EGLDMEXFL-abcdef',
+                        tokenIdentifier: 'REWAMEXFL-abcdef',
                         tokenNonce: 1,
                         amount: '100000000000000000000',
                     }),
@@ -648,7 +648,7 @@ describe('PositionCreatorTransaction', () => {
                     gasPrice: 1000000000,
                     gasLimit: gasLimit,
                     data: encodeTransactionData(
-                        `MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@USDC-123456@@100000000000000000000@EGLDMEXFL-abcdef@01@100000000000000000000@createFarmPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000021@329339339317295273252@329339339317295273252718@0000000000000000000000000000000000000000000000000000000000000013@swapTokensFixedInput@WEGLD-123456@989999999900702106327`,
+                        `MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@USDC-123456@@100000000000000000000@REWAMEXFL-abcdef@01@100000000000000000000@createFarmPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000021@329339339317295273252@329339339317295273252718@0000000000000000000000000000000000000000000000000000000000000013@swapTokensFixedInput@WREWA-123456@989999999900702106327`,
                     ),
                     chainID: 'T',
                     version: 2,
@@ -718,7 +718,7 @@ describe('PositionCreatorTransaction', () => {
                     gasPrice: 1000000000,
                     gasLimit: gasLimit,
                     data: encodeTransactionData(
-                        `DCDTTransfer@USDC-123456@100000000000000000000@createFarmPosFromSingleToken@1440@329339339317295273252@329339339317295273252718@0000000000000000000000000000000000000000000000000000000000000013@swapTokensFixedInput@WEGLD-123456@989999999900702106327`,
+                        `DCDTTransfer@USDC-123456@100000000000000000000@createFarmPosFromSingleToken@1440@329339339317295273252@329339339317295273252718@0000000000000000000000000000000000000000000000000000000000000013@swapTokensFixedInput@WREWA-123456@989999999900702106327`,
                     ),
                     chainID: 'T',
                     version: 2,
@@ -730,7 +730,7 @@ describe('PositionCreatorTransaction', () => {
             ]);
         });
 
-        it('should return transaction with EGLD payment', async () => {
+        it('should return transaction with REWA payment', async () => {
             const service = module.get<PositionCreatorTransactionService>(
                 PositionCreatorTransactionService,
             );
@@ -744,7 +744,7 @@ describe('PositionCreatorTransaction', () => {
                         '0000000000000000000000000000000000000000000000000000000000000012',
                     ).bech32(),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'EGLD',
+                        tokenIdentifier: 'REWA',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -758,7 +758,7 @@ describe('PositionCreatorTransaction', () => {
                 ).bech32(),
                 [
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'EGLD',
+                        tokenIdentifier: 'REWA',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -846,7 +846,7 @@ describe('PositionCreatorTransaction', () => {
             ).rejects.toThrowError('Invalid dual yield token payment');
         });
 
-        it('should return transaction with EGLD no merge dual farm tokens', async () => {
+        it('should return transaction with REWA no merge dual farm tokens', async () => {
             const service = module.get<PositionCreatorTransactionService>(
                 PositionCreatorTransactionService,
             );
@@ -869,7 +869,7 @@ describe('PositionCreatorTransaction', () => {
                         '0000000000000000000000000000000000000000000000000000000000000012',
                     ).bech32(),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'EGLD',
+                        tokenIdentifier: 'REWA',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -881,7 +881,7 @@ describe('PositionCreatorTransaction', () => {
                 Address.Zero().bech32(),
                 [
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'EGLD',
+                        tokenIdentifier: 'REWA',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -983,7 +983,7 @@ describe('PositionCreatorTransaction', () => {
                     gasPrice: 1000000000,
                     gasLimit: gasLimit,
                     data: encodeTransactionData(
-                        'DCDTTransfer@USDC-123456@100000000000000000000@createMetastakingPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000000@329339339317295273252@329339339317295273252718@0000000000000000000000000000000000000000000000000000000000000013@swapTokensFixedInput@WEGLD-123456@989999999900702106327',
+                        'DCDTTransfer@USDC-123456@100000000000000000000@createMetastakingPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000000@329339339317295273252@329339339317295273252718@0000000000000000000000000000000000000000000000000000000000000013@swapTokensFixedInput@WREWA-123456@989999999900702106327',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -995,7 +995,7 @@ describe('PositionCreatorTransaction', () => {
             ]);
         });
 
-        it('should return transaction with EGLD and merge dual farm tokens', async () => {
+        it('should return transaction with REWA and merge dual farm tokens', async () => {
             const service = module.get<PositionCreatorTransactionService>(
                 PositionCreatorTransactionService,
             );
@@ -1012,7 +1012,7 @@ describe('PositionCreatorTransaction', () => {
                         '0000000000000000000000000000000000000000000000000000000000000012',
                     ).bech32(),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'EGLD',
+                        tokenIdentifier: 'REWA',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -1030,7 +1030,7 @@ describe('PositionCreatorTransaction', () => {
                 Address.Zero().bech32(),
                 [
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'EGLD',
+                        tokenIdentifier: 'REWA',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -1062,7 +1062,7 @@ describe('PositionCreatorTransaction', () => {
                     receiverUsername: undefined,
                     gasPrice: 1000000000,
                     gasLimit: 4200000,
-                    data: encodeTransactionData('wrapEgld'),
+                    data: encodeTransactionData('wrapRewa'),
                     chainID: 'T',
                     version: 2,
                     options: undefined,
@@ -1080,7 +1080,7 @@ describe('PositionCreatorTransaction', () => {
                     gasPrice: 1000000000,
                     gasLimit: gasLimit,
                     data: encodeTransactionData(
-                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@WEGLD-123456@@100000000000000000000@METASTAKE-123456@01@100000000000000000000@createMetastakingPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000000@47008144020574367766@47008144020574367766823',
+                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@WREWA-123456@@100000000000000000000@METASTAKE-123456@01@100000000000000000000@createMetastakingPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000000@47008144020574367766@47008144020574367766823',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -1159,7 +1159,7 @@ describe('PositionCreatorTransaction', () => {
                     gasPrice: 1000000000,
                     gasLimit: gasLimit,
                     data: encodeTransactionData(
-                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@USDC-123456@@100000000000000000000@METASTAKE-123456@01@100000000000000000000@createMetastakingPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000000@329339339317295273252@329339339317295273252718@0000000000000000000000000000000000000000000000000000000000000013@swapTokensFixedInput@WEGLD-123456@989999999900702106327',
+                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@USDC-123456@@100000000000000000000@METASTAKE-123456@01@100000000000000000000@createMetastakingPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000000@329339339317295273252@329339339317295273252718@0000000000000000000000000000000000000000000000000000000000000013@swapTokensFixedInput@WREWA-123456@989999999900702106327',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -1189,7 +1189,7 @@ describe('PositionCreatorTransaction', () => {
                 Address.Zero().bech32(),
                 [
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'EGLDMEXLP-abcdef',
+                        tokenIdentifier: 'REWAMEXLP-abcdef',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -1219,7 +1219,7 @@ describe('PositionCreatorTransaction', () => {
                     gasPrice: 1000000000,
                     gasLimit: gasLimit,
                     data: encodeTransactionData(
-                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@EGLDMEXLP-abcdef@@100000000000000000000@METASTAKE-123456@01@100000000000000000000@createMetastakingPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000000@@',
+                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@REWAMEXLP-abcdef@@100000000000000000000@METASTAKE-123456@01@100000000000000000000@createMetastakingPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000000@@',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -1278,7 +1278,7 @@ describe('PositionCreatorTransaction', () => {
             ).rejects.toThrowError('Invalid staking token payment');
         });
 
-        it('should return transaction with EGLD no merge staking tokens', async () => {
+        it('should return transaction with REWA no merge staking tokens', async () => {
             const service = module.get<PositionCreatorTransactionService>(
                 PositionCreatorTransactionService,
             );
@@ -1295,7 +1295,7 @@ describe('PositionCreatorTransaction', () => {
                 await posCreatorCompute.computeStakingPositionSingleToken(
                     Address.Zero().bech32(),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'EGLD',
+                        tokenIdentifier: 'REWA',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -1308,7 +1308,7 @@ describe('PositionCreatorTransaction', () => {
                 swapRoutes.swaps[0],
                 [
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'EGLD',
+                        tokenIdentifier: 'REWA',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -1393,7 +1393,7 @@ describe('PositionCreatorTransaction', () => {
                     gasPrice: 1000000000,
                     gasLimit: gasLimit,
                     data: encodeTransactionData(
-                        'DCDTTransfer@USDC-123456@100000000000000000000@createFarmStakingPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000000@999999999899699097301@0000000000000000000000000000000000000000000000000000000000000013@swapTokensFixedInput@WEGLD-123456@989999999900702106327',
+                        'DCDTTransfer@USDC-123456@100000000000000000000@createFarmStakingPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000000@999999999899699097301@0000000000000000000000000000000000000000000000000000000000000013@swapTokensFixedInput@WREWA-123456@989999999900702106327',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -1405,7 +1405,7 @@ describe('PositionCreatorTransaction', () => {
             ]);
         });
 
-        it('should return transaction with EGLD and merge staking tokens', async () => {
+        it('should return transaction with REWA and merge staking tokens', async () => {
             const service = module.get<PositionCreatorTransactionService>(
                 PositionCreatorTransactionService,
             );
@@ -1422,7 +1422,7 @@ describe('PositionCreatorTransaction', () => {
                 await posCreatorCompute.computeStakingPositionSingleToken(
                     Address.Zero().bech32(),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'EGLD',
+                        tokenIdentifier: 'REWA',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -1435,7 +1435,7 @@ describe('PositionCreatorTransaction', () => {
                 swapRoutes.swaps[0],
                 [
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'EGLD',
+                        tokenIdentifier: 'REWA',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -1464,7 +1464,7 @@ describe('PositionCreatorTransaction', () => {
                     receiverUsername: undefined,
                     gasPrice: 1000000000,
                     gasLimit: 4200000,
-                    data: encodeTransactionData('wrapEgld'),
+                    data: encodeTransactionData('wrapRewa'),
                     chainID: 'T',
                     version: 2,
                     options: undefined,
@@ -1482,7 +1482,7 @@ describe('PositionCreatorTransaction', () => {
                     gasPrice: 1000000000,
                     gasLimit: gasLimit,
                     data: encodeTransactionData(
-                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@WEGLD-123456@@100000000000000000000@STAKETOK-111111@01@100000000000000000000@createFarmStakingPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000000@90661089388014913158134@0000000000000000000000000000000000000000000000000000000000000012@swapTokensFixedInput@MEX-123456@89754478494134764026552',
+                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@WREWA-123456@@100000000000000000000@STAKETOK-111111@01@100000000000000000000@createFarmStakingPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000000@90661089388014913158134@0000000000000000000000000000000000000000000000000000000000000012@swapTokensFixedInput@MEX-123456@89754478494134764026552',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -1548,7 +1548,7 @@ describe('PositionCreatorTransaction', () => {
                     gasPrice: 1000000000,
                     gasLimit: gasLimit,
                     data: encodeTransactionData(
-                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@USDC-123456@@100000000000000000000@STAKETOK-111111@01@100000000000000000000@createFarmStakingPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000000@999999999899699097301@0000000000000000000000000000000000000000000000000000000000000013@swapTokensFixedInput@WEGLD-123456@989999999900702106327',
+                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@USDC-123456@@100000000000000000000@STAKETOK-111111@01@100000000000000000000@createFarmStakingPosFromSingleToken@0000000000000000000000000000000000000000000000000000000000000000@999999999899699097301@0000000000000000000000000000000000000000000000000000000000000013@swapTokensFixedInput@WREWA-123456@989999999900702106327',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -1574,7 +1574,7 @@ describe('PositionCreatorTransaction', () => {
                     ).bech32(),
                     [
                         new DcdtTokenPayment({
-                            tokenIdentifier: 'WEGLD-123456',
+                            tokenIdentifier: 'WREWA-123456',
                             tokenNonce: 0,
                             amount: '100000000000000000000',
                         }),
@@ -1601,7 +1601,7 @@ describe('PositionCreatorTransaction', () => {
                     ).bech32(),
                     [
                         new DcdtTokenPayment({
-                            tokenIdentifier: 'WEGLD-123456',
+                            tokenIdentifier: 'WREWA-123456',
                             tokenNonce: 0,
                             amount: '100000000000000000000',
                         }),
@@ -1611,7 +1611,7 @@ describe('PositionCreatorTransaction', () => {
                             amount: '100000000000000000000',
                         }),
                         new DcdtTokenPayment({
-                            tokenIdentifier: 'EGLDMEXFL-123456',
+                            tokenIdentifier: 'REWAMEXFL-123456',
                             tokenNonce: 1,
                             amount: '100000000000000000000',
                         }),
@@ -1632,7 +1632,7 @@ describe('PositionCreatorTransaction', () => {
                 ).bech32(),
                 [
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'WEGLD-123456',
+                        tokenIdentifier: 'WREWA-123456',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -1656,7 +1656,7 @@ describe('PositionCreatorTransaction', () => {
                     gasPrice: 1000000000,
                     gasLimit: gasConfig.positionCreator.dualTokens.farmPosition,
                     data: encodeTransactionData(
-                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@WEGLD-123456@@100000000000000000000@MEX-123456@@100000000000000000000@createFarmPosFromTwoTokens@0000000000000000000000000000000000000000000000000000000000000021@99000000000000000000@99000000000000000000',
+                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@WREWA-123456@@100000000000000000000@MEX-123456@@100000000000000000000@createFarmPosFromTwoTokens@0000000000000000000000000000000000000000000000000000000000000021@99000000000000000000@99000000000000000000',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -1679,7 +1679,7 @@ describe('PositionCreatorTransaction', () => {
                 ).bech32(),
                 [
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'WEGLD-123456',
+                        tokenIdentifier: 'WREWA-123456',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -1689,7 +1689,7 @@ describe('PositionCreatorTransaction', () => {
                         amount: '100000000000000000000',
                     }),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'EGLDMEXFL-abcdef',
+                        tokenIdentifier: 'REWAMEXFL-abcdef',
                         tokenNonce: 1,
                         amount: '100000000000000000000',
                     }),
@@ -1708,7 +1708,7 @@ describe('PositionCreatorTransaction', () => {
                     gasPrice: 1000000000,
                     gasLimit: gasConfig.positionCreator.dualTokens.farmPosition,
                     data: encodeTransactionData(
-                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@03@WEGLD-123456@@100000000000000000000@MEX-123456@@100000000000000000000@EGLDMEXFL-abcdef@01@100000000000000000000@createFarmPosFromTwoTokens@0000000000000000000000000000000000000000000000000000000000000021@99000000000000000000@99000000000000000000',
+                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@03@WREWA-123456@@100000000000000000000@MEX-123456@@100000000000000000000@REWAMEXFL-abcdef@01@100000000000000000000@createFarmPosFromTwoTokens@0000000000000000000000000000000000000000000000000000000000000021@99000000000000000000@99000000000000000000',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -1720,7 +1720,7 @@ describe('PositionCreatorTransaction', () => {
             ]);
         });
 
-        it('should return transactions with egld wrap', async () => {
+        it('should return transactions with rewa wrap', async () => {
             const service = module.get<PositionCreatorTransactionService>(
                 PositionCreatorTransactionService,
             );
@@ -1731,7 +1731,7 @@ describe('PositionCreatorTransaction', () => {
                 ).bech32(),
                 [
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'EGLD',
+                        tokenIdentifier: 'REWA',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -1741,7 +1741,7 @@ describe('PositionCreatorTransaction', () => {
                         amount: '100000000000000000000',
                     }),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'EGLDMEXFL-abcdef',
+                        tokenIdentifier: 'REWAMEXFL-abcdef',
                         tokenNonce: 1,
                         amount: '100000000000000000000',
                     }),
@@ -1760,7 +1760,7 @@ describe('PositionCreatorTransaction', () => {
                     receiverUsername: undefined,
                     gasPrice: 1000000000,
                     gasLimit: 4200000,
-                    data: encodeTransactionData('wrapEgld'),
+                    data: encodeTransactionData('wrapRewa'),
                     chainID: 'T',
                     version: 2,
                     options: undefined,
@@ -1778,7 +1778,7 @@ describe('PositionCreatorTransaction', () => {
                     gasPrice: 1000000000,
                     gasLimit: gasConfig.positionCreator.dualTokens.farmPosition,
                     data: encodeTransactionData(
-                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@03@WEGLD-123456@@100000000000000000000@MEX-123456@@100000000000000000000@EGLDMEXFL-abcdef@01@100000000000000000000@createFarmPosFromTwoTokens@0000000000000000000000000000000000000000000000000000000000000021@99000000000000000000@99000000000000000000',
+                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@03@WREWA-123456@@100000000000000000000@MEX-123456@@100000000000000000000@REWAMEXFL-abcdef@01@100000000000000000000@createFarmPosFromTwoTokens@0000000000000000000000000000000000000000000000000000000000000021@99000000000000000000@99000000000000000000',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -1805,7 +1805,7 @@ describe('PositionCreatorTransaction', () => {
                     ).bech32(),
                     [
                         new DcdtTokenPayment({
-                            tokenIdentifier: 'WEGLD-123456',
+                            tokenIdentifier: 'WREWA-123456',
                             tokenNonce: 0,
                             amount: '100000000000000000000',
                         }),
@@ -1832,7 +1832,7 @@ describe('PositionCreatorTransaction', () => {
                             amount: '100000000000000000000',
                         }),
                         new DcdtTokenPayment({
-                            tokenIdentifier: 'WEGLD-123456',
+                            tokenIdentifier: 'WREWA-123456',
                             tokenNonce: 1,
                             amount: '100000000000000000000',
                         }),
@@ -1882,7 +1882,7 @@ describe('PositionCreatorTransaction', () => {
                             amount: '100000000000000000000',
                         }),
                         new DcdtTokenPayment({
-                            tokenIdentifier: 'WEGLD-123456',
+                            tokenIdentifier: 'WREWA-123456',
                             tokenNonce: 0,
                             amount: '100000000000000000000',
                         }),
@@ -1913,7 +1913,7 @@ describe('PositionCreatorTransaction', () => {
                         amount: '100000000000000000000',
                     }),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'WEGLD-123456',
+                        tokenIdentifier: 'WREWA-123456',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -1933,7 +1933,7 @@ describe('PositionCreatorTransaction', () => {
                     gasLimit:
                         gasConfig.positionCreator.dualTokens.farmPositionProxy,
                     data: encodeTransactionData(
-                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@WEGLD-123456@@100000000000000000000@ELKMEX-123456@01@100000000000000000000@createFarmPosFromTwoTokens@99000000000000000000@99000000000000000000',
+                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@WREWA-123456@@100000000000000000000@ELKMEX-123456@01@100000000000000000000@createFarmPosFromTwoTokens@99000000000000000000@99000000000000000000',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -1961,7 +1961,7 @@ describe('PositionCreatorTransaction', () => {
                         amount: '100000000000000000000',
                     }),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'WEGLD-123456',
+                        tokenIdentifier: 'WREWA-123456',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -1986,7 +1986,7 @@ describe('PositionCreatorTransaction', () => {
                     gasLimit:
                         gasConfig.positionCreator.dualTokens.farmPositionProxy,
                     data: encodeTransactionData(
-                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@03@WEGLD-123456@@100000000000000000000@ELKMEX-123456@01@100000000000000000000@LKFARM-123456@01@100000000000000000000@createFarmPosFromTwoTokens@99000000000000000000@99000000000000000000',
+                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@03@WREWA-123456@@100000000000000000000@ELKMEX-123456@01@100000000000000000000@LKFARM-123456@01@100000000000000000000@createFarmPosFromTwoTokens@99000000000000000000@99000000000000000000',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -2019,7 +2019,7 @@ describe('PositionCreatorTransaction', () => {
                     Address.Zero().bech32(),
                     [
                         new DcdtTokenPayment({
-                            tokenIdentifier: 'WEGLD-123456',
+                            tokenIdentifier: 'WREWA-123456',
                             tokenNonce: 0,
                             amount: '100000000000000000000',
                         }),
@@ -2053,7 +2053,7 @@ describe('PositionCreatorTransaction', () => {
                     Address.Zero().bech32(),
                     [
                         new DcdtTokenPayment({
-                            tokenIdentifier: 'WEGLD-123456',
+                            tokenIdentifier: 'WREWA-123456',
                             tokenNonce: 0,
                             amount: '100000000000000000000',
                         }),
@@ -2091,7 +2091,7 @@ describe('PositionCreatorTransaction', () => {
                 Address.Zero().bech32(),
                 [
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'WEGLD-123456',
+                        tokenIdentifier: 'WREWA-123456',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -2116,7 +2116,7 @@ describe('PositionCreatorTransaction', () => {
                     gasLimit:
                         gasConfig.positionCreator.dualTokens.dualFarmPosition,
                     data: encodeTransactionData(
-                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@WEGLD-123456@@100000000000000000000@MEX-123456@@100000000000000000000@createMetastakingPosFromTwoTokens@0000000000000000000000000000000000000000000000000000000000000000@99000000000000000000@99000000000000000000',
+                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@02@WREWA-123456@@100000000000000000000@MEX-123456@@100000000000000000000@createMetastakingPosFromTwoTokens@0000000000000000000000000000000000000000000000000000000000000000@99000000000000000000@99000000000000000000',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -2128,7 +2128,7 @@ describe('PositionCreatorTransaction', () => {
             ]);
         });
 
-        it('should return transaction with egld wrap', async () => {
+        it('should return transaction with rewa wrap', async () => {
             const service = module.get<PositionCreatorTransactionService>(
                 PositionCreatorTransactionService,
             );
@@ -2146,7 +2146,7 @@ describe('PositionCreatorTransaction', () => {
                 Address.Zero().bech32(),
                 [
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'EGLD',
+                        tokenIdentifier: 'REWA',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -2175,7 +2175,7 @@ describe('PositionCreatorTransaction', () => {
                     receiverUsername: undefined,
                     gasPrice: 1000000000,
                     gasLimit: 4200000,
-                    data: encodeTransactionData('wrapEgld'),
+                    data: encodeTransactionData('wrapRewa'),
                     chainID: 'T',
                     version: 2,
                     options: undefined,
@@ -2194,7 +2194,7 @@ describe('PositionCreatorTransaction', () => {
                     gasLimit:
                         gasConfig.positionCreator.dualTokens.dualFarmPosition,
                     data: encodeTransactionData(
-                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@03@WEGLD-123456@@100000000000000000000@MEX-123456@@100000000000000000000@METASTAKE-123456@01@100000000000000000000@createMetastakingPosFromTwoTokens@0000000000000000000000000000000000000000000000000000000000000000@99000000000000000000@99000000000000000000',
+                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@03@WREWA-123456@@100000000000000000000@MEX-123456@@100000000000000000000@METASTAKE-123456@01@100000000000000000000@createMetastakingPosFromTwoTokens@0000000000000000000000000000000000000000000000000000000000000000@99000000000000000000@99000000000000000000',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -2224,7 +2224,7 @@ describe('PositionCreatorTransaction', () => {
                 Address.Zero().bech32(),
                 [
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'WEGLD-123456',
+                        tokenIdentifier: 'WREWA-123456',
                         tokenNonce: 0,
                         amount: '100000000000000000000',
                     }),
@@ -2254,7 +2254,7 @@ describe('PositionCreatorTransaction', () => {
                     gasLimit:
                         gasConfig.positionCreator.dualTokens.dualFarmPosition,
                     data: encodeTransactionData(
-                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@03@WEGLD-123456@@100000000000000000000@MEX-123456@@100000000000000000000@METASTAKE-123456@01@100000000000000000000@createMetastakingPosFromTwoTokens@0000000000000000000000000000000000000000000000000000000000000000@99000000000000000000@99000000000000000000',
+                        'MultiDCDTNFTTransfer@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@03@WREWA-123456@@100000000000000000000@MEX-123456@@100000000000000000000@METASTAKE-123456@01@100000000000000000000@createMetastakingPosFromTwoTokens@0000000000000000000000000000000000000000000000000000000000000000@99000000000000000000@99000000000000000000',
                     ),
                     chainID: 'T',
                     version: 2,
@@ -2298,7 +2298,7 @@ describe('PositionCreatorTransaction', () => {
                     '0000000000000000000000000000000000000000000000000000000000000021',
                 ).bech32(),
                 new DcdtTokenPayment({
-                    tokenIdentifier: 'EGLDMEXFL-abcdef',
+                    tokenIdentifier: 'REWAMEXFL-abcdef',
                     tokenNonce: 1,
                     amount: '100000000000000000000',
                 }),
@@ -2315,7 +2315,7 @@ describe('PositionCreatorTransaction', () => {
                 gasPrice: 1000000000,
                 gasLimit: gasConfig.positionCreator.dualTokens.exitFarm,
                 data: encodeTransactionData(
-                    'DCDTNFTTransfer@EGLDMEXFL-abcdef@01@100000000000000000000@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@exitFarmPos@0000000000000000000000000000000000000000000000000000000000000021@99000000000000000000@99000000000000000000000',
+                    'DCDTNFTTransfer@REWAMEXFL-abcdef@01@100000000000000000000@00000000000000000500bc458e2cd68bb69665812137dcdd988d9f69901e7ceb@exitFarmPos@0000000000000000000000000000000000000000000000000000000000000021@99000000000000000000@99000000000000000000000',
                 ),
                 chainID: 'T',
                 version: 2,
@@ -2337,7 +2337,7 @@ describe('PositionCreatorTransaction', () => {
                 service.createEnergyPosition(
                     Address.Zero().bech32(),
                     new DcdtTokenPayment({
-                        tokenIdentifier: 'WEGLD-abcdef',
+                        tokenIdentifier: 'WREWA-abcdef',
                         tokenNonce: 0,
                         amount: '1000000000000000000',
                     }),
@@ -2357,7 +2357,7 @@ describe('PositionCreatorTransaction', () => {
 
             const swapRoute = await posCreatorCompute.computeSingleTokenInput(
                 new DcdtTokenPayment({
-                    tokenIdentifier: 'WEGLD-123456',
+                    tokenIdentifier: 'WREWA-123456',
                     tokenNonce: 0,
                     amount: '1000000000000000000',
                 }),
@@ -2368,7 +2368,7 @@ describe('PositionCreatorTransaction', () => {
             const transactions = await service.createEnergyPosition(
                 Address.Zero().bech32(),
                 new DcdtTokenPayment({
-                    tokenIdentifier: 'WEGLD-123456',
+                    tokenIdentifier: 'WREWA-123456',
                     tokenNonce: 0,
                     amount: '1000000000000000000',
                 }),
@@ -2380,7 +2380,7 @@ describe('PositionCreatorTransaction', () => {
                 {
                     chainID: 'T',
                     data: encodeTransactionData(
-                        'DCDTTransfer@WEGLD-123456@1000000000000000000@createEnergyPosition@1440@986046911229504184328@0000000000000000000000000000000000000000000000000000000000000012@swapTokensFixedInput@MEX-123456@986046911229504184328',
+                        'DCDTTransfer@WREWA-123456@1000000000000000000@createEnergyPosition@1440@986046911229504184328@0000000000000000000000000000000000000000000000000000000000000012@swapTokensFixedInput@MEX-123456@986046911229504184328',
                     ),
                     gasLimit: 43000000,
                     gasPrice: 1000000000,
@@ -2400,7 +2400,7 @@ describe('PositionCreatorTransaction', () => {
             ]);
         });
 
-        it('should return transaction with EGLD payment', async () => {
+        it('should return transaction with REWA payment', async () => {
             const service = module.get<PositionCreatorTransactionService>(
                 PositionCreatorTransactionService,
             );
@@ -2409,7 +2409,7 @@ describe('PositionCreatorTransaction', () => {
             );
             const swapRoute = await posCreatorCompute.computeSingleTokenInput(
                 new DcdtTokenPayment({
-                    tokenIdentifier: 'EGLD',
+                    tokenIdentifier: 'REWA',
                     tokenNonce: 0,
                     amount: '1000000000000000000',
                 }),
@@ -2420,7 +2420,7 @@ describe('PositionCreatorTransaction', () => {
             const transactions = await service.createEnergyPosition(
                 Address.Zero().bech32(),
                 new DcdtTokenPayment({
-                    tokenIdentifier: 'EGLD',
+                    tokenIdentifier: 'REWA',
                     tokenNonce: 0,
                     amount: '1000000000000000000',
                 }),

@@ -1,6 +1,6 @@
 import { PrimitiveType, PrimitiveValue } from "./types";
 
-const EGLDTokenIdentifier = "EGLD";
+const REWATokenIdentifier = "REWA";
 
 export class TokenIdentifierType extends PrimitiveType {
     static ClassName = "TokenIdentifierType";
@@ -23,8 +23,8 @@ export class TokenIdentifierValue extends PrimitiveValue {
         this.value = value;
     }
 
-    static egld(): TokenIdentifierValue {
-        return new TokenIdentifierValue(EGLDTokenIdentifier);
+    static rewa(): TokenIdentifierValue {
+        return new TokenIdentifierValue(REWATokenIdentifier);
     }
 
     static dcdtTokenIdentifier(identifier: string): TokenIdentifierValue {

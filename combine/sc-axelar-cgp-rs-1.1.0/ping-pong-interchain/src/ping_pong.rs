@@ -34,7 +34,7 @@ const PONG_ALL_LOW_GAS_LIMIT: u64 = 3_000_000;
 #[dharitri_sc::contract]
 pub trait PingPong {
     /// Necessary configuration when deploying:
-    /// `ping_amount` - the exact EGLD amounf that needs to be sent when `ping`-ing.
+    /// `ping_amount` - the exact REWA amounf that needs to be sent when `ping`-ing.
     /// `duration_in_seconds` - how much time (in seconds) until contract expires.
     /// `opt_activation_timestamp` - optionally specify the contract to only actvivate at a later date.
     /// `max_funds` - optional funding cap, no more funds than this can be added to the contract.
@@ -106,13 +106,13 @@ pub trait PingPong {
         }
     }
 
-    /// User sends some EGLD to be locked in the contract for a period of time.
+    /// User sends some REWA to be locked in the contract for a period of time.
     /// Optional `_data` argument is ignored.
     #[allow_multiple_var_args]
-    #[payable("EGLD")]
+    #[payable("REWA")]
     #[endpoint]
     fn ping(&self, opt_caller: OptionalValue<ManagedAddress>, _data: IgnoreValue) {
-        let payment = self.call_value().egld_value();
+        let payment = self.call_value().rewa_value();
 
         require!(
             *payment == self.ping_amount().get(),
@@ -129,7 +129,7 @@ pub trait PingPong {
             require!(
                 &self
                     .blockchain()
-                    .get_sc_balance(&EgldOrDcdtTokenIdentifier::egld(), 0)
+                    .get_sc_balance(&RewaOrDcdtTokenIdentifier::rewa(), 0)
                     + &*payment
                     <= max_funds,
                 "smart contract full"
@@ -164,7 +164,7 @@ pub trait PingPong {
                 self.user_status(user_id).set(UserStatus::Withdrawn);
                 if let Some(user_address) = self.user_mapper().get_user_address(user_id) {
                     self.send()
-                        .direct_egld(&user_address, &self.ping_amount().get());
+                        .direct_rewa(&user_address, &self.ping_amount().get());
                     Result::Ok(())
                 } else {
                     Result::Err("unknown user")

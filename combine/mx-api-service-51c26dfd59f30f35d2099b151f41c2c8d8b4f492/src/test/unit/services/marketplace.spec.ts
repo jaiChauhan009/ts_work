@@ -47,7 +47,7 @@ describe('Marketplace Service', () => {
                 creationDate: '1676563203',
                 endDate: 0,
                 minBid: { amount: '1', token: '390000000000000000' },
-                maxBid: { amount: '2', token: 'EGLD' },
+                maxBid: { amount: '2', token: 'REWA' },
               },
             },
           ],
@@ -73,7 +73,7 @@ describe('Marketplace Service', () => {
           marketplaceAuctionId: '584150',
           marketplace: 'xoxno',
           minBid: { amount: '1', token: '390000000000000000' },
-          maxBid: { amount: '2', token: 'EGLD' },
+          maxBid: { amount: '2', token: 'REWA' },
         }),
       ]));
     });
@@ -192,11 +192,11 @@ describe('Marketplace Service', () => {
                 marketplaceAuctionId: '373650',
                 minBid: {
                   amount: '123456',
-                  token: 'EGLD',
+                  token: 'REWA',
                 },
                 maxBid: {
                   amount: '654321',
-                  token: 'EGLD',
+                  token: 'REWA',
                 },
               },
             },
@@ -214,11 +214,11 @@ describe('Marketplace Service', () => {
                 marketplaceAuctionId: '373650',
                 minBid: {
                   amount: '123456',
-                  token: 'EGLD',
+                  token: 'REWA',
                 },
                 maxBid: {
                   amount: '654321',
-                  token: 'EGLD',
+                  token: 'REWA',
                 },
               },
             },
@@ -243,8 +243,8 @@ describe('Marketplace Service', () => {
           endsAt: undefined,
           marketplaceAuctionId: '373650',
           marketplace: 'xoxno',
-          minBid: { amount: '123456', token: 'EGLD' },
-          maxBid: { amount: '654321', token: 'EGLD' },
+          minBid: { amount: '123456', token: 'REWA' },
+          maxBid: { amount: '654321', token: 'REWA' },
         }),
       ]));
     });
@@ -283,8 +283,8 @@ describe('Marketplace Service', () => {
                 asset: {
                   creatorAddress: 'erd14wxx9p9kld06w66n6lcxcchv976n7crzma8w7s3tkaqcme8hr7fqdhhfdg',
                 },
-                minBid: { amount: '1900000000000000000', token: 'EGLD' },
-                maxBid: { amount: '1900000000000000000', token: 'EGLD' },
+                minBid: { amount: '1900000000000000000', token: 'REWA' },
+                maxBid: { amount: '1900000000000000000', token: 'REWA' },
                 ownerAddress: 'erd14wxx9p9kld06w66n6lcxcchv976n7crzma8w7s3tkaqcme8hr7fqdhhfdg',
                 marketplaceAuctionId: 586854,
                 startDate: 1676576532,
@@ -308,8 +308,8 @@ describe('Marketplace Service', () => {
         endsAt: 1676585733,
         marketplaceAuctionId: 586854,
         marketplace: 'xoxno',
-        minBid: { amount: '1900000000000000000', token: 'EGLD' },
-        maxBid: { amount: '1900000000000000000', token: 'EGLD' },
+        minBid: { amount: '1900000000000000000', token: 'REWA' },
+        maxBid: { amount: '1900000000000000000', token: 'REWA' },
       }));
     });
 

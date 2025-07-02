@@ -6,7 +6,7 @@ import {
 } from "@terradharitri/sdk-core";
 import { BigNumber } from "bignumber.js";
 import * as fs from "fs";
-import { EGLD_NUM_DECIMALS } from "./constants.js";
+import { REWA_NUM_DECIMALS } from "./constants.js";
 
 const API_URLS = {
   devnet: "https://devnet-api.dharitri.org",
@@ -81,8 +81,8 @@ export const getEntrypoint = (network: string) => {
   return ENTRYPOINTS[network as keyof typeof ENTRYPOINTS];
 };
 
-export const denominateEgldValue = (value: string): bigint => {
-  return denominateValueWithDecimals(value, EGLD_NUM_DECIMALS);
+export const denominateRewaValue = (value: string): bigint => {
+  return denominateValueWithDecimals(value, REWA_NUM_DECIMALS);
 };
 
 export const getExplorerUrl = (network: string): string => {

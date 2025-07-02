@@ -345,7 +345,7 @@ export const itsRegisterCanonicalToken = async (
   ];
 
   if (addTokens) {
-    if (tokenIdentifier === 'EGLD') {
+    if (tokenIdentifier === 'REWA') {
       await tokenManager.setAccount({
         ...(await tokenManager.getAccount()),
         balance: 100_000,
@@ -400,7 +400,7 @@ export const itsRegisterCustomTokenLockUnlock = async (
   ];
 
   if (addTokens) {
-    if (tokenIdentifier === 'EGLD') {
+    if (tokenIdentifier === 'REWA') {
       await tokenManager.setAccount({
         ...(await tokenManager.getAccount()),
         balance: 100_000,

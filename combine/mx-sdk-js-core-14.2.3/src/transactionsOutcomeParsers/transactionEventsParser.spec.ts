@@ -68,7 +68,7 @@ describe("test transaction events parser", () => {
                 dest_address: Address.newFromBech32("erd1wfkv9495dhtt6a9yepxsyu2mlpw2ua333j4cr0qfulpxr4q5nfnshgyqun"),
                 tokens: [
                     {
-                        token_identifier: "WEGLD-01e49d",
+                        token_identifier: "WREWA-01e49d",
                         token_nonce: new BigNumber(0),
                         amount: new BigNumber(100),
                     },
@@ -116,13 +116,13 @@ describe("test transaction events parser", () => {
                     action_id: new BigNumber("1"),
                     group_id: new BigNumber("0"),
                     action_data: {
-                        name: "SendTransferExecuteEgld",
+                        name: "SendTransferExecuteRewa",
                         fields: [
                             {
                                 to: Address.newFromBech32(
                                     "erd1qqqqqqqqqqqqqpgq6qr0w0zzyysklfneh32eqp2cf383zc89d8sstnkl60",
                                 ),
-                                egld_amount: new BigNumber("0"),
+                                rewa_amount: new BigNumber("0"),
                                 opt_gas_limit: null,
                                 endpoint_name: Buffer.from("add"),
                                 arguments: [Buffer.from("07", "hex")],

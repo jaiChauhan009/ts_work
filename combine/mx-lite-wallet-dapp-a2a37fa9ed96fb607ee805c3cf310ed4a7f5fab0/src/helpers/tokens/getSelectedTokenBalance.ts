@@ -1,4 +1,4 @@
-import { formatAmount, getEgldLabel } from 'lib';
+import { formatAmount, getRewaLabel } from 'lib';
 import { DECIMALS, DIGITS } from 'localConstants';
 import { PartialNftType, TokenType } from 'types';
 
@@ -28,7 +28,7 @@ export const getSelectedTokenBalance = ({
     return '1';
   }
 
-  if (!currentToken.decimals && currentToken.identifier !== getEgldLabel()) {
+  if (!currentToken.decimals && currentToken.identifier !== getRewaLabel()) {
     return currentToken.balance ?? '0';
   }
 

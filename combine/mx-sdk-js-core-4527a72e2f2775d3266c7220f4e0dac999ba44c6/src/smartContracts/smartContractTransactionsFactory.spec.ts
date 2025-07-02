@@ -115,14 +115,14 @@ describe("test smart contract transactions factory", function () {
         const contract = Address.newFromBech32("erd1qqqqqqqqqqqqqpgqhy6nl6zq07rnzry8uyh6rtyq0uzgtk3e69fqgtz9l4");
         const func = "add";
         const gasLimit = 6000000n;
-        const egldAmount = 1000000000000000000n;
+        const rewaAmount = 1000000000000000000n;
 
         const transaction = factory.createTransactionForExecute(sender, {
             contract: contract,
             function: func,
             gasLimit: gasLimit,
             arguments: [new U32Value(7)],
-            nativeTransferAmount: egldAmount,
+            nativeTransferAmount: rewaAmount,
         });
 
         const transactionAbiAware = abiAwareFactory.createTransactionForExecute(sender, {
@@ -130,7 +130,7 @@ describe("test smart contract transactions factory", function () {
             function: func,
             gasLimit: gasLimit,
             arguments: [7],
-            nativeTransferAmount: egldAmount,
+            nativeTransferAmount: rewaAmount,
         });
 
         assert.deepEqual(
@@ -188,13 +188,13 @@ describe("test smart contract transactions factory", function () {
         assert.deepEqual(transaction, transactionAbiAware);
     });
 
-    it("should create 'Transaction' for execute and transfer with EGLD as single token tranfer", async function () {
+    it("should create 'Transaction' for execute and transfer with REWA as single token tranfer", async function () {
         const sender = Address.newFromBech32("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th");
         const contract = Address.newFromBech32("erd1qqqqqqqqqqqqqpgqhy6nl6zq07rnzry8uyh6rtyq0uzgtk3e69fqgtz9l4");
         const func = "add";
         const gasLimit = 6000000n;
         const args = [new U32Value(7)];
-        const token = new Token({ identifier: "EGLD-000000", nonce: 0n });
+        const token = new Token({ identifier: "REWA-000000", nonce: 0n });
         const transfer = new TokenTransfer({ token, amount: 10n });
 
         const transaction = factory.createTransactionForExecute(sender, {

@@ -70,7 +70,7 @@ describe("test message", () => {
             signature:
                 "0xb16847437049986f936dd4a0917c869730cbf29e40a0c0821ca70db33f44758c3d41bcbea446dee70dea13d50942343bb78e74979dc434bbb2b901e0f4fd1809",
             version: 1,
-            signer: "ErdJS",
+            signer: "DrtJS",
         };
 
         const message = messageComputer.unpackMessage(legacyMessage);
@@ -81,7 +81,7 @@ describe("test message", () => {
             "b16847437049986f936dd4a0917c869730cbf29e40a0c0821ca70db33f44758c3d41bcbea446dee70dea13d50942343bb78e74979dc434bbb2b901e0f4fd1809",
         );
         assert.deepEqual(message.version, DEFAULT_MESSAGE_VERSION);
-        assert.equal(message.signer, "ErdJS");
+        assert.equal(message.signer, "DrtJS");
     });
 
     it("should unpack message", async () => {

@@ -1,5 +1,5 @@
 import { InterpretedTransactionType } from 'types/serverTransactions.types';
-import { getEgldValueData } from './getEgldValueData';
+import { getRewaValueData } from './getRewaValueData';
 import { getVisibleOperations } from './getVisibleOperations';
 
 let warningLogged = false;
@@ -20,12 +20,12 @@ export function getValueFromOperations(
   try {
     if (transaction.operations) {
       const [operation] = getVisibleOperations(transaction);
-      return getEgldValueData(operation?.value);
+      return getRewaValueData(operation?.value);
     } else {
       logError(transaction.txHash);
     }
   } catch {
     logError(transaction.txHash);
   }
-  return getEgldValueData(transaction.value);
+  return getRewaValueData(transaction.value);
 }

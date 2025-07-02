@@ -20,7 +20,7 @@ export class CollectionsStatsService {
   async getStats(
     identifier: string,
     marketplaceKey: string = undefined,
-    paymentToken: string = mxConfig.egld,
+    paymentToken: string = mxConfig.rewa,
   ): Promise<CollectionStatsEntity> {
     try {
       const cacheKey = this.getStatsCacheKey(identifier, marketplaceKey, paymentToken);
@@ -52,7 +52,7 @@ export class CollectionsStatsService {
     }
   }
 
-  private getStatsCacheKey(identifier: string, marketplaceKey: string = undefined, paymentToken: string = mxConfig.egld) {
+  private getStatsCacheKey(identifier: string, marketplaceKey: string = undefined, paymentToken: string = mxConfig.rewa) {
     return generateCacheKeyFromParams(CacheInfo.CollectionStats.key, identifier, marketplaceKey ?? '', paymentToken ?? '');
   }
 

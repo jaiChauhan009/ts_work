@@ -20,7 +20,7 @@ describe('getTokenFromData tests', () => {
     );
 
     expect(result).toStrictEqual({
-      tokenId: 'WEGLD-88600a',
+      tokenId: 'WREWA-88600a',
       amount: '10000000000000000000'
     });
   });

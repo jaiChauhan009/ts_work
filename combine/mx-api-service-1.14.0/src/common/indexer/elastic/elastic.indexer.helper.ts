@@ -370,7 +370,7 @@ export class ElasticIndexerHelper {
       elasticQuery = elasticQuery.withMustCondition(QueryType.Should(queries));
     }
 
-    if (filter.token === 'EGLD') {
+    if (filter.token === 'REWA') {
       elasticQuery = elasticQuery.withMustNotCondition(QueryType.Match('value', '0'));
     } else {
       elasticQuery = elasticQuery.withMustMatchCondition('tokens', filter.token, QueryOperator.AND);
@@ -563,7 +563,7 @@ export class ElasticIndexerHelper {
       }
     }
 
-    if (filter.token === 'EGLD') {
+    if (filter.token === 'REWA') {
       elasticQuery = elasticQuery.withMustNotCondition(QueryType.Match('value', '0'));
     } else {
       elasticQuery = elasticQuery.withMustMatchCondition('tokens', filter.token, QueryOperator.AND);

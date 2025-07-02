@@ -8,15 +8,15 @@ export async function getServerConfiguration(apiAddress: string) {
   try {
     const { data } = await axios.get<NetworkType>(configUrl);
     if (data != null) {
-      // egldDenomination will be removed from API when dapp-core v1 will be discontinued
-      const egldDenomination = 'egldDenomination';
-      if (egldDenomination in data) {
+      // rewaDenomination will be removed from API when dapp-core v1 will be discontinued
+      const rewaDenomination = 'rewaDenomination';
+      if (rewaDenomination in data) {
         const {
-          [egldDenomination]: decimals,
+          [rewaDenomination]: decimals,
           decimals: digits,
           ...rest
         } = data as NetworkType & {
-          [egldDenomination]: string;
+          [rewaDenomination]: string;
         };
         const networkConfig: NetworkType = {
           ...rest,

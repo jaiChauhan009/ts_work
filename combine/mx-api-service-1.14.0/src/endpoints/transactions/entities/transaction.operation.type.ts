@@ -6,7 +6,7 @@ export enum TransactionOperationType {
   dcdt = 'dcdt',
   log = 'log',
   error = 'error',
-  egld = 'egld'
+  rewa = 'rewa'
 }
 
 registerEnumType(TransactionOperationType, {
@@ -28,8 +28,8 @@ registerEnumType(TransactionOperationType, {
     error: {
       description: 'Error operation type.',
     },
-    egld: {
-      description: 'EGLD operation type.',
+    rewa: {
+      description: 'REWA operation type.',
     },
   },
 });

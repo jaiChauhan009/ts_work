@@ -32,10 +32,10 @@ describe('Tokens', () => {
 
   it('should acces the token details page', () => {
     cy.viewport(1000, 3000);
-    cy.contains('a', 'WEGLD').click();
+    cy.contains('a', 'WREWA').click();
     cy.getSelector('title').should(
       AssertionEnum.contain,
-      'WrappedEGLD (WEGLD) Token'
+      'WrappedREWA (WREWA) Token'
     );
   });
   it('should properly search tokens', () => {
@@ -44,8 +44,8 @@ describe('Tokens', () => {
     });
     cy.getSelector('tokensSearch').type('$').type('{enter}');
     cy.contains('No Tokens');
-    cy.getSelector('tokensSearch').clear().type('EGLD').type('{enter}');
-    cy.checkUrl('/tokens?search=EGLD');
-    cy.get('tr').should(AssertionEnum.contain, 'xEGLD');
+    cy.getSelector('tokensSearch').clear().type('REWA').type('{enter}');
+    cy.checkUrl('/tokens?search=REWA');
+    cy.get('tr').should(AssertionEnum.contain, 'xREWA');
   });
 });

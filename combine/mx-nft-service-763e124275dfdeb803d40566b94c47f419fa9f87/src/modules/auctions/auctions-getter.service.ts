@@ -164,7 +164,7 @@ export class AuctionsGetterService {
     let paymentDecimals = mxConfig.decimals;
     const sort = queryRequest.getSort();
     const allFilters = queryRequest.getAllFilters();
-    if (collectionFilter && (!paymentTokenFilter || paymentTokenFilter === mxConfig.egld)) {
+    if (collectionFilter && (!paymentTokenFilter || paymentTokenFilter === mxConfig.rewa)) {
       return await this.retriveCollectionAuctions(collectionFilter, queryRequest, sort);
     }
 
@@ -218,7 +218,7 @@ export class AuctionsGetterService {
       priceRange = await this.computePriceRange(allAuctions, paymentTokenFilter, paymentToken);
       allAuctions = this.filterByPriceRange(queryRequest, paymentToken, allAuctions);
     } else {
-      priceRange = await this.computePriceRange(allAuctions, mxConfig.egld);
+      priceRange = await this.computePriceRange(allAuctions, mxConfig.rewa);
     }
 
     if (sort) {

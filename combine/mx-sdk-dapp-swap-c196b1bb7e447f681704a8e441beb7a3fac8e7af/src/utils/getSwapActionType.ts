@@ -1,29 +1,29 @@
-import { EGLD_IDENTIFIER } from 'constants/general';
+import { REWA_IDENTIFIER } from 'constants/general';
 import { DcdtType, SwapActionTypesEnum } from 'types';
 
 export const getSwapActionType = ({
   firstTokenId,
   secondTokenId,
-  wrappedEgld
+  wrappedRewa
 }: {
   firstTokenId?: string;
   secondTokenId?: string;
-  wrappedEgld?: DcdtType;
+  wrappedRewa?: DcdtType;
 }) => {
-  if (!firstTokenId || !secondTokenId || !wrappedEgld) {
+  if (!firstTokenId || !secondTokenId || !wrappedRewa) {
     return;
   }
 
-  const isWrapEgldTransaction =
-    firstTokenId === EGLD_IDENTIFIER &&
-    secondTokenId === wrappedEgld?.identifier;
+  const isWrapRewaTransaction =
+    firstTokenId === REWA_IDENTIFIER &&
+    secondTokenId === wrappedRewa?.identifier;
 
-  const isUnwrapEgldTransaction =
-    firstTokenId === wrappedEgld?.identifier &&
-    secondTokenId === EGLD_IDENTIFIER;
+  const isUnwrapRewaTransaction =
+    firstTokenId === wrappedRewa?.identifier &&
+    secondTokenId === REWA_IDENTIFIER;
 
-  if (isWrapEgldTransaction) return SwapActionTypesEnum.wrap;
-  if (isUnwrapEgldTransaction) return SwapActionTypesEnum.unwrap;
+  if (isWrapRewaTransaction) return SwapActionTypesEnum.wrap;
+  if (isUnwrapRewaTransaction) return SwapActionTypesEnum.unwrap;
 
   return SwapActionTypesEnum.swap;
 };

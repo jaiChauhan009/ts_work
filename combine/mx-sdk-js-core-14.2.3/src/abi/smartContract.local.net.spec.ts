@@ -298,7 +298,7 @@ describe("test on local testnet", function () {
             gasLimit: 10000000n,
             arguments: [
                 BytesValue.fromUTF8("lucky"),
-                new TokenIdentifierValue("EGLD"),
+                new TokenIdentifierValue("REWA"),
                 new BigUIntValue(1),
                 OptionValue.newMissing(),
                 OptionValue.newMissing(),

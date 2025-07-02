@@ -40,13 +40,13 @@ export class MXApiServiceMock {
     async getNftsForUser(address: string): Promise<NftToken[]> {
         return [
             {
-                collection: 'EGLDMEXFL-abcdef',
-                ticker: 'EGLDMEXFL',
+                collection: 'REWAMEXFL-abcdef',
+                ticker: 'REWAMEXFL',
                 name: 'FarmToken',
                 type: 'SemiFungibleDCDT',
                 decimals: 18,
                 balance: '1000000000000000000',
-                identifier: 'EGLDMEXFL-abcdef-01',
+                identifier: 'REWAMEXFL-abcdef-01',
                 attributes: 'AAAABQeMCWDbAAAAAAAAAF8CAQ==',
                 creator: Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000021',

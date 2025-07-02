@@ -56,16 +56,16 @@ describe('ApiMetricService', () => {
   describe('getCurrentNonce', () => {
     it('should return current nonce for a given shard id', async () => {
       jest.spyOn(gatewayService, 'getNetworkStatus').mockResolvedValue({
-        erd_cross_check_block_height: 'meta 16974200',
-        erd_current_round: 16995012,
-        erd_epoch_number: 1180,
-        erd_highest_final_nonce: 16989264,
-        erd_nonce: 16989268,
-        erd_nonce_at_epoch_start: 16987444,
-        erd_nonces_passed_in_current_epoch: 1824,
-        erd_round_at_epoch_start: 16993184,
-        erd_rounds_passed_in_current_epoch: 1828,
-        erd_rounds_per_epoch: 14400,
+        drt_cross_check_block_height: 'meta 16974200',
+        drt_current_round: 16995012,
+        drt_epoch_number: 1180,
+        drt_highest_final_nonce: 16989264,
+        drt_nonce: 16989268,
+        drt_nonce_at_epoch_start: 16987444,
+        drt_nonces_passed_in_current_epoch: 1824,
+        drt_round_at_epoch_start: 16993184,
+        drt_rounds_passed_in_current_epoch: 1828,
+        drt_rounds_per_epoch: 14400,
       });
       const result = await service.getCurrentNonce(1);
 

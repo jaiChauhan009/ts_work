@@ -9,8 +9,8 @@ import {
   loginWithPem
 } from 'utils/testUtils/puppeteer';
 
-describe('Validate and send EGLD tests', () => {
-  it('should validate form and send EGLD successfully', async () => {
+describe('Validate and send REWA tests', () => {
+  it('should validate form and send REWA successfully', async () => {
     await page.goto(`${WALLET_SOURCE_ORIGIN}/logout`, {
       waitUntil: 'domcontentloaded'
     });
@@ -22,7 +22,7 @@ describe('Validate and send EGLD tests', () => {
 
     await expectElementToContainText({
       dataTestId: DataTestIdsEnum.availableAmount,
-      text: 'Available: 4.559443050404540691 WEGLD'
+      text: 'Available: 4.559443050404540691 WREWA'
     });
 
     await page.click(getByDataTestId(DataTestIdsEnum.sendBtn));

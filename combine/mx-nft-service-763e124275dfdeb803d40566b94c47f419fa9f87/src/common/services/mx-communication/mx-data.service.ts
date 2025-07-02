@@ -16,7 +16,7 @@ export class MxDataApiService {
   }
 
   async getCexPrice(timestamp: string): Promise<number> {
-    let requestUrl = `${this.url}/v1/quotes/cex/${mxConfig.egld}?fields=price&date=${timestamp}`;
+    let requestUrl = `${this.url}/v1/quotes/cex/${mxConfig.rewa}?fields=price&date=${timestamp}`;
 
     try {
       let response = await this.apiService.get(requestUrl, this.getHeaders());

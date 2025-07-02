@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { EGLD_IDENTIFIER, FIXED_INPUT, FIXED_OUTPUT } from 'constants/general';
+import { REWA_IDENTIFIER, FIXED_INPUT, FIXED_OUTPUT } from 'constants/general';
 import { stringIsFloat, parseAmount } from 'lib';
 import { SwapRouteType, SelectOptionType } from 'types';
 import {
@@ -269,7 +269,7 @@ export const useSwapFormHandlers = ({
 
       const balance = current.firstToken?.token.balance ?? '0';
       const amountIn =
-        tokenInID === EGLD_IDENTIFIER ? getBalanceMinusDust(balance) : balance;
+        tokenInID === REWA_IDENTIFIER ? getBalanceMinusDust(balance) : balance;
 
       const hasBothTokens = tokenInID != null && tokenOutID != null;
 

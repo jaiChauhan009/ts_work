@@ -1,21 +1,21 @@
 import { useEffect, useMemo } from 'react';
-import { useGetTokensWithEgld } from 'hooks';
-import { getEgldLabel, useGetAccountInfo } from 'lib';
+import { useGetTokensWithRewa } from 'hooks';
+import { getRewaLabel, useGetAccountInfo } from 'lib';
 import { useLazyGetNftsQuery } from 'redux/endpoints';
 import { SendTypeEnum, TokenOptionType } from 'types';
 
 export const useTokenOptions = ({
   sendType,
-  skipAddEgld
+  skipAddRewa
 }: {
   sendType: SendTypeEnum;
-  skipAddEgld?: boolean;
+  skipAddRewa?: boolean;
 }) => {
   const { address, websocketEvent } = useGetAccountInfo();
-  const { tokens, isLoading: isLoadingTokens } = useGetTokensWithEgld();
+  const { tokens, isLoading: isLoadingTokens } = useGetTokensWithRewa();
   const [fetchNFTs, { data: nfts, isLoading: isLoadingNfts }] =
     useLazyGetNftsQuery();
-  const egldLabel = getEgldLabel();
+  const rewaLabel = getRewaLabel();
 
   const getTokenOptionsByType = (type: SendTypeEnum): TokenOptionType[] => {
     if (type === SendTypeEnum.nft) {
@@ -28,7 +28,7 @@ export const useTokenOptions = ({
     }
 
     return tokens
-      .filter((token) => !skipAddEgld || token.identifier !== egldLabel)
+      .filter((token) => !skipAddRewa || token.identifier !== rewaLabel)
       .map((token) => ({
         value: token.identifier,
         label: token.name
@@ -48,7 +48,7 @@ export const useTokenOptions = ({
   );
 
   const allTokens = [...tokens, ...(nfts || [])].filter(
-    (token) => !skipAddEgld || token.identifier !== egldLabel
+    (token) => !skipAddRewa || token.identifier !== rewaLabel
   );
 
   return {

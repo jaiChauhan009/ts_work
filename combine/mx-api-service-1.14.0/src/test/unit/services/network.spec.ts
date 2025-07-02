@@ -72,7 +72,7 @@ describe('NetworkService', () => {
           provide: PluginService,
           useValue:
           {
-            getEgldPrice: jest.fn(),
+            getRewaPrice: jest.fn(),
             processAbout: jest.fn(),
           },
         },
@@ -116,7 +116,7 @@ describe('NetworkService', () => {
         {
           provide: DataApiService,
           useValue: {
-            getEgldPrice: jest.fn(),
+            getRewaPrice: jest.fn(),
           },
         },
         {
@@ -171,12 +171,12 @@ describe('NetworkService', () => {
   describe('getNetworkConfig', () => {
     it('should return network config when both promises resolve with valid values', async () => {
       const getNetworkConfigSpy = jest.spyOn(networkService['gatewayService'], 'getNetworkConfig').mockResolvedValue(new NetworkConfig({
-        erd_round_duration: 5000,
-        erd_rounds_per_epoch: 10,
+        drt_round_duration: 5000,
+        drt_rounds_per_epoch: 10,
       }));
 
       jest.spyOn(networkService['gatewayService'], 'getNetworkStatus').mockResolvedValue(new NetworkStatus({
-        erd_rounds_passed_in_current_epoch: 3,
+        drt_rounds_passed_in_current_epoch: 3,
       }));
 
       const result = await networkService.getNetworkConfig();
@@ -191,8 +191,8 @@ describe('NetworkService', () => {
 
     it('should throw error when getNetworkStatus() promise rejects', async () => {
       jest.spyOn(networkService['gatewayService'], 'getNetworkConfig').mockResolvedValue(new NetworkConfig({
-        erd_round_duration: 5000,
-        erd_rounds_per_epoch: 10,
+        drt_round_duration: 5000,
+        drt_rounds_per_epoch: 10,
       }));
       jest.spyOn(networkService['gatewayService'], 'getNetworkStatus').mockRejectedValue(new Error('Unable to get network status'));
 
@@ -311,40 +311,40 @@ describe('NetworkService', () => {
   describe('getStats', () => {
     it('should return stats details', async () => {
       const mockNetworkConfig: NetworkConfig = {
-        erd_adaptivity: false,
-        erd_chain_id: '1',
-        erd_denomination: 18,
-        erd_gas_per_data_byte: 1500,
-        erd_gas_price_modifier: '0.01',
-        erd_hysteresis: '0.200000',
-        erd_latest_tag_software_version: 'v1.5.14.0',
-        erd_max_gas_per_transaction: 600000000,
-        erd_meta_consensus_group_size: 400,
-        erd_min_gas_limit: 50000,
-        erd_min_gas_price: 1000000000,
-        erd_min_transaction_version: 1,
-        erd_num_metachain_nodes: 400,
-        erd_num_nodes_in_shard: 400,
-        erd_num_shards_without_meta: 3,
-        erd_rewards_top_up_gradient_point: '2000000000000000000000000',
-        erd_round_duration: 6000,
-        erd_rounds_per_epoch: 14400,
-        erd_shard_consensus_group_size: 63,
-        erd_start_time: 1596117600,
-        erd_top_up_factor: '0.500000',
+        drt_adaptivity: false,
+        drt_chain_id: '1',
+        drt_denomination: 18,
+        drt_gas_per_data_byte: 1500,
+        drt_gas_price_modifier: '0.01',
+        drt_hysteresis: '0.200000',
+        drt_latest_tag_software_version: 'v1.5.14.0',
+        drt_max_gas_per_transaction: 600000000,
+        drt_meta_consensus_group_size: 400,
+        drt_min_gas_limit: 50000,
+        drt_min_gas_price: 1000000000,
+        drt_min_transaction_version: 1,
+        drt_num_metachain_nodes: 400,
+        drt_num_nodes_in_shard: 400,
+        drt_num_shards_without_meta: 3,
+        drt_rewards_top_up_gradient_point: '2000000000000000000000000',
+        drt_round_duration: 6000,
+        drt_rounds_per_epoch: 14400,
+        drt_shard_consensus_group_size: 63,
+        drt_start_time: 1596117600,
+        drt_top_up_factor: '0.500000',
       };
 
       const mockNetworkStatus: NetworkStatus = {
-        erd_cross_check_block_height: '0: 17287291, 1: 17280583, 2: 17287747, ',
-        erd_current_round: 17293220,
-        erd_epoch_number: 1200,
-        erd_highest_final_nonce: 17272382,
-        erd_nonce: 17272383,
-        erd_nonce_at_epoch_start: 17260366,
-        erd_nonces_passed_in_current_epoch: 12017,
-        erd_round_at_epoch_start: 17281202,
-        erd_rounds_passed_in_current_epoch: 12018,
-        erd_rounds_per_epoch: 14400,
+        drt_cross_check_block_height: '0: 17287291, 1: 17280583, 2: 17287747, ',
+        drt_current_round: 17293220,
+        drt_epoch_number: 1200,
+        drt_highest_final_nonce: 17272382,
+        drt_nonce: 17272383,
+        drt_nonce_at_epoch_start: 17260366,
+        drt_nonces_passed_in_current_epoch: 12017,
+        drt_round_at_epoch_start: 17281202,
+        drt_rounds_passed_in_current_epoch: 12018,
+        drt_rounds_per_epoch: 14400,
       };
 
       jest.spyOn(apiConfigService, 'getMetaChainShardId').mockReturnValue(4294967295);

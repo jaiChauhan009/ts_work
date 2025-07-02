@@ -5,7 +5,7 @@ const createMockTransaction = (params: { hash: string; status?: string; timestam
   hash: params.hash,
   status: params.status || 'success',
   link: `https://explorer.com/${params.hash}`,
-  asset: { text: 'EGLD', imageUrl: 'egld.png' },
+  asset: { text: 'REWA', imageUrl: 'rewa.png' },
   action: { name: 'transfer' },
   interactor: 'wallet1',
   timestamp: params.timestamp || 1234567890,

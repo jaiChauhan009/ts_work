@@ -34,7 +34,7 @@ export async function getBalance(address: string): Promise<CallToolResult> {
     content: [
       {
         type: "text",
-        text: `The balance for ${addressObj.toBech32()} is ${formattedBalance} EGLD.`,
+        text: `The balance for ${addressObj.toBech32()} is ${formattedBalance} REWA.`,
       },
     ],
   };

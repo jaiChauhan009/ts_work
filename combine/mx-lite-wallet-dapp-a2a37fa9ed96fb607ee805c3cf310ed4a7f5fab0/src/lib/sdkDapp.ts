@@ -2,7 +2,7 @@ import { nativeAuth } from '@terradharitri/sdk-dapp/services/nativeAuth/nativeAu
 import { replyToDapp as originalReplyToDapp } from '@terradharitri/sdk-js-web-wallet-io/out/replyToDapp/replyToDapp';
 import { ExtendedReplyWithPostMessageType, ReplyWithRedirectType } from 'types';
 
-export { getEgldLabel } from '@terradharitri/sdk-dapp/utils/network/getEgldLabel';
+export { getRewaLabel } from '@terradharitri/sdk-dapp/utils/network/getRewaLabel';
 export { getTransactions } from '@terradharitri/sdk-dapp/apiCalls/transactions/getTransactions';
 export { sendTransactions } from '@terradharitri/sdk-dapp/services/transactions/sendTransactions';
 export { sendBatchTransactions as sendBatchTransactionsSdkDapp } from '@terradharitri/sdk-dapp/services/transactions/sendBatchTransactions';

@@ -199,6 +199,6 @@ export class LockedAssetService {
   private async getCurrentEpoch(): Promise<number> {
     const metaChainShard = this.apiConfigService.getMetaChainShardId();
     const res = await this.gatewayService.getNetworkStatus(metaChainShard);
-    return res.erd_epoch_number;
+    return res.drt_epoch_number;
   }
 }

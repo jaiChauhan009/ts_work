@@ -19,7 +19,7 @@ describe("AccountAwaiter Tests", () => {
 
     it("should await on balance increase", async () => {
         const alice = Address.newFromBech32("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th");
-        // alice account is created with 1000 EGLD
+        // alice account is created with 1000 REWA
         const initialBalance = (await provider.getAccount(alice)).balance;
 
         // Mock balance timeline

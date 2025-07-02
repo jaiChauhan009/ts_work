@@ -5,18 +5,18 @@ import { urlBuilder } from 'helpers';
 import { activeNetworkSelector } from 'redux/selectors';
 
 export const NativeTokenTabs = () => {
-  const { egldLabel = 'egld' } = useSelector(activeNetworkSelector);
+  const { rewaLabel = 'rewa' } = useSelector(activeNetworkSelector);
 
   const tabs = [
     {
       tabLabel: 'Transactions',
-      tabTo: urlBuilder.nativeTokenDetails(egldLabel),
-      activationRoutes: [urlBuilder.nativeTokenDetails(egldLabel)]
+      tabTo: urlBuilder.nativeTokenDetails(rewaLabel),
+      activationRoutes: [urlBuilder.nativeTokenDetails(rewaLabel)]
     },
     {
       tabLabel: 'Holders',
-      tabTo: urlBuilder.nativeTokenDetailsAccounts(egldLabel),
-      activationRoutes: [urlBuilder.nativeTokenDetailsAccounts(egldLabel)]
+      tabTo: urlBuilder.nativeTokenDetailsAccounts(rewaLabel),
+      activationRoutes: [urlBuilder.nativeTokenDetailsAccounts(rewaLabel)]
     }
   ];
 

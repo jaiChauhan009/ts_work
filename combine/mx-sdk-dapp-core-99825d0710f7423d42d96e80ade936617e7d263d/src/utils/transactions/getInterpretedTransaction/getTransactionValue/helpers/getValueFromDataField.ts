@@ -1,7 +1,7 @@
 import BigNumber from 'bignumber.js';
 import { InterpretedTransactionType } from 'types/serverTransactions.types';
 import { decodeBase64 } from 'utils/decoders';
-import { getEgldValueData } from './getEgldValueData';
+import { getRewaValueData } from './getRewaValueData';
 
 let warningLogged = false;
 
@@ -11,7 +11,7 @@ export function getValueFromDataField(transaction: InterpretedTransactionType) {
     const encodedValue = data.replace(`${transaction.action?.name}@`, '');
     const value = new BigNumber(encodedValue, 16);
     if (!value.isNaN()) {
-      return getEgldValueData(value.toString(10));
+      return getRewaValueData(value.toString(10));
     }
   } catch {
     if (!warningLogged) {
@@ -23,5 +23,5 @@ export function getValueFromDataField(transaction: InterpretedTransactionType) {
   }
 
   // fallback on transaction value
-  return getEgldValueData(transaction.value);
+  return getRewaValueData(transaction.value);
 }

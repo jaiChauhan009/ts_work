@@ -39,7 +39,7 @@ export class MetabondingActionRecognizerService {
     for (const chunk of chunks) {
       const week = new MetabondingWeek();
       week.week = BinaryUtils.hexToNumber(chunk[0]);
-      week.egldStaked = BinaryUtils.hexToBigInt(chunk[1]).toString();
+      week.rewaStaked = BinaryUtils.hexToBigInt(chunk[1]).toString();
       week.lkmexStaked = BinaryUtils.hexToBigInt(chunk[2]).toString();
 
       metabondingWeeks.push(week);
@@ -48,7 +48,7 @@ export class MetabondingActionRecognizerService {
     const result = new TransactionAction();
     result.name = MexFunction.claimRewards;
     result.category = TransactionActionCategory.mex;
-    result.description = `Eligible stake for ${metabondingWeeks.map((week) => `week ${week.week}: EGLD ${NumberUtils.toDenominatedString(BigInt(week.egldStaked))}, LKMEX ${NumberUtils.toDenominatedString(BigInt(week.lkmexStaked))}`).join('; ')}`;
+    result.description = `Eligible stake for ${metabondingWeeks.map((week) => `week ${week.week}: REWA ${NumberUtils.toDenominatedString(BigInt(week.rewaStaked))}, LKMEX ${NumberUtils.toDenominatedString(BigInt(week.lkmexStaked))}`).join('; ')}`;
     result.arguments = {
       weeks: metabondingWeeks,
       functionName: metadata.functionName,

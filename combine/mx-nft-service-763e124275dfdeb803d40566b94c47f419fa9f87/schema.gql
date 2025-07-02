@@ -320,7 +320,7 @@ enum AuctionTypeEnum {
 input BidActionArgs {
   auctionId: Int!
   identifier: String!
-  paymentTokenIdentifier: String! = "EGLD"
+  paymentTokenIdentifier: String! = "REWA"
   price: String!
 }
 
@@ -346,7 +346,7 @@ input BuyRandomNftActionArgs {
 input BuySftActionArgs {
   auctionId: Int!
   identifier: String!
-  paymentTokenIdentifier: String! = "EGLD"
+  paymentTokenIdentifier: String! = "REWA"
   price: String!
   quantity: String
 }
@@ -806,7 +806,7 @@ input IssueCampaignArgs {
   collectionTicker: String!
   mediaTypes: MediaTypeEnum!
   mintEndTime: Int!
-  mintPriceToken: String! = "EGLD"
+  mintPriceToken: String! = "REWA"
   mintStartTime: Int!
   minterAddress: String!
   ownerAddress: String!
@@ -1481,7 +1481,7 @@ type Token {
 }
 
 input TokenFilter {
-  token: String! = "EGLD"
+  token: String! = "REWA"
 }
 
 type TransactionNode {

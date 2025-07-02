@@ -41,13 +41,13 @@ export class UsdPriceService {
   }
 
   public async getToken(tokenId: string): Promise<Token> {
-    if (tokenId === mxConfig.egld || tokenId === mxConfig.wegld) {
+    if (tokenId === mxConfig.rewa || tokenId === mxConfig.wrewa) {
       return new Token({
-        identifier: mxConfig.egld,
-        symbol: mxConfig.egld,
-        name: mxConfig.egld,
+        identifier: mxConfig.rewa,
+        symbol: mxConfig.rewa,
+        name: mxConfig.rewa,
         decimals: mxConfig.decimals,
-        priceUsd: await this.getCurrentEgldPrice(),
+        priceUsd: await this.getCurrentRewaPrice(),
       });
     }
 
@@ -65,8 +65,8 @@ export class UsdPriceService {
   }
 
   async getTokenPriceUsd(token: string): Promise<string | undefined> {
-    if (token === mxConfig.egld || token === mxConfig.wegld) {
-      return await this.getCurrentEgldPrice();
+    if (token === mxConfig.rewa || token === mxConfig.wrewa) {
+      return await this.getCurrentRewaPrice();
     }
     return await this.getDcdtPriceUsd(token);
   }
@@ -78,16 +78,16 @@ export class UsdPriceService {
   }
 
   private async setAllCachedTokens(): Promise<Token[]> {
-    let [apiTokens, egldPriceUSD] = await Promise.all([this.getCachedApiTokens(), this.getCurrentEgldPrice()]);
+    let [apiTokens, rewaPriceUSD] = await Promise.all([this.getCachedApiTokens(), this.getCurrentRewaPrice()]);
 
-    const egldToken: Token = new Token({
-      identifier: mxConfig.egld,
-      symbol: mxConfig.egld,
-      name: mxConfig.egld,
+    const rewaToken: Token = new Token({
+      identifier: mxConfig.rewa,
+      symbol: mxConfig.rewa,
+      name: mxConfig.rewa,
       decimals: mxConfig.decimals,
-      priceUsd: egldPriceUSD,
+      priceUsd: rewaPriceUSD,
     });
-    return apiTokens.concat([egldToken]);
+    return apiTokens.concat([rewaToken]);
   }
 
   private async getTokenHistoricalPrice(tokenId: string, timestamp: number): Promise<number> {
@@ -118,11 +118,11 @@ export class UsdPriceService {
     );
   }
 
-  private async getCurrentEgldPrice(): Promise<string> {
+  private async getCurrentRewaPrice(): Promise<string> {
     return await this.cacheService.getOrSet(
-      CacheInfo.EgldToken.key,
-      async () => await this.mxApiService.getEgldPriceFromEconomics(),
-      CacheInfo.EgldToken.ttl,
+      CacheInfo.RewaToken.key,
+      async () => await this.mxApiService.getRewaPriceFromEconomics(),
+      CacheInfo.RewaToken.ttl,
     );
   }
 

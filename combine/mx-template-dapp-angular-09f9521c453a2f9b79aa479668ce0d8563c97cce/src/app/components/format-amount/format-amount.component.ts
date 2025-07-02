@@ -6,7 +6,7 @@ export interface FormatAmountProps {
   className?: string;
   'data-testid'?: string;
   showLabel?: boolean;
-  egldLabel?: string;
+  rewaLabel?: string;
   digits?: number;
   decimals?: number;
 }
@@ -31,7 +31,7 @@ export class FormatAmountComponent implements OnInit, OnDestroy, OnChanges {
   @Input() className?: string;
   @Input() dataTestId?: string;
   @Input() showLabel?: boolean = true;
-  @Input() egldLabel?: string = 'EGLD';
+  @Input() rewaLabel?: string = 'REWA';
   @Input() digits?: number = 4;
   @Input() decimals?: number = 18;
 
@@ -72,11 +72,11 @@ export class FormatAmountComponent implements OnInit, OnDestroy, OnChanges {
 
         this.valueInteger = parts[0] || '0';
         this.valueDecimal = parts[1] || '';
-        this.label = this.egldLabel || 'EGLD';
+        this.label = this.rewaLabel || 'REWA';
       } else {
         this.valueInteger = '0';
         this.valueDecimal = '';
-        this.label = this.egldLabel || 'EGLD';
+        this.label = this.rewaLabel || 'REWA';
       }
     } catch (error) {
       console.error('Error formatting amount:', error);
@@ -84,7 +84,7 @@ export class FormatAmountComponent implements OnInit, OnDestroy, OnChanges {
       this.isValid = false;
       this.valueDecimal = '';
       this.valueInteger = this.value || '0';
-      this.label = this.egldLabel || 'EGLD';
+      this.label = this.rewaLabel || 'REWA';
     }
   }
 }

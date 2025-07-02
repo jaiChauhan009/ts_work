@@ -6,7 +6,7 @@ import {
   OTHER_CHAIN_NAME,
   TOKEN_IDENTIFIER,
   TOKEN_IDENTIFIER2,
-  TOKEN_IDENTIFIER_EGLD,
+  TOKEN_IDENTIFIER_REWA,
 } from '../helpers';
 import {
   deployContracts,
@@ -392,15 +392,15 @@ describe('Interchain transfer', () => {
           { id: TOKEN_IDENTIFIER2, amount: 100 },
         ],
       })
-      .assertFail({ code: 4, message: 'Only egld is supported for paying gas' });
+      .assertFail({ code: 4, message: 'Only rewa is supported for paying gas' });
   });
 
-  test('Gas token egld', async () => {
+  test('Gas token rewa', async () => {
     const { computedTokenId, tokenManager, baseTokenManagerKvs } = await itsRegisterCanonicalToken(
       world,
       user,
       false,
-      'EGLD'
+      'REWA'
     );
 
     await user.callContract({
@@ -417,7 +417,7 @@ describe('Interchain transfer', () => {
       ],
     });
 
-    // Assert EGLD gas was paid for cross chain call
+    // Assert REWA gas was paid for cross chain call
     let kvs = await gasService.getAccount();
     assertAccount(kvs, {
       balance: 20,
@@ -431,7 +431,7 @@ describe('Interchain transfer', () => {
     });
   });
 
-  test('Gas token dcdt + egld', async () => {
+  test('Gas token dcdt + rewa', async () => {
     const { computedTokenId, tokenManager, baseTokenManagerKvs } = await itsRegisterCustomTokenLockUnlock(world, user);
 
     await user.callContract({
@@ -447,11 +447,11 @@ describe('Interchain transfer', () => {
       ],
       dcdts: [
         { id: TOKEN_IDENTIFIER, amount: 1_000 },
-        { id: TOKEN_IDENTIFIER_EGLD, amount: 100 },
+        { id: TOKEN_IDENTIFIER_REWA, amount: 100 },
       ],
     });
 
-    // Assert EGLD gas was paid for cross chain call
+    // Assert REWA gas was paid for cross chain call
     let kvs = await gasService.getAccount();
     assertAccount(kvs, {
       balance: 100,

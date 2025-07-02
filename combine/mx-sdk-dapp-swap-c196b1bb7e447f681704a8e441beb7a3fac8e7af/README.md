@@ -89,7 +89,7 @@ import { useTokens } from '@terradharitri/sdk-dapp-swap/hooks/useTokens';
 
 const {
   tokens,
-  wrappedEgld,
+  wrappedRewa,
   swapConfig,
   getTokens,
   isTokensLoading,
@@ -113,12 +113,12 @@ const {
   swapRouteError,
   swapActionType
 } = useSwapRoute({
-  wrappedEgld,
+  wrappedRewa,
   isPollingEnabled: true
 });
 ```
 
-The useSwapRoute hook returns the swapRoute required to compute the informations regarding both tokens provided in the fields. This hook accepts 2 optional parameters: `wrappedEgld` DcdtType object and a boolean parameter called `isPollingEnabled` to decide if the query should have polling or not.
+The useSwapRoute hook returns the swapRoute required to compute the informations regarding both tokens provided in the fields. This hook accepts 2 optional parameters: `wrappedRewa` DcdtType object and a boolean parameter called `isPollingEnabled` to decide if the query should have polling or not.
 
 ```typescript
 import { useSwapFormHandlers } from '@terradharitri/sdk-dapp-swap/hooks';
@@ -218,9 +218,9 @@ import { useSwapFormHandlers } from '@terradharitri/sdk-dapp-swap/hooks/useSwapF
 import {
   FIXED_INPUT,
   FIXED_OUTPUT,
-  EGLD_IDENTIFIER,
+  REWA_IDENTIFIER,
   DIGITS,
-  MIN_EGLD_DUST,
+  MIN_REWA_DUST,
   POLLING_INTERVAL
 } from '@terradharitri/sdk-dapp-swap/constants/general';
 ```
@@ -230,10 +230,10 @@ import {
 ```typescript
 import {
   useTokens,
-  useWrapEgld,
+  useWrapRewa,
   useSwapInfo,
   useSwapRoute,
-  useUnwrapEgld,
+  useUnwrapRewa,
   useQueryWrapper,
   useIsPageVisible,
   useRateCalculator,

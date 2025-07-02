@@ -22,9 +22,9 @@ export class MexWrapActionRecognizerService {
     }
 
     switch (metadata.functionName) {
-      case MexFunction.wrapEgld:
+      case MexFunction.wrapRewa:
         return this.getWrapAction(metadata);
-      case MexFunction.unwrapEgld:
+      case MexFunction.unwrapRewa:
         return this.getUnwrapAction(metadata);
       default:
         return undefined;
@@ -32,8 +32,8 @@ export class MexWrapActionRecognizerService {
   }
 
   private getWrapAction(metadata: TransactionMetadata): TransactionAction | undefined {
-    const wegldId = this.mexSettingsService.getWegldId();
-    if (!wegldId) {
+    const wrewaId = this.mexSettingsService.getWrewaId();
+    if (!wrewaId) {
       return undefined;
     }
 
@@ -42,14 +42,14 @@ export class MexWrapActionRecognizerService {
 
     const result = new TransactionAction();
     result.category = TransactionActionCategory.mex;
-    result.name = MexFunction.wrapEgld;
-    result.description = `Wrap ${valueDenominated} EGLD`;
+    result.name = MexFunction.wrapRewa;
+    result.description = `Wrap ${valueDenominated} REWA`;
     result.arguments = {
       token: {
         type: DcdtType.FungibleDCDT,
-        name: 'WrappedEGLD',
-        token: wegldId,
-        ticker: wegldId.split('-')[0],
+        name: 'WrappedREWA',
+        token: wrewaId,
+        ticker: wrewaId.split('-')[0],
         decimals: 18,
         value: metadata.value.toString(),
       },
@@ -60,6 +60,6 @@ export class MexWrapActionRecognizerService {
   }
 
   private getUnwrapAction(metadata: TransactionMetadata): TransactionAction | undefined {
-    return this.transactionActionDcdtNftRecognizerService.getMultiTransferActionWithTicker(metadata, TransactionActionCategory.mex, MexFunction.unwrapEgld, 'Unwrap');
+    return this.transactionActionDcdtNftRecognizerService.getMultiTransferActionWithTicker(metadata, TransactionActionCategory.mex, MexFunction.unwrapRewa, 'Unwrap');
   }
 }

@@ -319,7 +319,7 @@ const OperationRow = ({
         </DetailedItem>
       );
 
-    case TransactionVisibleOperationEnum.egld:
+    case TransactionVisibleOperationEnum.rewa:
       return (
         <DetailedItem operation={operation} transaction={transaction}>
           <div className='d-flex align-items-center symbol text-truncate text-neutral-100'>

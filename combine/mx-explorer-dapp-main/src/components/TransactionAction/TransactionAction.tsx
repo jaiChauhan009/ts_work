@@ -87,11 +87,11 @@ const ActionText = ({
   entry: any;
   transaction: TransactionType;
 }) => {
-  const { egldLabel = 'EGLD' } = useSelector(activeNetworkSelector);
+  const { rewaLabel = 'REWA' } = useSelector(activeNetworkSelector);
 
   switch (true) {
     case typeof entry === 'string':
-      return <span>{entry.replace('eGLD', egldLabel)}</span>;
+      return <span>{entry.replace('REWA', rewaLabel)}</span>;
 
     case Boolean(entry.address):
       let entryAssets;
@@ -167,10 +167,10 @@ const ActionText = ({
         </span>
       );
 
-    case Boolean(entry.egldValue):
+    case Boolean(entry.rewaValue):
       return (
         <span>
-          <FormatAmount value={entry.egldValue} showLastNonZeroDecimal />
+          <FormatAmount value={entry.rewaValue} showLastNonZeroDecimal />
         </span>
       );
 

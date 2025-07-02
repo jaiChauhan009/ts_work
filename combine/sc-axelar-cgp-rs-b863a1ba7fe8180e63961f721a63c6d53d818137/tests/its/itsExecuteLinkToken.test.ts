@@ -183,12 +183,12 @@ test('Execute with operator', async () => {
   });
 });
 
-test('Execute egld', async () => {
+test('Execute rewa', async () => {
   const { payload, crossChainId } = await mockGatewayCall(
     INTERCHAIN_TOKEN_ID,
     TOKEN_MANAGER_TYPE_LOCK_UNLOCK,
     Buffer.from(''),
-    'EGLD'
+    'REWA'
   );
 
   await user.callContract({
@@ -211,7 +211,7 @@ test('Execute egld', async () => {
     kvs: [
       e.kvs.Mapper('interchain_token_id').Value(e.TopBuffer(INTERCHAIN_TOKEN_ID)),
       e.kvs.Mapper('implementation_type').Value(e.U8(TOKEN_MANAGER_TYPE_LOCK_UNLOCK)),
-      e.kvs.Mapper('token_identifier').Value(e.Str('EGLD')),
+      e.kvs.Mapper('token_identifier').Value(e.Str('REWA')),
       e.kvs.Mapper('interchain_token_service').Value(its),
       e.kvs.Mapper('account_roles', e.Addr(ADDRESS_ZERO)).Value(e.U32(0b00000110)), // flow limit and operator roles
       e.kvs.Mapper('account_roles', its).Value(e.U32(0b00000110)),
@@ -254,7 +254,7 @@ test('Errors', async () => {
       gasLimit: 20_000_000,
       funcArgs: [e.Str(ITS_HUB_CHAIN), e.Str(MESSAGE_ID), e.Str(ITS_HUB_ADDRESS), payload],
     })
-    .assertFail({ code: 4, message: 'Can not send EGLD payment if not issuing DCDT' });
+    .assertFail({ code: 4, message: 'Can not send REWA payment if not issuing DCDT' });
 
   await user
     .callContract({

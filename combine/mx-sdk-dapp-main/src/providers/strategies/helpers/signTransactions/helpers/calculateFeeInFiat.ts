@@ -3,13 +3,13 @@ import { getUsdValue } from 'utils/operations/getUsdValue';
 
 export interface CalculateFeeInFiatType {
   feeLimit: string;
-  egldPriceInUsd: number;
+  rewaPriceInUsd: number;
   hideEqualSign?: boolean;
 }
 
 export const calculateFeeInFiat = ({
   feeLimit,
-  egldPriceInUsd,
+  rewaPriceInUsd,
   hideEqualSign
 }: CalculateFeeInFiatType) => {
   const amount = formatAmount({
@@ -21,7 +21,7 @@ export const calculateFeeInFiat = ({
 
   const feeAsUsdValue = getUsdValue({
     amount,
-    usd: egldPriceInUsd,
+    usd: rewaPriceInUsd,
     decimals: DIGITS
   });
 

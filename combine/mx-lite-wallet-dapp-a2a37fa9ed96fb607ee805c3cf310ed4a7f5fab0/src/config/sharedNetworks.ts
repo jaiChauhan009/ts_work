@@ -45,8 +45,8 @@ export const sharedNetorks: NetworkType[] = [
     sampleAuthenticatedDomains: ['https://localhost:3002'],
     sovereignContractAddress: '',
     walletAddress: 'https://localhost:3000',
-    WEGLDid: 'WEGLD-bd4d79',
-    hrp: 'erd',
+    WREWAid: 'WREWA-bd4d79',
+    hrp: 'drt',
     faucet: true,
     hasRegisterToken: true,
     hasSovereignTransfer: true

@@ -2,7 +2,7 @@
 
 Co-Signing provider for dApps: Guardians Provider. 
 
-<!-- Documentation is available on [docs.dharitri.org](https://docs.dharitri.org/sdk-and-tools/erdjs/erdjs-signing-providers/), while an integration example can be found [here](https://github.com/TerraDharitri/drt-js-sdk-examples/tree/main/signing-providers).
+<!-- Documentation is available on [docs.dharitri.org](https://docs.dharitri.org/sdk-and-tools/drtjs/drtjs-signing-providers/), while an integration example can be found [here](https://github.com/TerraDharitri/drt-js-sdk-examples/tree/main/signing-providers).
 
 Note that **we recommend using [dapp-core](https://github.com/TerraDharitri/mx-sdk-dapp)** instead of integrating the signing provider on your own.
 

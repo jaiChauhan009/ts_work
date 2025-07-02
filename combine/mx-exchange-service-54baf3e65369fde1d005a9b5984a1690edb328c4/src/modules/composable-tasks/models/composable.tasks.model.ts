@@ -2,21 +2,21 @@ import { EnumType, EnumVariantDefinition } from '@terradharitri/sdk-core/out';
 import { Field, ObjectType } from '@nestjs/graphql';
 
 export enum ComposableTaskType {
-    WRAP_EGLD = 'WrapEGLD',
-    UNWRAP_EGLD = 'UnwrapEGLD',
+    WRAP_REWA = 'WrapREWA',
+    UNWRAP_REWA = 'UnwrapREWA',
     SWAP = 'Swap',
     ROUTER_SWAP = 'RouterSwap',
-    SEND_EGLD_OR_DCDT = 'SendEgldOrDcdt',
+    SEND_REWA_OR_DCDT = 'SendRewaOrDcdt',
 }
 
 export class ComposableTaskEnumType {
     static getEnumType(): EnumType {
         return new EnumType('ComposableTaskType', [
-            new EnumVariantDefinition('WrapEGLD', 0),
-            new EnumVariantDefinition('UnwrapEGLD', 1),
+            new EnumVariantDefinition('WrapREWA', 0),
+            new EnumVariantDefinition('UnwrapREWA', 1),
             new EnumVariantDefinition('Swap', 2),
             new EnumVariantDefinition('RouterSwap', 3),
-            new EnumVariantDefinition('SendEgldOrDcdt', 4),
+            new EnumVariantDefinition('SendRewaOrDcdt', 4),
         ]);
     }
 }

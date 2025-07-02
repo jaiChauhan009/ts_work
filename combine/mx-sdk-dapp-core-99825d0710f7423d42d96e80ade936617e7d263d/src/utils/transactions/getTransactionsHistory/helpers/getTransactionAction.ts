@@ -15,14 +15,14 @@ export enum TransactionActionCategoryTypeEnum {
 export interface IGetTransactionActionParams {
   currentUserAddress: string;
   transaction: ServerTransactionType;
-  egldLabel?: string;
+  rewaLabel?: string;
   isPending?: boolean;
 }
 
 export const getTransactionAction = ({
   currentUserAddress,
   transaction,
-  egldLabel,
+  rewaLabel,
   isPending = false
 }: IGetTransactionActionParams): ITransactionListItemAction => {
   if (isPending) {
@@ -67,7 +67,7 @@ export const getTransactionAction = ({
   );
 
   const [transferType] = uniq(allTransferTypes);
-  const processedEgldLabel = egldLabel ?? 'EGLD';
+  const processedRewaLabel = rewaLabel ?? 'REWA';
   const directionLabel = getTransactionActionDirectionLabel({
     transaction,
     transferType,
@@ -115,7 +115,7 @@ export const getTransactionAction = ({
   }
 
   return {
-    name: `${directionLabel} ${processedEgldLabel}`,
+    name: `${directionLabel} ${processedRewaLabel}`,
     description: transactionActionDescription
   };
 };

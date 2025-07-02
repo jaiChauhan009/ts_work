@@ -36,7 +36,7 @@ export interface TransactionAccountType {
 export interface TransactionValueType {
   badge?: string;
   collection?: string;
-  egldLabel: string;
+  rewaLabel: string;
   link?: string;
   linkText?: string;
   name?: string;

@@ -1,6 +1,6 @@
 export * from './addressIsBech32';
 export * from './isContract';
-export * from './isEgldToken';
+export * from './isRewaToken';
 export * from './isEllipsisActive';
 export * from './isHash';
 export * from './isMetachain';

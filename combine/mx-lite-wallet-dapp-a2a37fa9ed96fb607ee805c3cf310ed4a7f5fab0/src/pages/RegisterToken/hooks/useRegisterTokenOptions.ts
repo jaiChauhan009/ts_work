@@ -1,17 +1,17 @@
 import { useEffect, useMemo } from 'react';
-import { useGetTokensWithEgld } from 'hooks';
-import { useGetAccountInfo, getEgldLabel } from 'lib';
+import { useGetTokensWithRewa } from 'hooks';
+import { useGetAccountInfo, getRewaLabel } from 'lib';
 import { useLazyGetCollectionsQuery } from 'redux/endpoints';
 import { SendTypeEnum, TokenOptionType } from 'types';
 
 export const useRegisterTokenOptions = (sendType: SendTypeEnum) => {
   const { address, websocketEvent } = useGetAccountInfo();
-  const { tokens, isLoading: isLoadingTokens } = useGetTokensWithEgld();
+  const { tokens, isLoading: isLoadingTokens } = useGetTokensWithRewa();
   const [
     fetchCollections,
     { data: collections, isLoading: isLoadingCollections }
   ] = useLazyGetCollectionsQuery();
-  const egldLabel = getEgldLabel();
+  const rewaLabel = getRewaLabel();
 
   const getTokenOptionsByType = (type: SendTypeEnum): TokenOptionType[] => {
     let options: TokenOptionType[] = [];
@@ -24,7 +24,7 @@ export const useRegisterTokenOptions = (sendType: SendTypeEnum) => {
         })) ?? [];
     } else {
       options = tokens
-        .filter((token) => token.identifier !== egldLabel)
+        .filter((token) => token.identifier !== rewaLabel)
         .map((token) => ({
           value: token.identifier,
           label: token.name
@@ -48,7 +48,7 @@ export const useRegisterTokenOptions = (sendType: SendTypeEnum) => {
   );
 
   const allTokens = [...tokens, ...(collections || [])].filter(
-    (token) => !('identifier' in token) || token.identifier !== egldLabel
+    (token) => !('identifier' in token) || token.identifier !== rewaLabel
   );
 
   return {

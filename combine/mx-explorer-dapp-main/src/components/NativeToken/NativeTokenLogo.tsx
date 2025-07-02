@@ -1,20 +1,20 @@
 import { SVGProps } from 'react';
 import { useSelector } from 'react-redux';
 
-import { ReactComponent as EgldLogo } from 'assets/img/tokens/egld-logo.svg';
+import { ReactComponent as RewaLogo } from 'assets/img/tokens/rewa-logo.svg';
 import { ReactComponent as SpcLogo } from 'assets/img/tokens/spc-logo.svg';
-import { isEgldToken } from 'helpers';
+import { isRewaToken } from 'helpers';
 import { activeNetworkSelector } from 'redux/selectors';
 
 // temporary?
 export const NativeTokenLogo = (props: SVGProps<SVGSVGElement>) => {
-  const { egldLabel } = useSelector(activeNetworkSelector);
+  const { rewaLabel } = useSelector(activeNetworkSelector);
 
-  if (isEgldToken(egldLabel)) {
-    return <EgldLogo {...props} />;
+  if (isRewaToken(rewaLabel)) {
+    return <RewaLogo {...props} />;
   }
 
-  switch (egldLabel?.toLowerCase()) {
+  switch (rewaLabel?.toLowerCase()) {
     case 'spc':
       return <SpcLogo {...props} />;
     default:

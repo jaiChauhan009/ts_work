@@ -35,7 +35,7 @@ export const NativeTokenRow = ({
   index: number;
   totalTokens: number;
 }) => {
-  const { egldLabel } = useSelector(activeNetworkSelector);
+  const { rewaLabel } = useSelector(activeNetworkSelector);
   const {
     isFetched: isEconomicsFetched,
     price,
@@ -50,7 +50,7 @@ export const NativeTokenRow = ({
   const { sort, order } = useGetSort();
   const showOnSearch = useIsNativeTokenSearched();
 
-  const nativeTokenLink = `/${egldLabel?.toLowerCase()}`;
+  const nativeTokenLink = `/${rewaLabel?.toLowerCase()}`;
 
   let showOnFilter = (!page || page === 1) && index === 0;
   const previousToken = tokens[index > 0 ? index - 1 : 0];
@@ -72,7 +72,7 @@ export const NativeTokenRow = ({
     isEconomicsFetched &&
     isStatsFetched
   ) {
-    const egldToken: DummyTokenType = {
+    const rewaToken: DummyTokenType = {
       price: unProcessedEconomics.price,
       marketCap: unProcessedEconomics.marketCap,
       circulatingSupply: unProcessedEconomics.circulatingSupply,
@@ -83,49 +83,49 @@ export const NativeTokenRow = ({
     const tokenValue = currentToken[sort as keyof TokenType];
     const previousTokenValue = previousToken[sort as keyof TokenType];
     const nextTokenValue = nextToken[sort as keyof TokenType];
-    const egldValue = egldToken[sort as keyof DummyTokenType];
+    const rewaValue = rewaToken[sort as keyof DummyTokenType];
 
     if (
-      egldValue !== undefined &&
+      rewaValue !== undefined &&
       ((tokenValue !== undefined || previousTokenValue) !== undefined ||
         nextTokenValue !== undefined)
     ) {
       showOnFilter = false;
       if (order === SortOrderEnum.desc) {
-        const egldIsGreaterThanNext =
-          new BigNumber(egldValue).isGreaterThanOrEqualTo(
+        const rewaIsGreaterThanNext =
+          new BigNumber(rewaValue).isGreaterThanOrEqualTo(
             tokenValue as string | number
           ) &&
-          new BigNumber(egldValue).isGreaterThanOrEqualTo(
+          new BigNumber(rewaValue).isGreaterThanOrEqualTo(
             nextTokenValue as string | number
           );
-        const egldIsGreater =
-          egldIsGreaterThanNext &&
-          new BigNumber(egldValue).isLessThanOrEqualTo(
+        const rewaIsGreater =
+          rewaIsGreaterThanNext &&
+          new BigNumber(rewaValue).isLessThanOrEqualTo(
             previousTokenValue as string | number
           );
         showOnFilter =
           previousToken?.identifier === currentToken?.identifier &&
           (!page || page === 1)
-            ? egldIsGreaterThanNext
-            : egldIsGreater;
+            ? rewaIsGreaterThanNext
+            : rewaIsGreater;
       }
       if (order === SortOrderEnum.asc) {
-        const egldIsGreaterThanPrevious =
-          new BigNumber(egldValue).isGreaterThanOrEqualTo(
+        const rewaIsGreaterThanPrevious =
+          new BigNumber(rewaValue).isGreaterThanOrEqualTo(
             previousTokenValue as string | number
           ) &&
-          new BigNumber(egldValue).isGreaterThanOrEqualTo(
+          new BigNumber(rewaValue).isGreaterThanOrEqualTo(
             tokenValue as string | number
           );
-        const egldIsLess =
-          new BigNumber(egldValue).isLessThanOrEqualTo(
+        const rewaIsLess =
+          new BigNumber(rewaValue).isLessThanOrEqualTo(
             nextTokenValue as string | number
-          ) && egldIsGreaterThanPrevious;
+          ) && rewaIsGreaterThanPrevious;
         showOnFilter =
           nextToken?.identifier === currentToken?.identifier && isLastPage
-            ? egldIsGreaterThanPrevious
-            : egldIsLess;
+            ? rewaIsGreaterThanPrevious
+            : rewaIsLess;
       }
     }
   }
@@ -138,7 +138,7 @@ export const NativeTokenRow = ({
   }
 
   return (
-    <tr className='egld-row'>
+    <tr className='rewa-row'>
       <td>
         <div className='token-identity d-flex flex-row'>
           <div className='d-flex align-items-center me-3'>
@@ -150,7 +150,7 @@ export const NativeTokenRow = ({
           </div>
           <div className='d-flex flex-column justify-content-center'>
             <NetworkLink to={nativeTokenLink} className='d-block token-ticker'>
-              {egldLabel}
+              {rewaLabel}
             </NetworkLink>
             {assets?.description && (
               <div
@@ -163,7 +163,7 @@ export const NativeTokenRow = ({
           </div>
         </div>
       </td>
-      <td>{assets?.name ?? egldLabel}</td>
+      <td>{assets?.name ?? rewaLabel}</td>
       <td>{price}</td>
       <td>{circulatingSupply}</td>
       <td>{marketCap}</td>

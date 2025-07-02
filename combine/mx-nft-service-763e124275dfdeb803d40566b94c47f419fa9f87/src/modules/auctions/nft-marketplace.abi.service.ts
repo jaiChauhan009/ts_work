@@ -82,9 +82,9 @@ export class NftMarketplaceAbiService {
     const { marketplaceAddress, auction } = await this.configureTransactionData(request.auctionId);
     if (request.paymentTokenIdentifier !== auction.paymentToken) throw new BadRequestError('Unaccepted payment token');
 
-    return request.paymentTokenIdentifier !== mxConfig.egld
+    return request.paymentTokenIdentifier !== mxConfig.rewa
       ? await this.bidWithDcdt(ownerAddress, request, marketplaceAddress, auction.marketplaceAuctionId)
-      : await this.bidWithEgld(ownerAddress, request, marketplaceAddress, auction.marketplaceAuctionId);
+      : await this.bidWithRewa(ownerAddress, request, marketplaceAddress, auction.marketplaceAuctionId);
   }
 
   async withdraw(ownerAddress: string, auctionId: number): Promise<TransactionNode> {
@@ -111,7 +111,7 @@ export class NftMarketplaceAbiService {
     }
 
     const factory = await ContractLoader.getFactory();
-    if (request.paymentToken !== mxConfig.egld) {
+    if (request.paymentToken !== mxConfig.rewa) {
       const token = new Token({ identifier: request.paymentToken });
       const transfer = new TokenTransfer({ token, amount: BigInt(request.paymentAmount) });
 
@@ -236,9 +236,9 @@ export class NftMarketplaceAbiService {
     const { marketplaceAddress, auction } = await this.configureTransactionData(request.auctionId);
     if (request.paymentTokenIdentifier !== auction.paymentToken) throw new BadRequestError('Unaccepted payment token');
 
-    return request.paymentTokenIdentifier !== mxConfig.egld
+    return request.paymentTokenIdentifier !== mxConfig.rewa
       ? await this.buySftWithDcdt(ownerAddress, request, marketplaceAddress, auction.marketplaceAuctionId)
-      : await this.buySftWithEgld(ownerAddress, request, marketplaceAddress, auction.marketplaceAuctionId);
+      : await this.buySftWithRewa(ownerAddress, request, marketplaceAddress, auction.marketplaceAuctionId);
   }
 
   async getAuctionQuery(auctionId: number, marketplace: Marketplace): Promise<AuctionAbi | ExternalAuctionAbi> {
@@ -400,7 +400,7 @@ export class NftMarketplaceAbiService {
     return returnArgs;
   }
 
-  private async bidWithEgld(
+  private async bidWithRewa(
     ownerAddress: string,
     request: BidRequest,
     marketplaceAddress: string,
@@ -440,7 +440,7 @@ export class NftMarketplaceAbiService {
     return transaction.toPlainObject();
   }
 
-  private async buySftWithEgld(
+  private async buySftWithRewa(
     ownerAddress: string,
     request: BuySftRequest,
     marketplaceAddress: string,

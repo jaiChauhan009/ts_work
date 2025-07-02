@@ -19,12 +19,12 @@ type ExtractTransactionsInfoType = {
   sender: string;
   address: string;
   apiAddress: string;
-  egldLabel: string;
+  rewaLabel: string;
   parsedTransactionsByDataField: Record<string, TransactionDataTokenType>;
 };
 
 export function getExtractTransactionsInfo({
-  egldLabel,
+  rewaLabel,
   apiAddress,
   sender,
   address,
@@ -80,7 +80,7 @@ export function getExtractTransactionsInfo({
     }
 
     const isTokenTransaction = Boolean(
-      tokenId && isTokenTransfer({ tokenId, egldLabel })
+      tokenId && isTokenTransfer({ tokenId, rewaLabel })
     );
 
     return {

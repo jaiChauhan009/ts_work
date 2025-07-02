@@ -39,7 +39,7 @@ export const getStorageCustomNetworks = (): NetworkType[] => {
         return {
           ...network,
           ...(!network?.adapter ? { adapter: NetworkAdapterEnum.api } : {}),
-          ...(!network?.egldLabel ? { egldLabel: 'xEGLD' } : {}),
+          ...(!network?.rewaLabel ? { rewaLabel: 'xREWA' } : {}),
           ...(!network?.chainId ? { chainId: 'T' } : {}),
           isCustom: true
         };

@@ -43,12 +43,12 @@ pub trait ProxyItsModule:
     fn token_manager_take_token(
         &self,
         token_id: &TokenId<Self::Api>,
-        token_identifier: EgldOrDcdtTokenIdentifier,
+        token_identifier: RewaOrDcdtTokenIdentifier,
         amount: BigUint,
     ) {
         self.token_manager_proxy(self.deployed_token_manager(token_id))
             .take_token()
-            .with_egld_or_single_dcdt_transfer(EgldOrDcdtTokenPayment::new(
+            .with_rewa_or_single_dcdt_transfer(RewaOrDcdtTokenPayment::new(
                 token_identifier,
                 0,
                 amount,
@@ -71,10 +71,10 @@ pub trait ProxyItsModule:
         token_id: &TokenId<Self::Api>,
         destination_address: &ManagedAddress,
         amount: &BigUint,
-    ) -> (EgldOrDcdtTokenIdentifier, BigUint) {
+    ) -> (RewaOrDcdtTokenIdentifier, BigUint) {
         self.token_manager_proxy(self.deployed_token_manager(token_id))
             .give_token(destination_address, amount)
-            .execute_on_dest_context::<MultiValue2<EgldOrDcdtTokenIdentifier, BigUint>>()
+            .execute_on_dest_context::<MultiValue2<RewaOrDcdtTokenIdentifier, BigUint>>()
             .into_tuple()
     }
 
@@ -95,7 +95,7 @@ pub trait ProxyItsModule:
                 decimals,
                 OptionalValue::Some(initial_caller),
             )
-            .with_egld_transfer(self.call_value().egld_value().clone_value())
+            .with_rewa_transfer(self.call_value().rewa_value().clone_value())
             .with_gas_limit(100_000_000) // Need to specify gas manually here because the function does an async call. This should be plenty
             .execute_on_dest_context::<()>();
     }
@@ -103,7 +103,7 @@ pub trait ProxyItsModule:
     fn token_manager_get_opt_token_identifier(
         &self,
         sc_address: ManagedAddress,
-    ) -> Option<EgldOrDcdtTokenIdentifier> {
+    ) -> Option<RewaOrDcdtTokenIdentifier> {
         self.token_manager_proxy(sc_address)
             .get_opt_token_identifier()
             .execute_on_dest_context()
@@ -174,7 +174,7 @@ pub trait ProxyItsModule:
         original_source_address: ManagedBuffer,
         data: ManagedBuffer,
         token_id: TokenId<Self::Api>,
-        token_identifier: EgldOrDcdtTokenIdentifier,
+        token_identifier: RewaOrDcdtTokenIdentifier,
         amount: BigUint,
     ) {
         self.executable_contract_proxy(destination_address)
@@ -185,7 +185,7 @@ pub trait ProxyItsModule:
                 data,
                 token_id.clone(),
             )
-            .with_egld_or_single_dcdt_transfer((token_identifier.clone(), 0, amount.clone()))
+            .with_rewa_or_single_dcdt_transfer((token_identifier.clone(), 0, amount.clone()))
             .execute_on_dest_context::<()>();
     }
 
@@ -258,7 +258,7 @@ pub trait ProxyItsModule:
     fn registered_token_identifier(
         &self,
         token_id: &TokenId<Self::Api>,
-    ) -> EgldOrDcdtTokenIdentifier {
+    ) -> RewaOrDcdtTokenIdentifier {
         self.token_manager_proxy(self.deployed_token_manager(token_id))
             .token_identifier()
             .execute_on_dest_context()
@@ -311,7 +311,7 @@ pub trait ProxyItsModule:
 
                 if token_type.deref() != DcdtTokenType::Fungible.as_type_name() {
                     // Send back paid cross chain gas value to initial caller if token is non fungible
-                    self.send().direct_non_zero_egld(&caller, &gas_value);
+                    self.send().direct_non_zero_rewa(&caller, &gas_value);
 
                     return;
                 }
@@ -325,21 +325,21 @@ pub trait ProxyItsModule:
                 let token_decimals = token_decimals_buf.ascii_to_u8();
 
                 self.register_token_metadata_raw(
-                    EgldOrDcdtTokenIdentifier::dcdt(token_identifier),
+                    RewaOrDcdtTokenIdentifier::dcdt(token_identifier),
                     token_decimals,
                     gas_value,
                 );
             }
             ManagedAsyncCallResult::Err(_) => {
                 // Send back paid gas value to initial caller
-                self.send().direct_non_zero_egld(&caller, &gas_value);
+                self.send().direct_non_zero_rewa(&caller, &gas_value);
             }
         }
     }
 
     fn register_token_metadata_raw(
         &self,
-        token_identifier: EgldOrDcdtTokenIdentifier,
+        token_identifier: RewaOrDcdtTokenIdentifier,
         decimals: u8,
         gas_value: BigUint,
     ) {

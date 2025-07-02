@@ -18,7 +18,7 @@ export class UpdatePriceEventParser {
 
     if (!marketplace) return;
     const paymentToken = this.getPaymentToken(marketplace.key, event.topics);
-    const tokenData = await this.usdPriceService.getToken(paymentToken ?? mxConfig.egld);
+    const tokenData = await this.usdPriceService.getToken(paymentToken ?? mxConfig.rewa);
     const tokenPrice = await this.usdPriceService.getTokenPriceFromDate(tokenData.identifier, timestamp);
 
     const data = [];

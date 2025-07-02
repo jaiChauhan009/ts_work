@@ -174,16 +174,16 @@ export class MexTokenService {
 
     const mexTokens: MexToken[] = [];
     for (const pair of pairs) {
-      if (pair.baseSymbol === 'WEGLD' && pair.quoteSymbol === "USDC") {
-        const wegldToken = new MexToken();
-        wegldToken.id = pair.baseId;
-        wegldToken.symbol = pair.baseSymbol;
-        wegldToken.name = pair.baseName;
-        wegldToken.price = pair.basePrice;
-        wegldToken.previous24hPrice = pair.basePrevious24hPrice;
-        wegldToken.previous24hVolume = pair.volume24h;
-        wegldToken.tradesCount = this.computeTradesCountForMexToken(wegldToken, pairs);
-        mexTokens.push(wegldToken);
+      if (pair.baseSymbol === 'WREWA' && pair.quoteSymbol === "USDC") {
+        const wrewaToken = new MexToken();
+        wrewaToken.id = pair.baseId;
+        wrewaToken.symbol = pair.baseSymbol;
+        wrewaToken.name = pair.baseName;
+        wrewaToken.price = pair.basePrice;
+        wrewaToken.previous24hPrice = pair.basePrevious24hPrice;
+        wrewaToken.previous24hVolume = pair.volume24h;
+        wrewaToken.tradesCount = this.computeTradesCountForMexToken(wrewaToken, pairs);
+        mexTokens.push(wrewaToken);
       }
 
       const mexToken = this.getMexToken(pair);
@@ -200,7 +200,7 @@ export class MexTokenService {
   }
 
   private getMexToken(pair: MexPair): MexToken | null {
-    if (pair.baseSymbol === 'WEGLD' && pair.quoteSymbol === "USDC") {
+    if (pair.baseSymbol === 'WREWA' && pair.quoteSymbol === "USDC") {
       return {
         id: pair.quoteId,
         symbol: pair.quoteSymbol,
@@ -212,7 +212,7 @@ export class MexTokenService {
       };
     }
 
-    if (['WEGLD', 'USDC'].includes(pair.quoteSymbol)) {
+    if (['WREWA', 'USDC'].includes(pair.quoteSymbol)) {
       return {
         id: pair.baseId,
         symbol: pair.baseSymbol,
@@ -224,7 +224,7 @@ export class MexTokenService {
       };
     }
 
-    if (['WEGLD', 'USDC'].includes(pair.baseSymbol)) {
+    if (['WREWA', 'USDC'].includes(pair.baseSymbol)) {
       return {
         id: pair.quoteId,
         symbol: pair.quoteSymbol,

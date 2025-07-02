@@ -1,9 +1,9 @@
 import { gql } from '@apollo/client';
 import { transactionAttributes } from 'queries/attributes/transaction';
 
-export const wrapEgldQuery = gql`
-  query swapPackageWrapEgld ($wrappingAmount: String!) {
-    wrapEgld(amount: $wrappingAmount) {
+export const wrapRewaQuery = gql`
+  query swapPackageWrapRewa ($wrappingAmount: String!) {
+    wrapRewa(amount: $wrappingAmount) {
       ${transactionAttributes}
     }
   }

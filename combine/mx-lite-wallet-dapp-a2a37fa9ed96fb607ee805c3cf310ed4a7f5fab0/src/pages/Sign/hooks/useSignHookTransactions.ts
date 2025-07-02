@@ -39,7 +39,7 @@ const emptyState: ValidatedTxsStateType & {
 
 export const useSignHookTransactions = () => {
   const {
-    network: { chainId, apiAddress, apiTimeout, egldLabel }
+    network: { chainId, apiAddress, apiTimeout, rewaLabel }
   } = useGetNetworkConfig();
 
   const {
@@ -62,7 +62,7 @@ export const useSignHookTransactions = () => {
     const txData = await validateSignTransactions({
       extractedTxs: rawTxs,
       address,
-      egldLabel: String(egldLabel),
+      rewaLabel: String(rewaLabel),
       balance,
       chainId: String(chainId),
       apiConfig

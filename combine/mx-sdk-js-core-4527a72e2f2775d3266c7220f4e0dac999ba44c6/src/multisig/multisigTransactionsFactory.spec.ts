@@ -152,7 +152,7 @@ describe("test multisig transactions factory", function () {
         const multisigContractAddress = Address.newFromBech32(
             "erd1qqqqqqqqqqqqqpgq6kurkz43xq8t35kx9p8rvyz5kpxe9g7qd8ssefqjw8",
         );
-        const amount = 1000000000000000000n; // 1 EGLD
+        const amount = 1000000000000000000n; // 1 REWA
         const transaction = factory.createTransactionForProposeTransferExecute(senderAddress, {
             multisigContract: multisigContractAddress,
             gasLimit: 5000000n,
@@ -238,7 +238,7 @@ describe("test multisig transactions factory", function () {
         );
     });
 
-    it("should create transaction for deposit the expected amount of egld", function () {
+    it("should create transaction for deposit the expected amount of rewa", function () {
         const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
 
         const multisigContractAddress = Address.newFromBech32(
@@ -287,7 +287,7 @@ describe("test multisig transactions factory", function () {
     });
 
     it("should create transaction for propose SC deploy from source when abi is passed", function () {
-        const amount = BigInt(50000000000000000); // 0.05 EGLD
+        const amount = BigInt(50000000000000000); // 0.05 REWA
         const metadata = new CodeMetadata(true, true, false);
         const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
         const sourceContract = Address.newFromBech32("erd1qqqqqqqqqqqqqpgqsuxsgykwm6r3s5apct2g5a2rcpe7kw0ed8ssf6h9f6");
@@ -316,7 +316,7 @@ describe("test multisig transactions factory", function () {
     });
 
     it("should create transaction for propose SC deploy from source when no abi is passed", function () {
-        const amount = BigInt(50000000000000000); // 0.05 EGLD
+        const amount = BigInt(50000000000000000); // 0.05 REWA
         const metadata = new CodeMetadata(true, true, false);
         const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
         const sourceContract = Address.newFromBech32("erd1qqqqqqqqqqqqqpgqsuxsgykwm6r3s5apct2g5a2rcpe7kw0ed8ssf6h9f6");
@@ -344,7 +344,7 @@ describe("test multisig transactions factory", function () {
     });
 
     it("should create transaction for propose SC upgrade from source when abi is passed", function () {
-        const amount = BigInt(50000000000000000); // 0.05 EGLD
+        const amount = BigInt(50000000000000000); // 0.05 REWA
         const metadata = new CodeMetadata(true, true, false);
         const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
         const sourceContract = Address.newFromBech32("erd1qqqqqqqqqqqqqpgqd273cw3hjndqzcpts4dvq0ncy8nx8rkgzeusnefvaq");
@@ -378,7 +378,7 @@ describe("test multisig transactions factory", function () {
     });
 
     it("should create transaction for propose SC upgrade from source when no abi is passed", function () {
-        const amount = BigInt(50000000000000000); // 0.05 EGLD
+        const amount = BigInt(50000000000000000); // 0.05 REWA
         const metadata = new CodeMetadata(true, true, false);
         const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
         const sourceContract = Address.newFromBech32("erd1qqqqqqqqqqqqqpgqd273cw3hjndqzcpts4dvq0ncy8nx8rkgzeusnefvaq");

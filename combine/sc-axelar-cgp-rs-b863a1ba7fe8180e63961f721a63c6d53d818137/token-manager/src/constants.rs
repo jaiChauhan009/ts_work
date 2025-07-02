@@ -41,11 +41,11 @@ impl From<TokenManagerType> for u8 {
 #[derive(TypeAbi, TopEncode, TopDecode, NestedEncode)]
 pub struct DeployTokenManagerParams<M: ManagedTypeApi> {
     pub operator: Option<ManagedAddress<M>>,
-    pub token_identifier: Option<EgldOrDcdtTokenIdentifier<M>>,
+    pub token_identifier: Option<RewaOrDcdtTokenIdentifier<M>>,
 }
 
 // If this needs updating, the TokenManagerMintBurn contract from which deployments are made can be upgraded
-pub const DEFAULT_DCDT_ISSUE_COST: u64 = 50000000000000000; // 0.05 EGLD
+pub const DEFAULT_DCDT_ISSUE_COST: u64 = 50000000000000000; // 0.05 REWA
 
 pub const TOKEN_NAME_MIN: usize = 3;
 pub const TOKEN_NAME_MAX: usize = 20;

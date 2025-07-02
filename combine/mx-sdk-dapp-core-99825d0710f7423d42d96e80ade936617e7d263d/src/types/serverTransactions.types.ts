@@ -60,8 +60,8 @@ export enum TransactionActionsEnum {
   claimRewardsProxy = 'claimRewardsProxy',
   compoundRewards = 'compoundRewards',
   compoundRewardsProxy = 'compoundRewardsProxy',
-  wrapEgld = 'wrapEgld',
-  unwrapEgld = 'unwrapEgld',
+  wrapRewa = 'wrapRewa',
+  unwrapRewa = 'unwrapRewa',
   unlockAssets = 'unlockAssets',
   mergeLockedAssetTokens = 'mergeLockedAssetTokens',
   stakeFarm = 'stakeFarm',
@@ -114,7 +114,7 @@ export interface UnwrapperType {
   tokenNoValue?: TokenArgumentType[];
   tokenNoLink?: TokenArgumentType[];
   address?: string;
-  egldValue?: string;
+  rewaValue?: string;
   value?: string;
   providerName?: string;
   providerAvatar?: string;
@@ -142,7 +142,7 @@ export enum TransactionOperationActionTypeEnum {
 export enum VisibleTransactionOperationType {
   nft = 'nft',
   dcdt = 'dcdt',
-  egld = 'egld'
+  rewa = 'rewa'
 }
 export enum HiddenTransactionOperationType {
   none = 'none',

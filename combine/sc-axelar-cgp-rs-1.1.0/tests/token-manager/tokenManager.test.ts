@@ -121,7 +121,7 @@ describe('Init', () => {
           deployer,
           e.U8(TOKEN_MANAGER_TYPE_MINT_BURN),
           e.TopBuffer(mockTokenId),
-          e.Tuple(e.Option(deployer), e.Option(e.Str('EGLD'))),
+          e.Tuple(e.Option(deployer), e.Option(e.Str('REWA'))),
         ],
       })
       .assertFail({ code: 4, message: 'Invalid token address' });

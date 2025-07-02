@@ -25,13 +25,13 @@ describe('test farm v1.2 event decoders', () => {
             epoch: 492,
             timestamp: 1638644490,
             farmingToken: {
-                tokenID: 'EGLDMEX-0be9e5',
+                tokenID: 'REWAMEX-0be9e5',
                 nonce: 0,
                 amount: '147695685924706452',
             },
             farmingReserve: '679057965261374012518156',
             farmToken: {
-                tokenID: 'EGLDMEXF-5bcc57',
+                tokenID: 'REWAMEXF-5bcc57',
                 nonce: 2053209,
                 amount: '193249221516474215',
             },
@@ -63,13 +63,13 @@ describe('test farm v1.2 event decoders', () => {
             epoch: 492,
             timestamp: 1638644502,
             farmingToken: {
-                tokenID: 'EGLDMEX-0be9e5',
+                tokenID: 'REWAMEX-0be9e5',
                 nonce: 0,
                 amount: '816736715136681017',
             },
             farmingReserve: '679085320819541276442112',
             farmToken: {
-                tokenID: 'EGLDMEXF-5bcc57',
+                tokenID: 'REWAMEXF-5bcc57',
                 nonce: 1936027,
                 amount: '816736715136681017',
             },
@@ -106,12 +106,12 @@ describe('test farm v1.2 event decoders', () => {
             epoch: 492,
             timestamp: 1638644508,
             oldFarmToken: {
-                tokenID: 'EGLDMEXF-5bcc57',
+                tokenID: 'REWAMEXF-5bcc57',
                 nonce: 1458167,
                 amount: '512401193570208088',
             },
             newFarmToken: {
-                tokenID: 'EGLDMEXF-5bcc57',
+                tokenID: 'REWAMEXF-5bcc57',
                 nonce: 2053251,
                 amount: '512401193570208088',
             },
@@ -159,12 +159,12 @@ describe('test farm v1.3 event decoders', () => {
             epoch: 643,
             timestamp: 1651682406,
             farmingToken: {
-                tokenID: 'EGLDMEX-0be9e5',
+                tokenID: 'REWAMEX-0be9e5',
                 nonce: 0,
                 amount: '6997239644024897115',
             },
             farmToken: {
-                tokenID: 'EGLDMEXF-a4d81e',
+                tokenID: 'REWAMEXF-a4d81e',
                 nonce: 17521,
                 amount: '6997239644024897115',
             },
@@ -194,12 +194,12 @@ describe('test farm v1.3 event decoders', () => {
             epoch: 643,
             timestamp: 1651679166,
             farmingToken: {
-                tokenID: 'EGLDMEX-0be9e5',
+                tokenID: 'REWAMEX-0be9e5',
                 nonce: 0,
                 amount: '16314837633503193469',
             },
             farmToken: {
-                tokenID: 'EGLDMEXF-a4d81e',
+                tokenID: 'REWAMEXF-a4d81e',
                 nonce: 17488,
                 amount: '16479633973235548958',
             },
@@ -234,12 +234,12 @@ describe('test farm v1.3 event decoders', () => {
             epoch: 643,
             timestamp: 1651683366,
             oldFarmToken: {
-                tokenID: 'EGLDMEXF-a4d81e',
+                tokenID: 'REWAMEXF-a4d81e',
                 nonce: 17357,
                 amount: '61445435106290949742',
             },
             newFarmToken: {
-                tokenID: 'EGLDMEXF-a4d81e',
+                tokenID: 'REWAMEXF-a4d81e',
                 nonce: 17527,
                 amount: '61445435106290949742',
             },

@@ -385,8 +385,8 @@ export class MxApiService {
     return allTokens.map((t) => Token.fromMxApiToken(t));
   }
 
-  async getEgldPriceFromEconomics(): Promise<string> {
-    return await this.doGetGeneric(this.getEgldPriceFromEconomics.name, 'economics?extract=price');
+  async getRewaPriceFromEconomics(): Promise<string> {
+    return await this.doGetGeneric(this.getRewaPriceFromEconomics.name, 'economics?extract=price');
   }
 
   async getTokenData(tokenId: string): Promise<Token | undefined> {

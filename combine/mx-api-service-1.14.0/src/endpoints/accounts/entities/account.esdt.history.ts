@@ -7,7 +7,7 @@ export class AccountDcdtHistory extends AccountHistory {
     Object.assign(this, init);
   }
 
-  @ApiProperty({ type: String, example: 'WEGLD-bd4d79' })
+  @ApiProperty({ type: String, example: 'WREWA-bd4d79' })
   token: string = '';
 
   @ApiProperty({ type: String, example: 'XPACHIEVE-5a0519-01' })

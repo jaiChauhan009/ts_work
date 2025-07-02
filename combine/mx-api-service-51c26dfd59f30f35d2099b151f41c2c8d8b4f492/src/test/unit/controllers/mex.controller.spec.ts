@@ -157,7 +157,7 @@ describe('MexController', () => {
     it('should return mex pair based on basId and quoteId', async () => {
       mexPairServiceMocks.getMexPair.mockReturnValue({});
       const baseId = 'MEX-455c57';
-      const quoteId = 'WEGLD-bd4d79';
+      const quoteId = 'WREWA-bd4d79';
 
       await request(app.getHttpServer())
         .get(`${path}/pairs/${baseId}/${quoteId}`)
@@ -180,7 +180,7 @@ describe('MexController', () => {
     it('should return mex pair with farms information', async () => {
       mexPairServiceMocks.getMexPair.mockReturnValue({});
       const baseId = 'MEX-455c57';
-      const quoteId = 'WEGLD-bd4d79';
+      const quoteId = 'WREWA-bd4d79';
 
       await request(app.getHttpServer())
         .get(`${path}/pairs/${baseId}/${quoteId}?includeFarms=true`)

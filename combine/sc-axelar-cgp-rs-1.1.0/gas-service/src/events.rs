@@ -34,7 +34,7 @@ pub struct AddNativeGasData<M: ManagedTypeApi> {
 #[derive(TypeAbi, TopEncode)]
 pub struct RefundedData<M: ManagedTypeApi> {
     pub receiver: ManagedAddress<M>,
-    pub token: EgldOrDcdtTokenIdentifier<M>,
+    pub token: RewaOrDcdtTokenIdentifier<M>,
     pub amount: BigUint<M>,
 }
 

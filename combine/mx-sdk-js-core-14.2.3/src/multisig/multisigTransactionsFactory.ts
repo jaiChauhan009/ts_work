@@ -118,7 +118,7 @@ export class MultisigTransactionsFactory {
     }
 
     /**
-     * Proposes a transaction that will transfer EGLD and/or execute a function
+     * Proposes a transaction that will transfer REWA and/or execute a function
      */
     createTransactionForProposeTransferExecute(
         sender: Address,
@@ -147,7 +147,7 @@ export class MultisigTransactionsFactory {
     }
 
     /**
-     * Proposes a transaction that will transfer EGLD and/or execute a function
+     * Proposes a transaction that will transfer REWA and/or execute a function
      */
     createTransactionForDeposit(sender: Address, options: resources.DepositExecuteInput): Transaction {
         return this.smartContractFactory.createTransactionForExecute(sender, {

@@ -19,7 +19,7 @@ export interface TokenValueDataType extends DCDTValueDataType {
   showFormattedAmount: boolean;
 }
 
-export interface EgldValueDataType {
+export interface RewaValueDataType {
   value: string;
   formattedValue: string;
   decimals: number;

@@ -51,7 +51,7 @@ export const usePageStats = () => {
         category === 'blocks' &&
         (id === 'totalDeveloperRewards' || id === 'totalNetworkFees')
       ) {
-        return 'EGLD';
+        return 'REWA';
       }
 
       if (category === 'tokens' && id === 'ecosystemMarketCap') {

@@ -39,7 +39,7 @@ export class ProtocolService {
 
   private async getShardCountRaw(): Promise<number> {
     const networkConfig = await this.gatewayService.getNetworkConfig();
-    const shardCount = networkConfig.erd_num_shards_without_meta;
+    const shardCount = networkConfig.drt_num_shards_without_meta;
     return shardCount;
   }
 

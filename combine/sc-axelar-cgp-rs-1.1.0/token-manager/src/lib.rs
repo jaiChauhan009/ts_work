@@ -110,7 +110,7 @@ pub trait TokenManagerLockUnlockContract:
         &self,
         destination_address: &ManagedAddress,
         amount: BigUint,
-    ) -> MultiValue2<EgldOrDcdtTokenIdentifier, BigUint> {
+    ) -> MultiValue2<RewaOrDcdtTokenIdentifier, BigUint> {
         self.only_service();
 
         let token_identifier = self.token_identifier().get();
@@ -173,7 +173,7 @@ pub trait TokenManagerLockUnlockContract:
     /// NativeInterchainToken type only functions
 
     // Somewhat equivalent to Axelar InterchainToken init method
-    #[payable("EGLD")]
+    #[payable("REWA")]
     #[endpoint(deployInterchainToken)]
     fn deploy_interchain_token(
         &self,
@@ -216,7 +216,7 @@ pub trait TokenManagerLockUnlockContract:
         let issue_cost = BigUint::from(DEFAULT_DCDT_ISSUE_COST);
 
         require!(
-            self.call_value().egld_value().deref() == &issue_cost,
+            self.call_value().rewa_value().deref() == &issue_cost,
             "Invalid dcdt issue cost"
         );
 
@@ -292,8 +292,8 @@ pub trait TokenManagerLockUnlockContract:
         self.only_role(Roles::FLOW_LIMITER);
     }
 
-    fn require_correct_token(&self) -> (EgldOrDcdtTokenIdentifier, BigUint) {
-        let (token_identifier, amount) = self.call_value().egld_or_single_fungible_dcdt();
+    fn require_correct_token(&self) -> (RewaOrDcdtTokenIdentifier, BigUint) {
+        let (token_identifier, amount) = self.call_value().rewa_or_single_fungible_dcdt();
 
         let required_token_identifier = self.token_identifier().get();
 
@@ -307,7 +307,7 @@ pub trait TokenManagerLockUnlockContract:
 
     fn give_token_lock_unlock(
         &self,
-        token_identifier: &EgldOrDcdtTokenIdentifier,
+        token_identifier: &RewaOrDcdtTokenIdentifier,
         destination_address: &ManagedAddress,
         amount: &BigUint,
     ) {
@@ -317,7 +317,7 @@ pub trait TokenManagerLockUnlockContract:
 
     fn give_token_mint_burn(
         &self,
-        token_identifier: &EgldOrDcdtTokenIdentifier,
+        token_identifier: &RewaOrDcdtTokenIdentifier,
         destination_address: &ManagedAddress,
         amount: &BigUint,
     ) {
@@ -328,7 +328,7 @@ pub trait TokenManagerLockUnlockContract:
             .direct(destination_address, token_identifier, 0, amount);
     }
 
-    fn take_token_mint_burn(&self, token_identifier: EgldOrDcdtTokenIdentifier, amount: &BigUint) {
+    fn take_token_mint_burn(&self, token_identifier: RewaOrDcdtTokenIdentifier, amount: &BigUint) {
         self.send()
             .dcdt_local_burn(&token_identifier.unwrap_dcdt(), 0, amount);
     }
@@ -336,7 +336,7 @@ pub trait TokenManagerLockUnlockContract:
     #[view(getImplementationTypeAndTokenIdentifier)]
     fn get_implementation_type_and_token_identifier(
         &self,
-    ) -> MultiValue2<TokenManagerType, EgldOrDcdtTokenIdentifier> {
+    ) -> MultiValue2<TokenManagerType, RewaOrDcdtTokenIdentifier> {
         MultiValue2::from((
             self.implementation_type().get(),
             self.token_identifier().get(),
@@ -353,7 +353,7 @@ pub trait TokenManagerLockUnlockContract:
     fn params(
         &self,
         operator: Option<ManagedAddress>,
-        token_identifier: Option<EgldOrDcdtTokenIdentifier>,
+        token_identifier: Option<RewaOrDcdtTokenIdentifier>,
     ) -> DeployTokenManagerParams<Self::Api> {
         DeployTokenManagerParams {
             operator,
@@ -362,7 +362,7 @@ pub trait TokenManagerLockUnlockContract:
     }
 
     #[view(optTokenIdentifier)]
-    fn get_opt_token_identifier(&self) -> Option<EgldOrDcdtTokenIdentifier> {
+    fn get_opt_token_identifier(&self) -> Option<RewaOrDcdtTokenIdentifier> {
         let token_identifier_mapper = self.token_identifier();
 
         if token_identifier_mapper.is_empty() {
@@ -386,7 +386,7 @@ pub trait TokenManagerLockUnlockContract:
 
     #[view(tokenIdentifier)]
     #[storage_mapper("token_identifier")]
-    fn token_identifier(&self) -> SingleValueMapper<EgldOrDcdtTokenIdentifier>;
+    fn token_identifier(&self) -> SingleValueMapper<RewaOrDcdtTokenIdentifier>;
 
     #[callback]
     fn deploy_token_callback(
@@ -396,7 +396,7 @@ pub trait TokenManagerLockUnlockContract:
     ) {
         match result {
             ManagedAsyncCallResult::Ok(token_id_raw) => {
-                let token_identifier = EgldOrDcdtTokenIdentifier::dcdt(token_id_raw);
+                let token_identifier = RewaOrDcdtTokenIdentifier::dcdt(token_id_raw);
 
                 self.interchain_token_deployed_event(
                     self.interchain_token_id().get(),
@@ -408,7 +408,7 @@ pub trait TokenManagerLockUnlockContract:
             ManagedAsyncCallResult::Err(_) => {
                 self.interchain_token_deployment_failed();
 
-                self.send().direct_egld(&user, self.call_value().egld_value().deref());
+                self.send().direct_rewa(&user, self.call_value().rewa_value().deref());
             }
         }
     }
@@ -420,6 +420,6 @@ pub trait TokenManagerLockUnlockContract:
     fn interchain_token_deployed_event(
         &self,
         #[indexed] token_id: ManagedByteArray<KECCAK256_RESULT_LEN>,
-        #[indexed] token_identifier: &EgldOrDcdtTokenIdentifier,
+        #[indexed] token_identifier: &RewaOrDcdtTokenIdentifier,
     );
 }

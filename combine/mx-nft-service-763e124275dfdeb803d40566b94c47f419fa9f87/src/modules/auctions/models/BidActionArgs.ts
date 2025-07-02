@@ -2,7 +2,7 @@ import { Field, InputType, Int } from '@nestjs/graphql';
 import { IsOptional, Matches } from 'class-validator';
 import { mxConfig } from 'src/config';
 import {
-  EGLD_OR_DCDT_TOKEN_RGX,
+  REWA_OR_DCDT_TOKEN_RGX,
   DCDT_TOKEN_ERROR,
   NFT_IDENTIFIER_ERROR,
   NFT_IDENTIFIER_RGX,
@@ -21,11 +21,11 @@ export class BidActionArgs {
   @Field(() => String)
   identifier: string;
 
-  @Matches(RegExp(EGLD_OR_DCDT_TOKEN_RGX), {
+  @Matches(RegExp(REWA_OR_DCDT_TOKEN_RGX), {
     message: DCDT_TOKEN_ERROR,
   })
   @Field(() => String)
-  paymentTokenIdentifier: string = mxConfig.egld;
+  paymentTokenIdentifier: string = mxConfig.rewa;
 
   @Field(() => String)
   price: string;
@@ -42,11 +42,11 @@ export class BuySftActionArgs {
   @Field(() => String)
   identifier: string;
 
-  @Matches(RegExp(EGLD_OR_DCDT_TOKEN_RGX), {
+  @Matches(RegExp(REWA_OR_DCDT_TOKEN_RGX), {
     message: DCDT_TOKEN_ERROR,
   })
   @Field(() => String)
-  paymentTokenIdentifier: string = mxConfig.egld;
+  paymentTokenIdentifier: string = mxConfig.rewa;
 
   @Matches(RegExp(NUMERIC_RGX), { message: `Price ${NUMERIC_ERROR}` })
   @Field(() => String)

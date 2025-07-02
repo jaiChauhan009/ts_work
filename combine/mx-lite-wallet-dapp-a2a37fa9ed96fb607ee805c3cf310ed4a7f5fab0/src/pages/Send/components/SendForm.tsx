@@ -15,7 +15,7 @@ export const SendForm = () => {
     formik,
     handleOnDataChange,
     handleOnSendTypeChange,
-    isEgldToken,
+    isRewaToken,
     isLoading,
     isNFT,
     tokenOptions
@@ -186,7 +186,7 @@ export const SendForm = () => {
               }
             )}
             data-testid={DataTestIdsEnum.gasLimitInput}
-            disabled={!isEgldToken}
+            disabled={!isRewaToken}
             id={FormFieldsEnum.gasLimit}
             name={FormFieldsEnum.gasLimit}
             onBlur={formik.handleBlur}
@@ -214,7 +214,7 @@ export const SendForm = () => {
           <textarea
             className='block w-full p-2 text-sm text-gray-700 placeholder-gray-400 border border-gray-300 rounded'
             data-testid={DataTestIdsEnum.dataInput}
-            disabled={!isEgldToken}
+            disabled={!isRewaToken}
             id={FormFieldsEnum.data}
             name={FormFieldsEnum.data}
             onBlur={formik.handleBlur}

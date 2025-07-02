@@ -511,11 +511,11 @@ describe("test user wallets", () => {
             "test1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ss5hqhtr",
         );
         assert.equal(
-            UserSigner.fromWallet(keyFileObjectWithMnemonic, password, 1).getAddress("xerd").toBech32(),
+            UserSigner.fromWallet(keyFileObjectWithMnemonic, password, 1).getAddress("xdrt").toBech32(),
             "xerd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruq9thc9j",
         );
         assert.equal(
-            UserSigner.fromWallet(keyFileObjectWithMnemonic, password, 2).getAddress("yerd").toBech32(),
+            UserSigner.fromWallet(keyFileObjectWithMnemonic, password, 2).getAddress("ydrt").toBech32(),
             "yerd1k2s324ww2g0yj38qn2ch2jwctdy8mnfxep94q9arncc6xecg3xaqgh23pp",
         );
     });

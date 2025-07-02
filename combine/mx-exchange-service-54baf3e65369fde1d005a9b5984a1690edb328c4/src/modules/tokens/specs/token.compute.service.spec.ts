@@ -54,50 +54,50 @@ describe('TokenComputeService', () => {
         expect(service).toBeDefined();
     });
 
-    it('should compute token price derived EGLD for tokenProviderUSD', async () => {
+    it('should compute token price derived REWA for tokenProviderUSD', async () => {
         const service: TokenComputeService =
             module.get<TokenComputeService>(TokenComputeService);
-        const price = await service.computeTokenPriceDerivedEGLD(
+        const price = await service.computeTokenPriceDerivedREWA(
             tokenProviderUSD,
             [],
         );
         expect(price).toEqual('1');
     });
 
-    it('should compute token price derived EGLD for MEX-123456', async () => {
+    it('should compute token price derived REWA for MEX-123456', async () => {
         const service: TokenComputeService =
             module.get<TokenComputeService>(TokenComputeService);
-        const price = await service.computeTokenPriceDerivedEGLD(
+        const price = await service.computeTokenPriceDerivedREWA(
             'MEX-123456',
             [],
         );
         expect(price).toEqual('0.001');
     });
 
-    it('should compute token price derived EGLD for TOK4-123456', async () => {
+    it('should compute token price derived REWA for TOK4-123456', async () => {
         const service: TokenComputeService =
             module.get<TokenComputeService>(TokenComputeService);
-        const price = await service.computeTokenPriceDerivedEGLD(
+        const price = await service.computeTokenPriceDerivedREWA(
             'TOK4-123456',
             [],
         );
         expect(price).toEqual('0.01');
     });
 
-    it('should compute token price derived EGLD for TOK5-123456', async () => {
+    it('should compute token price derived REWA for TOK5-123456', async () => {
         const service: TokenComputeService =
             module.get<TokenComputeService>(TokenComputeService);
-        const price = await service.computeTokenPriceDerivedEGLD(
+        const price = await service.computeTokenPriceDerivedREWA(
             'TOK5-123456',
             [],
         );
         expect(price).toEqual('0.01010101010101010101010101');
     });
 
-    it('should compute token price derived EGLD for TOK6-123456', async () => {
+    it('should compute token price derived REWA for TOK6-123456', async () => {
         const service: TokenComputeService =
             module.get<TokenComputeService>(TokenComputeService);
-        const price = await service.computeTokenPriceDerivedEGLD(
+        const price = await service.computeTokenPriceDerivedREWA(
             'TOK6-123456',
             [],
         );

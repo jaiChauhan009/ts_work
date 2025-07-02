@@ -3,7 +3,7 @@ use core::ops::Deref;
 use token_manager::constants::{ManagedBufferAscii as _, TokenManagerType};
 
 use crate::constants::{
-    DeployApproval, Hash, InterchainTokenStatus, ManagedBufferAscii, TokenId, EGLD_DECIMALS,
+    DeployApproval, Hash, InterchainTokenStatus, ManagedBufferAscii, TokenId, REWA_DECIMALS,
     PREFIX_CANONICAL_TOKEN_SALT, PREFIX_CUSTOM_TOKEN_SALT, PREFIX_DEPLOY_APPROVAL,
     PREFIX_INTERCHAIN_TOKEN_SALT,
 };
@@ -27,7 +27,7 @@ pub trait FactoryModule:
     + executable::ExecutableModule
 {
     // Needs to be payable because it issues DCDT token through the TokenManager
-    #[payable("EGLD")]
+    #[payable("REWA")]
     #[endpoint(deployInterchainToken)]
     fn deploy_interchain_token(
         &self,
@@ -90,13 +90,13 @@ pub trait FactoryModule:
 
         let token_manager = self.get_opt_token_manager_address(&token_id);
 
-        let egld_value = self.call_value().egld_value();
+        let rewa_value = self.call_value().rewa_value();
 
         // 1st transaction - deploy token manager
         if token_manager.is_none() {
             require!(
-                egld_value.deref() == &BigUint::zero(),
-                "Can not send EGLD payment if not issuing DCDT"
+                rewa_value.deref() == &BigUint::zero(),
+                "Can not send REWA payment if not issuing DCDT"
             );
 
             self.deploy_interchain_token_raw(
@@ -127,7 +127,7 @@ pub trait FactoryModule:
                 symbol,
                 decimals,
                 minter_bytes,
-                egld_value.clone_value(),
+                rewa_value.clone_value(),
                 sender,
             );
 
@@ -135,8 +135,8 @@ pub trait FactoryModule:
         }
 
         require!(
-            egld_value.deref() == &BigUint::zero(),
-            "Can not send EGLD payment if not issuing DCDT"
+            rewa_value.deref() == &BigUint::zero(),
+            "Can not send REWA payment if not issuing DCDT"
         );
 
         // 3rd transaction - mint token if needed
@@ -224,7 +224,7 @@ pub trait FactoryModule:
         self.approved_destination_minters(&approval_key).clear();
     }
 
-    #[payable("EGLD")]
+    #[payable("REWA")]
     #[endpoint(deployRemoteInterchainToken)]
     fn deploy_remote_interchain_token(
         &self,
@@ -239,8 +239,8 @@ pub trait FactoryModule:
         )
     }
 
-    // Payable with EGLD for cross chain calls gas
-    #[payable("EGLD")]
+    // Payable with REWA for cross chain calls gas
+    #[payable("REWA")]
     #[endpoint(deployRemoteInterchainTokenWithMinter)]
     fn deploy_remote_interchain_token_with_minter(
         &self,
@@ -294,7 +294,7 @@ pub trait FactoryModule:
     #[endpoint(registerCanonicalInterchainToken)]
     fn register_canonical_interchain_token(
         &self,
-        token_identifier: EgldOrDcdtTokenIdentifier,
+        token_identifier: RewaOrDcdtTokenIdentifier,
     ) -> TokenId<Self::Api> {
         require!(token_identifier.is_valid(), "Invalid token identifier");
 
@@ -311,12 +311,12 @@ pub trait FactoryModule:
         )
     }
 
-    // Payable with EGLD for cross chain calls gas
-    #[payable("EGLD")]
+    // Payable with REWA for cross chain calls gas
+    #[payable("REWA")]
     #[endpoint(deployRemoteCanonicalInterchainToken)]
     fn deploy_remote_canonical_interchain_token(
         &self,
-        original_token_identifier: EgldOrDcdtTokenIdentifier,
+        original_token_identifier: RewaOrDcdtTokenIdentifier,
         destination_chain: ManagedBuffer,
     ) -> TokenId<Self::Api> {
         self.require_not_paused();
@@ -341,7 +341,7 @@ pub trait FactoryModule:
     fn register_custom_token(
         &self,
         salt: Hash<Self::Api>,
-        token_identifier: EgldOrDcdtTokenIdentifier,
+        token_identifier: RewaOrDcdtTokenIdentifier,
         token_manager_type: TokenManagerType,
         operator_opt: OptionalValue<ManagedAddress>,
     ) -> TokenId<Self::Api> {
@@ -362,8 +362,8 @@ pub trait FactoryModule:
         )
     }
 
-    // Payable with EGLD for cross chain calls gas
-    #[payable("EGLD")]
+    // Payable with REWA for cross chain calls gas
+    #[payable("REWA")]
     #[endpoint(linkToken)]
     fn link_token(
         &self,
@@ -375,7 +375,7 @@ pub trait FactoryModule:
     ) -> TokenId<Self::Api> {
         let deploy_salt = self.linked_token_deploy_salt(&self.blockchain().get_caller(), &salt);
 
-        let gas_value = self.call_value().egld_value().clone_value();
+        let gas_value = self.call_value().rewa_value().clone_value();
 
         self.link_token_raw(
             deploy_salt,
@@ -442,16 +442,16 @@ pub trait FactoryModule:
 
         require!(token_identifier.is_valid(), "Invalid token identifier");
 
-        let gas_value = self.call_value().egld_value().clone_value();
+        let gas_value = self.call_value().rewa_value().clone_value();
 
-        // We can only fetch token properties from dcdt contract if it is not EGLD token
-        if token_identifier.is_egld() {
+        // We can only fetch token properties from dcdt contract if it is not REWA token
+        if token_identifier.is_rewa() {
             self.deploy_interchain_token_raw(
                 deploy_salt,
                 destination_chain,
                 token_identifier.clone().into_name(),
                 token_identifier.into_name(),
-                EGLD_DECIMALS,
+                REWA_DECIMALS,
                 destination_minter,
                 gas_value,
                 sender,
@@ -508,7 +508,7 @@ pub trait FactoryModule:
     #[view(canonicalInterchainTokenDeploySalt)]
     fn canonical_interchain_token_deploy_salt(
         &self,
-        token_identifier: EgldOrDcdtTokenIdentifier,
+        token_identifier: RewaOrDcdtTokenIdentifier,
     ) -> Hash<Self::Api> {
         let prefix_canonical_token_salt = self
             .crypto()
@@ -557,7 +557,7 @@ pub trait FactoryModule:
     #[view(canonicalInterchainTokenId)]
     fn canonical_interchain_token_id(
         &self,
-        token_identifier: EgldOrDcdtTokenIdentifier,
+        token_identifier: RewaOrDcdtTokenIdentifier,
     ) -> TokenId<Self::Api> {
         let deploy_salt = self.canonical_interchain_token_deploy_salt(token_identifier);
 
@@ -609,7 +609,7 @@ pub trait FactoryModule:
             ManagedAsyncCallResult::Ok(values) => {
                 // Send back paid gas value to initial caller in case chain is no longer trusted
                 if !self.is_trusted_chain(&destination_chain) {
-                    self.send().direct_non_zero_egld(&caller, &gas_value);
+                    self.send().direct_non_zero_rewa(&caller, &gas_value);
                     return;
                 }
 
@@ -621,7 +621,7 @@ pub trait FactoryModule:
 
                 if token_type.deref() != DcdtTokenType::Fungible.as_type_name() {
                     // Send back paid cross chain gas value to initial caller if token is non fungible
-                    self.send().direct_non_zero_egld(&caller, &gas_value);
+                    self.send().direct_non_zero_rewa(&caller, &gas_value);
 
                     return;
                 }
@@ -647,7 +647,7 @@ pub trait FactoryModule:
             }
             ManagedAsyncCallResult::Err(_) => {
                 // Send back paid gas value to initial caller
-                self.send().direct_non_zero_egld(&caller, &gas_value);
+                self.send().direct_non_zero_rewa(&caller, &gas_value);
             }
         }
     }

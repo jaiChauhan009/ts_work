@@ -73,12 +73,12 @@ export const keystoreWalletTokens = [
           'Locked Account #1'
       },
       extraTokens: [
-        'ASHWEGLD-38545c',
+        'ASHWREWA-38545c',
         'METAASHLK-ef49bd',
         'METAASH-05e858',
         'SASH-3671bd',
-        'ASHWEGLDFL-cf0194',
-        'ASHWEGLDF-092a4e',
+        'ASHWREWAFL-cf0194',
+        'ASHWREWAF-092a4e',
         'LKASH-10bd00'
       ],
       ledgerSignature:
@@ -256,11 +256,11 @@ export const keystoreWalletTokens = [
   },
   {
     type: 'MetaDCDT',
-    identifier: 'EGLDMEXFL-2ed783-04',
-    collection: 'EGLDMEXFL-2ed783',
+    identifier: 'REWAMEXFL-2ed783-04',
+    collection: 'REWAMEXFL-2ed783',
     nonce: 4,
-    name: 'EGLDMEXLPStakedLK',
-    ticker: 'EGLDMEXFL-2ed783-04',
+    name: 'REWAMEXLPStakedLK',
+    ticker: 'REWAMEXFL-2ed783-04',
     owner: 'erd1qqqqqqqqqqqqqpgqqjpfmappkpzq6kdju3mkqepk3d2kcymu0n4srd45sa',
     decimals: 18,
     isPaused: false,
@@ -285,21 +285,21 @@ export const keystoreWalletTokens = [
   },
   {
     type: 'FungibleDCDT',
-    identifier: 'EGLDRIDE-9fdd72',
-    name: 'EGLDRIDELP',
-    ticker: 'EGLDRIDE',
+    identifier: 'REWARIDE-9fdd72',
+    name: 'REWARIDELP',
+    ticker: 'REWARIDE',
     owner: 'erd1qqqqqqqqqqqqqpgqa7hv0nahgsl8tz0psat46x0tchm0wuyc0n4s6q28ad',
     decimals: 18,
     isPaused: false,
     assets: {
       website: 'https://xexchange.com',
       description:
-        'Liquidity Provider (LP) Token obtained by adding liquidity in the EGLD/RIDE pool on the xExchange.',
+        'Liquidity Provider (LP) Token obtained by adding liquidity in the REWA/RIDE pool on the xExchange.',
       status: 'active',
       pngUrl:
-        'https://devnet-media.dharitri.org/tokens/asset/EGLDRIDE-9fdd72/logo.png',
+        'https://devnet-media.dharitri.org/tokens/asset/REWARIDE-9fdd72/logo.png',
       svgUrl:
-        'https://devnet-media.dharitri.org/tokens/asset/EGLDRIDE-9fdd72/logo.svg'
+        'https://devnet-media.dharitri.org/tokens/asset/REWARIDE-9fdd72/logo.svg'
     },
     transactions: 16,
     transactionsLastUpdatedAt: 1718720499,
@@ -322,21 +322,21 @@ export const keystoreWalletTokens = [
   },
   {
     type: 'FungibleDCDT',
-    identifier: 'EGLDUSDC-ac1a30',
-    name: 'EGLDUSDCLP',
-    ticker: 'EGLDUSDC',
+    identifier: 'REWAUSDC-ac1a30',
+    name: 'REWAUSDCLP',
+    ticker: 'REWAUSDC',
     owner: 'erd1qqqqqqqqqqqqqpgqa7hv0nahgsl8tz0psat46x0tchm0wuyc0n4s6q28ad',
     decimals: 18,
     isPaused: false,
     assets: {
       website: 'https://xexchange.com',
       description:
-        'Liquidity Provider (LP) Token obtained by adding liquidity in the EGLD/USDC pool on the xExchange.',
+        'Liquidity Provider (LP) Token obtained by adding liquidity in the REWA/USDC pool on the xExchange.',
       status: 'active',
       pngUrl:
-        'https://devnet-media.dharitri.org/tokens/asset/EGLDUSDC-ac1a30/logo.png',
+        'https://devnet-media.dharitri.org/tokens/asset/REWAUSDC-ac1a30/logo.png',
       svgUrl:
-        'https://devnet-media.dharitri.org/tokens/asset/EGLDUSDC-ac1a30/logo.svg'
+        'https://devnet-media.dharitri.org/tokens/asset/REWAUSDC-ac1a30/logo.svg'
     },
     transactions: 18,
     transactionsLastUpdatedAt: 1718720528,
@@ -890,12 +890,12 @@ export const keystoreWalletTokens = [
       svgUrl:
         'https://devnet-media.dharitri.org/tokens/asset/UTK-14d57d/logo.svg',
       extraTokens: [
-        'UTKWEGLD-c960d1',
+        'UTKWREWA-c960d1',
         'METAUTKLK-e6a445',
         'METAUTK-291e0e',
         'SUTK-ba35f3',
-        'UTKWEGLDFL-082aec',
-        'UTKWEGLDF-5b9d50'
+        'UTKWREWAFL-082aec',
+        'UTKWREWAF-5b9d50'
       ],
       ledgerSignature:
         '304402204f2f6035dccb8c5e16698a1a8cfd0c0d4203e9a31103147e286fa1c1ea829c16022003284c1f3c8cb23b6587c5dee3187feb1e0663b15ffbffa89dbe07e7a766eff2',
@@ -932,21 +932,21 @@ export const keystoreWalletTokens = [
   },
   {
     type: 'FungibleDCDT',
-    identifier: 'WEGLD-a28c59',
-    name: 'WrappedEGLD',
-    ticker: 'WEGLD',
+    identifier: 'WREWA-a28c59',
+    name: 'WrappedREWA',
+    ticker: 'WREWA',
     owner: 'erd1x39tc3q3nn72ecjnmcz7x0qp09kp97t080x99dgyhx7zh95j0n4szskhlv',
     decimals: 18,
     isPaused: false,
     assets: {
       website: 'https://xexchange.com',
       description:
-        'wEGLD is an DCDT token that has the same value as EGLD, the native coin of the DharitrI blockchain.',
+        'wREWA is an DCDT token that has the same value as REWA, the native coin of the DharitrI blockchain.',
       status: 'active',
       pngUrl:
-        'https://devnet-media.dharitri.org/tokens/asset/WEGLD-a28c59/logo.png',
+        'https://devnet-media.dharitri.org/tokens/asset/WREWA-a28c59/logo.png',
       svgUrl:
-        'https://devnet-media.dharitri.org/tokens/asset/WEGLD-a28c59/logo.svg'
+        'https://devnet-media.dharitri.org/tokens/asset/WREWA-a28c59/logo.svg'
     },
     transactions: 51722,
     transactionsLastUpdatedAt: 1718723498,

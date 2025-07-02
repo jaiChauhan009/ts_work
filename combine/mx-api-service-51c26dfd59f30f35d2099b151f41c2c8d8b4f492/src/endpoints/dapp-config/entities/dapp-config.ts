@@ -11,14 +11,14 @@ export class DappConfig {
   @ApiProperty({ type: String, example: 'Mainnet' })
   name: string = '';
 
-  @ApiProperty({ type: String, example: 'EGLD' })
-  egldLabel: string = '';
+  @ApiProperty({ type: String, example: 'REWA' })
+  rewaLabel: string = '';
 
   @ApiProperty({ type: String, example: '4' })
   decimals: string = '';
 
   @ApiProperty({ type: String, example: '18' })
-  egldDenomination: string = '';
+  rewaDenomination: string = '';
 
   @ApiProperty({ type: String, example: '1500' })
   gasPerDataByte: string = '';

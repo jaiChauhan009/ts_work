@@ -4,7 +4,7 @@ export const emptyNetwork: NetworkType = {
   id: 'not-configured',
   chainId: '',
   name: 'NOT CONFIGURED',
-  egldLabel: '',
+  rewaLabel: '',
   decimals: '18',
   digits: '4',
   gasPerDataByte: '1500',

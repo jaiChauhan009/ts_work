@@ -109,7 +109,7 @@ export class TokenTransferService {
 
       const operation = new TransactionOperation();
       operation.action = TransactionOperationAction.transfer;
-      operation.type = TransactionOperationType.egld;
+      operation.type = TransactionOperationType.rewa;
       operation.id = scResult.hash;
       operation.sender = scResult.sender;
       operation.receiver = scResult.receiver;
@@ -287,7 +287,7 @@ export class TokenTransferService {
       const operation = new TransactionOperation();
       operation.id = log.id ?? '';
       operation.action = TransactionOperationAction.transfer;
-      operation.type = TransactionOperationType.egld;
+      operation.type = TransactionOperationType.rewa;
       operation.sender = sender;
       operation.receiver = receiver;
       operation.value = value;
@@ -319,9 +319,9 @@ export class TokenTransferService {
       if (dcdtPrice) {
         properties.valueUsd = new BigNumber(dcdtPrice).multipliedBy(options.value).shiftedBy(-(properties.decimals ?? 0)).toNumber();
 
-        const egldPrice = await this.dataApiService.getEgldPrice(options.timestamp);
-        if (egldPrice) {
-          properties.valueEgld = properties.valueUsd / egldPrice;
+        const rewaPrice = await this.dataApiService.getRewaPrice(options.timestamp);
+        if (rewaPrice) {
+          properties.valueRewa = properties.valueUsd / rewaPrice;
         }
       }
     }

@@ -25,7 +25,7 @@ import {
 } from '@terradharitri/sdk-core';
 import BigNumber from 'bignumber.js';
 import { gasConfig, mxConfig } from 'src/config';
-import { EgldOrDcdtTokenPayment } from 'src/models/dcdtTokenPayment.model';
+import { RewaOrDcdtTokenPayment } from 'src/models/dcdtTokenPayment.model';
 import { decimalToHex } from 'src/utils/token.converters';
 import { WrapAbiService } from 'src/modules/wrapping/services/wrap.abi.service';
 import { TransactionOptions } from 'src/modules/common/transaction.options';
@@ -45,18 +45,18 @@ export class ComposableTasksTransactionService {
     async getComposeTasksTransaction(
         sender: string,
         payment: DcdtTokenPayment,
-        tokenOut: EgldOrDcdtTokenPayment,
+        tokenOut: RewaOrDcdtTokenPayment,
         tasks: ComposableTask[],
     ): Promise<TransactionModel> {
         let gasLimit: number = gasConfig.composableTasks.default;
 
         for (const task of tasks) {
             switch (task.type) {
-                case ComposableTaskType.WRAP_EGLD:
-                    gasLimit += gasConfig.wrapeGLD;
+                case ComposableTaskType.WRAP_REWA:
+                    gasLimit += gasConfig.wrapREWA;
                     break;
-                case ComposableTaskType.UNWRAP_EGLD:
-                    gasLimit += gasConfig.wrapeGLD;
+                case ComposableTaskType.UNWRAP_REWA:
+                    gasLimit += gasConfig.wrapREWA;
                     break;
                 case ComposableTaskType.SWAP:
                     gasLimit +=
@@ -76,7 +76,7 @@ export class ComposableTasksTransactionService {
             gasLimit: gasLimit,
             function: 'composeTasks',
             arguments: [
-                new Struct(EgldOrDcdtTokenPayment.getStructure(), [
+                new Struct(RewaOrDcdtTokenPayment.getStructure(), [
                     new Field(
                         new TokenIdentifierValue(tokenOut.tokenIdentifier),
                         'token_identifier',
@@ -91,7 +91,7 @@ export class ComposableTasksTransactionService {
             ],
         });
 
-        if (payment.tokenIdentifier === mxConfig.EGLDIdentifier) {
+        if (payment.tokenIdentifier === mxConfig.REWAIdentifier) {
             transactionOptions.nativeTransferAmount = payment.amount;
         } else {
             transactionOptions.tokenTransfers = [
@@ -109,7 +109,7 @@ export class ComposableTasksTransactionService {
         );
     }
 
-    async wrapEgldAndSwapTransaction(
+    async wrapRewaAndSwapTransaction(
         sender: string,
         value: string,
         tokenOutID: string,
@@ -117,7 +117,7 @@ export class ComposableTasksTransactionService {
         swapEndpoint: string,
     ): Promise<TransactionModel> {
         const wrapTask: ComposableTask = {
-            type: ComposableTaskType.WRAP_EGLD,
+            type: ComposableTaskType.WRAP_REWA,
             arguments: [],
         };
 
@@ -138,11 +138,11 @@ export class ComposableTasksTransactionService {
         return this.getComposeTasksTransaction(
             sender,
             new DcdtTokenPayment({
-                tokenIdentifier: 'EGLD',
+                tokenIdentifier: 'REWA',
                 tokenNonce: 0,
                 amount: value,
             }),
-            new EgldOrDcdtTokenPayment({
+            new RewaOrDcdtTokenPayment({
                 tokenIdentifier: tokenOutID,
                 amount: tokenOutAmountMin,
             }),
@@ -150,19 +150,19 @@ export class ComposableTasksTransactionService {
         );
     }
 
-    async swapAndUnwrapEgldTransaction(
+    async swapAndUnwrapRewaTransaction(
         sender: string,
         payment: DcdtTokenPayment,
         minimumValue: string,
         swapEndpoint: string,
     ): Promise<TransactionModel> {
-        const wrappedEgldTokenID = await this.wrapAbi.wrappedEgldTokenID();
+        const wrappedRewaTokenID = await this.wrapAbi.wrappedRewaTokenID();
 
         const swapTask: ComposableTask = {
             type: ComposableTaskType.SWAP,
             arguments: [
                 new BytesValue(Buffer.from(swapEndpoint, 'utf-8')),
-                new BytesValue(Buffer.from(wrappedEgldTokenID, 'utf-8')),
+                new BytesValue(Buffer.from(wrappedRewaTokenID, 'utf-8')),
                 new BytesValue(
                     Buffer.from(
                         decimalToHex(new BigNumber(minimumValue)),
@@ -172,15 +172,15 @@ export class ComposableTasksTransactionService {
             ],
         };
         const unwrapTask: ComposableTask = {
-            type: ComposableTaskType.UNWRAP_EGLD,
+            type: ComposableTaskType.UNWRAP_REWA,
             arguments: [],
         };
 
         return this.getComposeTasksTransaction(
             sender,
             payment,
-            new EgldOrDcdtTokenPayment({
-                tokenIdentifier: 'EGLD',
+            new RewaOrDcdtTokenPayment({
+                tokenIdentifier: 'REWA',
                 amount: minimumValue,
             }),
             [swapTask, unwrapTask],

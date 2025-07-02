@@ -28,7 +28,7 @@ export const ChartStake = ({ className }: WithClassnameType) => {
     totalStakedAll,
     isFetched
   } = useSelector(growthStakingSelector);
-  const { egldLabel } = useSelector(activeNetworkSelector);
+  const { rewaLabel } = useSelector(activeNetworkSelector);
 
   const filters: SelectOptionType[] = [
     {
@@ -105,7 +105,7 @@ export const ChartStake = ({ className }: WithClassnameType) => {
       title='Total Staked'
       value={
         <>
-          {totalStaked} {egldLabel} <span>({stakingPercentage})</span>
+          {totalStaked} {rewaLabel} <span>({stakingPercentage})</span>
         </>
       }
       filters={filters}
@@ -120,7 +120,7 @@ export const ChartStake = ({ className }: WithClassnameType) => {
         color={primary}
         identifier='delegationGradient'
         tooltipFormatter={(option: any) =>
-          `${new BigNumber(option.value).toFormat(0)} ${egldLabel}`
+          `${new BigNumber(option.value).toFormat(0)} ${rewaLabel}`
         }
       />
     </ChartCard>

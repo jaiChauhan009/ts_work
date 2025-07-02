@@ -85,7 +85,7 @@ describe('TransactionPairService', () => {
                         amount: firstTokenAmount,
                     },
                     {
-                        tokenID: 'EGLD',
+                        tokenID: 'REWA',
                         nonce: 0,
                         amount: secondTokenAmount,
                     },
@@ -93,10 +93,10 @@ describe('TransactionPairService', () => {
                 tolerance: 0.01,
             });
 
-        const [wrapEgldTransaction, addLiquidityTransaction] =
+        const [wrapRewaTransaction, addLiquidityTransaction] =
             initialLiquidityBatchTransactions;
 
-        expect(wrapEgldTransaction).toEqual({
+        expect(wrapRewaTransaction).toEqual({
             nonce: 0,
             value: secondTokenAmount,
             receiver:
@@ -105,8 +105,8 @@ describe('TransactionPairService', () => {
             receiverUsername: undefined,
             senderUsername: undefined,
             gasPrice: 1000000000,
-            gasLimit: gasConfig.wrapeGLD,
-            data: encodeTransactionData('wrapEgld'),
+            gasLimit: gasConfig.wrapREWA,
+            data: encodeTransactionData('wrapRewa'),
             chainID: mxConfig.chainID,
             version: 2,
             options: undefined,
@@ -124,7 +124,7 @@ describe('TransactionPairService', () => {
             data: encodeTransactionData(
                 `MultiDCDTNFTTransfer@${Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000012',
-                ).bech32()}@2@WEGLD-123456@@9000000000000000000@MEX-123456@@10000000000000000000@addInitialLiquidity`,
+                ).bech32()}@2@WREWA-123456@@9000000000000000000@MEX-123456@@10000000000000000000@addInitialLiquidity`,
             ),
             chainID: mxConfig.chainID,
             version: 2,
@@ -149,7 +149,7 @@ describe('TransactionPairService', () => {
                 ).bech32(),
                 tokens: [
                     {
-                        tokenID: 'WEGLD-123456',
+                        tokenID: 'WREWA-123456',
                         nonce: 0,
                         amount: firstTokenAmount,
                     },
@@ -172,7 +172,7 @@ describe('TransactionPairService', () => {
             data: encodeTransactionData(
                 `MultiDCDTNFTTransfer@${Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000012',
-                ).bech32()}@02@WEGLD-123456@@10000000000000000000@MEX-123456@@9000000000000000000@addInitialLiquidity`,
+                ).bech32()}@02@WREWA-123456@@10000000000000000000@MEX-123456@@9000000000000000000@addInitialLiquidity`,
             ),
             chainID: mxConfig.chainID,
             version: 2,
@@ -202,7 +202,7 @@ describe('TransactionPairService', () => {
                         amount: firstTokenAmount,
                     },
                     {
-                        tokenID: 'EGLD',
+                        tokenID: 'REWA',
                         nonce: 0,
                         amount: secondTokenAmount,
                     },
@@ -222,7 +222,7 @@ describe('TransactionPairService', () => {
             data: encodeTransactionData(
                 `MultiDCDTNFTTransfer@${Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000012',
-                ).bech32()}@2@WEGLD-123456@@9@MEX-123456@@10@addLiquidity@8@9`,
+                ).bech32()}@2@WREWA-123456@@9@MEX-123456@@10@addLiquidity@8@9`,
             ),
             chainID: mxConfig.chainID,
             version: 2,
@@ -231,7 +231,7 @@ describe('TransactionPairService', () => {
         });
     });
 
-    it('should get add liquidity batch transaction EGLD first token', async () => {
+    it('should get add liquidity batch transaction REWA first token', async () => {
         const firstTokenAmount = '10';
         const secondTokenAmount = '9';
 
@@ -247,7 +247,7 @@ describe('TransactionPairService', () => {
                 ).bech32(),
                 tokens: [
                     {
-                        tokenID: 'EGLD',
+                        tokenID: 'REWA',
                         nonce: 0,
                         amount: firstTokenAmount,
                     },
@@ -260,9 +260,9 @@ describe('TransactionPairService', () => {
                 tolerance: 0.01,
             },
         );
-        const [wrapEgldTransaction, addLiquidity] = liquidityBatchTransactions;
+        const [wrapRewaTransaction, addLiquidity] = liquidityBatchTransactions;
 
-        expect(wrapEgldTransaction).toEqual({
+        expect(wrapRewaTransaction).toEqual({
             nonce: 0,
             value: '10',
             receiver:
@@ -271,8 +271,8 @@ describe('TransactionPairService', () => {
             receiverUsername: undefined,
             senderUsername: undefined,
             gasPrice: 1000000000,
-            gasLimit: gasConfig.wrapeGLD,
-            data: encodeTransactionData('wrapEgld'),
+            gasLimit: gasConfig.wrapREWA,
+            data: encodeTransactionData('wrapRewa'),
             chainID: mxConfig.chainID,
             version: 2,
             options: undefined,
@@ -292,7 +292,7 @@ describe('TransactionPairService', () => {
             data: encodeTransactionData(
                 `MultiDCDTNFTTransfer@${Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000012',
-                ).bech32()}@02@WEGLD-123456@@10@MEX-123456@@09@addLiquidity@09@08`,
+                ).bech32()}@02@WREWA-123456@@10@MEX-123456@@09@addLiquidity@09@08`,
             ),
             chainID: mxConfig.chainID,
             version: 2,
@@ -303,7 +303,7 @@ describe('TransactionPairService', () => {
         });
     });
 
-    it('should get add liquidity batch transaction EGLD second token', async () => {
+    it('should get add liquidity batch transaction REWA second token', async () => {
         const firstTokenAmount = '10';
         const secondTokenAmount = '9';
 
@@ -324,7 +324,7 @@ describe('TransactionPairService', () => {
                         amount: firstTokenAmount,
                     },
                     {
-                        tokenID: 'EGLD',
+                        tokenID: 'REWA',
                         nonce: 0,
                         amount: secondTokenAmount,
                     },
@@ -333,9 +333,9 @@ describe('TransactionPairService', () => {
             },
         );
 
-        const [wrapEgldTransaction, addLiquidity] = liquidityBatchTransactions;
+        const [wrapRewaTransaction, addLiquidity] = liquidityBatchTransactions;
 
-        expect(wrapEgldTransaction).toEqual({
+        expect(wrapRewaTransaction).toEqual({
             nonce: 0,
             value: secondTokenAmount,
             receiver:
@@ -344,8 +344,8 @@ describe('TransactionPairService', () => {
             receiverUsername: undefined,
             senderUsername: undefined,
             gasPrice: 1000000000,
-            gasLimit: gasConfig.wrapeGLD,
-            data: encodeTransactionData('wrapEgld'),
+            gasLimit: gasConfig.wrapREWA,
+            data: encodeTransactionData('wrapRewa'),
             chainID: mxConfig.chainID,
             version: 2,
             options: undefined,
@@ -365,7 +365,7 @@ describe('TransactionPairService', () => {
             data: encodeTransactionData(
                 `MultiDCDTNFTTransfer@${Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000012',
-                ).bech32()}@02@WEGLD-123456@@09@MEX-123456@@10@addLiquidity@08@09`,
+                ).bech32()}@02@WREWA-123456@@09@MEX-123456@@10@addLiquidity@08@09`,
             ),
             chainID: mxConfig.chainID,
             version: 2,
@@ -386,7 +386,7 @@ describe('TransactionPairService', () => {
                 '0000000000000000000000000000000000000000000000000000000000000012',
             ).bech32(),
             liquidity: '10',
-            liquidityTokenID: 'EGLD',
+            liquidityTokenID: 'REWA',
             tolerance: 0.01,
         });
 
@@ -421,9 +421,9 @@ describe('TransactionPairService', () => {
                 receiverUsername: undefined,
                 senderUsername: undefined,
                 gasPrice: 1000000000,
-                gasLimit: gasConfig.wrapeGLD,
+                gasLimit: gasConfig.wrapREWA,
                 data: encodeTransactionData(
-                    'DCDTTransfer@WEGLD-123456@09@unwrapEgld',
+                    'DCDTTransfer@WREWA-123456@09@unwrapRewa',
                 ),
                 chainID: mxConfig.chainID,
                 version: 2,
@@ -444,7 +444,7 @@ describe('TransactionPairService', () => {
             pairAddress: Address.fromHex(
                 '0000000000000000000000000000000000000000000000000000000000000012',
             ).bech32(),
-            tokenInID: 'EGLD',
+            tokenInID: 'REWA',
             tokenOutID: 'MEX-123456',
             amountIn: '5',
             amountOut: '5',
@@ -480,7 +480,7 @@ describe('TransactionPairService', () => {
                 '0000000000000000000000000000000000000000000000000000000000000012',
             ).bech32(),
             tokenInID: 'MEX-123456',
-            tokenOutID: 'EGLD',
+            tokenOutID: 'REWA',
             amountIn: '5',
             amountOut: '5',
         });
@@ -515,13 +515,13 @@ describe('TransactionPairService', () => {
             ).bech32(),
             [
                 new InputTokenModel({ tokenID: 'MEX-123456' }),
-                new InputTokenModel({ tokenID: 'EGLD' }),
+                new InputTokenModel({ tokenID: 'REWA' }),
             ],
         );
 
         expect(transactions).toEqual([
             {
-                tokenID: 'WEGLD-123456',
+                tokenID: 'WREWA-123456',
                 amount: undefined,
                 nonce: undefined,
             },
@@ -535,7 +535,7 @@ describe('TransactionPairService', () => {
                 ).bech32(),
                 [
                     new InputTokenModel({ tokenID: 'MEX-123456', nonce: 1 }),
-                    new InputTokenModel({ tokenID: 'EGLD' }),
+                    new InputTokenModel({ tokenID: 'REWA' }),
                 ],
             );
         } catch (error) {
@@ -548,8 +548,8 @@ describe('TransactionPairService', () => {
                     '0000000000000000000000000000000000000000000000000000000000000012',
                 ).bech32(),
                 [
-                    new InputTokenModel({ tokenID: 'WEGLD-123456' }),
-                    new InputTokenModel({ tokenID: 'EGLD' }),
+                    new InputTokenModel({ tokenID: 'WREWA-123456' }),
+                    new InputTokenModel({ tokenID: 'REWA' }),
                 ],
             );
         } catch (error) {
@@ -638,7 +638,7 @@ describe('TransactionPairService', () => {
                 '0000000000000000000000000000000000000000000000000000000000000012',
             ).bech32(),
             Address.Zero().bech32(),
-            'WEGLD-123456',
+            'WREWA-123456',
             'MEX-123456',
         );
 
@@ -654,7 +654,7 @@ describe('TransactionPairService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.pairs.admin.addTrustedSwapPair,
             data: encodeTransactionData(
-                'addTrustedSwapPair@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu@WEGLD-123456@MEX-123456',
+                'addTrustedSwapPair@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu@WREWA-123456@MEX-123456',
             ),
             chainID: mxConfig.chainID,
             version: 2,
@@ -675,7 +675,7 @@ describe('TransactionPairService', () => {
             Address.fromHex(
                 '0000000000000000000000000000000000000000000000000000000000000012',
             ).bech32(),
-            'WEGLD-123456',
+            'WREWA-123456',
             'MEX-123456',
         );
 
@@ -691,7 +691,7 @@ describe('TransactionPairService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.pairs.admin.removeTrustedSwapPair,
             data: encodeTransactionData(
-                'removeTrustedSwapPair@WEGLD-123456@MEX-123456',
+                'removeTrustedSwapPair@WREWA-123456@MEX-123456',
             ),
             chainID: mxConfig.chainID,
             version: 2,

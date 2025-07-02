@@ -24,7 +24,7 @@ const deployBaseTokenManager = async (deployer: Wallet) => {
       e.TopBuffer(INTERCHAIN_TOKEN_ID),
       e.Tuple(
         e.Option(deployer),
-        e.Option(e.Str('EGLD')),
+        e.Option(e.Str('REWA')),
       ),
     ],
   });
@@ -82,7 +82,7 @@ export const setupITSCommands = (program: Command) => {
       gasLimit: 100_000_000,
       codeArgs: [
         e.Addr(envChain.select(data.addressIts)),
-        e.U(BigInt('10000000000000000')), // 0.01 EGLD
+        e.U(BigInt('10000000000000000')), // 0.01 REWA
         e.U64(3600), // deadline after 1 hour
         e.Option(null),
       ],
@@ -95,7 +95,7 @@ export const setupITSCommands = (program: Command) => {
       gasLimit: 100_000_000,
       codeArgs: [
         e.Addr(envChain.select(data.addressGateway)),
-        e.U(BigInt('10000000000000000')), // 0.01 EGLD
+        e.U(BigInt('10000000000000000')), // 0.01 REWA
         e.U64(3600), // deadline after 1 hour
         e.Option(null),
       ],
@@ -146,7 +146,7 @@ export const setupITSCommands = (program: Command) => {
         e.TopBuffer(INTERCHAIN_TOKEN_ID),
         e.Tuple(
           e.Option(wallet),
-          e.Option(e.Str('EGLD')),
+          e.Option(e.Str('REWA')),
         ),
       ],
     });
@@ -158,8 +158,8 @@ export const setupITSCommands = (program: Command) => {
     .argument('amount')
     .argument('otherChainName')
     .argument('destinationAddress')
-    .argument('[gasValue]', '', '5000000000000000') // 0.005 EGLD
-    .argument('[gasToken]', '', 'EGLD-000000')
+    .argument('[gasValue]', '', '5000000000000000') // 0.005 REWA
+    .argument('[gasToken]', '', 'REWA-000000')
     .action(async (
       tokenIdentifier,
       amount,
@@ -174,7 +174,7 @@ export const setupITSCommands = (program: Command) => {
         callee: envChain.select(data.addressIts),
         funcName: 'interchainTransfer',
         gasLimit: 20_000_000,
-        value: tokenIdentifier === 'EGLD' ? BigInt(amount) : 0,
+        value: tokenIdentifier === 'REWA' ? BigInt(amount) : 0,
         funcArgs: [
           e.TopBuffer(envChain.select(data.itsKnownTokens)[tokenIdentifier].tokenId),
           e.Str(otherChainName),
@@ -182,7 +182,7 @@ export const setupITSCommands = (program: Command) => {
           e.TopBuffer(''), // No metadata, uses default
           e.U(BigInt(gasValue)),
         ],
-        dcdts: (tokenIdentifier !== 'EGLD' ? [
+        dcdts: (tokenIdentifier !== 'REWA' ? [
           { id: tokenIdentifier, amount: BigInt(amount) },
           { id: gasToken, amount: BigInt(gasValue) },
         ] : []),
@@ -196,8 +196,8 @@ export const setupITSCommands = (program: Command) => {
     .argument('amount')
     .argument('otherChainName')
     .argument('destinationAddress')
-    .argument('[gasValue]', '', '5000000000000000') // 0.005 EGLD
-    .argument('[gasToken]', '', 'EGLD-000000')
+    .argument('[gasValue]', '', '5000000000000000') // 0.005 REWA
+    .argument('[gasToken]', '', 'REWA-000000')
     .action(async (
       tokenIdentifier,
       amount,
@@ -220,7 +220,7 @@ export const setupITSCommands = (program: Command) => {
         callee: envChain.select(data.addressIts),
         funcName: 'callContractWithInterchainToken',
         gasLimit: 20_000_000,
-        value: tokenIdentifier === 'EGLD' ? BigInt(amount) : 0,
+        value: tokenIdentifier === 'REWA' ? BigInt(amount) : 0,
         funcArgs: [
           e.TopBuffer(envChain.select(data.itsKnownTokens)[tokenIdentifier].tokenId),
           e.Str(otherChainName),
@@ -228,7 +228,7 @@ export const setupITSCommands = (program: Command) => {
           e.TopBuffer(metadata),
           e.U(BigInt(0)),
         ],
-        dcdts: (tokenIdentifier !== 'EGLD' ? [
+        dcdts: (tokenIdentifier !== 'REWA' ? [
           { id: tokenIdentifier, amount: BigInt(amount) },
           { id: gasToken, amount: BigInt(gasValue) },
         ] : []),
@@ -257,7 +257,7 @@ const setupITSFactoryCommands = (program: Command) => {
         callee: envChain.select(data.addressIts),
         funcName: 'deployInterchainToken',
         gasLimit: 150_000_000,
-        // value: BigInt('50000000000000000'), // 0.05 EGLD, to pay for DCDT issue cost (only on 2nd transaction)
+        // value: BigInt('50000000000000000'), // 0.05 REWA, to pay for DCDT issue cost (only on 2nd transaction)
         funcArgs: [
           e.TopBuffer(getKeccak256Hash(tokenSymbol)),
           e.Str(tokenName),
@@ -281,7 +281,7 @@ const setupITSFactoryCommands = (program: Command) => {
         callee: envChain.select(data.addressIts),
         funcName: 'deployRemoteInterchainToken',
         gasLimit: 100_000_000,
-        value: BigInt('5000000000000000'), // 0.005 EGLD, to pay for cross chain gas
+        value: BigInt('5000000000000000'), // 0.005 REWA, to pay for cross chain gas
         funcArgs: [
           e.TopBuffer(getKeccak256Hash(tokenSymbol)),
           e.Addr(ADDRESS_ZERO),
@@ -321,7 +321,7 @@ const setupITSFactoryCommands = (program: Command) => {
         callee: envChain.select(data.addressIts),
         funcName: 'deployRemoteCanonicalInterchainToken',
         gasLimit: 100_000_000,
-        value: BigInt('5000000000000000'), // 0.005 EGLD, to pay for cross chain gas
+        value: BigInt('5000000000000000'), // 0.005 REWA, to pay for cross chain gas
         funcArgs: [
           e.Str(tokenIdentifier),
           e.Str(otherChainName),

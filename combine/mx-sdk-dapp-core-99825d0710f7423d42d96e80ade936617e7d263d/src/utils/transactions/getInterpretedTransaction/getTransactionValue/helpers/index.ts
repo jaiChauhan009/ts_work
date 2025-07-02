@@ -1,4 +1,4 @@
-export * from './getEgldValueData';
+export * from './getRewaValueData';
 export * from './getTitleText';
 export * from './getValueFromActions';
 export * from './getValueFromDataField';

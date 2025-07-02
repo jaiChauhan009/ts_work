@@ -38,7 +38,7 @@ export class WeeklyRewardsSplittingAbiServiceMock
         return [
             new DcdtTokenPayment({
                 amount: '100000000000000000000',
-                tokenID: 'WEGLD-123456',
+                tokenID: 'WREWA-123456',
             }),
             new DcdtTokenPayment({
                 amount: '150000000000000000000',

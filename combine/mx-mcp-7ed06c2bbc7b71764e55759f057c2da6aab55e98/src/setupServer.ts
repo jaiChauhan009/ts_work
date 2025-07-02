@@ -57,17 +57,17 @@ import {
   issueSemiFungibleCollectionToolName,
 } from "./tools/issueSemiFungibleCollection.js";
 import {
-  sendEgld,
-  sendEgldParamScheme,
-  sendEgldToolDescription,
-  sendEgldToolName,
-} from "./tools/sendEgld.js";
+  sendRewa,
+  sendRewaParamScheme,
+  sendRewaToolDescription,
+  sendRewaToolName,
+} from "./tools/sendRewa.js";
 import {
-  sendEgldToMultipleReceivers,
-  sendEgldToMultipleReceiversParamScheme,
-  sendEgldToMultipleReceiversToolDescription,
-  sendEgldToMultipleReceiversToolName,
-} from "./tools/sendEgldToMultipleReceivers.js";
+  sendRewaToMultipleReceivers,
+  sendRewaToMultipleReceiversParamScheme,
+  sendRewaToMultipleReceiversToolDescription,
+  sendRewaToMultipleReceiversToolName,
+} from "./tools/sendRewaToMultipleReceivers.js";
 import {
   sendFungible,
   sendFungibleParamScheme,
@@ -98,10 +98,10 @@ server.tool(getAddressToolName, getAddressToolDescription, getAddress);
 server.tool(createWalletToolName, createWalletToolDescription, createWallet);
 
 server.tool(
-  sendEgldToolName,
-  sendEgldToolDescription,
-  sendEgldParamScheme,
-  ({ amount, receiver }) => sendEgld(amount, receiver)
+  sendRewaToolName,
+  sendRewaToolDescription,
+  sendRewaParamScheme,
+  ({ amount, receiver }) => sendRewa(amount, receiver)
 );
 
 server.tool(
@@ -165,10 +165,10 @@ server.tool(
 );
 
 server.tool(
-  sendEgldToMultipleReceiversToolName,
-  sendEgldToMultipleReceiversToolDescription,
-  sendEgldToMultipleReceiversParamScheme,
-  ({ amount, receivers }) => sendEgldToMultipleReceivers(amount, receivers)
+  sendRewaToMultipleReceiversToolName,
+  sendRewaToMultipleReceiversToolDescription,
+  sendRewaToMultipleReceiversParamScheme,
+  ({ amount, receivers }) => sendRewaToMultipleReceivers(amount, receivers)
 );
 
 server.tool(getNetworkToolName, getNetworkToolDescription, getNetwork);

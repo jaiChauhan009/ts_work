@@ -100,7 +100,7 @@ pub trait InterchainTokenServiceContract:
     /// Internal Functions
 
     // Needs to be payable because it can issue DCDT token through the TokenManager
-    #[payable("EGLD")]
+    #[payable("REWA")]
     #[endpoint]
     fn execute(
         &self,
@@ -119,8 +119,8 @@ pub trait InterchainTokenServiceContract:
         match message_type {
             MESSAGE_TYPE_INTERCHAIN_TRANSFER => {
                 require!(
-                    self.call_value().egld_value().deref() == &BigUint::zero(),
-                    "Can not send EGLD payment if not issuing DCDT"
+                    self.call_value().rewa_value().deref() == &BigUint::zero(),
+                    "Can not send REWA payment if not issuing DCDT"
                 );
 
                 let valid = self.gateway_validate_message(
@@ -149,8 +149,8 @@ pub trait InterchainTokenServiceContract:
             }
             MESSAGE_TYPE_LINK_TOKEN => {
                 require!(
-                    self.call_value().egld_value().deref() == &BigUint::zero(),
-                    "Can not send EGLD payment if not issuing DCDT"
+                    self.call_value().rewa_value().deref() == &BigUint::zero(),
+                    "Can not send REWA payment if not issuing DCDT"
                 );
 
                 let valid = self.gateway_validate_message(

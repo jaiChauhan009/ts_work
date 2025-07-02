@@ -135,7 +135,7 @@ describe('Token Service', () => {
           provide: DataApiService,
           useValue: {
             getDcdtTokenPrice: jest.fn(),
-            getEgldPrice: jest.fn(),
+            getRewaPrice: jest.fn(),
           },
         },
         {
@@ -179,7 +179,7 @@ describe('Token Service', () => {
       const data = require('../../mocks/tokens.mock.json');
       tokenService.getAllTokens = jest.fn().mockResolvedValue(data);
 
-      const result = await tokenService.isToken('WEGLD-bd4d79');
+      const result = await tokenService.isToken('WREWA-bd4d79');
 
       expect(tokenService.getAllTokens).toHaveBeenCalledTimes(1);
       expect(result).toBe(true);
@@ -188,7 +188,7 @@ describe('Token Service', () => {
     it('should return false if identifier does not exist in getAllTokens', async () => {
       tokenService.getAllTokens = jest.fn().mockResolvedValue([]);
 
-      const result = await tokenService.isToken('WEGLD-bd4d79');
+      const result = await tokenService.isToken('WREWA-bd4d79');
 
       expect(tokenService.getAllTokens).toHaveBeenCalledTimes(1);
       expect(result).toBe(false);
@@ -205,18 +205,18 @@ describe('Token Service', () => {
       tokenService.applySupply = jest.fn().mockResolvedValue(undefined);
       tokenService.getTokenRoles = jest.fn().mockResolvedValue([]);
 
-      const result = await tokenService.getToken('WEGLD-bd4d79');
+      const result = await tokenService.getToken('WREWA-bd4d79');
       expect(tokenService.getAllTokens).toHaveBeenCalledTimes(1);
       expect(tokenService.applyTickerFromAssets).toHaveBeenCalledTimes(1);
       expect(tokenService.applySupply).toHaveBeenCalledTimes(1);
       expect(tokenService.getTokenRoles).toHaveBeenCalledTimes(1);
       expect(result).toEqual(expect.objectContaining({
-        identifier: 'WEGLD-bd4d79',
+        identifier: 'WREWA-bd4d79',
         type: 'FungibleDCDT',
         collection: undefined,
         nonce: undefined,
-        name: 'WrappedEGLD',
-        ticker: 'WEGLD',
+        name: 'WrappedREWA',
+        ticker: 'WREWA',
         owner: 'erd1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsqj8x97',
         minted: '',
         burnt: '',
@@ -256,7 +256,7 @@ describe('Token Service', () => {
       expect(tokenService.applySupply).toHaveBeenCalledTimes(1);
       expect(tokenService.getTokenRoles).toHaveBeenCalledTimes(1);
       expect(result).toEqual(expect.objectContaining({
-        identifier: 'WEGLD-bd4d79',
+        identifier: 'WREWA-bd4d79',
         type: 'FungibleDCDT',
         price: 41.626458658528016,
       }));
@@ -374,14 +374,14 @@ describe('Token Service', () => {
       jest.spyOn(tokenService, 'applyTickerFromAssets').mockImplementation();
 
       const queryPagination: QueryPagination = new QueryPagination();
-      const filter: TokenFilter = new TokenFilter({ identifiers: ['MEX-455c57', 'WEGLD-bd4d79'] });
+      const filter: TokenFilter = new TokenFilter({ identifiers: ['MEX-455c57', 'WREWA-bd4d79'] });
 
       const result = await tokenService.getTokens(queryPagination, filter);
 
       expect(result).toHaveLength(2);
       expect(result).toEqual(expect.arrayContaining([
         expect.objectContaining({ identifier: 'MEX-455c57' }),
-        expect.objectContaining({ identifier: 'WEGLD-bd4d79' }),
+        expect.objectContaining({ identifier: 'WREWA-bd4d79' }),
       ]));
     });
 
@@ -392,13 +392,13 @@ describe('Token Service', () => {
       jest.spyOn(tokenService, 'applyTickerFromAssets').mockImplementation();
 
       const queryPagination: QueryPagination = new QueryPagination();
-      const filter: TokenFilter = new TokenFilter({ identifier: 'WEGLD-bd4d79' });
+      const filter: TokenFilter = new TokenFilter({ identifier: 'WREWA-bd4d79' });
 
       const result = await tokenService.getTokens(queryPagination, filter);
 
       expect(result).toHaveLength(1);
       expect(result).toEqual(expect.arrayContaining([
-        expect.objectContaining({ identifier: 'WEGLD-bd4d79' }),
+        expect.objectContaining({ identifier: 'WREWA-bd4d79' }),
       ]));
     });
 
@@ -409,12 +409,12 @@ describe('Token Service', () => {
       jest.spyOn(tokenService, 'applyTickerFromAssets').mockImplementation();
 
       const queryPagination: QueryPagination = new QueryPagination();
-      const filter: TokenFilter = new TokenFilter({ search: 'WEGLD' });
+      const filter: TokenFilter = new TokenFilter({ search: 'WREWA' });
 
       const result = await tokenService.getTokens(queryPagination, filter);
       expect(result).toHaveLength(1);
       expect(result).toEqual(expect.arrayContaining([
-        expect.objectContaining({ identifier: 'WEGLD-bd4d79' }),
+        expect.objectContaining({ identifier: 'WREWA-bd4d79' }),
       ]));
     });
 
@@ -425,12 +425,12 @@ describe('Token Service', () => {
       jest.spyOn(tokenService, 'applyTickerFromAssets').mockImplementation();
 
       const queryPagination: QueryPagination = new QueryPagination();
-      const filter: TokenFilter = new TokenFilter({ search: 'WrappedEGLD' });
+      const filter: TokenFilter = new TokenFilter({ search: 'WrappedREWA' });
 
       const result = await tokenService.getTokens(queryPagination, filter);
       expect(result).toHaveLength(1);
       expect(result).toEqual(expect.arrayContaining([
-        expect.objectContaining({ identifier: 'WEGLD-bd4d79' }),
+        expect.objectContaining({ identifier: 'WREWA-bd4d79' }),
       ]));
     });
 
@@ -484,7 +484,7 @@ describe('Token Service', () => {
       const getFilteredTokensMock = jest.spyOn(tokenService, 'getAllTokens').mockReturnValue(mockTokens);
 
       const filter = new TokenFilter();
-      filter.identifier = "WEGLD-bd4d79";
+      filter.identifier = "WREWA-bd4d79";
 
       const result = await tokenService.getTokenCount(filter);
 
@@ -498,7 +498,7 @@ describe('Token Service', () => {
       const getFilteredTokensMock = jest.spyOn(tokenService, 'getAllTokens').mockReturnValue(mockTokens);
 
       const filter = new TokenFilter();
-      filter.identifiers = ['MEX-455c57', 'WEGLD-bd4d79'];
+      filter.identifiers = ['MEX-455c57', 'WREWA-bd4d79'];
 
       const result = await tokenService.getTokenCount(filter);
 
@@ -566,7 +566,7 @@ describe('Token Service', () => {
 
       expect(result).toEqual(expect.arrayContaining([
         expect.objectContaining({
-          identifier: 'WEGLD-bd4d79',
+          identifier: 'WREWA-bd4d79',
         }),
       ]));
     });
@@ -618,18 +618,18 @@ describe('Token Service', () => {
     const mockTokens = [
       {
         type: "FungibleDCDT",
-        identifier: "WEGLD-bd4d79",
-        name: "WrappedEGLD",
-        ticker: "WEGLD",
+        identifier: "WREWA-bd4d79",
+        name: "WrappedREWA",
+        ticker: "WREWA",
         owner: "erd1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsqj8x97",
         decimals: 18,
         isPaused: false,
         assets: {
           website: "https://xexchange.com",
-          description: "wEGLD is an DCDT token that has the same value as EGLD, the native coin of the DharitrI blockchain.",
+          description: "wREWA is an DCDT token that has the same value as REWA, the native coin of the DharitrI blockchain.",
           status: TokenAssetStatus.active,
-          pngUrl: "https://media.dharitri.org/tokens/asset/WEGLD-bd4d79/logo.png",
-          svgUrl: "https://media.dharitri.org/tokens/asset/WEGLD-bd4d79/logo.svg",
+          pngUrl: "https://media.dharitri.org/tokens/asset/WREWA-bd4d79/logo.png",
+          svgUrl: "https://media.dharitri.org/tokens/asset/WREWA-bd4d79/logo.svg",
           ledgerSignature: "3044022062a68d4bdd649aebb5e4ed5c6284e211c689c3b8142e59a47b01cc9997b16dfa0220475b064836849b9c4aa9c5ff18daed91a64f847bd96aa0a26768349f2cd0c24f",
           extraTokens: [],
 
@@ -655,10 +655,10 @@ describe('Token Service', () => {
         isPaused: false,
         assets: {
           website: "https://xexchange.com",
-          description: "wEGLD is an DCDT token that has the same value as EGLD, the native coin of the DharitrI blockchain.",
+          description: "wREWA is an DCDT token that has the same value as REWA, the native coin of the DharitrI blockchain.",
           status: "active",
-          pngUrl: "https://media.dharitri.org/tokens/asset/WEGLD-bd4d79/logo.png",
-          svgUrl: "https://media.dharitri.org/tokens/asset/WEGLD-bd4d79/logo.svg",
+          pngUrl: "https://media.dharitri.org/tokens/asset/WREWA-bd4d79/logo.png",
+          svgUrl: "https://media.dharitri.org/tokens/asset/WREWA-bd4d79/logo.svg",
           ledgerSignature: "3044022062a68d4bdd649aebb5e4ed5c6284e211c689c3b8142e59a47b01cc9997b16dfa0220475b064836849b9c4aa9c5ff18daed91a64f847bd96aa0a26768349f2cd0c24f",
         },
         transactions: 5998186,
@@ -711,7 +711,7 @@ describe('Token Service', () => {
         jest.spyOn(tokenService as any, 'applyMexPairTradesCount').mockImplementation(() => Promise.resolve());
         jest.spyOn(cacheService as any, 'batchApplyAll').mockImplementation(() => Promise.resolve());
         jest.spyOn(dataApiService, 'getDcdtTokenPrice').mockResolvedValue(100);
-        jest.spyOn(dataApiService, 'getEgldPrice').mockResolvedValue(100);
+        jest.spyOn(dataApiService, 'getRewaPrice').mockResolvedValue(100);
         jest.spyOn(tokenService as any, 'fetchTokenDataFromUrl').mockResolvedValue(100);
         jest.spyOn(dcdtService, 'getTokenSupply').mockResolvedValue(mockTokenSupply as DcdtSupply);
 
@@ -732,7 +732,7 @@ describe('Token Service', () => {
           expect(assetsService.getTokenAssets).toHaveBeenCalledWith(mockToken.identifier);
           mockToken.name = mockTokenAssets.name;
         });
-        expect(assetsService.getTokenAssets).toHaveBeenCalledTimes(mockTokens.length + 1); // add 1 for EGLD-000000
+        expect(assetsService.getTokenAssets).toHaveBeenCalledTimes(mockTokens.length + 1); // add 1 for REWA-000000
 
 
         expect((collectionService as any).getNftCollections).toHaveBeenCalledWith(expect.anything(), { type: [TokenType.MetaDCDT] });
@@ -787,8 +787,8 @@ describe('Token Service', () => {
         );
 
         mockTokens.push(new TokenDetailed({
-          identifier: 'EGLD-000000',
-          name: 'EGLD',
+          identifier: 'REWA-000000',
+          name: 'REWA',
           canPause: false,
           canUpgrade: false,
           canWipe: false,
@@ -838,7 +838,7 @@ describe('Token Service', () => {
 
       jest.spyOn(tokenService['collectionService'], 'getNftCollections').mockResolvedValue([]);
 
-      jest.spyOn(tokenService['dataApiService'], 'getEgldPrice').mockResolvedValue(0);
+      jest.spyOn(tokenService['dataApiService'], 'getRewaPrice').mockResolvedValue(0);
       jest.spyOn(tokenService['dataApiService'], 'getDcdtTokenPrice').mockResolvedValue(1);
       jest.spyOn(tokenService['dcdtService'], 'getTokenSupply').mockResolvedValue({
         minted: '1000000',
@@ -945,7 +945,7 @@ describe('Token Service', () => {
     };
 
     it('should return undefined if there are no assets for the identifier', async () => {
-      const identifier = 'WEGLD-bd4d79';
+      const identifier = 'WREWA-bd4d79';
       const tokenAssetesMock = jest.spyOn(tokenService['assetsService'], 'getTokenAssets').mockReturnValueOnce(Promise.resolve(undefined));
 
       const result = await tokenService.getLogoPng(identifier);
@@ -956,7 +956,7 @@ describe('Token Service', () => {
     });
 
     it('should return the PNG URL if assets exist for the identifier', async () => {
-      const identifier = 'WEGLD-bd4d79';
+      const identifier = 'WREWA-bd4d79';
 
       const pngUrl = 'https://example.com/token.png';
       const tokenAssetesMock = jest.spyOn(tokenService['assetsService'], 'getTokenAssets').mockReturnValueOnce(Promise.resolve(assetsMock));
@@ -969,7 +969,7 @@ describe('Token Service', () => {
     });
 
     it('should return undefined if there are no assets for the identifier', async () => {
-      const identifier = 'WEGLD-bd4d79';
+      const identifier = 'WREWA-bd4d79';
       const tokenAssetesMock = jest.spyOn(tokenService['assetsService'], 'getTokenAssets').mockReturnValueOnce(Promise.resolve(undefined));
 
       const result = await tokenService.getLogoSvg(identifier);
@@ -980,7 +980,7 @@ describe('Token Service', () => {
     });
 
     it('should return the SVG URL if assets exist for the identifier', async () => {
-      const identifier = 'WEGLD-bd4d79';
+      const identifier = 'WREWA-bd4d79';
 
       const pngUrl = 'https://example.com/token.svg';
       const tokenAssetesMock = jest.spyOn(tokenService['assetsService'], 'getTokenAssets').mockReturnValueOnce(Promise.resolve(assetsMock));
@@ -994,10 +994,10 @@ describe('Token Service', () => {
   });
 
   describe('getTokenAccountsCount', () => {
-    const identifier = 'WEGLD-bd4d79';
+    const identifier = 'WREWA-bd4d79';
     const propertiesMock: TokenProperties = {
-      identifier: 'WEGLD-bd4d79',
-      name: 'WrappedEGLD',
+      identifier: 'WREWA-bd4d79',
+      name: 'WrappedREWA',
       type: DcdtType.FungibleDCDT,
       subType: undefined,
       owner: 'erd1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsqj8x97',
@@ -1049,10 +1049,10 @@ describe('Token Service', () => {
   });
 
   describe('getTokenAccounts', () => {
-    const identifier = 'WEGLD-bd4d79';
+    const identifier = 'WREWA-bd4d79';
     const propertiesMock: TokenProperties = {
-      identifier: 'WEGLD-bd4d79',
-      name: 'WrappedEGLD',
+      identifier: 'WREWA-bd4d79',
+      name: 'WrappedREWA',
       type: DcdtType.FungibleDCDT,
       subType: undefined,
       owner: 'erd1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsqj8x97',

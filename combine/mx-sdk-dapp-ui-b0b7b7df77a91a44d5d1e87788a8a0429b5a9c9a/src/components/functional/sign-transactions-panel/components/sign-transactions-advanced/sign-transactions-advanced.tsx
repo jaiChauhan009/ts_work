@@ -42,7 +42,7 @@ export class SignTransactionsAdvanced {
           <div class="gas-wrapper">
             <div class="gas-header">
               <span class="gas-price">Gas Price</span>
-              <span class="gas-price-value">{gasPrice} EGLD</span>
+              <span class="gas-price-value">{gasPrice} REWA</span>
             </div>
             <div class="gas-speed-selector">
               {ppuOptions.map(ppuOption => (

@@ -14,7 +14,7 @@ export class ChainSimulatorUtils {
       while (retries < maxRetries) {
         try {
           const networkStatus = await axios.get(`${config.chainSimulatorUrl}/network/status/4294967295`);
-          const currentEpoch = networkStatus.data.erd_epoch_number;
+          const currentEpoch = networkStatus.data.drt_epoch_number;
 
           if (currentEpoch >= targetEpoch) {
             return true;
@@ -75,7 +75,7 @@ export class ChainSimulatorUtils {
 
   public static async deployPingPongSc(deployer: string): Promise<string> {
     try {
-      const contractCodeRaw = fs.readFileSync('./src/test/chain-simulator/utils/contracts/ping-pong-egld.wasm');
+      const contractCodeRaw = fs.readFileSync('./src/test/chain-simulator/utils/contracts/ping-pong-rewa.wasm');
       const contractArgs = [
         '0de0b6b3a7640000',
       ];

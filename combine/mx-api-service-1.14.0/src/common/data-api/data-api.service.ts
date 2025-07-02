@@ -16,8 +16,8 @@ export class DataApiService {
     private readonly cachingService: CacheService,
   ) { }
 
-  public async getEgldPrice(timestamp?: number): Promise<number | undefined> {
-    return await this.getDcdtTokenPrice('EGLD', timestamp);
+  public async getRewaPrice(timestamp?: number): Promise<number | undefined> {
+    return await this.getDcdtTokenPrice('REWA', timestamp);
   }
 
   public async getDcdtTokenPrice(identifier: string, timestamp?: number): Promise<number | undefined> {

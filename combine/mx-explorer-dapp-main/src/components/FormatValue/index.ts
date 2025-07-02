@@ -1,4 +1,4 @@
 export * from './FormatAmount';
-export * from './FormatEGLD';
+export * from './FormatREWA';
 export * from './FormatNumber';
 export * from './FormatUSD';

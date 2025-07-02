@@ -72,7 +72,7 @@ export class CurrencyConverterService {
                 const price = tokenPrices[index];
                 const [symbol, name] =
                     identifier === tokenProviderUSD
-                        ? [mxConfig.EGLDIdentifier, mxConfig.EGLDIdentifier]
+                        ? [mxConfig.REWAIdentifier, mxConfig.REWAIdentifier]
                         : [identifier.split('-')[0], token.name];
 
                 const rate = new BigNumber(usdcPrice)
@@ -96,7 +96,7 @@ export class CurrencyConverterService {
 
         return allCurrencyRates.filter((rate) => {
             if (
-                symbols.includes(mxConfig.EGLDIdentifier) &&
+                symbols.includes(mxConfig.REWAIdentifier) &&
                 rate.symbol === tokenProviderUSD
             ) {
                 return true;
@@ -157,7 +157,7 @@ export class CurrencyConverterService {
     getCryptoSymbols(): string[] {
         return cryptoRatesIdentifiers.map((identifier) =>
             identifier === tokenProviderUSD
-                ? mxConfig.EGLDIdentifier
+                ? mxConfig.REWAIdentifier
                 : identifier.split('-')[0],
         );
     }

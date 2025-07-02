@@ -100,7 +100,7 @@ describe("test token transfer", () => {
     it("should create TokenTransfer from native token amount", () => {
         const transfer = TokenTransfer.newFromNativeAmount(1000000000000000000n);
 
-        assert.equal(transfer.token.identifier, "EGLD-000000");
+        assert.equal(transfer.token.identifier, "REWA-000000");
         assert.equal(transfer.token.nonce, 0n);
         assert.equal(transfer.amount, 1000000000000000000n);
     });

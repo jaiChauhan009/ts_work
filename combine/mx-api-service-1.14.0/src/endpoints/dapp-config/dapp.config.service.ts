@@ -21,7 +21,7 @@ export class DappConfigService {
     }
 
     const networkConfig = await this.gatewayService.getNetworkConfig();
-    const refreshRate = networkConfig.erd_round_duration;
+    const refreshRate = networkConfig.drt_round_duration;
 
     if (refreshRate) {
       return {

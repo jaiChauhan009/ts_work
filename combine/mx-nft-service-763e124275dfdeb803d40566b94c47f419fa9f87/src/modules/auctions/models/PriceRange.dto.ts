@@ -16,7 +16,7 @@ export class PriceRange {
     Object.assign(this, init);
   }
 
-  static fromEntity(minBid: string, maxBid: string, paymentToken: string = mxConfig.egld, paymentDecimals: number = mxConfig.decimals) {
+  static fromEntity(minBid: string, maxBid: string, paymentToken: string = mxConfig.rewa, paymentDecimals: number = mxConfig.decimals) {
     return new PriceRange({
       minBid: new Price({
         token: paymentToken,

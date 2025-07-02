@@ -114,7 +114,7 @@ describe('Transfers Service', () => {
 
     it('should return the count of transfers filtered by token', async () => {
       const filter: TransactionFilter = new AccountQueryOptions();
-      filter.token = 'WEGLD-bd4d79';
+      filter.token = 'WREWA-bd4d79';
 
       const indexerServiceMock = jest.spyOn(service['indexerService'], 'getTransfersCount')
         .mockResolvedValue(50);
@@ -246,7 +246,7 @@ describe('Transfers Service', () => {
 
     it('should return the count of transfers filtered by tokens', async () => {
       const filter: TransactionFilter = new AccountQueryOptions();
-      filter.tokens = ['UTK-2f80e9', 'WEGLD-bd4d79'];
+      filter.tokens = ['UTK-2f80e9', 'WREWA-bd4d79'];
 
       const indexerServiceMock = jest.spyOn(service['indexerService'], 'getTransfersCount')
         .mockResolvedValue(10000);

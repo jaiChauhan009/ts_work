@@ -65,17 +65,17 @@ export class DcdtTokenType {
     }
 }
 
-export class EgldOrDcdtTokenPayment {
+export class RewaOrDcdtTokenPayment {
     tokenIdentifier: string;
     nonce: number;
     amount: string;
 
-    constructor(init?: Partial<EgldOrDcdtTokenPayment>) {
+    constructor(init?: Partial<RewaOrDcdtTokenPayment>) {
         Object.assign(this, init);
     }
 
     static getStructure(): StructType {
-        return new StructType('EgldOrDcdtTokenPayment', [
+        return new StructType('RewaOrDcdtTokenPayment', [
             new FieldDefinition(
                 'token_identifier',
                 '',

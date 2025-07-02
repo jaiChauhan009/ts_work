@@ -8,7 +8,7 @@ import type { TransactionAccountType, TransactionRowType } from '../../../transa
 import { TransactionHash } from '../transaction-hash';
 
 const account: TransactionAccountType = {
-  address: 'erd...',
+  address: 'drt...',
   name: 'test',
   description: 'test',
   isContract: false,
@@ -37,7 +37,7 @@ describe('TransactionHash', () => {
       sender: account,
       txHash: '0x123456789abcdef',
       value: {
-        egldLabel: 'xEGLD',
+        rewaLabel: 'xREWA',
         valueDecimal: '0',
         valueInteger: '100',
       },
@@ -75,7 +75,7 @@ describe('TransactionHash', () => {
       sender: account,
       txHash: '0xInitialHash',
       value: {
-        egldLabel: 'xEGLD',
+        rewaLabel: 'xREWA',
         valueDecimal: '0',
         valueInteger: '100',
       },
@@ -111,7 +111,7 @@ describe('TransactionHash', () => {
       sender: account,
       txHash: '0xUpdatedHash',
       value: {
-        egldLabel: 'xEGLD',
+        rewaLabel: 'xREWA',
         valueDecimal: '1',
         valueInteger: '200',
       },

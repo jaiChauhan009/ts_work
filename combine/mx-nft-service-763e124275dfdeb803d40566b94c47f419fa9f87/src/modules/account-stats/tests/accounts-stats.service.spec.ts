@@ -191,7 +191,7 @@ describe('AccountsStatsService', () => {
       const accountsStatsCachingService = module.get<AccountsStatsCachingService>(AccountsStatsCachingService);
       const getBiddingBalanceStub = jest
         .spyOn(accountsStatsCachingService, 'getBiddingBalance')
-        .mockImplementation(() => Promise.resolve([{ biddingBalance: '10000', priceToken: 'EGLD' }]));
+        .mockImplementation(() => Promise.resolve([{ biddingBalance: '10000', priceToken: 'REWA' }]));
 
       const usdPriceService = module.get<UsdPriceService>(UsdPriceService);
       jest.spyOn(usdPriceService, 'getToken').mockImplementation(() => Promise.resolve(new Token({ decimals: 18 })));
@@ -199,14 +199,14 @@ describe('AccountsStatsService', () => {
       const results = await service.getBiddingBalance('address');
 
       expect(getBiddingBalanceStub).toBeCalledWith('address', expect.anything());
-      expect(results).toMatchObject([{ amount: '10000000000000000000000', nonce: 0, token: 'EGLD', tokenData: { decimals: 18 } }]);
+      expect(results).toMatchObject([{ amount: '10000000000000000000000', nonce: 0, token: 'REWA', tokenData: { decimals: 18 } }]);
     });
 
     it('should return bidding balance and call with right params, marketplace included', async () => {
       const accountsStatsCachingService = module.get<AccountsStatsCachingService>(AccountsStatsCachingService);
       const getBiddingBalanceStub = jest
         .spyOn(accountsStatsCachingService, 'getBiddingBalance')
-        .mockImplementation(() => Promise.resolve([{ biddingBalance: '10000', priceToken: 'EGLD' }]));
+        .mockImplementation(() => Promise.resolve([{ biddingBalance: '10000', priceToken: 'REWA' }]));
 
       const usdPriceService = module.get<UsdPriceService>(UsdPriceService);
       jest.spyOn(usdPriceService, 'getToken').mockImplementation(() => Promise.resolve(new Token({ decimals: 18 })));
@@ -214,7 +214,7 @@ describe('AccountsStatsService', () => {
       const results = await service.getBiddingBalance('address', 'marketplace');
 
       expect(getBiddingBalanceStub).toBeCalledWith('address_marketplace', expect.anything());
-      expect(results).toMatchObject([{ amount: '10000000000000000000000', nonce: 0, token: 'EGLD', tokenData: { decimals: 18 } }]);
+      expect(results).toMatchObject([{ amount: '10000000000000000000000', nonce: 0, token: 'REWA', tokenData: { decimals: 18 } }]);
     });
 
     it('when error occurs returns 0', async () => {

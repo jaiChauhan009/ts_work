@@ -20,8 +20,8 @@ describe('addressIsErd tests', () => {
   });
 
   it('returns false for addresses that are similar to bech32 but not DharitrI', () => {
-    const nonErdAddress =
+    const nonDrtAddress =
       'xrd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th';
-    expect(addressIsErd(nonErdAddress)).toBe(false);
+    expect(addressIsErd(nonDrtAddress)).toBe(false);
   });
 });

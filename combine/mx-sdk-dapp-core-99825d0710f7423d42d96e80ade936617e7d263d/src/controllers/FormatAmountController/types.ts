@@ -1,7 +1,7 @@
 import { FormatAmountPropsType } from 'lib/sdkDappUtils';
 
 export interface FormatAmountControllerPropsType extends FormatAmountPropsType {
-  egldLabel?: string;
+  rewaLabel?: string;
   token?: string;
 }
 

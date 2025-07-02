@@ -32,7 +32,7 @@ export class SignTransactionsStateManager extends SidePanelBaseManager<
     commonData: {
       transactionsCount: 0,
       currentIndexToSign: 0,
-      egldLabel: '',
+      rewaLabel: '',
       currentIndex: 0,
       ppuOptions: [],
       address: '',

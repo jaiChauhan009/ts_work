@@ -151,7 +151,7 @@ export class MexPairService {
       }),
     };
 
-    if ((firstTokenSymbol === 'WEGLD' && secondTokenSymbol === 'USDC') || secondTokenSymbol === 'WEGLD') {
+    if ((firstTokenSymbol === 'WREWA' && secondTokenSymbol === 'USDC') || secondTokenSymbol === 'WREWA') {
       return {
         ...baseInfo,
         basePrevious24hPrice: Number(pair.firstToken.previous24hPrice),

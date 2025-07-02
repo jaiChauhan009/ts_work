@@ -140,11 +140,11 @@ import { useGetNetworkConfig } from '@terradharitri/sdk-dapp-core/out/store/sele
 
 const account = useGetAccount();
 const {
-  network: { egldLabel }
+  network: { rewaLabel }
 } = useGetNetworkConfig();
 
 console.log(account.address);
-console.log(`${account.balance} ${egldLabel}`);
+console.log(`${account.balance} ${rewaLabel}`);
 ```
 
 #### Store selector functions:
@@ -154,7 +154,7 @@ import { getAccount } from '@terradharitri/sdk-dapp-core/out/core/methods/accoun
 import { getNetworkConfig } from '@terradharitri/sdk-dapp-core/out/core/methods/network/getNetworkConfig';
 
 const account = getAccount();
-const { egldLabel } = getNetworkConfig();
+const { rewaLabel } = getNetworkConfig();
 ```
 
 ### 4. Transactions

@@ -2,7 +2,7 @@
 
 ## Summary
 
-This scheme facilitates payments on the DharitrI blockchain using Relayed Transactions (v3). This allows users to make payments without holding EGLD for gas fees, as these are handled by the facilitator or resource server. The transaction requires signatures from both the user and the facilitator, preventing the resource server from unilaterally submitting transactions.
+This scheme facilitates payments on the DharitrI blockchain using Relayed Transactions (v3). This allows users to make payments without holding REWA for gas fees, as these are handled by the facilitator or resource server. The transaction requires signatures from both the user and the facilitator, preventing the resource server from unilaterally submitting transactions.
 
 ## `X-Payment` header payload
 
@@ -10,8 +10,8 @@ The `402 Payment Required` response from the resource server MUST include `payme
 *   `chainID` (string): The target DharitrI chain ID (e.g., "1" for Mainnet, "T" for Testnet).
 *   `transactionVersion` (number): The DharitrI transaction version (e.g., 2 or as appropriate for Relayed v3).
 *   `receiverAddress` (string): The bech32 encoded address of the recipient.
-*   `amount` (string): The amount of tokens to be transferred, in atomic units (e.g., for 1 EGLD, use "1000000000000000000").
-*   `tokenIdentifier` (string, optional): The token identifier if not EGLD (e.g., "MYTOKEN-abcdef"). Defaults to EGLD.
+*   `amount` (string): The amount of tokens to be transferred, in atomic units (e.g., for 1 REWA, use "1000000000000000000").
+*   `tokenIdentifier` (string, optional): The token identifier if not REWA (e.g., "MYTOKEN-abcdef"). Defaults to REWA.
 *   `gasPrice` (number): The gas price for the transaction.
 *   `gasLimitForInnerTx` (number): The gas limit for the core operation (e.g., the transfer itself). The client will use this to calculate the total gas limit for the relayed transaction.
 *   `relayerAddress` (string): The bech32 encoded address of the facilitator that will relay the transaction.
@@ -29,7 +29,7 @@ Example `X-Payment` header value (JSON stringified):
 ```json
 {
   "nonce": 10,
-  "value": "100000000000000000", // 0.1 EGLD
+  "value": "100000000000000000", // 0.1 REWA
   "receiver": "erd1...", // Resource server's address
   "sender": "erd1...", // User's address
   "gasPrice": 1000000000,
@@ -54,7 +54,7 @@ The facilitator (which may be the resource server or a separate entity designate
     *   Verify that the `relayer` field in the transaction correctly identifies the facilitator's address.
     *   Validate `chainID`, `transactionVersion`, `gasPrice`, and `gasLimit` for appropriateness and consistency with network conditions and facilitator's policies. The `gasLimit` should be sufficient for the inner transaction plus the relayed overhead.
 4.  **Check User Account State (Optional but Recommended)**:
-    *   Verify if the `sender` account has a sufficient balance of the token being sent if the transaction involved a token transfer that isn't covered by the facilitator (though typically for relayed tx, the user might not have EGLD, but they must have the asset they are sending if it's not EGLD).
+    *   Verify if the `sender` account has a sufficient balance of the token being sent if the transaction involved a token transfer that isn't covered by the facilitator (though typically for relayed tx, the user might not have REWA, but they must have the asset they are sending if it's not REWA).
     *   Check the `nonce` provided against the current nonce of the `sender` account on the blockchain to prevent replay attacks.
 
 ## Settlement

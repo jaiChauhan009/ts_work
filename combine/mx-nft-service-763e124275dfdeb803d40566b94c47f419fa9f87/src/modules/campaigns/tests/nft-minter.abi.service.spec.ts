@@ -38,7 +38,7 @@ describe('Nft Minter Abi Service', () => {
           mintStartTime: 12324232,
           mintEndTime: 121211212,
           whitelistEndTime: 12121212,
-          mintPriceToken: 'EGLD',
+          mintPriceToken: 'REWA',
           collectionName: 'Name',
           collectionTicker: 'NAME',
           tags: ['tag'],

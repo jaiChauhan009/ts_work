@@ -68,7 +68,7 @@ pub trait InterchainTokenServiceProxy {
         let (token_identifier, amount) =
             if self.blockchain().get_caller() == self.interchain_token_service().get() {
                 // Get tokens sent by Interchain Token Service
-                self.call_value().egld_or_single_fungible_dcdt()
+                self.call_value().rewa_or_single_fungible_dcdt()
             } else {
                 let failed_calls_mapper = self.failed_calls(
                     &source_chain,
@@ -109,7 +109,7 @@ pub trait InterchainTokenServiceProxy {
                 &data,
                 &token_id,
             )
-            .with_egld_or_single_dcdt_transfer((token_identifier.clone(), 0, amount.clone()))
+            .with_rewa_or_single_dcdt_transfer((token_identifier.clone(), 0, amount.clone()))
             .with_gas_limit(gas_limit)
             .with_callback(self.callbacks().execute_callback(
                 source_chain,
@@ -151,7 +151,7 @@ pub trait InterchainTokenServiceProxy {
         source_address: &ManagedBuffer,
         data: &ManagedBuffer,
         token_id: &TokenId<Self::Api>,
-    ) -> SingleValueMapper<(EgldOrDcdtTokenIdentifier, BigUint)>;
+    ) -> SingleValueMapper<(RewaOrDcdtTokenIdentifier, BigUint)>;
 
     #[proxy]
     fn contract_proxy(&self, sc_address: ManagedAddress) -> contract_proxy::Proxy<Self::Api>;
@@ -164,7 +164,7 @@ pub trait InterchainTokenServiceProxy {
         source_address: ManagedBuffer,
         data: ManagedBuffer,
         token_id: TokenId<Self::Api>,
-        token_identifier: EgldOrDcdtTokenIdentifier,
+        token_identifier: RewaOrDcdtTokenIdentifier,
         amount: BigUint,
         #[call_result] result: ManagedAsyncCallResult<MultiValueEncoded<ManagedBuffer>>,
     ) {

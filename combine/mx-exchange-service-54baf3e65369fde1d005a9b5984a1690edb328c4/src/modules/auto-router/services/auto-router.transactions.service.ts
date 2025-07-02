@@ -19,7 +19,7 @@ import { SWAP_TYPE } from '../models/auto-route.model';
 import { ComposableTaskType } from 'src/modules/composable-tasks/models/composable.tasks.model';
 import { ComposableTasksTransactionService } from 'src/modules/composable-tasks/services/composable.tasks.transaction';
 import { DcdtTokenPayment } from '@terradharitri/sdk-exchange';
-import { EgldOrDcdtTokenPayment } from 'src/models/dcdtTokenPayment.model';
+import { RewaOrDcdtTokenPayment } from 'src/models/dcdtTokenPayment.model';
 import { decimalToHex } from 'src/utils/token.converters';
 import { TransactionOptions } from 'src/modules/common/transaction.options';
 
@@ -43,9 +43,9 @@ export class AutoRouterTransactionService {
             ),
         );
 
-        if (args.tokenInID === mxConfig.EGLDIdentifier) {
+        if (args.tokenInID === mxConfig.REWAIdentifier) {
             return [
-                await this.wrapEgldAndMultiSwapTransaction(
+                await this.wrapRewaAndMultiSwapTransaction(
                     sender,
                     amountIn.integerValue().toFixed(),
                     args,
@@ -53,9 +53,9 @@ export class AutoRouterTransactionService {
             ];
         }
 
-        if (args.tokenOutID === mxConfig.EGLDIdentifier) {
+        if (args.tokenOutID === mxConfig.REWAIdentifier) {
             return [
-                await this.multiSwapAndUnwrapEgldTransaction(
+                await this.multiSwapAndUnwrapRewaTransaction(
                     sender,
                     amountIn.integerValue().toFixed(),
                     args,
@@ -99,9 +99,9 @@ export class AutoRouterTransactionService {
             );
         transactions.push(transaction);
 
-        if (args.tokenOutID === mxConfig.EGLDIdentifier) {
+        if (args.tokenOutID === mxConfig.REWAIdentifier) {
             transactions.push(
-                await this.transactionsWrapService.unwrapEgld(
+                await this.transactionsWrapService.unwrapRewa(
                     sender,
                     args.intermediaryAmounts[
                         args.intermediaryAmounts.length - 1
@@ -226,7 +226,7 @@ export class AutoRouterTransactionService {
         return swaps;
     }
 
-    async wrapEgldAndMultiSwapTransaction(
+    async wrapRewaAndMultiSwapTransaction(
         sender: string,
         value: string,
         args: MultiSwapTokensArgs,
@@ -240,11 +240,11 @@ export class AutoRouterTransactionService {
         return this.composeTasksTransactionService.getComposeTasksTransaction(
             sender,
             new DcdtTokenPayment({
-                tokenIdentifier: 'EGLD',
+                tokenIdentifier: 'REWA',
                 tokenNonce: 0,
                 amount: value,
             }),
-            new EgldOrDcdtTokenPayment({
+            new RewaOrDcdtTokenPayment({
                 tokenIdentifier: args.tokenRoute[args.tokenRoute.length - 1],
                 nonce: 0,
                 amount: args.intermediaryAmounts[
@@ -253,7 +253,7 @@ export class AutoRouterTransactionService {
             }),
             [
                 {
-                    type: ComposableTaskType.WRAP_EGLD,
+                    type: ComposableTaskType.WRAP_REWA,
                     arguments: [],
                 },
                 {
@@ -264,7 +264,7 @@ export class AutoRouterTransactionService {
         );
     }
 
-    async multiSwapAndUnwrapEgldTransaction(
+    async multiSwapAndUnwrapRewaTransaction(
         sender: string,
         value: string,
         args: MultiSwapTokensArgs,
@@ -282,8 +282,8 @@ export class AutoRouterTransactionService {
                 tokenNonce: 0,
                 amount: value,
             }),
-            new EgldOrDcdtTokenPayment({
-                tokenIdentifier: 'EGLD',
+            new RewaOrDcdtTokenPayment({
+                tokenIdentifier: 'REWA',
                 nonce: 0,
                 amount: args.intermediaryAmounts[
                     args.intermediaryAmounts.length - 1
@@ -295,7 +295,7 @@ export class AutoRouterTransactionService {
                     arguments: swaps,
                 },
                 {
-                    type: ComposableTaskType.UNWRAP_EGLD,
+                    type: ComposableTaskType.UNWRAP_REWA,
                     arguments: [],
                 },
             ],

@@ -393,20 +393,20 @@ describe('Execute proposal', () => {
       callee: contract,
       gasLimit: 50_000_000,
       funcName: 'executeProposal',
-      value: 1_000, // also send egld
+      value: 1_000, // also send rewa
       funcArgs: [gateway, callData, e.U(1_000)],
     }); // async call actually fails
 
     // Time lock eta was NOT deleted and refund token was created
     let kvs = await contract.getAccount();
     assertAccount(kvs, {
-      balance: 1_000, // EGLD still in contract
+      balance: 1_000, // REWA still in contract
       kvs: [
         ...baseKvs(),
 
         e.kvs.Mapper('time_lock_eta', proposalHash).Value(e.U64(1)),
         e.kvs.Mapper('time_lock_proposals_submitted', proposalHash).Value(e.Bool(true)),
-        e.kvs.Mapper('refund_token', deployer, e.Tuple(e.Str('EGLD'), e.U64(0))).Value(e.U(1_000)),
+        e.kvs.Mapper('refund_token', deployer, e.Tuple(e.Str('REWA'), e.U64(0))).Value(e.U(1_000)),
       ],
     });
 
@@ -415,11 +415,11 @@ describe('Execute proposal', () => {
       callee: contract,
       gasLimit: 50_000_000,
       funcName: 'withdrawRefundToken',
-      funcArgs: [e.Tuple(e.Str('EGLD'), e.U64(0))],
+      funcArgs: [e.Tuple(e.Str('REWA'), e.U64(0))],
     });
 
     assertAccount(await deployer.getAccount(), {
-      balance: 10_000_000_000n, // got egld back
+      balance: 10_000_000_000n, // got rewa back
     });
   });
 
@@ -557,7 +557,7 @@ describe('Execute proposal', () => {
         ...baseKvs(),
 
         e.kvs.Mapper('refund_token', deployer, e.Tuple(e.Str(TOKEN_IDENTIFIER), e.U64(1))).Value(e.U(1_000)),
-        e.kvs.Mapper('refund_token', deployer, e.Tuple(e.Str('EGLD'), e.U64(0))).Value(e.U(1_000)),
+        e.kvs.Mapper('refund_token', deployer, e.Tuple(e.Str('REWA'), e.U64(0))).Value(e.U(1_000)),
 
         e.kvs.Dcdts([{ id: TOKEN_IDENTIFIER, amount: 1_000, nonce: 1 }]),
       ],
@@ -578,18 +578,18 @@ describe('Execute proposal', () => {
     });
     assertAccount(await contract.getAccount(), {
       balance: 1_000n,
-      kvs: [...baseKvs(), e.kvs.Mapper('refund_token', deployer, e.Tuple(e.Str('EGLD'), e.U64(0))).Value(e.U(1_000))],
+      kvs: [...baseKvs(), e.kvs.Mapper('refund_token', deployer, e.Tuple(e.Str('REWA'), e.U64(0))).Value(e.U(1_000))],
     });
 
     await deployer.callContract({
       callee: contract,
       gasLimit: 50_000_000,
       funcName: 'withdrawRefundToken',
-      funcArgs: [e.Tuple(e.Str('EGLD'), e.U64(0))],
+      funcArgs: [e.Tuple(e.Str('REWA'), e.U64(0))],
     });
 
     assertAccount(await deployer.getAccount(), {
-      balance: 10_000_001_000n, // got egld back
+      balance: 10_000_001_000n, // got rewa back
       kvs: [e.kvs.Dcdts([{ id: TOKEN_IDENTIFIER, amount: 2_000, nonce: 1 }])],
     });
     assertAccount(await contract.getAccount(), {
@@ -867,13 +867,13 @@ describe('Execute operator proposal', () => {
     // Operator approval NOT deleted and refund token was created
     let kvs = await contract.getAccount();
     assertAccount(kvs, {
-      balance: 1_000, // EGLD still in contract
+      balance: 1_000, // REWA still in contract
       kvs: [
         ...baseKvs(),
 
         e.kvs.Mapper('operator_approvals', proposalHash).Value(e.Bool(true)),
         e.kvs.Mapper('operator_proposals_submitted', proposalHash).Value(e.Bool(true)),
-        e.kvs.Mapper('refund_token', deployer, e.Tuple(e.Str('EGLD'), e.U64(0))).Value(e.U(1_000)),
+        e.kvs.Mapper('refund_token', deployer, e.Tuple(e.Str('REWA'), e.U64(0))).Value(e.U(1_000)),
       ],
     });
 
@@ -882,11 +882,11 @@ describe('Execute operator proposal', () => {
       callee: contract,
       gasLimit: 50_000_000,
       funcName: 'withdrawRefundToken',
-      funcArgs: [e.Tuple(e.Str('EGLD'), e.U64(0))],
+      funcArgs: [e.Tuple(e.Str('REWA'), e.U64(0))],
     });
 
     assertAccount(await deployer.getAccount(), {
-      balance: 10_000_000_000n, // got egld back
+      balance: 10_000_000_000n, // got rewa back
     });
   });
 

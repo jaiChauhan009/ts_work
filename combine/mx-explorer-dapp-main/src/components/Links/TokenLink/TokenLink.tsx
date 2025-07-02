@@ -3,14 +3,14 @@ import { useSelector } from 'react-redux';
 
 import { NATIVE_TOKEN_IDENTIFIER } from 'appConstants';
 import { NativeTokenSymbol, NetworkLink, Overlay } from 'components';
-import { urlBuilder, isEgldToken, isProof } from 'helpers';
+import { urlBuilder, isRewaToken, isProof } from 'helpers';
 import { activeNetworkSelector } from 'redux/selectors';
 import { TokenType, TokenTypeEnum } from 'types';
 
 export const TokenLink = ({ token }: { token: TokenType }) => {
   const isNftProof = isProof(token);
 
-  const { egldLabel = '' } = useSelector(activeNetworkSelector);
+  const { rewaLabel = '' } = useSelector(activeNetworkSelector);
 
   const identifierArray = token.identifier ? token.identifier.split('-') : [];
   if (identifierArray.length > 2 && token.type === TokenTypeEnum.MetaDCDT) {
@@ -28,8 +28,8 @@ export const TokenLink = ({ token }: { token: TokenType }) => {
       : urlBuilder.tokenDetails(token.identifier);
 
   if (token.identifier === NATIVE_TOKEN_IDENTIFIER) {
-    const isCustomIcon = !isEgldToken(egldLabel);
-    const defaultCoinLink = `/${egldLabel.toLowerCase()}`;
+    const isCustomIcon = !isRewaToken(rewaLabel);
+    const defaultCoinLink = `/${rewaLabel.toLowerCase()}`;
 
     return (
       <NetworkLink to={defaultCoinLink} className='d-flex text-truncate'>

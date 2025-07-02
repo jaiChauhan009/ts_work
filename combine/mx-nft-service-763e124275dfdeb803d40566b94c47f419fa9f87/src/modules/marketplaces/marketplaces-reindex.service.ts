@@ -384,10 +384,10 @@ export class MarketplacesReindexService {
       const paymentNonceValue = input.paymentNonce ?? marketplaceReindexState.auctions[auctionIndex]?.paymentNonce;
       const paymentNonce = !Number.isNaN(paymentNonceValue) ? paymentNonceValue : 0;
       const paymentTokenIdentifier = input.paymentToken ?? marketplaceReindexState.auctions[auctionIndex]?.paymentToken;
-      if (paymentTokenIdentifier === mxConfig.egld) {
+      if (paymentTokenIdentifier === mxConfig.rewa) {
         return [
           new Token({
-            identifier: mxConfig.egld,
+            identifier: mxConfig.rewa,
             decimals: mxConfig.decimals,
           }),
           0,
@@ -397,7 +397,7 @@ export class MarketplacesReindexService {
       if (!paymentToken) {
         return [
           new Token({
-            identifier: paymentTokenIdentifier ?? mxConfig.egld,
+            identifier: paymentTokenIdentifier ?? mxConfig.rewa,
             decimals: mxConfig.decimals,
           }),
           paymentNonce,

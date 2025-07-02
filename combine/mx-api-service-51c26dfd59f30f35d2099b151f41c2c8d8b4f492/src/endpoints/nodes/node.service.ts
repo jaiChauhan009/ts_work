@@ -733,7 +733,7 @@ export class NodeService {
         }
       }
 
-      node.issues = this.getIssues(node, config.erd_latest_tag_software_version);
+      node.issues = this.getIssues(node, config.drt_latest_tag_software_version);
 
       nodes.push(node);
     }

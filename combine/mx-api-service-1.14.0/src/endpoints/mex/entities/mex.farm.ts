@@ -56,7 +56,7 @@ export class MexFarm {
     let price = Number(response.farmTokenPriceUSD);
 
     const symbol = response.farmToken.collection.split('-')[0];
-    if (['EGLDUSDCF', 'EGLDUSDCFL'].includes(symbol)) {
+    if (['REWAUSDCF', 'REWAUSDCFL'].includes(symbol)) {
       price = price / (10 ** 12) * 2;
     }
 

@@ -48,7 +48,7 @@ import { NftSubType } from "../nfts/entities/nft.sub.type";
 export class TokenService {
   private readonly logger = new OriginLogger(TokenService.name);
   private readonly nftSubTypes = [NftSubType.DynamicNonFungibleDCDT, NftSubType.DynamicMetaDCDT, NftSubType.NonFungibleDCDTv2, NftSubType.DynamicSemiFungibleDCDT];
-  private readonly egldIdentifierInMultiTransfer = 'EGLD-000000';
+  private readonly rewaIdentifierInMultiTransfer = 'REWA-000000';
 
   constructor(
     private readonly dcdtService: DcdtService,
@@ -129,7 +129,7 @@ export class TokenService {
 
     return tokens
       .map(item => ApiUtils.mergeObjects(new TokenDetailed(), item))
-      .filter(t => t.identifier !== this.egldIdentifierInMultiTransfer);
+      .filter(t => t.identifier !== this.rewaIdentifierInMultiTransfer);
   }
 
   applyTickerFromAssets(token: Token) {
@@ -842,19 +842,19 @@ export class TokenService {
       token => token.transactions ?? 0,
     );
 
-    const egldToken = new TokenDetailed({
-      identifier: this.egldIdentifierInMultiTransfer,
-      name: 'EGLD',
+    const rewaToken = new TokenDetailed({
+      identifier: this.rewaIdentifierInMultiTransfer,
+      name: 'REWA',
       type: TokenType.FungibleDCDT,
-      assets: await this.assetsService.getTokenAssets(this.egldIdentifierInMultiTransfer),
+      assets: await this.assetsService.getTokenAssets(this.rewaIdentifierInMultiTransfer),
       decimals: 18,
       isLowLiquidity: false,
-      price: await this.dataApiService.getEgldPrice(),
+      price: await this.dataApiService.getRewaPrice(),
       supply: '0',
       circulatingSupply: '0',
       marketCap: 0,
     });
-    tokens = [...tokens, egldToken];
+    tokens = [...tokens, rewaToken];
 
     return tokens;
   }
@@ -1043,7 +1043,7 @@ export class TokenService {
         if (price) {
           const supply = await this.dcdtService.getTokenSupply(token.identifier);
 
-          if (token.assets && token.identifier.split('-')[0] === 'EGLDUSDC') {
+          if (token.assets && token.identifier.split('-')[0] === 'REWAUSDC') {
             price.price = price.price / (10 ** 12) * 2;
           }
 

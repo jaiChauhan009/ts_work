@@ -149,8 +149,8 @@ export class AssetsService {
     if (mexSettings) {
       for (const [index, wrapContract] of mexSettings.wrapContracts.entries()) {
         allAssets[wrapContract] = this.createAccountAsset(
-          `DCDT: WrappedEGLD Contract Shard ${index}`,
-          ['xexchange', 'wegld']
+          `DCDT: WrappedREWA Contract Shard ${index}`,
+          ['xexchange', 'wrewa']
         );
       }
 

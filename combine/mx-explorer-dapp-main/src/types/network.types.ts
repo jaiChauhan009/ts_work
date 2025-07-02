@@ -25,9 +25,9 @@ export interface NetworkUrlType {
 export interface DappNetworkConfigType {
   id: string | number;
   name: string;
-  egldLabel: string;
+  rewaLabel: string;
   decimals: string;
-  egldDenomination: string;
+  rewaDenomination: string;
   gasPerDataByte: string;
   apiTimeout: string;
   walletConnectDeepLink: string;

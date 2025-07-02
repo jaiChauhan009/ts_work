@@ -12,7 +12,7 @@ const transactionsWithLogs: TransactionLog[] =
       iconPng: "",
       iconSvg: "",
       proof: "",
-      name: "Maiar Exchange: WEGLD/USDC Liquidity Pool",
+      name: "Maiar Exchange: WREWA/USDC Liquidity Pool",
       tags: [
         "mex",
         "liquiditypool",

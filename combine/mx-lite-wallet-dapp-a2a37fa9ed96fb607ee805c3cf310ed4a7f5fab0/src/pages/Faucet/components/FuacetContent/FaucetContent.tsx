@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Loader } from 'components';
-import { getEgldLabel, refreshAccount, useGetAccountInfo } from 'lib';
+import { getRewaLabel, refreshAccount, useGetAccountInfo } from 'lib';
 import { DataTestIdsEnum } from 'localConstants';
 import {
   useGetFaucetSettingsQuery,
@@ -17,7 +17,7 @@ export const FaucetContent = () => {
   const [requestFailed, setRequestFailed] = useState('');
   const { websocketEvent } = useGetAccountInfo();
   const { data: settings, error: settingsError } = useGetFaucetSettingsQuery();
-  const egldLabel = getEgldLabel();
+  const rewaLabel = getRewaLabel();
 
   useEffect(() => {
     if (isSuccess && fundsReceived) {
@@ -51,7 +51,7 @@ export const FaucetContent = () => {
           className='text-2xl whitespace-nowrap mt-2'
           data-testid={DataTestIdsEnum.faucetTitle}
         >
-          {egldLabel} Faucet
+          {rewaLabel} Faucet
         </h1>
         <Loader />
       </div>

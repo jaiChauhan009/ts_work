@@ -7,7 +7,7 @@ import { getAssetPrice } from './getAssetPrice';
 interface IGetTransactionAssetsParams {
   transaction: ServerTransactionType;
   userIsReceiver: boolean;
-  egldLabel?: string;
+  rewaLabel?: string;
 }
 
 export interface ITransactionAsset {
@@ -22,7 +22,7 @@ export interface ITransactionAsset {
 export const getTransactionAssets = ({
   transaction,
   userIsReceiver,
-  egldLabel
+  rewaLabel
 }: IGetTransactionAssetsParams): ITransactionAsset[] => {
   const transactionAction = transaction.action;
   const transactionArguments = transactionAction && transactionAction.arguments;
@@ -32,14 +32,14 @@ export const getTransactionAssets = ({
       ? transactionArguments.transfers
       : [];
 
-  const isEgldTransfer = transactionTransfers.length === 0;
-  const processedEgldLabel = egldLabel ?? 'EGLD';
+  const isRewaTransfer = transactionTransfers.length === 0;
+  const processedRewaLabel = rewaLabel ?? 'REWA';
   const assetPrefix = userIsReceiver ? '+' : '-';
 
-  const egldTransferAsset: ITransactionAsset = {
+  const rewaTransferAsset: ITransactionAsset = {
     assetPrefix,
-    type: processedEgldLabel,
-    assetTicker: processedEgldLabel,
+    type: processedRewaLabel,
+    assetTicker: processedRewaLabel,
     assetAmount: getAssetAmount({
       value: transaction.value,
       decimals: String(DECIMALS)
@@ -57,8 +57,8 @@ export const getTransactionAssets = ({
     })
   );
 
-  if (isEgldTransfer) {
-    return [egldTransferAsset];
+  if (isRewaTransfer) {
+    return [rewaTransferAsset];
   }
 
   return transfersAssets;

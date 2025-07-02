@@ -63,7 +63,7 @@ export interface TokenSelectFilterType {
   noOptionsMessage?: string;
 }
 
-const egldSearchLabel = 'EGLD';
+const rewaSearchLabel = 'REWA';
 
 const Option: typeof components.Option = (props) => {
   return (
@@ -77,7 +77,7 @@ const Option: typeof components.Option = (props) => {
             role='presentation'
           />
         )}
-        {(props.data as TokenSelectOptionType).value === egldSearchLabel && (
+        {(props.data as TokenSelectOptionType).value === rewaSearchLabel && (
           <NativeTokenLogo className='side-icon me-1' role='presentation' />
         )}
         <span className='text-truncate'>{props.label}</span>
@@ -97,7 +97,7 @@ export const TokenSelectFilter = ({
   showAllPlaceholder = 'Show All',
   noOptionsMessage
 }: TokenSelectFilterType) => {
-  const { egldLabel } = useSelector(activeNetworkSelector);
+  const { rewaLabel } = useSelector(activeNetworkSelector);
   const [defaultValue, setDefaultValue] = useState<SelectOptionType>();
   const activeRoute = useActiveRoute();
   const address = useGetHash();
@@ -120,31 +120,31 @@ export const TokenSelectFilter = ({
     (option) => option.label === showAllPlaceholder
   );
 
-  const hasExistingEgldOption = options.find(
-    (option) => option.label === egldLabel
+  const hasExistingRewaOption = options.find(
+    (option) => option.label === rewaLabel
   );
 
   if (hasShowAllOption && !hasExistingShowAllOption) {
     options.push({ value: '', label: showAllPlaceholder });
   }
 
-  if (!hasExistingEgldOption && egldLabel) {
-    options.push({ value: egldSearchLabel, label: egldLabel });
+  if (!hasExistingRewaOption && rewaLabel) {
+    options.push({ value: rewaSearchLabel, label: rewaLabel });
   }
 
   useEffect(() => {
-    const isEgld =
-      defaultValue?.value === egldSearchLabel ||
-      existingValues[0] === egldSearchLabel;
+    const isRewa =
+      defaultValue?.value === rewaSearchLabel ||
+      existingValues[0] === rewaSearchLabel;
     if (
       existingValues.length > 0 &&
       (!defaultValue ||
         (defaultValue && existingValues[0] !== defaultValue?.value))
     ) {
-      if (isEgld && egldLabel) {
+      if (isRewa && rewaLabel) {
         const defaultVal = {
-          value: egldSearchLabel,
-          label: egldLabel
+          value: rewaSearchLabel,
+          label: rewaLabel
         };
         setDefaultValue(defaultVal);
       } else {

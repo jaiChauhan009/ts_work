@@ -110,7 +110,7 @@ export const getCampaignsMockData = [
         total_nfts: '150',
         available_nfts: '109',
         mint_price: {
-          token_id: 'EGLD',
+          token_id: 'REWA',
           amount: '10000000000000000',
         },
       },
@@ -195,7 +195,7 @@ export const getCampaignsMockData = [
         total_nfts: '150',
         available_nfts: '109',
         mint_price: {
-          token_id: 'EGLD',
+          token_id: 'REWA',
           amount: '10000000000000000',
         },
       },

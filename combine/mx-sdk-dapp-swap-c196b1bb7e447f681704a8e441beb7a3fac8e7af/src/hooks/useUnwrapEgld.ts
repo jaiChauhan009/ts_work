@@ -1,25 +1,25 @@
 import { useAuthorizationContext } from 'components/SwapAuthorizationProvider';
-import { unwrapEgldQuery } from 'queries';
+import { unwrapRewaQuery } from 'queries';
 import { WrappingQueryResponseType } from 'types';
 import { useLazyQueryWrapper } from './useLazyQueryWrapper';
 
-export const useUnwrapEgld = () => {
+export const useUnwrapRewa = () => {
   const { client } = useAuthorizationContext();
 
   if (!client) {
     throw new Error('Swap GraphQL client not initialized');
   }
 
-  const { execute: unwrapEgld, isLoading } =
+  const { execute: unwrapRewa, isLoading } =
     useLazyQueryWrapper<WrappingQueryResponseType>({
-      query: unwrapEgldQuery,
+      query: unwrapRewaQuery,
       queryOptions: {
         client
       }
     });
 
   return {
-    unwrapEgld,
-    isUnwrapEgldLoading: isLoading
+    unwrapRewa,
+    isUnwrapRewaLoading: isLoading
   };
 };

@@ -10,11 +10,11 @@ export const ACTIONS_WITH_MANDATORY_OPERATIONS = [
 ];
 
 /**
- * If `action.name` is in `ACTIONS_WITH_EGLD_VALUE[]`, transaction value will be returned directly
+ * If `action.name` is in `ACTIONS_WITH_REWA_VALUE[]`, transaction value will be returned directly
  */
-export const ACTIONS_WITH_EGLD_VALUE = [
-  TransactionActionsEnum.wrapEgld,
-  TransactionActionsEnum.unwrapEgld
+export const ACTIONS_WITH_REWA_VALUE = [
+  TransactionActionsEnum.wrapRewa,
+  TransactionActionsEnum.unwrapRewa
 ];
 
 /**

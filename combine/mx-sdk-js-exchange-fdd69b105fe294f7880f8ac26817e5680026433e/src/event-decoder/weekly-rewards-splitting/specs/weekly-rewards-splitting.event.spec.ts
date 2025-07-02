@@ -62,7 +62,7 @@ describe('test claimRewards event decoder', () => {
             allPayments: [
                 {
                     "amount": "831689996798491",
-                    "tokenIdentifier": "WEGLD-d7c6bb",
+                    "tokenIdentifier": "WREWA-d7c6bb",
                     "tokenNonce": 0,
                 },
                 {

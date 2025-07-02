@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [Update pacakges to latest versions](https://github.com/TerraDharitri/mx-lite-wallet-dapp/pull/89)
 - [Fixed issue NFT has invalid collection name](https://github.com/TerraDharitri/mx-lite-wallet-dapp/pull/84)
-- [Added WEGLD to sovereign transfer](https://github.com/TerraDharitri/mx-lite-wallet-dapp/pull/83)
+- [Added WREWA to sovereign transfer](https://github.com/TerraDharitri/mx-lite-wallet-dapp/pull/83)
 
 ## [[2.0.0](https://github.com/TerraDharitri/mx-lite-wallet-dapp/pull/82)] - 2025-03-31
 

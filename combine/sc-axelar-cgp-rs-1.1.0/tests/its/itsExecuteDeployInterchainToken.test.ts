@@ -221,7 +221,7 @@ test('Errors', async () => {
       value: BigInt('50000000000000000'),
       funcArgs: [e.Str(ITS_HUB_CHAIN), e.Str(MESSAGE_ID), e.Str(ITS_HUB_ADDRESS), payload],
     })
-    .assertFail({ code: 4, message: 'Can not send EGLD payment if not issuing DCDT' });
+    .assertFail({ code: 4, message: 'Can not send REWA payment if not issuing DCDT' });
 
   await user
     .callContract({

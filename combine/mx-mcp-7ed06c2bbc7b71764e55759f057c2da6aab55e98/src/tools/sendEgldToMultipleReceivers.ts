@@ -3,17 +3,17 @@ import { Account, Address } from "@terradharitri/sdk-core/out/index.js";
 import { z } from "zod";
 import { MIN_GAS_LIMIT } from "./constants.js";
 import {
-  denominateEgldValue,
+  denominateRewaValue,
   getEntrypoint,
   loadNetworkFromEnv,
   loadPemWalletFromEnv,
 } from "./utils.js";
 
-export async function sendEgldToMultipleReceivers(
+export async function sendRewaToMultipleReceivers(
   amount: string,
   receivers: string[]
 ): Promise<CallToolResult> {
-  const denominated = denominateEgldValue(amount);
+  const denominated = denominateRewaValue(amount);
   const pem = loadPemWalletFromEnv();
 
   const account = new Account(pem.secretKey);
@@ -30,7 +30,7 @@ export async function sendEgldToMultipleReceivers(
     MIN_GAS_LIMIT * BigInt(receivers.length);
 
   if (requiredBalance > accountOnNetwork.balance) {
-    throw new Error("Not enough EGLD balance");
+    throw new Error("Not enough REWA balance");
   }
 
   let hashes: string[] = [];
@@ -58,7 +58,7 @@ export async function sendEgldToMultipleReceivers(
     content: [
       {
         type: "text",
-        text: `${amount} EGLD has been sent to each receiver. Check out the transactions hashes here: ${hashes.join(
+        text: `${amount} REWA has been sent to each receiver. Check out the transactions hashes here: ${hashes.join(
           ", "
         )}`,
       },
@@ -66,15 +66,15 @@ export async function sendEgldToMultipleReceivers(
   };
 }
 
-export const sendEgldToMultipleReceiversToolName =
-  "send-egld-to-multiple-receivers";
-export const sendEgldToMultipleReceiversToolDescription =
-  "Create move balance transactions and send them. Will send EGLD using the wallet set in the env to each specified receiver.";
-export const sendEgldToMultipleReceiversParamScheme = {
+export const sendRewaToMultipleReceiversToolName =
+  "send-rewa-to-multiple-receivers";
+export const sendRewaToMultipleReceiversToolDescription =
+  "Create move balance transactions and send them. Will send REWA using the wallet set in the env to each specified receiver.";
+export const sendRewaToMultipleReceiversParamScheme = {
   amount: z
     .string()
     .describe(
-      "The amount of EGLD to send. This amount will then be denominated (1 EGLD=1000000000000000000)"
+      "The amount of REWA to send. This amount will then be denominated (1 REWA=1000000000000000000)"
     ),
   receivers: z
     .array(z.string())

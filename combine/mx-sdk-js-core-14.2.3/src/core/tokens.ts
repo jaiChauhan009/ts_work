@@ -1,11 +1,11 @@
 import BigNumber from "bignumber.js";
-import { EGLD_IDENTIFIER_FOR_MULTI_DCDTNFT_TRANSFER } from "./constants";
+import { REWA_IDENTIFIER_FOR_MULTI_DCDTNFT_TRANSFER } from "./constants";
 import { ErrInvalidArgument, ErrInvalidTokenIdentifier } from "./errors";
 import { numberToPaddedHex } from "./utils.codec";
 
 // Legacy constants:
-const EGLDTokenIdentifier = "EGLD";
-const EGLDNumDecimals = 18;
+const REWATokenIdentifier = "REWA";
+const REWANumDecimals = 18;
 
 // Legacy configuration.
 // Note: this will actually set the default rounding mode for all BigNumber objects in the environment (in the application / dApp).
@@ -22,7 +22,7 @@ export type TokenType = "NFT" | "SFT" | "META" | "FNG";
 
 export class Token {
     /**
-     * E.g. "FOO-abcdef", "EGLD-000000".
+     * E.g. "FOO-abcdef", "REWA-000000".
      */
     readonly identifier: string;
     readonly nonce: bigint;
@@ -96,7 +96,7 @@ export class TokenTransfer {
      * @returns @TokenTransfer from native token
      */
     static newFromNativeAmount(amount: bigint): TokenTransfer {
-        const token = new Token({ identifier: EGLD_IDENTIFIER_FOR_MULTI_DCDTNFT_TRANSFER });
+        const token = new Token({ identifier: REWA_IDENTIFIER_FOR_MULTI_DCDTNFT_TRANSFER });
         return new TokenTransfer({ token, amount });
     }
 
@@ -107,20 +107,20 @@ export class TokenTransfer {
     /**
      * @deprecated Use {@link newFromNativeAmount} instead.
      */
-    static egldFromAmount(amount: BigNumber.Value) {
-        const amountAsBigInteger = new BigNumber(amount).shiftedBy(EGLDNumDecimals).decimalPlaces(0);
-        return this.egldFromBigInteger(amountAsBigInteger);
+    static rewaFromAmount(amount: BigNumber.Value) {
+        const amountAsBigInteger = new BigNumber(amount).shiftedBy(REWANumDecimals).decimalPlaces(0);
+        return this.rewaFromBigInteger(amountAsBigInteger);
     }
 
     /**
      * @deprecated Use {@link newFromNativeAmount} instead.
      */
-    static egldFromBigInteger(amountAsBigInteger: BigNumber.Value) {
+    static rewaFromBigInteger(amountAsBigInteger: BigNumber.Value) {
         return new TokenTransfer({
-            tokenIdentifier: EGLDTokenIdentifier,
+            tokenIdentifier: REWATokenIdentifier,
             nonce: 0,
             amountAsBigInteger,
-            numDecimals: EGLDNumDecimals,
+            numDecimals: REWANumDecimals,
         });
     }
 
@@ -220,11 +220,11 @@ export class TokenTransfer {
     }
 
     /**
-     * @deprecated Within your code, don't mix native values (EGLD) and custom (DCDT) tokens.
+     * @deprecated Within your code, don't mix native values (REWA) and custom (DCDT) tokens.
      * See "TransferTransactionsFactory.createTransactionForNativeTokenTransfer()" vs. "TransferTransactionsFactory.createTransactionForDCDTTokenTransfer()".
      */
-    isEgld(): boolean {
-        return this.token.identifier == EGLDTokenIdentifier;
+    isRewa(): boolean {
+        return this.token.identifier == REWATokenIdentifier;
     }
 
     /**

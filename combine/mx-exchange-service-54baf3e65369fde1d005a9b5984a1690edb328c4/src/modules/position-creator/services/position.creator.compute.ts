@@ -74,7 +74,7 @@ export class PositionCreatorComputeService {
             reserves,
             totalFeePercent,
         ] = await Promise.all([
-            this.wrapAbi.wrappedEgldTokenID(),
+            this.wrapAbi.wrappedRewaTokenID(),
             this.pairService.getFirstToken(pairAddress),
             this.pairService.getSecondToken(pairAddress),
             this.pairAbi.lpTokenID(pairAddress),
@@ -91,7 +91,7 @@ export class PositionCreatorComputeService {
         const profiler = new PerformanceProfiler();
 
         const paymentTokenID =
-            payment.tokenIdentifier === mxConfig.EGLDIdentifier
+            payment.tokenIdentifier === mxConfig.REWAIdentifier
                 ? wrappedTokenID
                 : payment.tokenIdentifier;
 

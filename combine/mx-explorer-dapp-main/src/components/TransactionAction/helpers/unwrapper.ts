@@ -139,7 +139,7 @@ export const stakeUnwrapper = (
     case TransactionActionEnum.stake:
       return [
         'Delegate',
-        { egldValue: action.arguments?.value },
+        { rewaValue: action.arguments?.value },
         'to staking provider',
         {
           providerName: action.arguments?.providerName,
@@ -149,7 +149,7 @@ export const stakeUnwrapper = (
     case TransactionActionEnum.unDelegate:
       return [
         'Undelegate',
-        { egldValue: action.arguments?.value },
+        { rewaValue: action.arguments?.value },
         'from staking provider',
         {
           providerName: action.arguments?.providerName,

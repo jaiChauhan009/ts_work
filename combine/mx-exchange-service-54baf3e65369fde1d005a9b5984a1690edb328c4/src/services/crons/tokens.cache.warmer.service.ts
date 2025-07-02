@@ -68,8 +68,8 @@ export class TokensCacheWarmerService {
         const profiler = new PerformanceProfiler();
 
         for (const tokenID of tokensIDs) {
-            const priceDerivedEGLD =
-                await this.tokenComputeService.computeTokenPriceDerivedEGLD(
+            const priceDerivedREWA =
+                await this.tokenComputeService.computeTokenPriceDerivedREWA(
                     tokenID,
                     [],
                 );
@@ -79,9 +79,9 @@ export class TokensCacheWarmerService {
                 );
 
             const cachedKeys = await Promise.all([
-                this.tokenSetterService.setDerivedEGLD(
+                this.tokenSetterService.setDerivedREWA(
                     tokenID,
-                    priceDerivedEGLD,
+                    priceDerivedREWA,
                 ),
                 this.tokenSetterService.setDerivedUSD(tokenID, priceDerivedUSD),
                 this.pairSetter.setTokenPriceUSD(tokenID, priceDerivedUSD),

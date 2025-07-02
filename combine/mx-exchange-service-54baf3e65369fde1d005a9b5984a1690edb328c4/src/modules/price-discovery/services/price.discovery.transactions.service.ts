@@ -24,11 +24,11 @@ export class PriceDiscoveryTransactionService {
         sender: string,
         inputToken: InputTokenModel,
     ): Promise<TransactionModel[]> {
-        const wrappedTokenID = await this.wrapAbi.wrappedEgldTokenID();
+        const wrappedTokenID = await this.wrapAbi.wrappedRewaTokenID();
         const transactions: TransactionModel[] = [];
-        if (inputToken.tokenID === mxConfig.EGLDIdentifier) {
+        if (inputToken.tokenID === mxConfig.REWAIdentifier) {
             transactions.push(
-                await this.wrappingTransactions.wrapEgld(
+                await this.wrappingTransactions.wrapRewa(
                     sender,
                     inputToken.amount,
                 ),
@@ -92,7 +92,7 @@ export class PriceDiscoveryTransactionService {
             await Promise.all([
                 this.priceDiscoveryAbi.currentPhase(priceDiscoveryAddress),
                 this.priceDiscoveryAbi.acceptedTokenID(priceDiscoveryAddress),
-                this.wrapAbi.wrappedEgldTokenID(),
+                this.wrapAbi.wrappedRewaTokenID(),
             ]);
 
         transactions.push(
@@ -112,7 +112,7 @@ export class PriceDiscoveryTransactionService {
                       )
                     : new BigNumber(inputToken.amount);
             transactions.push(
-                await this.wrappingTransactions.unwrapEgld(
+                await this.wrappingTransactions.unwrapRewa(
                     sender,
                     wrappedAmount.toFixed(),
                 ),

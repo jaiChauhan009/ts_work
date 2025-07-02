@@ -25,12 +25,12 @@ describe('test proxy pair event decoders', () => {
             epoch: 643,
             timestamp: 1651755090,
             firstToken: {
-                tokenID: 'WEGLD-bd4d79',
+                tokenID: 'WREWA-bd4d79',
                 nonce: 0,
                 amount: '127871379362263892',
             },
             secondToken: {
-                tokenID: 'WEGLD-bd4d79',
+                tokenID: 'WREWA-bd4d79',
                 nonce: 0,
                 amount: '127871379362263892',
             },
@@ -40,7 +40,7 @@ describe('test proxy pair event decoders', () => {
                 amount: '84152534155050442',
             },
             wrappedLpAttributes: {
-                lpTokenID: 'EGLDMEX-0be9e5',
+                lpTokenID: 'REWAMEX-0be9e5',
                 lpTokenTotalAmount: '84152534155050442',
                 lockedAssetsInvested: '89242243357071189167161',
                 lockedAssetsNonce: 3717058,
@@ -62,12 +62,12 @@ describe('test proxy pair event decoders', () => {
             epoch: 643,
             timestamp: 1651740540,
             firstToken: {
-                tokenID: 'WEGLD-bd4d79',
+                tokenID: 'WREWA-bd4d79',
                 nonce: 0,
                 amount: '11015349012935035301',
             },
             secondToken: {
-                tokenID: 'WEGLD-bd4d79',
+                tokenID: 'WREWA-bd4d79',
                 nonce: 0,
                 amount: '11015349012935035301',
             },
@@ -77,7 +77,7 @@ describe('test proxy pair event decoders', () => {
                 amount: '7251153915989114663',
             },
             wrappedLpAttributes: {
-                lpTokenID: 'EGLDMEX-0be9e5',
+                lpTokenID: 'REWAMEX-0be9e5',
                 lpTokenTotalAmount: '7251153915989114663',
                 lockedAssetsInvested: '6185740014381025411493263',
                 lockedAssetsNonce: 1777951,
@@ -107,12 +107,12 @@ describe('test proxy farm event decoders', () => {
                 amount: '298944491380449379',
             },
             wrappedFarmToken: {
-                tokenID: 'EGLDMEXFL-ef2065',
+                tokenID: 'REWAMEXFL-ef2065',
                 nonce: 695995,
                 amount: '6347318843650466162',
             },
             wrappedFarmAttributes: {
-                farmTokenID: 'EGLDMEXFL-ef2065',
+                farmTokenID: 'REWAMEXFL-ef2065',
                 farmTokenNonce: 695995,
                 farmTokenAmount: '6347318843650466162',
                 farmingTokenID: 'LKLP-03a2fa',
@@ -143,7 +143,7 @@ describe('test proxy farm event decoders', () => {
                 amount: '2352200000000000000',
             },
             wrappedFarmAttributes: {
-                farmTokenID: 'EGLDMEXFL-ef2065',
+                farmTokenID: 'REWAMEXFL-ef2065',
                 farmTokenNonce: 692078,
                 farmTokenAmount: '6190019886884648569',
                 farmingTokenID: 'LKLP-03a2fa',
@@ -183,12 +183,12 @@ describe('test proxy farm event decoders', () => {
                 amount: '1161978112252118146',
             },
             newWrappedFarmToken: {
-                tokenID: 'EGLDMEXFL-ef2065',
+                tokenID: 'REWAMEXFL-ef2065',
                 nonce: 695988,
                 amount: '1161978112252118146',
             },
             oldWrappedFarmAttributes: {
-                farmTokenID: 'EGLDMEXFL-ef2065',
+                farmTokenID: 'REWAMEXFL-ef2065',
                 farmTokenNonce: 576971,
                 farmTokenAmount: '1161978112252118146',
                 farmingTokenID: 'LKLP-03a2fa',
@@ -196,7 +196,7 @@ describe('test proxy farm event decoders', () => {
                 farmingTokenAmount: '1161978112252118146',
             },
             newWrappedFarmAttributes: {
-                farmTokenID: 'EGLDMEXFL-ef2065',
+                farmTokenID: 'REWAMEXFL-ef2065',
                 farmTokenNonce: 695988,
                 farmTokenAmount: '1161978112252118146',
                 farmingTokenID: 'LKLP-03a2fa',

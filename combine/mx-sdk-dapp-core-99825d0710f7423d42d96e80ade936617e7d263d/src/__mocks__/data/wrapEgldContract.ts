@@ -1,4 +1,4 @@
-export const wrapEgldContract = {
+export const wrapRewaContract = {
   address: 'erd1qqqqqqqqqqqqqpgqpv09kfzry5y4sj05udcngesat07umyj70n4sa2c0rp',
   balance: '259256323101682773803471',
   nonce: 0,
@@ -7,8 +7,8 @@ export const wrapEgldContract = {
   ownerAddress:
     'erd1x39tc3q3nn72ecjnmcz7x0qp09kp97t080x99dgyhx7zh95j0n4szskhlv',
   assets: {
-    name: 'DCDT: WrappedEGLD Contract Shard 1',
-    tags: ['xexchange', 'wegld'],
+    name: 'DCDT: WrappedREWA Contract Shard 1',
+    tags: ['xexchange', 'wrewa'],
     iconPng:
       'https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/accounts/icons/xexchange.png',
     iconSvg:

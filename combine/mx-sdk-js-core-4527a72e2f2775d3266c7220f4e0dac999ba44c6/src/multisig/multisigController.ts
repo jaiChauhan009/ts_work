@@ -494,7 +494,7 @@ export class MultisigController extends BaseController {
     }
 
     /**
-     * Creates a transaction for proposing to transfer EGLD and execute a smart contract call
+     * Creates a transaction for proposing to transfer REWA and execute a smart contract call
      */
     async createTransactionForProposeTransferExecute(
         sender: IAccount,
@@ -708,8 +708,8 @@ export class MultisigController extends BaseController {
                 return new resources.RemoveUser(fields[0]);
             case resources.MultisigActionEnum.ChangeQuorum:
                 return new resources.ChangeQuorum(fields[0]);
-            case resources.MultisigActionEnum.SendTransferExecuteEgld:
-                return new resources.SendTransferExecuteEgld(fields[0]);
+            case resources.MultisigActionEnum.SendTransferExecuteRewa:
+                return new resources.SendTransferExecuteRewa(fields[0]);
             case resources.MultisigActionEnum.SendTransferExecuteDcdt:
                 return new resources.SendTransferExecuteDcdt(fields[0]);
             case resources.MultisigActionEnum.SendAsyncCall:

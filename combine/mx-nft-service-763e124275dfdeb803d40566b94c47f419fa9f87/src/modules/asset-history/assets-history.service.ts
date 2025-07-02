@@ -107,7 +107,7 @@ export class AssetsHistoryService {
         price: totalPrice
           ? new Price({
               nonce: 0,
-              token: mxConfig.egld,
+              token: mxConfig.rewa,
               amount: totalPrice.toFixed(),
               timestamp: input.event.timestamp,
             })

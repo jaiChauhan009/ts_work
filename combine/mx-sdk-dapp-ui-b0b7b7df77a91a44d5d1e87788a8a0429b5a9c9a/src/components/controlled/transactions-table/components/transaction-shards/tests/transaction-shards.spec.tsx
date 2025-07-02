@@ -35,7 +35,7 @@ describe('TransactionShards', () => {
     },
     txHash: 'hash123',
     value: {
-      egldLabel: 'xEGLD',
+      rewaLabel: 'xREWA',
       valueDecimal: '0',
       valueInteger: '100',
     },

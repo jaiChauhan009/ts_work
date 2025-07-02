@@ -2,7 +2,7 @@ import { Abi, ArgSerializer, EndpointDefinition, isTyped, NativeSerializer } fro
 import { Address, CodeMetadata } from "../core";
 import {
     CONTRACT_DEPLOY_ADDRESS_HEX,
-    EGLD_IDENTIFIER_FOR_MULTI_DCDTNFT_TRANSFER,
+    REWA_IDENTIFIER_FOR_MULTI_DCDTNFT_TRANSFER,
     VM_TYPE_WASM_VM,
 } from "../core/constants";
 import { Err } from "../core/errors";
@@ -84,7 +84,7 @@ export class SmartContractTransactionsFactory {
         if (numberOfTokens === 1) {
             const transfer = tokenTransfers[0];
 
-            if (transfer.token.identifier === EGLD_IDENTIFIER_FOR_MULTI_DCDTNFT_TRANSFER) {
+            if (transfer.token.identifier === REWA_IDENTIFIER_FOR_MULTI_DCDTNFT_TRANSFER) {
                 dataParts = this.dataArgsBuilder.buildDataPartsForMultiDCDTNFTTransfer(receiver, tokenTransfers);
                 receiver = sender;
             } else if (this.tokenComputer.isFungible(transfer.token)) {

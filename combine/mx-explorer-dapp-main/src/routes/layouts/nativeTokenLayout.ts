@@ -9,11 +9,11 @@ import { TitledRouteObject } from '../routes';
 export const nativeTokenLayout: TitledRouteObject[] = [];
 
 networks.forEach((network) => {
-  if (!network.egldLabel) {
+  if (!network.rewaLabel) {
     return;
   }
 
-  const networkPath = `/${network.egldLabel?.toLowerCase()}`;
+  const networkPath = `/${network.rewaLabel?.toLowerCase()}`;
 
   const routeExists = nativeTokenLayout.find(
     (route) => route.path === networkPath
@@ -30,7 +30,7 @@ networks.forEach((network) => {
     children: [
       {
         path: networkPath,
-        title: network.egldLabel,
+        title: network.rewaLabel,
         preventScroll: true,
         Component: NativeTokenTransactions
       },

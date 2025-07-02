@@ -17,7 +17,7 @@ const initialState: ITransactionState = {
     gasLimit: '',
     gasPrice: '',
     transactionsCount: 0,
-    egldLabel: '',
+    rewaLabel: '',
     feeLimit: '',
     feeInFiatLimit: '',
     currentIndex: 0,

@@ -11,7 +11,7 @@ import { getProviderColor } from './helpers/getEntryColor';
 import { ChartProps } from './helpers/types';
 
 const RenderActiveShape = (props: any) => {
-  const { egldLabel } = useSelector(activeNetworkSelector);
+  const { rewaLabel } = useSelector(activeNetworkSelector);
   const { isFetched, unprocessed } = useSelector(economicsSelector);
 
   const RADIAN = Math.PI / 180;
@@ -101,7 +101,7 @@ const RenderActiveShape = (props: any) => {
         fontSize={12}
         className='d-none d-md-block'
       >
-        {payload.displayValue ?? new BigNumber(value).toFormat()} {egldLabel}
+        {payload.displayValue ?? new BigNumber(value).toFormat()} {rewaLabel}
       </text>
       {isFetched && (
         <text
@@ -125,7 +125,7 @@ const RenderActiveShape = (props: any) => {
 };
 
 export const ChartDonut = ({ config }: ChartProps) => {
-  const { egldLabel } = useSelector(activeNetworkSelector);
+  const { rewaLabel } = useSelector(activeNetworkSelector);
   const { unprocessed } = useSelector(economicsSelector);
   const chartData = config[0].data;
   const previousActiveIndex = useRef<number | undefined>();
@@ -199,7 +199,7 @@ export const ChartDonut = ({ config }: ChartProps) => {
       {activeSector && unprocessed?.price && (
         <div className='card chart-tooltip d-flex d-md-none'>
           <div className='card-body p-3'>
-            {activeSector?.name}: {activeSector?.value} {egldLabel}{' '}
+            {activeSector?.name}: {activeSector?.value} {rewaLabel}{' '}
             <span className='text-neutral-400'>
               <FormatUSD
                 value={activeSector?.value}

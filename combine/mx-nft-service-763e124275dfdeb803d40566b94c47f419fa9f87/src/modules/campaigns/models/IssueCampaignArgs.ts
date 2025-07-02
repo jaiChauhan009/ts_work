@@ -36,7 +36,7 @@ export class IssueCampaignArgs {
   whitelistEndTime: number;
 
   @Field()
-  mintPriceToken: string = mxConfig.egld;
+  mintPriceToken: string = mxConfig.rewa;
 
   @MinLength(3, { message: 'The token name should have at least 3 caracters' })
   @MaxLength(20, { message: 'The token name should have at most 20 caracters' })

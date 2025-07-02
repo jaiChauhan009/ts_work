@@ -274,7 +274,7 @@ export class AuctionsRepository {
   private async getMinMaxForQuery(queryRequest: QueryRequest): Promise<PriceRange> {
     const filterQueryBuilder = new FilterQueryBuilder<AuctionEntity>(this.auctionsRepository, queryRequest.filters, 'a');
     const paymentTokenFilter = queryRequest.getFilterName('paymentToken');
-    const paymentToken = paymentTokenFilter ?? mxConfig.egld;
+    const paymentToken = paymentTokenFilter ?? mxConfig.rewa;
     const queryBuilder: SelectQueryBuilder<AuctionEntity> = filterQueryBuilder.build();
     const response = await queryBuilder
       .select(

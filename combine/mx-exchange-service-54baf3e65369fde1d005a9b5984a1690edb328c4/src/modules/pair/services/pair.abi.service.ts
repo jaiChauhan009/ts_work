@@ -104,7 +104,7 @@ export class PairAbiService
 
         const response = await this.getGenericData(interaction);
         const lpTokenID = response.firstValue.valueOf().toString();
-        return lpTokenID === mxConfig.EGLDIdentifier || lpTokenID === ''
+        return lpTokenID === mxConfig.REWAIdentifier || lpTokenID === ''
             ? undefined
             : lpTokenID;
     }
