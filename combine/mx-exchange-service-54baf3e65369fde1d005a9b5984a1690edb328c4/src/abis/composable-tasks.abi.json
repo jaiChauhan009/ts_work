@@ -37,7 +37,7 @@
             "inputs": [
                 {
                     "name": "min_expected_token_out",
-                    "type": "EgldOrEsdtTokenPayment"
+                    "type": "EgldOrDcdtTokenPayment"
                 },
                 {
                     "name": "tasks",
@@ -91,15 +91,15 @@
             ]
         }
     ],
-    "esdtAttributes": [],
+    "dcdtAttributes": [],
     "hasCallback": false,
     "types": {
-        "EgldOrEsdtTokenPayment": {
+        "EgldOrDcdtTokenPayment": {
             "type": "struct",
             "fields": [
                 {
                     "name": "token_identifier",
-                    "type": "EgldOrEsdtTokenIdentifier"
+                    "type": "EgldOrDcdtTokenIdentifier"
                 },
                 {
                     "name": "token_nonce",
@@ -131,7 +131,7 @@
                     "discriminant": 3
                 },
                 {
-                    "name": "SendEgldOrEsdt",
+                    "name": "SendEgldOrDcdt",
                     "discriminant": 4
                 }
             ]

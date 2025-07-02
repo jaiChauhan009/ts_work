@@ -58,7 +58,7 @@ describe('WrapTransactionsService', () => {
                 value: rewaValue,
                 data: encodeTransactionData('wrapRewa'),
                 receiver:
-                    'erd1qqqqqqqqqqqqqpgqd77fnev2sthnczp2lnfx0y5jdycynjfhzzgq6p3rax',
+                    'drt1qqqqqqqqqqqqqpgqd77fnev2sthnczp2lnfx0y5jdycynjfhzzgq8axq7c',
                 sender: senderAddress,
                 receiverUsername: undefined,
                 senderUsername: undefined,
@@ -88,7 +88,7 @@ describe('WrapTransactionsService', () => {
                     `DCDTTransfer@WREWA-123456@${dcdtValue}@unwrapRewa`,
                 ),
                 receiver:
-                    'erd1qqqqqqqqqqqqqpgqd77fnev2sthnczp2lnfx0y5jdycynjfhzzgq6p3rax',
+                    'drt1qqqqqqqqqqqqqpgqd77fnev2sthnczp2lnfx0y5jdycynjfhzzgq8axq7c',
                 sender: senderAddress,
                 receiverUsername: undefined,
                 senderUsername: undefined,

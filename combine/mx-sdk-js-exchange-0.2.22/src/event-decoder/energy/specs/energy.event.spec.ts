@@ -23,7 +23,7 @@ describe('test energy event decoders', () => {
         const decodedTopics = energyEvent.decodedTopics;
         expect(decodedTopics.toJSON()).toEqual({
             eventName: 'energyUpdated',
-            caller: 'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+            caller: 'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             block: 1,
             epoch: 1,
             timestamp: 1663778190,

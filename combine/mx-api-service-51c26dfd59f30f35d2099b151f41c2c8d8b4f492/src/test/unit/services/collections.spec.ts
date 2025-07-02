@@ -28,14 +28,14 @@ describe('CollectionService', () => {
     name: 'XDAY2023TEAM',
     ticker: 'XDAY23TEAM',
     token: 'XDAY23TEAM-f7a346',
-    issuer: 'erd178ah2z70a442g9hrt39w2ld67lav62jq72gzp3r9tu5egz4hr4cswr5unp',
-    currentOwner: 'erd178ah2z70a442g9hrt39w2ld67lav62jq72gzp3r9tu5egz4hr4cswr5unp',
+    issuer: 'drt178ah2z70a442g9hrt39w2ld67lav62jq72gzp3r9tu5egz4hr4csnlrlsl',
+    currentOwner: 'drt178ah2z70a442g9hrt39w2ld67lav62jq72gzp3r9tu5egz4hr4csnlrlsl',
     numDecimals: 0,
     type: 'NonFungibleDCDT',
     timestamp: 1696923978,
     ownersHistory: [
       {
-        address: 'erd178ah2z70a442g9hrt39w2ld67lav62jq72gzp3r9tu5egz4hr4cswr5unp',
+        address: 'drt178ah2z70a442g9hrt39w2ld67lav62jq72gzp3r9tu5egz4hr4csnlrlsl',
         timestamp: 1696923978,
       },
     ],
@@ -53,9 +53,9 @@ describe('CollectionService', () => {
     },
     nft_hasTraitSummary: true,
     roles: {
-      DCDTRoleNFTCreate: ['erd178ah2z70a442g9hrt39w2ld67lav62jq72gzp3r9tu5egz4hr4cswr5unp'],
-      DCDTTransferRole: ['erd178ah2z70a442g9hrt39w2ld67lav62jq72gzp3r9tu5egz4hr4cswr5unp'],
-      DCDTRoleNFTBurn: ['erd178ah2z70a442g9hrt39w2ld67lav62jq72gzp3r9tu5egz4hr4cswr5unp'],
+      DCDTRoleNFTCreate: ['drt178ah2z70a442g9hrt39w2ld67lav62jq72gzp3r9tu5egz4hr4csnlrlsl'],
+      DCDTTransferRole: ['drt178ah2z70a442g9hrt39w2ld67lav62jq72gzp3r9tu5egz4hr4csnlrlsl'],
+      DCDTRoleNFTBurn: ['drt178ah2z70a442g9hrt39w2ld67lav62jq72gzp3r9tu5egz4hr4csnlrlsl'],
     },
     nft_hasRarities: false,
     api_holderCount: 101,
@@ -169,7 +169,7 @@ describe('CollectionService', () => {
 
     it('should return NFT collection count for a given owner', async () => {
       const filter = new CollectionFilter();
-      filter.owner = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      filter.owner = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       jest.spyOn(indexerService, 'getNftCollectionCount').mockResolvedValue(5);
 
       const result = await service.getNftCollectionCount(filter);
@@ -182,7 +182,7 @@ describe('CollectionService', () => {
 
   describe('getCollectionCountForAddressWithRoles', () => {
     it('should return collection count for address with roles', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const filter = new CollectionFilter();
 
       jest.spyOn(dcdtAddressService, 'getCollectionCountForAddressFromElastic').mockResolvedValue(100);
@@ -215,7 +215,7 @@ describe('CollectionService', () => {
       subType: undefined,
       name: 'xPortalAchievements',
       ticker: 'XDAY23TEAM',
-      owner: 'erd1lpc6wjh2hav6q50p8y6a44r2lhtnseqksygakjfgep6c9uduchkqphzu6t',
+      owner: 'drt1lpc6wjh2hav6q50p8y6a44r2lhtnseqksygakjfgep6c9uduchkqut4le4',
       timestamp: 0,
       canFreeze: true,
       canWipe: true,
@@ -315,7 +315,7 @@ describe('CollectionService', () => {
 
   describe('getNftCollectionRolesFromGateway', () => {
     const gatewayCollectionRolesMock: CollectionRoles = {
-      address: 'erd1lpc6wjh2hav6q50p8y6a44r2lhtnseqksygakjfgep6c9uduchkqphzu6t',
+      address: 'drt1lpc6wjh2hav6q50p8y6a44r2lhtnseqksygakjfgep6c9uduchkqut4le4',
       canCreate: false,
       canBurn: false,
       canAddQuantity: false,

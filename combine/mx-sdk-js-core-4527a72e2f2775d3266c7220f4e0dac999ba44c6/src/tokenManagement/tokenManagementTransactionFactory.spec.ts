@@ -27,7 +27,7 @@ describe("test token management transactions factory", () => {
         assert.deepEqual(transaction.sender, frank.address);
         assert.deepEqual(
             transaction.receiver,
-            Address.newFromBech32("erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u"),
+            Address.newFromBech32("drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqzlllsd5j0s2"),
         );
         assert.deepEqual(transaction.value, config.issueCost);
         assert.deepEqual(transaction.gasLimit, 60125000n);

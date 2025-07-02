@@ -192,7 +192,7 @@ describe('Stake Service', () => {
       const queueSize = Buffer.from('10', 'ascii').toString('base64');
       const nodesMock = require('../../mocks/nodes.mock.json');
 
-      jest.spyOn(apiConfigService, 'getStakingContractAddress').mockReturnValue('erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqllls0lczs7');
+      jest.spyOn(apiConfigService, 'getStakingContractAddress').mockReturnValue('drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqqllls9k7r6g');
       jest.spyOn(stakeService['vmQueryService'], 'vmQuery').mockResolvedValue([queueSize]);
       jest.spyOn(stakeService['nodeService'], 'getAllNodes').mockResolvedValue(nodesMock);
 
@@ -219,7 +219,7 @@ describe('Stake Service', () => {
         auctionList: [
           {
             qualifiedTopUp: '0',
-            owner: "erd1netql0lyhcyd8ugpcfrchr60273rjemr5thug9g0fgxqa9ep5yeqvj7qfv",
+            owner: "drt1netql0lyhcyd8ugpcfrchr60273rjemr5thug9g0fgxqa9ep5yeq3wfr2j",
             numStakedNodes: 1,
             totalTopUp: "0",
             topUpPerNode: "0",
@@ -232,7 +232,7 @@ describe('Stake Service', () => {
           },
           {
             qualifiedTopUp: '0',
-            owner: "erd1crmrdw7dgkcmj6a045yjcq3ehvzyntegtn6pu9ttnl35l9kcmjjqsf5v59",
+            owner: "drt1crmrdw7dgkcmj6a045yjcq3ehvzyntegtn6pu9ttnl35l9kcmjjqd4r0hm",
             numStakedNodes: 1,
             totalTopUp: "0",
             topUpPerNode: "0",
@@ -257,7 +257,7 @@ describe('Stake Service', () => {
         auctionList: [
           {
             qualifiedTopUp: '2400000000000000000000',
-            owner: "erd1netql0lyhcyd8ugpcfrchr60273rjemr5thug9g0fgxqa9ep5yeqvj7qfv",
+            owner: "drt1netql0lyhcyd8ugpcfrchr60273rjemr5thug9g0fgxqa9ep5yeq3wfr2j",
             numStakedNodes: 1,
             totalTopUp: "0",
             topUpPerNode: "0",
@@ -270,7 +270,7 @@ describe('Stake Service', () => {
           },
           {
             qualifiedTopUp: '2300000000000000000000',
-            owner: "erd1crmrdw7dgkcmj6a045yjcq3ehvzyntegtn6pu9ttnl35l9kcmjjqsf5v59",
+            owner: "drt1crmrdw7dgkcmj6a045yjcq3ehvzyntegtn6pu9ttnl35l9kcmjjqd4r0hm",
             numStakedNodes: 1,
             totalTopUp: "0",
             topUpPerNode: "0",
@@ -295,7 +295,7 @@ describe('Stake Service', () => {
         auctionList: [
           {
             qualifiedTopUp: '3000000000000000000000',
-            owner: "erd1netql0lyhcyd8ugpcfrchr60273rjemr5thug9g0fgxqa9ep5yeqvj7qfv",
+            owner: "drt1netql0lyhcyd8ugpcfrchr60273rjemr5thug9g0fgxqa9ep5yeq3wfr2j",
             numStakedNodes: 1,
             totalTopUp: "0",
             topUpPerNode: "0",
@@ -308,7 +308,7 @@ describe('Stake Service', () => {
           },
           {
             qualifiedTopUp: '2500000000000000000000',
-            owner: "erd1crmrdw7dgkcmj6a045yjcq3ehvzyntegtn6pu9ttnl35l9kcmjjqsf5v59",
+            owner: "drt1crmrdw7dgkcmj6a045yjcq3ehvzyntegtn6pu9ttnl35l9kcmjjqd4r0hm",
             numStakedNodes: 1,
             totalTopUp: "0",
             topUpPerNode: "0",
@@ -333,7 +333,7 @@ describe('Stake Service', () => {
         auctionList: [
           {
             qualifiedTopUp: '2500000000000000000000',
-            owner: "erd1netql0lyhcyd8ugpcfrchr60273rjemr5thug9g0fgxqa9ep5yeqvj7qfv",
+            owner: "drt1netql0lyhcyd8ugpcfrchr60273rjemr5thug9g0fgxqa9ep5yeq3wfr2j",
             numStakedNodes: 1,
             totalTopUp: "0",
             topUpPerNode: "0",
@@ -346,7 +346,7 @@ describe('Stake Service', () => {
           },
           {
             qualifiedTopUp: '3000000000000000000000',
-            owner: "erd1crmrdw7dgkcmj6a045yjcq3ehvzyntegtn6pu9ttnl35l9kcmjjqsf5v59",
+            owner: "drt1crmrdw7dgkcmj6a045yjcq3ehvzyntegtn6pu9ttnl35l9kcmjjqd4r0hm",
             numStakedNodes: 1,
             totalTopUp: "0",
             topUpPerNode: "0",
@@ -371,7 +371,7 @@ describe('Stake Service', () => {
         auctionList: [
           {
             qualifiedTopUp: '2500000000000000000000',
-            owner: "erd1netql0lyhcyd8ugpcfrchr60273rjemr5thug9g0fgxqa9ep5yeqvj7qfv",
+            owner: "drt1netql0lyhcyd8ugpcfrchr60273rjemr5thug9g0fgxqa9ep5yeq3wfr2j",
             numStakedNodes: 1,
             totalTopUp: "0",
             topUpPerNode: "0",
@@ -384,7 +384,7 @@ describe('Stake Service', () => {
           },
           {
             qualifiedTopUp: '3000000000000000000000',
-            owner: "erd1crmrdw7dgkcmj6a045yjcq3ehvzyntegtn6pu9ttnl35l9kcmjjqsf5v59",
+            owner: "drt1crmrdw7dgkcmj6a045yjcq3ehvzyntegtn6pu9ttnl35l9kcmjjqd4r0hm",
             numStakedNodes: 1,
             totalTopUp: "0",
             topUpPerNode: "0",
@@ -397,7 +397,7 @@ describe('Stake Service', () => {
           },
           {
             qualifiedTopUp: '2300000000000000000000',
-            owner: "erd1crmrdw7dgkcmj6a045yjcq3ehvzyntegtn6pu9ttnl35l9kcmjjqsf5v59",
+            owner: "drt1crmrdw7dgkcmj6a045yjcq3ehvzyntegtn6pu9ttnl35l9kcmjjqd4r0hm",
             numStakedNodes: 1,
             totalTopUp: "0",
             topUpPerNode: "0",
@@ -432,7 +432,7 @@ describe('Stake Service', () => {
         auctionList: [
           {
             qualifiedTopUp: '2500000000000000000000',
-            owner: "erd1netql0lyhcyd8ugpcfrchr60273rjemr5thug9g0fgxqa9ep5yeqvj7qfv",
+            owner: "drt1netql0lyhcyd8ugpcfrchr60273rjemr5thug9g0fgxqa9ep5yeq3wfr2j",
             numStakedNodes: 1,
             totalTopUp: "0",
             topUpPerNode: "0",
@@ -445,7 +445,7 @@ describe('Stake Service', () => {
           },
           {
             qualifiedTopUp: '3000000000000000000000',
-            owner: "erd1crmrdw7dgkcmj6a045yjcq3ehvzyntegtn6pu9ttnl35l9kcmjjqsf5v59",
+            owner: "drt1crmrdw7dgkcmj6a045yjcq3ehvzyntegtn6pu9ttnl35l9kcmjjqd4r0hm",
             numStakedNodes: 1,
             totalTopUp: "0",
             topUpPerNode: "0",
@@ -458,7 +458,7 @@ describe('Stake Service', () => {
           },
           {
             qualifiedTopUp: '2300000000000000000000',
-            owner: "erd1crmrdw7dgkcmj6a045yjcq3ehvzyntegtn6pu9ttnl35l9kcmjjqsf5v59",
+            owner: "drt1crmrdw7dgkcmj6a045yjcq3ehvzyntegtn6pu9ttnl35l9kcmjjqd4r0hm",
             numStakedNodes: 1,
             totalTopUp: "0",
             topUpPerNode: "0",
@@ -483,7 +483,7 @@ describe('Stake Service', () => {
         auctionList: [
           {
             qualifiedTopUp: '2500000000000000000000',
-            owner: "erd1netql0lyhcyd8ugpcfrchr60273rjemr5thug9g0fgxqa9ep5yeqvj7qfv",
+            owner: "drt1netql0lyhcyd8ugpcfrchr60273rjemr5thug9g0fgxqa9ep5yeq3wfr2j",
             numStakedNodes: 1,
             totalTopUp: "0",
             topUpPerNode: "0",
@@ -496,7 +496,7 @@ describe('Stake Service', () => {
           },
           {
             qualifiedTopUp: '3000000000000000000000',
-            owner: "erd1crmrdw7dgkcmj6a045yjcq3ehvzyntegtn6pu9ttnl35l9kcmjjqsf5v59",
+            owner: "drt1crmrdw7dgkcmj6a045yjcq3ehvzyntegtn6pu9ttnl35l9kcmjjqd4r0hm",
             numStakedNodes: 1,
             totalTopUp: "0",
             topUpPerNode: "0",
@@ -509,7 +509,7 @@ describe('Stake Service', () => {
           },
           {
             qualifiedTopUp: '2300000000000000000000',
-            owner: "erd1crmrdw7dgkcmj6a045yjcq3ehvzyntegtn6pu9ttnl35l9kcmjjqsf5v59",
+            owner: "drt1crmrdw7dgkcmj6a045yjcq3ehvzyntegtn6pu9ttnl35l9kcmjjqd4r0hm",
             numStakedNodes: 1,
             totalTopUp: "0",
             topUpPerNode: "0",

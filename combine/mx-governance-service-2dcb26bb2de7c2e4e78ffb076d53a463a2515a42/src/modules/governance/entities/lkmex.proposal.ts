@@ -28,7 +28,7 @@ export class GovernanceLKMEXProposal extends GovernanceProposalModel {
             }),
             status: GovernanceProposalStatus.Succeeded,
             proposalId: 1,
-            proposer: "erd1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsqj8x97",
+            proposer: "drt1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsaws9xq",
             actions: [],
             rootHash: "",
             totalQuorum: "6742520471308000000000000000000",

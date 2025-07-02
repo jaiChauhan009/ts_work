@@ -44,7 +44,7 @@ describe('RabbitMqTokenHandlerService', () => {
     const tokenIdentifier = 'WREWA-bd4d79';
     const event: NotifierEvent = {
       topics: [Buffer.from(tokenIdentifier).toString('base64')],
-      address: "erd1",
+      address: "drt1",
       identifier: "WREWA-bd4d79",
     };
 
@@ -64,7 +64,7 @@ describe('RabbitMqTokenHandlerService', () => {
     const tokenIdentifier = 'WREWA-bd4d79';
     const event: NotifierEvent = {
       topics: [Buffer.from(tokenIdentifier).toString('base64')],
-      address: "erd1",
+      address: "drt1",
       identifier: "WREWA-bd4d79",
     };
 
@@ -82,7 +82,7 @@ describe('RabbitMqTokenHandlerService', () => {
     const tokenIdentifier = 'WREWA-bd4d79';
     const event: NotifierEvent = {
       topics: [Buffer.from(tokenIdentifier).toString('base64')],
-      address: "erd1",
+      address: "drt1",
       identifier: "WREWA-bd4d79",
     };
 

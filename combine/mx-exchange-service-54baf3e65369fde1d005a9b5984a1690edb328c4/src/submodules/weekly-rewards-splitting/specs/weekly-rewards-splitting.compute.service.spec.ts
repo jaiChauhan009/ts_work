@@ -351,7 +351,7 @@ describe('WeeklyRewardsSplittingComputeService', () => {
             ' first user has equal part of lk tokens but double energy' +
             ' first user should have double APR compared with 2nd one',
         async () => {
-            const user1 = 'erd1';
+            const user1 = 'drt1';
             const user2 = 'erd2';
             const mex = 'MEX-123456';
             const priceMap = new Map<string, string>();
@@ -426,7 +426,7 @@ describe('WeeklyRewardsSplittingComputeService', () => {
             ' users has equal part of lk tokens but  one of them has 0 energy' +
             ' first user should have global APR x2',
         async () => {
-            const user1 = 'erd1';
+            const user1 = 'drt1';
             const user2 = 'erd2';
             const mex = 'MEX-123456';
             const priceMap = new Map<string, string>();

@@ -15,7 +15,7 @@ export class XExchange1720017949454 implements MigrationInterface {
           last(value, timestamp) FILTER (WHERE key = 'secondTokenPrice') AS close,
           sum(value) FILTER (WHERE key = 'secondTokenVolume') AS volume
     FROM hyper_dex_analytics
-    WHERE key in ('secondTokenPrice', 'secondTokenVolume') and  series like 'erd1%'
+    WHERE key in ('secondTokenPrice', 'secondTokenVolume') and  series like 'drt1%'
     GROUP BY time, series
     ORDER BY time ASC;
 `);
@@ -25,7 +25,7 @@ export class XExchange1720017949454 implements MigrationInterface {
                 'public',
                 'MATERIALIZED_VIEW',
                 'pair_second_token_candles_minute',
-                "SELECT\n          time_bucket('1 minute', timestamp) AS time,\n          series,\n          first(value, timestamp) FILTER (WHERE key = 'secondTokenPrice') AS open,\n          max(value) FILTER (WHERE key = 'secondTokenPrice') AS high,\n          min(value) FILTER (WHERE key = 'secondTokenPrice') AS low,\n          last(value, timestamp) FILTER (WHERE key = 'secondTokenPrice') AS close,\n          sum(value) FILTER (WHERE key = 'secondTokenVolume') AS volume\n    FROM hyper_dex_analytics\n    WHERE key in ('secondTokenPrice', 'secondTokenVolume') and  series like 'erd1%'\n    GROUP BY time, series\n    ORDER BY time ASC;",
+                "SELECT\n          time_bucket('1 minute', timestamp) AS time,\n          series,\n          first(value, timestamp) FILTER (WHERE key = 'secondTokenPrice') AS open,\n          max(value) FILTER (WHERE key = 'secondTokenPrice') AS high,\n          min(value) FILTER (WHERE key = 'secondTokenPrice') AS low,\n          last(value, timestamp) FILTER (WHERE key = 'secondTokenPrice') AS close,\n          sum(value) FILTER (WHERE key = 'secondTokenVolume') AS volume\n    FROM hyper_dex_analytics\n    WHERE key in ('secondTokenPrice', 'secondTokenVolume') and  series like 'drt1%'\n    GROUP BY time, series\n    ORDER BY time ASC;",
             ],
         );
         await queryRunner.query(`CREATE MATERIALIZED VIEW "pair_second_token_candles_hourly" WITH (timescaledb.continuous) AS 

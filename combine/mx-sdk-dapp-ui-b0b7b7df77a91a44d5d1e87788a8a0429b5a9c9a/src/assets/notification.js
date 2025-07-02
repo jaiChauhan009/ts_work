@@ -65,7 +65,7 @@ function showNotification() {
 
   newToast.processedTransactionsStatus = '0 / 1 transactions processed';
   newToast.toastId = notificationId.toString();
-  newToast.transactions = [{ hash: 'erd1...8ctr', status: 'success' }];
+  newToast.transactions = [{ hash: 'drt1...8ctr', status: 'success' }];
 
   const transactionListElement = document.getElementById('toast-list');
   if (transactionListElement) {

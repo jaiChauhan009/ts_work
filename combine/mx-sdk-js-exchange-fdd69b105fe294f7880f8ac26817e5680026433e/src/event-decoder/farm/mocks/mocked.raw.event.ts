@@ -1,7 +1,7 @@
 import { RawEventType } from '../../generic.types';
 
 export const rawEnterFarmEventV1_2: RawEventType = {
-    address: 'erd1qqqqqqqqqqqqqpgqye633y7k0zd7nedfnp3m48h24qygm5jl2jpslxallh',
+    address: 'drt1qqqqqqqqqqqqqpgqye633y7k0zd7nedfnp3m48h24qygm5jl2jpsz62uuf',
     identifier: 'enterFarm',
     topics: [
         'ZW50ZXJfZmFybQ==',
@@ -14,7 +14,7 @@ export const rawEnterFarmEventV1_2: RawEventType = {
 };
 
 export const rawExitFarmEventV1_2: RawEventType = {
-    address: 'erd1qqqqqqqqqqqqqpgqye633y7k0zd7nedfnp3m48h24qygm5jl2jpslxallh',
+    address: 'drt1qqqqqqqqqqqqqpgqye633y7k0zd7nedfnp3m48h24qygm5jl2jpsz62uuf',
     identifier: 'exitFarm',
     topics: [
         'ZXhpdF9mYXJt',
@@ -27,7 +27,7 @@ export const rawExitFarmEventV1_2: RawEventType = {
 };
 
 export const rawClaimRewardsEventV1_2: RawEventType = {
-    address: 'erd1qqqqqqqqqqqqqpgqye633y7k0zd7nedfnp3m48h24qygm5jl2jpslxallh',
+    address: 'drt1qqqqqqqqqqqqqpgqye633y7k0zd7nedfnp3m48h24qygm5jl2jpsz62uuf',
     identifier: 'claimRewards',
     topics: [
         'Y2xhaW1fcmV3YXJkcw==',
@@ -40,7 +40,7 @@ export const rawClaimRewardsEventV1_2: RawEventType = {
 };
 
 export const rawEnterFarmEventV1_3: RawEventType = {
-    address: 'erd1qqqqqqqqqqqqqpgqnqvjnn4haygsw2hls2k9zjjadnjf9w7g2jpsmc60a4',
+    address: 'drt1qqqqqqqqqqqqqpgqnqvjnn4haygsw2hls2k9zjjadnjf9w7g2jpsxydv7t',
     identifier: 'enterFarm',
     topics: [
         'ZW50ZXJfZmFybQ==',
@@ -52,7 +52,7 @@ export const rawEnterFarmEventV1_3: RawEventType = {
 };
 
 export const rawExitFarmEventV1_3: RawEventType = {
-    address: 'erd1qqqqqqqqqqqqqpgqnqvjnn4haygsw2hls2k9zjjadnjf9w7g2jpsmc60a4',
+    address: 'drt1qqqqqqqqqqqqqpgqnqvjnn4haygsw2hls2k9zjjadnjf9w7g2jpsxydv7t',
     identifier: 'exitFarm',
     topics: [
         'ZXhpdF9mYXJt',
@@ -64,7 +64,7 @@ export const rawExitFarmEventV1_3: RawEventType = {
 };
 
 export const rawClaimRewardsEventV1_3: RawEventType = {
-    address: 'erd1qqqqqqqqqqqqqpgqnqvjnn4haygsw2hls2k9zjjadnjf9w7g2jpsmc60a4',
+    address: 'drt1qqqqqqqqqqqqqpgqnqvjnn4haygsw2hls2k9zjjadnjf9w7g2jpsxydv7t',
     identifier: 'claimRewards',
     topics: [
         'Y2xhaW1fcmV3YXJkcw==',

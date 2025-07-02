@@ -573,7 +573,7 @@
     ],
     "hasCallback": false,
     "types": {
-        "EsdtTokenPayment": {
+        "DcdtTokenPayment": {
             "type": "struct",
             "fields": [
                 {
@@ -632,7 +632,7 @@
                 },
                 {
                     "name": "fee_payment",
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
                     "name": "minimum_quorum",

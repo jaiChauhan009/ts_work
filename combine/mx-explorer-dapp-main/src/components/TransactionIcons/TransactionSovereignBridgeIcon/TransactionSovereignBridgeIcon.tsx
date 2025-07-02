@@ -7,7 +7,7 @@ import { faLinkHorizontal } from 'icons/duotone';
 import { UITransactionType } from 'types';
 
 const sovereignBridgeAddresses = [
-  'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u'
+  'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqzlllsd5j0s2'
 ];
 const mainChainShardIds = [MAIN_SHARD_ID];
 

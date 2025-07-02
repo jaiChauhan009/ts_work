@@ -18,7 +18,7 @@ describe('Binary Utils', () => {
       expect(BinaryUtils.hexToNumber('616c69636552')).toStrictEqual(107118252483922);
     });
     it('Convert tryBase64 to address', () => {
-      expect(BinaryUtils.tryBase64ToAddress('erd1rf4hv70arudgzus0ymnnsnc4pml0jkywg2xjvzslg0mz4nn2tg7q7k0t6p')).toBeUndefined();
+      expect(BinaryUtils.tryBase64ToAddress('drt1rf4hv70arudgzus0ymnnsnc4pml0jkywg2xjvzslg0mz4nn2tg7qr2cgel')).toBeUndefined();
     });
     it('Convert String to padHex', () => {
       expect(BinaryUtils.padHex('alice')).toStrictEqual('0alice');

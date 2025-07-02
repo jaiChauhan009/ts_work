@@ -18,9 +18,9 @@ describe('test proxy pair event decoders', () => {
         );
         expect(addLiquidityProxyEvent.toJSON()).toEqual({
             address:
-                'erd1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps89fxnl',
+                'drt1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps6e79sp',
             identifier: 'addLiquidityProxy',
-            caller: 'erd1ztrzzq4xd3sx7aqr9rl368r3cz7843tnelf367dlfzrg37s94xlsy7kwj7',
+            caller: 'drt1ztrzzq4xd3sx7aqr9rl368r3cz7843tnelf367dlfzrg37s94xlsezpd3q',
             block: 9266338,
             epoch: 643,
             timestamp: 1651755090,
@@ -55,9 +55,9 @@ describe('test proxy pair event decoders', () => {
         );
         expect(removeLiquidityProxyEvent.toJSON()).toEqual({
             address:
-                'erd1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps89fxnl',
+                'drt1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps6e79sp',
             identifier: 'removeLiquidityProxy',
-            caller: 'erd1advjt988u7pm5ltsh5jeudewfydh52xcn0u5ft3jzwm3ltum0q0qargnj3',
+            caller: 'drt1advjt988u7pm5ltsh5jeudewfydh52xcn0u5ft3jzwm3ltum0q0qqlls30',
             block: 9263913,
             epoch: 643,
             timestamp: 1651740540,
@@ -93,14 +93,14 @@ describe('test proxy farm event decoders', () => {
         );
         expect(enterFarmProxyEvent.toJSON()).toEqual({
             address:
-                'erd1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps89fxnl',
+                'drt1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps6e79sp',
             identifier: 'enterFarmProxy',
-            caller: 'erd16vutspr88q6q33wwcfgwwhkymas2g9vzv33m69e9fzpjykdmctxqgk96pn',
+            caller: 'drt16vutspr88q6q33wwcfgwwhkymas2g9vzv33m69e9fzpjykdmctxq42jezd',
             block: 9266441,
             epoch: 643,
             timestamp: 1651755708,
             farmAddress:
-                'erd1qqqqqqqqqqqqqpgqyawg3d9r4l27zue7e9sz7djf7p9aj3sz2jpsm070jf',
+                'drt1qqqqqqqqqqqqqpgqyawg3d9r4l27zue7e9sz7djf7p9aj3sz2jpsxnfv3h',
             farmingToken: {
                 tokenID: 'LKLP-03a2fa',
                 nonce: 1051072,
@@ -129,14 +129,14 @@ describe('test proxy farm event decoders', () => {
         );
         expect(exitFarmProxyEvent.toJSON()).toEqual({
             address:
-                'erd1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps89fxnl',
+                'drt1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps6e79sp',
             identifier: 'exitFarmProxy',
-            caller: 'erd1qpesj652rr4fqt4ta8r34e3lvaxek94a2cedn0ff69uj02auecnqqx5q06',
+            caller: 'drt1qpesj652rr4fqt4ta8r34e3lvaxek94a2cedn0ff69uj02auecnqa6rrvy',
             block: 9266409,
             epoch: 643,
             timestamp: 1651755516,
             farmAddress:
-                'erd1qqqqqqqqqqqqqpgqyawg3d9r4l27zue7e9sz7djf7p9aj3sz2jpsm070jf',
+                'drt1qqqqqqqqqqqqqpgqyawg3d9r4l27zue7e9sz7djf7p9aj3sz2jpsxnfv3h',
             wrappedFarmToken: {
                 tokenID: 'LKFARM-9d1ea8',
                 nonce: 8074823,
@@ -169,14 +169,14 @@ describe('test proxy farm event decoders', () => {
         );
         expect(claimRewardsProxyEvent.toJSON()).toEqual({
             address:
-                'erd1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps89fxnl',
+                'drt1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps6e79sp',
             identifier: 'claimRewardsProxy',
-            caller: 'erd1hcp4gdp5rxguqz50303ckawfkzfhjeckgf8yshpf6t3gvs465qgq3hmkj8',
+            caller: 'drt1hcp4gdp5rxguqz50303ckawfkzfhjeckgf8yshpf6t3gvs465qgqvtv43e',
             block: 9266424,
             epoch: 643,
             timestamp: 1651755606,
             farmAddress:
-                'erd1qqqqqqqqqqqqqpgqyawg3d9r4l27zue7e9sz7djf7p9aj3sz2jpsm070jf',
+                'drt1qqqqqqqqqqqqqpgqyawg3d9r4l27zue7e9sz7djf7p9aj3sz2jpsxnfv3h',
             oldWrappedFarmToken: {
                 tokenID: 'LKFARM-9d1ea8',
                 nonce: 7735612,

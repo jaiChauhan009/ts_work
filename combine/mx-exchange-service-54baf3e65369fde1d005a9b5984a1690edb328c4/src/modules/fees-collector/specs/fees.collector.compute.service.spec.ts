@@ -219,7 +219,7 @@ describe('FeesCollectorComputeService', () => {
     it(
         'computeUserApr' + ' last week' + ' with default user energy',
         async () => {
-            const user1 = 'erd1';
+            const user1 = 'drt1';
             const mex = 'MEX-123456';
             const priceMap = new Map<string, string>();
             priceMap.set('WREWA-123456', '10');
@@ -287,7 +287,7 @@ describe('FeesCollectorComputeService', () => {
     it(
         'computeUserApr' + ' last week' + ' with custom user energy',
         async () => {
-            const user1 = 'erd1';
+            const user1 = 'drt1';
             const mex = 'MEX-123456';
             const priceMap = new Map<string, string>();
             priceMap.set('WREWA-123456', '10');
@@ -357,7 +357,7 @@ describe('FeesCollectorComputeService', () => {
             ' last week' +
             ' with custom user energy and locked tokens',
         async () => {
-            const user1 = 'erd1';
+            const user1 = 'drt1';
             const mex = 'MEX-123456';
             const priceMap = new Map<string, string>();
             priceMap.set('WREWA-123456', '10');
@@ -429,7 +429,7 @@ describe('FeesCollectorComputeService', () => {
             ' last week' +
             ' with 0 user energy and locked tokens',
         async () => {
-            const user1 = 'erd1';
+            const user1 = 'drt1';
 
             const service = module.get<FeesCollectorComputeService>(
                 FeesCollectorComputeService,

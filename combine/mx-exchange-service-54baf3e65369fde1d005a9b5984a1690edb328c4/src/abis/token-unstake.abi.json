@@ -74,7 +74,7 @@
             "inputs": [],
             "outputs": [
                 {
-                    "type": "variadic<EsdtTokenPayment>",
+                    "type": "variadic<DcdtTokenPayment>",
                     "multi_result": true
                 }
             ]
@@ -85,7 +85,7 @@
             "inputs": [],
             "outputs": [
                 {
-                    "type": "variadic<EsdtTokenPayment>",
+                    "type": "variadic<DcdtTokenPayment>",
                     "multi_result": true
                 }
             ]
@@ -189,7 +189,7 @@
     ],
     "hasCallback": false,
     "types": {
-        "EsdtTokenPayment": {
+        "DcdtTokenPayment": {
             "type": "struct",
             "fields": [
                 {
@@ -215,11 +215,11 @@
                 },
                 {
                     "name": "locked_tokens",
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
                     "name": "unlocked_tokens",
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         }

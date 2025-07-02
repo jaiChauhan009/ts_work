@@ -30,13 +30,13 @@ Example `X-Payment` header value (JSON stringified):
 {
   "nonce": 10,
   "value": "100000000000000000", // 0.1 REWA
-  "receiver": "erd1...", // Resource server's address
-  "sender": "erd1...", // User's address
+  "receiver": "drt1...", // Resource server's address
+  "sender": "drt1...", // User's address
   "gasPrice": 1000000000,
   "gasLimit": 70000, // e.g., 20000 (inner) + 50000 (relayed base)
   "chainID": "T",
   "version": 2,
-  "relayer": "erd1...", // Facilitator's address
+  "relayer": "drt1...", // Facilitator's address
   "signature": "users_signature_hex_encoded"
   // relayerSignature is not present here
 }

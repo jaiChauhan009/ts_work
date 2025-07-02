@@ -1,5 +1,5 @@
 export const account = {
-  address: 'erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx',
+  address: 'drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c',
   balance: '116893786890813785912',
   nonce: 12320,
   shard: 0,

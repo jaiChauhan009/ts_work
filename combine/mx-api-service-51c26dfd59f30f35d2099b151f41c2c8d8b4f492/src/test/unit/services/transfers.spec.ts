@@ -58,7 +58,7 @@ describe('Transfers Service', () => {
 
     it('should return the count of transfers filtered by address ', async () => {
       const filter: TransactionFilter = new AccountQueryOptions();
-      filter.address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      filter.address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
 
       const indexerServiceMock = jest.spyOn(service['indexerService'], 'getTransfersCount')
         .mockResolvedValue(100);
@@ -71,7 +71,7 @@ describe('Transfers Service', () => {
 
     it('should return the count of transfers filtered by sender', async () => {
       const filter: TransactionFilter = new AccountQueryOptions();
-      filter.sender = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      filter.sender = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
 
       const indexerServiceMock = jest.spyOn(service['indexerService'], 'getTransfersCount')
         .mockResolvedValue(200);
@@ -85,8 +85,8 @@ describe('Transfers Service', () => {
     it('should return the count of transfers filtered by senders', async () => {
       const filter: TransactionFilter = new AccountQueryOptions();
       filter.senders = [
-        'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz',
-        'erd15hmuycqw4mkaksfp0yu0auy548urd0wp6wyd4vtjkg3t6h9he5ystm2sv6'];
+        'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su',
+        'drt15hmuycqw4mkaksfp0yu0auy548urd0wp6wyd4vtjkg3t6h9he5ysk8an0y'];
 
       const indexerServiceMock = jest.spyOn(service['indexerService'], 'getTransfersCount')
         .mockResolvedValue(300);
@@ -100,8 +100,8 @@ describe('Transfers Service', () => {
     it('should return the count of transfers filtered by receivers', async () => {
       const filter: TransactionFilter = new AccountQueryOptions();
       filter.receivers = [
-        'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz',
-        'erd15hmuycqw4mkaksfp0yu0auy548urd0wp6wyd4vtjkg3t6h9he5ystm2sv6'];
+        'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su',
+        'drt15hmuycqw4mkaksfp0yu0auy548urd0wp6wyd4vtjkg3t6h9he5ysk8an0y'];
 
       const indexerServiceMock = jest.spyOn(service['indexerService'], 'getTransfersCount')
         .mockResolvedValue(400);
@@ -259,7 +259,7 @@ describe('Transfers Service', () => {
 
     it('should return the count of transfers filtered by senderOrReceiver', async () => {
       const filter: TransactionFilter = new AccountQueryOptions();
-      filter.senderOrReceiver = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      filter.senderOrReceiver = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
 
       const indexerServiceMock = jest.spyOn(service['indexerService'], 'getTransfersCount')
         .mockResolvedValue(2);

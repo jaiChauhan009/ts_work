@@ -53,7 +53,7 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -82,7 +82,7 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -243,13 +243,13 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -285,10 +285,10 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -415,7 +415,7 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -438,10 +438,10 @@
             "inputs": [],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -465,10 +465,10 @@
             "inputs": [],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -496,12 +496,12 @@
     ],
     "hasCallback": true,
     "types": {
-        "EsdtTokenPayment": {
+        "DcdtTokenPayment": {
             "type": "struct",
             "fields": [
                 {
                     "name": "token_type",
-                    "type": "EsdtTokenType"
+                    "type": "DcdtTokenType"
                 },
                 {
                     "name": "token_identifier",
@@ -517,7 +517,7 @@
                 }
             ]
         },
-        "EsdtTokenType": {
+        "DcdtTokenType": {
             "type": "enum",
             "variants": [
                 {

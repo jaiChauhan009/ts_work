@@ -1,7 +1,7 @@
 import { RawEventType } from '../../generic.types';
 
 export const rawMultiPairSwapEvent: RawEventType = {
-    address: 'erd1qqqqqqqqqqqqqpgqq66xk9gfr4esuhem3jru86wg5hvp33a62jps2fy57p',
+    address: 'drt1qqqqqqqqqqqqqpgqq66xk9gfr4esuhem3jru86wg5hvp33a62jpsh4nhal',
     identifier: 'multiPairSwap',
     topics: [
         'bXVsdGlQYWlyU3dhcA==',

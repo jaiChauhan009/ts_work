@@ -19,11 +19,11 @@
     "mainnet": 7200
   },
   "operator": {
-    "devnet": "erd1wavgcxq9tfyrw49k3s3h34085mayu82wqvpd4h6akyh8559pkklsknwhwh",
+    "devnet": "drt1wavgcxq9tfyrw49k3s3h34085mayu82wqvpd4h6akyh8559pkklst0e5df",
     "mainnet": ""
   },
   "gasCollector": {
-    "devnet": "erd1medg4x6ft60dmf94kl7zm24ten928mnk5pfkpfny9cakc6n84pxszdgjht",
+    "devnet": "drt1medg4x6ft60dmf94kl7zm24ten928mnk5pfkpfny9cakc6n84pxsl3l354",
     "mainnet": ""
   },
   "governance": {
@@ -80,33 +80,33 @@
     "devnet": {
       "EGLD": {
         "tokenId": "2c2a94e0c1200b3432349f28ac617a7c9242bbc9d2c9cb46d7fe9ac555104710",
-        "tokenManager": "erd1qqqqqqqqqqqqqpgqlmu50mwf6a8j9ys7txr7u0f6g730th4wkklswp02pc"
+        "tokenManager": "drt1qqqqqqqqqqqqqpgqlmu50mwf6a8j9ys7txr7u0f6g730th4wkklsnacfzx"
       },
       "ITSTT-066438": {
         "tokenId": "81748eb162a0c2c245b3fb7f29e125edf1a95cf01712d21e20a7594add9d82cd",
-        "tokenManager": "erd1s96gavtz5rpvy3dnldljncf9ahc6jh8szufdy83q5av54hvastxs9ren2p"
+        "tokenManager": "drt1s96gavtz5rpvy3dnldljncf9ahc6jh8szufdy83q5av54hvastxsclwsfl"
       },
       "MEX-a659d0": {
         "tokenId": "5f2a70ee6ef62578e6c13283c84b20edaa76d20ff6744b703b613aa4ec376522",
-        "tokenManager": "erd1qqqqqqqqqqqqqpgqyud9dhd7d4al34l5xvaz4g6hm6nypqawkklszy7e88"
+        "tokenManager": "drt1qqqqqqqqqqqqqpgqyud9dhd7d4al34l5xvaz4g6hm6nypqawkklslcf6ye"
       }
     },
     "mainnet": {}
   },
   "addressGateway": {
-    "devnet": "erd1qqqqqqqqqqqqqpgqvaj9w3g006wgj7avhen3au27datwgk63kklszcamgw",
+    "devnet": "drt1qqqqqqqqqqqqqpgqvaj9w3g006wgj7avhen3au27datwgk63kklsly2cts",
     "mainnet": ""
   },
   "addressGasService": {
-    "devnet": "erd1qqqqqqqqqqqqqpgqvr340nazahl2r0q7dnqvyakuk909yjvukklsuzx4ar",
+    "devnet": "drt1qqqqqqqqqqqqqpgqvr340nazahl2r0q7dnqvyakuk909yjvukklsp73k7a",
     "mainnet": ""
   },
   "addressBaseTokenManager": {
-    "devnet": "erd1qqqqqqqqqqqqqpgq0nzpwdfpt3drhv6zamw67kp635xlg0qykklskzls7v",
+    "devnet": "drt1qqqqqqqqqqqqqpgq0nzpwdfpt3drhv6zamw67kp635xlg0qykklst7gnaj",
     "mainnet": ""
   },
   "addressIts": {
-    "devnet": "erd1qqqqqqqqqqqqqpgqc5ypvy2d6z52fwscsfnrwcdkdh2fnthfkkls7kcn9j",
+    "devnet": "drt1qqqqqqqqqqqqqpgqc5ypvy2d6z52fwscsfnrwcdkdh2fnthfkklsr20sxv",
     "mainnet": ""
   },
   "addressGovernance": {
@@ -122,6 +122,6 @@
     "mainnet": ""
   },
   "addressHelloWorld": {
-    "devnet": "erd1qqqqqqqqqqqqqpgqr5ytd20lqhqqephlf7pd298yeucy85aakklsrx6yle"
+    "devnet": "drt1qqqqqqqqqqqqqpgqr5ytd20lqhqqephlf7pd298yeucy85aakkls76d8u8"
   }
 }

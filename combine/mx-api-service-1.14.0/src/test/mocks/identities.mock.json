@@ -20,7 +20,7 @@
         "identity": "meria",
         "locked": "876851146681104087281152",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq8hlllls7a6h85": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq8hlllls55ukdz": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/meria/logo.png",
         "description": "French Crypto Investment Provider\nwww.meria.com",
@@ -32,7 +32,7 @@
         "stake": "560000000000000000000000",
         "topUp": "316851146681104087281152",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq8hlllls7a6h85"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq8hlllls55ukdz"
         ],
         "stakePercent": 5.15,
         "apr": 8.62,
@@ -42,7 +42,7 @@
         "identity": "stakingagency",
         "locked": "752930697648429940308144",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqhllllsajxzat": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqhllllshmqrha": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/stakingagency/logo.png",
         "description": "The smart way to manage your stakes",
@@ -55,7 +55,7 @@
         "stake": "457500000000000000000000",
         "topUp": "295430697648429940308144",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqhllllsajxzat"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqhllllshmqrha"
         ],
         "stakePercent": 4.42,
         "apr": 8.46,
@@ -65,7 +65,7 @@
         "identity": "istariv",
         "locked": "760623967706268005898222",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqrhlllls062tu4": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqrhlllls9nv2kr": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/istariv/logo.png",
         "description": "Next generation Blockchain projects https://t.me/iVerse_Vision_Official",
@@ -78,7 +78,7 @@
         "stake": "342500000000000000000000",
         "topUp": "418123967706268005898222",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqrhlllls062tu4"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqrhlllls9nv2kr"
         ],
         "stakePercent": 4.46,
         "apr": 7.64,
@@ -88,7 +88,7 @@
         "identity": "partnerstaking",
         "locked": "408429855887321356229680",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq9hllllsz2je7q": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq9hllllsgr5c5k": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/partnerstaking/logo.png",
         "description": "Easiest way to manage your stake using the Partner Staking mobile app: https://partnerstaking.com/mobile",
@@ -100,7 +100,7 @@
         "stake": "265000000000000000000000",
         "topUp": "143429855887321356229680",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq9hllllsz2je7q"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq9hllllsgr5c5k"
         ],
         "stakePercent": 2.39,
         "apr": 8.67,
@@ -110,7 +110,7 @@
         "identity": "thepalmtreenw",
         "locked": "418199224393710113965644",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqy8lllls62y8s5": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqy8llllssrzx6z": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/thepalmtreenw/logo.png",
         "description": "DharitrI Stake Operator, we work with the more secure datacenters to help you get always the max. rewards of your eGLD staked.",
@@ -123,7 +123,7 @@
         "stake": "190000000000000000000000",
         "topUp": "228199224393710113965644",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqy8lllls62y8s5"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqy8llllssrzx6z"
         ],
         "stakePercent": 2.45,
         "apr": 7.66,
@@ -133,7 +133,7 @@
         "identity": "truststaking",
         "locked": "426064221292766875570633",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzhllllsp9wvyl": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqzhllllstvgdwf": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/truststaking/logo.png",
         "description": "We are running nodes for PoS on @terradharitri ",
@@ -146,7 +146,7 @@
         "stake": "175000000000000000000000",
         "topUp": "251064221292766875570633",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzhllllsp9wvyl"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqzhllllstvgdwf"
         ],
         "stakePercent": 2.5,
         "apr": 7.43,
@@ -156,7 +156,7 @@
         "identity": "primal-block-one",
         "locked": "234999999999999999999968",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqx8llllsxavffq": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqx8llllsv52grk": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/primal-block-one/logo.png",
         "description": "We focus on technology-induced black swans and investing in and supporting the companies and founders that are creating them.\r\nMatrix",
@@ -168,7 +168,7 @@
         "stake": "167500000000000000000000",
         "topUp": "67499999999999999999968",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqx8llllsxavffq"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqx8llllsv52grk"
         ],
         "stakePercent": 1.38,
         "apr": 9,
@@ -178,7 +178,7 @@
         "identity": "everstake",
         "locked": "233074787235328434003366",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq28llllsu54ydr": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq28llllskan984": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/everstake/logo.png",
         "description": "Everstake is a responsible validator trusted by 625k+ users across 70+ blockchain networks.",
@@ -191,7 +191,7 @@
         "stake": "165000000000000000000000",
         "topUp": "68074787235328434003366",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq28llllsu54ydr"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq28llllskan984"
         ],
         "stakePercent": 1.36,
         "apr": 8.43,
@@ -201,7 +201,7 @@
         "identity": "unitedgroupcapital",
         "locked": "210434476046011156209453",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllllls27850s": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqzlllllsqhp49x": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/unitedgroupcapital/logo.png",
         "description": "UnitedGroupCapital provides Staking Services, Secured Network and the smart way to invest your EGLD !",
@@ -213,7 +213,7 @@
         "stake": "132500000000000000000000",
         "topUp": "77934476046011156209453",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllllls27850s"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqzlllllsqhp49x"
         ],
         "stakePercent": 1.23,
         "apr": 8.57,
@@ -223,7 +223,7 @@
         "identity": "procryptostaking",
         "locked": "209480122153409642671900",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqxlllllsmehg53": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqxllllls3s3f78": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/procryptostaking/logo.png",
         "description": "🌍 Global distributed infrastructure 💨 High automatization & availability 📈 Redelegation activated 🔐 Sophisticated security concept 🤑 Nice APR 🇺🇸🇩🇪🇷🇴 ",
@@ -235,7 +235,7 @@
         "stake": "125000000000000000000000",
         "topUp": "84480122153409642671900",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqxlllllsmehg53"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqxllllls3s3f78"
         ],
         "stakePercent": 1.23,
         "apr": 8.4,
@@ -245,7 +245,7 @@
         "identity": "cslabsio",
         "locked": "265028204164244794973400",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqphllllsndz99p": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqphllllseyyy0h": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/cslabsio/logo.png",
         "description": "Secure staking, simplified.\nFor everyone.",
@@ -257,7 +257,7 @@
         "stake": "125000000000000000000000",
         "topUp": "140028204164244794973400",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqphllllsndz99p"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqphllllseyyy0h"
         ],
         "stakePercent": 1.55,
         "apr": 7.75,
@@ -267,7 +267,7 @@
         "identity": "arcstake",
         "locked": "294759882514488689869350",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqz8llllsh6u4jp": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqz8llllsan65ch": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/arcstake/logo.png",
         "description": "ARC Stake provides staking services for the most advanced blockchain in the world: DharitrI",
@@ -280,7 +280,7 @@
         "stake": "125000000000000000000000",
         "topUp": "169759882514488689869350",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqz8llllsh6u4jp"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqz8llllsan65ch"
         ],
         "stakePercent": 1.73,
         "apr": 6.45,
@@ -290,7 +290,7 @@
         "identity": "validblocks",
         "locked": "316363761493511585599840",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq90llllslwfcr3": 0.96,
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq90lllls480ef8": 0.96,
             "direct": 0.04
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/validblocks/logo.png",
@@ -304,7 +304,7 @@
         "stake": "115000000000000000000000",
         "topUp": "201363761493511585599840",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq90llllslwfcr3"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq90lllls480ef8"
         ],
         "stakePercent": 1.85,
         "apr": 7.19,
@@ -314,7 +314,7 @@
         "identity": "mgstaking",
         "locked": "272715313186251705975892",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq9lllllsf3mp40": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq9lllllsrcaqle": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/mgstaking/logo.png",
         "description": "Secure staking for a blockchain world!",
@@ -327,7 +327,7 @@
         "stake": "115000000000000000000000",
         "topUp": "157715313186251705975892",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq9lllllsf3mp40"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq9lllllsrcaqle"
         ],
         "stakePercent": 1.6,
         "apr": 7.49,
@@ -337,7 +337,7 @@
         "identity": "heliosstaking",
         "locked": "231586037257133580516310",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqx0llllsdx93z0": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqx0lllls80rsge": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/heliosstaking/logo.png",
         "description": "Professional Staking as a Service Provider",
@@ -350,7 +350,7 @@
         "stake": "95000000000000000000000",
         "topUp": "136586037257133580516310",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqx0llllsdx93z0"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqx0lllls80rsge"
         ],
         "stakePercent": 1.36,
         "apr": 7.43,
@@ -360,7 +360,7 @@
         "identity": "alchemiststakexyz",
         "locked": "199782159863848858429574",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqfhllllscrt56r": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqfhllllsj2d4s4": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/alchemiststakexyz/logo.png",
         "description": "Alchemist Stake provides an enterprise-level PoS infrastructure that that aims to create a bridge between investors and the best blockchain-based projects.",
@@ -372,7 +372,7 @@
         "stake": "95000000000000000000000",
         "topUp": "104782159863848858429574",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqfhllllscrt56r"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqfhllllsj2d4s4"
         ],
         "stakePercent": 1.17,
         "apr": 7.77,
@@ -382,7 +382,7 @@
         "identity": "xoxno",
         "locked": "229299921830391787650600",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqg8llllsqra25h": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqg8lllls22mt7p": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/xoxno/logo.png",
         "description": "The largest NFT Marketplace Aggregator on @terradharitri",
@@ -395,7 +395,7 @@
         "stake": "90000000000000000000000",
         "topUp": "139299921830391787650600",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqg8llllsqra25h"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqg8lllls22mt7p"
         ],
         "stakePercent": 1.34,
         "apr": 7.34,
@@ -405,7 +405,7 @@
         "identity": "middlestaking",
         "locked": "126377192428787704857322",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqyhllllsv4k7x2": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqyhllllsxuslvu": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/middlestaking/logo.png",
         "description": "Middle Staking",
@@ -418,7 +418,7 @@
         "stake": "77500000000000000000000",
         "topUp": "48877192428787704857322",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqyhllllsv4k7x2"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqyhllllsxuslvu"
         ],
         "stakePercent": 0.74,
         "apr": 8.48,
@@ -428,7 +428,7 @@
         "identity": "binance_staking",
         "locked": "956993961499995740632350",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqc0llllsayxegu": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqc0llllshdqcz2": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/binance_staking/logo.png",
         "name": "Binance Staking",
@@ -437,7 +437,7 @@
         "stake": "75000000000000000000000",
         "topUp": "881993961499995740632350",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqc0llllsayxegu"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqc0llllshdqcz2"
         ],
         "stakePercent": 5.62,
         "apr": 5.7,
@@ -447,7 +447,7 @@
         "identity": "carpathianstake",
         "locked": "119802181454836926170387",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqy0lllls33dlmm": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqy0llllsmct73d": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/carpathianstake/logo.png",
         "name": "Carpathian Stake",
@@ -459,7 +459,7 @@
         "stake": "72500000000000000000000",
         "topUp": "47302181454836926170387",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqy0lllls33dlmm"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqy0llllsmct73d"
         ],
         "stakePercent": 0.7,
         "apr": 8.44,
@@ -469,7 +469,7 @@
         "identity": "star_staking",
         "locked": "130726452154605225782382",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqprhllllsj9265l": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqprhllllscvvm7f": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/star_staking/logo.png",
         "name": "Star Staking",
@@ -478,7 +478,7 @@
         "stake": "67500000000000000000000",
         "topUp": "63226452154605225782382",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqprhllllsj9265l"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqprhllllscvvm7f"
         ],
         "stakePercent": 0.76,
         "apr": 7.98,
@@ -488,7 +488,7 @@
         "identity": "equinoxecapital",
         "locked": "244985839247332057019925",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqh0lllls49nadp": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqh0llllslv4u8h": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/equinoxecapital/logo.png",
         "description": "Staking company situated in Romania operating on DharitrI blockchain.",
@@ -499,7 +499,7 @@
         "stake": "62500000000000000000000",
         "topUp": "182485839247332057019925",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqh0lllls49nadp"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqh0llllslv4u8h"
         ],
         "stakePercent": 1.43,
         "apr": 6.62,
@@ -545,7 +545,7 @@
         "identity": "christstake",
         "locked": "99013742772493184834256",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq98lllls54qqg7": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq98lllls7uxpzg": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/christstake/logo.png",
         "description": "Jesus Christ is Lord and Savior for all Eternity. \"...whoever believes in Him shall not perish but have everlasting life\"",
@@ -557,7 +557,7 @@
         "stake": "60000000000000000000000",
         "topUp": "39013742772493184834256",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq98lllls54qqg7"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq98lllls7uxpzg"
         ],
         "stakePercent": 0.58,
         "apr": 8.45,
@@ -567,7 +567,7 @@
         "identity": "incalng",
         "locked": "108974811572987705116320",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqd8llllslmf3hu": 0.7,
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqd8lllls4j0sa2": 0.7,
             "direct": 0.3
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/incalng/logo.png",
@@ -580,7 +580,7 @@
         "stake": "60000000000000000000000",
         "topUp": "48974811572987705116320",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqd8llllslmf3hu"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqd8lllls4j0sa2"
         ],
         "stakePercent": 0.64,
         "apr": 8.16,
@@ -590,7 +590,7 @@
         "identity": "figment-networks",
         "locked": "313863217734623442441534",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqlhllllsr0pd0j": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqlhllllsfx8v9y": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/figment-networks/logo.png",
         "description": "Figment is the world's leading provider of blockchain infrastructure.",
@@ -602,7 +602,7 @@
         "stake": "55000000000000000000000",
         "topUp": "258863217734623442441534",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqlhllllsr0pd0j"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqlhllllsfx8v9y"
         ],
         "stakePercent": 1.84,
         "apr": 6.21,
@@ -612,7 +612,7 @@
         "identity": "web3water",
         "locked": "154225642092325833254742",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqql8lllls4sn5ev": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqql8llllsle44n6": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/web3water/logo.png",
         "description": "Liquidity for web3",
@@ -624,7 +624,7 @@
         "stake": "55000000000000000000000",
         "topUp": "99225642092325833254742",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqql8lllls4sn5ev"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqql8llllsle44n6"
         ],
         "stakePercent": 0.9,
         "apr": 7.15,
@@ -634,7 +634,7 @@
         "identity": "stakegen",
         "locked": "57123887815844053053381",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqk0llllsm6h64t": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqk0lllls3n3mla": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/stakegen/logo.png",
         "name": "stakeGEN",
@@ -644,7 +644,7 @@
         "stake": "52500000000000000000000",
         "topUp": "4623887815844053053381",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqk0llllsm6h64t"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqk0lllls3n3mla"
         ],
         "stakePercent": 0.33,
         "apr": 7.68,
@@ -654,7 +654,7 @@
         "identity": "aurentum",
         "locked": "97942190269587295919112",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqmhllllsjg335n": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqmhllllscphs79": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/aurentum/logo.png",
         "description": "Staking made in Germany! https://t.me/aurentum_de",
@@ -667,7 +667,7 @@
         "stake": "52500000000000000000000",
         "topUp": "45442190269587295919112",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqmhllllsjg335n"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqmhllllscphs79"
         ],
         "stakePercent": 0.57,
         "apr": 6.93,
@@ -677,7 +677,7 @@
         "identity": "oxsyai",
         "locked": "80006817586065921357280",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqp8lllls9jsunl": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqp8lllls0mkaef": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/oxsyai/logo.png",
         "description": "Oxsy is the fuel which powers the implementation of robotics and AI research, into a team of fully autonomous robot soccer players.",
@@ -690,7 +690,7 @@
         "stake": "50000000000000000000000",
         "topUp": "30006817586065921357280",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqp8lllls9jsunl"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqp8lllls0mkaef"
         ],
         "stakePercent": 0.46,
         "apr": 8.55,
@@ -716,7 +716,7 @@
         "identity": "titanstake",
         "locked": "134560767526662734635740",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqr8llllse9cj2t": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqr8llllsnv7nqa": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/titanstake/logo.png",
         "description": "Stake, support and join the titans on a revolutionary journey enabling DharitrI, the network of tomorrow.",
@@ -729,7 +729,7 @@
         "stake": "50000000000000000000000",
         "topUp": "84560767526662734635740",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqr8llllse9cj2t"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqr8llllsnv7nqa"
         ],
         "stakePercent": 0.79,
         "apr": 7.23,
@@ -739,7 +739,7 @@
         "identity": "sikka_tech",
         "locked": "55590027040231087055280",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqf8llllswuedva": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqf8llllsy4lvxt": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/sikka_tech/logo.png",
         "description": "Infrastructure for the Decentralized Future",
@@ -752,7 +752,7 @@
         "stake": "50000000000000000000000",
         "topUp": "5590027040231087055280",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqf8llllswuedva"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqf8llllsy4lvxt"
         ],
         "stakePercent": 0.32,
         "apr": 6.98,
@@ -778,7 +778,7 @@
         "identity": "rosettastake",
         "locked": "64000751045943550192560",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqrlllllsyprnh6": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqrlllllswg9jav": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/rosettastake/logo.png",
         "description": "The Unknown Journey is ongoing",
@@ -790,7 +790,7 @@
         "stake": "45000000000000000000000",
         "topUp": "19000751045943550192560",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqrlllllsyprnh6"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqrlllllswg9jav"
         ],
         "stakePercent": 0.37,
         "apr": 8.95,
@@ -800,7 +800,7 @@
         "identity": "p2p_org_",
         "locked": "115622567841184494248664",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqm8llllsyhrgzd": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqm8llllsw79fgm": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/p2p_org_/logo.png",
         "description": "P2P Validator is a world-leading non-custodial staking provider securing $5+ billion in staked assets by 24,000+ delegators across 20+ top-notch networks. P2P has been participating in Cosmos, Solana, Polkadot and other novel blockchains from day one.",
@@ -812,7 +812,7 @@
         "stake": "45000000000000000000000",
         "topUp": "70622567841184494248664",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqm8llllsyhrgzd"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqm8llllsw79fgm"
         ],
         "stakePercent": 0.67,
         "apr": 7.32,
@@ -822,7 +822,7 @@
         "identity": "alchemycapital",
         "locked": "99997271854920784946106",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqlllllskf06ky": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqlllllsuqfmuj": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/alchemycapital/logo.png",
         "description": "🤩 Visit our website to get to know us!",
@@ -835,7 +835,7 @@
         "stake": "45000000000000000000000",
         "topUp": "54997271854920784946106",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqlllllskf06ky"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqlllllsuqfmuj"
         ],
         "stakePercent": 0.58,
         "apr": 7.64,
@@ -877,7 +877,7 @@
         "identity": "owlhero",
         "locked": "81576676803663307065456",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqpr0lllls0p3mfw": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqpr0lllls9gh6rc": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/owlhero/logo.png",
         "name": "OwlHero",
@@ -886,7 +886,7 @@
         "stake": "40000000000000000000000",
         "topUp": "41576676803663307065456",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqpr0lllls0p3mfw"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqpr0lllls9gh6rc"
         ],
         "stakePercent": 0.47,
         "apr": 7.85,
@@ -896,7 +896,7 @@
         "identity": "phidelta",
         "locked": "45869634767894482946416",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqpzhllllsu6wav4": 0.79,
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqpzhllllsknguxr": 0.79,
             "direct": 0.21
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/phidelta/logo.png",
@@ -907,7 +907,7 @@
         "stake": "40000000000000000000000",
         "topUp": "5869634767894482946416",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqpzhllllsu6wav4"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqpzhllllsknguxr"
         ],
         "stakePercent": 0.26,
         "apr": 6.76,
@@ -917,7 +917,7 @@
         "identity": "vaporrepublic",
         "locked": "79621389453151537553745",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqehllllswleld8": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqehllllsykl783": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/vaporrepublic/logo.png",
         "description": "Premium staking provider built for the community by the community.",
@@ -930,7 +930,7 @@
         "stake": "37500000000000000000000",
         "topUp": "42121389453151537553745",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqehllllswleld8"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqehllllsykl783"
         ],
         "stakePercent": 0.46,
         "apr": 7.74,
@@ -940,7 +940,7 @@
         "identity": "stakedao-devops",
         "locked": "73566136964292481292655",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq20llllsh0uuxv": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq20llllsax6av6": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/stakedao-devops/logo.png",
         "description": "Stake Capital is a group run by Blockchain and DeFi pioneers standing at the intersection of traditional industries and blockchain technology.",
@@ -953,7 +953,7 @@
         "stake": "37500000000000000000000",
         "topUp": "36066136964292481292655",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq20llllsh0uuxv"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq20llllsax6av6"
         ],
         "stakePercent": 0.43,
         "apr": 7.42,
@@ -963,7 +963,7 @@
         "identity": "truststakingus",
         "locked": "92565583499927168953830",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq08llllsrvplwg": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq08llllsf987y7": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/truststakingus/logo.png",
         "description": "Member of the parent company Trust Staking S.R.L",
@@ -976,7 +976,7 @@
         "stake": "37500000000000000000000",
         "topUp": "55065583499927168953830",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq08llllsrvplwg"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq08llllsf987y7"
         ],
         "stakePercent": 0.54,
         "apr": 7.4,
@@ -986,7 +986,7 @@
         "identity": "forbole",
         "locked": "79289937875965873236930",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq40llllsfjmn54": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq40llllsrmaj7r": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/forbole/logo.png",
         "description": "Empower Web3 Future with Reliable Infrastructure",
@@ -999,7 +999,7 @@
         "stake": "37500000000000000000000",
         "topUp": "41789937875965873236930",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq40llllsfjmn54"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq40llllsrmaj7r"
         ],
         "stakePercent": 0.46,
         "apr": 7.76,
@@ -1009,7 +1009,7 @@
         "identity": "stakecamp",
         "locked": "41501377087894742157375",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqv8lllls3ydk0k": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqv8llllsmdth9q": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/stakecamp/logo.png",
         "name": "stakecamp",
@@ -1019,7 +1019,7 @@
         "stake": "37500000000000000000000",
         "topUp": "4001377087894742157375",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqv8lllls3ydk0k"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqv8llllsmdth9q"
         ],
         "stakePercent": 0.24,
         "apr": 7.33,
@@ -1029,7 +1029,7 @@
         "identity": "easy2stake",
         "locked": "51999999999999999999990",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqghllllsku0nzf": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqghllllsu4fjgl": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/easy2stake/logo.png",
         "description": "Easy.Stake.Trust. as easy and as simple as you would click next. Complete transparency and trust with a secure and stable validator.",
@@ -1041,7 +1041,7 @@
         "stake": "37500000000000000000000",
         "topUp": "14499999999999999999990",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqghllllsku0nzf"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqghllllsu4fjgl"
         ],
         "stakePercent": 0.3,
         "apr": 8.44,
@@ -1051,7 +1051,7 @@
         "identity": "moonlorianstake",
         "locked": "85183354575147192984060",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqj0lllls2a8xw2": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqj0llllsq5p8yu": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/moonlorianstake/logo.png",
         "description": "DharitrI partner: 360º Full project lifecycle + Staking Pool",
@@ -1063,7 +1063,7 @@
         "stake": "35000000000000000000000",
         "topUp": "50183354575147192984060",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqj0lllls2a8xw2"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqj0llllsq5p8yu"
         ],
         "stakePercent": 0.5,
         "apr": 7.43,
@@ -1074,7 +1074,7 @@
         "locked": "66332517982214444928410",
         "distribution": {
             "direct": 0.16,
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqyllllls8wlxd9": 0.84
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqylllllsd8e88n": 0.84
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/disruptivedigital/logo.png",
         "description": "The ultimate goal of innovation should be the creation of a better future. Telegram: @disruptivedigital_eu",
@@ -1087,7 +1087,7 @@
         "stake": "35000000000000000000000",
         "topUp": "31332517982214444928410",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqyllllls8wlxd9"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqylllllsd8e88n"
         ],
         "stakePercent": 0.38,
         "apr": 8.04,
@@ -1097,7 +1097,7 @@
         "identity": "exceptionlabs",
         "locked": "66976976024922523642544",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqpphllllswjz5dt": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqpphllllsymy48a": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/exceptionlabs/logo.png",
         "name": "ExceptionLabs",
@@ -1106,7 +1106,7 @@
         "stake": "35000000000000000000000",
         "topUp": "31976976024922523642544",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqpphllllswjz5dt"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqpphllllsymy48a"
         ],
         "stakePercent": 0.39,
         "apr": 8.01,
@@ -1116,7 +1116,7 @@
         "identity": "cyberpunkstake",
         "locked": "88351655460573479912896",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqpzlllllshp8986": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqpzlllllsagpydv": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/cyberpunkstake/logo.png",
         "description": "Visionary staking provider on #DharitrI ⚡️",
@@ -1129,7 +1129,7 @@
         "stake": "35000000000000000000000",
         "topUp": "53351655460573479912896",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqpzlllllshp8986"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqpzlllllsagpydv"
         ],
         "stakePercent": 0.51,
         "apr": 7.36,
@@ -1139,7 +1139,7 @@
         "identity": "rvstaking",
         "locked": "106339748246895871445164",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqpqhllllsqdxn4p": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqpqhlllls2yqjlh": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/rvstaking/logo.png",
         "description": "Formal Verification for Blockchain",
@@ -1152,7 +1152,7 @@
         "stake": "35000000000000000000000",
         "topUp": "71339748246895871445164",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqpqhllllsqdxn4p"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqpqhlllls2yqjlh"
         ],
         "stakePercent": 0.62,
         "apr": 7.01,
@@ -1162,7 +1162,7 @@
         "identity": "bharvest",
         "locked": "50021361243265861820812",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq58llllsvkkv8s": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq58llllsxlsddx": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/bharvest/logo.png",
         "description": "Provides secure validation services for dPoS networks",
@@ -1175,7 +1175,7 @@
         "stake": "35000000000000000000000",
         "topUp": "15021361243265861820812",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq58llllsvkkv8s"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq58llllsxlsddx"
         ],
         "stakePercent": 0.29,
         "apr": 8.93,
@@ -1185,7 +1185,7 @@
         "identity": "westake",
         "locked": "63183646048085766336252",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq68lllls2g8068": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq68llllsqppws3": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/westake/logo.png",
         "name": "WeStake",
@@ -1196,7 +1196,7 @@
         "stake": "35000000000000000000000",
         "topUp": "28183646048085766336252",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq68lllls2g8068"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq68llllsqppws3"
         ],
         "stakePercent": 0.37,
         "apr": 8.18,
@@ -1206,7 +1206,7 @@
         "identity": "smartchainconnection",
         "locked": "55635115622771878444524",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqc8llllskl0prn": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqc8llllsukfqf9": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/smartchainconnection/logo.png",
         "description": "We're builders on DharitrI Blockchain.",
@@ -1219,7 +1219,7 @@
         "stake": "30000000000000000000000",
         "topUp": "25635115622771878444524",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqc8llllskl0prn"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqc8llllsukfqf9"
         ],
         "stakePercent": 0.32,
         "apr": 6.75,
@@ -1245,7 +1245,7 @@
         "identity": "mempoolcapital",
         "locked": "78556522180831563170832",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqklllllsd99rr4": 0.88,
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqkllllls8vrzfr": 0.88,
             "direct": 0.12
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/mempoolcapital/logo.png",
@@ -1256,7 +1256,7 @@
         "stake": "30000000000000000000000",
         "topUp": "48556522180831563170832",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqklllllsd99rr4"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqkllllls8vrzfr"
         ],
         "stakePercent": 0.46,
         "apr": 7.28,
@@ -1266,7 +1266,7 @@
         "identity": "rafstakeagency",
         "locked": "51497719437321252499236",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq5hlllls6fy43w": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq5hllllssqz5mc": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/rafstakeagency/logo.png",
         "description": "As a DharitrI staking provider, we want to share our passion for blockchains and DharitrI especially.",
@@ -1278,7 +1278,7 @@
         "stake": "30000000000000000000000",
         "topUp": "21497719437321252499236",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq5hlllls6fy43w"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq5hllllssqz5mc"
         ],
         "stakePercent": 0.3,
         "apr": 7.63,
@@ -1288,7 +1288,7 @@
         "identity": "open-stake",
         "locked": "33760116612346101475330",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq0llllls7g67ne": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq0llllls5pule0": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/open-stake/logo.png",
         "description": "OpenStake.io allows you to stake the most promising crypto assets out there. Delegate with us!",
@@ -1300,7 +1300,7 @@
         "stake": "25000000000000000000000",
         "topUp": "8760116612346101475330",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq0llllls7g67ne"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq0llllls5pule0"
         ],
         "stakePercent": 0.19,
         "apr": 7.32,
@@ -1310,7 +1310,7 @@
         "identity": "stakedinc",
         "locked": "48303166106389361641960",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqkhllllsx7vmg6": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqkhllllsvh26zv": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/stakedinc/logo.png",
         "description": "Staked operates highly available and highly secure, institutional grade staking infrastructure for leading proof-of-stake (PoS) protocols.",
@@ -1321,7 +1321,7 @@
         "stake": "25000000000000000000000",
         "topUp": "23303166106389361641960",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqkhllllsx7vmg6"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqkhllllsvh26zv"
         ],
         "stakePercent": 0.28,
         "apr": 7.99,
@@ -1331,7 +1331,7 @@
         "identity": "stake24",
         "locked": "50921157532548015211790",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqprlllllse7rzls": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqprlllllsnh9r4x": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/stake24/logo.png",
         "name": "Stake24",
@@ -1340,7 +1340,7 @@
         "stake": "25000000000000000000000",
         "topUp": "25921157532548015211790",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqprlllllse7rzls"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqprlllllsnh9r4x"
         ],
         "stakePercent": 0.29,
         "apr": 7.85,
@@ -1350,7 +1350,7 @@
         "identity": "parasco1",
         "locked": "59951264768353992833780",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq50lllls8dl5vl": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq50llllsdye4xf": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/parasco1/logo.png",
         "description": "You can find us on twitter.com/ParascoStaking, parasco.ro and https://t.me/ParascoStaking !",
@@ -1363,7 +1363,7 @@
         "stake": "25000000000000000000000",
         "topUp": "34951264768353992833780",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq50lllls8dl5vl"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq50llllsdye4xf"
         ],
         "stakePercent": 0.35,
         "apr": 7.46,
@@ -1373,7 +1373,7 @@
         "identity": "orangestaking",
         "locked": "42457572618689878877310",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqxhllllssz7sl7": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqxhlllls6tc34g": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/orangestaking/logo.png",
         "description": "Orange Staking is a staking provider on the DharitrI blockchain",
@@ -1386,7 +1386,7 @@
         "stake": "25000000000000000000000",
         "topUp": "17457572618689878877310",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqxhllllssz7sl7"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqxhlllls6tc34g"
         ],
         "stakePercent": 0.24,
         "apr": 8.36,
@@ -1396,7 +1396,7 @@
         "identity": "ieleman",
         "locked": "36306553065823934991190",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqplllllscktaww": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqplllllsjlduyc": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/ieleman/logo.png",
         "description": "Small DharitrI delegation pool for friends and family.",
@@ -1408,7 +1408,7 @@
         "stake": "25000000000000000000000",
         "topUp": "11306553065823934991190",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqplllllscktaww"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqplllllsjlduyc"
         ],
         "stakePercent": 0.21,
         "apr": 8.88,
@@ -1418,7 +1418,7 @@
         "identity": "galaxyone",
         "locked": "35179191827019413867619",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqj8llllspxw799": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqj8llllst0gl0n": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/galaxyone/logo.png",
         "name": "Buidly Staking",
@@ -1428,7 +1428,7 @@
         "stake": "22500000000000000000000",
         "topUp": "12679191827019413867619",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqj8llllspxw799"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqj8llllst0gl0n"
         ],
         "stakePercent": 0.2,
         "apr": 8.62,
@@ -1438,7 +1438,7 @@
         "identity": "inceptionnetwork",
         "locked": "46084357663171136304624",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq00llllsghg898": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq00llllsz7wx03": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/inceptionnetwork/logo.png",
         "name": "Inception Network",
@@ -1449,7 +1449,7 @@
         "stake": "22500000000000000000000",
         "topUp": "23584357663171136304624",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq00llllsghg898"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq00llllsz7wx03"
         ],
         "stakePercent": 0.27,
         "apr": 6.96,
@@ -1459,7 +1459,7 @@
         "identity": "d1fferentcapital",
         "locked": "55142826604241190923502",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqm0lllls0v2sfz": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqm0lllls99v3r5": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/d1fferentcapital/logo.png",
         "description": "Bridging the analog & digital worlds.",
@@ -1470,7 +1470,7 @@
         "stake": "22500000000000000000000",
         "topUp": "32642826604241190923502",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqm0lllls0v2sfz"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqm0lllls99v3r5"
         ],
         "stakePercent": 0.32,
         "apr": 7.42,
@@ -1496,7 +1496,7 @@
         "identity": "astrarizon",
         "locked": "48157838743750784509616",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqpq8llllskj52rl": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqpq8llllsumjtff": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/astrarizon/logo.png",
         "description": "Staking provider bridging horizon boundaries.",
@@ -1508,7 +1508,7 @@
         "stake": "20000000000000000000000",
         "topUp": "28157838743750784509616",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqpq8llllskj52rl"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqpq8llllsumjtff"
         ],
         "stakePercent": 0.28,
         "apr": 7.46,
@@ -1518,7 +1518,7 @@
         "identity": "wehaveservers",
         "locked": "56088119867172621955376",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqnhllllsexcqt3": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqnhllllsn07pp8": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/wehaveservers/logo.png",
         "description": "https://www.WeHaveServers.com",
@@ -1528,7 +1528,7 @@
         "stake": "20000000000000000000000",
         "topUp": "36088119867172621955376",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqnhllllsexcqt3"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqnhllllsn07pp8"
         ],
         "stakePercent": 0.32,
         "apr": 7.15,
@@ -1554,7 +1554,7 @@
         "identity": "ninjastaking",
         "locked": "37065865385091079821680",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq48llllszfjtl6": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq48llllsgq524v": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/ninjastaking/logo.png",
         "description": "EGLD staking with X Ninjas. Part of MultiversDAO.",
@@ -1566,7 +1566,7 @@
         "stake": "20000000000000000000000",
         "topUp": "17065865385091079821680",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq48llllszfjtl6"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq48llllsgq524v"
         ],
         "stakePercent": 0.21,
         "apr": 8.1,
@@ -1576,7 +1576,7 @@
         "identity": "cryptobayspace",
         "locked": "32445667875887838249632",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq8llllls4xn0vm": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq8lllllsl04wxd": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/cryptobayspace/logo.png",
         "description": "Service Stacking Provider",
@@ -1588,7 +1588,7 @@
         "stake": "20000000000000000000000",
         "topUp": "12445667875887838249632",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq8llllls4xn0vm"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq8lllllsl04wxd"
         ],
         "stakePercent": 0.19,
         "apr": 8.5,
@@ -1598,7 +1598,7 @@
         "identity": "hyperblockspro",
         "locked": "38926564248139136030768",
         "distribution": {
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq3lllllsw2eke2": 1
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq3lllllsyrlhnu": 1
         },
         "avatar": "https://raw.githubusercontent.com/TerraDharitri/mx-assets/master/identities/hyperblockspro/logo.png",
         "description": "Professional Proof-of-Stake Services",
@@ -1609,7 +1609,7 @@
         "stake": "20000000000000000000000",
         "topUp": "18926564248139136030768",
         "providers": [
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq3lllllsw2eke2"
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq3lllllsyrlhnu"
         ],
         "stakePercent": 0.22,
         "apr": 7.97,

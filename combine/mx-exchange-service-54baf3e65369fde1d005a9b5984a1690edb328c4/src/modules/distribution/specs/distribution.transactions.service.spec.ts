@@ -58,7 +58,7 @@ describe('DistributionTransactionsService', () => {
                 nonce: 0,
                 options: undefined,
                 receiver:
-                    'erd1qqqqqqqqqqqqqpgq29s98mhxwyknmxcpdtdx6nm0wkvnkvwe0n4sjpdhyq',
+                    'drt1qqqqqqqqqqqqqpgq29s98mhxwyknmxcpdtdx6nm0wkvnkvwe0n4s0a6587',
                 sender: senderAddress,
                 receiverUsername: undefined,
                 senderUsername: undefined,

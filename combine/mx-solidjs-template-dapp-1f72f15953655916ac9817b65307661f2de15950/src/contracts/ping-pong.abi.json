@@ -45,7 +45,7 @@
       },
       {
         "name": "opt_token_id",
-        "type": "optional<EgldOrEsdtTokenIdentifier>",
+        "type": "optional<EgldOrDcdtTokenIdentifier>",
         "multi_arg": true
       }
     ],
@@ -124,7 +124,7 @@
       "inputs": [],
       "outputs": [
         {
-          "type": "EgldOrEsdtTokenIdentifier"
+          "type": "EgldOrDcdtTokenIdentifier"
         }
       ]
     },

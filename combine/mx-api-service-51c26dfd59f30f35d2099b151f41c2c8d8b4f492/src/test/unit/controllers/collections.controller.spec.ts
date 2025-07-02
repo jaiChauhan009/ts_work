@@ -119,7 +119,7 @@ describe('CollectionController', () => {
 
     it('should return an array of collections with canCreate filter applied', async () => {
       collectionServiceMocks.getNftCollections.mockReturnValue([]);
-      const canCreate = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const canCreate = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
 
       await request(app.getHttpServer())
         .get(`${path}?canCreate=${canCreate}`)
@@ -164,11 +164,11 @@ describe('CollectionController', () => {
 
     it('should return an array of collections with multiple filters applied', async () => {
       collectionServiceMocks.getNftCollections.mockReturnValue([]);
-      const canBurn = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
-      const canAddQuantity = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
-      const canUpdateAttributes = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
-      const canAddUri = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
-      const canTransferRole = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const canBurn = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
+      const canAddQuantity = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
+      const canUpdateAttributes = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
+      const canAddUri = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
+      const canTransferRole = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
 
       await request(app.getHttpServer())
         .get(`${path}?canBurn=${canBurn}&canAddQuantity=${canAddQuantity}&canUpdateAttributes=${canUpdateAttributes}&canAddUri=${canAddUri}&canTransferRole=${canTransferRole}`)
@@ -259,7 +259,7 @@ describe('CollectionController', () => {
 
     it('should return total collection count with canCreate filter applied', async () => {
       collectionServiceMocks.getNftCollectionCount.mockReturnValue(10);
-      const canCreate = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const canCreate = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
 
       await request(app.getHttpServer())
         .get(`${path}/count?canCreate=${canCreate}`)
@@ -301,11 +301,11 @@ describe('CollectionController', () => {
 
     it('should return total collection count with multiple filters applied', async () => {
       collectionServiceMocks.getNftCollectionCount.mockReturnValue(10);
-      const canBurn = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
-      const canAddQuantity = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
-      const canUpdateAttributes = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
-      const canAddUri = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
-      const canTransferRole = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const canBurn = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
+      const canAddQuantity = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
+      const canUpdateAttributes = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
+      const canAddUri = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
+      const canTransferRole = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
 
       await request(app.getHttpServer())
         .get(`${path}/count?canBurn=${canBurn}&canAddQuantity=${canAddQuantity}&canUpdateAttributes=${canUpdateAttributes}&canAddUri=${canAddUri}&canTransferRole=${canTransferRole}`)
@@ -364,7 +364,7 @@ describe('CollectionController', () => {
 
     it('should return total collection count with canCreate filter applied', async () => {
       collectionServiceMocks.getNftCollectionCount.mockReturnValue(10);
-      const canCreate = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const canCreate = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
 
       await request(app.getHttpServer())
         .get(`${path}/c?canCreate=${canCreate}`)
@@ -406,11 +406,11 @@ describe('CollectionController', () => {
 
     it('should return total collection count with multiple filters applied', async () => {
       collectionServiceMocks.getNftCollectionCount.mockReturnValue(10);
-      const canBurn = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
-      const canAddQuantity = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
-      const canUpdateAttributes = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
-      const canAddUri = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
-      const canTransferRole = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const canBurn = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
+      const canAddQuantity = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
+      const canUpdateAttributes = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
+      const canAddUri = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
+      const canTransferRole = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
 
       await request(app.getHttpServer())
         .get(`${path}/c?canBurn=${canBurn}&canAddQuantity=${canAddQuantity}&canUpdateAttributes=${canUpdateAttributes}&canAddUri=${canAddUri}&canTransferRole=${canTransferRole}`)
@@ -555,7 +555,7 @@ describe('CollectionController', () => {
       nftServiceMocks.getNfts.mockResolvedValue([]);
       collectionServiceMocks.isCollection.mockResolvedValue(true);
       const collection = 'TEST-5409d3';
-      const creator = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const creator = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const options = new NftQueryOptions({});
 
       await request(app.getHttpServer())
@@ -812,7 +812,7 @@ describe('CollectionController', () => {
       nftServiceMocks.getNftCount.mockResolvedValue(150);
       collectionServiceMocks.isCollection.mockResolvedValue(true);
       const collection = 'TEST-5409d3';
-      const creator = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const creator = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
 
       await request(app.getHttpServer())
         .get(`${path}/${collection}/nfts/count?creator=${creator}`)
@@ -1024,7 +1024,7 @@ describe('CollectionController', () => {
       collectionServiceMocks.isCollection.mockResolvedValue(true);
       transactionServiceMocks.getTransactionCount.mockResolvedValue(1000);
       const collection = 'TEST-5409d3';
-      const sender = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const sender = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
 
       await request(app.getHttpServer())
         .get(`${path}/${collection}/transactions/count?sender=${sender}`)
@@ -1137,7 +1137,7 @@ describe('CollectionController', () => {
       collectionServiceMocks.isCollection.mockResolvedValue(true);
       transferServiceMocks.getTransfersCount.mockResolvedValue(1000);
       const collection = 'TEST-5409d3';
-      const sender = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const sender = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
 
       await request(app.getHttpServer())
         .get(`${path}/${collection}/transfers/count?sender=${sender}`)

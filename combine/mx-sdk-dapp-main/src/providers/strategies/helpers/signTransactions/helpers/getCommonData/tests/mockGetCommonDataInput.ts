@@ -7,7 +7,7 @@ export const mockGetCommonDataInput = {
         nonce: 598,
         value: '1000000000000000000',
         receiver:
-          'erd1qqqqqqqqqqqqqpgqpv09kfzry5y4sj05udcngesat07umyj70n4sa2c0rp',
+          'drt1qqqqqqqqqqqqqpgqpv09kfzry5y4sj05udcngesat07umyj70n4sqk0vql',
         sender: testAddress,
         gasPrice: 1000000000,
         gasLimit: 4200000,

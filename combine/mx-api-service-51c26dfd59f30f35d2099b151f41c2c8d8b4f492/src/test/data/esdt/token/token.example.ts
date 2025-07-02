@@ -2,7 +2,7 @@ const tokenExample = {
   identifier: "QWT-46ac01",
   name: "QoWatt",
   ticker: "QWT",
-  owner: "erd1tvfx40l73kxvsz7gsy8394ke5wny66tgmwg6w9m9dyzp9c5xchxqzuypa3",
+  owner: "drt1tvfx40l73kxvsz7gsy8394ke5wny66tgmwg6w9m9dyzp9c5xchxqlqnz70",
   minted: "444000000000000",
   burnt: "0",
   decimals: 6,

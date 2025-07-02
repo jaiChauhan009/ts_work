@@ -77,15 +77,15 @@ describe("test user wallets", () => {
 
         assert.equal(
             mnemonic.deriveKey(0).generatePublicKey().toAddress().toBech32(),
-            "erd1l8g9dk3gz035gkjhwegsjkqzdu3augrwhcfxrnucnyyrpc2220pqg4g7na",
+            "drt1l8g9dk3gz035gkjhwegsjkqzdu3augrwhcfxrnucnyyrpc2220pq4flasr",
         );
         assert.equal(
             mnemonic.deriveKey(1).generatePublicKey().toAddress().toBech32(),
-            "erd1fmhwg84rldg0xzngf53m0y607wvefvamh07n2mkypedx27lcqnts4zs09p",
+            "drt1fmhwg84rldg0xzngf53m0y607wvefvamh07n2mkypedx27lcqntsg78vxl",
         );
         assert.equal(
             mnemonic.deriveKey(2).generatePublicKey().toAddress().toBech32(),
-            "erd1tyuyemt4xz2yjvc7rxxp8kyfmk2n3h8gv3aavzd9ru4v2vhrkcksptewtj",
+            "drt1tyuyemt4xz2yjvc7rxxp8kyfmk2n3h8gv3aavzd9ru4v2vhrkcksuhwdgv",
         );
 
         assert.equal(
@@ -206,7 +206,7 @@ describe("test user wallets", () => {
 
         assert.equal(
             secretKey.generatePublicKey().toAddress().toBech32(),
-            "erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th",
+            "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf",
         );
     });
 
@@ -249,7 +249,7 @@ describe("test user wallets", () => {
 
         assert.equal(
             secretKey.generatePublicKey().toAddress().toBech32(),
-            "erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th",
+            "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf",
         );
     });
 
@@ -260,7 +260,7 @@ describe("test user wallets", () => {
 
         assert.equal(
             secretKey.generatePublicKey().toAddress().toBech32(),
-            "erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th",
+            "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf",
         );
     });
 
@@ -278,15 +278,15 @@ describe("test user wallets", () => {
 
         assert.equal(
             UserWallet.decrypt(keyFileObject, password, 0).generatePublicKey().toAddress().toBech32(),
-            "erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th",
+            "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf",
         );
         assert.equal(
             UserWallet.decrypt(keyFileObject, password, 1).generatePublicKey().toAddress().toBech32(),
-            "erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx",
+            "drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c",
         );
         assert.equal(
             UserWallet.decrypt(keyFileObject, password, 2).generatePublicKey().toAddress().toBech32(),
-            "erd1k2s324ww2g0yj38qn2ch2jwctdy8mnfxep94q9arncc6xecg3xaq6mjse8",
+            "drt1k2s324ww2g0yj38qn2ch2jwctdy8mnfxep94q9arncc6xecg3xaq889n6e",
         );
     });
 
@@ -304,8 +304,8 @@ describe("test user wallets", () => {
         let transaction = new Transaction({
             nonce: 0n,
             value: 0n,
-            sender: Address.newFromBech32("erd1l453hd0gt5gzdp7czpuall8ggt2dcv5zwmfdf3sd3lguxseux2fsmsgldz"),
-            receiver: Address.newFromBech32("erd1cux02zersde0l7hhklzhywcxk4u9n4py5tdxyx7vrvhnza2r4gmq4vw35r"),
+            sender: Address.newFromBech32("drt1l453hd0gt5gzdp7czpuall8ggt2dcv5zwmfdf3sd3lguxseux2fsxvluwu"),
+            receiver: Address.newFromBech32("drt1cux02zersde0l7hhklzhywcxk4u9n4py5tdxyx7vrvhnza2r4gmqgsejha"),
             gasPrice: 1000000000n,
             gasLimit: 50000n,
             data: new TextEncoder().encode("foo"),
@@ -318,7 +318,7 @@ describe("test user wallets", () => {
         assert.deepEqual(await signer.sign(serialized), await signer.sign(Uint8Array.from(serialized)));
         assert.deepEqual(
             serialized.toString(),
-            `{"nonce":0,"value":"0","receiver":"erd1cux02zersde0l7hhklzhywcxk4u9n4py5tdxyx7vrvhnza2r4gmq4vw35r","sender":"erd1l453hd0gt5gzdp7czpuall8ggt2dcv5zwmfdf3sd3lguxseux2fsmsgldz","gasPrice":1000000000,"gasLimit":50000,"data":"Zm9v","chainID":"1","version":2}`,
+            `{"nonce":0,"value":"0","receiver":"drt1cux02zersde0l7hhklzhywcxk4u9n4py5tdxyx7vrvhnza2r4gmqgsejha","sender":"drt1l453hd0gt5gzdp7czpuall8ggt2dcv5zwmfdf3sd3lguxseux2fsxvluwu","gasPrice":1000000000,"gasLimit":50000,"data":"Zm9v","chainID":"1","version":2}`,
         );
         assert.equal(
             Buffer.from(signature).toString("hex"),
@@ -330,8 +330,8 @@ describe("test user wallets", () => {
         transaction = new Transaction({
             nonce: 8n,
             value: 10000000000000000000n,
-            sender: Address.newFromBech32("erd1l453hd0gt5gzdp7czpuall8ggt2dcv5zwmfdf3sd3lguxseux2fsmsgldz"),
-            receiver: Address.newFromBech32("erd1cux02zersde0l7hhklzhywcxk4u9n4py5tdxyx7vrvhnza2r4gmq4vw35r"),
+            sender: Address.newFromBech32("drt1l453hd0gt5gzdp7czpuall8ggt2dcv5zwmfdf3sd3lguxseux2fsxvluwu"),
+            receiver: Address.newFromBech32("drt1cux02zersde0l7hhklzhywcxk4u9n4py5tdxyx7vrvhnza2r4gmqgsejha"),
             gasPrice: 1000000000n,
             gasLimit: 50000n,
             chainID: "1",
@@ -343,7 +343,7 @@ describe("test user wallets", () => {
         assert.deepEqual(await signer.sign(serialized), await signer.sign(Uint8Array.from(serialized)));
         assert.equal(
             serialized.toString(),
-            `{"nonce":8,"value":"10000000000000000000","receiver":"erd1cux02zersde0l7hhklzhywcxk4u9n4py5tdxyx7vrvhnza2r4gmq4vw35r","sender":"erd1l453hd0gt5gzdp7czpuall8ggt2dcv5zwmfdf3sd3lguxseux2fsmsgldz","gasPrice":1000000000,"gasLimit":50000,"chainID":"1","version":2}`,
+            `{"nonce":8,"value":"10000000000000000000","receiver":"drt1cux02zersde0l7hhklzhywcxk4u9n4py5tdxyx7vrvhnza2r4gmqgsejha","sender":"drt1l453hd0gt5gzdp7czpuall8ggt2dcv5zwmfdf3sd3lguxseux2fsxvluwu","gasPrice":1000000000,"gasLimit":50000,"chainID":"1","version":2}`,
         );
         assert.equal(
             Buffer.from(signature).toString("hex"),
@@ -367,13 +367,13 @@ describe("test user wallets", () => {
         let transaction = new Transaction({
             nonce: 0n,
             value: 0n,
-            receiver: Address.newFromBech32("erd1cux02zersde0l7hhklzhywcxk4u9n4py5tdxyx7vrvhnza2r4gmq4vw35r"),
-            sender: Address.newFromBech32("erd1l453hd0gt5gzdp7czpuall8ggt2dcv5zwmfdf3sd3lguxseux2fsmsgldz"),
+            receiver: Address.newFromBech32("drt1cux02zersde0l7hhklzhywcxk4u9n4py5tdxyx7vrvhnza2r4gmqgsejha"),
+            sender: Address.newFromBech32("drt1l453hd0gt5gzdp7czpuall8ggt2dcv5zwmfdf3sd3lguxseux2fsxvluwu"),
             gasPrice: 1000000000n,
             gasLimit: 50000n,
             data: new TextEncoder().encode("foo"),
             chainID: "1",
-            guardian: Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx"),
+            guardian: Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c"),
             options: 2,
             version: 2,
         });
@@ -384,7 +384,7 @@ describe("test user wallets", () => {
 
         assert.deepEqual(
             serialized.toString(),
-            `{"nonce":0,"value":"0","receiver":"erd1cux02zersde0l7hhklzhywcxk4u9n4py5tdxyx7vrvhnza2r4gmq4vw35r","sender":"erd1l453hd0gt5gzdp7czpuall8ggt2dcv5zwmfdf3sd3lguxseux2fsmsgldz","gasPrice":1000000000,"gasLimit":50000,"data":"Zm9v","chainID":"1","version":2,"options":2,"guardian":"erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx"}`,
+            `{"nonce":0,"value":"0","receiver":"drt1cux02zersde0l7hhklzhywcxk4u9n4py5tdxyx7vrvhnza2r4gmqgsejha","sender":"drt1l453hd0gt5gzdp7czpuall8ggt2dcv5zwmfdf3sd3lguxseux2fsxvluwu","gasPrice":1000000000,"gasLimit":50000,"data":"Zm9v","chainID":"1","version":2,"options":2,"guardian":"drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c"}`,
         );
         assert.equal(
             Buffer.from(signature).toString("hex"),
@@ -400,12 +400,12 @@ describe("test user wallets", () => {
         transaction = new Transaction({
             nonce: 8n,
             value: 10000000000000000000n,
-            receiver: Address.newFromBech32("erd1cux02zersde0l7hhklzhywcxk4u9n4py5tdxyx7vrvhnza2r4gmq4vw35r"),
-            sender: Address.newFromBech32("erd1l453hd0gt5gzdp7czpuall8ggt2dcv5zwmfdf3sd3lguxseux2fsmsgldz"),
+            receiver: Address.newFromBech32("drt1cux02zersde0l7hhklzhywcxk4u9n4py5tdxyx7vrvhnza2r4gmqgsejha"),
+            sender: Address.newFromBech32("drt1l453hd0gt5gzdp7czpuall8ggt2dcv5zwmfdf3sd3lguxseux2fsxvluwu"),
             gasPrice: 1000000000n,
             gasLimit: 50000n,
             chainID: "1",
-            guardian: Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx"),
+            guardian: Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c"),
             options: 2,
             version: 2,
         });
@@ -416,7 +416,7 @@ describe("test user wallets", () => {
 
         assert.equal(
             serialized.toString(),
-            `{"nonce":8,"value":"10000000000000000000","receiver":"erd1cux02zersde0l7hhklzhywcxk4u9n4py5tdxyx7vrvhnza2r4gmq4vw35r","sender":"erd1l453hd0gt5gzdp7czpuall8ggt2dcv5zwmfdf3sd3lguxseux2fsmsgldz","gasPrice":1000000000,"gasLimit":50000,"chainID":"1","version":2,"options":2,"guardian":"erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx"}`,
+            `{"nonce":8,"value":"10000000000000000000","receiver":"drt1cux02zersde0l7hhklzhywcxk4u9n4py5tdxyx7vrvhnza2r4gmqgsejha","sender":"drt1l453hd0gt5gzdp7czpuall8ggt2dcv5zwmfdf3sd3lguxseux2fsxvluwu","gasPrice":1000000000,"gasLimit":50000,"chainID":"1","version":2,"options":2,"guardian":"drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c"}`,
         );
         assert.equal(
             Buffer.from(signature).toString("hex"),
@@ -436,7 +436,7 @@ describe("test user wallets", () => {
             nonce: 0n,
             value: 0n,
             sender: signer.getAddress(),
-            receiver: Address.newFromBech32("erd1cux02zersde0l7hhklzhywcxk4u9n4py5tdxyx7vrvhnza2r4gmq4vw35r"),
+            receiver: Address.newFromBech32("drt1cux02zersde0l7hhklzhywcxk4u9n4py5tdxyx7vrvhnza2r4gmqgsejha"),
             gasPrice: 1000000000n,
             gasLimit: 50000n,
             data: new TextEncoder().encode("foo"),
@@ -483,27 +483,27 @@ describe("test user wallets", () => {
 
         assert.equal(
             UserSigner.fromWallet(keyFileObjectWithoutKind, password).getAddress().toBech32(),
-            "erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th",
+            "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf",
         );
         assert.equal(
             UserSigner.fromWallet(keyFileObjectWithMnemonic, password).getAddress().toBech32(),
-            "erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th",
+            "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf",
         );
         assert.equal(
             UserSigner.fromWallet(keyFileObjectWithSecretKey, password).getAddress().toBech32(),
-            "erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th",
+            "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf",
         );
         assert.equal(
             UserSigner.fromWallet(keyFileObjectWithMnemonic, password, 0).getAddress().toBech32(),
-            "erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th",
+            "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf",
         );
         assert.equal(
             UserSigner.fromWallet(keyFileObjectWithMnemonic, password, 1).getAddress().toBech32(),
-            "erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx",
+            "drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c",
         );
         assert.equal(
             UserSigner.fromWallet(keyFileObjectWithMnemonic, password, 2).getAddress().toBech32(),
-            "erd1k2s324ww2g0yj38qn2ch2jwctdy8mnfxep94q9arncc6xecg3xaq6mjse8",
+            "drt1k2s324ww2g0yj38qn2ch2jwctdy8mnfxep94q9arncc6xecg3xaq889n6e",
         );
 
         assert.equal(

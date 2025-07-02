@@ -3,7 +3,7 @@ import { addressIsErd } from '../addressIsErd';
 describe('addressIsErd tests', () => {
   it('returns true for valid DharitrI addresses starting with erd', () => {
     const validAddress =
-      'erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th';
+      'drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf';
     expect(addressIsErd(validAddress)).toBe(true);
   });
 

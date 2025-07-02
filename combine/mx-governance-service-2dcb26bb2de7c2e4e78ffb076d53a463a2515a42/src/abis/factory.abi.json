@@ -79,7 +79,7 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -107,7 +107,7 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -129,7 +129,7 @@
             "inputs": [],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -180,7 +180,7 @@
                 },
                 {
                     "name": "roles",
-                    "type": "variadic<EsdtLocalRole>",
+                    "type": "variadic<DcdtLocalRole>",
                     "multi_arg": true
                 }
             ],
@@ -321,7 +321,7 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -338,7 +338,7 @@
     ],
     "hasCallback": true,
     "types": {
-        "EsdtLocalRole": {
+        "DcdtLocalRole": {
             "type": "enum",
             "variants": [
                 {
@@ -375,12 +375,12 @@
                 }
             ]
         },
-        "EsdtTokenPayment": {
+        "DcdtTokenPayment": {
             "type": "struct",
             "fields": [
                 {
                     "name": "token_type",
-                    "type": "EsdtTokenType"
+                    "type": "DcdtTokenType"
                 },
                 {
                     "name": "token_identifier",
@@ -396,7 +396,7 @@
                 }
             ]
         },
-        "EsdtTokenType": {
+        "DcdtTokenType": {
             "type": "enum",
             "variants": [
                 {

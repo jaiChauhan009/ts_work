@@ -11,10 +11,10 @@ export const baseTransactionMock = {
   miniBlockHash:
     'd7ad7c1f8f57e3a370b12092604c42157cb5228ab598e9bbca641ee2e4ee7bd2',
   nonce: 965,
-  receiver: 'erd1qqqqqqqqqqqqqpgq4gdcg0k83u7lpv4s4532w3au9y9h0vm70eqq6m8qk2',
+  receiver: 'drt1qqqqqqqqqqqqqpgq4gdcg0k83u7lpv4s4532w3au9y9h0vm70eqq88sr45',
   receiverShard: 0,
   round: 2044988,
-  sender: 'erd1axhx4kenjlae6sknq7zjg2g4fvzavv979r2fg425p62wkl84avtqsf7vvv',
+  sender: 'drt1axhx4kenjlae6sknq7zjg2g4fvzavv979r2fg425p62wkl84avtqd4f00j',
   senderShard: 0,
   signature: 'transaction-signature-hash',
   status: TransactionServerStatusesEnum.fail,

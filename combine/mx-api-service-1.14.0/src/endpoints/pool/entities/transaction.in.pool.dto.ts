@@ -9,16 +9,16 @@ export class TransactionInPool {
   @ApiProperty({ type: String, example: "6dc737fcb21e6f599c557f6001f78ae1f073241d1bd9b488b02f86c5131d477c" })
   txHash: string = '';
 
-  @ApiProperty({ type: String, example: "erd17rc0pu8s7rc0pu8s7rc0pu8s7rc0pu8s7rc0pu8s7rc0pu8s7rcqqkhty3" })
+  @ApiProperty({ type: String, example: "drt17rc0pu8s7rc0pu8s7rc0pu8s7rc0pu8s7rc0pu8s7rc0pu8s7rcqa2qg80" })
   sender: string = '';
 
-  @ApiProperty({ type: String, example: "erd1an4xpn58j7ymd58m2jznr32t0vmas75egrdfa8mta6fzvqn9tkxq4jvghn" })
+  @ApiProperty({ type: String, example: "drt1an4xpn58j7ymd58m2jznr32t0vmas75egrdfa8mta6fzvqn9tkxqgwmt5d" })
   receiver: string = '';
 
   @ApiProperty({ type: String, example: "alice.numbat" })
   receiverUsername: string = '';
 
-  @ApiProperty({ type: String, example: "erd17rc0pu8s7rc0pu8s7rc0pu8s7rc0pu8s7rc0pu8s7rc0pu8s7rcqqkhty3" })
+  @ApiProperty({ type: String, example: "drt17rc0pu8s7rc0pu8s7rc0pu8s7rc0pu8s7rc0pu8s7rc0pu8s7rcqa2qg80" })
   guardian: string = '';
 
   @ApiProperty({ type: String, example: "0228618b6339c5eaf71ed1a8cd71df010ccd0369a29d957c37d53b0409408161726dd97e10ac7836996f666ffd636a797b9b9abecbd276971376fb3479b48203" })

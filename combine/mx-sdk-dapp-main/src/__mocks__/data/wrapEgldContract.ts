@@ -1,11 +1,11 @@
 export const wrapRewaContract = {
-  address: 'erd1qqqqqqqqqqqqqpgqpv09kfzry5y4sj05udcngesat07umyj70n4sa2c0rp',
+  address: 'drt1qqqqqqqqqqqqqpgqpv09kfzry5y4sj05udcngesat07umyj70n4sqk0vql',
   balance: '259256323101682773803471',
   nonce: 0,
   timestamp: 0,
   shard: 1,
   ownerAddress:
-    'erd1x39tc3q3nn72ecjnmcz7x0qp09kp97t080x99dgyhx7zh95j0n4szskhlv',
+    'drt1x39tc3q3nn72ecjnmcz7x0qp09kp97t080x99dgyhx7zh95j0n4slvp5uj',
   assets: {
     name: 'DCDT: WrappedREWA Contract Shard 1',
     tags: ['xexchange', 'wrewa'],

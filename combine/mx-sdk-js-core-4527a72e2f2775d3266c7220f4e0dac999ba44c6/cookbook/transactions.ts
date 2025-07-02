@@ -52,7 +52,7 @@ import {
 
         const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
         const alice = await Account.newFromPem(filePath);
-        const bob = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const bob = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
         // the developer is responsible for managing the nonce
         alice.nonce = await entrypoint.recallAccountNonce(alice.address);
@@ -88,7 +88,7 @@ import {
         // the developer is responsible for managing the nonce
         alice.nonce = await entrypoint.recallAccountNonce(alice.address);
 
-        const bob = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const bob = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
         const transaction = factory.createTransactionForTransfer(alice.address, {
             receiver: bob,
@@ -115,7 +115,7 @@ import {
 
         const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
         const alice = await Account.newFromPem(filePath);
-        const bob = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const bob = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
         // the developer is responsible for managing the nonce
         alice.nonce = await entrypoint.recallAccountNonce(alice.address);
@@ -155,7 +155,7 @@ import {
 
         const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
         const alice = await Account.newFromPem(filePath);
-        const bob = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const bob = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
         // the developer is responsible for managing the nonce
         alice.nonce = await entrypoint.recallAccountNonce(alice.address);
@@ -196,7 +196,7 @@ import {
 
         const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
         const alice = await Account.newFromPem(filePath);
-        const bob = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const bob = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
         // the developer is responsible for managing the nonce
         alice.nonce = await entrypoint.recallAccountNonce(alice.address);

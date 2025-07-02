@@ -1,9 +1,9 @@
 import { isContract } from '../isContract';
 
 const userAddress =
-  'erd1a07ey0xj28u90mtk8858zsavs0cj7s3cy74ufgxdmcq3nslr0y2st2aaax';
+  'drt1a07ey0xj28u90mtk8858zsavs0cj7s3cy74ufgxdmcq3nslr0y2skk277c';
 const contractAddress =
-  'erd1qqqqqqqqqqqqqpgqv9gxgq8nurz754spjfck6rdwlg9etpcp0n4sjg2dhc';
+  'drt1qqqqqqqqqqqqqpgqv9gxgq8nurz754spjfck6rdwlg9etpcp0n4s05aw5x';
 
 describe('isContract tests', () => {
   it('returns false for user account', () => {

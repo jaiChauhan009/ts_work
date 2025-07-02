@@ -96,7 +96,7 @@
                 },
                 {
                     "name": "roles",
-                    "type": "variadic<EsdtLocalRole>",
+                    "type": "variadic<DcdtLocalRole>",
                     "multi_arg": true
                 }
             ],
@@ -383,7 +383,7 @@
     ],
     "hasCallback": true,
     "types": {
-        "EsdtLocalRole": {
+        "DcdtLocalRole": {
             "type": "enum",
             "variants": [
                 {

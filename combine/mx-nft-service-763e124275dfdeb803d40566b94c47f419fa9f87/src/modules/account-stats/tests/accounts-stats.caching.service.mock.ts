@@ -8,13 +8,13 @@ export class AccountsStatsCachingServiceMock {
       auctions: '2',
       orders: '0',
       biddingBalance: '0',
-      address: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+      address: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
     });
   }
 
   public async getStatsForOwner(_address: string, _getAccountStats: () => any): Promise<AccountStatsEntity> {
     return new AccountStatsEntity({
-      address: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+      address: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
       auctions: '3',
       biddingBalance: '0',
       orders: '0',

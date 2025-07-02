@@ -208,24 +208,24 @@ describe('Array Extensions', () => {
 
   describe('Group By', () => {
     const transaction1 = {
-      sender: 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq9lllllsf3mp40',
+      sender: 'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq9lllllsrcaqle',
       receiver: 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqaqqqqqqqqq9lllllsf3mp40',
     };
 
     const transaction2 = {
-      sender: 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq9lllllsf3mp40',
+      sender: 'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq9lllllsrcaqle',
       receiver: 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqaqqqqqqqqq9lllllsf3mp40',
     };
 
     const transaction3 = {
-      sender: 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq9lllllsf3mp40',
+      sender: 'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq9lllllsrcaqle',
       receiver: 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqaqqqqqqqqq9ldavllcf3mp40',
     };
 
     const array = [transaction1, transaction2, transaction3];
 
     expect(array.groupBy((item) => item.sender)).toEqual({
-      'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqq9lllllsf3mp40': [transaction1, transaction2, transaction3],
+      'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqq9lllllsrcaqle': [transaction1, transaction2, transaction3],
     });
 
     expect(array.groupBy((item) => item.receiver)).toEqual({

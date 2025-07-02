@@ -4,9 +4,9 @@ import { AddressUtils } from "@terradharitri/sdk-nestjs-common";
 const VM_TYPE = '0500';
 const CODE_METADATA = '0100';
 const SC_DEPLOY_ADDRESS =
-  'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu';
+  'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z';
 const DCDT_ADDRESS =
-  'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u';
+  'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqzlllsd5j0s2';
 
 export async function fundAddress(chainSimulatorUrl: string, address: string) {
   const payload = [

@@ -503,7 +503,7 @@ export class TokenCandlesDaily {
           last(value, timestamp) FILTER (WHERE key = 'firstTokenPrice') AS close,
           sum(value) FILTER (WHERE key = 'firstTokenVolume') AS volume
     FROM hyper_dex_analytics
-    WHERE key in ('firstTokenPrice', 'firstTokenVolume') and  series like 'erd1%'
+    WHERE key in ('firstTokenPrice', 'firstTokenVolume') and  series like 'drt1%'
     GROUP BY time, series
     ORDER BY time ASC;
 `,
@@ -626,7 +626,7 @@ export class PairFirstTokenCandlesDaily {
           last(value, timestamp) FILTER (WHERE key = 'secondTokenPrice') AS close,
           sum(value) FILTER (WHERE key = 'secondTokenVolume') AS volume
     FROM hyper_dex_analytics
-    WHERE key in ('secondTokenPrice', 'secondTokenVolume') and  series like 'erd1%'
+    WHERE key in ('secondTokenPrice', 'secondTokenVolume') and  series like 'drt1%'
     GROUP BY time, series
     ORDER BY time ASC;
 `,

@@ -1,6 +1,6 @@
 export const rawEnergyEvent = {
     identifier: 'lockTokens',
-    address: 'erd1qqqqqqqqqqqqqpgq2anqkeemt2h5gzseusajuyxt2eaak3j50n4skqj5tz',
+    address: 'drt1qqqqqqqqqqqqqpgq2anqkeemt2h5gzseusajuyxt2eaak3j50n4stu9hgu',
     data: 'AAAACA3gtrOnZAAAAAAAAAAAAAEAAAAIDeC2s6dkAAAAAAAIG8FtZ07IAAAAAAAAAAAAAgAAAAgbwW1nTsgAAA==',
     topics: [
         'ZW5lcmd5VXBkYXRlZA==',

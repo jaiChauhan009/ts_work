@@ -160,7 +160,7 @@ describe('PositionCreatorTransaction', () => {
                     nonce: 0,
                     value: '0',
                     receiver:
-                        'erd1qqqqqqqqqqqqqpgqh3zcutxk3wmfvevpyymaehvc3k0knyq70n4sg6qcj6',
+                        'drt1qqqqqqqqqqqqqpgqh3zcutxk3wmfvevpyymaehvc3k0knyq70n4s4xhm3y',
                     sender: Address.Zero().bech32(),
                     senderUsername: undefined,
                     receiverUsername: undefined,
@@ -228,7 +228,7 @@ describe('PositionCreatorTransaction', () => {
                     nonce: 0,
                     value: '0',
                     receiver:
-                        'erd1qqqqqqqqqqqqqpgqh3zcutxk3wmfvevpyymaehvc3k0knyq70n4sg6qcj6',
+                        'drt1qqqqqqqqqqqqqpgqh3zcutxk3wmfvevpyymaehvc3k0knyq70n4s4xhm3y',
                     sender: Address.Zero().bech32(),
                     senderUsername: undefined,
                     receiverUsername: undefined,
@@ -294,7 +294,7 @@ describe('PositionCreatorTransaction', () => {
                     nonce: 0,
                     value: '100000000000000000000',
                     receiver:
-                        'erd1qqqqqqqqqqqqqpgqh3zcutxk3wmfvevpyymaehvc3k0knyq70n4sg6qcj6',
+                        'drt1qqqqqqqqqqqqqpgqh3zcutxk3wmfvevpyymaehvc3k0knyq70n4s4xhm3y',
                     sender: Address.Zero().bech32(),
                     senderUsername: undefined,
                     receiverUsername: undefined,
@@ -414,7 +414,7 @@ describe('PositionCreatorTransaction', () => {
                     nonce: 0,
                     value: '100000000000000000000',
                     receiver:
-                        'erd1qqqqqqqqqqqqqpgqh3zcutxk3wmfvevpyymaehvc3k0knyq70n4sg6qcj6',
+                        'drt1qqqqqqqqqqqqqpgqh3zcutxk3wmfvevpyymaehvc3k0knyq70n4s4xhm3y',
                     sender: Address.Zero().bech32(),
                     senderUsername: undefined,
                     receiverUsername: undefined,
@@ -481,7 +481,7 @@ describe('PositionCreatorTransaction', () => {
                     nonce: 0,
                     value: '0',
                     receiver:
-                        'erd1qqqqqqqqqqqqqpgqh3zcutxk3wmfvevpyymaehvc3k0knyq70n4sg6qcj6',
+                        'drt1qqqqqqqqqqqqqpgqh3zcutxk3wmfvevpyymaehvc3k0knyq70n4s4xhm3y',
                     sender: Address.Zero().bech32(),
                     senderUsername: undefined,
                     receiverUsername: undefined,
@@ -553,7 +553,7 @@ describe('PositionCreatorTransaction', () => {
                     nonce: 0,
                     value: '100000000000000000000',
                     receiver:
-                        'erd1qqqqqqqqqqqqqpgqd77fnev2sthnczp2lnfx0y5jdycynjfhzzgq6p3rax',
+                        'drt1qqqqqqqqqqqqqpgqd77fnev2sthnczp2lnfx0y5jdycynjfhzzgq8axq7c',
                     sender: senderAddress,
                     senderUsername: undefined,
                     receiverUsername: undefined,
@@ -711,7 +711,7 @@ describe('PositionCreatorTransaction', () => {
                     nonce: 0,
                     value: '0',
                     receiver:
-                        'erd1qqqqqqqqqqqqqpgqh3zcutxk3wmfvevpyymaehvc3k0knyq70n4sg6qcj6',
+                        'drt1qqqqqqqqqqqqqpgqh3zcutxk3wmfvevpyymaehvc3k0knyq70n4s4xhm3y',
                     sender: Address.Zero().bech32(),
                     senderUsername: undefined,
                     receiverUsername: undefined,
@@ -779,7 +779,7 @@ describe('PositionCreatorTransaction', () => {
                     nonce: 0,
                     value: '100000000000000000000',
                     receiver:
-                        'erd1qqqqqqqqqqqqqpgqh3zcutxk3wmfvevpyymaehvc3k0knyq70n4sg6qcj6',
+                        'drt1qqqqqqqqqqqqqpgqh3zcutxk3wmfvevpyymaehvc3k0knyq70n4s4xhm3y',
                     sender: Address.Zero().bech32(),
                     senderUsername: undefined,
                     receiverUsername: undefined,
@@ -976,7 +976,7 @@ describe('PositionCreatorTransaction', () => {
                     nonce: 0,
                     value: '0',
                     receiver:
-                        'erd1qqqqqqqqqqqqqpgqh3zcutxk3wmfvevpyymaehvc3k0knyq70n4sg6qcj6',
+                        'drt1qqqqqqqqqqqqqpgqh3zcutxk3wmfvevpyymaehvc3k0knyq70n4s4xhm3y',
                     sender: Address.Zero().bech32(),
                     senderUsername: undefined,
                     receiverUsername: undefined,
@@ -1056,7 +1056,7 @@ describe('PositionCreatorTransaction', () => {
                     nonce: 0,
                     value: '100000000000000000000',
                     receiver:
-                        'erd1qqqqqqqqqqqqqpgqd77fnev2sthnczp2lnfx0y5jdycynjfhzzgq6p3rax',
+                        'drt1qqqqqqqqqqqqqpgqd77fnev2sthnczp2lnfx0y5jdycynjfhzzgq8axq7c',
                     sender: senderAddress,
                     senderUsername: undefined,
                     receiverUsername: undefined,
@@ -1386,7 +1386,7 @@ describe('PositionCreatorTransaction', () => {
                     nonce: 0,
                     value: '0',
                     receiver:
-                        'erd1qqqqqqqqqqqqqpgqh3zcutxk3wmfvevpyymaehvc3k0knyq70n4sg6qcj6',
+                        'drt1qqqqqqqqqqqqqpgqh3zcutxk3wmfvevpyymaehvc3k0knyq70n4s4xhm3y',
                     sender: Address.Zero().bech32(),
                     senderUsername: undefined,
                     receiverUsername: undefined,
@@ -1458,7 +1458,7 @@ describe('PositionCreatorTransaction', () => {
                     nonce: 0,
                     value: '100000000000000000000',
                     receiver:
-                        'erd1qqqqqqqqqqqqqpgqd77fnev2sthnczp2lnfx0y5jdycynjfhzzgq6p3rax',
+                        'drt1qqqqqqqqqqqqqpgqd77fnev2sthnczp2lnfx0y5jdycynjfhzzgq8axq7c',
                     sender: senderAddress,
                     senderUsername: undefined,
                     receiverUsername: undefined,
@@ -1754,7 +1754,7 @@ describe('PositionCreatorTransaction', () => {
                     nonce: 0,
                     value: '100000000000000000000',
                     receiver:
-                        'erd1qqqqqqqqqqqqqpgqd77fnev2sthnczp2lnfx0y5jdycynjfhzzgq6p3rax',
+                        'drt1qqqqqqqqqqqqqpgqd77fnev2sthnczp2lnfx0y5jdycynjfhzzgq8axq7c',
                     sender: senderAddress,
                     senderUsername: undefined,
                     receiverUsername: undefined,
@@ -2169,7 +2169,7 @@ describe('PositionCreatorTransaction', () => {
                     nonce: 0,
                     value: '100000000000000000000',
                     receiver:
-                        'erd1qqqqqqqqqqqqqpgqd77fnev2sthnczp2lnfx0y5jdycynjfhzzgq6p3rax',
+                        'drt1qqqqqqqqqqqqqpgqd77fnev2sthnczp2lnfx0y5jdycynjfhzzgq8axq7c',
                     sender: senderAddress,
                     senderUsername: undefined,
                     receiverUsername: undefined,
@@ -2389,9 +2389,9 @@ describe('PositionCreatorTransaction', () => {
                     nonce: 0,
                     options: undefined,
                     receiver:
-                        'erd1qqqqqqqqqqqqqpgqh3zcutxk3wmfvevpyymaehvc3k0knyq70n4sg6qcj6',
+                        'drt1qqqqqqqqqqqqqpgqh3zcutxk3wmfvevpyymaehvc3k0knyq70n4s4xhm3y',
                     receiverUsername: undefined,
-                    sender: 'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                    sender: 'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
                     senderUsername: undefined,
                     signature: undefined,
                     value: '0',
@@ -2441,9 +2441,9 @@ describe('PositionCreatorTransaction', () => {
                     nonce: 0,
                     options: undefined,
                     receiver:
-                        'erd1qqqqqqqqqqqqqpgqh3zcutxk3wmfvevpyymaehvc3k0knyq70n4sg6qcj6',
+                        'drt1qqqqqqqqqqqqqpgqh3zcutxk3wmfvevpyymaehvc3k0knyq70n4s4xhm3y',
                     receiverUsername: undefined,
-                    sender: 'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                    sender: 'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
                     senderUsername: undefined,
                     signature: undefined,
                     value: '1000000000000000000',

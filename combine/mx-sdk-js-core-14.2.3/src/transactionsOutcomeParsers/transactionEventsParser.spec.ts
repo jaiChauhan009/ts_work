@@ -65,7 +65,7 @@ describe("test transaction events parser", () => {
 
         assert.deepEqual(parsed, [
             {
-                dest_address: Address.newFromBech32("erd1wfkv9495dhtt6a9yepxsyu2mlpw2ua333j4cr0qfulpxr4q5nfnshgyqun"),
+                dest_address: Address.newFromBech32("drt1wfkv9495dhtt6a9yepxsyu2mlpw2ua333j4cr0qfulpxr4q5nfns25nrld"),
                 tokens: [
                     {
                         token_identifier: "WREWA-01e49d",
@@ -120,7 +120,7 @@ describe("test transaction events parser", () => {
                         fields: [
                             {
                                 to: Address.newFromBech32(
-                                    "erd1qqqqqqqqqqqqqpgq6qr0w0zzyysklfneh32eqp2cf383zc89d8sstnkl60",
+                                    "drt1qqqqqqqqqqqqqpgq6qr0w0zzyysklfneh32eqp2cf383zc89d8ssk0pue3",
                                 ),
                                 rewa_amount: new BigNumber("0"),
                                 opt_gas_limit: null,
@@ -129,7 +129,7 @@ describe("test transaction events parser", () => {
                             },
                         ],
                     },
-                    signers: [Address.newFromBech32("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th")],
+                    signers: [Address.newFromBech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf")],
                 },
             },
         ]);

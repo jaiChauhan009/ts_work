@@ -147,7 +147,7 @@ describe('RouterService', () => {
 
         const transaction = await service.issueLpToken(
             senderAddress,
-            'erd1sea63y47u569ns3x5mqjf4vnygn9whkk7p6ry4rfpqyd6rd5addqyd9lf2',
+            'drt1sea63y47u569ns3x5mqjf4vnygn9whkk7p6ry4rfpqyd6rd5addqe3ju25',
             'LiquidityPoolToken3',
             'LPT-3333',
         );
@@ -163,7 +163,7 @@ describe('RouterService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.router.issueToken,
             data: encodeTransactionData(
-                'issueLpToken@erd1sea63y47u569ns3x5mqjf4vnygn9whkk7p6ry4rfpqyd6rd5addqyd9lf2@LiquidityPoolToken3@LPT-3333',
+                'issueLpToken@drt1sea63y47u569ns3x5mqjf4vnygn9whkk7p6ry4rfpqyd6rd5addqe3ju25@LiquidityPoolToken3@LPT-3333',
             ),
             chainID: mxConfig.chainID,
             version: 2,
@@ -234,7 +234,7 @@ describe('RouterService', () => {
 
         const transaction = await service.setState(
             senderAddress,
-            'erd1qqqqqqqqqqqqqpgqe8m9w7cv2ekdc28q5ahku9x3hcregqpn0n4sum0e3u',
+            'drt1qqqqqqqqqqqqqpgqe8m9w7cv2ekdc28q5ahku9x3hcregqpn0n4sp8c6jz',
             false,
         );
         expect(transaction).toEqual({
@@ -249,7 +249,7 @@ describe('RouterService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.router.admin.setState,
             data: encodeTransactionData(
-                'pause@erd1qqqqqqqqqqqqqpgqe8m9w7cv2ekdc28q5ahku9x3hcregqpn0n4sum0e3u',
+                'pause@drt1qqqqqqqqqqqqqpgqe8m9w7cv2ekdc28q5ahku9x3hcregqpn0n4sp8c6jz',
             ),
             chainID: mxConfig.chainID,
             version: 2,
@@ -323,7 +323,7 @@ describe('RouterService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.router.admin.setFee,
             data: encodeTransactionData(
-                `setFeeOff@${pairAddress}@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu@WREWA-123456`,
+                `setFeeOff@${pairAddress}@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z@WREWA-123456`,
             ),
             chainID: mxConfig.chainID,
             version: 2,
@@ -360,7 +360,7 @@ describe('RouterService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.router.admin.setFee,
             data: encodeTransactionData(
-                `setFeeOn@${pairAddress}@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu@WREWA-123456`,
+                `setFeeOn@${pairAddress}@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z@WREWA-123456`,
             ),
             chainID: mxConfig.chainID,
             version: 2,
@@ -393,7 +393,7 @@ describe('RouterService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.router.admin.setLocalRolesOwner,
             data: encodeTransactionData(
-                'setLocalRolesOwner@WREWA-123456@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu@01',
+                'setLocalRolesOwner@WREWA-123456@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z@01',
             ),
             chainID: mxConfig.chainID,
             version: 2,
@@ -577,7 +577,7 @@ describe('RouterService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.router.admin.setPairTemplateAddress,
             data: encodeTransactionData(
-                'setPairTemplateAddress@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'setPairTemplateAddress@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             ),
             chainID: mxConfig.chainID,
             version: 2,

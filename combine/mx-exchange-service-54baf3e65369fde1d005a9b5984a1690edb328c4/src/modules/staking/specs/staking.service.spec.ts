@@ -74,7 +74,7 @@ describe('StakingService', () => {
             module.get<StakingService>(StakingService);
         const rewards = await service.getRewardsForPosition({
             farmAddress:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqes9lzxht',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqescr4954',
             liquidity: '1000000000000000',
             identifier: 'MEXFARML-772223-14',
             attributes:
@@ -103,7 +103,7 @@ describe('StakingService', () => {
         const batchRewards = await service.getBatchRewardsForPosition([
             {
                 farmAddress:
-                    'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqes9lzxht',
+                    'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqescr4954',
                 liquidity: '1000000000000000',
                 identifier: 'MEXFARML-772223-14',
                 attributes:

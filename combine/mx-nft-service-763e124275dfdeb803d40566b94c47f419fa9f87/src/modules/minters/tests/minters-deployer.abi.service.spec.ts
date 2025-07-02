@@ -30,9 +30,9 @@ describe('Minters Deployer Abi Service', () => {
       const result = await service.deployMinter(
         new DeployMinterRequest({
           maxNftsPerTransaction: 4,
-          mintClaimAddress: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
-          royaltiesClaimAddress: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
-          ownerAddress: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+          mintClaimAddress: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
+          royaltiesClaimAddress: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
+          ownerAddress: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
         }),
       );
 
@@ -43,8 +43,8 @@ describe('Minters Deployer Abi Service', () => {
         gasPrice: 1000000000,
         nonce: 0,
         options: undefined,
-        receiver: 'erd1qqqqqqqqqqqqqpgqut6lamz9dn480ytj8cmcwvydcu3lj55epltq9t9kam',
-        sender: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+        receiver: 'drt1qqqqqqqqqqqqqpgqut6lamz9dn480ytj8cmcwvydcu3lj55epltqchj479',
+        sender: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
         signature: undefined,
         value: '0',
         version: 2,
@@ -62,16 +62,16 @@ describe('Minters Deployer Abi Service', () => {
         gasPrice: 1000000000,
         nonce: 0,
         options: undefined,
-        receiver: 'erd1qqqqqqqqqqqqqpgqut6lamz9dn480ytj8cmcwvydcu3lj55epltq9t9kam',
-        sender: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+        receiver: 'drt1qqqqqqqqqqqqqpgqut6lamz9dn480ytj8cmcwvydcu3lj55epltqchj479',
+        sender: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
         signature: undefined,
         value: '0',
         version: 2,
       };
 
       const result = await service.pauseNftMinter(
-        'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
-        new UpgradeMinterRequest({ minterAddress: 'erd1qqqqqqqqqqqqqpgq7t389h9twftwlnt29hm0xz58v7k3vt6fpltqhtxnru' }),
+        'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
+        new UpgradeMinterRequest({ minterAddress: 'drt1qqqqqqqqqqqqqpgq7t389h9twftwlnt29hm0xz58v7k3vt6fpltq2h3sqz' }),
       );
 
       expect(result).toMatchObject(expectedResult);
@@ -81,8 +81,8 @@ describe('Minters Deployer Abi Service', () => {
   describe('resumeNftMinter', () => {
     it('returns build transaction with right arguments', async () => {
       const result = await service.resumeNftMinter(
-        'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
-        new UpgradeMinterRequest({ minterAddress: 'erd1qqqqqqqqqqqqqpgq7t389h9twftwlnt29hm0xz58v7k3vt6fpltqhtxnru' }),
+        'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
+        new UpgradeMinterRequest({ minterAddress: 'drt1qqqqqqqqqqqqqpgq7t389h9twftwlnt29hm0xz58v7k3vt6fpltq2h3sqz' }),
       );
       const expectedResult = {
         chainID: 'T',
@@ -91,8 +91,8 @@ describe('Minters Deployer Abi Service', () => {
         gasPrice: 1000000000,
         nonce: 0,
         options: undefined,
-        receiver: 'erd1qqqqqqqqqqqqqpgqut6lamz9dn480ytj8cmcwvydcu3lj55epltq9t9kam',
-        sender: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+        receiver: 'drt1qqqqqqqqqqqqqpgqut6lamz9dn480ytj8cmcwvydcu3lj55epltqchj479',
+        sender: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
         signature: undefined,
         value: '0',
         version: 2,

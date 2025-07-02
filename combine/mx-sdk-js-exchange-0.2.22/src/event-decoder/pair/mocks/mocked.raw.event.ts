@@ -1,7 +1,7 @@
 import { RawEventType } from '../../generic.types';
 
 export const rawAddLiquidityEvent: RawEventType = {
-    address: 'erd1qqqqqqqqqqqqqpgquu5rsa4ee6l4azz6vdu4hjp8z4p6tt8m0n4suht3dy',
+    address: 'drt1qqqqqqqqqqqqqpgquu5rsa4ee6l4azz6vdu4hjp8z4p6tt8m0n4sptujw6',
     identifier: 'addLiquidity',
     topics: [
         'YWRkX2xpcXVpZGl0eQ==',
@@ -14,7 +14,7 @@ export const rawAddLiquidityEvent: RawEventType = {
 };
 
 export const rawRemoveLiquidityEvent: RawEventType = {
-    address: 'erd1qqqqqqqqqqqqqpgquu5rsa4ee6l4azz6vdu4hjp8z4p6tt8m0n4suht3dy',
+    address: 'drt1qqqqqqqqqqqqqpgquu5rsa4ee6l4azz6vdu4hjp8z4p6tt8m0n4sptujw6',
     identifier: 'removeLiquidity',
     topics: [
         'cmVtb3ZlX2xpcXVpZGl0eQ==',
@@ -27,7 +27,7 @@ export const rawRemoveLiquidityEvent: RawEventType = {
 };
 
 export const rawSwapFixedInputEvent: RawEventType = {
-    address: 'erd1qqqqqqqqqqqqqpgquu5rsa4ee6l4azz6vdu4hjp8z4p6tt8m0n4suht3dy',
+    address: 'drt1qqqqqqqqqqqqqpgquu5rsa4ee6l4azz6vdu4hjp8z4p6tt8m0n4sptujw6',
     identifier: 'swapTokensFixedInput',
     topics: [
         'c3dhcA==',
@@ -40,7 +40,7 @@ export const rawSwapFixedInputEvent: RawEventType = {
 };
 
 export const rawSwapFixedOutputEvent: RawEventType = {
-    address: 'erd1qqqqqqqqqqqqqpgquu5rsa4ee6l4azz6vdu4hjp8z4p6tt8m0n4suht3dy',
+    address: 'drt1qqqqqqqqqqqqqpgquu5rsa4ee6l4azz6vdu4hjp8z4p6tt8m0n4sptujw6',
     identifier: 'swapTokensFixedOutput',
     topics: [
         'c3dhcA==',
@@ -53,7 +53,7 @@ export const rawSwapFixedOutputEvent: RawEventType = {
 };
 
 export const rawSwapNoFeeEvent: RawEventType = {
-    address: 'erd1qqqqqqqqqqqqqpgquu5rsa4ee6l4azz6vdu4hjp8z4p6tt8m0n4suht3dy',
+    address: 'drt1qqqqqqqqqqqqqpgquu5rsa4ee6l4azz6vdu4hjp8z4p6tt8m0n4sptujw6',
     identifier: 'swapNoFeeAndForward',
     topics: [
         'c3dhcF9ub19mZWVfYW5kX2ZvcndhcmQ=',

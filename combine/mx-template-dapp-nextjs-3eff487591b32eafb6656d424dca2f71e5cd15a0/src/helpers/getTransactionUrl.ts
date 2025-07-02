@@ -11,7 +11,7 @@ export const getTransactionUrl = (walletAddress: string) => {
   const walletBaseUrl = `${walletAddress}/${WALLET_PROVIDER_SEND_TRANSACTION_URL}`;
 
   const receiver =
-    'erd1deaddeaddeaddeaddeaddeaddeaddeaddeaddeaddeaddeaddeaqtv0gag'; // add your receiver address here
+    'drt1deaddeaddeaddeaddeaddeaddeaddeaddeaddeaddeaddeaddeaqksct7k'; // add your receiver address here
   const data = 'Hello_world';
   const value = TokenTransfer.rewaFromAmount('0.01').toString();
   const callbackUrl = encodeURIComponent(safeWindow.origin ?? '');

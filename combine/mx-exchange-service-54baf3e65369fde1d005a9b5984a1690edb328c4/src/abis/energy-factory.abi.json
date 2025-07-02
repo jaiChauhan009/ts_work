@@ -90,7 +90,7 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -110,7 +110,7 @@
             "inputs": [],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -266,7 +266,7 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -330,7 +330,7 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -406,7 +406,7 @@
             "inputs": [],
             "outputs": [
                 {
-                    "type": "variadic<EsdtTokenPayment>",
+                    "type": "variadic<DcdtTokenPayment>",
                     "multi_result": true
                 }
             ]
@@ -481,7 +481,7 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -512,7 +512,7 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -673,7 +673,7 @@
                 }
             ]
         },
-        "EsdtTokenPayment": {
+        "DcdtTokenPayment": {
             "type": "struct",
             "fields": [
                 {

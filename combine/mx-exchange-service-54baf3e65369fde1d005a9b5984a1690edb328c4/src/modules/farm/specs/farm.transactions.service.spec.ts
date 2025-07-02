@@ -77,7 +77,7 @@ describe('FarmService', () => {
             Address.Zero().bech32(),
             {
                 farmAddress:
-                    'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                    'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
                 tokens: [
                     {
                         tokenID: 'REWAMEXLP-abcdef',
@@ -92,8 +92,8 @@ describe('FarmService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
-            sender: 'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
+            sender: 'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             gasPrice: 1000000000,
             gasLimit: gasConfig.farms['v1.2'].enterFarm.default,
             data: encodeTransactionData(
@@ -115,7 +115,7 @@ describe('FarmService', () => {
             Address.Zero().bech32(),
             {
                 farmAddress:
-                    'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                    'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
                 farmTokenID: 'REWAMEXFL-abcdef',
                 farmTokenNonce: 1,
                 amount: '1000000000000',
@@ -127,14 +127,14 @@ describe('FarmService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
-            sender: 'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
+            sender: 'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             gasPrice: 1000000000,
             gasLimit:
                 gasConfig.farms['v1.2']['lockedRewards'].exitFarm.default +
                 gasConfig.lockedAssetCreate,
             data: encodeTransactionData(
-                'DCDTNFTTransfer@REWAMEXFL-abcdef@01@1000000000000@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5@07311709943153914477',
+                'DCDTNFTTransfer@REWAMEXFL-abcdef@01@1000000000000@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42@07311709943153914477',
             ),
             chainID: mxConfig.chainID,
             version: 2,
@@ -152,7 +152,7 @@ describe('FarmService', () => {
             Address.Zero().bech32(),
             {
                 farmAddress:
-                    'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqes9lzxht',
+                    'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqescr4954',
                 farmTokenID: 'REWATOK4FL-abcdef',
                 farmTokenNonce: 1,
                 amount: '1000000000000',
@@ -163,14 +163,14 @@ describe('FarmService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
-            sender: 'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
+            sender: 'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             gasPrice: 1000000000,
             gasLimit:
                 gasConfig.farms['v1.2']['lockedRewards'].claimRewards +
                 gasConfig.lockedAssetCreate,
             data: encodeTransactionData(
-                'DCDTNFTTransfer@REWATOK4FL-abcdef@01@1000000000000@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqes9lzxht@claimRewards',
+                'DCDTNFTTransfer@REWATOK4FL-abcdef@01@1000000000000@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqescr4954@claimRewards',
             ),
             chainID: mxConfig.chainID,
             version: 2,
@@ -188,7 +188,7 @@ describe('FarmService', () => {
         try {
             await transactionV1_2.compoundRewards(Address.Zero().bech32(), {
                 farmAddress:
-                    'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u',
+                    'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqzlllsd5j0s2',
                 farmTokenID: 'farmTokenID',
                 farmTokenNonce: 1,
                 amount: '1000000000000',
@@ -209,7 +209,7 @@ describe('FarmService', () => {
             Address.Zero().bech32(),
             {
                 farmAddress:
-                    'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                    'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
                 farmTokenID: 'REWAMEXFL-abcdef',
                 farmTokenNonce: 1,
                 amount: '1000000000000',
@@ -221,12 +221,12 @@ describe('FarmService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
-            sender: 'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
+            sender: 'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             gasPrice: 1000000000,
             gasLimit: gasConfig.farms['v1.2'].migrateToNewFarm,
             data: encodeTransactionData(
-                'DCDTNFTTransfer@REWAMEXFL-abcdef@01@1000000000000@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5@migrateToNewFarm@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'DCDTNFTTransfer@REWAMEXFL-abcdef@01@1000000000000@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42@migrateToNewFarm@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             ),
             chainID: mxConfig.chainID,
             version: 2,
@@ -244,7 +244,7 @@ describe('FarmService', () => {
             senderAddress,
             {
                 oldFarmAddress:
-                    'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                    'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
                 oldFarmTokenID: 'REWAMEXFL-abcdef',
                 newFarmAddress: Address.Zero().bech32(),
                 newLockedFarmAddress: Address.Zero().bech32(),
@@ -254,14 +254,14 @@ describe('FarmService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
             gasPrice: 1000000000,
             gasLimit: gasConfig.farms.admin.setFarmMigrationConfig,
             data: encodeTransactionData(
-                'setFarmMigrationConfig@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5@REWAMEXFL-abcdef@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'setFarmMigrationConfig@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42@REWAMEXFL-abcdef@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             ),
             chainID: mxConfig.chainID,
             version: 2,
@@ -279,13 +279,13 @@ describe('FarmService', () => {
 
         const transaction = await transactionV1_2.stopRewardsAndMigrateRps(
             senderAddress,
-            'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+            'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
         );
         expect(transaction).toEqual({
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
@@ -310,7 +310,7 @@ describe('FarmService', () => {
         try {
             await transactionV1_2.endProduceRewards(
                 senderAddress,
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
             );
         } catch (e) {
             error = e;
@@ -319,13 +319,13 @@ describe('FarmService', () => {
 
         const transaction = await transactionV1_2.endProduceRewards(
             senderAddress,
-            'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqcs2zduud',
+            'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqcsh76lln',
         );
         expect(transaction).toEqual({
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqcs2zduud',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqcsh76lln',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
@@ -350,7 +350,7 @@ describe('FarmService', () => {
         try {
             await transactionV1_2.startProduceRewards(
                 senderAddress,
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
             );
         } catch (e) {
             error = e;
@@ -359,13 +359,13 @@ describe('FarmService', () => {
 
         const transaction = await transactionV1_2.startProduceRewards(
             senderAddress,
-            'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+            'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
         );
         expect(transaction).toEqual({
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
@@ -390,7 +390,7 @@ describe('FarmService', () => {
         try {
             await transactionV1_2.setPerBlockRewardAmount(
                 senderAddress,
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
                 '1000000000000',
             );
         } catch (e) {
@@ -400,14 +400,14 @@ describe('FarmService', () => {
 
         const transaction = await transactionV1_2.setPerBlockRewardAmount(
             senderAddress,
-            'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+            'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
             '1000000000000',
         );
         expect(transaction).toEqual({
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
@@ -434,7 +434,7 @@ describe('FarmService', () => {
         try {
             await transactionV1_2.setPenaltyPercent(
                 senderAddress,
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
                 5,
             );
         } catch (e) {
@@ -444,14 +444,14 @@ describe('FarmService', () => {
 
         const transaction = await transactionV1_2.setPenaltyPercent(
             senderAddress,
-            'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+            'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
             5,
         );
         expect(transaction).toEqual({
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
@@ -476,7 +476,7 @@ describe('FarmService', () => {
         try {
             await transactionV1_2.setMinimumFarmingEpochs(
                 senderAddress,
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
                 10,
             );
         } catch (e) {
@@ -486,14 +486,14 @@ describe('FarmService', () => {
 
         const transaction = await transactionV1_2.setMinimumFarmingEpochs(
             senderAddress,
-            'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+            'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
             10,
         );
         expect(transaction).toEqual({
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
@@ -518,7 +518,7 @@ describe('FarmService', () => {
         try {
             await transactionV1_2.setTransferExecGasLimit(
                 senderAddress,
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
                 100000000,
             );
         } catch (e) {
@@ -528,14 +528,14 @@ describe('FarmService', () => {
 
         const transaction = await transactionV1_2.setTransferExecGasLimit(
             senderAddress,
-            'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+            'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
             100000000,
         );
         expect(transaction).toEqual({
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
@@ -562,7 +562,7 @@ describe('FarmService', () => {
         try {
             await transactionV1_2.setBurnGasLimit(
                 senderAddress,
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
                 100000000,
             );
         } catch (e) {
@@ -572,14 +572,14 @@ describe('FarmService', () => {
 
         const transaction = await transactionV1_2.setBurnGasLimit(
             senderAddress,
-            'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqcs2zduud',
+            'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqcsh76lln',
             100000000,
         );
         expect(transaction).toEqual({
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqcs2zduud',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqcsh76lln',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
@@ -604,7 +604,7 @@ describe('FarmService', () => {
         try {
             await transactionV1_2.pause(
                 senderAddress,
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
             );
         } catch (e) {
             error = e;
@@ -613,13 +613,13 @@ describe('FarmService', () => {
 
         const transaction = await transactionV1_2.pause(
             senderAddress,
-            'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+            'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
         );
         expect(transaction).toEqual({
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
@@ -644,7 +644,7 @@ describe('FarmService', () => {
         try {
             await transactionV1_2.resume(
                 senderAddress,
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
             );
         } catch (e) {
             error = e;
@@ -653,13 +653,13 @@ describe('FarmService', () => {
 
         const transaction = await transactionV1_2.resume(
             senderAddress,
-            'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+            'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
         );
         expect(transaction).toEqual({
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
@@ -684,7 +684,7 @@ describe('FarmService', () => {
         try {
             await transactionV1_2.registerFarmToken(
                 senderAddress,
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
                 'FarmingToken12',
                 'T1T2-1234',
                 18,
@@ -696,7 +696,7 @@ describe('FarmService', () => {
 
         const transaction = await transactionV1_2.registerFarmToken(
             senderAddress,
-            'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+            'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
             'FarmingToken12',
             'T1T2-1234',
             18,
@@ -705,7 +705,7 @@ describe('FarmService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
@@ -732,7 +732,7 @@ describe('FarmService', () => {
         try {
             await transactionV1_2.setLocalRolesFarmToken(
                 senderAddress,
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
             );
         } catch (e) {
             error = e;
@@ -741,13 +741,13 @@ describe('FarmService', () => {
 
         const transaction = await transactionV1_2.setLocalRolesFarmToken(
             senderAddress,
-            'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+            'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
         );
         expect(transaction).toEqual({
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
@@ -772,7 +772,7 @@ describe('FarmService', () => {
         try {
             await transactionV1_2.mergeFarmTokens(
                 Address.Zero().bech32(),
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
                 [
                     {
                         tokenID: 'REWATOK4FL-abcdef',
@@ -793,7 +793,7 @@ describe('FarmService', () => {
 
         const transaction = await transactionV1_2.mergeFarmTokens(
             Address.Zero().bech32(),
-            'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+            'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
             [
                 {
                     tokenID: 'REWAMEXFL-abcdef',
@@ -811,12 +811,12 @@ describe('FarmService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
-            sender: 'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
+            sender: 'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             gasPrice: 1000000000,
             gasLimit: gasConfig.farms['v1.3'].mergeFarmTokensMultiplier * 2,
             data: encodeTransactionData(
-                'MultiDCDTNFTTransfer@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5@02@REWAMEXFL-abcdef@@01000000000000@REWAMEXFL-abcdef@@01000000000000@mergeFarmTokens',
+                'MultiDCDTNFTTransfer@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42@02@REWAMEXFL-abcdef@@01000000000000@REWAMEXFL-abcdef@@01000000000000@mergeFarmTokens',
             ),
             chainID: mxConfig.chainID,
             version: 2,

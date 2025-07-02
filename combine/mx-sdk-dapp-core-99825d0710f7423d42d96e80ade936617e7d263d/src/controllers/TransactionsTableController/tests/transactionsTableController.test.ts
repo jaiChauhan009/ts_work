@@ -57,7 +57,7 @@ const mockTransactionBase: ServerTransactionType = {
   operations: [],
   logs: {
     id: 'log1',
-    address: 'erd1qqq...contract',
+    address: 'drt1qqq...contract',
     events: []
   },
   scamInfo: undefined,
@@ -78,7 +78,7 @@ const mockTransactionBase: ServerTransactionType = {
 };
 
 const mockParams = {
-  address: 'erd1qqq...test',
+  address: 'drt1qqq...test',
   rewaLabel: 'REWA',
   explorerAddress: 'https://explorer.example.com',
   transactions: [mockTransactionBase]
@@ -121,7 +121,7 @@ describe('TransactionsTableController', () => {
 
   it('should detect contract addresses', async () => {
     const contractAddress =
-      'erd1qqqqqqqqqqqqqpgqv9gxgq8nurz754spjfck6rdwlg9etpcp0n4sjg2dhc';
+      'drt1qqqqqqqqqqqqqpgqv9gxgq8nurz754spjfck6rdwlg9etpcp0n4s05aw5x';
 
     const transactions = [
       {
@@ -315,18 +315,18 @@ describe('TransactionsTableController', () => {
   it('should handle different transaction directions', async () => {
     const testCases = [
       {
-        sender: 'erd1qqq...test',
-        receiver: 'erd1qqq...other',
+        sender: 'drt1qqq...test',
+        receiver: 'drt1qqq...other',
         expectedDirection: TransactionDirectionEnum.OUT
       },
       {
-        sender: 'erd1qqq...other',
-        receiver: 'erd1qqq...test',
+        sender: 'drt1qqq...other',
+        receiver: 'drt1qqq...test',
         expectedDirection: TransactionDirectionEnum.IN
       },
       {
-        sender: 'erd1qqq...test',
-        receiver: 'erd1qqq...test',
+        sender: 'drt1qqq...test',
+        receiver: 'drt1qqq...test',
         expectedDirection: TransactionDirectionEnum.SELF
       }
     ];
@@ -342,7 +342,7 @@ describe('TransactionsTableController', () => {
 
       const [result] = await TransactionsTableController.processTransactions({
         ...mockParams,
-        address: 'erd1qqq...test',
+        address: 'drt1qqq...test',
         transactions
       });
 

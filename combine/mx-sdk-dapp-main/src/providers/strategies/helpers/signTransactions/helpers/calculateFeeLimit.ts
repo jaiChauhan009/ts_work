@@ -19,8 +19,8 @@ export interface CalculateFeeLimitType {
   defaultGasPrice?: string;
 }
 const placeholderData = {
-  from: 'erd12dnfhej64s6c56ka369gkyj3hwv5ms0y5rxgsk2k7hkd2vuk7rvqxkalsa',
-  to: 'erd12dnfhej64s6c56ka369gkyj3hwv5ms0y5rxgsk2k7hkd2vuk7rvqxkalsa'
+  from: 'drt12dnfhej64s6c56ka369gkyj3hwv5ms0y5rxgsk2k7hkd2vuk7rvqm22unr',
+  to: 'drt12dnfhej64s6c56ka369gkyj3hwv5ms0y5rxgsk2k7hkd2vuk7rvqm22unr'
 };
 export function calculateFeeLimit({
   minGasLimit = String(GAS_LIMIT),

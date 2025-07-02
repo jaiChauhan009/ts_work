@@ -85,7 +85,7 @@ describe("test abi", () => {
         let result = bc.decodeTopLevel(buff, performAction.output[0].type);
         assert.deepEqual(
             JSON.stringify(result.valueOf()),
-            `{"name":"SendTransferExecuteRewa","fields":[{"to":{"bech32":"erd1qqqqqqqqqqqqqpgq6qr0w0zzyysklfneh32eqp2cf383zc89d8sstnkl60","pubkey":"00000000000000000500d006f73c4221216fa679bc559005584c4f1160e569e1"},"rewa_amount":"42","opt_gas_limit":null,"endpoint_name":{"type":"Buffer","data":[97,100,100]},"arguments":[{"type":"Buffer","data":[7]}]}]}`,
+            `{"name":"SendTransferExecuteRewa","fields":[{"to":{"bech32":"drt1qqqqqqqqqqqqqpgq6qr0w0zzyysklfneh32eqp2cf383zc89d8ssk0pue3","pubkey":"00000000000000000500d006f73c4221216fa679bc559005584c4f1160e569e1"},"rewa_amount":"42","opt_gas_limit":null,"endpoint_name":{"type":"Buffer","data":[97,100,100]},"arguments":[{"type":"Buffer","data":[7]}]}]}`,
         );
         assert.equal(result.valueOf().name, "SendTransferExecuteRewa");
     });

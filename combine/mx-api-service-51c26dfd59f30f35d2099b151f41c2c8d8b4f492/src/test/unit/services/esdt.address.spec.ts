@@ -110,7 +110,7 @@ describe('DcdtAddressService', () => {
 
   describe('getNftCountForAddressFromElastic', () => {
     it('should return NFT count for a given address from Elastic', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const filter = new NftFilter();
       jest.spyOn(indexerService, 'getNftCountForAddress').mockResolvedValue(10);
 
@@ -122,7 +122,7 @@ describe('DcdtAddressService', () => {
     });
 
     it('should return all NSFW NFTs count for a given address from Elastic', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const filter = new NftFilter();
       filter.isNsfw = true;
       jest.spyOn(indexerService, 'getNftCountForAddress').mockResolvedValue(1);
@@ -135,7 +135,7 @@ describe('DcdtAddressService', () => {
     });
 
     it('should return all NFT count from a specific collection for a given address from Elastic', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const filter = new NftFilter();
       filter.collection = 'XDAY23TEAM-f7a346';
       jest.spyOn(indexerService, 'getNftCountForAddress').mockResolvedValue(20);
@@ -148,7 +148,7 @@ describe('DcdtAddressService', () => {
     });
 
     it('should return all NFT count from specific collections for a given address from Elastic', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const filter = new NftFilter();
       filter.collections = ['XDAY23TEAM-f7a346', 'XDAY23TEAM-f11111'];
       jest.spyOn(indexerService, 'getNftCountForAddress').mockResolvedValue(25);
@@ -163,7 +163,7 @@ describe('DcdtAddressService', () => {
 
   describe('getCollectionCountForAddressFromElastic', () => {
     it('should return collections count for a given address', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const filter = new CollectionFilter();
       jest.spyOn(indexerService, 'getCollectionCountForAddress').mockResolvedValue(5);
 
@@ -175,7 +175,7 @@ describe('DcdtAddressService', () => {
     });
 
     it('should return collection count when collection filter is applied for a given address', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const filter = new CollectionFilter();
       filter.collection = 'XDAY23TEAM-f7a346';
       jest.spyOn(indexerService, 'getCollectionCountForAddress').mockResolvedValue(1);
@@ -188,7 +188,7 @@ describe('DcdtAddressService', () => {
     });
 
     it('should return collection count when identifiers filter is applied for a given address', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const filter = new CollectionFilter();
       filter.identifiers = ['XDAY23TEAM-f7a346-01', 'XDAY23TEAM-f7a346-02'];
       jest.spyOn(indexerService, 'getCollectionCountForAddress').mockResolvedValue(1);
@@ -203,7 +203,7 @@ describe('DcdtAddressService', () => {
 
   describe('DcdtAddressService - getCollectionsForAddress', () => {
     it('should return cached DCDTs for a given address', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const cachedDcdts = {
         "BUSD-19079b": {
           balance: "50850380000",

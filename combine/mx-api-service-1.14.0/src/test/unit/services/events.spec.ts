@@ -16,8 +16,8 @@ describe('EventsService', () => {
   };
 
   const baseMockEventData = {
-    logAddress: "erd1qqqqqqqqqqqqqpgq5lgsm8lsen2gv65gwtrs25js0ktx7ltgusrqeltmln",
-    address: "erd1qqqqqqqqqqqqqpgq5lgsm8lsen2gv65gwtrs25js0ktx7ltgusrqeltmln",
+    logAddress: "drt1qqqqqqqqqqqqqpgq5lgsm8lsen2gv65gwtrs25js0ktx7ltgusrqyrucud",
+    address: "drt1qqqqqqqqqqqqqpgq5lgsm8lsen2gv65gwtrs25js0ktx7ltgusrqyrucud",
     data: "44697265637443616c6c",
     topics: [
       "2386f26fc10000",

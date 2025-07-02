@@ -6,8 +6,8 @@ import { expect } from '@jest/globals';
 const pingTransaction = {
   nonce: 10705,
   value: '1000000000000000000',
-  receiver: 'erd1qqqqqqqqqqqqqpgq72l6vl07fkn3alyfq753mcy4nakm0l72396qkcud5x',
-  sender: 'erd1wh9c0sjr2xn8hzf02lwwcr4jk2s84tat9ud2kaq6zr7xzpvl9l5q8awmex',
+  receiver: 'drt1qqqqqqqqqqqqqpgq72l6vl07fkn3alyfq753mcy4nakm0l72396qtytwhc',
+  sender: 'drt1wh9c0sjr2xn8hzf02lwwcr4jk2s84tat9ud2kaq6zr7xzpvl9l5q6pec6c',
   gasPrice: 1000000000,
   gasLimit: 6000000,
   data: 'cGluZw==',

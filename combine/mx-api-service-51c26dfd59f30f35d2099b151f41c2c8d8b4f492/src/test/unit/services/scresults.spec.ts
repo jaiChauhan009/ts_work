@@ -52,7 +52,7 @@ describe('TagService', () => {
 
   describe('getAccountScResultsCount', () => {
     it('should return account smart contract results count', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       jest.spyOn(indexerService, 'getAccountScResultsCount').mockResolvedValue(256);
 
       const result = await service.getAccountScResultsCount(address);
@@ -83,8 +83,8 @@ describe('TagService', () => {
         gasLimit: '0',
         gasPrice: '1000000000',
         value: '0',
-        sender: 'erd1qqqqqqqqqqqqqpgql6dxenaameqn2uyyru3nmmpf7e95zmlxu7zskzpdcw',
-        receiver: 'erd1ahauxqcaxvcksrcyyxzk5lrr3p8p8rjtayfue068nktrpjpvzers3dgvax',
+        sender: 'drt1qqqqqqqqqqqqqpgql6dxenaameqn2uyyru3nmmpf7e95zmlxu7zst7kwms',
+        receiver: 'drt1ahauxqcaxvcksrcyyxzk5lrr3p8p8rjtayfue068nktrpjpvzersv3l07c',
         senderShard: 1,
         receiverShard: 1,
         data: 'RVNEVFRyYW5zZmVyQDQ4NTk1MDQ1MmQzNjMxMzkzNjM2MzFAOGIzYzVhNDFhMDRhNjliMjdm',
@@ -104,7 +104,7 @@ describe('TagService', () => {
         description: 'Transfer',
         arguments: {
           transfers: [[Object]],
-          receiver: 'erd1ahauxqcaxvcksrcyyxzk5lrr3p8p8rjtayfue068nktrpjpvzers3dgvax',
+          receiver: 'drt1ahauxqcaxvcksrcyyxzk5lrr3p8p8rjtayfue068nktrpjpvzersv3l07c',
           functionName: undefined,
           functionArgs: [],
         },
@@ -126,8 +126,8 @@ describe('TagService', () => {
       gasLimit: '0',
       gasPrice: '1000000000',
       value: '0',
-      sender: 'erd1qqqqqqqqqqqqqpgql6dxenaameqn2uyyru3nmmpf7e95zmlxu7zskzpdcw',
-      receiver: 'erd1ahauxqcaxvcksrcyyxzk5lrr3p8p8rjtayfue068nktrpjpvzers3dgvax',
+      sender: 'drt1qqqqqqqqqqqqqpgql6dxenaameqn2uyyru3nmmpf7e95zmlxu7zst7kwms',
+      receiver: 'drt1ahauxqcaxvcksrcyyxzk5lrr3p8p8rjtayfue068nktrpjpvzersv3l07c',
       senderShard: 1,
       receiverShard: 1,
       data: 'RVNEVFRyYW5zZmVyQDQ4NTk1MDQ1MmQzNjMxMzkzNjM2MzFAOGIzYzVhNDFhMDRhNjliMjdm',
@@ -145,8 +145,8 @@ describe('TagService', () => {
       gasLimit: '0',
       gasPrice: '1000000000',
       value: '0',
-      sender: 'erd1qqqqqqqqqqqqqpgql6dxenaameqn2uyyru3nmmpf7e95zmlxu7zskzpdcw',
-      receiver: 'erd1ahauxqcaxvcksrcyyxzk5lrr3p8p8rjtayfue068nktrpjpvzers3dgvax',
+      sender: 'drt1qqqqqqqqqqqqqpgql6dxenaameqn2uyyru3nmmpf7e95zmlxu7zst7kwms',
+      receiver: 'drt1ahauxqcaxvcksrcyyxzk5lrr3p8p8rjtayfue068nktrpjpvzersv3l07c',
       senderShard: 1,
       receiverShard: 1,
       data: 'RVNEVFRyYW5zZmVyQDQ4NTk1MDQ1MmQzNjMxMzkzNjM2MzFAOGIzYzVhNDFhMDRhNjliMjdm',
@@ -168,14 +168,14 @@ describe('TagService', () => {
           category: "scCall",
           name: "dcdtTransfer",
         }],
-        receiver: 'erd1ahauxqcaxvcksrcyyxzk5lrr3p8p8rjtayfue068nktrpjpvzers3dgvax',
+        receiver: 'drt1ahauxqcaxvcksrcyyxzk5lrr3p8p8rjtayfue068nktrpjpvzersv3l07c',
         functionName: undefined,
         functionArgs: [],
       },
     };
 
     it('should return account smart contract results', async () => {
-      const address = 'erd1ahauxqcaxvcksrcyyxzk5lrr3p8p8rjtayfue068nktrpjpvzers3dgvax';
+      const address = 'drt1ahauxqcaxvcksrcyyxzk5lrr3p8p8rjtayfue068nktrpjpvzersv3l07c';
 
       jest.spyOn(indexerService, 'getAccountScResults').mockResolvedValue(mockIndexerScResults);
       jest.spyOn(transactionActionService, 'getTransactionAction').mockResolvedValue(mockTransactionAction);

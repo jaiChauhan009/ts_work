@@ -26,7 +26,7 @@ describe('Sign hook test', () => {
 
     await expectElementToContainText({
       dataTestId: DataTestIdsEnum.confirmReceiver,
-      text: 'erd1qqqqqqqqqqqqqpgqvuzv2xe949tdm0ryxxym5729ksfcjr20pltqlxgr8p'
+      text: 'drt1qqqqqqqqqqqqqpgqvuzv2xe949tdm0ryxxym5729ksfcjr20pltqz6lqyl'
     });
 
     await expectElementToContainText({
@@ -48,7 +48,7 @@ describe('Sign hook test', () => {
 
     await expectElementToContainText({
       dataTestId: DataTestIdsEnum.confirmReceiver,
-      text: 'erd1qqqqqqqqqqqqqpgqvuzv2xe949tdm0ryxxym5729ksfcjr20pltqlxgr8p'
+      text: 'drt1qqqqqqqqqqqqqpgqvuzv2xe949tdm0ryxxym5729ksfcjr20pltqz6lqyl'
     });
 
     await expectElementToContainText({
@@ -70,7 +70,7 @@ describe('Sign hook test', () => {
 
     await expectElementToContainText({
       dataTestId: DataTestIdsEnum.confirmReceiver,
-      text: 'erd1qqqqqqqqqqqqqpgqvuzv2xe949tdm0ryxxym5729ksfcjr20pltqlxgr8p'
+      text: 'drt1qqqqqqqqqqqqqpgqvuzv2xe949tdm0ryxxym5729ksfcjr20pltqz6lqyl'
     });
 
     await expectElementToContainText({

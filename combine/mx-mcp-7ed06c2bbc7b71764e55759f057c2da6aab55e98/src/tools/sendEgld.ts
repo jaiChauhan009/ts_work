@@ -62,5 +62,5 @@ export const sendRewaParamScheme = {
     .describe(
       "The amount of REWA to send. This amount will then be denominated (1 REWA=1000000000000000000)"
     ),
-  receiver: z.string().describe("The bech32 address of the receiver (erd1...)"),
+  receiver: z.string().describe("The bech32 address of the receiver (drt1...)"),
 };

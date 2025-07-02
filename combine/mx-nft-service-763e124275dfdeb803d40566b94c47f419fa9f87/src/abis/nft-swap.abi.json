@@ -510,7 +510,7 @@
   ],
   "hasCallback": false,
   "types": {
-    "EsdtToken": {
+    "DcdtToken": {
       "type": "struct",
       "fields": [
         {
@@ -528,7 +528,7 @@
       "fields": [
         {
           "name": "token",
-          "type": "EsdtToken"
+          "type": "DcdtToken"
         },
         {
           "name": "nr_tokens",
@@ -558,7 +558,7 @@
       "fields": [
         {
           "name": "token",
-          "type": "EsdtToken"
+          "type": "DcdtToken"
         },
         {
           "name": "nr_tokens",
@@ -578,7 +578,7 @@
         },
         {
           "name": "payment_token",
-          "type": "EsdtToken"
+          "type": "DcdtToken"
         },
         {
           "name": "original_owner",

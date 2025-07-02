@@ -8,10 +8,10 @@ export class TransactionPool {
   @ApiProperty({ type: String, description: 'Transaction hash', example: '39098e005c9f53622e9c8a946f9141d7c29a5da3bc38e07e056b549fa017ae1b' })
   txHash?: string;
 
-  @ApiProperty({ type: String, description: 'Sender bech32 address', example: 'erd1wh9c0sjr2xn8hzf02lwwcr4jk2s84tat9ud2kaq6zr7xzpvl9l5q8awmex' })
+  @ApiProperty({ type: String, description: 'Sender bech32 address', example: 'drt1wh9c0sjr2xn8hzf02lwwcr4jk2s84tat9ud2kaq6zr7xzpvl9l5q6pec6c' })
   sender?: string;
 
-  @ApiProperty({ type: String, description: 'Receiver bech32 address', example: 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz' })
+  @ApiProperty({ type: String, description: 'Receiver bech32 address', example: 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su' })
   receiver?: string;
 
   @ApiProperty({ type: Number, description: 'Transaction value', example: 1000000000000000000 })

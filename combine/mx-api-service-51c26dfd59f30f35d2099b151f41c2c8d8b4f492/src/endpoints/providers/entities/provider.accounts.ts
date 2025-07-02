@@ -5,7 +5,7 @@ export class ProviderAccounts {
     Object.assign(this, init);
   }
 
-  @ApiProperty({ type: String, nullable: true, example: 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz' })
+  @ApiProperty({ type: String, nullable: true, example: 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su' })
   address: string = '';
 
   @ApiProperty({ type: String, nullable: true, example: '9999109666430000000' })

@@ -19,7 +19,7 @@ export class AccountKey {
   @ApiProperty({ type: String, example: 'online' })
   status: string = '';
 
-  @ApiProperty({ type: String, example: 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz' })
+  @ApiProperty({ type: String, example: 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su' })
   rewardAddress: string = '';
 
   @ApiProperty({ type: String, nullable: true, example: '2' })

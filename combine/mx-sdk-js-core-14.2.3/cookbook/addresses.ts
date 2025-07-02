@@ -8,7 +8,7 @@ import { Address, AddressComputer, LibraryConfig } from "../src"; // md-ignore
     // ``` js
     {
         // Create an Address object from a bech32-encoded string // md-as-comment
-        const address = Address.newFromBech32("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th");
+        const address = Address.newFromBech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf");
 
         console.log("Address (bech32-encoded):", address.toBech32());
         console.log("Public key (hex-encoded):", address.toHex());
@@ -50,7 +50,7 @@ import { Address, AddressComputer, LibraryConfig } from "../src"; // md-ignore
     // Checking if an address is a smart contract
     // ``` js
 
-    const contractAddress = Address.newFromBech32("erd1qqqqqqqqqqqqqpgquzmh78klkqwt0p4rjys0qtp3la07gz4d396qn50nnm");
+    const contractAddress = Address.newFromBech32("drt1qqqqqqqqqqqqqpgquzmh78klkqwt0p4rjys0qtp3la07gz4d396qwgcss9");
     console.log("Is contract address:", contractAddress.isSmartContract());
     // ```
 

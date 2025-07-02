@@ -197,7 +197,7 @@ describe('Account Service', () => {
     });
 
     it('should call indexerService.getAccountsCount directly if filter.ownerAddress is provided', async () => {
-      const filter = new AccountQueryOptions({ ownerAddress: "erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz" });
+      const filter = new AccountQueryOptions({ ownerAddress: "drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su" });
       const expectedResult = 10;
 
       jest.spyOn(cacheService, 'getOrSet').mockResolvedValue(expectedResult);
@@ -251,7 +251,7 @@ describe('Account Service', () => {
     });
 
     it('should return verification data if the address is valid', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const verifierUrl = 'https://play-api.dharitri.org';
       const verificationData = { verified: true };
 
@@ -278,9 +278,9 @@ describe('Account Service', () => {
     });
 
     it('should return account data if the address is valid', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const accountData: AccountDetailed = {
-        address: 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz',
+        address: 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su',
         balance: '162486906126924046',
         nonce: 45,
         timestamp: 0,
@@ -314,7 +314,7 @@ describe('Account Service', () => {
 
   describe('getAccountTxCount', () => {
     it('should return account transactions count from transfer service', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const expectedTxCount = 100;
 
       jest.spyOn(transferService, 'getTransfersCount').mockResolvedValue(expectedTxCount);
@@ -332,7 +332,7 @@ describe('Account Service', () => {
   describe('getAccountScResults', () => {
     it('should return account smart contract results from transfer service',
       async () => {
-        const address = "erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz";
+        const address = "drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su";
         const expectedTxCount = 100;
 
         jest.spyOn(transferService, 'getTransfersCount').mockResolvedValue(expectedTxCount);
@@ -349,7 +349,7 @@ describe('Account Service', () => {
 
   describe('getAccountDeployedAt', () => {
     it('should call cachingService.getOrSet with the correct key and TTL', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const expectedResult = 1620000000;
 
       jest.spyOn(cacheService, 'getOrSet').mockResolvedValue(expectedResult);
@@ -364,7 +364,7 @@ describe('Account Service', () => {
 
   describe('getAccountDeployedAtRaw', () => {
     it('should return null if no scDeploy is found', async () => {
-      const address = 'erd1qqqqqqqqqqqqqpgqa0fsfshnff4n76jhcye6k7uvd7qacsq42jpsp6shh2';
+      const address = 'drt1qqqqqqqqqqqqqpgqa0fsfshnff4n76jhcye6k7uvd7qacsq42jpsux8555';
 
       jest.spyOn(indexerService, 'getScDeploy').mockResolvedValue(undefined);
 
@@ -375,7 +375,7 @@ describe('Account Service', () => {
     });
 
     it('should return null if no deployTxHash is found', async () => {
-      const address = 'erd1qqqqqqqqqqqqqpgqa0fsfshnff4n76jhcye6k7uvd7qacsq42jpsp6shh2';
+      const address = 'drt1qqqqqqqqqqqqqpgqa0fsfshnff4n76jhcye6k7uvd7qacsq42jpsux8555';
 
       jest.spyOn(indexerService, 'getScDeploy').mockResolvedValue(
         Promise.resolve({ deployTxHash: '', address: address, contract: address, initialCodeHash: '', deployer: address, timestamp: 1620000000, upgrades: [] }));
@@ -387,7 +387,7 @@ describe('Account Service', () => {
     });
 
     it('should return the timestamp if scDeploy, deployTxHash, and transaction are found', async () => {
-      const address = 'erd1qqqqqqqqqqqqqpgqa0fsfshnff4n76jhcye6k7uvd7qacsq42jpsp6shh2';
+      const address = 'drt1qqqqqqqqqqqqqpgqa0fsfshnff4n76jhcye6k7uvd7qacsq42jpsux8555';
       const txHash = "ca7acccc20a07695ba5657aac9c6e97b50fdcc9a77763447b9003721812271c7";
       const timestamp = 1620000000;
 
@@ -441,7 +441,7 @@ describe('Account Service', () => {
     });
 
     it('should return null if transaction is not found', async () => {
-      const address = 'erd1qqqqqqqqqqqqqpgqa0fsfshnff4n76jhcye6k7uvd7qacsq42jpsp6shh2';
+      const address = 'drt1qqqqqqqqqqqqqpgqa0fsfshnff4n76jhcye6k7uvd7qacsq42jpsux8555';
       const txHash = "invalid-tx";
 
       jest.spyOn(indexerService, 'getScDeploy').mockResolvedValue(
@@ -458,7 +458,7 @@ describe('Account Service', () => {
 
   describe('getAccountDeployedTxHash', () => {
     it('should call cachingService.getOrSet with the correct key and TTL', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const expectedResult = '1620000000';
 
       jest.spyOn(cacheService, 'getOrSet').mockResolvedValue(expectedResult);
@@ -472,7 +472,7 @@ describe('Account Service', () => {
   });
 
   describe('getAccountDeployedTxHashRaw', () => {
-    const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+    const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
     const txHash = 'ca7acccc20a07695ba5657aac9c6e97b50fdcc9a77763447b9003721812271c7';
     const initialCodeHash = 'kUVJtdwvHG2sCTi9l2uneSONUVonWfgHCK69gdB+52o=';
 
@@ -500,7 +500,7 @@ describe('Account Service', () => {
   });
 
   describe('getAccountIsVerified', () => {
-    const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+    const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
     const codeHash = 'ca7acccc20a07695ba5657aac9c6e97b50fdcc9a77763447b9003721812271c7';
 
     it('should call cachingService.getOrSet', async () => {
@@ -517,7 +517,7 @@ describe('Account Service', () => {
   });
 
   describe('getAccountIsVerifiedRaw', () => {
-    const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+    const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
     const codeHash = 'ca7acccc20a07695ba5657aac9c6e97b50fdcc9a77763447b9003721812271c7';
     const verifierUrl = 'https://play-api.dharitri.org';
 
@@ -557,7 +557,7 @@ describe('Account Service', () => {
 
   describe('getAccountContractsCount', () => {
     it('should return the number of contracts', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const contractsCount = 5;
 
       jest.spyOn(indexerService, 'getAccountDeploysCount').mockResolvedValue(contractsCount);
@@ -570,7 +570,7 @@ describe('Account Service', () => {
   });
 
   describe('getAccountHistoryCount', () => {
-    const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+    const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
     const filter = new AccountHistoryFilter({});
     const historyCount = 10;
 
@@ -585,7 +585,7 @@ describe('Account Service', () => {
   });
 
   describe('getAccountTokenHistoryCount', () => {
-    const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+    const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
     const tokenIdentifier = 'WREWA-bd4d79';
     const filter = new AccountHistoryFilter({});
     const tokenHistoryCount = 5;
@@ -601,18 +601,18 @@ describe('Account Service', () => {
   });
 
   describe('getAccountHistory', () => {
-    const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+    const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
     const pagination = { from: 0, size: 10 };
     const filter = new AccountHistoryFilter({});
 
     const elasticResult = [
       {
-        address: 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz',
+        address: 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su',
         timestamp: 1671354534,
         balance: '162486906126924046',
       },
       {
-        address: 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz',
+        address: 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su',
         timestamp: 1671354486,
         balance: '162363149176924046',
       },
@@ -631,14 +631,14 @@ describe('Account Service', () => {
   });
 
   describe('getAccountTokenHistory', () => {
-    const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+    const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
     const token = 'WREWA-bd4d79';
     const pagination = { from: 0, size: 10 };
     const filter = new AccountHistoryFilter({});
 
     const elasticResult = [
       {
-        address: 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz',
+        address: 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su',
         timestamp: 1640603532,
         balance: '0',
         token: 'WREWA-bd4d79',
@@ -649,7 +649,7 @@ describe('Account Service', () => {
         isSmartContract: false,
       },
       {
-        address: 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz',
+        address: 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su',
         timestamp: 1640603532,
         balance: '0',
         token: 'WREWA-bd4d79',
@@ -674,13 +674,13 @@ describe('Account Service', () => {
   });
 
   describe('getAccountDcdtHistory', () => {
-    const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+    const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
     const pagination = { from: 0, size: 10 };
     const filter = new AccountHistoryFilter({});
 
     const elasticResult = [
       {
-        address: 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz',
+        address: 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su',
         timestamp: 1640603532,
         balance: '0',
         token: 'WREWA-bd4d79',
@@ -691,7 +691,7 @@ describe('Account Service', () => {
         isSmartContract: false,
       },
       {
-        address: 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz',
+        address: 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su',
         timestamp: 1640603532,
         balance: '0',
         token: 'WREWA-bd4d79',
@@ -725,7 +725,7 @@ describe('Account Service', () => {
   });
 
   describe('getAccountDcdtHistoryCount', () => {
-    const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+    const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
     const filter = new AccountHistoryFilter({});
     const dcdtHistoryCount = 5;
 
@@ -741,30 +741,30 @@ describe('Account Service', () => {
 
   describe('getContractUpgrades', () => {
     const queryPagination = new QueryPagination({ from: 0, size: 2 });
-    const address = 'erd1qqqqqqqqqqqqqpgqeel2kumf0r8ffyhth7pqdujjat9nx0862jpsg2pqaq';
+    const address = 'drt1qqqqqqqqqqqqqpgqeel2kumf0r8ffyhth7pqdujjat9nx0862jps4kkr77';
 
     const details = {
-      address: 'erd1qqqqqqqqqqqqqpgqeel2kumf0r8ffyhth7pqdujjat9nx0862jpsg2pqaq',
+      address: 'drt1qqqqqqqqqqqqqpgqeel2kumf0r8ffyhth7pqdujjat9nx0862jps4kkr77',
       deployTxHash: '32be840b215a7343ca7c0cbd35c517fd2c04aba22e4465ee1146d59dc7359cd3',
-      deployer: 'erd1qqqqqqqqqqqqqpgqq66xk9gfr4esuhem3jru86wg5hvp33a62jps2fy57p',
+      deployer: 'drt1qqqqqqqqqqqqqpgqq66xk9gfr4esuhem3jru86wg5hvp33a62jpsh4nhal',
       initialCodeHash: 'kUVJtdwvHG2sCTi9l2uneSONUVonWfgHCK69gdB',
       timestamp: 1636895604,
-      contract: 'erd1qqqqqqqqqqqqqpgqeel2kumf0r8ffyhth7pqdujjat9nx0862jpsg2pqaq',
+      contract: 'drt1qqqqqqqqqqqqqpgqeel2kumf0r8ffyhth7pqdujjat9nx0862jps4kkr77',
       upgrades: [
         {
-          upgrader: 'erd1qqqqqqqqqqqqqpgqq66xk9gfr4esuhem3jru86wg5hvp33a62jps2fy57p',
+          upgrader: 'drt1qqqqqqqqqqqqqpgqq66xk9gfr4esuhem3jru86wg5hvp33a62jpsh4nhal',
           codeHash: 'WFdobEwmytuddWRc8yVm0Pm1AMwoES5n4yQ0WRjtG2g=',
           upgradeTxHash: '1c8c6b2148f25621fa2c798a2c9a184df61fdd1991aa0af7ea01eb7b89025d2a',
           timestamp: 1638577452,
         },
         {
-          upgrader: 'erd1qqqqqqqqqqqqqpgqq66xk9gfr4esuhem3jru86wg5hvp33a62jps2fy57p',
+          upgrader: 'drt1qqqqqqqqqqqqqpgqq66xk9gfr4esuhem3jru86wg5hvp33a62jpsh4nhal',
           codeHash: 'WFdobEwmytuddWRc8yVm0Pm1AMwoES5n4yQ0WRjtG3g=',
           upgradeTxHash: 'fb586bdbdeadab8e7a5d0cf6b4aa815e459614eea357b912de6a9087a7c00ab3',
           timestamp: 1638577752,
         },
         {
-          upgrader: 'erd1qqqqqqqqqqqqqpgqq66xk9gfr4esuhem3jru86wg5hvp33a62jps2fy57p',
+          upgrader: 'drt1qqqqqqqqqqqqqpgqq66xk9gfr4esuhem3jru86wg5hvp33a62jpsh4nhal',
           codeHash: 'WFdobEwmytuddWRc8yVm0Pm1AMwoES5n4yQ0WRjtG4g=',
           upgradeTxHash: 'a0a94ee0e8f9c4de12fe35d849d81f7b0885eb203eca33275faf115536290af8',
           timestamp: 1654616658,
@@ -772,7 +772,7 @@ describe('Account Service', () => {
         {
           upgradeTxHash: '7af97da5a00e9f927df7f19a095800f381c185a6a0a6d6bca46b3db6235ff1d2',
           codeHash: 'WFdobEwmytuddWRc8yVm0Pm1AMwoES5n4yQ0WRjtG5g=',
-          upgrader: 'erd1qqqqqqqqqqqqqpgqq66xk9gfr4esuhem3jru86wg5hvp33a62jps2fy57p',
+          upgrader: 'drt1qqqqqqqqqqqqqpgqq66xk9gfr4esuhem3jru86wg5hvp33a62jpsh4nhal',
           timestamp: 1670612868,
         },
       ],
@@ -808,30 +808,30 @@ describe('Account Service', () => {
 
   describe('getAccountContracts', () => {
     const pagination = { from: 0, size: 2 };
-    const address = 'erd1qqqqqqqqqqqqqpgqeel2kumf0r8ffyhth7pqdujjat9nx0862jpsg2pqaq';
+    const address = 'drt1qqqqqqqqqqqqqpgqeel2kumf0r8ffyhth7pqdujjat9nx0862jps4kkr77';
 
     const details = [{
-      address: 'erd1qqqqqqqqqqqqqpgqeel2kumf0r8ffyhth7pqdujjat9nx0862jpsg2pqaq',
+      address: 'drt1qqqqqqqqqqqqqpgqeel2kumf0r8ffyhth7pqdujjat9nx0862jps4kkr77',
       deployTxHash: '32be840b215a7343ca7c0cbd35c517fd2c04aba22e4465ee1146d59dc7359cd3',
-      deployer: 'erd1qqqqqqqqqqqqqpgqq66xk9gfr4esuhem3jru86wg5hvp33a62jps2fy57p',
+      deployer: 'drt1qqqqqqqqqqqqqpgqq66xk9gfr4esuhem3jru86wg5hvp33a62jpsh4nhal',
       initialCodeHash: 'kUVJtdwvHG2sCTi9l2uneSONUVonWfgHCK69gdB',
       timestamp: 1636895604,
-      contract: 'erd1qqqqqqqqqqqqqpgqeel2kumf0r8ffyhth7pqdujjat9nx0862jpsg2pqaq',
+      contract: 'drt1qqqqqqqqqqqqqpgqeel2kumf0r8ffyhth7pqdujjat9nx0862jps4kkr77',
       upgrades: [
         {
-          upgrader: 'erd1qqqqqqqqqqqqqpgqq66xk9gfr4esuhem3jru86wg5hvp33a62jps2fy57p',
+          upgrader: 'drt1qqqqqqqqqqqqqpgqq66xk9gfr4esuhem3jru86wg5hvp33a62jpsh4nhal',
           codeHash: 'WFdobEwmytuddWRc8yVm0Pm1AMwoES5n4yQ0WRjtG2g=',
           upgradeTxHash: '1c8c6b2148f25621fa2c798a2c9a184df61fdd1991aa0af7ea01eb7b89025d2a',
           timestamp: 1638577452,
         },
         {
-          upgrader: 'erd1qqqqqqqqqqqqqpgqq66xk9gfr4esuhem3jru86wg5hvp33a62jps2fy57p',
+          upgrader: 'drt1qqqqqqqqqqqqqpgqq66xk9gfr4esuhem3jru86wg5hvp33a62jpsh4nhal',
           codeHash: 'WFdobEwmytuddWRc8yVm0Pm1AMwoES5n4yQ0WRjtG3g=',
           upgradeTxHash: 'fb586bdbdeadab8e7a5d0cf6b4aa815e459614eea357b912de6a9087a7c00ab3',
           timestamp: 1638577752,
         },
         {
-          upgrader: 'erd1qqqqqqqqqqqqqpgqq66xk9gfr4esuhem3jru86wg5hvp33a62jps2fy57p',
+          upgrader: 'drt1qqqqqqqqqqqqqpgqq66xk9gfr4esuhem3jru86wg5hvp33a62jpsh4nhal',
           codeHash: 'WFdobEwmytuddWRc8yVm0Pm1AMwoES5n4yQ0WRjtG4g=',
           upgradeTxHash: 'a0a94ee0e8f9c4de12fe35d849d81f7b0885eb203eca33275faf115536290af8',
           timestamp: 1654616658,
@@ -839,14 +839,14 @@ describe('Account Service', () => {
         {
           upgradeTxHash: '7af97da5a00e9f927df7f19a095800f381c185a6a0a6d6bca46b3db6235ff1d2',
           codeHash: 'WFdobEwmytuddWRc8yVm0Pm1AMwoES5n4yQ0WRjtG5g=',
-          upgrader: 'erd1qqqqqqqqqqqqqpgqq66xk9gfr4esuhem3jru86wg5hvp33a62jps2fy57p',
+          upgrader: 'drt1qqqqqqqqqqqqqpgqq66xk9gfr4esuhem3jru86wg5hvp33a62jpsh4nhal',
           timestamp: 1670612868,
         },
       ],
     }];
 
     const assets: { [key: string]: AccountAssets } = {
-      erd1qqqqqqqqqqqqqpgqc0htpys8vhtf5m3tg7t6ts2wvkgx3favqrhsdsz9w0: {
+      drt1qqqqqqqqqqqqqpgqc0htpys8vhtf5m3tg7t6ts2wvkgx3favqrhssv4xd3: {
         name: 'Dharitri  DNS: Contract 239',
         description: '',
         social: new AccountAssetsSocial({
@@ -886,13 +886,13 @@ describe('Account Service', () => {
   describe('getAccounts', () => {
     const elasticIndexerMock = [
       {
-        address: 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqplllst77y4l',
+        address: 'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqplllsphc9lf',
         developerRewardsNum: 1.2784189545,
         totalBalanceWithStakeNum: 17420283.932524484,
         balance: '17420283932524481604580318',
         balanceNum: 17420283.932524484,
         developerRewards: '1278418954499998714',
-        currentOwner: 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqplllst77y4l',
+        currentOwner: 'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqplllsphc9lf',
         totalBalanceWithStake: '17420283932524481604580318',
         shardID: 4294967295,
         nonce: 1,
@@ -901,7 +901,7 @@ describe('Account Service', () => {
     ];
 
     const assets: { [key: string]: AccountAssets } = {
-      erd1qqqqqqqqqqqqqpgqykt0f03czqj2p9qltpygzu7jwlzkaxqaqpdq07cak6: {
+      drt1qqqqqqqqqqqqqpgqykt0f03czqj2p9qltpygzu7jwlzkaxqaqpdqjz074y: {
         name: "System: Staking Module",
         description: "Smart contract containing all staked REWA on the network",
         tags: [
@@ -918,7 +918,7 @@ describe('Account Service', () => {
     };
 
     const ownerAssets: { [key: string]: AccountAssets } = {
-      erd1qqqqqqqqqqqqqpgqykt0f03czqj2p9qltpygzu7jwlzkaxqaqpdq07cak6: {
+      drt1qqqqqqqqqqqqqpgqykt0f03czqj2p9qltpygzu7jwlzkaxqaqpdqjz074y: {
         name: "System: Staking Module",
         description: "Smart contract containing all staked REWA on the network",
         tags: [
@@ -936,12 +936,12 @@ describe('Account Service', () => {
 
     const accountsRawMock = [
       new Account({
-        address: 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqplllst77y4l',
+        address: 'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqplllsphc9lf',
         balance: '17420808473771662313204012',
         nonce: 1,
         timestamp: 1703677860,
         shard: 4294967295,
-        ownerAddress: 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqplllst77y4l',
+        ownerAddress: 'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqplllsphc9lf',
         assets: {
           name: "System: Staking Module",
           description: "Smart contract containing all staked REWA on the network",
@@ -956,7 +956,7 @@ describe('Account Service', () => {
           proof: '',
           social: undefined,
         },
-        ownerAssets: ownerAssets['erd1qqqqqqqqqqqqqpgqykt0f03czqj2p9qltpygzu7jwlzkaxqaqpdq07cak6'],
+        ownerAssets: ownerAssets['drt1qqqqqqqqqqqqqpgqykt0f03czqj2p9qltpygzu7jwlzkaxqaqpdqjz074y'],
       }),
     ];
 
@@ -1003,7 +1003,7 @@ describe('Account Service', () => {
 
       expect(service.getAccountsRaw).toHaveBeenCalledWith(new QueryPagination({ size: 1 }), filter);
       expect(result[0]).toHaveProperty('ownerAssets');
-      expect(result[0].ownerAssets).toEqual(ownerAssets['erd1qqqqqqqqqqqqqpgqykt0f03czqj2p9qltpygzu7jwlzkaxqaqpdq07cak6']);
+      expect(result[0].ownerAssets).toEqual(ownerAssets['drt1qqqqqqqqqqqqqpgqykt0f03czqj2p9qltpygzu7jwlzkaxqaqpdqjz074y']);
     });
   });
 });

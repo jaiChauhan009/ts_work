@@ -16,7 +16,7 @@ describe('AccountStatsResolver', () => {
 
   describe('Query #accountStats', () => {
     const mutation = () => `
-      { accountStats(filters: { address: "erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha" }) {
+      { accountStats(filters: { address: "drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r" }) {
         address
         auctions
         biddingBalance
@@ -36,7 +36,7 @@ describe('AccountStatsResolver', () => {
           auctions: '2',
           orders: '0',
           biddingBalance: '0',
-          address: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+          address: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
         }),
       );
       jest.spyOn(accountStatsService, 'getClaimableCount').mockResolvedValue(5);
@@ -52,7 +52,7 @@ describe('AccountStatsResolver', () => {
           expect(res.body).toEqual({
             data: {
               accountStats: {
-                address: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+                address: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
                 auctions: '2',
                 biddingBalance: '0',
                 claimable: '5',

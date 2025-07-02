@@ -28,7 +28,7 @@ describe('CrossWindowProvider Login', () => {
   it('should sign a message correctly', async () => {
     const mockMessage = new Message({ data: Buffer.from('test') });
     crossWindowProvider.setAddress(
-      'erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th'
+      'drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf'
     );
     await crossWindowProvider.init();
     const result = await crossWindowProvider.signMessage(mockMessage);

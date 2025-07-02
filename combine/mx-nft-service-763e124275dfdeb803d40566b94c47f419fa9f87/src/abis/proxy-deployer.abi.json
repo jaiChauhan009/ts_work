@@ -273,7 +273,7 @@
       ]
     }
   ],
-  "esdtAttributes": [],
+  "dcdtAttributes": [],
   "hasCallback": false,
   "types": {
     "OngoingUpgradeOperation": {

@@ -155,8 +155,8 @@ describe('NodeService', () => {
         online: true,
         nonce: 8160575,
         instances: 1,
-        owner: "erd1kz2kumr0clug4ht2ek0l4l9drvq3rne9lmkwrjf3qv2luyuuaj2szjwv0f",
-        provider: "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqy8lllls62y8s5",
+        owner: "drt1kz2kumr0clug4ht2ek0l4l9drvq3rne9lmkwrjf3qv2luyuuaj2slwe0vh",
+        provider: "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqy8llllssrzx6z",
         stake: "2500000000000000000000",
         topUp: "688187259066013399629",
         locked: "3188187259066013399629",
@@ -297,7 +297,7 @@ describe('NodeService', () => {
 
       it('should return the correct count of nodes with owner', async () => {
         const allNodesSpy = jest.spyOn(nodeService, 'getAllNodes').mockResolvedValueOnce(Promise.resolve(mockNodes));
-        const owner = "erd1kz2kumr0clug4ht2ek0l4l9drvq3rne9lmkwrjf3qv2luyuuaj2szjwv0f";
+        const owner = "drt1kz2kumr0clug4ht2ek0l4l9drvq3rne9lmkwrjf3qv2luyuuaj2slwe0vh";
         const result = await nodeService.getNodeCount(new NodeFilter({ owner: owner }));
 
         expect(result).toStrictEqual(2);
@@ -306,7 +306,7 @@ describe('NodeService', () => {
 
       it('should return the correct count of nodes with provider', async () => {
         const allNodesSpy = jest.spyOn(nodeService, 'getAllNodes').mockResolvedValueOnce(Promise.resolve(mockNodes));
-        const provider = "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqxlllllsmehg53";
+        const provider = "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqxllllls3s3f78";
         const result = await nodeService.getNodeCount(new NodeFilter({ provider: provider }));
 
         expect(result).toStrictEqual(2);
@@ -484,7 +484,7 @@ describe('NodeService', () => {
 
     describe('deleteOwnersForAddressInCache', () => {
       it('should return an empty array if no cache entries are found for an address', async () => {
-        const address = 'erd1qqqqqqqqqqqqqpgqp699jngundfqw07d8jzkepucvpzush6k3wvqyc44rx';
+        const address = 'drt1qqqqqqqqqqqqqpgqp699jngundfqw07d8jzkepucvpzush6k3wvqeyzkqc';
         const allNodesSpy = jest.spyOn(nodeService, 'getAllNodes').mockResolvedValueOnce(Promise.resolve(mockNodes));
         const currentEpochSpy = jest.spyOn(nodeService['blockService'], 'getCurrentEpoch').mockResolvedValue(1);
 
@@ -505,7 +505,7 @@ describe('NodeService', () => {
           '003ba6237f0f7c269eebfecb6a0a0796076c02593846e1ce89aee9b832b94dd54e93d35b03dc3d5944b1aae916722506faf959a47cabf2d00f567ad50b10f8f1a40ab0316fdf302454f7aea58b23109ccfdce082bd16fb262342a1382b802c10'];
         const epoch = 10;
         const keys = blses.map((bls) => CacheInfo.OwnerByEpochAndBls(epoch, bls).key);
-        const values = ['erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqy8lllls62y8s5', 'erd1qzwd98g6xjs6h33ezxc9ey766ee082z9q4yvj46r8p7xqnl0eenqvxtaz3'];
+        const values = ['drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqy8llllssrzx6z', 'drt1qzwd98g6xjs6h33ezxc9ey766ee082z9q4yvj46r8p7xqnl0eenq36u7p0'];
         const barchGetManyRemoteSpy = jest.spyOn(nodeService['cacheService'], 'batchGetManyRemote').mockResolvedValue(values);
 
         const result = await nodeService.getOwners(blses, epoch);
@@ -517,7 +517,7 @@ describe('NodeService', () => {
 
       it('should query missing values and cache them', async () => {
         const epoch = 123;
-        const cached = ['erd1kz2kumr0clug4ht2ek0l4l9drvq3rne9lmkwrjf3qv2luyuuaj2szjwv0f', null, 'erd1qzwd98g6xjs6h33ezxc9ey766ee082z9q4yvj46r8p7xqnl0eenqvxtaz3', null];
+        const cached = ['drt1kz2kumr0clug4ht2ek0l4l9drvq3rne9lmkwrjf3qv2luyuuaj2slwe0vh', null, 'drt1qzwd98g6xjs6h33ezxc9ey766ee082z9q4yvj46r8p7xqnl0eenq36u7p0', null];
         const existingBlses: string[] =
           ['00198be6aae517a382944cd5a97845857f3b122bb1edf1588d60ed421d32d16ea2767f359a0d714fae3a35c1b0cf4e1141d701d5d1d24160e49eeaebeab21e2f89a2b7c44f3a313383d542e69800cfb6e115406d3d8114b4044ef5a04acf0408',
             '003ba6237f0f7c269eebfecb6a0a0796076c02593846e1ce89aee9b832b94dd54e93d35b03dc3d5944b1aae916722506faf959a47cabf2d00f567ad50b10f8f1a40ab0316fdf302454f7aea58b23109ccfdce082bd16fb262342a1382b802c10',
@@ -533,9 +533,9 @@ describe('NodeService', () => {
         const result = await nodeService.getOwners(existingBlses, epoch);
         expect(result).toStrictEqual(
           [
-            'erd1kz2kumr0clug4ht2ek0l4l9drvq3rne9lmkwrjf3qv2luyuuaj2szjwv0f',
+            'drt1kz2kumr0clug4ht2ek0l4l9drvq3rne9lmkwrjf3qv2luyuuaj2slwe0vh',
             undefined,
-            'erd1qzwd98g6xjs6h33ezxc9ey766ee082z9q4yvj46r8p7xqnl0eenqvxtaz3',
+            'drt1qzwd98g6xjs6h33ezxc9ey766ee082z9q4yvj46r8p7xqnl0eenq36u7p0',
             undefined,
           ]
         );
@@ -545,9 +545,9 @@ describe('NodeService', () => {
 
     describe('getOwnerBlses', () => {
       it('should return empty array if getBlsKeysStatusListEncoded is returning []', async () => {
-        const address = 'erd1kz2kumr0clug4ht2ek0l4l9drvq3rne9lmkwrjf3qv2luyuuaj2szjwv0f';
+        const address = 'drt1kz2kumr0clug4ht2ek0l4l9drvq3rne9lmkwrjf3qv2luyuuaj2slwe0vh';
 
-        jest.spyOn(apiConfigService, 'getAuctionContractAddress').mockReturnValue('erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqplllst77y4l');
+        jest.spyOn(apiConfigService, 'getAuctionContractAddress').mockReturnValue('drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqplllsphc9lf');
         jest.spyOn(nodeService['vmQueryService'], 'vmQuery').mockResolvedValueOnce([]);
 
         const result = await nodeService.getOwnerBlses(address);
@@ -557,14 +557,14 @@ describe('NodeService', () => {
       });
 
       it('should return an array of BLS keys', async () => {
-        const address = 'erd1kz2kumr0clug4ht2ek0l4l9drvq3rne9lmkwrjf3qv2luyuuaj2szjwv0f';
+        const address = 'drt1kz2kumr0clug4ht2ek0l4l9drvq3rne9lmkwrjf3qv2luyuuaj2slwe0vh';
         const expectedBls = ["00198be6aae517a382944cd5a97845857f3b122bb1edf1588d60ed421d32d16ea2767f359a0d714fae3a35c1b0cf4e1141d701d5d1d24160e49eeaebeab21e2f89a2b7c44f3a313383d542e69800cfb6e115406d3d8114b4044ef5a04acf0408"];
         const getBlsKeysStatusListEncoded = [
           'ABmL5qrlF6OClEzVqXhFhX87Eiux7fFYjWDtQh0y0W6idn81mg1xT646NcGwz04RQdcB1dHSQWDknurr6rIeL4mit8RPOjEzg9VC5pgAz7bhFUBtPYEUtARO9aBKzwQI',
           'ADumI38PfCae6/7LagoHlgdsAlk4RuHOia7puDK5TdVOk9NbA9w9WUSxqukWciUG+vlZpHyr8tAPVnrVCxD48aQKsDFv3zAkVPeupYsjEJzP3OCCvRb7JiNCoTgrgCwQ',
         ];
 
-        jest.spyOn(apiConfigService, 'getAuctionContractAddress').mockReturnValue('erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqplllst77y4l');
+        jest.spyOn(apiConfigService, 'getAuctionContractAddress').mockReturnValue('drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqplllsphc9lf');
         jest.spyOn(nodeService['vmQueryService'], 'vmQuery').mockResolvedValueOnce(getBlsKeysStatusListEncoded);
 
         const result = await nodeService.getOwnerBlses(address);
@@ -619,7 +619,7 @@ describe('NodeService', () => {
           nodes: [{
             blsKey: '072a9fba41a1460860974110b6b5e336e7e316f1400135f91b629b6455b18d42d6fc650ba43c6577b275dd9b55e1bd1651ac70580f4c787e4c76b580c3150c0a00d7bb97fed2363792a61112867de8ca2447a4d47098f2a48ce199d5989f3182', qualified: true,
           }],
-          owner: "erd13xsdkqytfuthgfaq867sr0n5sxhvn0twmmlkrd8c29ltvw59d27s2dud48",
+          owner: "drt13xsdkqytfuthgfaq867sr0n5sxhvn0twmmlkrd8c29ltvw59d27sh3twke",
           numStakedNodes: 3,
           totalTopUp: "",
           topUpPerNode: "",
@@ -627,7 +627,7 @@ describe('NodeService', () => {
         },
         {
           nodes: [{ blsKey: '017cf4eaf5833bfb82ddf1c3255f339bc43c28d428972736da6fa4bc6d3ea0443e7065ae49ce5b5a2b63bef68f99560b77360eeecba56bc3e5600df49cd1fcfefa3a7caf83a7060c8b0955971147525b154220b61a3fe3714212dc1fb2579088', qualified: true }, { blsKey: 'bls2', qualified: true }],
-          owner: "erd13xsdkqytfuthgfaq867sr0n5sxhvn0twmmlkrd8c29ltvw59d27s2dud48",
+          owner: "drt13xsdkqytfuthgfaq867sr0n5sxhvn0twmmlkrd8c29ltvw59d27sh3twke",
           numStakedNodes: 3,
           totalTopUp: "",
           topUpPerNode: "",
@@ -646,7 +646,7 @@ describe('NodeService', () => {
         jest.spyOn(nodeService, 'getNodes').mockResolvedValue(mockNodes);
         jest.spyOn(gatewayService, 'getValidatorAuctions').mockResolvedValue([{
           nodes: [{ blsKey: '017cf4eaf5833bfb82ddf1c3255f339bc43c28d428972736da6fa4bc6d3ea0443e7065ae49ce5b5a2b63bef68f99560b77360eeecba56bc3e5600df49cd1fcfefa3a7caf83a7060c8b0955971147525b154220b61a3fe3714212dc1fb2579088', qualified: true }, { blsKey: 'bls2', qualified: true }],
-          owner: "erd13xsdkqytfuthgfaq867sr0n5sxhvn0twmmlkrd8c29ltvw59d27s2dud48",
+          owner: "drt13xsdkqytfuthgfaq867sr0n5sxhvn0twmmlkrd8c29ltvw59d27sh3twke",
           numStakedNodes: 3,
           totalTopUp: "",
           topUpPerNode: "",
@@ -654,7 +654,7 @@ describe('NodeService', () => {
         },
         {
           nodes: [{ blsKey: '072a9fba41a1460860974110b6b5e336e7e316f1400135f91b629b6455b18d42d6fc650ba43c6577b275dd9b55e1bd1651ac70580f4c787e4c76b580c3150c0a00d7bb97fed2363792a61112867de8ca2447a4d47098f2a48ce199d5989f3182', qualified: true }, { blsKey: 'bls2', qualified: true }],
-          owner: "erd1qqqqqqqqqqqqqpgq97wezxw6l7lgg7k9rxvycrz66vn92ksh2tssxwf7ep",
+          owner: "drt1qqqqqqqqqqqqqpgq97wezxw6l7lgg7k9rxvycrz66vn92ksh2tssmj7a6l",
           numStakedNodes: 2,
           totalTopUp: "",
           topUpPerNode: "",

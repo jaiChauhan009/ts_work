@@ -76,7 +76,7 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -129,7 +129,7 @@
             ],
             "outputs": [
                 {
-                    "type": "List<EsdtTokenPayment>"
+                    "type": "List<DcdtTokenPayment>"
                 }
             ]
         },
@@ -151,7 +151,7 @@
             ],
             "outputs": [
                 {
-                    "type": "List<EsdtTokenPayment>"
+                    "type": "List<DcdtTokenPayment>"
                 }
             ]
         },
@@ -182,7 +182,7 @@
             ],
             "outputs": [
                 {
-                    "type": "List<EsdtTokenPayment>"
+                    "type": "List<DcdtTokenPayment>"
                 }
             ]
         },
@@ -204,15 +204,15 @@
             ],
             "outputs": [
                 {
-                    "type": "List<EsdtTokenPayment>"
+                    "type": "List<DcdtTokenPayment>"
                 }
             ]
         }
     ],
-    "esdtAttributes": [],
+    "dcdtAttributes": [],
     "hasCallback": false,
     "types": {
-        "EsdtTokenPayment": {
+        "DcdtTokenPayment": {
             "type": "struct",
             "fields": [
                 {

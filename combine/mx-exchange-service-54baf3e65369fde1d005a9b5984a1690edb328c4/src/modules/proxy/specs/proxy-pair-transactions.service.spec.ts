@@ -93,8 +93,8 @@ describe('TransactionProxyPairService', () => {
         );
 
         const liquidityBatchTransactions = await service.addLiquidityProxyBatch(
-            'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
-            'erd1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps89fxnl',
+            'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
+            'drt1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps6e79sp',
             {
                 pairAddress: Address.Zero().bech32(),
                 tokens: [
@@ -144,8 +144,8 @@ describe('TransactionProxyPairService', () => {
         );
 
         const liquidityBatchTransactions = await service.addLiquidityProxyBatch(
-            'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
-            'erd1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps89fxnl',
+            'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
+            'drt1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps6e79sp',
             {
                 pairAddress: Address.Zero().bech32(),
                 tokens: [

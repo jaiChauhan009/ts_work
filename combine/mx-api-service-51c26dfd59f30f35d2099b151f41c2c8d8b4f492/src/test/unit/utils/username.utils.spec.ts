@@ -15,8 +15,8 @@ describe('Username Utils', () => {
   });
   describe('getContractAddress', () => {
     it('Get Contract Address from normalized userName', () => {
-      expect(UsernameUtils.getContractAddress('alice')).toStrictEqual('erd1qqqqqqqqqqqqqpgqf97pgqdy0tstwauxu09kszz020hp5kgqqzzsscqtww');
-      expect(UsernameUtils.getContractAddress('alice@google.com')).toStrictEqual('erd1qqqqqqqqqqqqqpgqexv860na2t9cwgrvmrydgre23uc5g0ptqqts4tusev');
+      expect(UsernameUtils.getContractAddress('alice')).toStrictEqual('drt1qqqqqqqqqqqqqpgqf97pgqdy0tstwauxu09kszz020hp5kgqqzzsdyhgds');
+      expect(UsernameUtils.getContractAddress('alice@google.com')).toStrictEqual('drt1qqqqqqqqqqqqqpgqexv860na2t9cwgrvmrydgre23uc5g0ptqqtsghtn6j');
     });
   });
   describe('extractUsernameFromRawBase64', () => {

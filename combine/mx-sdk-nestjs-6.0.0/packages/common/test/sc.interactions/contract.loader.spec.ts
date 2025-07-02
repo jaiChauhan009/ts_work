@@ -3,7 +3,7 @@ import * as fs from "fs";
 import { SmartContract, AbiRegistry } from "@terradharitri/sdk-core";
 
 describe("Contract loader", () => {
-  const CONTRACT_ADDRESS = "erd1qqqqqqqqqqqqqpgqkdz87p5raf5tsyv66ld8cu49nf2dqpp9d8ss36ltf2";
+  const CONTRACT_ADDRESS = "drt1qqqqqqqqqqqqqpgqkdz87p5raf5tsyv66ld8cu49nf2dqpp9d8ssvxgg25";
   const ABI_PATH: string = 'test/sc.interactions/test.abi.json';
   const CONTRACT_INTERFACE: string = 'Metabonding';
   const contractLoader: ContractLoader = new ContractLoader(ABI_PATH, CONTRACT_INTERFACE);
@@ -52,7 +52,7 @@ describe("Contract loader", () => {
 
     expect(c1.getAddress().bech32()).toStrictEqual(CONTRACT_ADDRESS);
 
-    const c2 = await cLoader.getContract('erd1qqqqqqqqqqqqqpgq50dge6rrpcra4tp9hl57jl0893a4r2r72jpsk39rjj');
-    expect(c2.getAddress().bech32()).toStrictEqual('erd1qqqqqqqqqqqqqpgq50dge6rrpcra4tp9hl57jl0893a4r2r72jpsk39rjj');
+    const c2 = await cLoader.getContract('drt1qqqqqqqqqqqqqpgq50dge6rrpcra4tp9hl57jl0893a4r2r72jpstdjq3v');
+    expect(c2.getAddress().bech32()).toStrictEqual('drt1qqqqqqqqqqqqqpgq50dge6rrpcra4tp9hl57jl0893a4r2r72jpstdjq3v');
   });
 });

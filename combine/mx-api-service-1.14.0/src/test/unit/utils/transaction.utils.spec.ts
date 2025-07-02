@@ -114,13 +114,13 @@ describe('Transaction Utils', () => {
 
     transaction = new ShardTransaction();
     transaction.data = 'Y2hhbmdlU0ZUVG9NZXRhRVNEVA==';
-    transaction.sender = 'erd13wtw8k3vch93g5w74a7x35kld2hqm73kcn644l49669qr425wyfquyk02a';
-    transaction.receiver = 'erd1qqqqqqqqqqqqqpgq95786n3gs5ddqxvwhtdyjepep740xqrkys5swtr2gm';
+    transaction.sender = 'drt13wtw8k3vch93g5w74a7x35kld2hqm73kcn644l49669qr425wyfqpcpvfr';
+    transaction.receiver = 'drt1qqqqqqqqqqqqqpgq95786n3gs5ddqxvwhtdyjepep740xqrkys5snh5ft9';
     expect(extractor.canDetectNftCreateTransactionFromLogs(transaction)).toBe(false);
 
     transaction = new ShardTransaction();
-    transaction.sender = 'erd13wtw8k3vch93g5w74a7x35kld2hqm73kcn644l49669qr425wyfquyk02a';
-    transaction.receiver = 'erd1qqqqqqqqqqqqqpgq95786n3gs5ddqxvwhtdyjepep740xqrkys5swtr2gm';
+    transaction.sender = 'drt13wtw8k3vch93g5w74a7x35kld2hqm73kcn644l49669qr425wyfqpcpvfr';
+    transaction.receiver = 'drt1qqqqqqqqqqqqqpgq95786n3gs5ddqxvwhtdyjepep740xqrkys5snh5ft9';
     transaction.data = 'YnV5QDUzNzU2MjYzNjE3MjcwNjE3NDY5NGY0NzczQDAx';
     expect(extractor.canDetectNftCreateTransactionFromLogs(transaction)).toBe(true);
   });
@@ -184,8 +184,8 @@ describe('Transaction Utils', () => {
         dcdtType: DcdtType.FungibleDCDT,
         identifier: "WUSDC-91dfa4",
         name: "WrappedUSDC",
-        sender: "erd1qqqqqqqqqqqqqpgqxe80hegndzmp25c2qnsutze45h8q7nlud8ssplfp8u",
-        receiver: "erd1f04mhj7mjedkd4snav6zpyjtlgqpnp8hv5ex4sw38wck9ep09s8qhh5k5v",
+        sender: "drt1qqqqqqqqqqqqqpgqxe80hegndzmp25c2qnsutze45h8q7nlud8ssur7zyz",
+        receiver: "drt1f04mhj7mjedkd4snav6zpyjtlgqpnp8hv5ex4sw38wck9ep09s8q2tr4hj",
         value: "25000000",
         decimals: 6,
       }),
@@ -196,8 +196,8 @@ describe('Transaction Utils', () => {
         dcdtType: DcdtType.FungibleDCDT,
         identifier: "WUSDC-91dfa4",
         name: "WrappedUSDC",
-        sender: "erd1qqqqqqqqqqqqqpgqxe80hegndzmp25c2qnsutze45h8q7nlud8ssplfp8u",
-        receiver: "erd1f04mhj7mjedkd4snav6zpyjtlgqpnp8hv5ex4sw38wck9ep09s8qhh5k5v",
+        sender: "drt1qqqqqqqqqqqqqpgqxe80hegndzmp25c2qnsutze45h8q7nlud8ssur7zyz",
+        receiver: "drt1f04mhj7mjedkd4snav6zpyjtlgqpnp8hv5ex4sw38wck9ep09s8q2tr4hj",
         value: "25000000",
         decimals: 6,
       }),
@@ -207,7 +207,7 @@ describe('Transaction Utils', () => {
       '2199b2f2ebf591e1d05ee3c871546cffdc1eb4970a54eee707614aa9374935c0': 'f592405c4d6556a5a680c3225ae7bd254b73c7c47cf032ec66936dbbb494ca4c',
     };
 
-    const trimmedOperations = TransactionUtils.trimOperations('erd1qqqqqqqqqqqqqpgqxe80hegndzmp25c2qnsutze45h8q7nlud8ssplfp8u', operations, previousHashes);
+    const trimmedOperations = TransactionUtils.trimOperations('drt1qqqqqqqqqqqqqpgqxe80hegndzmp25c2qnsutze45h8q7nlud8ssur7zyz', operations, previousHashes);
 
     expect(trimmedOperations.length).toStrictEqual(1);
     expect(trimmedOperations[0]).toEqual({
@@ -217,8 +217,8 @@ describe('Transaction Utils', () => {
       dcdtType: DcdtType.FungibleDCDT,
       identifier: "WUSDC-91dfa4",
       name: "WrappedUSDC",
-      sender: "erd1qqqqqqqqqqqqqpgqxe80hegndzmp25c2qnsutze45h8q7nlud8ssplfp8u",
-      receiver: "erd1f04mhj7mjedkd4snav6zpyjtlgqpnp8hv5ex4sw38wck9ep09s8qhh5k5v",
+      sender: "drt1qqqqqqqqqqqqqpgqxe80hegndzmp25c2qnsutze45h8q7nlud8ssur7zyz",
+      receiver: "drt1f04mhj7mjedkd4snav6zpyjtlgqpnp8hv5ex4sw38wck9ep09s8q2tr4hj",
       value: "25000000",
       decimals: 6,
       receiverAssets: undefined,

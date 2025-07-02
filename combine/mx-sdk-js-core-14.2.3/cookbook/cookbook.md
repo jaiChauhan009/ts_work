@@ -290,7 +290,7 @@ To fetch an account, we need its address. Once we have the address, we create an
 {
     const entrypoint = new DevnetEntrypoint();
     const api = entrypoint.createNetworkProvider();
-    const alice = Address.newFromBech32("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th");
+    const alice = Address.newFromBech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf");
     const account = await api.getAccount(alice);
 }
 ```
@@ -302,7 +302,7 @@ We can also fetch an account's storage, allowing us to retrieve all key-value pa
 {
     const entrypoint = new DevnetEntrypoint();
     const api = entrypoint.createNetworkProvider();
-    const alice = Address.newFromBech32("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th");
+    const alice = Address.newFromBech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf");
     const account = await api.getAccountStorage(alice);
 }
 ```
@@ -313,7 +313,7 @@ If we only want to fetch a specific key, we can do so as follows:
 {
     const entrypoint = new DevnetEntrypoint();
     const api = entrypoint.createNetworkProvider();
-    const alice = Address.newFromBech32("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th");
+    const alice = Address.newFromBech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf");
     const account = await api.getAccountStorageEntry(alice, "testKey");
 }
 ```
@@ -334,7 +334,7 @@ Keep in mind that this method has a default timeout, which can be adjusted using
     const condition = (account: any) => {
         return account.balance >= 7000000000000000000n; // 7 REWA
     };
-    const alice = Address.newFromBech32("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th");
+    const alice = Address.newFromBech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf");
     const account = await api.awaitAccountOnCondition(alice, condition);
 }
 ```
@@ -349,8 +349,8 @@ To execute transactions, we use the network providers to broadcast them to the n
     const entrypoint = new DevnetEntrypoint();
     const api = entrypoint.createNetworkProvider();
 
-    const alice = Address.newFromBech32("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th");
-    const bob = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+    const alice = Address.newFromBech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf");
+    const bob = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
     const transaction = new Transaction({
         sender: alice,
@@ -371,8 +371,8 @@ To execute transactions, we use the network providers to broadcast them to the n
     const entrypoint = new DevnetEntrypoint();
     const api = entrypoint.createNetworkProvider();
 
-    const alice = Address.newFromBech32("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th");
-    const bob = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+    const alice = Address.newFromBech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf");
+    const bob = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
     const firstTransaction = new Transaction({
         sender: alice,
@@ -417,8 +417,8 @@ A transaction can be simulated before being sent for processing by the network. 
     const entrypoint = new DevnetEntrypoint();
     const api = entrypoint.createNetworkProvider();
 
-    const alice = Address.newFromBech32("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th");
-    const contract = Address.newFromBech32("erd1qqqqqqqqqqqqqpgqccmyzj9sade2495w78h42erfrw7qmqxpd8sss6gmgn");
+    const alice = Address.newFromBech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf");
+    const contract = Address.newFromBech32("drt1qqqqqqqqqqqqqpgqccmyzj9sade2495w78h42erfrw7qmqxpd8ssdxlctd");
 
     const transaction = new Transaction({
         sender: alice,
@@ -440,8 +440,8 @@ Before sending a transaction to the network for processing, you can retrieve the
     const entrypoint = new DevnetEntrypoint();
     const api = entrypoint.createNetworkProvider();
 
-    const alice = Address.newFromBech32("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th");
-    const contract = Address.newFromBech32("erd1qqqqqqqqqqqqqpgqccmyzj9sade2495w78h42erfrw7qmqxpd8sss6gmgn");
+    const alice = Address.newFromBech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf");
+    const contract = Address.newFromBech32("drt1qqqqqqqqqqqqqpgqccmyzj9sade2495w78h42erfrw7qmqxpd8ssdxlctd");
 
     const nonce = await entrypoint.recallAccountNonce(alice);
 
@@ -520,7 +520,7 @@ We can fetch a specific token (DCDT, MetaDCDT, SFT, NFT) from an account by prov
     const entrypoint = new DevnetEntrypoint();
     const api = entrypoint.createNetworkProvider();
 
-    const alice = Address.newFromBech32("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th");
+    const alice = Address.newFromBech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf");
     let token = new Token({ identifier: "TEST-ff155e" }); // DCDT
     let tokenOnNetwork = await api.getTokenOfAccount(alice, token);
 
@@ -537,7 +537,7 @@ Fetches all fungible tokens held by an account. Note that this method does not h
     const entrypoint = new DevnetEntrypoint();
     const api = entrypoint.createNetworkProvider();
 
-    const alice = Address.newFromBech32("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th");
+    const alice = Address.newFromBech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf");
     const fungibleTokens = await api.getFungibleTokensOfAccount(alice);
 }
 ```
@@ -550,7 +550,7 @@ Fetches all non-fungible tokens held by an account. Note that this method does n
     const entrypoint = new DevnetEntrypoint();
     const api = entrypoint.createNetworkProvider();
 
-    const alice = Address.newFromBech32("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th");
+    const alice = Address.newFromBech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf");
     const nfts = await api.getNonFungibleTokensOfAccount(alice);
 }
 ```
@@ -580,7 +580,7 @@ Smart contract queries, or view functions, are endpoints that only read data fro
     const api = entrypoint.createNetworkProvider();
 
     const query = new SmartContractQuery({
-        contract: Address.newFromBech32("erd1qqqqqqqqqqqqqpgqqy34h7he2ya6qcagqre7ur7cc65vt0mxrc8qnudkr4"),
+        contract: Address.newFromBech32("drt1qqqqqqqqqqqqqpgqqy34h7he2ya6qcagqre7ur7cc65vt0mxrc8qwq64qt"),
         function: "getSum",
         arguments: [],
     });
@@ -597,7 +597,7 @@ Let’s assume we want to retrieve all the transactions sent by Alice in which t
     const entrypoint = new DevnetEntrypoint();
     const api = entrypoint.createNetworkProvider();
 
-    const alice = Address.newFromBech32("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th");
+    const alice = Address.newFromBech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf");
     const url = `transactions/${alice.toBech32()}?function=delegate`;
 
     const response = await api.doGetGeneric(url);
@@ -645,7 +645,7 @@ When using the controller, the transaction will be signed because we’ll be wor
 
     const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
     const alice = await Account.newFromPem(filePath);
-    const bob = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+    const bob = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
     // the developer is responsible for managing the nonce
     alice.nonce = await entrypoint.recallAccountNonce(alice.address);
@@ -681,7 +681,7 @@ You will need to handle these aspects after the transaction is created.
     // the developer is responsible for managing the nonce
     alice.nonce = await entrypoint.recallAccountNonce(alice.address);
 
-    const bob = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+    const bob = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
     const transaction = factory.createTransactionForTransfer(alice.address, {
         receiver: bob,
@@ -708,7 +708,7 @@ If you know you’ll only be sending native tokens, you can create the transacti
 
     const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
     const alice = await Account.newFromPem(filePath);
-    const bob = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+    const bob = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
     // the developer is responsible for managing the nonce
     alice.nonce = await entrypoint.recallAccountNonce(alice.address);
@@ -748,7 +748,7 @@ When using the factory, only the sender's address is required. As a result, the 
 
     const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
     const alice = await Account.newFromPem(filePath);
-    const bob = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+    const bob = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
     // the developer is responsible for managing the nonce
     alice.nonce = await entrypoint.recallAccountNonce(alice.address);
@@ -789,7 +789,7 @@ We can send both types of tokens using either the `controller` or the `factory`,
 
     const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
     const alice = await Account.newFromPem(filePath);
-    const bob = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+    const bob = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
     // the developer is responsible for managing the nonce
     alice.nonce = await entrypoint.recallAccountNonce(alice.address);
@@ -1060,7 +1060,7 @@ In this section we'll see how we can call an endpoint of our previously deployed
     const abi = await loadAbiRegistry("../src/testdata/adder.abi.json");
     const controller = entrypoint.createSmartContractController(abi);
 
-    const contractAddress = Address.newFromBech32("erd1qqqqqqqqqqqqqpgq7cmfueefdqkjsnnjnwydw902v8pwjqy3d8ssd4meug");
+    const contractAddress = Address.newFromBech32("drt1qqqqqqqqqqqqqpgq7cmfueefdqkjsnnjnwydw902v8pwjqy3d8sssfv6lk");
 
     // For deploy arguments, use "TypedValue" objects if you haven't provided an ABI to the factory:
     let args: any[] = [new U32Value(42)];
@@ -1114,7 +1114,7 @@ Both REWA and DCDT tokens or a combination of both can be sent. This functionali
     // get the smart contracts controller
     const controller = entrypoint.createSmartContractController(abi);
 
-    const contractAddress = Address.newFromBech32("erd1qqqqqqqqqqqqqpgq7cmfueefdqkjsnnjnwydw902v8pwjqy3d8ssd4meug");
+    const contractAddress = Address.newFromBech32("drt1qqqqqqqqqqqqqpgq7cmfueefdqkjsnnjnwydw902v8pwjqy3d8sssfv6lk");
 
     // For deploy arguments, use "TypedValue" objects if you haven't provided an ABI to the factory:
     let args: any[] = [new U32Value(42)];
@@ -1159,7 +1159,7 @@ Let's create the same smart contract call transaction, but using the `factory`.
     // get the smart contracts controller
     const controller = entrypoint.createSmartContractTransactionsFactory();
 
-    const contractAddress = Address.newFromBech32("erd1qqqqqqqqqqqqqpgq7cmfueefdqkjsnnjnwydw902v8pwjqy3d8ssd4meug");
+    const contractAddress = Address.newFromBech32("drt1qqqqqqqqqqqqqpgq7cmfueefdqkjsnnjnwydw902v8pwjqy3d8sssfv6lk");
 
     // For deploy arguments, use "TypedValue" objects if you haven't provided an ABI to the factory:
     let args: any[] = [new U32Value(42)];
@@ -1274,7 +1274,7 @@ In this example, we will query the **adder smart contract** by calling its `getS
 ```js
 {
     const entrypoint = new DevnetEntrypoint();
-    const contractAddress = Address.newFromBech32("erd1qqqqqqqqqqqqqpgq7cmfueefdqkjsnnjnwydw902v8pwjqy3d8ssd4meug");
+    const contractAddress = Address.newFromBech32("drt1qqqqqqqqqqqqqpgq7cmfueefdqkjsnnjnwydw902v8pwjqy3d8sssfv6lk");
     const abi = await loadAbiRegistry("../src/testdata/adder.abi.json");
 
     // create the controller
@@ -1296,7 +1296,7 @@ This approach achieves the same result as the previous example.
     const abi = await loadAbiRegistry("../src/testdata/adder.abi.json");
 
     // the contract address we'll query
-    const contractAddress = Address.newFromBech32("erd1qqqqqqqqqqqqqpgq7cmfueefdqkjsnnjnwydw902v8pwjqy3d8ssd4meug");
+    const contractAddress = Address.newFromBech32("drt1qqqqqqqqqqqqqpgq7cmfueefdqkjsnnjnwydw902v8pwjqy3d8sssfv6lk");
 
     // create the controller
     const controller = entrypoint.createSmartContractController(abi);
@@ -1339,7 +1339,7 @@ However, in this case, the contract address is already known. Like deploying a s
     // Or use simple, plain JavaScript values and objects if you have provided an ABI to the factory:
     args = [42];
 
-    const contractAddress = Address.newFromBech32("erd1qqqqqqqqqqqqqpgq7cmfueefdqkjsnnjnwydw902v8pwjqy3d8ssd4meug");
+    const contractAddress = Address.newFromBech32("drt1qqqqqqqqqqqqqpgq7cmfueefdqkjsnnjnwydw902v8pwjqy3d8sssfv6lk");
 
     const upgradeTransaction = await controller.createTransactionForUpgrade(
         sender,
@@ -1464,7 +1464,7 @@ For scripts or quick network interactions, we recommend using the controller. Ho
     // fetch the nonce of the network
     alice.nonce = await entrypoint.recallAccountNonce(alice.address);
 
-    const bob = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+    const bob = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
     const transaction = await controller.createTransactionForSettingSpecialRoleOnFungibleToken(
         alice,
@@ -1776,7 +1776,7 @@ A guardian can also be set using the WebWallet, which leverages our hosted `Trus
     alice.nonce = await entrypoint.recallAccountNonce(alice.address);
 
     // we can use a trusted service that provides a guardian, or simply set another address we own or trust
-    const guardian = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+    const guardian = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
     const transaction = await controller.createTransactionForSettingGuardian(alice, alice.getNonceThenIncrement(), {
         guardianAddress: guardian,
@@ -1800,7 +1800,7 @@ A guardian can also be set using the WebWallet, which leverages our hosted `Trus
     const alice = await Account.newFromPem(filePath);
 
     // we can use a trusted service that provides a guardian, or simply set another address we own or trust
-    const guardian = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+    const guardian = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
     const transaction = await factory.createTransactionForSettingGuardian(alice.address, {
         guardianAddress: guardian,
@@ -2085,7 +2085,7 @@ We can send funds to a delegation contract to earn rewards.
     // fetch the nonce of the network
     alice.nonce = await entrypoint.recallAccountNonce(alice.address);
 
-    const contract = Address.newFromBech32("erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqf8llllswuedva");
+    const contract = Address.newFromBech32("drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqf8llllsy4lvxt");
 
     const transaction = await controller.createTransactionForDelegating(alice, alice.getNonceThenIncrement(), {
         delegationContract: contract,
@@ -2107,7 +2107,7 @@ We can send funds to a delegation contract to earn rewards.
     const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
     const alice = await Account.newFromPem(filePath);
 
-    const contract = Address.newFromBech32("erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqf8llllswuedva");
+    const contract = Address.newFromBech32("drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqf8llllsy4lvxt");
 
     const transaction = await factory.createTransactionForDelegating(alice.address, {
         delegationContract: contract,
@@ -2139,7 +2139,7 @@ Over time, as rewards accumulate, we may choose to redelegate them to the contra
     const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
     const alice = await Account.newFromPem(filePath);
 
-    const contract = Address.newFromBech32("erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqf8llllswuedva");
+    const contract = Address.newFromBech32("drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqf8llllsy4lvxt");
     // fetch the nonce of the network
     alice.nonce = await entrypoint.recallAccountNonce(alice.address);
 
@@ -2166,7 +2166,7 @@ Over time, as rewards accumulate, we may choose to redelegate them to the contra
     const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
     const alice = await Account.newFromPem(filePath);
 
-    const contract = Address.newFromBech32("erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqf8llllswuedva");
+    const contract = Address.newFromBech32("drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqf8llllsy4lvxt");
 
     const transaction = await factory.createTransactionForRedelegatingRewards(alice.address, {
         delegationContract: contract,
@@ -2197,7 +2197,7 @@ We can also claim our rewards when needed.
     const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
     const alice = await Account.newFromPem(filePath);
 
-    const contract = Address.newFromBech32("erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqf8llllswuedva");
+    const contract = Address.newFromBech32("drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqf8llllsy4lvxt");
     // fetch the nonce of the network
     alice.nonce = await entrypoint.recallAccountNonce(alice.address);
 
@@ -2220,7 +2220,7 @@ We can also claim our rewards when needed.
     const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
     const alice = await Account.newFromPem(filePath);
 
-    const contract = Address.newFromBech32("erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqf8llllswuedva");
+    const contract = Address.newFromBech32("drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqf8llllsy4lvxt");
 
     const transaction = await factory.createTransactionForClaimingRewards(alice.address, {
         delegationContract: contract,
@@ -2251,7 +2251,7 @@ By **undelegating**, we signal the contract that we want to retrieve our staked 
     const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
     const alice = await Account.newFromPem(filePath);
 
-    const contract = Address.newFromBech32("erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqf8llllswuedva");
+    const contract = Address.newFromBech32("drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqf8llllsy4lvxt");
     // fetch the nonce of the network
     alice.nonce = await entrypoint.recallAccountNonce(alice.address);
 
@@ -2275,7 +2275,7 @@ By **undelegating**, we signal the contract that we want to retrieve our staked 
     const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
     const alice = await Account.newFromPem(filePath);
 
-    const contract = Address.newFromBech32("erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqf8llllswuedva");
+    const contract = Address.newFromBech32("drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqf8llllsy4lvxt");
 
     const transaction = await factory.createTransactionForUndelegating(alice.address, {
         delegationContract: contract,
@@ -2307,7 +2307,7 @@ After the `10-epoch unbonding period` is complete, we can proceed with withdrawi
     const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
     const alice = await Account.newFromPem(filePath);
 
-    const contract = Address.newFromBech32("erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqf8llllswuedva");
+    const contract = Address.newFromBech32("drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqf8llllsy4lvxt");
 
     // fetch the nonce of the network
     alice.nonce = await entrypoint.recallAccountNonce(alice.address);
@@ -2331,7 +2331,7 @@ After the `10-epoch unbonding period` is complete, we can proceed with withdrawi
     const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
     const alice = await Account.newFromPem(filePath);
 
-    const contract = Address.newFromBech32("erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqf8llllswuedva");
+    const contract = Address.newFromBech32("drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqf8llllsy4lvxt");
 
     const transaction = await factory.createTransactionForWithdrawing(alice.address, {
         delegationContract: contract,
@@ -2370,7 +2370,7 @@ Let’s see how to create a relayed transaction:
     const entrypoint = new DevnetEntrypoint();
     const walletsPath = path.join("../src", "testdata", "testwallets");
     const bob = await Account.newFromPem(path.join(walletsPath, "bob.pem"));
-    const grace = Address.newFromBech32("erd1r69gk66fmedhhcg24g2c5kn2f2a5k4kvpr6jfw67dn2lyydd8cfswy6ede");
+    const grace = Address.newFromBech32("drt1r69gk66fmedhhcg24g2c5kn2f2a5k4kvpr6jfw67dn2lyydd8cfsncd6w8");
     const mike = await Account.newFromPem(path.join(walletsPath, "mike.pem"));
 
     // fetch the nonce of the network
@@ -2620,7 +2620,7 @@ Create an `Address` object from a bech32-encoded string:
 ``` js
 {
     // Create an Address object from a bech32-encoded string
-    const address = Address.newFromBech32("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th");
+    const address = Address.newFromBech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf");
 
     console.log("Address (bech32-encoded):", address.toBech32());
     console.log("Public key (hex-encoded):", address.toHex());
@@ -2662,7 +2662,7 @@ console.log("Shard:", addressComputer.getShardOfAddress(address));
 Checking if an address is a smart contract
 ``` js
 
-const contractAddress = Address.newFromBech32("erd1qqqqqqqqqqqqqpgquzmh78klkqwt0p4rjys0qtp3la07gz4d396qn50nnm");
+const contractAddress = Address.newFromBech32("drt1qqqqqqqqqqqqqpgquzmh78klkqwt0p4rjys0qtp3la07gz4d396qwgcss9");
 console.log("Is contract address:", contractAddress.isSmartContract());
 ```
 
@@ -2836,7 +2836,7 @@ We are going to assume we have an account at this point. If you don't, feel free
     const transaction = new Transaction({
         chainID: "D",
         sender: alice.address,
-        receiver: Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx"),
+        receiver: Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c"),
         gasLimit: 50000n,
         nonce: 90n,
     });
@@ -2856,7 +2856,7 @@ We are going to assume we have an account at this point. If you don't, feel free
     const transaction = new Transaction({
         nonce: 90n,
         sender: publickKey.toAddress(),
-        receiver: Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx"),
+        receiver: Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c"),
         value: 1000000000000000000n,
         gasLimit: 50000n,
         chainID: "D",
@@ -2882,7 +2882,7 @@ We are going to assume we have an account at this point. If you don't, feel free
     const transaction = new Transaction({
         nonce: 90n,
         sender: alice.address,
-        receiver: Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx"),
+        receiver: Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c"),
         value: 1000000000000000000n,
         gasLimit: 50000n,
         chainID: "D",
@@ -2951,7 +2951,7 @@ To simplify this process, we provide wrappers over public keys that make verific
     const transaction = new Transaction({
         nonce: 90n,
         sender: account.address,
-        receiver: Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx"),
+        receiver: Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c"),
         value: 1000000000000000000n,
         gasLimit: 50000n,
         chainID: "D",
@@ -2961,7 +2961,7 @@ To simplify this process, we provide wrappers over public keys that make verific
     transaction.signature = await account.signTransaction(transaction);
 
     // instantiating a user verifier; basically gets the public key
-    const alice = Address.newFromBech32("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th");
+    const alice = Address.newFromBech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf");
     const aliceVerifier = UserVerifier.fromAddress(alice);
 
     // serialize the transaction for verification
@@ -2991,7 +2991,7 @@ To simplify this process, we provide wrappers over public keys that make verific
     message.signature = await account.signMessage(message);
 
     // instantiating a user verifier; basically gets the public key
-    const alice = Address.newFromBech32("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th");
+    const alice = Address.newFromBech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf");
     const aliceVerifier = UserVerifier.fromAddress(alice);
 
     // serialize the message for verification
@@ -3014,7 +3014,7 @@ To simplify this process, we provide wrappers over public keys that make verific
     const transaction = new Transaction({
         nonce: 90n,
         sender: account.address,
-        receiver: Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx"),
+        receiver: Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c"),
         value: 1000000000000000000n,
         gasLimit: 50000n,
         chainID: "D",
@@ -3024,7 +3024,7 @@ To simplify this process, we provide wrappers over public keys that make verific
     transaction.signature = await account.signTransaction(transaction);
 
     // instantiating a public key
-    const alice = Address.newFromBech32("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th");
+    const alice = Address.newFromBech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf");
     const publicKey = new UserPublicKey(alice.getPublicKey());
 
     // serialize the transaction for verification

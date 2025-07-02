@@ -187,7 +187,7 @@
     "events": [],
     "hasCallback": false,
     "types": {
-        "EsdtTokenPayment": {
+        "DcdtTokenPayment": {
             "type": "struct",
             "fields": [
                 {
@@ -209,7 +209,7 @@
             "fields": [
                 {
                     "name": "funds",
-                    "type": "List<EsdtTokenPayment>"
+                    "type": "List<DcdtTokenPayment>"
                 },
                 {
                     "name": "locked_epoch",

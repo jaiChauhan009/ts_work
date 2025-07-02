@@ -11,7 +11,7 @@ describe('getTokenFromData tests', () => {
       tokenId: 'METARIDE-4bd193-4022',
       nonce: '4022',
       amount: '12000000000000000000',
-      receiver: 'erd1a07ey0xj28u90mtk8858zsavs0cj7s3cy74ufgxdmcq3nslr0y2st2aaax'
+      receiver: 'drt1a07ey0xj28u90mtk8858zsavs0cj7s3cy74ufgxdmcq3nslr0y2skk277c'
     });
   });
   test('get token test', () => {

@@ -12,10 +12,10 @@ export const createMockTransaction = ({
   return new Transaction({
     // ...other necessary transaction properties
     sender: new Address(
-      'erd1wh9c0sjr2xn8hzf02lwwcr4jk2s84tat9ud2kaq6zr7xzpvl9l5q8awmex'
+      'drt1wh9c0sjr2xn8hzf02lwwcr4jk2s84tat9ud2kaq6zr7xzpvl9l5q6pec6c'
     ),
     receiver: new Address(
-      'erd1wh9c0sjr2xn8hzf02lwwcr4jk2s84tat9ud2kaq6zr7xzpvl9l5q8awmex'
+      'drt1wh9c0sjr2xn8hzf02lwwcr4jk2s84tat9ud2kaq6zr7xzpvl9l5q6pec6c'
     ),
     data: Buffer.from(data),
     receiverUsername: receiverUsername

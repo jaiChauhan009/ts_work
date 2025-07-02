@@ -6,7 +6,7 @@ import { nativeAuth } from '../nativeAuth';
 describe('Native Auth', () => {
   let mock: MockAdapter;
   const ADDRESS =
-    'erd13rrn3fwjds8r5260n6q3pd2qa6wqkudrhczh26d957c0edyzermshds0k8';
+    'drt13rrn3fwjds8r5260n6q3pd2qa6wqkudrhczh26d957c0edyzerms238v4e';
   const ORIGIN = 'dharitri.org';
   const SIGNATURE =
     '4b445f287663b868e269aa0532c9fd73acb37cfd45f46e33995777e68e5ecc15d97318d9af09c4102f9b40ecf347a75e2d2e81acbcc3c72ae32fcf659c2acd0e';

@@ -44,7 +44,7 @@ describe('PoolController', () => {
 
     it('should return a list of pool transactions for a given receiver', async () => {
       poolServiceMocks.getPool.mockReturnValue([]);
-      const receiver = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const receiver = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
 
       await request(app.getHttpServer())
         .get(`${path}?receiver=${receiver}`)
@@ -59,7 +59,7 @@ describe('PoolController', () => {
 
     it('should return a list of pool transactions for a given sender', async () => {
       poolServiceMocks.getPool.mockReturnValue([]);
-      const sender = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const sender = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
 
       await request(app.getHttpServer())
         .get(`${path}?sender=${sender}`)
@@ -102,7 +102,7 @@ describe('PoolController', () => {
 
     it('should return total pool transactions count for a specific receiver', async () => {
       poolServiceMocks.getPoolCount.mockReturnValue(1);
-      const receiver = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const receiver = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
 
       await request(app.getHttpServer())
         .get(`${path}/count?receiver=${receiver}`)
@@ -118,7 +118,7 @@ describe('PoolController', () => {
 
     it('should return total pool transactions count for a specific sender', async () => {
       poolServiceMocks.getPoolCount.mockReturnValue(2);
-      const sender = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const sender = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
 
       await request(app.getHttpServer())
         .get(`${path}/count?sender=${sender}`)
@@ -163,7 +163,7 @@ describe('PoolController', () => {
 
     it('should return total pool transactions count for a specific receiver', async () => {
       poolServiceMocks.getPoolCount.mockReturnValue(1);
-      const receiver = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const receiver = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
 
       await request(app.getHttpServer())
         .get(`${path}/c?receiver=${receiver}`)
@@ -179,7 +179,7 @@ describe('PoolController', () => {
 
     it('should return total pool transactions count for a specific sender', async () => {
       poolServiceMocks.getPoolCount.mockReturnValue(2);
-      const sender = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const sender = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
 
       await request(app.getHttpServer())
         .get(`${path}/c?sender=${sender}`)

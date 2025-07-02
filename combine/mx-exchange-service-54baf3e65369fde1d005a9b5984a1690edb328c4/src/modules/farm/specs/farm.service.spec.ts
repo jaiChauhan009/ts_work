@@ -118,7 +118,7 @@ describe('FarmService', () => {
 
         const rewards = await serviceV1_2.getRewardsForPosition({
             farmAddress:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqes9lzxht',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqescr4954',
             identifier: identifier,
             attributes: attributes,
             liquidity: liquidity,
@@ -141,31 +141,31 @@ describe('FarmService', () => {
         expect(farms).toEqual([
             {
                 address:
-                    'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqssfuwnk5',
+                    'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqss5qes42',
                 rewardType: undefined,
                 version: 'v1.2',
             },
             {
                 address:
-                    'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqcs2zduud',
+                    'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqcsh76lln',
                 rewardType: 'unlockedRewards',
                 version: 'v1.3',
             },
             {
                 address:
-                    'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqeqs727zc',
+                    'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqeqdzaapx',
                 rewardType: 'lockedRewards',
                 version: 'v1.3',
             },
             {
                 address:
-                    'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqes9lzxht',
+                    'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqescr4954',
                 rewardType: 'customRewards',
                 version: 'v1.3',
             },
             {
                 address:
-                    'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpqsdtp6mh',
+                    'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpqsshkecf',
                 rewardType: 'lockedRewards',
                 version: 'v2',
             },
@@ -191,7 +191,7 @@ describe('FarmService', () => {
             'REWATOK4FL-abcdef',
         );
         expect(farmAddress).toEqual(
-            'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqes9lzxht',
+            'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqescr4954',
         );
     });
 
@@ -208,7 +208,7 @@ describe('FarmService', () => {
             await serviceV1_3.getBatchRewardsForPosition([
                 {
                     farmAddress:
-                        'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqeqs727zc',
+                        'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqeqdzaapx',
                     liquidity: '1000000000000000000',
                     identifier: 'REWAMEXFL-bcdefg-0b',
                     attributes:
@@ -238,7 +238,7 @@ describe('FarmService', () => {
 
         const tokensForExitFarm = await serviceV1_3.getTokensForExitFarm({
             farmAddress:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqeqs727zc',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqeqdzaapx',
             liquidity: '1000000000000000000',
             identifier: 'REWAMEXFL-a329b6-0b',
             attributes:

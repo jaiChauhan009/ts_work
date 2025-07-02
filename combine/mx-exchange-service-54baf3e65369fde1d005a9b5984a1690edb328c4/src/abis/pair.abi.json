@@ -66,13 +66,13 @@
             "inputs": [],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -94,13 +94,13 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -122,10 +122,10 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -179,7 +179,7 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -201,10 +201,10 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -230,10 +230,10 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -606,10 +606,10 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -619,12 +619,12 @@
             "inputs": [
                 {
                     "name": "input",
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -959,7 +959,7 @@
                 }
             ]
         },
-        "EsdtTokenPayment": {
+        "DcdtTokenPayment": {
             "type": "struct",
             "fields": [
                 {

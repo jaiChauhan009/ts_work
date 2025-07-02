@@ -5,9 +5,9 @@ import { MultisigController } from "./multisigController";
 import * as resources from "./resources";
 
 describe("test multisig controller query methods", () => {
-    const mockMultisigAddress: string = "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqylllslmq6y6";
-    const mockBoardMemberAddress = "erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx";
-    const mockProposerAddress = "erd1k2s324ww2g0yj38qn2ch2jwctdy8mnfxep94q9arncc6xecg3xaq6mjse8";
+    const mockMultisigAddress: string = "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqyllls4jxmwv";
+    const mockBoardMemberAddress = "drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c";
+    const mockProposerAddress = "drt1k2s324ww2g0yj38qn2ch2jwctdy8mnfxep94q9arncc6xecg3xaq889n6e";
     let networkProvider = new MockNetworkProvider();
     let controller: MultisigController;
 
@@ -254,8 +254,8 @@ describe("test multisig controller query methods", () => {
         });
 
         assert.equal(result.length, 2);
-        assert.equal(result[0], "erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th");
-        assert.equal(result[1], "erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        assert.equal(result[0], "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf");
+        assert.equal(result[1], "drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
     });
 
     it("getAllProposers returns all proposers as address array", async function () {
@@ -303,7 +303,7 @@ describe("test multisig controller query methods", () => {
         });
 
         const mappedRes = result as resources.SendTransferExecuteRewa;
-        assert.equal(mappedRes.receiver.toBech32(), "erd1qqqqqqqqqqqqqpgq6qr0w0zzyysklfneh32eqp2cf383zc89d8sstnkl60");
+        assert.equal(mappedRes.receiver.toBech32(), "drt1qqqqqqqqqqqqqpgq6qr0w0zzyysklfneh32eqp2cf383zc89d8ssk0pue3");
         assert.equal(mappedRes.functionName, "add");
         assert.equal(mappedRes.amount, 42n);
     });
@@ -383,7 +383,7 @@ describe("test multisig controller query methods", () => {
         });
 
         const mappedRes = result as resources.SendAsyncCall;
-        assert.equal(mappedRes.receiver.toBech32(), "erd1qqqqqqqqqqqqqpgq0rffvv4vk9vesqplv9ws55fxzdfaspqa8cfszy2hms");
+        assert.equal(mappedRes.receiver.toBech32(), "drt1qqqqqqqqqqqqqpgq0rffvv4vk9vesqplv9ws55fxzdfaspqa8cfslca5cw");
         assert.equal(mappedRes.funcionName, "add");
         assert.equal(mappedRes.amount, 0n);
     });
@@ -411,7 +411,7 @@ describe("test multisig controller query methods", () => {
 
         const mappedRes = result as resources.SendTransferExecuteDcdt;
 
-        assert.equal(mappedRes.receiver.toBech32(), "erd1qqqqqqqqqqqqqpgqfxlljcaalgl2qfcnxcsftheju0ts36kvl3ts3qkewe");
+        assert.equal(mappedRes.receiver.toBech32(), "drt1qqqqqqqqqqqqqpgqfxlljcaalgl2qfcnxcsftheju0ts36kvl3tsvup6d8");
         assert.equal(mappedRes.funcionName, "distribute");
     });
 
@@ -433,7 +433,7 @@ describe("test multisig controller query methods", () => {
 
         const mappedRes = result as resources.AddBoardMember;
 
-        assert.equal(mappedRes.address.toBech32(), "erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        assert.equal(mappedRes.address.toBech32(), "drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
     });
 
     it("getActionData returns the action data as AddProposer", async function () {
@@ -454,7 +454,7 @@ describe("test multisig controller query methods", () => {
 
         const mappedRes = result as resources.AddProposer;
 
-        assert.equal(mappedRes.address.toBech32(), "erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        assert.equal(mappedRes.address.toBech32(), "drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
     });
 
     it("getActionData returns the action data as SCDeployFromSource", async function () {
@@ -482,7 +482,7 @@ describe("test multisig controller query methods", () => {
 
         assert.equal(
             mappedRes.sourceContract.toBech32(),
-            "erd1qqqqqqqqqqqqqpgqsuxsgykwm6r3s5apct2g5a2rcpe7kw0ed8ssf6h9f6",
+            "drt1qqqqqqqqqqqqqpgqsuxsgykwm6r3s5apct2g5a2rcpe7kw0ed8ss5xqx2y",
         );
         assert.equal(mappedRes.amount.toString(), "50000000000000000");
         assert.deepEqual(mappedRes.codeMetadata, new CodeMetadata(true, true, false));
@@ -505,7 +505,7 @@ describe("test multisig controller query methods", () => {
         );
         const amount = BigInt(50000000000000000); // 0.05 REWA
         const metadata = new CodeMetadata(true, true, false);
-        const sourceContract = Address.newFromBech32("erd1qqqqqqqqqqqqqpgqd273cw3hjndqzcpts4dvq0ncy8nx8rkgzeusnefvaq");
+        const sourceContract = Address.newFromBech32("drt1qqqqqqqqqqqqqpgqd273cw3hjndqzcpts4dvq0ncy8nx8rkgzeusw97077");
 
         const result = await controller.getActionData({
             multisigAddress: mockMultisigAddress,
@@ -553,7 +553,7 @@ describe("test multisig controller query methods", () => {
         });
         const mappedRes = result as resources.RemoveUser;
 
-        assert.equal(mappedRes.address.toBech32(), "erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        assert.equal(mappedRes.address.toBech32(), "drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
     });
 
     it("getActionSigners returns the action signers as address array", async function () {

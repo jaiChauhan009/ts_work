@@ -43,7 +43,7 @@ export const TOKEN_MANAGER_TYPE_INTERCHAIN_TOKEN = 0;
 export const TOKEN_MANAGER_TYPE_LOCK_UNLOCK = 2;
 export const TOKEN_MANAGER_TYPE_MINT_BURN = 4;
 
-export const DCDT_SYSTEM_CONTRACT = 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u';
+export const DCDT_SYSTEM_CONTRACT = 'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqzlllsd5j0s2';
 
 let address: string;
 export let gateway: LSContract;

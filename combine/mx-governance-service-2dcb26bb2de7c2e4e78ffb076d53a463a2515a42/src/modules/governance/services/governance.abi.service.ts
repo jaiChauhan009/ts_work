@@ -204,11 +204,11 @@ export class GovernanceTokenSnapshotAbiService extends GenericAbiService {
                 });
             });
             let totalQuorum = proposal.total_quorum.toFixed();
-            if (scAddress === 'erd1qqqqqqqqqqqqqpgq8xqp6c0kzwn3f2c5zsxfex6h69s2x9rwhg4smw0gfc') {
+            if (scAddress === 'drt1qqqqqqqqqqqqqpgq8xqp6c0kzwn3f2c5zsxfex6h69s2x9rwhg4sxjct2x') {
                 totalQuorum = '14864643496672232664684799';
             }
             let description = proposal.description.toString();
-            if (scAddress === 'erd1qqqqqqqqqqqqqpgqfn2mu8l0dte34eqh6qtgmpjpxpkhunccrl4sy2sp07' && proposal.proposal_id.toNumber() === 1) {
+            if (scAddress === 'drt1qqqqqqqqqqqqqpgqfn2mu8l0dte34eqh6qtgmpjpxpkhunccrl4sek8zvq' && proposal.proposal_id.toNumber() === 1) {
                 description = JSON.stringify({
                     title: 'Andromeda 1.9 Protocol Upgrade',
                     shortDescription: 'Andromeda is the first major upgrade in a two-step roadmap to drastically reduce transaction time to finality on DharitrI. This release redesigns consensus mechanisms, finalization rules, and cross-shard execution, significantly improving the efficiency, security, and scalability of the network.',

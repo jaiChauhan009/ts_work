@@ -477,7 +477,7 @@ export class ProviderService {
     const [base64] = await this.vmQueryService.vmQuery(
       address,
       'getTotalCumulatedRewards',
-      'erd1qqqqqqqqqqqqqqqpqqqqqqqqlllllllllllllllllllllllllllsr9gav8',
+      'drt1qqqqqqqqqqqqqqqpqqqqqqqqllllllllllllllllllllllllllls7el70e',
     );
 
     if (base64) {

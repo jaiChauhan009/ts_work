@@ -162,7 +162,7 @@
                 },
                 {
                     "name": "roles",
-                    "type": "variadic<EsdtLocalRole>",
+                    "type": "variadic<DcdtLocalRole>",
                     "multi_arg": true
                 }
             ],
@@ -603,7 +603,7 @@
                 }
             ]
         },
-        "EsdtLocalRole": {
+        "DcdtLocalRole": {
             "type": "enum",
             "variants": [
                 {

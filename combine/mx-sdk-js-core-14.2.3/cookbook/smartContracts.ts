@@ -268,7 +268,7 @@ import { loadAbiRegistry } from "../src/testutils";
         const abi = await loadAbiRegistry("../src/testdata/adder.abi.json");
         const controller = entrypoint.createSmartContractController(abi);
 
-        const contractAddress = Address.newFromBech32("erd1qqqqqqqqqqqqqpgq7cmfueefdqkjsnnjnwydw902v8pwjqy3d8ssd4meug");
+        const contractAddress = Address.newFromBech32("drt1qqqqqqqqqqqqqpgq7cmfueefdqkjsnnjnwydw902v8pwjqy3d8sssfv6lk");
 
         // For deploy arguments, use "TypedValue" objects if you haven't provided an ABI to the factory: // md-as-comment
         let args: any[] = [new U32Value(42)];
@@ -322,7 +322,7 @@ import { loadAbiRegistry } from "../src/testutils";
         // get the smart contracts controller
         const controller = entrypoint.createSmartContractController(abi);
 
-        const contractAddress = Address.newFromBech32("erd1qqqqqqqqqqqqqpgq7cmfueefdqkjsnnjnwydw902v8pwjqy3d8ssd4meug");
+        const contractAddress = Address.newFromBech32("drt1qqqqqqqqqqqqqpgq7cmfueefdqkjsnnjnwydw902v8pwjqy3d8sssfv6lk");
 
         // For deploy arguments, use "TypedValue" objects if you haven't provided an ABI to the factory: // md-as-comment
         let args: any[] = [new U32Value(42)];
@@ -367,7 +367,7 @@ import { loadAbiRegistry } from "../src/testutils";
         // get the smart contracts controller
         const controller = entrypoint.createSmartContractTransactionsFactory();
 
-        const contractAddress = Address.newFromBech32("erd1qqqqqqqqqqqqqpgq7cmfueefdqkjsnnjnwydw902v8pwjqy3d8ssd4meug");
+        const contractAddress = Address.newFromBech32("drt1qqqqqqqqqqqqqpgq7cmfueefdqkjsnnjnwydw902v8pwjqy3d8sssfv6lk");
 
         // For deploy arguments, use "TypedValue" objects if you haven't provided an ABI to the factory: // md-as-comment
         let args: any[] = [new U32Value(42)];
@@ -482,7 +482,7 @@ import { loadAbiRegistry } from "../src/testutils";
     // ```js
     {
         const entrypoint = new DevnetEntrypoint();
-        const contractAddress = Address.newFromBech32("erd1qqqqqqqqqqqqqpgq7cmfueefdqkjsnnjnwydw902v8pwjqy3d8ssd4meug");
+        const contractAddress = Address.newFromBech32("drt1qqqqqqqqqqqqqpgq7cmfueefdqkjsnnjnwydw902v8pwjqy3d8sssfv6lk");
         const abi = await loadAbiRegistry("../src/testdata/adder.abi.json");
 
         // create the controller
@@ -504,7 +504,7 @@ import { loadAbiRegistry } from "../src/testutils";
         const abi = await loadAbiRegistry("../src/testdata/adder.abi.json");
 
         // the contract address we'll query
-        const contractAddress = Address.newFromBech32("erd1qqqqqqqqqqqqqpgq7cmfueefdqkjsnnjnwydw902v8pwjqy3d8ssd4meug");
+        const contractAddress = Address.newFromBech32("drt1qqqqqqqqqqqqqpgq7cmfueefdqkjsnnjnwydw902v8pwjqy3d8sssfv6lk");
 
         // create the controller
         const controller = entrypoint.createSmartContractController(abi);
@@ -547,7 +547,7 @@ import { loadAbiRegistry } from "../src/testutils";
         // Or use simple, plain JavaScript values and objects if you have provided an ABI to the factory: // md-as-comment
         args = [42];
 
-        const contractAddress = Address.newFromBech32("erd1qqqqqqqqqqqqqpgq7cmfueefdqkjsnnjnwydw902v8pwjqy3d8ssd4meug");
+        const contractAddress = Address.newFromBech32("drt1qqqqqqqqqqqqqpgq7cmfueefdqkjsnnjnwydw902v8pwjqy3d8sssfv6lk");
 
         const upgradeTransaction = await controller.createTransactionForUpgrade(
             sender,

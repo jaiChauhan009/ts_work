@@ -8,7 +8,7 @@ const nftCollection = [{
   nonce: 196,
   type: NftType.NonFungibleDCDT,
   name: 'Numbat Robots #196',
-  creator: 'erd1qqqqqqqqqqqqqpgqlxyw866pd8pvfqvphgsz9dgx5mr44uv5ys5sew4epr',
+  creator: 'drt1qqqqqqqqqqqqqpgqlxyw866pd8pvfqvphgsz9dgx5mr44uv5ys5syjz6za',
   royalties: 10,
   uris: [
     'aHR0cHM6Ly9pcGZzLmlvL2lwZnMvUW1lRHhBTlQzOUs4VWdRbzRGWFF4SkdKWURYTVVYZ2dNVlRNY1VBWnpuTnM2cS80MzEucG5n',
@@ -29,7 +29,7 @@ const nftCollection = [{
   thumbnailUrl: '',
   tags: ['numbat', ' robots', ' robot', ' erobots'],
   metadata: undefined,
-  owner: 'erd13w5hlehc42zvhd9u78ylrac9axntn9p9jqn9kvy3c052l8rmt2yqa59l76',
+  owner: 'drt13w5hlehc42zvhd9u78ylrac9axntn9p9jqn9kvy3c052l8rmt2yqqgjuay',
   balance: undefined,
   supply: '1',
   decimals: undefined,

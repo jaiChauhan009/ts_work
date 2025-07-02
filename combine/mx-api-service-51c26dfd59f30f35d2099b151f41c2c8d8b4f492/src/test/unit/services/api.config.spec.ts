@@ -129,10 +129,10 @@ describe('API Config', () => {
     it("should return dcdt contract address", () => {
       jest
         .spyOn(ConfigService.prototype, "get")
-        .mockImplementation(jest.fn(() => 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u'));
+        .mockImplementation(jest.fn(() => 'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqzlllsd5j0s2'));
 
       const results = apiConfigService.getDcdtContractAddress();
-      expect(results).toEqual('erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u');
+      expect(results).toEqual('drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqzlllsd5j0s2');
     });
 
     it("should throw error because test simulates that dcdt contract address is not defined", () => {
@@ -148,10 +148,10 @@ describe('API Config', () => {
     it("should return auction contract address", () => {
       jest
         .spyOn(ConfigService.prototype, "get")
-        .mockImplementation(jest.fn(() => 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqplllst77y4l'));
+        .mockImplementation(jest.fn(() => 'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqplllsphc9lf'));
 
       const results = apiConfigService.getAuctionContractAddress();
-      expect(results).toEqual('erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqplllst77y4l');
+      expect(results).toEqual('drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqplllsphc9lf');
     });
   });
 
@@ -159,10 +159,10 @@ describe('API Config', () => {
     it("should return staking contract address", () => {
       jest
         .spyOn(ConfigService.prototype, "get")
-        .mockImplementation(jest.fn(() => 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqllls0lczs7'));
+        .mockImplementation(jest.fn(() => 'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqqllls9k7r6g'));
 
       const results = apiConfigService.getStakingContractAddress();
-      expect(results).toEqual('erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqllls0lczs7');
+      expect(results).toEqual('drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqqllls9k7r6g');
     });
   });
 
@@ -170,10 +170,10 @@ describe('API Config', () => {
     it("should return delegation contract address", () => {
       jest
         .spyOn(ConfigService.prototype, "get")
-        .mockImplementation(jest.fn(() => 'erd1qqqqqqqqqqqqqpgqxwakt2g7u9atsnr03gqcgmhcv38pt7mkd94q6shuwt'));
+        .mockImplementation(jest.fn(() => 'drt1qqqqqqqqqqqqqpgqxwakt2g7u9atsnr03gqcgmhcv38pt7mkd94q8vqld4'));
 
       const results = apiConfigService.getDelegationContractAddress();
-      expect(results).toEqual('erd1qqqqqqqqqqqqqpgqxwakt2g7u9atsnr03gqcgmhcv38pt7mkd94q6shuwt');
+      expect(results).toEqual('drt1qqqqqqqqqqqqqpgqxwakt2g7u9atsnr03gqcgmhcv38pt7mkd94q8vqld4');
     });
   });
 
@@ -181,10 +181,10 @@ describe('API Config', () => {
     it("should return metabonding contract address", () => {
       jest
         .spyOn(ConfigService.prototype, "get")
-        .mockImplementation(jest.fn(() => 'erd1qqqqqqqqqqqqqpgq50dge6rrpcra4tp9hl57jl0893a4r2r72jpsk39rjj'));
+        .mockImplementation(jest.fn(() => 'drt1qqqqqqqqqqqqqpgq50dge6rrpcra4tp9hl57jl0893a4r2r72jpstdjq3v'));
 
       const results = apiConfigService.getMetabondingContractAddress();
-      expect(results).toEqual('erd1qqqqqqqqqqqqqpgq50dge6rrpcra4tp9hl57jl0893a4r2r72jpsk39rjj');
+      expect(results).toEqual('drt1qqqqqqqqqqqqqpgq50dge6rrpcra4tp9hl57jl0893a4r2r72jpstdjq3v');
     });
   });
 
@@ -192,10 +192,10 @@ describe('API Config', () => {
     it("should return delegation manager contract address", () => {
       jest
         .spyOn(ConfigService.prototype, "get")
-        .mockImplementation(jest.fn(() => 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqylllslmq6y6'));
+        .mockImplementation(jest.fn(() => 'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqyllls4jxmwv'));
 
       const results = apiConfigService.getDelegationManagerContractAddress();
-      expect(results).toEqual('erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqylllslmq6y6');
+      expect(results).toEqual('drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqyllls4jxmwv');
     });
 
     it("should throw error because test simulates that delegation manager contract address is not defined", () => {

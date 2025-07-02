@@ -397,7 +397,7 @@ describe('NFTs e2e tests with chain simulator', () => {
       const response = await axios.get(`${config.apiServiceUrl}/nfts/${identifier}/accounts`);
       expect(response.status).toBe(200);
       expect(response.data).toStrictEqual([{
-        address: "erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th",
+        address: "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf",
         balance: "10",
       }]);
     });
@@ -409,7 +409,7 @@ describe('NFTs e2e tests with chain simulator', () => {
       const response = await axios.get(`${config.apiServiceUrl}/nfts/${identifier}/accounts?from=0&size=1`);
       expect(response.status).toBe(200);
       expect(response.data).toStrictEqual([{
-        address: "erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th",
+        address: "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf",
         balance: "10",
       }]);
     });
@@ -421,7 +421,7 @@ describe('NFTs e2e tests with chain simulator', () => {
       const response = await axios.get(`${config.apiServiceUrl}/nfts/${identifier}/accounts`);
       expect(response.status).toBe(200);
       expect(response.data).toStrictEqual([{
-        address: "erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th",
+        address: "drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf",
         balance: "10",
       }]);
     });

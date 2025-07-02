@@ -13,7 +13,7 @@ import { Attribute, CreateNftRequest, TransferNftRequest, UpdateQuantityRequest 
 describe('Assets Transaction Service', () => {
   let service: AssetsTransactionService;
   let module: TestingModule;
-  const ownerAddress = 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha';
+  const ownerAddress = 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r';
 
   beforeEach(async () => {
     module = await Test.createTestingModule({
@@ -57,8 +57,8 @@ describe('Assets Transaction Service', () => {
       gasPrice: 1000000000,
       nonce: 0,
       options: undefined,
-      receiver: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
-      sender: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+      receiver: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
+      sender: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
       signature: undefined,
       value: '0',
       version: 2,
@@ -71,7 +71,7 @@ describe('Assets Transaction Service', () => {
           functionName: 'DCDTNFTAddQuantity',
           identifier: 'GEN-eff51c-03',
           quantity: '10',
-          updateQuantityRoleAddress: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+          updateQuantityRoleAddress: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
         }),
       );
       expect(result).toMatchObject(expectedResult);
@@ -83,7 +83,7 @@ describe('Assets Transaction Service', () => {
       functionName: 'DCDTNFTBurn',
       identifier: 'GEN-eff51c-03',
       quantity: '10',
-      updateQuantityRoleAddress: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+      updateQuantityRoleAddress: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
     });
 
     it('returns built transaction with right arguments', async () => {
@@ -103,8 +103,8 @@ describe('Assets Transaction Service', () => {
         gasPrice: 1000000000,
         nonce: 0,
         options: undefined,
-        receiver: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
-        sender: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+        receiver: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
+        sender: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
         signature: undefined,
         value: '0',
         version: 2,
@@ -145,8 +145,8 @@ describe('Assets Transaction Service', () => {
         gasPrice: 1000000000,
         nonce: 0,
         options: undefined,
-        receiver: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
-        sender: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+        receiver: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
+        sender: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
         signature: undefined,
         value: '0',
         version: 2,
@@ -166,8 +166,8 @@ describe('Assets Transaction Service', () => {
         gasPrice: 1000000000,
         nonce: 0,
         options: undefined,
-        receiver: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
-        sender: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+        receiver: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
+        sender: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
         signature: undefined,
         value: '0',
         version: 2,
@@ -177,7 +177,7 @@ describe('Assets Transaction Service', () => {
         ownerAddress,
         new TransferNftRequest({
           identifier: 'GEN-eff51c-03',
-          destinationAddress: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+          destinationAddress: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
         }),
       );
       expect(result).toMatchObject(expectedResult);
@@ -191,8 +191,8 @@ describe('Assets Transaction Service', () => {
         gasPrice: 1000000000,
         nonce: 0,
         options: undefined,
-        receiver: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
-        sender: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+        receiver: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
+        sender: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
         signature: undefined,
         value: '0',
         version: 2,
@@ -203,7 +203,7 @@ describe('Assets Transaction Service', () => {
         new TransferNftRequest({
           identifier: 'GEN-eff51c-03',
           quantity: '10',
-          destinationAddress: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+          destinationAddress: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
         }),
       );
       expect(result).toMatchObject(expectedResult);
@@ -215,7 +215,7 @@ describe('Assets Transaction Service', () => {
         new TransferNftRequest({
           identifier: 'TEST-9e876f-0435', 
           quantity: '1',
-          destinationAddress: 'erd1f339wqgj09j6yf79m0ae85syjaljxsfgasuwfe33g22jmyjvep6qsm0w6n',
+          destinationAddress: 'drt1f339wqgj09j6yf79m0ae85syjaljxsfgasuwfe33g22jmyjvep6qd8cded',
         }),
       );
 
@@ -233,7 +233,7 @@ describe('Assets Transaction Service', () => {
         new TransferNftRequest({
           identifier: 'TEST-753c62-01f6',
           quantity: '1',
-          destinationAddress: 'erd1f339wqgj09j6yf79m0ae85syjaljxsfgasuwfe33g22jmyjvep6qsm0w6n',
+          destinationAddress: 'drt1f339wqgj09j6yf79m0ae85syjaljxsfgasuwfe33g22jmyjvep6qd8cded',
         }),
       );
 
@@ -249,7 +249,7 @@ describe('Assets Transaction Service', () => {
         new TransferNftRequest({
           identifier: 'TEST-123456-01',
           quantity: '1',
-          destinationAddress: 'erd1f339wqgj09j6yf79m0ae85syjaljxsfgasuwfe33g22jmyjvep6qsm0w6n',
+          destinationAddress: 'drt1f339wqgj09j6yf79m0ae85syjaljxsfgasuwfe33g22jmyjvep6qd8cded',
         }),
       );
 
@@ -264,7 +264,7 @@ describe('Assets Transaction Service', () => {
         new TransferNftRequest({
           identifier: 'TEST-123456-ffff', 
           quantity: '1',
-          destinationAddress: 'erd1f339wqgj09j6yf79m0ae85syjaljxsfgasuwfe33g22jmyjvep6qsm0w6n',
+          destinationAddress: 'drt1f339wqgj09j6yf79m0ae85syjaljxsfgasuwfe33g22jmyjvep6qd8cded',
         }),
       );
 
@@ -279,7 +279,7 @@ describe('Assets Transaction Service', () => {
         new TransferNftRequest({
           identifier: 'TEST-123456-00ab',
           quantity: '1',
-          destinationAddress: 'erd1f339wqgj09j6yf79m0ae85syjaljxsfgasuwfe33g22jmyjvep6qsm0w6n',
+          destinationAddress: 'drt1f339wqgj09j6yf79m0ae85syjaljxsfgasuwfe33g22jmyjvep6qd8cded',
         }),
       );
 
@@ -322,8 +322,8 @@ describe('Assets Transaction Service', () => {
         gasPrice: 1000000000,
         nonce: 0,
         options: undefined,
-        receiver: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
-        sender: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+        receiver: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
+        sender: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
         signature: undefined,
         value: '0',
         version: 2,

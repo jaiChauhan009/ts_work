@@ -45,7 +45,7 @@ describe('RabbitMqTokenHandlerService', () => {
   describe('handleTransferOwnershipEvent', () => {
     const event: NotifierEvent = {
       identifier: 'DCDTNFTCreate',
-      address: 'erd1',
+      address: 'drt1',
       topics: [BinaryUtils.base64Encode('test-topic')],
     };
 

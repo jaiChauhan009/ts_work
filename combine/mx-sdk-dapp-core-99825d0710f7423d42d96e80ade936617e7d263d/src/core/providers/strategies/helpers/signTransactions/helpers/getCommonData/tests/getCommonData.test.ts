@@ -41,7 +41,7 @@ describe('getCommonData', () => {
         ppu: 0,
         ppuOptions: [],
         receiver:
-          'erd1qqqqqqqqqqqqqpgqpv09kfzry5y4sj05udcngesat07umyj70n4sa2c0rp',
+          'drt1qqqqqqqqqqqqqpgqpv09kfzry5y4sj05udcngesat07umyj70n4sqk0vql',
         scCall: null,
         tokenType: 'FungibleDCDT',
         transactionsCount: 4
@@ -125,7 +125,7 @@ describe('when the gas limit is updated', () => {
           }
         ],
         receiver:
-          'erd1qqqqqqqqqqqqqpgqpv09kfzry5y4sj05udcngesat07umyj70n4sa2c0rp',
+          'drt1qqqqqqqqqqqqqpgqpv09kfzry5y4sj05udcngesat07umyj70n4sqk0vql',
         scCall: null,
         tokenType: 'FungibleDCDT',
         transactionsCount: 4
@@ -180,7 +180,7 @@ describe('when the gas limit is updated', () => {
           }
         ],
         receiver:
-          'erd1dm9uxpf5awkn7uhju7zjn9lde0dhahy0qaxqqlu26xcuuw27qqrsqfmej3',
+          'drt1dm9uxpf5awkn7uhju7zjn9lde0dhahy0qaxqqlu26xcuuw27qqrsa4v630',
         scCall: 'addLiquidity',
         tokenType: 'FungibleDCDT',
         transactionsCount: 4

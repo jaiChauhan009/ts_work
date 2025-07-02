@@ -16,11 +16,11 @@ export const TOKEN_IDENTIFIER_REWA: string = 'REWA-000000';
 export const INTERCHAIN_TOKEN_ID: string = '01b3d64c8c6530a3aad5909ae7e0985d4438ce8eafd90e51ce48fbc809bced39';
 export const CANONICAL_INTERCHAIN_TOKEN_ID: string = 'ab13e48029a0672cd3a669e258a97696dc33b4f72f4d758f92ee4afc8a026dc1';
 
-export const TOKEN_MANAGER_ADDRESS: string = 'erd1qqqqqqqqqqqqqpgqzyg3zygqqqqqqqqqqqqq2qqqqqqqqqqqqqqqtstllp';
-export const TOKEN_MANAGER_ADDRESS_2: string = 'erd1qqqqqqqqqqqqqpgqzyg3zygqqqqqqqqqqqqq2qqqqqqqqqqpqqqq03de6q';
-export const TOKEN_MANAGER_ADDRESS_3: string = 'erd1qqqqqqqqqqqqqpgqqqqqqqqqqqqq2qqqqqqqqqqqqqqqqqqqqqqqglm4l5';
+export const TOKEN_MANAGER_ADDRESS: string = 'drt1qqqqqqqqqqqqqpgqzyg3zygqqqqqqqqqqqqq2qqqqqqqqqqqqqqqkvuuul';
+export const TOKEN_MANAGER_ADDRESS_2: string = 'drt1qqqqqqqqqqqqqpgqzyg3zygqqqqqqqqqqqqq2qqqqqqqqqqpqqqqjd66e7';
+export const TOKEN_MANAGER_ADDRESS_3: string = 'drt1qqqqqqqqqqqqqpgqqqqqqqqqqqqq2qqqqqqqqqqqqqqqqqqqqqqq4rvku2';
 
-export const ADDRESS_ZERO: string = 'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu';
+export const ADDRESS_ZERO: string = 'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z';
 
 export const CHAIN_NAME: string = 'DharitrI';
 export const CHAIN_NAME_HASH: string = createKeccakHash('keccak256').update(CHAIN_NAME).digest('hex');

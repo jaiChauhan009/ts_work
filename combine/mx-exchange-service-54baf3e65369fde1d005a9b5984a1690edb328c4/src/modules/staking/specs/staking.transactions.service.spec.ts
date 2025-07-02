@@ -72,8 +72,8 @@ describe('StakingTransactionService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
-            sender: 'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
+            sender: 'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             gasPrice: 1000000000,
             gasLimit: gasConfig.stake.stakeFarm.default,
             data: encodeTransactionData(
@@ -104,12 +104,12 @@ describe('StakingTransactionService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
-            sender: 'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
+            sender: 'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             gasPrice: 1000000000,
             gasLimit: gasConfig.stake.unstakeFarm,
             data: encodeTransactionData(
-                'DCDTNFTTransfer@STAKETOK-111111@01@1000@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu@unstakeFarm',
+                'DCDTNFTTransfer@STAKETOK-111111@01@1000@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z@unstakeFarm',
             ),
             chainID: 'T',
             version: 2,
@@ -136,12 +136,12 @@ describe('StakingTransactionService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
-            sender: 'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
+            sender: 'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             gasPrice: 1000000000,
             gasLimit: gasConfig.stake.unbondFarm,
             data: encodeTransactionData(
-                'DCDTNFTTransfer@STAKETOK-111111@01@01000000@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu@unbondFarm',
+                'DCDTNFTTransfer@STAKETOK-111111@01@01000000@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z@unbondFarm',
             ),
             chainID: 'T',
             version: 2,
@@ -168,12 +168,12 @@ describe('StakingTransactionService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
-            sender: 'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
+            sender: 'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             gasPrice: 1000000000,
             gasLimit: gasConfig.stake.claimRewards,
             data: encodeTransactionData(
-                'DCDTNFTTransfer@STAKETOK-111111@01@01000000@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu@claimRewards',
+                'DCDTNFTTransfer@STAKETOK-111111@01@01000000@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z@claimRewards',
             ),
             chainID: 'T',
             version: 2,
@@ -200,12 +200,12 @@ describe('StakingTransactionService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
-            sender: 'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
+            sender: 'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             gasPrice: 1000000000,
             gasLimit: gasConfig.stake.compoundRewards,
             data: encodeTransactionData(
-                'DCDTNFTTransfer@STAKETOK-111111@01@01000000@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu@compoundRewards',
+                'DCDTNFTTransfer@STAKETOK-111111@01@01000000@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z@compoundRewards',
             ),
             chainID: 'T',
             version: 2,
@@ -272,14 +272,14 @@ describe('StakingTransactionService', () => {
                 nonce: 0,
                 value: '0',
                 receiver:
-                    'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
-                sender: 'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                    'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
+                sender: 'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
                 senderUsername: undefined,
                 receiverUsername: undefined,
                 gasPrice: 1000000000,
                 gasLimit: gasConfig.stake.claimRewards,
                 data: encodeTransactionData(
-                    'DCDTNFTTransfer@STAKETOK-111111@01@1000000000000000000@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu@claimRewards',
+                    'DCDTNFTTransfer@STAKETOK-111111@01@1000000000000000000@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z@claimRewards',
                 ),
                 chainID: 'T',
                 version: 2,
@@ -309,7 +309,7 @@ describe('StakingTransactionService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             sender: senderAddress,
             senderUsername: undefined,
             receiverUsername: undefined,
@@ -352,12 +352,12 @@ describe('StakingTransactionService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
-            sender: 'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
+            sender: 'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             gasPrice: 1000000000,
             gasLimit: gasConfig.stake.mergeTokens,
             data: encodeTransactionData(
-                'MultiDCDTNFTTransfer@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu@02@REWAMEXFL-abcdef@@01000000@REWAMEXFL-abcdef@@01000000@mergeFarmTokens',
+                'MultiDCDTNFTTransfer@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z@02@REWAMEXFL-abcdef@@01000000@REWAMEXFL-abcdef@@01000000@mergeFarmTokens',
             ),
             chainID: 'T',
             version: 2,
@@ -381,14 +381,14 @@ describe('StakingTransactionService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
             gasPrice: 1000000000,
             gasLimit: gasConfig.stake.admin.whitelist,
             data: encodeTransactionData(
-                'addSCAddressToWhitelist@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'addSCAddressToWhitelist@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             ),
             chainID: 'T',
             version: 2,
@@ -414,14 +414,14 @@ describe('StakingTransactionService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
             gasPrice: 1000000000,
             gasLimit: gasConfig.stake.admin.whitelist,
             data: encodeTransactionData(
-                'removeSCAddressFromWhitelist@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'removeSCAddressFromWhitelist@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             ),
             chainID: 'T',
             version: 2,
@@ -446,7 +446,7 @@ describe('StakingTransactionService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
@@ -476,7 +476,7 @@ describe('StakingTransactionService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
@@ -508,7 +508,7 @@ describe('StakingTransactionService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
@@ -540,14 +540,14 @@ describe('StakingTransactionService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
             gasPrice: 1000000000,
             gasLimit: gasConfig.stake.admin.setLocalRolesFarmToken,
             data: encodeTransactionData(
-                'setBurnRoleForAddress@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'setBurnRoleForAddress@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             ),
             chainID: 'T',
             version: 2,
@@ -572,7 +572,7 @@ describe('StakingTransactionService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
@@ -602,7 +602,7 @@ describe('StakingTransactionService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
@@ -632,7 +632,7 @@ describe('StakingTransactionService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
@@ -662,7 +662,7 @@ describe('StakingTransactionService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
@@ -692,7 +692,7 @@ describe('StakingTransactionService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,

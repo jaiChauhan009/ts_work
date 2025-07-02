@@ -57,7 +57,7 @@ export const NotificationsBar = () => {
               {notification.id === TEMP_LOCAL_NOTIFICATION_DISMISSED && (
                 <div className='w-100'>
                   <a
-                    href='https://governance.dharitri.org/proposal/erd1qqqqqqqqqqqqqpgqfn2mu8l0dte34eqh6qtgmpjpxpkhunccrl4sy2sp07/2'
+                    href='https://governance.dharitri.org/proposal/drt1qqqqqqqqqqqqqpgqfn2mu8l0dte34eqh6qtgmpjpxpkhunccrl4sek8zvq/2'
                     target='_blank'
                     rel='noreferrer nofollow noopener'
                     className='text-black'

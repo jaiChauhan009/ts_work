@@ -15,7 +15,7 @@ describe('Send', () => {
       .should(AssertionEnum.contain, 'Sender')
       .should(
         AssertionEnum.contain,
-        'erd16xlzk48ftvhxp8dyq6d0kkfpgpfechlzycfm9xmdmwna66pvkymqvz4vzq'
+        'drt16xlzk48ftvhxp8dyq6d0kkfpgpfechlzycfm9xmdmwna66pvkymq37z0p7'
       )
       .should(AssertionEnum.contain, 'Transaction status')
       .should(AssertionEnum.contain, 'succes');

@@ -2,7 +2,7 @@ import { RawEventType } from '../../generic.types';
 import { RawEvent } from '../../raw.event';
 
 export const rawVoteEvent: RawEventType = {
-    address: 'erd1qqqqqqqqqqqqqpgq7cywmem5g66ad49rce0ctu6yqmscmp9v7j6q7cded4',
+    address: 'drt1qqqqqqqqqqqqqpgq7cywmem5g66ad49rce0ctu6yqmscmp9v7j6qry66wt',
     identifier: 'vote',
     topics: [
         "dXBWb3RlQ2FzdA==",

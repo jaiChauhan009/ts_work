@@ -140,5 +140,5 @@ export const sendTokensParamScheme = {
     .describe(
       "The amount of tokens to send. ONLY needed for SFT or Meta-DCDT."
     ),
-  receiver: z.string().describe("The bech32 address of the receiver (erd1...)"),
+  receiver: z.string().describe("The bech32 address of the receiver (drt1...)"),
 };

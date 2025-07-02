@@ -1,8 +1,8 @@
 {
   "DharitrI": {
     "chainID": "D",
-    "esdtNftAddress": "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u",
-    "nftMarketplaceAddress": "erd1qqqqqqqqqqqqqpgqz8q2ggskllzh9dp5988uz42jn95pqeghu00s0mlgca",
+    "dcdtNftAddress": "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqzlllsd5j0s2",
+    "nftMarketplaceAddress": "drt1qqqqqqqqqqqqqpgqz8q2ggskllzh9dp5988uz42jn95pqeghu00sj8gtmr",
     "issueNftCost": 50000000000000000,
     "pricePerByte": 1500,
     "transferMinCost": 750000,
@@ -17,7 +17,7 @@
     "keepAliveMaxFreeSockets": 10,
     "decimals": 18,
     "egld": "EGLD",
-    "burnAddress": "erd1deaddeaddeaddeaddeaddeaddeaddeaddeaddeaddeaddeaddeaqtv0gag",
+    "burnAddress": "drt1deaddeaddeaddeaddeaddeaddeaddeaddeaddeaddeaddeaddeaqksct7k",
     "pemFileName": "wallet.pem",
     "marketplacesIconsBaseUrl": "https://media.dharitri.org/markets",
     "ipfs": "ipfs.io/ipfs/",

@@ -15,7 +15,7 @@ export class XExchange1720010809879 implements MigrationInterface {
           last(value, timestamp) FILTER (WHERE key = 'firstTokenPrice') AS close,
           sum(value) FILTER (WHERE key = 'firstTokenVolume') AS volume
     FROM hyper_dex_analytics
-    WHERE key in ('firstTokenPrice', 'firstTokenVolume') and  series like 'erd1%'
+    WHERE key in ('firstTokenPrice', 'firstTokenVolume') and  series like 'drt1%'
     GROUP BY time, series
     ORDER BY time ASC;
 `);
@@ -25,7 +25,7 @@ export class XExchange1720010809879 implements MigrationInterface {
                 'public',
                 'MATERIALIZED_VIEW',
                 'pair_first_token_candles_minute',
-                "SELECT\n          time_bucket('1 minute', timestamp) AS time,\n          series,\n          first(value, timestamp) FILTER (WHERE key = 'firstTokenPrice') AS open,\n          max(value) FILTER (WHERE key = 'firstTokenPrice') AS high,\n          min(value) FILTER (WHERE key = 'firstTokenPrice') AS low,\n          last(value, timestamp) FILTER (WHERE key = 'firstTokenPrice') AS close,\n          sum(value) FILTER (WHERE key = 'firstTokenVolume') AS volume\n    FROM hyper_dex_analytics\n    WHERE key in ('firstTokenPrice', 'firstTokenVolume') and  series like 'erd1%'\n    GROUP BY time, series\n    ORDER BY time ASC;",
+                "SELECT\n          time_bucket('1 minute', timestamp) AS time,\n          series,\n          first(value, timestamp) FILTER (WHERE key = 'firstTokenPrice') AS open,\n          max(value) FILTER (WHERE key = 'firstTokenPrice') AS high,\n          min(value) FILTER (WHERE key = 'firstTokenPrice') AS low,\n          last(value, timestamp) FILTER (WHERE key = 'firstTokenPrice') AS close,\n          sum(value) FILTER (WHERE key = 'firstTokenVolume') AS volume\n    FROM hyper_dex_analytics\n    WHERE key in ('firstTokenPrice', 'firstTokenVolume') and  series like 'drt1%'\n    GROUP BY time, series\n    ORDER BY time ASC;",
             ],
         );
         await queryRunner.query(`CREATE MATERIALIZED VIEW "pair_first_token_candles_hourly" WITH (timescaledb.continuous) AS 

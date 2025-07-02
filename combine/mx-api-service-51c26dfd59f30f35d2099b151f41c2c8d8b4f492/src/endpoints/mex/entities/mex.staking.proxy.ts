@@ -5,7 +5,7 @@ export class MexStakingProxy {
     Object.assign(this, init);
   }
 
-  @ApiProperty({ type: String, example: 'erd1qqqqqqqqqqqqqpgq2ymdr66nk5hx32j2tqdeqv9ajm9dj9uu2jps3dtv6v' })
+  @ApiProperty({ type: String, example: 'drt1qqqqqqqqqqqqqpgq2ymdr66nk5hx32j2tqdeqv9ajm9dj9uu2jpsv3u0ej' })
   address: string = '';
 
   @ApiProperty()

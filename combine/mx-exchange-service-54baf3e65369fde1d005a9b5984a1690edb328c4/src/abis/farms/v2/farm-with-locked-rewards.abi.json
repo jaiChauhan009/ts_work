@@ -68,10 +68,10 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -90,10 +90,10 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -112,10 +112,10 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -134,10 +134,10 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -153,7 +153,7 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -817,7 +817,7 @@
             ],
             "outputs": [
                 {
-                    "type": "List<EsdtTokenPayment>"
+                    "type": "List<DcdtTokenPayment>"
                 }
             ]
         },
@@ -1057,7 +1057,7 @@
                 },
                 {
                     "name": "all_payments",
-                    "type": "List<EsdtTokenPayment>"
+                    "type": "List<DcdtTokenPayment>"
                 }
             ]
         },
@@ -1102,7 +1102,7 @@
             ]
         }
     ],
-    "esdtAttributes": [],
+    "dcdtAttributes": [],
     "hasCallback": true,
     "types": {
         "BoostedYieldsFactors": {
@@ -1148,11 +1148,11 @@
             "fields": [
                 {
                     "name": "old_farm_token",
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
                     "name": "new_farm_token",
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
                     "name": "farm_supply",
@@ -1160,7 +1160,7 @@
                 },
                 {
                     "name": "reward_tokens",
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
                     "name": "reward_reserve",
@@ -1185,11 +1185,11 @@
             "fields": [
                 {
                     "name": "old_farm_token",
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
                     "name": "new_farm_token",
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
                     "name": "farm_supply",
@@ -1197,7 +1197,7 @@
                 },
                 {
                     "name": "reward_tokens",
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
                     "name": "reward_reserve",
@@ -1247,7 +1247,7 @@
                 },
                 {
                     "name": "farm_token",
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
                     "name": "farm_supply",
@@ -1271,7 +1271,7 @@
                 }
             ]
         },
-        "EsdtTokenPayment": {
+        "DcdtTokenPayment": {
             "type": "struct",
             "fields": [
                 {
@@ -1301,7 +1301,7 @@
                 },
                 {
                     "name": "farm_token",
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
                     "name": "farm_supply",
@@ -1309,7 +1309,7 @@
                 },
                 {
                     "name": "reward_tokens",
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
                     "name": "reward_reserve",

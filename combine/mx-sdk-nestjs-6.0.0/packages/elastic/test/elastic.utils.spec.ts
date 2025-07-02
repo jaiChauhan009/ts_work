@@ -107,7 +107,7 @@ describe('Elastic Query', () => {
 
     const textToSearch = "Day One";
     elasticQuery = elasticQuery.withCondition(QueryConditionOptions.must, QueryType.Exists('identifier'));
-    elasticQuery = elasticQuery.withMustCondition(QueryType.Match('address', 'erd1wh9c0sjr2xn8hzf02lwwcr4jk2s84tat9ud2kaq6zr7xzpvl9l5q8awmex'));
+    elasticQuery = elasticQuery.withMustCondition(QueryType.Match('address', 'drt1wh9c0sjr2xn8hzf02lwwcr4jk2s84tat9ud2kaq6zr7xzpvl9l5q6pec6c'));
     const conditions: AbstractQuery[] = [];
     conditions.push(QueryType.Wildcard('data.name', `*${textToSearch.toLowerCase()}*`));
     conditions.push(QueryType.Wildcard('data.token', `*${textToSearch.toLowerCase()}*`));

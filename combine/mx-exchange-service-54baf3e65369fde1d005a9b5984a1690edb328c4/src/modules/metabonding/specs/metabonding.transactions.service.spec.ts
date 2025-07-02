@@ -68,7 +68,7 @@ describe('MetabondingTransactionsService', () => {
             new TransactionModel({
                 chainID: mxConfig.chainID,
                 data: encodeTransactionData(
-                    'DCDTNFTTransfer@LKMEX-abcdef@01@1000000000000000000@erd1qqqqqqqqqqqqqpgq4jvy228nzlcxnwufqzm7hugnv6wl42xj0n4sz7ra7n@stakeLockedAsset',
+                    'DCDTNFTTransfer@LKMEX-abcdef@01@1000000000000000000@drt1qqqqqqqqqqqqqpgq4jvy228nzlcxnwufqzm7hugnv6wl42xj0n4slz57ad@stakeLockedAsset',
                 ),
                 gasLimit: gasConfig.metabonding.stakeLockedAsset.default,
                 gasPrice: 1000000000,

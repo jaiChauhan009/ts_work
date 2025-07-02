@@ -8,9 +8,9 @@ describe('test router events decoder', () => {
         );
         expect(multiPairSwapEvent.toJSON()).toEqual({
             address:
-                'erd1qqqqqqqqqqqqqpgqq66xk9gfr4esuhem3jru86wg5hvp33a62jps2fy57p',
+                'drt1qqqqqqqqqqqqqpgqq66xk9gfr4esuhem3jru86wg5hvp33a62jpsh4nhal',
             identifier: 'multiPairSwap',
-            caller: 'erd1qqqqqqqqqqqqqpgqsytkvnexypp7argk02l0rasnj57sxa542jpshkl7df',
+            caller: 'drt1qqqqqqqqqqqqqpgqsytkvnexypp7argk02l0rasnj57sxa542jps22gawh',
             block: 25574671,
             epoch: 1777,
             timestamp: 1749709740,

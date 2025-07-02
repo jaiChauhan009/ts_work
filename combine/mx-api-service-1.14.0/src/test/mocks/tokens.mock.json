@@ -4,7 +4,7 @@
     "identifier": "WEGLD-bd4d79",
     "name": "WrappedEGLD",
     "ticker": "WEGLD",
-    "owner": "erd1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsqj8x97",
+    "owner": "drt1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsaws9xq",
     "decimals": 18,
     "isPaused": false,
     "assets": {
@@ -35,7 +35,7 @@
     "identifier": "MEX-455c57",
     "name": "MEX",
     "ticker": "MEX",
-    "owner": "erd1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsqj8x97",
+    "owner": "drt1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsaws9xq",
     "decimals": 18,
     "isPaused": false,
     "assets": {
@@ -66,7 +66,7 @@
     "identifier": "UTK-2f80e9",
     "name": "Utrust",
     "ticker": "UTK",
-    "owner": "erd1kc3y0d3jhmv4j42lvyq84t395s7s47tucpw97grwgaj8dqlkzumsw97k34",
+    "owner": "drt1kc3y0d3jhmv4j42lvyq84t395s7s47tucpw97grwgaj8dqlkzumsnef4jt",
     "decimals": 18,
     "isPaused": false,
     "assets": {
@@ -109,7 +109,7 @@
     "identifier": "RIDE-7d18e9",
     "name": "holoride",
     "ticker": "RIDE",
-    "owner": "erd1fnq9urh6945yez393jf86umt7zhqz3wa5dqxa2fwv5gemj0fxqpsjcarlm",
+    "owner": "drt1fnq9urh6945yez393jf86umt7zhqz3wa5dqxa2fwv5gemj0fxqps0y2qu9",
     "decimals": 18,
     "isPaused": false,
     "assets": {
@@ -119,55 +119,55 @@
       "pngUrl": "https://media.dharitri.org/tokens/asset/RIDE-7d18e9/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/RIDE-7d18e9/logo.svg",
       "lockedAccounts": {
-        "erd1fnq9urh6945yez393jf86umt7zhqz3wa5dqxa2fwv5gemj0fxqpsjcarlm": "Locked Account #1",
-        "erd1jtl4gcgcvh6ktuj2phj7rq0dumsr0czhcny8ztrlt2atq83fdnxsxnss62": "Locked Account #2",
-        "erd1pjwfnd30etn6yslp4gyf9qkstjjmq5m9xyju80nnszed6gmxny6q42s6cc": "Locked Account #3",
-        "erd16davrfmlkem4cwzhcva85np7dfuhcve70293n6h3ay92r494lkpssx6t9u": "Locked Account #4",
-        "erd1wxsug6t7zc4207th8484fm769067w5kgnurg2pmdld5nlde8zy2qklln8w": "Locked Account #5",
-        "erd1f35warttsdj4y7cz5e56xg7q32vwvfatruvu75n5d0n4zcjs3rtqptksyk": "Locked Account #6",
-        "erd12qw2g7jqtejvhq4fdtd09rpslzt5j7jausprzdru7mkuqml6pvhsp40n34": "Locked Account #7",
-        "erd19w6f7jqnf4nqrdmq0m548crrc4v3dmrxtn7u3dngep2r078v30aqzzu6nc": "Locked Account #8",
-        "erd1y8tf50le8grc7t3gy7l0wk7lvg9uhzznmx66k0ma3xjguzfm752q9j2wlu": "Locked Account #9",
-        "erd10mrn7uvn0g9wqc8nnal2wedh6uj7cjg6ddpc00dsv5q0pvjdtl7s5twmj7": "Locked Account #10",
-        "erd188xr2v80m9tp8s0ydu7mxzq0v7rxczme39yyq3nw8k99nn4muzusp2rlyx": "Locked Account #11",
-        "erd1utrglml7cgts2syrrvy8l6pq8hmlmxgp960qgxaye8ftuaglpt5sy35c0s": "Locked Account #12",
-        "erd1wate00rh8prvdtujsyv6g3fevqg7l840fhd7v2ecedhd6v9pxtjql0eay7": "Locked Account #13",
-        "erd1qv5lkt8qnrq77re5tn39r0pfjgju492muz3plckd7xq00eux59kqm4kgvs": "Locked Account #14",
-        "erd1mh397lv7f20gcvhy55kp3q3vkdqeyvrt9nl2hyclzvr2puhrtu5ssh8v6p": "Locked Account #15",
-        "erd19l2mwjtpsc45x5shz4gk7ltffmz4thjqhyt3p9djgcgwl96fpp5qewrlry": "Locked Account #16",
-        "erd1nlkzl56xmlap923hdr2dvh4pt2xm4jgcq4mvh4yakx7hzhaqqtxqlyle5p": "Locked Account #17",
-        "erd1sg7p5jpfyhyj76dk8uezwnaxers78h348ffe7puredepck25df8slfq0ju": "Locked Account #18",
-        "erd1qyqfdqge74ljllrun48awehf455xjjycgvk8sw4u06j75fnlfxqsl0p0rk": "Locked Account #19",
-        "erd1uhqj5cefc5tfhvy22vlvvxq4mltgl25gwypt47tcvnm8tav4w06qw4nakz": "Locked Account #20",
-        "erd18pplw3nzl7yglgeday42qccxfsuatzcw3dldnk9gtnk9sgyy4pys0cjmc4": "Locked Account #21",
-        "erd1r2w7nwauw2jph6zxa8sfqawsffu9w940kpm78evz2udwqxdqnwmskqfy0m": "Locked Account #22",
-        "erd17523rp9tje2pewkad7l5q3038w9wxe9hwajgdtgxzntpeasfq9pslsexdx": "Locked Account #23",
-        "erd1v9vrlmpn0flz4fc68wswzc0v9m90uj0zw2ejns492sjmy3jav5fq67t2xt": "Locked Account #24",
-        "erd1mx57kjzt69j7elh9g3rjgs64eukwpl8rff0fxmqv90jsc9qgd8xq9qqqr5": "Locked Account #25",
-        "erd1ahwpcr7sp2ne6pl9nafxa3cyl6tj5h0glnfe0g9xm583kj7mfztq48zjxx": "Locked Account #26",
-        "erd1dlghdd2l06away76wzl5jjw36galq3lfn888vdnr2mk92835vusqn7kxnl": "Locked Account #27",
-        "erd1yq9ccj6lkpuvztrfdjda2r65c3nscw8qauuun6sgw5g43dpxpgvsvehc78": "Locked Account #28",
-        "erd17ck6pv5vtvyym0um8czlkky9elp4s788rhd9v5z3repj6lw9yctqepurxq": "Locked Account #29",
-        "erd1e25895tlj5nw52r0wwu5cc99k2sr9023dwuu3jeg6d0he8gmvh2q206zph": "Locked Account #30",
-        "erd189sfede2wh0rllfgyg94cnmv87vqu0pav52lgha228ludvf32p2snu68t3": "Locked Account #31",
-        "erd1f54cwcj6xgv7c5wmj43rafmjqhuhrn78qc6f549xnq5rkdcasyhsm9tdg6": "Locked Account #32",
-        "erd16ptxqpwzmr5ezpeyefwelr7w9zt8exct0wjrp98gnjpu85ndxuhs0e5hr9": "Locked Account #33",
-        "erd1ltkdvpusvssstwrt93m6fa89u03jhlr4euemvwdyh27vysa5nvgq06vpz8": "Locked Account #34",
-        "erd1fwfwtj5ypzw4sc4ktc4qazpzmqmy80wctr686f0czxzqq9ky5pjqphmqg0": "Locked Account #35",
-        "erd14cyxqj497px9zd57hf0jjaj8xrakhn4h3t6rjldmx6vqrvxknktqr3p29j": "Locked Account #36",
-        "erd1rn0m3vw8x0p9env62jq69pq4ls20r359un2a2g59exgd2gqjsklqmumfnd": "Locked Account #37",
-        "erd1dghh6hn4grxh09dvrqlp96kpcy4m4qtzk8fjm9v7fjcahd700gdslnnqg3": "Locked Account #38",
-        "erd1kqvkp64ahaheks595ecepqadk5h36aynj8cdrst56trk65zfcyksuecw2a": "Locked Account #39",
-        "erd1pe84ysl62e0ehaqf7hf5t890ut0kv7ju4w27n6lcj2g87vg89qjqxvxsar": "Locked Account #40",
-        "erd1jk2lul7q9wk9nvqsyy7rhjsj7xy9th4sf0sp247lu0egjd2klfkqm3huvc": "Locked Account #41",
-        "erd1h6psle8zuz45qsrkxgkuu0dh45tjpe2qncufr6hyluyzyp283tdsxpl2rd": "Locked Account #42",
-        "erd1ayt9254lughnjzsnm9aztgvk7w32tjk39lqwy3mq8s6f3jqn04wshgujs9": "Locked Account #43",
-        "erd13d296fx96wrusd9h2hxx76ea0pl42zlp8huqn3erw0322tmflj4qw0ery6": "Locked Account #44",
-        "erd1q0g7dypj6m5hk4cvg72fmq3jax3e4tle94rfwaqkh0lww54het0s9pecrq": "Locked Account #45",
-        "erd1080w7duvu4rh6vplzjpr8wht2rqzvj7wm0ywv3vz7ceug299j2yqfmh2sq": "Locked Account #46",
-        "erd1zucf3xv5nzek5dmxaj8xjtr889nt68fcj32w9rtmlp3fjwvjclts3mj7y0": "Locked Account #47",
-        "erd1ksd5j647ptsvx9g3sz7vmkp5n5wmqfsv6r855dgd4jlza4h0nfjslnqsvq": "Locked Account #48",
-        "erd1jcu9yy7cjv9cznr4sm86g3nt57lsjzvmc8tryfdkkmy72mjjmf8qrspfml": "Locked Account #49"
+        "drt1fnq9urh6945yez393jf86umt7zhqz3wa5dqxa2fwv5gemj0fxqps0y2qu9": "Locked Account #1",
+        "drt1jtl4gcgcvh6ktuj2phj7rq0dumsr0czhcny8ztrlt2atq83fdnxsm08ne5": "Locked Account #2",
+        "drt1pjwfnd30etn6yslp4gyf9qkstjjmq5m9xyju80nnszed6gmxny6qgk8emx": "Locked Account #3",
+        "drt16davrfmlkem4cwzhcva85np7dfuhcve70293n6h3ay92r494lkpsd6dgxz": "Locked Account #4",
+        "drt1wxsug6t7zc4207th8484fm769067w5kgnurg2pmdld5nlde8zy2qtrgsys": "Locked Account #5",
+        "drt1f35warttsdj4y7cz5e56xg7q32vwvfatruvu75n5d0n4zcjs3rtquhpn8g": "Locked Account #6",
+        "drt12qw2g7jqtejvhq4fdtd09rpslzt5j7jausprzdru7mkuqml6pvhsufcsjt": "Locked Account #7",
+        "drt19w6f7jqnf4nqrdmq0m548crrc4v3dmrxtn7u3dngep2r078v30aql7tesx": "Locked Account #8",
+        "drt1y8tf50le8grc7t3gy7l0wk7lvg9uhzznmx66k0ma3xjguzfm752qcwaduz": "Locked Account #9",
+        "drt10mrn7uvn0g9wqc8nnal2wedh6uj7cjg6ddpc00dsv5q0pvjdtl7sfhec3q": "Locked Account #10",
+        "drt188xr2v80m9tp8s0ydu7mxzq0v7rxczme39yyq3nw8k99nn4muzusuk5u8c": "Locked Account #11",
+        "drt1utrglml7cgts2syrrvy8l6pq8hmlmxgp960qgxaye8ftuaglpt5sedrmvw": "Locked Account #12",
+        "drt1wate00rh8prvdtujsyv6g3fevqg7l840fhd7v2ecedhd6v9pxtjqznw78q": "Locked Account #13",
+        "drt1qv5lkt8qnrq77re5tn39r0pfjgju492muz3plckd7xq00eux59kqxfpt0w": "Locked Account #14",
+        "drt1mh397lv7f20gcvhy55kp3q3vkdqeyvrt9nl2hyclzvr2puhrtu5sdts0el": "Locked Account #15",
+        "drt19l2mwjtpsc45x5shz4gk7ltffmz4thjqhyt3p9djgcgwl96fpp5qyj5uq6": "Locked Account #16",
+        "drt1nlkzl56xmlap923hdr2dvh4pt2xm4jgcq4mvh4yakx7hzhaqqtxqzcg6hl": "Locked Account #17",
+        "drt1sg7p5jpfyhyj76dk8uezwnaxers78h348ffe7puredepck25df8sz4hv3z": "Locked Account #18",
+        "drt1qyqfdqge74ljllrun48awehf455xjjycgvk8sw4u06j75fnlfxqsznkvqg": "Locked Account #19",
+        "drt1uhqj5cefc5tfhvy22vlvvxq4mltgl25gwypt47tcvnm8tav4w06qnfy74u": "Locked Account #20",
+        "drt18pplw3nzl7yglgeday42qccxfsuatzcw3dldnk9gtnk9sgyy4pysjy9cmt": "Locked Account #21",
+        "drt1r2w7nwauw2jph6zxa8sfqawsffu9w940kpm78evz2udwqxdqnwmstu78v9": "Locked Account #22",
+        "drt17523rp9tje2pewkad7l5q3038w9wxe9hwajgdtgxzntpeasfq9pszvw9wc": "Locked Account #23",
+        "drt1v9vrlmpn0flz4fc68wswzc0v9m90uj0zw2ejns492sjmy3jav5fq8zuf94": "Locked Account #24",
+        "drt1mx57kjzt69j7elh9g3rjgs64eukwpl8rff0fxmqv90jsc9qgd8xqcuhrq2": "Locked Account #25",
+        "drt1ahwpcr7sp2ne6pl9nafxa3cyl6tj5h0glnfe0g9xm583kj7mfztqgm439c": "Locked Account #26",
+        "drt1dlghdd2l06away76wzl5jjw36galq3lfn888vdnr2mk92835vusqwzp9sp": "Locked Account #27",
+        "drt1yq9ccj6lkpuvztrfdjda2r65c3nscw8qauuun6sgw5g43dpxpgvs39qmae": "Locked Account #28",
+        "drt17ck6pv5vtvyym0um8czlkky9elp4s788rhd9v5z3repj6lw9yctqyatq97": "Locked Account #29",
+        "drt1e25895tlj5nw52r0wwu5cc99k2sr9023dwuu3jeg6d0he8gmvh2qhndpzf": "Locked Account #30",
+        "drt189sfede2wh0rllfgyg94cnmv87vqu0pav52lgha228ludvf32p2swqdyg0": "Locked Account #31",
+        "drt1f54cwcj6xgv7c5wmj43rafmjqhuhrn78qc6f549xnq5rkdcasyhsxeuwty": "Locked Account #32",
+        "drt16ptxqpwzmr5ezpeyefwelr7w9zt8exct0wjrp98gnjpu85ndxuhsj9r5qm": "Locked Account #33",
+        "drt1ltkdvpusvssstwrt93m6fa89u03jhlr4euemvwdyh27vysa5nvgqjxmzpe": "Locked Account #34",
+        "drt1fwfwtj5ypzw4sc4ktc4qazpzmqmy80wctr686f0czxzqq9ky5pjqutvrt3": "Locked Account #35",
+        "drt14cyxqj497px9zd57hf0jjaj8xrakhn4h3t6rjldmx6vqrvxknktq7dkfxv": "Locked Account #36",
+        "drt1rn0m3vw8x0p9env62jq69pq4ls20r359un2a2g59exgd2gqjsklqxqv2sn": "Locked Account #37",
+        "drt1dghh6hn4grxh09dvrqlp96kpcy4m4qtzk8fjm9v7fjcahd700gdsz0yrt0": "Locked Account #38",
+        "drt1kqvkp64ahaheks595ecepqadk5h36aynj8cdrst56trk65zfcyksp90dfr": "Locked Account #39",
+        "drt1pe84ysl62e0ehaqf7hf5t890ut0kv7ju4w27n6lcj2g87vg89qjqms3n7a": "Locked Account #40",
+        "drt1jk2lul7q9wk9nvqsyy7rhjsj7xy9th4sf0sp247lu0egjd2klfkqxdql0x": "Locked Account #41",
+        "drt1h6psle8zuz45qsrkxgkuu0dh45tjpe2qncufr6hyluyzyp283tdsmagfqn": "Locked Account #42",
+        "drt1ayt9254lughnjzsnm9aztgvk7w32tjk39lqwy3mq8s6f3jqn04ws25t3nm": "Locked Account #43",
+        "drt13d296fx96wrusd9h2hxx76ea0pl42zlp8huqn3erw0322tmflj4qnnwq8y": "Locked Account #44",
+        "drt1q0g7dypj6m5hk4cvg72fmq3jax3e4tle94rfwaqkh0lww54het0scawmq7": "Locked Account #45",
+        "drt1080w7duvu4rh6vplzjpr8wht2rqzvj7wm0ywv3vz7ceug299j2yq58qfn7": "Locked Account #46",
+        "drt1zucf3xv5nzek5dmxaj8xjtr889nt68fcj32w9rtmlp3fjwvjcltsv89a83": "Locked Account #47",
+        "drt1ksd5j647ptsvx9g3sz7vmkp5n5wmqfsv6r855dgd4jlza4h0nfjsz0hn07": "Locked Account #48",
+        "drt1jcu9yy7cjv9cznr4sm86g3nt57lsjzvmc8tryfdkkmy72mjjmf8q7vk2cp": "Locked Account #49"
       },
       "extraTokens": [
         "EGLDRIDE-7bd51a",
@@ -208,7 +208,7 @@
     "identifier": "USDC-c76f1f",
     "name": "WrappedUSDC",
     "ticker": "USDC",
-    "owner": "erd1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsqj8x97",
+    "owner": "drt1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsaws9xq",
     "decimals": 6,
     "isPaused": false,
     "assets": {
@@ -239,7 +239,7 @@
     "identifier": "ITHEUM-df6f26",
     "name": "Itheum",
     "ticker": "ITHEUM",
-    "owner": "erd1m38hwpeq9x5m9l5cckxfmrsmnxmsm5gwv5atymqp84y988t5haasn4u0cg",
+    "owner": "drt1m38hwpeq9x5m9l5cckxfmrsmnxmsm5gwv5atymqp84y988t5haaswftvmk",
     "decimals": 18,
     "isPaused": false,
     "assets": {
@@ -249,8 +249,8 @@
       "pngUrl": "https://media.dharitri.org/tokens/asset/ITHEUM-df6f26/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/ITHEUM-df6f26/logo.svg",
       "lockedAccounts": {
-        "erd1fasw55a2zfztcy7e8424g9kn8clwnksjl7mlw9zdpkl473m9pljsmwpkw2": "Ecosystem, Community, Treasury",
-        "erd1m38hwpeq9x5m9l5cckxfmrsmnxmsm5gwv5atymqp84y988t5haasn4u0cg": "Investors, Team"
+        "drt1fasw55a2zfztcy7e8424g9kn8clwnksjl7mlw9zdpkl473m9pljsxjk4d5": "Ecosystem, Community, Treasury",
+        "drt1m38hwpeq9x5m9l5cckxfmrsmnxmsm5gwv5atymqp84y988t5haaswftvmk": "Investors, Team"
       },
       "extraTokens": [
         "ITHWEGLD-1adc53",
@@ -291,7 +291,7 @@
     "identifier": "ZPAY-247875",
     "name": "ZoidPay",
     "ticker": "ZPAY",
-    "owner": "erd136kalm60ndyyps7paexvz38pf09f58f7nzqg8tw60p9pq7ygyspsx6ux89",
+    "owner": "drt136kalm60ndyyps7paexvz38pf09f58f7nzqg8tw60p9pq7ygyspsmxt9ym",
     "decimals": 18,
     "isPaused": false,
     "assets": {
@@ -301,7 +301,7 @@
       "pngUrl": "https://media.dharitri.org/tokens/asset/ZPAY-247875/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/ZPAY-247875/logo.svg",
       "lockedAccounts": {
-        "erd136kalm60ndyyps7paexvz38pf09f58f7nzqg8tw60p9pq7ygyspsx6ux89": "Owner Account"
+        "drt136kalm60ndyyps7paexvz38pf09f58f7nzqg8tw60p9pq7ygyspsmxt9ym": "Owner Account"
       },
       "extraTokens": [
         "ZPAYWEGLD-34e5c1",
@@ -337,7 +337,7 @@
     "identifier": "OFE-29eb54",
     "name": "Ofero",
     "ticker": "OFE",
-    "owner": "erd1dnzn7d44wpxzk6jjs4wydm4h2sle5ldcgtnmjp5xqx8cd5gvdnlsncftas",
+    "owner": "drt1dnzn7d44wpxzk6jjs4wydm4h2sle5ldcgtnmjp5xqx8cd5gvdnlswy7g7w",
     "decimals": 4,
     "isPaused": false,
     "assets": {
@@ -372,7 +372,7 @@
     "identifier": "QWT-46ac01",
     "name": "QoWatt",
     "ticker": "QWT",
-    "owner": "erd1nu0xq58kdevp48mkrjdg8kqdtnx8qny2pgun0kq9ee624q5kly6qa6jrx5",
+    "owner": "drt1nu0xq58kdevp48mkrjdg8kqdtnx8qny2pgun0kq9ee624q5kly6qqx9q92",
     "decimals": 6,
     "isPaused": false,
     "assets": {
@@ -383,7 +383,7 @@
       "svgUrl": "https://media.dharitri.org/tokens/asset/QWT-46ac01/logo.svg",
       "ledgerSignature": "3045022100e43c1ad7d3e4a5439e2ff7b97bb7901ca1a36a130b0e6e74464d65cc8d282bbb02206d318a05ff0dde6148856fc8391f1878cbdea591db47a74ad117a6a821e835f2",
       "social": {
-        "email": "esdt@qowatt.com",
+        "email": "dcdt@qowatt.com",
         "twitter": "https://twitter.com/QoWattEcosystem",
         "whitepaper": "https://qowatt.network/wp-content/uploads/2022/01/QoWatt_Whitepaper_EN_1.2.pdf",
         "coinmarketcap": "https://coinmarketcap.com/currencies/qowatt",
@@ -410,7 +410,7 @@
     "identifier": "ASH-a642d1",
     "name": "AshSwap",
     "ticker": "ASH",
-    "owner": "erd1w280yjym0xc2aw80dvn2a4ew5vzvtshtr8nux8wa5wzqm78y7nvsq0ktun",
+    "owner": "drt1w280yjym0xc2aw80dvn2a4ew5vzvtshtr8nux8wa5wzqm78y7nvsanpgld",
     "decimals": 18,
     "isPaused": false,
     "assets": {
@@ -420,7 +420,7 @@
       "pngUrl": "https://media.dharitri.org/tokens/asset/ASH-a642d1/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/ASH-a642d1/logo.svg",
       "lockedAccounts": {
-        "erd1w280yjym0xc2aw80dvn2a4ew5vzvtshtr8nux8wa5wzqm78y7nvsq0ktun": "Locked Account #1"
+        "drt1w280yjym0xc2aw80dvn2a4ew5vzvtshtr8nux8wa5wzqm78y7nvsanpgld": "Locked Account #1"
       },
       "extraTokens": [
         "ASHWEGLD-38545c",
@@ -460,7 +460,7 @@
     "identifier": "CRT-52decf",
     "name": "CantinaRoyale",
     "ticker": "CRT",
-    "owner": "erd1tmktutxcjuh6pwr4r4culpjg8lp3x5saxqchxv95nkqymmdk24ksjkt99d",
+    "owner": "drt1tmktutxcjuh6pwr4r4culpjg8lp3x5saxqchxv95nkqymmdk24ks02uxxn",
     "decimals": 18,
     "isPaused": false,
     "assets": {
@@ -470,11 +470,11 @@
       "pngUrl": "https://media.dharitri.org/tokens/asset/CRT-52decf/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/CRT-52decf/logo.svg",
       "lockedAccounts": {
-        "erd1s9gcnzgjyzdn205xdy3gy3jtm8yl95k4g3kq54ryprs0h486v7dqw2zjrf": "Investors",
-        "erd1xaa6p8uxtzrzq7s2khy9q6kqzka5f3pu8t5rmrz0nm804lvn5z2qg8xev4": "Team",
-        "erd1hs6a3uhtc8chgm4k3wgamxue7fjnga4k5dsstvlgmhf6w9ph9zzswhq64c": "Ecosystem, Players, Community",
-        "erd1avld7x8wvmvu0ryzythw4khkwfpmzvuf70fp5z8f72nxysa6uq7qae3w0m": "Marketing, Partners",
-        "erd102975u07wnv0t8pl389l6dag2r9ca8ql2dsjvgc8jp59a39ycd4q4dsfdw": "Treasury"
+        "drt1s9gcnzgjyzdn205xdy3gy3jtm8yl95k4g3kq54ryprs0h486v7dqnk43qh": "Investors",
+        "drt1xaa6p8uxtzrzq7s2khy9q6kqzka5f3pu8t5rmrz0nm804lvn5z2q4m360t": "Team",
+        "drt1hs6a3uhtc8chgm4k3wgamxue7fjnga4k5dsstvlgmhf6w9ph9zzsnthekx": "Ecosystem, Players, Community",
+        "drt1avld7x8wvmvu0ryzythw4khkwfpmzvuf70fp5z8f72nxysa6uq7qq9xdv9": "Marketing, Partners",
+        "drt102975u07wnv0t8pl389l6dag2r9ca8ql2dsjvgc8jp59a39ycd4qg382ws": "Treasury"
       },
       "social": {
         "blog": "https://blog.cantinaroyale.io",
@@ -504,7 +504,7 @@
     "identifier": "PROTEO-0c7311",
     "name": "Proteo",
     "ticker": "PROTEO",
-    "owner": "erd1j35wnhst63s44xt9hpjf3fjkf8ptav6lzgvajcnecrlssmaw830q4zcpl3",
+    "owner": "drt1j35wnhst63s44xt9hpjf3fjkf8ptav6lzgvajcnecrlssmaw830qg70zu0",
     "decimals": 18,
     "isPaused": false,
     "assets": {
@@ -514,12 +514,12 @@
       "pngUrl": "https://media.dharitri.org/tokens/asset/PROTEO-0c7311/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/PROTEO-0c7311/logo.svg",
       "lockedAccounts": {
-        "erd1tye3f5w7957eh3z83d7fjll6zkwdfs48h6p7nq93sgxsa9dvn66swvmjtc": "DAO Treasury",
-        "erd1j35wnhst63s44xt9hpjf3fjkf8ptav6lzgvajcnecrlssmaw830q4zcpl3": "Liquidity + Team + Seed",
-        "erd1q3elczhw8txrsmuav9j75evxmfveq48j2kz8l8pc6yqhj4jhzxes70vwus": "Development",
-        "erd1qqqqqqqqqqqqqpgqhas2k56eggg5rkqqjzlxjmsu380ds03dznyq6ksr8a": "Bonds",
-        "erd1qqqqqqqqqqqqqpgqkfg8hm9nwwfl7sg52y0mg529vjgvwm49znyq4nm5kg": "Staking Rewards Boost",
-        "erd1qqqqqqqqqqqqqpgqrpgclqhqjz8084jhn5p3tg6wecr9ezxkznyqck8kmr": "Raffles"
+        "drt1tye3f5w7957eh3z83d7fjll6zkwdfs48h6p7nq93sgxsa9dvn66snsv3gx": "DAO Treasury",
+        "drt1j35wnhst63s44xt9hpjf3fjkf8ptav6lzgvajcnecrlssmaw830qg70zu0": "Liquidity + Team + Seed",
+        "drt1q3elczhw8txrsmuav9j75evxmfveq48j2kz8l8pc6yqhj4jhzxesrnmdlw": "Development",
+        "drt1qqqqqqqqqqqqqpgqhas2k56eggg5rkqqjzlxjmsu380ds03dznyq828qyr": "Bonds",
+        "drt1qqqqqqqqqqqqqpgqkfg8hm9nwwfl7sg52y0mg529vjgvwm49znyqg0vh4k": "Staking Rewards Boost",
+        "drt1qqqqqqqqqqqqqpgqrpgclqhqjz8084jhn5p3tg6wecr9ezxkznyq92s4ca": "Raffles"
       },
       "social": {
         "twitter": "https://twitter.com/proteodefi",
@@ -546,7 +546,7 @@
     "identifier": "BHAT-c1fde3",
     "name": "BHNetwork",
     "ticker": "BHAT",
-    "owner": "erd1pqmkrsgs8wgtn9vyj8xv0c02j22v2cge49v32thhvzya964kgq9q6hzegx",
+    "owner": "drt1pqmkrsgs8wgtn9vyj8xv0c02j22v2cge49v32thhvzya964kgq9q8t46tc",
     "decimals": 18,
     "isPaused": false,
     "assets": {
@@ -556,15 +556,15 @@
       "pngUrl": "https://media.dharitri.org/tokens/asset/BHAT-c1fde3/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/BHAT-c1fde3/logo.svg",
       "lockedAccounts": {
-        "erd1qqqqqqqqqqqqqpgqrg6hj7pvwvu8ph0wjnj57mn8hwl4a9xdm0qsp0e4a6": "StakingUnvested",
-        "erd1qqqqqqqqqqqqqpgq58gew3q4mldmu9ggwtvx6ygfhe728fdfm0qsgcmdhu": "LiquidityAndExchangeListingsUnvested",
-        "erd1qqqqqqqqqqqqqpgq562wlzndcxjjf5mfrhlxxkkyq0j5f7tfm0qscdrau6": "PublicSaleUnvested",
-        "erd1qqqqqqqqqqqqqpgqkl242f8m3tkd5cgvstjkwfzvu93try0em0qsdejff7": "PrivateSaleUnvested",
-        "erd1qqqqqqqqqqqqqpgqe38ry6970g72mkc9achtlh5th42kz8hgm0qstluvzw": "TeamUnvested",
-        "erd1qqqqqqqqqqqqqpgqw26kqrsjz9jclhwyyllytvaw0w3wtdttm0qs7vrez8": "AdvisorsUnvested",
-        "erd1qqqqqqqqqqqqqpgq628kr49cdx47ek6txz5xcll9a4mzzvrkm0qslrx6e6": "MarketingUnvested",
-        "erd1qqqqqqqqqqqqqpgqwz6sk8cw8xyqvzgq59zty2cs7zvn2hfzm0qscrspuw": "ProjectTreasuryMetabondingUnvested",
-        "erd1qqqqqqqqqqqqqpgq50dge6rrpcra4tp9hl57jl0893a4r2r72jpsk39rjj": "NumbatMetabondingSC"
+        "drt1qqqqqqqqqqqqqpgqrg6hj7pvwvu8ph0wjnj57mn8hwl4a9xdm0qsunwk7y": "StakingUnvested",
+        "drt1qqqqqqqqqqqqqpgq58gew3q4mldmu9ggwtvx6ygfhe728fdfm0qs4yvw5z": "LiquidityAndExchangeListingsUnvested",
+        "drt1qqqqqqqqqqqqqpgq562wlzndcxjjf5mfrhlxxkkyq0j5f7tfm0qs9357ly": "PublicSaleUnvested",
+        "drt1qqqqqqqqqqqqqpgqkl242f8m3tkd5cgvstjkwfzvu93try0em0qss9922q": "PrivateSaleUnvested",
+        "drt1qqqqqqqqqqqqqpgqe38ry6970g72mkc9achtlh5th42kz8hgm0qskrt0ps": "TeamUnvested",
+        "drt1qqqqqqqqqqqqqpgqw26kqrsjz9jclhwyyllytvaw0w3wtdttm0qsrs56pe": "AdvisorsUnvested",
+        "drt1qqqqqqqqqqqqqpgq628kr49cdx47ek6txz5xcll9a4mzzvrkm0qszl3e6y": "MarketingUnvested",
+        "drt1qqqqqqqqqqqqqpgqwz6sk8cw8xyqvzgq59zty2cs7zvn2hfzm0qs9l8zls": "ProjectTreasuryMetabondingUnvested",
+        "drt1qqqqqqqqqqqqqpgq50dge6rrpcra4tp9hl57jl0893a4r2r72jpstdjq3v": "NumbatMetabondingSC"
       },
       "extraTokens": [
         "BHATWEGLD-f45935",
@@ -602,7 +602,7 @@
     "identifier": "CYBER-489c1c",
     "name": "CyberpunkCity",
     "ticker": "CYBER",
-    "owner": "erd1t4tlghny9l9dtdlv9t52jl2jstxx2a85pntlmdecwgmmn8w642qs8230zz",
+    "owner": "drt1t4tlghny9l9dtdlv9t52jl2jstxx2a85pntlmdecwgmmn8w642qs6kxvpu",
     "decimals": 18,
     "isPaused": false,
     "assets": {
@@ -612,10 +612,10 @@
       "pngUrl": "https://media.dharitri.org/tokens/asset/CYBER-489c1c/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/CYBER-489c1c/logo.svg",
       "lockedAccounts": {
-        "erd1vh30dhaz85lz4mpyenxexnju6uypgareuy0zd82jt3u6pm4lgjtqwlvlmm": "CommunityRewards",
-        "erd1nj7470xzm04c3rsdtxcn7fx43ktm80jgujchjd8ds0tcj7sjxy7qajpt6u": "Marketing",
-        "erd1zukw5k2mhgt5l90azcdktm4ffwnmknawsjxdrzukrjf8e28gr3qqvwr03q": "Treasury",
-        "erd1d9hx3g0qazqxc4rstpqewhmvsq38wmyc053y56tnkr787850j6hst4xhfq": "Team"
+        "drt1vh30dhaz85lz4mpyenxexnju6uypgareuy0zd82jt3u6pm4lgjtqnrmuc9": "CommunityRewards",
+        "drt1nj7470xzm04c3rsdtxcn7fx43ktm80jgujchjd8ds0tcj7sjxy7qqwkgez": "Marketing",
+        "drt1zukw5k2mhgt5l90azcdktm4ffwnmknawsjxdrzukrjf8e28gr3qq3j5vj7": "Treasury",
+        "drt1d9hx3g0qazqxc4rstpqewhmvsq38wmyc053y56tnkr787850j6hskf3527": "Team"
       },
       "social": {
         "email": "info@cyberpunkcity.com",
@@ -647,7 +647,7 @@
     "identifier": "AERO-458bbf",
     "name": "Aerovek",
     "ticker": "AERO",
-    "owner": "erd1mqf9szpl6zphkhznyj3lq36c55p3yp6f6dkxpp9q3wj7a2efjp6sn6dpme",
+    "owner": "drt1mqf9szpl6zphkhznyj3lq36c55p3yp6f6dkxpp9q3wj7a2efjp6swx6zc8",
     "decimals": 18,
     "isPaused": false,
     "assets": {
@@ -686,7 +686,7 @@
     "identifier": "INSTANT-086961",
     "name": "instant",
     "ticker": "INSTANT",
-    "owner": "erd10ypsxdd04qmcwt8f0n9kcs4fjxjvvcw7nz62t8fxzhq0rnh8wjtslpjzvq",
+    "owner": "drt10ypsxdd04qmcwt8f0n9kcs4fjxjvvcw7nz62t8fxzhq0rnh8wjtsza9p07",
     "decimals": 18,
     "isPaused": false,
     "assets": {
@@ -724,7 +724,7 @@
     "identifier": "LAUNCH-3e2258",
     "name": "LAUNCH",
     "ticker": "LAUNCH",
-    "owner": "erd1w83yx4jc8uy8m22k2n9mmv7pkdm27agaf2z0dw4xsy2padrny2xqwg0ey8",
+    "owner": "drt1w83yx4jc8uy8m22k2n9mmv7pkdm27agaf2z0dw4xsy2padrny2xqn5c68e",
     "decimals": 18,
     "isPaused": false,
     "assets": {
@@ -758,7 +758,7 @@
     "identifier": "LAND-40f26f",
     "name": "Landboard",
     "ticker": "LAND",
-    "owner": "erd174wqpfeqex47wacz5d2k95x7vrqwrm3jnu0k805zcs0ekvxr0e3qttu526",
+    "owner": "drt174wqpfeqex47wacz5d2k95x7vrqwrm3jnu0k805zcs0ekvxr0e3qkhthfy",
     "decimals": 18,
     "isPaused": false,
     "assets": {
@@ -794,7 +794,7 @@
     "identifier": "ESTAR-461bab",
     "name": "ESTAR",
     "ticker": "ESTAR",
-    "owner": "erd19wjjxty40r6356r5mzjf2fmg8we2gxzshltunntk5tg45pl35r7ql8yzym",
+    "owner": "drt19wjjxty40r6356r5mzjf2fmg8we2gxzshltunntk5tg45pl35r7qzmnp89",
     "decimals": 18,
     "isPaused": false,
     "assets": {
@@ -829,7 +829,7 @@
     "identifier": "SFIT-aebc90",
     "name": "Sense4FIT",
     "ticker": "SFIT",
-    "owner": "erd1m8c863k7hfgnvnkhxxvxdk8eu808ttq9r8escz3ee7qwmkz3y8qq2c5wn3",
+    "owner": "drt1m8c863k7hfgnvnkhxxvxdk8eu808ttq9r8escz3ee7qwmkz3y8qqhyrds0",
     "decimals": 18,
     "isPaused": false,
     "assets": {
@@ -839,18 +839,18 @@
       "pngUrl": "https://media.dharitri.org/tokens/asset/SFIT-aebc90/logo.png",
       "svgUrl": "https://media.dharitri.org/tokens/asset/SFIT-aebc90/logo.svg",
       "lockedAccounts": {
-        "erd1qqqqqqqqqqqqqpgqz88aj0jnyk2245qdckqlr0u3esrkm227up4sduprh7": "PrivateSeedTeamAdvisorVestingModule",
-        "erd1qqqqqqqqqqqqqpgquef97h66mjmgghdglpkjllamt2hjz2zcaykqpwwurh": "StakingModule",
-        "erd1qqqqqqqqqqqqqpgqmazld0dz27axdf8acslqkncdcrjrqpav548spxdtm9": "BHeroLaunchpad",
-        "erd1qqqqqqqqqqqqqpgq50dge6rrpcra4tp9hl57jl0893a4r2r72jpsk39rjj": "Metabonding",
-        "erd13u0axantgkhfdl3y9wnuve6sk5g7ax87698rkc492mf7neaung5s9gvwg8": "PrivateTokens",
-        "erd19nx7n7ktyzus32wf0zh6a9t5x0ssy72k8tsnwnhp57jt3jx0vx6sylrzn3": "AdvisorTokens",
-        "erd1n5zpnws389s854rjsgpsw5hdk0p4umetewpcv4xa4e8u0pwunuask26u72": "MarketingTokens",
-        "erd19pfa9pzmect3lzwelv6xhdv2t3em8ljgq5h5vwlgnac8j0mry58s0ecaf3": "TreasuryTokens",
-        "erd1cp4fguy8nyr7n0hfs3nzl8expd8mthe3x7zrn2gcx4zclsunempq7ld8t4": "StakingTokens",
-        "erd16ak04re87er9kalkn8vna65z4c6aw846r33w82lfwqy30jm0ntussd9r0u": "StrategyTokens",
-        "erd1l8c82zv0z55qy5zprkgece0w9ukwck5e7pkqtjcytzjxvjvpwu8qpzm95u": "RewardsTokens",
-        "erd1tq6308sklqtfd3kh6ac5y2sactjg0j88k9sn2msdkg2s3g8fx0hs7wn2wj": "LiquidityTokens"
+        "drt1qqqqqqqqqqqqqpgqz88aj0jnyk2245qdckqlr0u3esrkm227up4ssqkq5q": "PrivateSeedTeamAdvisorVestingModule",
+        "drt1qqqqqqqqqqqqqpgquef97h66mjmgghdglpkjllamt2hjz2zcaykqujelqf": "StakingModule",
+        "drt1qqqqqqqqqqqqqpgqmazld0dz27axdf8acslqkncdcrjrqpav548su66gcm": "BHeroLaunchpad",
+        "drt1qqqqqqqqqqqqqpgq50dge6rrpcra4tp9hl57jl0893a4r2r72jpstdjq3v": "Metabonding",
+        "drt13u0axantgkhfdl3y9wnuve6sk5g7ax87698rkc492mf7neaung5sc5mdte": "PrivateTokens",
+        "drt19nx7n7ktyzus32wf0zh6a9t5x0ssy72k8tsnwnhp57jt3jx0vx6ser5ps0": "AdvisorTokens",
+        "drt1n5zpnws389s854rjsgpsw5hdk0p4umetewpcv4xa4e8u0pwunuastkdla5": "MarketingTokens",
+        "drt19pfa9pzmect3lzwelv6xhdv2t3em8ljgq5h5vwlgnac8j0mry58sj90720": "TreasuryTokens",
+        "drt1cp4fguy8nyr7n0hfs3nzl8expd8mthe3x7zrn2gcx4zclsunempqrr6ygt": "StakingTokens",
+        "drt16ak04re87er9kalkn8vna65z4c6aw846r33w82lfwqy30jm0ntusd3jqvz": "StrategyTokens",
+        "drt1l8c82zv0z55qy5zprkgece0w9ukwck5e7pkqtjcytzjxvjvpwu8qu7vxhz": "RewardsTokens",
+        "drt1tq6308sklqtfd3kh6ac5y2sactjg0j88k9sn2msdkg2s3g8fx0hsrjyfdv": "LiquidityTokens"
       },
       "ledgerSignature": "304402204abef32b5df9129086d14d8130f0658085a30b061f39d8226e8a2e2223ea7b5b02207bf2f87e1b3948953a9714f1cb573acd9447d6d6111ad8d188756407f7b2790c",
       "social": {
@@ -879,7 +879,7 @@
     "identifier": "ISET-84e55e",
     "name": "IsengardToken",
     "ticker": "ISET",
-    "owner": "erd17e4uuvhhnncye6mxxzffmgfhtyz8tpf4ug25he23z99j6yg8lwfqus4n28",
+    "owner": "drt17e4uuvhhnncye6mxxzffmgfhtyz8tpf4ug25he23z99j6yg8lwfqpvzsfe",
     "decimals": 6,
     "isPaused": false,
     "assets": {
@@ -916,7 +916,7 @@
     "identifier": "EFFORT-a13513",
     "name": "EffortToken",
     "ticker": "EFFORT",
-    "owner": "erd1n9luywkfvu7hyr84lgcvafcf9d205xpk2e5rp0uwfwtgw26vsh6q08d8mq",
+    "owner": "drt1n9luywkfvu7hyr84lgcvafcf9d205xpk2e5rp0uwfwtgw26vsh6qjm6yc7",
     "decimals": 18,
     "isPaused": false,
     "assets": {
@@ -953,7 +953,7 @@
     "identifier": "HODL-d7f4b5",
     "name": "HODL",
     "ticker": "HODL",
-    "owner": "erd1f9khargm3reuxhusf8fs33lsnd44nxz8xfmr3k6vxymk60x8q3lsy4kl6h",
+    "owner": "drt1f9khargm3reuxhusf8fs33lsnd44nxz8xfmr3k6vxymk60x8q3lsefpuef",
     "decimals": 18,
     "isPaused": false,
     "assets": {
@@ -987,7 +987,7 @@
     "identifier": "CPA-97530a",
     "name": "CPA",
     "ticker": "CPA",
-    "owner": "erd1j5fdqzwr6jes7vh5uxmyg9ekug5yud84578m2aft56wgunulwsgsaz9n42",
+    "owner": "drt1j5fdqzwr6jes7vh5uxmyg9ekug5yud84578m2aft56wgunulwsgsq7jsk5",
     "decimals": 6,
     "isPaused": false,
     "assets": {
@@ -1024,7 +1024,7 @@
     "identifier": "DEAD-4c133a",
     "name": "DEAD",
     "ticker": "DEAD",
-    "owner": "erd1qdjwkynaf9k92eeq9xqg8tyf5ndqzv9lted7pk2tf29xll2g79dqdre2zg",
+    "owner": "drt1qdjwkynaf9k92eeq9xqg8tyf5ndqzv9lted7pk2tf29xll2g79dqslwfpk",
     "decimals": 18,
     "isPaused": false,
     "assets": {
@@ -1058,7 +1058,7 @@
     "identifier": "LKFARM-9d1ea8",
     "name": "LockedLPStaked",
     "ticker": "LKFARM",
-    "owner": "erd1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps89fxnl",
+    "owner": "drt1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps6e79sp",
     "decimals": 18,
     "isPaused": false,
     "assets": {

@@ -71,7 +71,7 @@ describe('FarmServiceV2', () => {
     it('should correctly calculate total rewards', async () => {
         const service = module.get<FarmComputeServiceV2>(FarmComputeServiceV2);
         const result = await service.undistributedBoostedRewards(
-            'erd18h5dulxp5zdp80qjndd2w25kufx0rm5yqd2h7ajrfucjhr82y8vqyq0hye',
+            'drt18h5dulxp5zdp80qjndd2w25kufx0rm5yqd2h7ajrfucjhr82y8vqeuc588',
             10,
         );
         const expectedTotal = new BigNumber('5000')
@@ -87,7 +87,7 @@ describe('FarmServiceV2', () => {
     //     const service = module.get<FarmComputeServiceV2>(
     //         FarmComputeServiceV2,
     //     );
-    //     const result = await service.computeUndistributedBoostedRewards('erd18h5dulxp5zdp80qjndd2w25kufx0rm5yqd2h7ajrfucjhr82y8vqyq0hye', 5);
+    //     const result = await service.computeUndistributedBoostedRewards('drt18h5dulxp5zdp80qjndd2w25kufx0rm5yqd2h7ajrfucjhr82y8vqeuc588', 5);
     //     expect(result).toEqual('5000');
     //     // expect(mockFarmAbi.undistributedBoostedRewards).toHaveBeenCalled();
     //     // expect(mockFarmAbi.lastUndistributedBoostedRewardsCollectWeek).toHaveBeenCalled();
@@ -101,7 +101,7 @@ describe('FarmServiceV2', () => {
 
         const blocksInWeek = await service.computeBlocksInWeek(
             Address.fromBech32(
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpqsdtp6mh',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpqsshkecf',
             ).bech32(),
             1,
         );
@@ -150,7 +150,7 @@ describe('FarmServiceV2', () => {
 
         const accumulatedRewards = await service.computeUserRewardsForWeek(
             Address.fromBech32(
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpqsdtp6mh',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpqsshkecf',
             ).bech32(),
             Address.Zero().bech32(),
             1,

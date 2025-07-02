@@ -6,7 +6,7 @@ import { INetworkProvider } from "./interface";
 import { ProxyNetworkProvider } from "./proxyNetworkProvider";
 
 describe("test network providers on devnet: Proxy and API", function () {
-    let alice = new Address("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th");
+    let alice = new Address("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf");
 
     let apiProvider: INetworkProvider = new ApiNetworkProvider("https://devnet-api.dharitri.org", {
         timeout: 10000,
@@ -97,8 +97,8 @@ describe("test network providers on devnet: Proxy and API", function () {
         const txs = [
             new Transaction({
                 nonce: 103n,
-                receiver: Address.newFromBech32("erd1487vz5m4zpxjyqw4flwa3xhnkzg4yrr3mkzf5sf0zgt94hjprc8qazcccl"),
-                sender: Address.newFromBech32("erd1487vz5m4zpxjyqw4flwa3xhnkzg4yrr3mkzf5sf0zgt94hjprc8qazcccl"),
+                receiver: Address.newFromBech32("drt1487vz5m4zpxjyqw4flwa3xhnkzg4yrr3mkzf5sf0zgt94hjprc8qq70mmp"),
+                sender: Address.newFromBech32("drt1487vz5m4zpxjyqw4flwa3xhnkzg4yrr3mkzf5sf0zgt94hjprc8qq70mmp"),
                 gasPrice: 1000000000n,
                 gasLimit: 50000n,
                 chainID: "D",
@@ -111,8 +111,8 @@ describe("test network providers on devnet: Proxy and API", function () {
 
             new Transaction({
                 nonce: 104n,
-                receiver: Address.newFromBech32("erd1487vz5m4zpxjyqw4flwa3xhnkzg4yrr3mkzf5sf0zgt94hjprc8qazcccl"),
-                sender: Address.newFromBech32("erd1487vz5m4zpxjyqw4flwa3xhnkzg4yrr3mkzf5sf0zgt94hjprc8qazcccl"),
+                receiver: Address.newFromBech32("drt1487vz5m4zpxjyqw4flwa3xhnkzg4yrr3mkzf5sf0zgt94hjprc8qq70mmp"),
+                sender: Address.newFromBech32("drt1487vz5m4zpxjyqw4flwa3xhnkzg4yrr3mkzf5sf0zgt94hjprc8qq70mmp"),
                 gasPrice: 1000000000n,
                 gasLimit: 50000n,
                 chainID: "D",
@@ -125,8 +125,8 @@ describe("test network providers on devnet: Proxy and API", function () {
             new Transaction({
                 nonce: 77n,
                 chainID: "D",
-                receiver: Address.newFromBech32("erd1487vz5m4zpxjyqw4flwa3xhnkzg4yrr3mkzf5sf0zgt94hjprc8qazcccl"),
-                sender: Address.newFromBech32("erd1487vz5m4zpxjyqw4flwa3xhnkzg4yrr3mkzf5sf0zgt94hjprc8qazcccl"),
+                receiver: Address.newFromBech32("drt1487vz5m4zpxjyqw4flwa3xhnkzg4yrr3mkzf5sf0zgt94hjprc8qq70mmp"),
+                sender: Address.newFromBech32("drt1487vz5m4zpxjyqw4flwa3xhnkzg4yrr3mkzf5sf0zgt94hjprc8qq70mmp"),
                 gasLimit: 50000n,
                 gasPrice: 1000000000n,
             }),
@@ -267,7 +267,7 @@ describe("test network providers on devnet: Proxy and API", function () {
 
         // Query: get sum (of adder contract)
         let query = new SmartContractQuery({
-            contract: new Address("erd1qqqqqqqqqqqqqpgqfzydqmdw7m2vazsp6u5p95yxz76t2p9rd8ss0zp9ts"),
+            contract: new Address("drt1qqqqqqqqqqqqqpgqfzydqmdw7m2vazsp6u5p95yxz76t2p9rd8ssj7kxgw"),
             function: "getSum",
         });
 
@@ -301,8 +301,8 @@ describe("test network providers on devnet: Proxy and API", function () {
         const transaction = new Transaction({
             nonce: BigInt(8),
             value: BigInt(0),
-            receiver: Address.newFromBech32("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th"),
-            sender: Address.newFromBech32("erd1zztjf9fhwvuvquzsllknq4qcmffwad6n0hjtn5dyzytr5tgz7uas0mkgrq"),
+            receiver: Address.newFromBech32("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf"),
+            sender: Address.newFromBech32("drt1zztjf9fhwvuvquzsllknq4qcmffwad6n0hjtn5dyzytr5tgz7uasj8ptq7"),
             data: new Uint8Array(Buffer.from("test")),
             gasPrice: BigInt(1000000000),
             gasLimit: BigInt(80000),

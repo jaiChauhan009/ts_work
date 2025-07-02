@@ -44,13 +44,13 @@ describe('RabbitMqConsumer', () => {
   it('should call the appropriate handler based on the event identifier', async () => {
     const event1: NotifierEvent = {
       identifier: NotifierEventIdentifier.DCDTNFTCreate,
-      address: "erd1",
+      address: "drt1",
       topics: [''],
     };
 
     const event2: NotifierEvent = {
       identifier: NotifierEventIdentifier.transferOwnership,
-      address: "erd1",
+      address: "drt1",
       topics: [''],
     };
 
@@ -63,7 +63,7 @@ describe('RabbitMqConsumer', () => {
   it('should log the error when an unhandled error occurs', async () => {
     const event: NotifierEvent = {
       identifier: NotifierEventIdentifier.DCDTNFTCreate,
-      address: "erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz",
+      address: "drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su",
       topics: [''],
     };
 
@@ -74,7 +74,7 @@ describe('RabbitMqConsumer', () => {
     });
 
     const loggerSpy = jest.spyOn(service['logger'], 'error').mockImplementation(() =>
-      `An unhandled error occurred when consuming events: {"events":[{"identifier":"DCDTNFTCreate","address":"erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz","topics":[""]}]}`);
+      `An unhandled error occurred when consuming events: {"events":[{"identifier":"DCDTNFTCreate","address":"drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su","topics":[""]}]}`);
 
     await service.consumeEvents({ events: [event] });
 

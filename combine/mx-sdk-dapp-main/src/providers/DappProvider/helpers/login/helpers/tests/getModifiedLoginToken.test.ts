@@ -6,7 +6,7 @@ describe('getMultiSigLoginToken', () => {
       loginToken: undefined,
       extraInfoData: {
         multisig:
-          'erd1qqqqqqqqqqqqqpgq944h7h6mckw6q0d3g223cjz4ytvken86u00sz7carw'
+          'drt1qqqqqqqqqqqqqpgq944h7h6mckw6q0d3g223cjz4ytvken86u00slz07qs'
       }
     });
 
@@ -18,7 +18,7 @@ describe('getMultiSigLoginToken', () => {
       loginToken: 'invalidLoginToken',
       extraInfoData: {
         multisig:
-          'erd1qqqqqqqqqqqqqpgq944h7h6mckw6q0d3g223cjz4ytvken86u00sz7carw'
+          'drt1qqqqqqqqqqqqqpgq944h7h6mckw6q0d3g223cjz4ytvken86u00slz07qs'
       }
     });
 
@@ -31,7 +31,7 @@ describe('getMultiSigLoginToken', () => {
         'aHR0cHM6Ly9kZXZuZXQueGV4Y2hhbmdlLmNvbQ.d9ee880c609d5fe482a675826eb7e74f707c882e796ec191913a6c18d762685d.86400.eyJ0aW1lc3RhbXAiOjE3MDYxODAwMjd9',
       extraInfoData: {
         multisig:
-          'erd1qqqqqqqqqqqqqpgq944h7h6mckw6q0d3g223cjz4ytvken86u00sz7carw'
+          'drt1qqqqqqqqqqqqqpgq944h7h6mckw6q0d3g223cjz4ytvken86u00slz07qs'
       }
     };
 

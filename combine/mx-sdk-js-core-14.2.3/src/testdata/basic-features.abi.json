@@ -4956,7 +4956,7 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -4975,7 +4975,7 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -5068,7 +5068,7 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -5091,7 +5091,7 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -5110,7 +5110,7 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -5133,7 +5133,7 @@
             ],
             "outputs": [
                 {
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -5540,7 +5540,7 @@
             "inputs": [],
             "outputs": [
                 {
-                    "type": "EgldOrEsdtTokenIdentifier"
+                    "type": "EgldOrDcdtTokenIdentifier"
                 }
             ]
         },
@@ -5550,7 +5550,7 @@
             "inputs": [
                 {
                     "name": "token_id",
-                    "type": "EgldOrEsdtTokenIdentifier"
+                    "type": "EgldOrDcdtTokenIdentifier"
                 }
             ],
             "outputs": [
@@ -6029,7 +6029,7 @@
             ]
         }
     ],
-    "esdtAttributes": [],
+    "dcdtAttributes": [],
     "hasCallback": true,
     "types": {
         "CodecErrorTestType": {
@@ -6055,7 +6055,7 @@
                 }
             ]
         },
-        "EsdtTokenPayment": {
+        "DcdtTokenPayment": {
             "type": "struct",
             "fields": [
                 {

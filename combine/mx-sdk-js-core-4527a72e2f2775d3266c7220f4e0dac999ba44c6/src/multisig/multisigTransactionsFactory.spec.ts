@@ -30,10 +30,10 @@ describe("test multisig transactions factory", function () {
     });
 
     it("should create transaction for deploy multisig contract", function () {
-        const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const senderAddress = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
-        const boardMemberOne = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
-        const boardMemberTwo = Address.newFromBech32("erd1k2s324ww2g0yj38qn2ch2jwctdy8mnfxep94q9arncc6xecg3xaq6mjse8");
+        const boardMemberOne = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
+        const boardMemberTwo = Address.newFromBech32("drt1k2s324ww2g0yj38qn2ch2jwctdy8mnfxep94q9arncc6xecg3xaq889n6e");
 
         const board = [boardMemberOne, boardMemberTwo];
 
@@ -45,7 +45,7 @@ describe("test multisig transactions factory", function () {
         });
         assert.instanceOf(transaction, Transaction);
         assert.equal(transaction.sender.toBech32(), senderAddress.toBech32());
-        assert.equal(transaction.receiver.toBech32(), "erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu");
+        assert.equal(transaction.receiver.toBech32(), "drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z");
         assert.equal(transaction.value, 0n);
         assert.equal(transaction.chainID, config.chainID);
         assert.deepEqual(
@@ -57,11 +57,11 @@ describe("test multisig transactions factory", function () {
     });
 
     it("should create transaction for propose add board member", function () {
-        const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const senderAddress = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
-        const boardMember = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const boardMember = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
         const multisigContractAddress = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqylllslmq6y6",
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqyllls4jxmwv",
         );
         const transaction = factory.createTransactionForProposeAddBoardMember(senderAddress, {
             multisigContract: multisigContractAddress,
@@ -80,11 +80,11 @@ describe("test multisig transactions factory", function () {
     });
 
     it("should create transaction for propose add proposer", function () {
-        const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const senderAddress = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
-        const proposer = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const proposer = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
         const multisigContractAddress = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqylllslmq6y6",
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqyllls4jxmwv",
         );
         const transaction = factory.createTransactionForProposeAddProposer(senderAddress, {
             multisigContract: multisigContractAddress,
@@ -103,11 +103,11 @@ describe("test multisig transactions factory", function () {
     });
 
     it("should create transaction for propose remove user", function () {
-        const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const senderAddress = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
-        const userAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const userAddress = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
         const multisigContractAddress = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqylllslmq6y6",
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqyllls4jxmwv",
         );
         const transaction = factory.createTransactionForProposeRemoveUser(senderAddress, {
             multisigContract: multisigContractAddress,
@@ -126,10 +126,10 @@ describe("test multisig transactions factory", function () {
     });
 
     it("should create transaction for propose change quorum", function () {
-        const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const senderAddress = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
         const multisigContractAddress = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqylllslmq6y6",
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqyllls4jxmwv",
         );
         const transaction = factory.createTransactionForProposeChangeQuorum(senderAddress, {
             multisigContract: multisigContractAddress,
@@ -145,12 +145,12 @@ describe("test multisig transactions factory", function () {
     });
 
     it("should create transaction for propose transfer execute", function () {
-        const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const senderAddress = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
         const destinationContract = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqpgq0rffvv4vk9vesqplv9ws55fxzdfaspqa8cfszy2hms",
+            "drt1qqqqqqqqqqqqqpgq0rffvv4vk9vesqplv9ws55fxzdfaspqa8cfslca5cw",
         );
         const multisigContractAddress = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqpgq6kurkz43xq8t35kx9p8rvyz5kpxe9g7qd8ssefqjw8",
+            "drt1qqqqqqqqqqqqqpgq6kurkz43xq8t35kx9p8rvyz5kpxe9g7qd8ssy4h3de",
         );
         const amount = 1000000000000000000n; // 1 REWA
         const transaction = factory.createTransactionForProposeTransferExecute(senderAddress, {
@@ -175,13 +175,13 @@ describe("test multisig transactions factory", function () {
     });
 
     it("should create transaction for propose transfer execute DCDT", function () {
-        const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const senderAddress = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
         const destinationContract = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqpgqfxlljcaalgl2qfcnxcsftheju0ts36kvl3ts3qkewe",
+            "drt1qqqqqqqqqqqqqpgqfxlljcaalgl2qfcnxcsftheju0ts36kvl3tsvup6d8",
         );
 
         const multisigContractAddress = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqylllslmq6y6",
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqyllls4jxmwv",
         );
         const token = new Token({
             identifier: "ALICE-5627f1",
@@ -209,12 +209,12 @@ describe("test multisig transactions factory", function () {
     });
 
     it("should create transaction for propose async call", function () {
-        const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const senderAddress = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
         const destinationContract = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqpgq0rffvv4vk9vesqplv9ws55fxzdfaspqa8cfszy2hms",
+            "drt1qqqqqqqqqqqqqpgq0rffvv4vk9vesqplv9ws55fxzdfaspqa8cfslca5cw",
         );
         const multisigContractAddress = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqpgq6kurkz43xq8t35kx9p8rvyz5kpxe9g7qd8ssefqjw8",
+            "drt1qqqqqqqqqqqqqpgq6kurkz43xq8t35kx9p8rvyz5kpxe9g7qd8ssy4h3de",
         );
         const transaction = factory.createTransactionForProposeAsyncCall(senderAddress, {
             multisigContract: multisigContractAddress,
@@ -239,10 +239,10 @@ describe("test multisig transactions factory", function () {
     });
 
     it("should create transaction for deposit the expected amount of rewa", function () {
-        const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const senderAddress = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
         const multisigContractAddress = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqylllslmq6y6",
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqyllls4jxmwv",
         );
 
         const transaction = factory.createTransactionForDeposit(senderAddress, {
@@ -261,10 +261,10 @@ describe("test multisig transactions factory", function () {
     });
 
     it("should create transaction for deposit dcdt token", function () {
-        const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const senderAddress = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
         const multisigContractAddress = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqylllslmq6y6",
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqyllls4jxmwv",
         );
         const token = new Token({
             identifier: "ALICE-5627f1",
@@ -289,10 +289,10 @@ describe("test multisig transactions factory", function () {
     it("should create transaction for propose SC deploy from source when abi is passed", function () {
         const amount = BigInt(50000000000000000); // 0.05 REWA
         const metadata = new CodeMetadata(true, true, false);
-        const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
-        const sourceContract = Address.newFromBech32("erd1qqqqqqqqqqqqqpgqsuxsgykwm6r3s5apct2g5a2rcpe7kw0ed8ssf6h9f6");
+        const senderAddress = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
+        const sourceContract = Address.newFromBech32("drt1qqqqqqqqqqqqqpgqsuxsgykwm6r3s5apct2g5a2rcpe7kw0ed8ss5xqx2y");
         const multisigContractAddress = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqpgq0cjuum0t436gmp446wf3yz43avp2gm2czeus8mctaf",
+            "drt1qqqqqqqqqqqqqpgq0cjuum0t436gmp446wf3yz43avp2gm2czeus680g7h",
         );
 
         const transaction = factory.createTransactionForProposeContractDeployFromSource(senderAddress, {
@@ -318,10 +318,10 @@ describe("test multisig transactions factory", function () {
     it("should create transaction for propose SC deploy from source when no abi is passed", function () {
         const amount = BigInt(50000000000000000); // 0.05 REWA
         const metadata = new CodeMetadata(true, true, false);
-        const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
-        const sourceContract = Address.newFromBech32("erd1qqqqqqqqqqqqqpgqsuxsgykwm6r3s5apct2g5a2rcpe7kw0ed8ssf6h9f6");
+        const senderAddress = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
+        const sourceContract = Address.newFromBech32("drt1qqqqqqqqqqqqqpgqsuxsgykwm6r3s5apct2g5a2rcpe7kw0ed8ss5xqx2y");
         const multisigContractAddress = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqpgq0cjuum0t436gmp446wf3yz43avp2gm2czeus8mctaf",
+            "drt1qqqqqqqqqqqqqpgq0cjuum0t436gmp446wf3yz43avp2gm2czeus680g7h",
         );
 
         const transaction = factory.createTransactionForProposeContractDeployFromSource(senderAddress, {
@@ -346,10 +346,10 @@ describe("test multisig transactions factory", function () {
     it("should create transaction for propose SC upgrade from source when abi is passed", function () {
         const amount = BigInt(50000000000000000); // 0.05 REWA
         const metadata = new CodeMetadata(true, true, false);
-        const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
-        const sourceContract = Address.newFromBech32("erd1qqqqqqqqqqqqqpgqd273cw3hjndqzcpts4dvq0ncy8nx8rkgzeusnefvaq");
+        const senderAddress = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
+        const sourceContract = Address.newFromBech32("drt1qqqqqqqqqqqqqpgqd273cw3hjndqzcpts4dvq0ncy8nx8rkgzeusw97077");
         const multisigContractAddress = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqpgq0cjuum0t436gmp446wf3yz43avp2gm2czeus8mctaf",
+            "drt1qqqqqqqqqqqqqpgq0cjuum0t436gmp446wf3yz43avp2gm2czeus680g7h",
         );
 
         const transaction = factory.createTransactionForProposeContractUpgradeFromSource(senderAddress, {
@@ -361,8 +361,8 @@ describe("test multisig transactions factory", function () {
             codeMetadata: metadata,
             arguments: [
                 2,
-                "erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx",
-                "erd1qqqqqqqqqqqqqpgqsuxsgykwm6r3s5apct2g5a2rcpe7kw0ed8ssf6h9f6",
+                "drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c",
+                "drt1qqqqqqqqqqqqqpgqsuxsgykwm6r3s5apct2g5a2rcpe7kw0ed8ss5xqx2y",
             ],
             abi: dcdtSafeAbi,
         });
@@ -380,10 +380,10 @@ describe("test multisig transactions factory", function () {
     it("should create transaction for propose SC upgrade from source when no abi is passed", function () {
         const amount = BigInt(50000000000000000); // 0.05 REWA
         const metadata = new CodeMetadata(true, true, false);
-        const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
-        const sourceContract = Address.newFromBech32("erd1qqqqqqqqqqqqqpgqd273cw3hjndqzcpts4dvq0ncy8nx8rkgzeusnefvaq");
+        const senderAddress = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
+        const sourceContract = Address.newFromBech32("drt1qqqqqqqqqqqqqpgqd273cw3hjndqzcpts4dvq0ncy8nx8rkgzeusw97077");
         const multisigContractAddress = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqpgq0cjuum0t436gmp446wf3yz43avp2gm2czeus8mctaf",
+            "drt1qqqqqqqqqqqqqpgq0cjuum0t436gmp446wf3yz43avp2gm2czeus680g7h",
         );
 
         const transaction = factory.createTransactionForProposeContractUpgradeFromSource(senderAddress, {
@@ -397,10 +397,10 @@ describe("test multisig transactions factory", function () {
                 new U32Value(2n),
                 VariadicValue.fromItems(
                     new AddressValue(
-                        Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx"),
+                        Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c"),
                     ),
                     new AddressValue(
-                        Address.newFromBech32("erd1qqqqqqqqqqqqqpgqsuxsgykwm6r3s5apct2g5a2rcpe7kw0ed8ssf6h9f6"),
+                        Address.newFromBech32("drt1qqqqqqqqqqqqqpgqsuxsgykwm6r3s5apct2g5a2rcpe7kw0ed8ss5xqx2y"),
                     ),
                 ),
             ],
@@ -417,10 +417,10 @@ describe("test multisig transactions factory", function () {
     });
 
     it("should create transaction for sign action", function () {
-        const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const senderAddress = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
         const multisigContractAddress = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqylllslmq6y6",
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqyllls4jxmwv",
         );
         const transaction = factory.createTransactionForSignAction(senderAddress, {
             multisigContract: multisigContractAddress,
@@ -436,10 +436,10 @@ describe("test multisig transactions factory", function () {
     });
 
     it("should create transaction for sign batch", function () {
-        const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const senderAddress = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
         const multisigContractAddress = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqylllslmq6y6",
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqyllls4jxmwv",
         );
         const transaction = factory.createTransactionForSignBatch(senderAddress, {
             multisigContract: multisigContractAddress,
@@ -455,10 +455,10 @@ describe("test multisig transactions factory", function () {
     });
 
     it("should create transaction for sign and perform", function () {
-        const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const senderAddress = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
         const multisigContractAddress = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqylllslmq6y6",
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqyllls4jxmwv",
         );
         const transaction = factory.createTransactionForSignAndPerform(senderAddress, {
             multisigContract: multisigContractAddress,
@@ -474,10 +474,10 @@ describe("test multisig transactions factory", function () {
     });
 
     it("should create transaction for unsign", function () {
-        const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const senderAddress = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
         const multisigContractAddress = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqylllslmq6y6",
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqyllls4jxmwv",
         );
         const transaction = factory.createTransactionForUnsign(senderAddress, {
             multisigContract: multisigContractAddress,
@@ -492,9 +492,9 @@ describe("test multisig transactions factory", function () {
     });
 
     it("should create transaction for unsign for outdated board members", function () {
-        const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const senderAddress = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
         const multisigContractAddress = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqylllslmq6y6",
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqyllls4jxmwv",
         );
         const transaction = factory.createTransactionForUnsignForOutdatedBoardMembers(senderAddress, {
             multisigContract: multisigContractAddress,
@@ -510,9 +510,9 @@ describe("test multisig transactions factory", function () {
     });
 
     it("should create transaction for perform action", function () {
-        const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const senderAddress = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
         const multisigContractAddress = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqylllslmq6y6",
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqyllls4jxmwv",
         );
         const transaction = factory.createTransactionForPerformAction(senderAddress, {
             multisigContract: multisigContractAddress,
@@ -527,9 +527,9 @@ describe("test multisig transactions factory", function () {
     });
 
     it("should create transaction for perform batch", function () {
-        const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const senderAddress = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
         const multisigContractAddress = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqylllslmq6y6",
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqyllls4jxmwv",
         );
         const transaction = factory.createTransactionForPerformBatch(senderAddress, {
             multisigContract: multisigContractAddress,
@@ -544,10 +544,10 @@ describe("test multisig transactions factory", function () {
     });
 
     it("should create transaction for discard action", function () {
-        const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const senderAddress = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
         const multisigContractAddress = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqylllslmq6y6",
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqyllls4jxmwv",
         );
         const transaction = factory.createTransactionForDiscardAction(senderAddress, {
             multisigContract: multisigContractAddress,
@@ -563,10 +563,10 @@ describe("test multisig transactions factory", function () {
     });
 
     it("should create transaction for discard batch", function () {
-        const senderAddress = Address.newFromBech32("erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx");
+        const senderAddress = Address.newFromBech32("drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c");
 
         const multisigContractAddress = Address.newFromBech32(
-            "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqylllslmq6y6",
+            "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqyllls4jxmwv",
         );
         const transaction = factory.createTransactionForDiscardBatch(senderAddress, {
             multisigContract: multisigContractAddress,

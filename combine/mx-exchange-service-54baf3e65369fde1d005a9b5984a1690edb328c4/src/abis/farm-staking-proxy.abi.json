@@ -274,19 +274,19 @@
             "fields": [
                 {
                     "name": "lp_farm_rewards",
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
                     "name": "staking_farm_rewards",
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
                     "name": "new_dual_yield_tokens",
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
-        "EsdtTokenPayment": {
+        "DcdtTokenPayment": {
             "type": "struct",
             "fields": [
                 {
@@ -308,11 +308,11 @@
             "fields": [
                 {
                     "name": "dual_yield_tokens",
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
                     "name": "boosted_rewards",
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         },
@@ -321,19 +321,19 @@
             "fields": [
                 {
                     "name": "other_token_payment",
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
                     "name": "lp_farm_rewards",
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
                     "name": "staking_rewards",
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 },
                 {
                     "name": "unbond_staking_farm_token",
-                    "type": "EsdtTokenPayment"
+                    "type": "DcdtTokenPayment"
                 }
             ]
         }

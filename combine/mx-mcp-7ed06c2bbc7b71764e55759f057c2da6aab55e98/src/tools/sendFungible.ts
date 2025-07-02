@@ -79,5 +79,5 @@ export const sendFungibleParamScheme = {
     .string()
     .describe("The amount to send. This amount will then be denominated."),
   token: z.string().describe("The identifier of the token to send."),
-  receiver: z.string().describe("The bech32 address of the receiver (erd1...)"),
+  receiver: z.string().describe("The bech32 address of the receiver (drt1...)"),
 };

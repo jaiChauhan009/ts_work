@@ -13,7 +13,7 @@ export class MexFarm {
   @ApiProperty({ nullable: true, required: false })
   version?: string;
 
-  @ApiProperty({ type: String, example: 'erd1qqqqqqqqqqqqqpgqzps75vsk97w9nsx2cenv2r2tyxl4fl402jpsx78m9j' })
+  @ApiProperty({ type: String, example: 'drt1qqqqqqqqqqqqqpgqzps75vsk97w9nsx2cenv2r2tyxl4fl402jpsmzscxv' })
   address: string = '';
 
   @ApiProperty()

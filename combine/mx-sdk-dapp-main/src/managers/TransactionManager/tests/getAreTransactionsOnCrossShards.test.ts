@@ -35,7 +35,7 @@ describe('getAreTransactionsOnSameShard', () => {
     const transactions: SignedTransactionType[] = [
       {
         receiver:
-          'erd1qqqqqqqqqqqqqpgq6d2ss380cvjhese43930hgzdx8quadm0zeusy9lclj',
+          'drt1qqqqqqqqqqqqqpgq6d2ss380cvjhese43930hgzdx8quadm0zeuseegmuv',
         data: 'data1',
         hash: '',
         status: TransactionBatchStatusesEnum.signed,
@@ -49,7 +49,7 @@ describe('getAreTransactionsOnSameShard', () => {
       },
       {
         receiver:
-          'erd1qqqqqqqqqqqqqpgq6d2ss380cvjhese43930hgzdx8quadm0zeusy9lclj',
+          'drt1qqqqqqqqqqqqqpgq6d2ss380cvjhese43930hgzdx8quadm0zeuseegmuv',
         data: 'data2',
         hash: '',
         status: TransactionServerStatusesEnum.pending,
@@ -70,14 +70,14 @@ describe('getAreTransactionsOnSameShard', () => {
     const transactions: SignedTransactionType[] = [
       {
         receiver:
-          'erd1qqqqqqqqqqqqqpgq6d2ss380cvjhese43930hgzdx8quadm0zeusy9lclj',
+          'drt1qqqqqqqqqqqqqpgq6d2ss380cvjhese43930hgzdx8quadm0zeuseegmuv',
         data: 'data1',
         hash: '',
         status: TransactionBatchStatusesEnum.signed,
         nonce: 0,
         value: '',
         sender:
-          'erd169achhjktctt8umfj3y2vy8490l5l0e7r9gqaekl9kc89pcwdnpqf2kn0s',
+          'drt169achhjktctt8umfj3y2vy8490l5l0e7r9gqaekl9kc89pcwdnpq5kpsvw',
         gasPrice: 0,
         gasLimit: 0,
         chainID: '',
@@ -85,14 +85,14 @@ describe('getAreTransactionsOnSameShard', () => {
       },
       {
         receiver:
-          'erd1qqqqqqqqqqqqqpgq6d2ss380cvjhese43930hgzdx8quadm0zeusy9lclj',
+          'drt1qqqqqqqqqqqqqpgq6d2ss380cvjhese43930hgzdx8quadm0zeuseegmuv',
         data: 'data2',
         hash: '',
         status: TransactionServerStatusesEnum.pending,
         nonce: 0,
         value: '',
         sender:
-          'erd169achhjktctt8umfj3y2vy8490l5l0e7r9gqaekl9kc89pcwdnpqf2kn0s',
+          'drt169achhjktctt8umfj3y2vy8490l5l0e7r9gqaekl9kc89pcwdnpq5kpsvw',
         gasPrice: 0,
         gasLimit: 0,
         chainID: '',
@@ -112,14 +112,14 @@ describe('getAreTransactionsOnSameShard', () => {
     const transactions: SignedTransactionType[] = [
       {
         receiver:
-          'erd1qqqqqqqqqqqqqpgq6d2ss380cvjhese43930hgzdx8quadm0zeusy9lclj',
+          'drt1qqqqqqqqqqqqqpgq6d2ss380cvjhese43930hgzdx8quadm0zeuseegmuv',
         data: 'data1',
         hash: '',
         status: TransactionServerStatusesEnum.pending,
         nonce: 0,
         value: '',
         sender:
-          'erd169achhjktctt8umfj3y2vy8490l5l0e7r9gqaekl9kc89pcwdnpqf2kn0s',
+          'drt169achhjktctt8umfj3y2vy8490l5l0e7r9gqaekl9kc89pcwdnpq5kpsvw',
         gasPrice: 0,
         gasLimit: 0,
         chainID: '',
@@ -127,14 +127,14 @@ describe('getAreTransactionsOnSameShard', () => {
       },
       {
         receiver:
-          'erd1qqqqqqqqqqqqqpgq6d2ss380cvjhese43930hgzdx8quadm0zeusy9lclj',
+          'drt1qqqqqqqqqqqqqpgq6d2ss380cvjhese43930hgzdx8quadm0zeuseegmuv',
         data: 'data2',
         hash: '',
         status: TransactionServerStatusesEnum.pending,
         nonce: 0,
         value: '',
         sender:
-          'erd169achhjktctt8umfj3y2vy8490l5l0e7r9gqaekl9kc89pcwdnpqf2kn0s',
+          'drt169achhjktctt8umfj3y2vy8490l5l0e7r9gqaekl9kc89pcwdnpq5kpsvw',
         gasPrice: 0,
         gasLimit: 0,
         chainID: '',

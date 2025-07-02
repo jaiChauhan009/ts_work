@@ -92,7 +92,7 @@ describe('DelegationLegacyService', () => {
       jest.spyOn(delegationLegacyService['vmQueryService'], 'vmQuery').mockResolvedValueOnce(totalStakeByTypeEncoded);
       jest.spyOn(delegationLegacyService['vmQueryService'], 'vmQuery').mockResolvedValueOnce(numUsersEncoded);
 
-      (apiConfigService.getDelegationContractAddress as jest.Mock).mockReturnValueOnce('erd1');
+      (apiConfigService.getDelegationContractAddress as jest.Mock).mockReturnValueOnce('drt1');
 
       const actualDelegation = await delegationLegacyService.getDelegationRaw();
 

@@ -217,7 +217,7 @@ describe('Token Service', () => {
         nonce: undefined,
         name: 'WrappedREWA',
         ticker: 'WREWA',
-        owner: 'erd1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsqj8x97',
+        owner: 'drt1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsaws9xq',
         minted: '',
         burnt: '',
         initialMinted: '',
@@ -509,7 +509,7 @@ describe('Token Service', () => {
 
   describe('getTokenCountForAddress', () => {
     it('should return the correct token count for a valid address and filter', async () => {
-      const address = 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqplllst77y4l';
+      const address = 'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqplllsphc9lf';
       const filter = new TokenFilter({ type: TokenType.FungibleDCDT });
       const expectedCount = 10;
       const getTokenCountForAddressMock = jest.spyOn(tokenService['indexerService'], 'getTokenCountForAddress')
@@ -523,7 +523,7 @@ describe('Token Service', () => {
 
   describe('getTokenCountForAddressFromElastic', () => {
     it('should return the correct token count from elastic for a valid address and filter', async () => {
-      const address = 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqplllst77y4l';
+      const address = 'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqplllsphc9lf';
       const filter = new TokenFilter({ type: TokenType.FungibleDCDT });
       const expectedCount = 10;
       const getTokenCountForAddressMock = jest.spyOn(tokenService['indexerService'], 'getTokenCountForAddress')
@@ -539,7 +539,7 @@ describe('Token Service', () => {
     it('should return the correct token count for a valid address and filter', async () => {
       const mockTokens = JSON.parse(fs.readFileSync(path.join(__dirname, '../../mocks/tokens.filtered.mock.json'), 'utf-8'));
 
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const filter = new TokenFilter({ type: TokenType.FungibleDCDT });
 
       const expectedCount = 26;
@@ -556,7 +556,7 @@ describe('Token Service', () => {
     it('should return the correct tokens with balances for a valid address and filter', async () => {
       const mockTokens = JSON.parse(fs.readFileSync(path.join(__dirname, '../../mocks/tokens.filtered.mock.json'), 'utf-8'));
 
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const queryPagination = { from: 0, size: 1 };
       const filter = new TokenFilter({ type: TokenType.FungibleDCDT });
 
@@ -621,7 +621,7 @@ describe('Token Service', () => {
         identifier: "WREWA-bd4d79",
         name: "WrappedREWA",
         ticker: "WREWA",
-        owner: "erd1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsqj8x97",
+        owner: "drt1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsaws9xq",
         decimals: 18,
         isPaused: false,
         assets: {
@@ -650,7 +650,7 @@ describe('Token Service', () => {
         identifier: "MEX-455c57",
         name: "MEX",
         ticker: "MEX",
-        owner: "erd1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsqj8x97",
+        owner: "drt1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsaws9xq",
         decimals: 18,
         isPaused: false,
         assets: {
@@ -934,9 +934,9 @@ describe('Token Service', () => {
       status: TokenAssetStatus.active,
       pngUrl: 'https://example.com/token.png',
       svgUrl: 'https://example.com/token.svg',
-      ledgerSignature: 'erd1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsqj8x97',
+      ledgerSignature: 'drt1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsaws9xq',
       lockedAccounts: {
-        'erd1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsqj8x97': '1000000000000000000',
+        'drt1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsaws9xq': '1000000000000000000',
         'erd1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsqj8x91': '500000000000000000',
       },
       extraTokens: ['MEX-455c57', 'USDC-c76f1f'],
@@ -1000,7 +1000,7 @@ describe('Token Service', () => {
       name: 'WrappedREWA',
       type: DcdtType.FungibleDCDT,
       subType: undefined,
-      owner: 'erd1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsqj8x97',
+      owner: 'drt1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsaws9xq',
       wiped: '',
       decimals: 18,
       isPaused: false,
@@ -1021,7 +1021,7 @@ describe('Token Service', () => {
       timestamp: 1643824710,
       ownersHistory: [
         {
-          address: 'erd1qqqqqqqqqqqqqpgq0lzzvt2faev4upyf586tg38s84d7zsaj2jpsglugga',
+          address: 'drt1qqqqqqqqqqqqqpgq0lzzvt2faev4upyf586tg38s84d7zsaj2jps4rtttr',
           timestamp: 1643824710,
         },
       ],
@@ -1055,7 +1055,7 @@ describe('Token Service', () => {
       name: 'WrappedREWA',
       type: DcdtType.FungibleDCDT,
       subType: undefined,
-      owner: 'erd1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsqj8x97',
+      owner: 'drt1ss6u80ruas2phpmr82r42xnkd6rxy40g9jl69frppl4qez9w2jpsaws9xq',
       wiped: '',
       decimals: 18,
       isPaused: false,
@@ -1076,14 +1076,14 @@ describe('Token Service', () => {
       timestamp: 1643824710,
       ownersHistory: [
         {
-          address: 'erd1qqqqqqqqqqqqqpgq0lzzvt2faev4upyf586tg38s84d7zsaj2jpsglugga',
+          address: 'drt1qqqqqqqqqqqqqpgq0lzzvt2faev4upyf586tg38s84d7zsaj2jps4rtttr',
           timestamp: 1643824710,
         },
       ],
     };
 
     const assets = {
-      erd16jruked88jgtsar78ej85hjp3qsd9jkjcw4swsn7k0teqh3wgcqqgyrupq: new AccountAssets({
+      drt16jruked88jgtsar78ej85hjp3qsd9jkjcw4swsn7k0teqh3wgcqq4c5lz7: new AccountAssets({
         name: 'Exchange: Tests',
         description: '',
         tags: ['exchange', 'tests'],
@@ -1132,7 +1132,7 @@ describe('Token Service', () => {
       const results = await tokenService.getTokenAccounts(new QueryPagination({ size: 1 }), identifier);
       if (results) {
         for (const result of results) {
-          expect(result.address).toStrictEqual("erd1qqqqqqqqqqqqqpgq0lzzvt2faev4upyf586tg38s84d7zsaj2jpsglugga");
+          expect(result.address).toStrictEqual("drt1qqqqqqqqqqqqqpgq0lzzvt2faev4upyf586tg38s84d7zsaj2jps4rtttr");
           expect(result.hasOwnProperty('address')).toBe(true);
           expect(result.hasOwnProperty('balance')).toBe(true);
           expect(result.hasOwnProperty('assets')).toBe(true);

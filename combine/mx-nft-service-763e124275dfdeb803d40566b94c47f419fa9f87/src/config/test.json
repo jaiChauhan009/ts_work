@@ -1,8 +1,8 @@
 {
   "DharitrI": {
     "chainID": "T",
-    "esdtNftAddress": "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u",
-    "nftMarketplaceAddress": "erd1qqqqqqqqqqqqqpgqvfpluw9whepv7ge0e60khnx70yys6p3lu00sat8pff",
+    "dcdtNftAddress": "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqzlllsd5j0s2",
+    "nftMarketplaceAddress": "drt1qqqqqqqqqqqqqpgqvfpluw9whepv7ge0e60khnx70yys6p3lu00sqhsz2h",
     "issueNftCost": 50000000000000000,
     "wegld": "WEGLD-71e90a",
     "mex": "MEX-27f4cd",

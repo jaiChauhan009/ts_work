@@ -7,7 +7,7 @@ describe('decodeNativeAuthToken tests', () => {
   it('decodes nativeAuthToken token', () => {
     const parsed = decodeNativeAuthToken(nativeAuthToken);
     expect(parsed).toStrictEqual({
-      address: 'erd1dm9uxpf5awkn7uhju7zjn9lde0dhahy0qaxqqlu26xcuuw27qqrsqfmej3',
+      address: 'drt1dm9uxpf5awkn7uhju7zjn9lde0dhahy0qaxqqlu26xcuuw27qqrsa4v630',
       blockHash:
         '955be88217985c51d121c51e11a7f7a7eb68eab0b9a398b077e724e2c2b64b95',
       body: 'bG9jYWxob3N0.955be88217985c51d121c51e11a7f7a7eb68eab0b9a398b077e724e2c2b64b95.86400.eyJ0aW1lc3RhbXAiOjE2Njk3MzA5MzR9',

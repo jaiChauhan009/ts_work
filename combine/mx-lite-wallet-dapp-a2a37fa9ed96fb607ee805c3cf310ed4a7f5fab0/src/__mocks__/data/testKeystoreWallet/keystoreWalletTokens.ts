@@ -56,7 +56,7 @@ export const keystoreWalletTokens = [
     identifier: 'ASH-e3d1b7',
     name: 'ASH',
     ticker: 'ASH',
-    owner: 'erd1f0dwxpl3vxe936cla2mkky7nym4g3xn4vgfz497dpupqul8uktzshxqj5l',
+    owner: 'drt1f0dwxpl3vxe936cla2mkky7nym4g3xn4vgfz497dpupqul8uktzs26h3hp',
     decimals: 18,
     isPaused: false,
     assets: {
@@ -69,7 +69,7 @@ export const keystoreWalletTokens = [
       svgUrl:
         'https://devnet-media.dharitri.org/tokens/asset/ASH-e3d1b7/logo.svg',
       lockedAccounts: {
-        erd1w280yjym0xc2aw80dvn2a4ew5vzvtshtr8nux8wa5wzqm78y7nvsq0ktun:
+        drt1w280yjym0xc2aw80dvn2a4ew5vzvtshtr8nux8wa5wzqm78y7nvsanpgld:
           'Locked Account #1'
       },
       extraTokens: [
@@ -147,7 +147,7 @@ export const keystoreWalletTokens = [
     identifier: 'CRT-f55762',
     name: 'CRT',
     ticker: 'CRT',
-    owner: 'erd1x39tc3q3nn72ecjnmcz7x0qp09kp97t080x99dgyhx7zh95j0n4szskhlv',
+    owner: 'drt1x39tc3q3nn72ecjnmcz7x0qp09kp97t080x99dgyhx7zh95j0n4slvp5uj',
     decimals: 18,
     isPaused: false,
     assets: {
@@ -160,14 +160,14 @@ export const keystoreWalletTokens = [
       svgUrl:
         'https://devnet-media.dharitri.org/tokens/asset/CRT-f55762/logo.svg',
       lockedAccounts: {
-        erd1s9gcnzgjyzdn205xdy3gy3jtm8yl95k4g3kq54ryprs0h486v7dqw2zjrf:
+        drt1s9gcnzgjyzdn205xdy3gy3jtm8yl95k4g3kq54ryprs0h486v7dqnk43qh:
           'Investors',
-        erd1xaa6p8uxtzrzq7s2khy9q6kqzka5f3pu8t5rmrz0nm804lvn5z2qg8xev4: 'Team',
-        erd1hs6a3uhtc8chgm4k3wgamxue7fjnga4k5dsstvlgmhf6w9ph9zzswhq64c:
+        drt1xaa6p8uxtzrzq7s2khy9q6kqzka5f3pu8t5rmrz0nm804lvn5z2q4m360t: 'Team',
+        drt1hs6a3uhtc8chgm4k3wgamxue7fjnga4k5dsstvlgmhf6w9ph9zzsnthekx:
           'Ecosystem, Players, Community',
-        erd1avld7x8wvmvu0ryzythw4khkwfpmzvuf70fp5z8f72nxysa6uq7qae3w0m:
+        drt1avld7x8wvmvu0ryzythw4khkwfpmzvuf70fp5z8f72nxysa6uq7qq9xdv9:
           'Marketing, Partners',
-        erd102975u07wnv0t8pl389l6dag2r9ca8ql2dsjvgc8jp59a39ycd4q4dsfdw:
+        drt102975u07wnv0t8pl389l6dag2r9ca8ql2dsjvgc8jp59a39ycd4qg382ws:
           'Treasury'
       },
       social: {
@@ -261,7 +261,7 @@ export const keystoreWalletTokens = [
     nonce: 4,
     name: 'REWAMEXLPStakedLK',
     ticker: 'REWAMEXFL-2ed783-04',
-    owner: 'erd1qqqqqqqqqqqqqpgqqjpfmappkpzq6kdju3mkqepk3d2kcymu0n4srd45sa',
+    owner: 'drt1qqqqqqqqqqqqqpgqqjpfmappkpzq6kdju3mkqepk3d2kcymu0n4s73zhnr',
     decimals: 18,
     isPaused: false,
     transactions: 31,
@@ -288,7 +288,7 @@ export const keystoreWalletTokens = [
     identifier: 'REWARIDE-9fdd72',
     name: 'REWARIDELP',
     ticker: 'REWARIDE',
-    owner: 'erd1qqqqqqqqqqqqqpgqa7hv0nahgsl8tz0psat46x0tchm0wuyc0n4s6q28ad',
+    owner: 'drt1qqqqqqqqqqqqqpgqa7hv0nahgsl8tz0psat46x0tchm0wuyc0n4s8uay7n',
     decimals: 18,
     isPaused: false,
     assets: {
@@ -325,7 +325,7 @@ export const keystoreWalletTokens = [
     identifier: 'REWAUSDC-ac1a30',
     name: 'REWAUSDCLP',
     ticker: 'REWAUSDC',
-    owner: 'erd1qqqqqqqqqqqqqpgqa7hv0nahgsl8tz0psat46x0tchm0wuyc0n4s6q28ad',
+    owner: 'drt1qqqqqqqqqqqqqpgqa7hv0nahgsl8tz0psat46x0tchm0wuyc0n4s8uay7n',
     decimals: 18,
     isPaused: false,
     assets: {
@@ -387,7 +387,7 @@ export const keystoreWalletTokens = [
     identifier: 'ITHEUM-fce905',
     name: 'ITHEUM',
     ticker: 'ITHEUM',
-    owner: 'erd1h45j98675dh8rl747w88g879l6c24cxhlyx3g9t9x46flqyt463qu6c68u',
+    owner: 'drt1h45j98675dh8rl747w88g879l6c24cxhlyx3g9t9x46flqyt463qpx0eyz',
     decimals: 18,
     isPaused: false,
     assets: {
@@ -442,7 +442,7 @@ export const keystoreWalletTokens = [
     nonce: 9,
     name: 'MEX-a659d0',
     ticker: 'LKTK-4de4a1-09',
-    owner: 'erd1qqqqqqqqqqqqqpgq2l97gw2j4wnlem4y2rx7dudqlssjtwpu0n4sd0u3w2',
+    owner: 'drt1qqqqqqqqqqqqqpgq2l97gw2j4wnlem4y2rx7dudqlssjtwpu0n4ssntjd5',
     decimals: 18,
     isPaused: false,
     transactions: 83,
@@ -524,7 +524,7 @@ export const keystoreWalletTokens = [
     nonce: 2,
     name: 'MetaStakedUtrustLK',
     ticker: 'METAUTKLK-761eab-02',
-    owner: 'erd1qqqqqqqqqqqqqpgqqwn0qa7ft4tew05r0zcd0c5hay5mp6np0n4ss8jm86',
+    owner: 'drt1qqqqqqqqqqqqqpgqqwn0qa7ft4tew05r0zcd0c5hay5mp6np0n4sdm9cyy',
     decimals: 18,
     isPaused: false,
     transactions: 15,
@@ -552,7 +552,7 @@ export const keystoreWalletTokens = [
     nonce: 1,
     name: 'MetaStakedUtrustLK',
     ticker: 'METAUTKLK-bad544-01',
-    owner: 'erd1qqqqqqqqqqqqqpgqteg56fufpkfwzwjdhlethwmnnj9mglrz0n4std9j7u',
+    owner: 'drt1qqqqqqqqqqqqqpgqteg56fufpkfwzwjdhlethwmnnj9mglrz0n4sk3j3az',
     decimals: 18,
     isPaused: false,
     transactions: 0,
@@ -578,7 +578,7 @@ export const keystoreWalletTokens = [
     identifier: 'MEX-a659d0',
     name: 'MEX',
     ticker: 'MEX',
-    owner: 'erd1x39tc3q3nn72ecjnmcz7x0qp09kp97t080x99dgyhx7zh95j0n4szskhlv',
+    owner: 'drt1x39tc3q3nn72ecjnmcz7x0qp09kp97t080x99dgyhx7zh95j0n4slvp5uj',
     decimals: 18,
     isPaused: false,
     assets: {
@@ -623,7 +623,7 @@ export const keystoreWalletTokens = [
     identifier: 'RIDE-05b1bb',
     name: 'RIDE',
     ticker: 'RIDE',
-    owner: 'erd1x39tc3q3nn72ecjnmcz7x0qp09kp97t080x99dgyhx7zh95j0n4szskhlv',
+    owner: 'drt1x39tc3q3nn72ecjnmcz7x0qp09kp97t080x99dgyhx7zh95j0n4slvp5uj',
     decimals: 18,
     isPaused: false,
     assets: {
@@ -677,7 +677,7 @@ export const keystoreWalletTokens = [
     nonce: 2,
     name: 'SUTK',
     ticker: 'SUTK-b4f480-02',
-    owner: 'erd1qqqqqqqqqqqqqpgqzwv3sn2h4juyya2aadacmrt4hqj9r7a70n4shpwswh',
+    owner: 'drt1qqqqqqqqqqqqqpgqzwv3sn2h4juyya2aadacmrt4hqj9r7a70n4s2aendf',
     decimals: 18,
     isPaused: false,
     transactions: 3,
@@ -705,7 +705,7 @@ export const keystoreWalletTokens = [
     nonce: 3,
     name: 'SUTK',
     ticker: 'SUTK-fda803-03',
-    owner: 'erd1qqqqqqqqqqqqqpgquvklwltnlgyn5w5cd65ey36nw8sc008d0n4s0xpr25',
+    owner: 'drt1qqqqqqqqqqqqqpgquvklwltnlgyn5w5cd65ey36nw8sc008d0n4sj6kqf2',
     decimals: 18,
     isPaused: false,
     transactions: 27,
@@ -758,7 +758,7 @@ export const keystoreWalletTokens = [
     identifier: 'TKNHFNW-4e08a9',
     name: 'TKNHFNW32GKYD',
     ticker: 'TKNHFNW-4e08a9',
-    owner: 'erd1hfnw32gkydnj80cljjvkfz9kl3tachmwcpgjhxm5k5l0vhu4pr9s4zwxwa',
+    owner: 'drt1hfnw32gkydnj80cljjvkfz9kl3tachmwcpgjhxm5k5l0vhu4pr9sg7e9dr',
     decimals: 18,
     isPaused: false,
     transactions: 25,
@@ -833,7 +833,7 @@ export const keystoreWalletTokens = [
     identifier: 'USDC-350c4e',
     name: 'USDC',
     ticker: 'USDC',
-    owner: 'erd1x39tc3q3nn72ecjnmcz7x0qp09kp97t080x99dgyhx7zh95j0n4szskhlv',
+    owner: 'drt1x39tc3q3nn72ecjnmcz7x0qp09kp97t080x99dgyhx7zh95j0n4slvp5uj',
     decimals: 6,
     isPaused: false,
     assets: {
@@ -878,7 +878,7 @@ export const keystoreWalletTokens = [
     identifier: 'UTK-14d57d',
     name: 'UTK',
     ticker: 'UTK',
-    owner: 'erd1x39tc3q3nn72ecjnmcz7x0qp09kp97t080x99dgyhx7zh95j0n4szskhlv',
+    owner: 'drt1x39tc3q3nn72ecjnmcz7x0qp09kp97t080x99dgyhx7zh95j0n4slvp5uj',
     decimals: 18,
     isPaused: false,
     assets: {
@@ -935,7 +935,7 @@ export const keystoreWalletTokens = [
     identifier: 'WREWA-a28c59',
     name: 'WrappedREWA',
     ticker: 'WREWA',
-    owner: 'erd1x39tc3q3nn72ecjnmcz7x0qp09kp97t080x99dgyhx7zh95j0n4szskhlv',
+    owner: 'drt1x39tc3q3nn72ecjnmcz7x0qp09kp97t080x99dgyhx7zh95j0n4slvp5uj',
     decimals: 18,
     isPaused: false,
     assets: {
@@ -979,7 +979,7 @@ export const keystoreWalletTokens = [
     nonce: 2,
     name: 'MEX-a659d0',
     ticker: 'XMEX-0d5939-02',
-    owner: 'erd1qqqqqqqqqqqqqpgqzqsrh358v57maeclstufm4w2wrsc52cq0n4s38vfzd',
+    owner: 'drt1qqqqqqqqqqqqqpgqzqsrh358v57maeclstufm4w2wrsc52cq0n4svmm2pn',
     decimals: 18,
     isPaused: false,
     transactions: 0,
@@ -1007,7 +1007,7 @@ export const keystoreWalletTokens = [
     nonce: 4,
     name: 'MEX-a659d0',
     ticker: 'XMEX-38c7fb-04',
-    owner: 'erd1qqqqqqqqqqqqqpgqs7qnuvj2t0m40xmgrrh88wc7qdx286c60n4spvrzzk',
+    owner: 'drt1qqqqqqqqqqqqqpgqs7qnuvj2t0m40xmgrrh88wc7qdx286c60n4sus5ppg',
     decimals: 18,
     isPaused: false,
     transactions: 90,
@@ -1035,7 +1035,7 @@ export const keystoreWalletTokens = [
     nonce: 14,
     name: 'MEX-a659d0',
     ticker: 'XMEX-38c7fb-0e',
-    owner: 'erd1qqqqqqqqqqqqqpgqs7qnuvj2t0m40xmgrrh88wc7qdx286c60n4spvrzzk',
+    owner: 'drt1qqqqqqqqqqqqqpgqs7qnuvj2t0m40xmgrrh88wc7qdx286c60n4sus5ppg',
     decimals: 18,
     isPaused: false,
     transactions: 90,
@@ -1063,7 +1063,7 @@ export const keystoreWalletTokens = [
     nonce: 19,
     name: 'MEX-a659d0',
     ticker: 'XMEX-38c7fb-13',
-    owner: 'erd1qqqqqqqqqqqqqpgqs7qnuvj2t0m40xmgrrh88wc7qdx286c60n4spvrzzk',
+    owner: 'drt1qqqqqqqqqqqqqpgqs7qnuvj2t0m40xmgrrh88wc7qdx286c60n4sus5ppg',
     decimals: 18,
     isPaused: false,
     transactions: 90,
@@ -1091,7 +1091,7 @@ export const keystoreWalletTokens = [
     nonce: 32,
     name: 'MEX-a659d0',
     ticker: 'XMEX-38c7fb-20',
-    owner: 'erd1qqqqqqqqqqqqqpgqs7qnuvj2t0m40xmgrrh88wc7qdx286c60n4spvrzzk',
+    owner: 'drt1qqqqqqqqqqqqqpgqs7qnuvj2t0m40xmgrrh88wc7qdx286c60n4sus5ppg',
     decimals: 18,
     isPaused: false,
     transactions: 90,
@@ -1119,7 +1119,7 @@ export const keystoreWalletTokens = [
     nonce: 33,
     name: 'MEX-a659d0',
     ticker: 'XMEX-38c7fb-21',
-    owner: 'erd1qqqqqqqqqqqqqpgqs7qnuvj2t0m40xmgrrh88wc7qdx286c60n4spvrzzk',
+    owner: 'drt1qqqqqqqqqqqqqpgqs7qnuvj2t0m40xmgrrh88wc7qdx286c60n4sus5ppg',
     decimals: 18,
     isPaused: false,
     transactions: 90,
@@ -1147,7 +1147,7 @@ export const keystoreWalletTokens = [
     nonce: 34,
     name: 'MEX-a659d0',
     ticker: 'XMEX-38c7fb-22',
-    owner: 'erd1qqqqqqqqqqqqqpgqs7qnuvj2t0m40xmgrrh88wc7qdx286c60n4spvrzzk',
+    owner: 'drt1qqqqqqqqqqqqqpgqs7qnuvj2t0m40xmgrrh88wc7qdx286c60n4sus5ppg',
     decimals: 18,
     isPaused: false,
     transactions: 90,
@@ -1175,7 +1175,7 @@ export const keystoreWalletTokens = [
     nonce: 1,
     name: 'MEX-a659d0',
     ticker: 'XMEX',
-    owner: 'erd1qqqqqqqqqqqqqpgqfsdhdyyuyxlflc43axlvderg84ry7cfr0n4sf0nw6v',
+    owner: 'drt1qqqqqqqqqqqqqpgqfsdhdyyuyxlflc43axlvderg84ry7cfr0n4s5nydej',
     decimals: 18,
     isPaused: false,
     assets: {
@@ -1213,7 +1213,7 @@ export const keystoreWalletTokens = [
     nonce: 2,
     name: 'MEX-a659d0',
     ticker: 'XMEX',
-    owner: 'erd1qqqqqqqqqqqqqpgqfsdhdyyuyxlflc43axlvderg84ry7cfr0n4sf0nw6v',
+    owner: 'drt1qqqqqqqqqqqqqpgqfsdhdyyuyxlflc43axlvderg84ry7cfr0n4s5nydej',
     decimals: 18,
     isPaused: false,
     assets: {
@@ -1251,7 +1251,7 @@ export const keystoreWalletTokens = [
     nonce: 3,
     name: 'MEX-a659d0',
     ticker: 'XMEX',
-    owner: 'erd1qqqqqqqqqqqqqpgqfsdhdyyuyxlflc43axlvderg84ry7cfr0n4sf0nw6v',
+    owner: 'drt1qqqqqqqqqqqqqpgqfsdhdyyuyxlflc43axlvderg84ry7cfr0n4s5nydej',
     decimals: 18,
     isPaused: false,
     assets: {
@@ -1289,7 +1289,7 @@ export const keystoreWalletTokens = [
     nonce: 16,
     name: 'MEX-a659d0',
     ticker: 'XMEX',
-    owner: 'erd1qqqqqqqqqqqqqpgqfsdhdyyuyxlflc43axlvderg84ry7cfr0n4sf0nw6v',
+    owner: 'drt1qqqqqqqqqqqqqpgqfsdhdyyuyxlflc43axlvderg84ry7cfr0n4s5nydej',
     decimals: 18,
     isPaused: false,
     assets: {
@@ -1327,7 +1327,7 @@ export const keystoreWalletTokens = [
     nonce: 3,
     name: 'xMEXLP',
     ticker: 'XMEXLP-72e654-03',
-    owner: 'erd1qqqqqqqqqqqqqpgqp8c763u69ctvshmjtp06qzzcwmleqcpu0n4s2e893l',
+    owner: 'drt1qqqqqqqqqqqqqpgqp8c763u69ctvshmjtp06qzzcwmleqcpu0n4sh9sxjp',
     decimals: 18,
     isPaused: false,
     transactions: 4,

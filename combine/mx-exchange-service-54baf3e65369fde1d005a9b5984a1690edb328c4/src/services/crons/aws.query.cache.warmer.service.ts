@@ -274,13 +274,13 @@ export class AWSQueryCacheWarmerService {
 
         const allPairsVolumeUSDCompleteValuesSum =
             await this.analyticsQuery.getSumCompleteValues({
-                series: 'erd1%',
+                series: 'drt1%',
                 metric: 'volumeUSD',
             });
         await delay(constantsConfig.AWS_QUERY_CACHE_WARMER_DELAY);
         const allPairsVolumeUSD24hSum =
             await this.analyticsQuery.getValues24hSum({
-                series: 'erd1%',
+                series: 'drt1%',
                 metric: 'volumeUSD',
             });
 

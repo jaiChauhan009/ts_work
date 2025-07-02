@@ -7,7 +7,7 @@ import {
 import { ContractTransactionGenerator } from "../../src/sc.interactions/contract.transaction.generator";
 
 const TEST_ADDRESS =
-  "erd1wtm3yl58vcnj089lqy3tatkdpwklffh4pjnf27zwsa2znjyk355sutafqh";
+  "drt1wtm3yl58vcnj089lqy3tatkdpwklffh4pjnf27zwsa2znjyk355sph22rf";
 describe("Contract transaction generator", () => {
   it("Should set transaction nonce", async () => {
     const cTxGenerator = new ContractTransactionGenerator(

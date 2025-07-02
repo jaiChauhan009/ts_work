@@ -31,7 +31,7 @@ describe('test farm v2 event decoders', () => {
                 compoundedReward: '0',
                 currentFarmAmount: '10384405708276779102',
                 originalOwner:
-                    'erd17y8mkjassels7j6zeefn93ruw50x3mrmcx2vz8ud0qachctw8vwsruqcdl',
+                    'drt17y8mkjassels7j6zeefn93ruw50x3mrmcx2vz8ud0qachctw8vws7qhmwp',
             },
         });
     });
@@ -62,7 +62,7 @@ describe('test farm v2 event decoders', () => {
                 compoundedReward: '0',
                 currentFarmAmount: '27118253941196305',
                 originalOwner:
-                    'erd14zssfxluxdqf62rtl28fs046jrky8rzh78ywpavk3znky40fptdsjluy8r',
+                    'drt14zssfxluxdqf62rtl28fs046jrky8rzh78ywpavk3znky40fptds0rt8ya',
             },
         });
     });
@@ -93,7 +93,7 @@ describe('test farm v2 event decoders', () => {
                 compoundedReward: '0',
                 currentFarmAmount: '884549960938460528',
                 originalOwner:
-                    'erd1x30muxqm232uwhswk52vl5a0lh958hy8hx66e6ehwfrpua8usdzqnu80n9',
+                    'drt1x30muxqm232uwhswk52vl5a0lh958hy8hx66e6ehwfrpua8usdzqwqsvsm',
             },
             newFarmAttributes: {
                 rewardPerShare: '716810673355886049',
@@ -101,7 +101,7 @@ describe('test farm v2 event decoders', () => {
                 compoundedReward: '0',
                 currentFarmAmount: '884549960938460528',
                 originalOwner:
-                    'erd1x30muxqm232uwhswk52vl5a0lh958hy8hx66e6ehwfrpua8usdzqnu80n9',
+                    'drt1x30muxqm232uwhswk52vl5a0lh958hy8hx66e6ehwfrpua8usdzqwqsvsm',
             },
             createdWithMerge: false,
         });

@@ -78,5 +78,5 @@ export const sendRewaToMultipleReceiversParamScheme = {
     ),
   receivers: z
     .array(z.string())
-    .describe("An array of bech32 addresses of the receivers (erd1...)"),
+    .describe("An array of bech32 addresses of the receivers (drt1...)"),
 };

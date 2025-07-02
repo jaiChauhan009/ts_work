@@ -9,7 +9,7 @@ describe('test token unstake event decoders', () => {
         expect(unlockTokensEvent.toJSON()).toEqual({
             identifier: 'depositUserTokens',
             address:
-                'erd1qqqqqqqqqqqqqpgq4vukqq9sd040peulr2m0tlnyffgdee770n4se6gjv7',
+                'drt1qqqqqqqqqqqqqpgq4vukqq9sd040peulr2m0tlnyffgdee770n4syxl30q',
             unstakeTokens: [
                 {
                     lockedTokens: {

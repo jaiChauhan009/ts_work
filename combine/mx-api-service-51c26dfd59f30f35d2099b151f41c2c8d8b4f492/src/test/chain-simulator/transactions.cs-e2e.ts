@@ -25,7 +25,7 @@ describe('Transactions e2e tests with chain simulator', () => {
     });
 
     it('should return transactions with receiver filter applied', async () => {
-      const receiver = 'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu';
+      const receiver = 'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z';
       const response = await axios.get(`${config.apiServiceUrl}/transactions?receiver=${receiver}`);
       expect(response.status).toBe(200);
       expect(response.data.length).toBeGreaterThan(1);
@@ -257,7 +257,7 @@ describe('Transactions e2e tests with chain simulator', () => {
     });
 
     it('should return the total number of transactions with receiver filter applied', async () => {
-      const receiver = 'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu';
+      const receiver = 'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z';
       const response = await axios.get(`${config.apiServiceUrl}/transactions/count?receiver=${receiver}`);
       expect(response.status).toBe(200);
       expect(response.data).toBeGreaterThan(0);

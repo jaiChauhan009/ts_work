@@ -70,7 +70,7 @@ describe('FarmTransactionsServiceV2', () => {
                 type: 'MetaDCDT',
                 name: 'REWAMEXLPStakedLK',
                 creator:
-                    'erd1qqqqqqqqqqqqqpgqna8cqqzdtdg849hr0pd5cmft8ujaguhv295qgchtqa',
+                    'drt1qqqqqqqqqqqqqpgqna8cqqzdtdg849hr0pd5cmft8ujaguhv295q4yqgrr',
                 balance: '12120193336145595',
                 decimals: 18,
                 ticker: 'REWAMEXFL-2d2bba',
@@ -102,7 +102,7 @@ describe('FarmTransactionsServiceV2', () => {
                 type: 'MetaDCDT',
                 name: 'REWAMEXLPStakedLK',
                 creator:
-                    'erd1qqqqqqqqqqqqqpgqna8cqqzdtdg849hr0pd5cmft8ujaguhv295qgchtqa',
+                    'drt1qqqqqqqqqqqqqpgqna8cqqzdtdg849hr0pd5cmft8ujaguhv295q4yqgrr',
                 balance: '12120193336145595',
                 decimals: 18,
                 ticker: 'REWAMEXFL-2d2bba',

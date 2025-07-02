@@ -2,7 +2,7 @@ import axios from 'axios';
 import { config } from './config/env.config';
 
 const BOB_ADDRESS =
-  'erd1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqzu66jx';
+  'drt1spyavw0956vq68xj8y4tenjpq2wd5a9p2c6j8gsz7ztyrnpxrruqlqde3c';
 
 describe('Tokens e2e tests with chain simulator', () => {
   describe('GET /tokens', () => {
@@ -303,7 +303,7 @@ describe('Tokens e2e tests with chain simulator', () => {
 
     it('should return filtered transfers by receiver', async () => {
       const sender =
-        'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u';
+        'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqzlllsd5j0s2';
       const tokensResponse = await axios.get(
         `${config.apiServiceUrl}/tokens?size=1`,
       );
@@ -372,7 +372,7 @@ describe('Tokens e2e tests with chain simulator', () => {
 
     it('should return filtered transfer count by sender', async () => {
       const sender =
-        'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u';
+        'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqzlllsd5j0s2';
       const tokensResponse = await axios.get(
         `${config.apiServiceUrl}/tokens?size=1`,
       );

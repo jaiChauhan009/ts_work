@@ -18,9 +18,9 @@ describe('test farm v1.2 event decoders', () => {
         const enterFarmEvent = new EnterFarmEventV1_2(rawEnterFarmEventV1_2);
         expect(enterFarmEvent.toJSON()).toEqual({
             address:
-                'erd1qqqqqqqqqqqqqpgqye633y7k0zd7nedfnp3m48h24qygm5jl2jpslxallh',
+                'drt1qqqqqqqqqqqqqpgqye633y7k0zd7nedfnp3m48h24qygm5jl2jpsz62uuf',
             identifier: 'enterFarm',
-            caller: 'erd1dgc8uvk35ahjnpgkvelm9zqwsgrl8f5ykcdjmrht8ljz0g20qzsqj8nenx',
+            caller: 'drt1dgc8uvk35ahjnpgkvelm9zqwsgrl8f5ykcdjmrht8ljz0g20qzsq0my6sc',
             block: 7085901,
             epoch: 492,
             timestamp: 1638644490,
@@ -56,9 +56,9 @@ describe('test farm v1.2 event decoders', () => {
         const exitFarmEvent = new ExitFarmEventV1_2(rawExitFarmEventV1_2);
         expect(exitFarmEvent.toJSON()).toEqual({
             address:
-                'erd1qqqqqqqqqqqqqpgqye633y7k0zd7nedfnp3m48h24qygm5jl2jpslxallh',
+                'drt1qqqqqqqqqqqqqpgqye633y7k0zd7nedfnp3m48h24qygm5jl2jpsz62uuf',
             identifier: 'exitFarm',
-            caller: 'erd17n50m95a7leuarz7yj2tz3djukeyq07jrvfze3wunelghsnwm5hs5vpt82',
+            caller: 'drt17n50m95a7leuarz7yj2tz3djukeyq07jrvfze3wunelghsnwm5hsfskgy5',
             block: 7085903,
             epoch: 492,
             timestamp: 1638644502,
@@ -99,9 +99,9 @@ describe('test farm v1.2 event decoders', () => {
         );
         expect(claimRewardsEvent.toJSON()).toEqual({
             address:
-                'erd1qqqqqqqqqqqqqpgqye633y7k0zd7nedfnp3m48h24qygm5jl2jpslxallh',
+                'drt1qqqqqqqqqqqqqpgqye633y7k0zd7nedfnp3m48h24qygm5jl2jpsz62uuf',
             identifier: 'claimRewards',
-            caller: 'erd1zz8trvmnq7pjv7u60zg05u8rn34s9f27339dhz36vqdwr8v025hss32v32',
+            caller: 'drt1zz8trvmnq7pjv7u60zg05u8rn34s9f27339dhz36vqdwr8v025hsdda0j5',
             block: 7085904,
             epoch: 492,
             timestamp: 1638644508,
@@ -152,9 +152,9 @@ describe('test farm v1.3 event decoders', () => {
         const enterFarmEvent = new EnterFarmEventV1_3(rawEnterFarmEventV1_3);
         expect(enterFarmEvent.toJSON()).toEqual({
             address:
-                'erd1qqqqqqqqqqqqqpgqnqvjnn4haygsw2hls2k9zjjadnjf9w7g2jpsmc60a4',
+                'drt1qqqqqqqqqqqqqpgqnqvjnn4haygsw2hls2k9zjjadnjf9w7g2jpsxydv7t',
             identifier: 'enterFarm',
-            caller: 'erd1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps89fxnl',
+            caller: 'drt1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps6e79sp',
             block: 9254224,
             epoch: 643,
             timestamp: 1651682406,
@@ -187,9 +187,9 @@ describe('test farm v1.3 event decoders', () => {
         const exitFarmEvent = new ExitFarmEventV1_3(rawExitFarmEventV1_3);
         expect(exitFarmEvent.toJSON()).toEqual({
             address:
-                'erd1qqqqqqqqqqqqqpgqnqvjnn4haygsw2hls2k9zjjadnjf9w7g2jpsmc60a4',
+                'drt1qqqqqqqqqqqqqpgqnqvjnn4haygsw2hls2k9zjjadnjf9w7g2jpsxydv7t',
             identifier: 'exitFarm',
-            caller: 'erd1t9ascd7zgaearpujuhpp73vnyx87vdmcg5vjczrqdkge7ze3wnwqh4kkw0',
+            caller: 'drt1t9ascd7zgaearpujuhpp73vnyx87vdmcg5vjczrqdkge7ze3wnwq2fp4d3',
             block: 9253685,
             epoch: 643,
             timestamp: 1651679166,
@@ -227,9 +227,9 @@ describe('test farm v1.3 event decoders', () => {
         );
         expect(claimRewardsEvent.toJSON()).toEqual({
             address:
-                'erd1qqqqqqqqqqqqqpgqnqvjnn4haygsw2hls2k9zjjadnjf9w7g2jpsmc60a4',
+                'drt1qqqqqqqqqqqqqpgqnqvjnn4haygsw2hls2k9zjjadnjf9w7g2jpsxydv7t',
             identifier: 'claimRewards',
-            caller: 'erd1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps89fxnl',
+            caller: 'drt1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps6e79sp',
             block: 9254384,
             epoch: 643,
             timestamp: 1651683366,

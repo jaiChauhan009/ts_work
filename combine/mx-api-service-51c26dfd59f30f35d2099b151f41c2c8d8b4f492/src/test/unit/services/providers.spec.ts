@@ -94,7 +94,7 @@ describe('ProviderService', () => {
     it('should return total cumulated rewards for a given address', async () => {
       jest.spyOn(vmQuery, 'vmQuery').mockResolvedValue(['MTAwMA==']);
 
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const result = await service.getCumulatedRewards(address);
 
       expect(result).toStrictEqual("825241648");
@@ -103,7 +103,7 @@ describe('ProviderService', () => {
     it('should return null if vmQuery returns empty array', async () => {
       jest.spyOn(vmQuery, 'vmQuery').mockResolvedValue([]);
 
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const result = await service.getCumulatedRewards(address);
 
       expect(result).toBeNull();
@@ -114,7 +114,7 @@ describe('ProviderService', () => {
     it('should return total number of users for a given address', async () => {
       jest.spyOn(vmQuery, 'vmQuery').mockResolvedValue(['MTA=']);
 
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const result = await service.getCumulatedRewards(address);
 
       expect(result).toStrictEqual("12592");
@@ -123,7 +123,7 @@ describe('ProviderService', () => {
     it('should return null if vmQuery returns empty array', async () => {
       jest.spyOn(vmQuery, 'vmQuery').mockResolvedValue([]);
 
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const result = await service.getCumulatedRewards(address);
 
       expect(result).toBeNull();
@@ -143,11 +143,11 @@ describe('ProviderService', () => {
             location: 'Sibiu',
             url: 'https://staking.provider',
           },
-          contract: 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqhllllsajxzat',
+          contract: 'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqhllllshmqrha',
           explorerURL:
-            'https://explorer.dharitri.org/providers/erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqhllllsajxzat',
+            'https://explorer.dharitri.org/providers/drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqhllllshmqrha',
           featured: true,
-          owner: 'erd1yj4jlay9rrzahran7jxk89gsg9frxw6l5qyca9dqhp8c4f5e0vdsytwkvl',
+          owner: 'drt1yj4jlay9rrzahran7jxk89gsg9frxw6l5qyca9dqhp8c4f5e0vdsehe40p',
           serviceFee: '1500',
           maxDelegationCap: '0',
           initialOwnerFunds: '1250000000000000000000',
@@ -192,7 +192,7 @@ describe('ProviderService', () => {
       jest.spyOn(service['logger'], 'error').mockImplementation(() =>
         "Error when getting delegation provider");
 
-      const address = 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqhllllsajxzat';
+      const address = 'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqhllllshmqrha';
       const result = await service.getDelegationProviderByAddressRaw(address);
 
       expect(result).toBeUndefined();
@@ -207,8 +207,8 @@ describe('ProviderService', () => {
       ];
 
       const expectedBech32Encoded = [
-        'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqhllllsajxzat',
-        'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqlllllskf06ky',
+        'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqhllllshmqrha',
+        'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqlllllsuqfmuj',
       ];
 
       jest.spyOn(vmQuery, 'vmQuery').mockResolvedValue(base64Providers);
@@ -230,7 +230,7 @@ describe('ProviderService', () => {
 
   describe('getProviderAccounts', () => {
     it('should return a list of delegators for a given provider', async () => {
-      const contract = 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqc0llllsayxegu';
+      const contract = 'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqc0llllshdqcz2';
       const elasticProviderDelegatorsMock = createElasticMockDelegators(25, contract);
       jest.spyOn(elasticIndexerService, 'getProviderDelegators').mockResolvedValue(elasticProviderDelegatorsMock);
 
@@ -244,7 +244,7 @@ describe('ProviderService', () => {
     });
 
     it('should return [] if no delegators are available from elastic from given contract address', async () => {
-      const contract = 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqrhlllls062tu4';
+      const contract = 'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqrhlllls9nv2kr';
       jest.spyOn(elasticIndexerService, 'getProviderDelegators').mockResolvedValue([]);
 
       const results = await service.getProviderAccounts(contract, new QueryPagination());
@@ -254,7 +254,7 @@ describe('ProviderService', () => {
     });
 
     it('should return paginated delegators for a given provider', async () => {
-      const contract = 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqc0llllsayxegu';
+      const contract = 'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqc0llllshdqcz2';
       const pagination = new QueryPagination({ from: 0, size: 10 });
       const elasticProviderDelegatorsMock = createElasticMockDelegators(10, contract);
       jest.spyOn(elasticIndexerService, 'getProviderDelegators').mockResolvedValue(elasticProviderDelegatorsMock);
@@ -268,7 +268,7 @@ describe('ProviderService', () => {
 
   describe('getProviderAccountsCount', () => {
     it('should return total delegators count for a given provider', async () => {
-      const contract = 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqc0llllsayxegu';
+      const contract = 'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqc0llllshdqcz2';
       jest.spyOn(elasticIndexerService, 'getProviderDelegatorsCount').mockResolvedValue(100);
 
       const results = await service.getProviderAccountsCount(contract);
@@ -424,12 +424,12 @@ function generateRandomBalance() {
 }
 
 function generateMockAddress() {
-  const desiredLength = 62 - 'erd1'.length;
-  let address = 'erd1';
+  const desiredLength = 62 - 'drt1'.length;
+  let address = 'drt1';
 
-  while (address.length < desiredLength + 'erd1'.length) {
+  while (address.length < desiredLength + 'drt1'.length) {
     address += Math.random().toString(36).substring(2);
   }
 
-  return address.substring(0, desiredLength + 'erd1'.length);
+  return address.substring(0, desiredLength + 'drt1'.length);
 }

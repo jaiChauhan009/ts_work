@@ -158,7 +158,7 @@ describe('AccountController', () => {
     });
 
     it('should return accounts details for a given owner address', async () => {
-      const ownerAddress: string = "erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqplllst77y4l";
+      const ownerAddress: string = "drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqplllsphc9lf";
       const params = new URLSearchParams({ ownerAddress: ownerAddress }).toString();
       accountServiceMocks.getAccountsCount.mockReturnValue(25);
 
@@ -211,12 +211,12 @@ describe('AccountController', () => {
 
   describe('GET /accounts/:address', () => {
     const mockAccount = {
-      address: 'erd1vtlpm6sxxvmgt43ldsrpswjrfcsudmradylpxn9jkp66ra3rkz4qruzvfw',
+      address: 'drt1vtlpm6sxxvmgt43ldsrpswjrfcsudmradylpxn9jkp66ra3rkz4q7q402s',
       balance: '707809',
       nonce: 46,
       timestamp: 1708946805,
       shard: 3,
-      ownerAddress: 'erd1vtlpm6sxxvmgt43ldsrpswjrfcsudmradylpxn9jkp66ra3rkz4qruzvfw',
+      ownerAddress: 'drt1vtlpm6sxxvmgt43ldsrpswjrfcsudmradylpxn9jkp66ra3rkz4q7q402s',
       ownerAssets: undefined,
       assets: undefined,
     };
@@ -244,7 +244,7 @@ describe('AccountController', () => {
 
     it('should throw 400 Bad Request for a given invalid address value', async () => {
       await request(app.getHttpServer())
-        .get(`${path}/erd1...`)
+        .get(`${path}/drt1...`)
         .expect(400)
         .expect(response => {
           expect(response.body.message).toStrictEqual("Validation failed for argument 'address' (a bech32 address is expected)");
@@ -252,7 +252,7 @@ describe('AccountController', () => {
     });
 
     it('should return account details with withTxCount parameter', async () => {
-      const address = "erd1rf4hv70arudgzus0ymnnsnc4pml0jkywg2xjvzslg0mz4nn2tg7q7k0t6p";
+      const address = "drt1rf4hv70arudgzus0ymnnsnc4pml0jkywg2xjvzslg0mz4nn2tg7qr2cgel";
       const mockAccountWithTxCount = {
         ...mockAccount,
         txCount: 100,
@@ -279,7 +279,7 @@ describe('AccountController', () => {
     });
 
     it('should return account details with withScrCount parameter', async () => {
-      const address = "erd1rf4hv70arudgzus0ymnnsnc4pml0jkywg2xjvzslg0mz4nn2tg7q7k0t6p";
+      const address = "drt1rf4hv70arudgzus0ymnnsnc4pml0jkywg2xjvzslg0mz4nn2tg7qr2cgel";
       const mockAccountWithScrCount = {
         ...mockAccount,
         scrCount: 50,
@@ -306,7 +306,7 @@ describe('AccountController', () => {
     });
 
     it('should return account details with withTimestamp parameter', async () => {
-      const address = "erd1rf4hv70arudgzus0ymnnsnc4pml0jkywg2xjvzslg0mz4nn2tg7q7k0t6p";
+      const address = "drt1rf4hv70arudgzus0ymnnsnc4pml0jkywg2xjvzslg0mz4nn2tg7qr2cgel";
       const mockAccountWithTimestamp = {
         ...mockAccount,
         timestamp: 1708946805,
@@ -333,7 +333,7 @@ describe('AccountController', () => {
     });
 
     it('should return account details with withAssets parameter', async () => {
-      const address = "erd1rf4hv70arudgzus0ymnnsnc4pml0jkywg2xjvzslg0mz4nn2tg7q7k0t6p";
+      const address = "drt1rf4hv70arudgzus0ymnnsnc4pml0jkywg2xjvzslg0mz4nn2tg7qr2cgel";
       const mockAccountWithAssets = {
         ...mockAccount,
         assets: {
@@ -365,12 +365,12 @@ describe('AccountController', () => {
     it('should return account details with all optional parameters set to true', async () => {
       const mockAddressList = createMockAccountsList(1);
       const accountDetails = mockAddressList[0];
-      const address = "erd1rf4hv70arudgzus0ymnnsnc4pml0jkywg2xjvzslg0mz4nn2tg7q7k0t6p";
+      const address = "drt1rf4hv70arudgzus0ymnnsnc4pml0jkywg2xjvzslg0mz4nn2tg7qr2cgel";
       const mockAccountWithAllParams = {
         ...accountDetails,
         isGuarded: true,
         activeGuardianActivationEpoch: 496,
-        activeGuardianAddress: "erd1x5d4p63uwcns8cvyrl4g3qgvwwa2nkt5jdp0vwetc7csqzpjzz0qec58k0",
+        activeGuardianAddress: "drt1x5d4p63uwcns8cvyrl4g3qgvwwa2nkt5jdp0vwetc7csqzpjzz0qyyry43",
         activeGuardianServiceUid: "DharitrITCSService",
         txCount: 100,
         scrCount: 50,
@@ -402,7 +402,7 @@ describe('AccountController', () => {
     });
 
     it('should return account details filtered by fields', async () => {
-      const address = "erd1s6uspvcnwr254ag8urs62m8e554hkf8yqpegwrgtxvzw3ddksjcs66g0u2";
+      const address = "drt1s6uspvcnwr254ag8urs62m8e554hkf8yqpegwrgtxvzw3ddksjcs8xlvl5";
       const fields = ['balance', 'nonce'];
       const mockAccountFilteredFields = {
         balance: "1000",
@@ -431,7 +431,7 @@ describe('AccountController', () => {
     });
 
     it('should return account details with all filters set to false', async () => {
-      const address = "erd1rf4hv70arudgzus0ymnnsnc4pml0jkywg2xjvzslg0mz4nn2tg7q7k0t6p";
+      const address = "drt1rf4hv70arudgzus0ymnnsnc4pml0jkywg2xjvzslg0mz4nn2tg7qr2cgel";
       const mockAccountWithAllParamsFalse = {
         ...mockAccount,
       };
@@ -457,12 +457,12 @@ describe('AccountController', () => {
     });
 
     it('should return account details with all filters set to true', async () => {
-      const address = "erd1rf4hv70arudgzus0ymnnsnc4pml0jkywg2xjvzslg0mz4nn2tg7q7k0t6p";
+      const address = "drt1rf4hv70arudgzus0ymnnsnc4pml0jkywg2xjvzslg0mz4nn2tg7qr2cgel";
       const mockAccountWithAllParamsTrue = {
         ...mockAccount,
         guardianInfo: {
           guarded: true,
-          activeGuardian: "erd1guardianaddress",
+          activeGuardian: "drt1guardianaddress",
         },
         txCount: 100,
         scrCount: 50,
@@ -494,7 +494,7 @@ describe('AccountController', () => {
     });
 
     it('should throw 404 Not Found when account does not exist', async () => {
-      const address = "erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu";
+      const address = "drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z";
       accountServiceMocks.getAccount.mockResolvedValue(null);
 
       await request(app.getHttpServer())
@@ -507,7 +507,7 @@ describe('AccountController', () => {
   });
 
   describe("GET /accounts/:address/deferred", () => {
-    const address = "erd1s6uspvcnwr254ag8urs62m8e554hkf8yqpegwrgtxvzw3ddksjcs66g0u2";
+    const address = "drt1s6uspvcnwr254ag8urs62m8e554hkf8yqpegwrgtxvzw3ddksjcs8xlvl5";
 
     it('should return deferred payments from legacy staking', async () => {
       const mockDeferred: AccountDeferred[] = [
@@ -573,7 +573,7 @@ describe('AccountController', () => {
   }
 
   function generateMockSmartContractAddress() {
-    const prefix = 'erd1';
+    const prefix = 'drt1';
     const middle = 'q'.repeat(38);
     const suffixLength = 62 - prefix.length - middle.length;
     let suffix = '';
@@ -592,14 +592,14 @@ describe('AccountController', () => {
   }
 
   function generateMockAddress() {
-    const desiredLength = 62 - 'erd1'.length;
-    let address = 'erd1';
+    const desiredLength = 62 - 'drt1'.length;
+    let address = 'drt1';
 
-    while (address.length < desiredLength + 'erd1'.length) {
+    while (address.length < desiredLength + 'drt1'.length) {
       address += Math.random().toString(36).substring(2);
     }
 
-    return address.substring(0, desiredLength + 'erd1'.length);
+    return address.substring(0, desiredLength + 'drt1'.length);
   }
 });
 

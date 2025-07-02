@@ -7,7 +7,7 @@ import { IssueCollectionRequest, SetNftRolesRequest } from '../models/requests';
 describe('Collections Transactions Service', () => {
   let service: CollectionsTransactionsService;
   let module: TestingModule;
-  const ownerAddress = 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha';
+  const ownerAddress = 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r';
 
   beforeEach(async () => {
     module = await Test.createTestingModule({
@@ -36,8 +36,8 @@ describe('Collections Transactions Service', () => {
         gasPrice: 1000000000,
         nonce: 0,
         options: undefined,
-        receiver: 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u',
-        sender: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+        receiver: 'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqzlllsd5j0s2',
+        sender: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
         signature: undefined,
         value: '50000000000000000',
         version: 2,
@@ -66,8 +66,8 @@ describe('Collections Transactions Service', () => {
         gasPrice: 1000000000,
         nonce: 0,
         options: undefined,
-        receiver: 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u',
-        sender: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+        receiver: 'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqzlllsd5j0s2',
+        sender: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
         signature: undefined,
         value: '50000000000000000',
         version: 2,
@@ -104,8 +104,8 @@ describe('Collections Transactions Service', () => {
         gasPrice: 1000000000,
         nonce: 0,
         options: undefined,
-        receiver: 'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzllls8a5w6u',
-        sender: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+        receiver: 'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqzlllsd5j0s2',
+        sender: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
         signature: undefined,
         value: '0',
         version: 2,
@@ -115,7 +115,7 @@ describe('Collections Transactions Service', () => {
         ownerAddress,
         new SetNftRolesRequest({
           collection: 'collection',
-          addressToTransfer: 'erd1l86wtsmm3wrz385zq6vstyxxvxz2a3nkje3fgtqmkm0ymx426q4s93gyd9',
+          addressToTransfer: 'drt1l86wtsmm3wrz385zq6vstyxxvxz2a3nkje3fgtqmkm0ymx426q4scdl8wm',
           roles: ['DCDTRoleNFTAddQuantity'],
         }),
       );

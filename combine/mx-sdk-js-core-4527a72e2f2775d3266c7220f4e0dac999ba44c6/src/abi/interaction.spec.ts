@@ -14,7 +14,7 @@ import { SmartContract } from "./smartContract";
 import { BigUIntValue, BytesValue, OptionalValue, OptionValue, TokenIdentifierValue, U32Value } from "./typesystem";
 
 describe("test smart contract interactor", function () {
-    let dummyAddress = new Address("erd1qqqqqqqqqqqqqpgqak8zt22wl2ph4tswtyc39namqx6ysa2sd8ss4xmlj3");
+    let dummyAddress = new Address("drt1qqqqqqqqqqqqqpgqak8zt22wl2ph4tswtyc39namqx6ysa2sd8ssg6vu30");
     let provider = new MockNetworkProvider();
     let alice: Account;
 
@@ -43,7 +43,7 @@ describe("test smart contract interactor", function () {
     it("should set transfers (payments) on contract calls (transfer and execute)", async function () {
         let contract = new SmartContract({ address: dummyAddress });
         let dummyFunction = new ContractFunction("dummy");
-        let alice = new Address("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th");
+        let alice = new Address("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf");
 
         const TokenFoo = (amount: BigNumber.Value) =>
             new TokenTransfer({ token: new Token({ identifier: "FOO-6ce17b" }), amount: BigInt(amount.toString()) });
@@ -176,7 +176,7 @@ describe("test smart contract interactor", function () {
     it("should create transaction, with ABI, with transfer & execute", async function () {
         const abi = await loadAbiRegistry("src/testdata/answer.abi.json");
         const contract = new SmartContract({ address: dummyAddress, abi: abi });
-        const alice = new Address("erd1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssycr6th");
+        const alice = new Address("drt1qyu5wthldzr8wx5c9ucg8kjagg0jfs53s8nr3zpz3hypefsdd8ssey5egf");
         const token = new Token({ identifier: "FOO-abcdef", nonce: 0n });
 
         const transaction = contract.methods

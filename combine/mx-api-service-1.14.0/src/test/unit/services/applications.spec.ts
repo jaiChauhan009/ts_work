@@ -73,23 +73,23 @@ describe('ApplicationService', () => {
     it('should return an array of applications', async () => {
       const indexResult = [
         {
-          address: 'erd1qqqqqqqqqqqqqpgq8372f63glekg7zl22tmx7wzp4drql25r6avs70dmp0',
-          deployer: 'erd1j770k2n46wzfn5g63gjthhqemu9r23n9tp7seu95vpz5gk5s6avsk5aams',
-          currentOwner: 'erd1j770k2n46wzfn5g63gjthhqemu9r23n9tp7seu95vpz5gk5s6avsk5aams',
+          address: 'drt1qqqqqqqqqqqqqpgq8372f63glekg7zl22tmx7wzp4drql25r6avsrn6cz3',
+          deployer: 'drt1j770k2n46wzfn5g63gjthhqemu9r23n9tp7seu95vpz5gk5s6avstg27cw',
+          currentOwner: 'drt1j770k2n46wzfn5g63gjthhqemu9r23n9tp7seu95vpz5gk5s6avstg27cw',
           initialCodeHash: 'kDh8hR9vyceELMUuy6JdAg0X90+ZaLeyVQS6tPbY82s=',
           timestamp: 1724955216,
         },
         {
-          address: 'erd1qqqqqqqqqqqqqpgquc4v0pujmewzr26tm2gtawmsq4vsrm4mwmfs459g65',
-          deployer: 'erd1szcgm7vq3tmyxfgd4wd2k2emh59az8jq5jjpj9799a0k59u0wmfss4vw3v',
-          currentOwner: 'erd1szcgm7vq3tmyxfgd4wd2k2emh59az8jq5jjpj9799a0k59u0wmfss4vw3v',
+          address: 'drt1qqqqqqqqqqqqqpgquc4v0pujmewzr26tm2gtawmsq4vsrm4mwmfsggjte2',
+          deployer: 'drt1szcgm7vq3tmyxfgd4wd2k2emh59az8jq5jjpj9799a0k59u0wmfsdfmdjj',
+          currentOwner: 'drt1szcgm7vq3tmyxfgd4wd2k2emh59az8jq5jjpj9799a0k59u0wmfsdfmdjj',
           initialCodeHash: 'kDiPwFRJhcB7TmeBbQvw1uWQ8vuhRSU6XF71Z4OybeQ=',
           timestamp: 1725017514,
         },
       ];
 
       const assets: { [key: string]: AccountAssets } = {
-        erd1qqqqqqqqqqqqqpgq8372f63glekg7zl22tmx7wzp4drql25r6avs70dmp0: {
+        drt1qqqqqqqqqqqqqpgq8372f63glekg7zl22tmx7wzp4drql25r6avsrn6cz3: {
           name: 'Dharitri DNS: Contract 239',
           description: '',
           social: new AccountAssetsSocial({
@@ -162,9 +162,9 @@ describe('ApplicationService', () => {
     it('should return an array of applications with tx count', async () => {
       const indexResult = [
         {
-          address: 'erd1qqqqqqqqqqqqqpgq8372f63glekg7zl22tmx7wzp4drql25r6avs70dmp0',
-          deployer: 'erd1j770k2n46wzfn5g63gjthhqemu9r23n9tp7seu95vpz5gk5s6avsk5aams',
-          currentOwner: 'erd1j770k2n46wzfn5g63gjthhqemu9r23n9tp7seu95vpz5gk5s6avsk5aams',
+          address: 'drt1qqqqqqqqqqqqqpgq8372f63glekg7zl22tmx7wzp4drql25r6avsrn6cz3',
+          deployer: 'drt1j770k2n46wzfn5g63gjthhqemu9r23n9tp7seu95vpz5gk5s6avstg27cw',
+          currentOwner: 'drt1j770k2n46wzfn5g63gjthhqemu9r23n9tp7seu95vpz5gk5s6avstg27cw',
           initialCodeHash: 'kDh8hR9vyceELMUuy6JdAg0X90+ZaLeyVQS6tPbY82s=',
           timestamp: 1724955216,
         },

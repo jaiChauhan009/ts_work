@@ -1,7 +1,7 @@
 import { RawEventType } from '../../generic.types';
 
 export const rawAddLiquidityProxyEvent: RawEventType = {
-    address: 'erd1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps89fxnl',
+    address: 'drt1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps6e79sp',
     identifier: 'addLiquidityProxy',
     topics: [
         'YWRkX2xpcXVpZGl0eV9wcm94eQ==',
@@ -14,7 +14,7 @@ export const rawAddLiquidityProxyEvent: RawEventType = {
     data: 'EsYhAqZsYG90Ayj/HRxxwLx6xXPP0x15v0iGiPoFqb8AAAAAAAAAAAUA69MEwvNKaz9qV8Ezq3uMb4HcQBVUgwAAAAxXRUdMRC1iZDRkNzkAAAAAAAAAAAAAAAgBxkpXj9OzVAAAAAxMS01FWC1hYWI5MTAAAAAAAAAAAAAAAAoS5dTqs5Yn90w5AAAAC0xLTFAtMDNhMmZhAAAAAAAQCbkAAAAIASr4SLFCvcoAAAAORUdMRE1FWC0wYmU5ZTUAAAAIASr4SLFCvcoAAAAKEuXU6rOWJ/dMOQAAAAAAOLfCAAAAAAAAjWSiAAAAAAAAAoMAAAAAYnPIUg==',
 };
 export const rawRemoveLiquidityProxyEvent: RawEventType = {
-    address: 'erd1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps89fxnl',
+    address: 'drt1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps6e79sp',
     identifier: 'removeLiquidityProxy',
     topics: [
         'cmVtb3ZlX2xpcXVpZGl0eV9wcm94eQ==',
@@ -28,7 +28,7 @@ export const rawRemoveLiquidityProxyEvent: RawEventType = {
 };
 
 export const rawEnterFarmProxyEvent: RawEventType = {
-    address: 'erd1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps89fxnl',
+    address: 'drt1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps6e79sp',
     identifier: 'enterFarmProxy',
     topics: [
         'ZW50ZXJfZmFybV9wcm94eQ==',
@@ -40,7 +40,7 @@ export const rawEnterFarmProxyEvent: RawEventType = {
     data: '0zi4BGc4NAjFzsJQ517E32CkFYJkY70XJUiDIlm7wswAAAAAAAAAAAUAJ1yItKOv1eFzPslgLzZJ8EvZRgJUgwAAAAtMS0xQLTAzYTJmYQAAAAAAEAnAAAAACAQmEG5YSqBjAAAAEEVHTERNRVhGTC1lZjIwNjUAAAAAAAqeuwAAAAhYFjTb1+3hcgAAABBFR0xETUVYRkwtZWYyMDY1AAAAAAAKnrsAAAAIWBY029ft4XIAAAALTEtMUC0wM2EyZmEAAAAAABAJwgAAAAhYFjTb1+3hcgEAAAAAAI1lCQAAAAAAAAKDAAAAAGJzyrw=',
 };
 export const rawExitFarmProxyEvent: RawEventType = {
-    address: 'erd1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps89fxnl',
+    address: 'drt1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps6e79sp',
     identifier: 'exitFarmProxy',
     topics: [
         'ZXhpdF9mYXJtX3Byb3h5',
@@ -52,7 +52,7 @@ export const rawExitFarmProxyEvent: RawEventType = {
     data: 'AHMJaooY6pAuq+nHGuY/Z02bFr1WMtm9KdF5J6u8ziYAAAAAAAAAAAUAJ1yItKOv1eFzPslgLzZJ8EvZRgJUgwAAAA1MS0ZBUk0tOWQxZWE4AAAAAAB7NkcAAAAIIKSxcACsgAAAAAAQRUdMRE1FWEZMLWVmMjA2NQAAAAAACo9uAAAACFXnXkp+XPZ5AAAAC0xLTFAtMDNhMmZhAAAAAAAPCB0AAAAIVedeSn5c9nkAAAALTEtMUC0wM2EyZmEAAAAAAA8IHQAAAAggpLFwAKyAAAAAAAxMS01FWC1hYWI5MTAAAAAAACgkBAAAAAoCA1sHgVVBBCuIAAAAAACNZOkAAAAAAAACgwAAAABic8n8',
 };
 export const rawClaimRewardsProxyEvent: RawEventType = {
-    address: 'erd1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps89fxnl',
+    address: 'drt1qqqqqqqqqqqqqpgqrc4pg2xarca9z34njcxeur622qmfjp8w2jps6e79sp',
     identifier: 'claimRewardsProxy',
     topics: [
         'Y2xhaW1fcmV3YXJkc19mYXJtX3Byb3h5',

@@ -12,7 +12,7 @@ describe('Smart Contract Results e2e tests with chain simulator', () => {
 
     it('should return filtered smart contract results by sender', async () => {
       const sender =
-        'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqplllst77y4l';
+        'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqplllsphc9lf';
       const response = await axios.get(
         `${config.apiServiceUrl}/results?sender=${sender}`,
       );
@@ -25,7 +25,7 @@ describe('Smart Contract Results e2e tests with chain simulator', () => {
 
     it('should return filtered smart contract results by receiver', async () => {
       const receiver =
-        'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqplllst77y4l';
+        'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqplllsphc9lf';
       const response = await axios.get(
         `${config.apiServiceUrl}/results?receiver=${receiver}`,
       );
@@ -61,7 +61,7 @@ describe('Smart Contract Results e2e tests with chain simulator', () => {
 
     it('should return filtered smart contract results count by sender', async () => {
       const sender =
-        'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqplllst77y4l';
+        'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqplllsphc9lf';
       const response = await axios.get(
         `${config.apiServiceUrl}/results/count?sender=${sender}`,
       );
@@ -72,7 +72,7 @@ describe('Smart Contract Results e2e tests with chain simulator', () => {
 
     it('should return filtered smart contract results count by receiver', async () => {
       const receiver =
-        'erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqplllst77y4l';
+        'drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqqqplllsphc9lf';
       const response = await axios.get(
         `${config.apiServiceUrl}/results/count?receiver=${receiver}`,
       );

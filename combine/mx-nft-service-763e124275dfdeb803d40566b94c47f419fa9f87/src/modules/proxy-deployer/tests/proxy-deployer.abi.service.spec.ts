@@ -30,9 +30,9 @@ describe('Proxy  Deployer Abi Service', () => {
       const result = await service.deployMinterSc(
         new DeployMinterRequest({
           maxNftsPerTransaction: 4,
-          mintClaimAddress: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
-          royaltiesClaimAddress: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
-          ownerAddress: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+          mintClaimAddress: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
+          royaltiesClaimAddress: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
+          ownerAddress: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
         }),
       );
 
@@ -43,8 +43,8 @@ describe('Proxy  Deployer Abi Service', () => {
         gasPrice: 1000000000,
         nonce: 0,
         options: undefined,
-        receiver: 'erd1qqqqqqqqqqqqqpgqut6lamz9dn480ytj8cmcwvydcu3lj55epltq9t9kam',
-        sender: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+        receiver: 'drt1qqqqqqqqqqqqqpgqut6lamz9dn480ytj8cmcwvydcu3lj55epltqchj479',
+        sender: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
         signature: undefined,
         value: '0',
         version: 2,
@@ -55,7 +55,7 @@ describe('Proxy  Deployer Abi Service', () => {
 
   describe('deployBulkSc', () => {
     it('returns built transaction with right arguments', async () => {
-      const result = await service.deployBulkSc('erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha');
+      const result = await service.deployBulkSc('drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r');
 
       const expectedResult = {
         chainID: 'T',
@@ -64,8 +64,8 @@ describe('Proxy  Deployer Abi Service', () => {
         gasPrice: 1000000000,
         nonce: 0,
         options: undefined,
-        receiver: 'erd1qqqqqqqqqqqqqpgqut6lamz9dn480ytj8cmcwvydcu3lj55epltq9t9kam',
-        sender: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+        receiver: 'drt1qqqqqqqqqqqqqpgqut6lamz9dn480ytj8cmcwvydcu3lj55epltqchj479',
+        sender: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
         signature: undefined,
         value: '0',
         version: 2,
@@ -76,7 +76,7 @@ describe('Proxy  Deployer Abi Service', () => {
 
   describe('deployMarketplaceSc', () => {
     it('returns built transaction with right arguments', async () => {
-      const result = await service.deployMarketplaceSc('erd1qqqqqqqqqqqqqpgq9ac9zvc4ugzrgqaqjqgjdhvxxtx7wu2eu00sxezym3', '1000', [
+      const result = await service.deployMarketplaceSc('drt1qqqqqqqqqqqqqpgq9ac9zvc4ugzrgqaqjqgjdhvxxtx7wu2eu00sm948c0', '1000', [
         'WREWA-a28c59',
       ]);
 
@@ -87,8 +87,8 @@ describe('Proxy  Deployer Abi Service', () => {
         gasPrice: 1000000000,
         nonce: 0,
         options: undefined,
-        receiver: 'erd1qqqqqqqqqqqqqpgqut6lamz9dn480ytj8cmcwvydcu3lj55epltq9t9kam',
-        sender: 'erd1qqqqqqqqqqqqqpgq9ac9zvc4ugzrgqaqjqgjdhvxxtx7wu2eu00sxezym3',
+        receiver: 'drt1qqqqqqqqqqqqqpgqut6lamz9dn480ytj8cmcwvydcu3lj55epltqchj479',
+        sender: 'drt1qqqqqqqqqqqqqpgq9ac9zvc4ugzrgqaqjqgjdhvxxtx7wu2eu00sm948c0',
         signature: undefined,
         value: '0',
         version: 2,
@@ -98,7 +98,7 @@ describe('Proxy  Deployer Abi Service', () => {
   });
 
   it('returns built transaction with right arguments including paymentTokens', async () => {
-    const result = await service.deployMarketplaceSc('erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha', '10000', ['REWA']);
+    const result = await service.deployMarketplaceSc('drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r', '10000', ['REWA']);
 
     const expectedResult = {
       chainID: 'T',
@@ -107,8 +107,8 @@ describe('Proxy  Deployer Abi Service', () => {
       gasPrice: 1000000000,
       nonce: 0,
       options: undefined,
-      receiver: 'erd1qqqqqqqqqqqqqpgqut6lamz9dn480ytj8cmcwvydcu3lj55epltq9t9kam',
-      sender: 'erd1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltq7ndgha',
+      receiver: 'drt1qqqqqqqqqqqqqpgqut6lamz9dn480ytj8cmcwvydcu3lj55epltqchj479',
+      sender: 'drt1dc3yzxxeq69wvf583gw0h67td226gu2ahpk3k50qdgzzym8npltqr06t5r',
       signature: undefined,
       value: '0',
       version: 2,

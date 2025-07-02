@@ -100,7 +100,7 @@ describe('TransactionPairService', () => {
             nonce: 0,
             value: secondTokenAmount,
             receiver:
-                'erd1qqqqqqqqqqqqqpgqd77fnev2sthnczp2lnfx0y5jdycynjfhzzgq6p3rax',
+                'drt1qqqqqqqqqqqqqpgqd77fnev2sthnczp2lnfx0y5jdycynjfhzzgq8axq7c',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
@@ -190,7 +190,7 @@ describe('TransactionPairService', () => {
         );
 
         const addLiquidityTransaction = await service.addLiquidity(
-            'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+            'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             {
                 pairAddress: Address.fromHex(
                     '0000000000000000000000000000000000000000000000000000000000000012',
@@ -215,8 +215,8 @@ describe('TransactionPairService', () => {
             nonce: 0,
             value: '0',
             receiver:
-                'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
-            sender: 'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
+            sender: 'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             gasPrice: 1000000000,
             gasLimit: gasConfig.pairs.addLiquidity,
             data: encodeTransactionData(
@@ -266,7 +266,7 @@ describe('TransactionPairService', () => {
             nonce: 0,
             value: '10',
             receiver:
-                'erd1qqqqqqqqqqqqqpgqd77fnev2sthnczp2lnfx0y5jdycynjfhzzgq6p3rax',
+                'drt1qqqqqqqqqqqqqpgqd77fnev2sthnczp2lnfx0y5jdycynjfhzzgq8axq7c',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
@@ -339,7 +339,7 @@ describe('TransactionPairService', () => {
             nonce: 0,
             value: secondTokenAmount,
             receiver:
-                'erd1qqqqqqqqqqqqqpgqd77fnev2sthnczp2lnfx0y5jdycynjfhzzgq6p3rax',
+                'drt1qqqqqqqqqqqqqpgqd77fnev2sthnczp2lnfx0y5jdycynjfhzzgq8axq7c',
             sender: senderAddress,
             receiverUsername: undefined,
             senderUsername: undefined,
@@ -416,7 +416,7 @@ describe('TransactionPairService', () => {
                 nonce: 0,
                 value: '0',
                 receiver:
-                    'erd1qqqqqqqqqqqqqpgqd77fnev2sthnczp2lnfx0y5jdycynjfhzzgq6p3rax',
+                    'drt1qqqqqqqqqqqqqpgqd77fnev2sthnczp2lnfx0y5jdycynjfhzzgq8axq7c',
                 sender: senderAddress,
                 receiverUsername: undefined,
                 senderUsername: undefined,
@@ -581,7 +581,7 @@ describe('TransactionPairService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.pairs.admin.whitelist,
             data: encodeTransactionData(
-                'whitelist@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'whitelist@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             ),
             chainID: mxConfig.chainID,
             version: 2,
@@ -616,7 +616,7 @@ describe('TransactionPairService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.pairs.admin.removeWhitelist,
             data: encodeTransactionData(
-                'removeWhitelist@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'removeWhitelist@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             ),
             chainID: mxConfig.chainID,
             version: 2,
@@ -654,7 +654,7 @@ describe('TransactionPairService', () => {
             gasPrice: 1000000000,
             gasLimit: gasConfig.pairs.admin.addTrustedSwapPair,
             data: encodeTransactionData(
-                'addTrustedSwapPair@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu@WREWA-123456@MEX-123456',
+                'addTrustedSwapPair@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z@WREWA-123456@MEX-123456',
             ),
             chainID: mxConfig.chainID,
             version: 2,
@@ -929,7 +929,7 @@ describe('TransactionPairService', () => {
             gasPrice: 1000000000,
             gasLimit: 200000000,
             data: encodeTransactionData(
-                'setLockingScAddress@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu',
+                'setLockingScAddress@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z',
             ),
             chainID: mxConfig.chainID,
             version: 2,
@@ -964,7 +964,7 @@ describe('TransactionPairService', () => {
             gasPrice: 1000000000,
             gasLimit: 10000000,
             data: encodeTransactionData(
-                `setupFeesCollector@erd1qqqqqqqqqqqqqpgqagq2v9exkrn3wnauq3lw4xcetwsmgmwjd8ssjt4k7s@50000`,
+                `setupFeesCollector@drt1qqqqqqqqqqqqqpgqagq2v9exkrn3wnauq3lw4xcetwsmgmwjd8ss0hz4aw@50000`,
             ),
             chainID: mxConfig.chainID,
             version: 2,

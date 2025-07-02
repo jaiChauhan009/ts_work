@@ -38,7 +38,7 @@
       "inputs": [],
       "outputs": [
         {
-          "type": "List<EsdtTokenPayment>"
+          "type": "List<DcdtTokenPayment>"
         }
       ]
     },
@@ -182,7 +182,7 @@
       ],
       "outputs": [
         {
-          "type": "List<EsdtTokenPayment>"
+          "type": "List<DcdtTokenPayment>"
         }
       ]
     },
@@ -436,7 +436,7 @@
         },
         {
           "name": "payment",
-          "type": "EsdtTokenPayment",
+          "type": "DcdtTokenPayment",
           "indexed": true
         }
       ]
@@ -461,7 +461,7 @@
         },
         {
           "name": "all_payments",
-          "type": "List<EsdtTokenPayment>"
+          "type": "List<DcdtTokenPayment>"
         }
       ]
     },
@@ -538,7 +538,7 @@
         }
       ]
     },
-    "EsdtTokenPayment": {
+    "DcdtTokenPayment": {
       "type": "struct",
       "fields": [
         {

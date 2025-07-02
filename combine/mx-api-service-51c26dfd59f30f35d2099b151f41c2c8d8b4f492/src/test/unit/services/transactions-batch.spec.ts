@@ -47,7 +47,7 @@ describe('TransactionsBatchService', () => {
 
   describe('getTransactionBatches', () => {
     it('should get transaction batches', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const keys = ['key1', 'key2'];
       const batches = [{ batch1: 'details' }, { batch2: 'details' }];
 
@@ -62,7 +62,7 @@ describe('TransactionsBatchService', () => {
     });
 
     it('should return an empty array if no transaction batches are found', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
 
       jest.spyOn(cacheService, 'getKeys').mockResolvedValue([]);
       jest.spyOn(cacheService, 'batchGetManyRemote').mockResolvedValue([]);
@@ -77,7 +77,7 @@ describe('TransactionsBatchService', () => {
 
   describe('getTransactionBatch', () => {
     it('should get a transaction batch', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const batchId = 'batchId';
       const batch = { id: batchId, details: 'details' };
 
@@ -90,7 +90,7 @@ describe('TransactionsBatchService', () => {
     });
 
     it('should return undefined if no batch is found', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const batchId = 'batchId';
 
       jest.spyOn(cacheService, 'getRemote').mockResolvedValue(undefined);
@@ -112,12 +112,12 @@ describe('TransactionsBatchService', () => {
             gasLimit: 368000,
             gasPrice: 1000000000,
             nonce: 13,
-            receiver: "erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz",
-            sender: "erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz",
+            receiver: "drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su",
+            sender: "drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su",
             signature: "acc6892fae65638d317ed11630e31e116aac14b837531f2a157a4892fca3dbc0e648e19433c4d4c8da4056d624f82154eb12294d6637ef22f751a487d2300c04",
             value: "0",
             version: 1,
-            guardian: "erd1sfp8lm4z7n7l3r55dqaanfwy2hzsvzmqsngu9qlh3n4809ympqgqfa3l70",
+            guardian: "drt1sfp8lm4z7n7l3r55dqaanfwy2hzsvzmqsngu9qlh3n4809ympqgq5pxua3",
             guardianSignature: "8090ad78de6215ad6c5027849265bdd32d9723d7e89ac2b8e9cf80923329a814",
 
           },
@@ -154,12 +154,12 @@ describe('TransactionsBatchService', () => {
         gasLimit: 368000,
         gasPrice: 1000000000,
         nonce: 13,
-        receiver: "erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz",
-        sender: "erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz",
+        receiver: "drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su",
+        sender: "drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su",
         signature: "acc6892fae65638d317ed11630e31e116aac14b837531f2a157a4892fca3dbc0e648e19433c4d4c8da4056d624f82154eb12294d6637ef22f751a487d2300c04",
         value: "0",
         version: 1,
-        guardian: "erd1sfp8lm4z7n7l3r55dqaanfwy2hzsvzmqsngu9qlh3n4809ympqgqfa3l70",
+        guardian: "drt1sfp8lm4z7n7l3r55dqaanfwy2hzsvzmqsngu9qlh3n4809ympqgq5pxua3",
         guardianSignature: "8090ad78de6215ad6c5027849265bdd32d9723d7e89ac2b8e9cf80923329a814",
         status: BatchTransactionStatus.pending,
         error: "",

@@ -102,7 +102,7 @@ import { Account, Address, DevnetEntrypoint, TokenManagementTransactionsOutcomeP
         // fetch the nonce of the network // md-as-comment
         alice.nonce = await entrypoint.recallAccountNonce(alice.address);
 
-        const contract = Address.newFromBech32("erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqf8llllswuedva");
+        const contract = Address.newFromBech32("drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqf8llllsy4lvxt");
 
         const transaction = await controller.createTransactionForDelegating(alice, alice.getNonceThenIncrement(), {
             delegationContract: contract,
@@ -124,7 +124,7 @@ import { Account, Address, DevnetEntrypoint, TokenManagementTransactionsOutcomeP
         const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
         const alice = await Account.newFromPem(filePath);
 
-        const contract = Address.newFromBech32("erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqf8llllswuedva");
+        const contract = Address.newFromBech32("drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqf8llllsy4lvxt");
 
         const transaction = await factory.createTransactionForDelegating(alice.address, {
             delegationContract: contract,
@@ -156,7 +156,7 @@ import { Account, Address, DevnetEntrypoint, TokenManagementTransactionsOutcomeP
         const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
         const alice = await Account.newFromPem(filePath);
 
-        const contract = Address.newFromBech32("erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqf8llllswuedva");
+        const contract = Address.newFromBech32("drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqf8llllsy4lvxt");
         // fetch the nonce of the network // md-as-comment
         alice.nonce = await entrypoint.recallAccountNonce(alice.address);
 
@@ -183,7 +183,7 @@ import { Account, Address, DevnetEntrypoint, TokenManagementTransactionsOutcomeP
         const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
         const alice = await Account.newFromPem(filePath);
 
-        const contract = Address.newFromBech32("erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqf8llllswuedva");
+        const contract = Address.newFromBech32("drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqf8llllsy4lvxt");
 
         const transaction = await factory.createTransactionForRedelegatingRewards(alice.address, {
             delegationContract: contract,
@@ -214,7 +214,7 @@ import { Account, Address, DevnetEntrypoint, TokenManagementTransactionsOutcomeP
         const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
         const alice = await Account.newFromPem(filePath);
 
-        const contract = Address.newFromBech32("erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqf8llllswuedva");
+        const contract = Address.newFromBech32("drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqf8llllsy4lvxt");
         // fetch the nonce of the network // md-as-comment
         alice.nonce = await entrypoint.recallAccountNonce(alice.address);
 
@@ -237,7 +237,7 @@ import { Account, Address, DevnetEntrypoint, TokenManagementTransactionsOutcomeP
         const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
         const alice = await Account.newFromPem(filePath);
 
-        const contract = Address.newFromBech32("erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqf8llllswuedva");
+        const contract = Address.newFromBech32("drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqf8llllsy4lvxt");
 
         const transaction = await factory.createTransactionForClaimingRewards(alice.address, {
             delegationContract: contract,
@@ -268,7 +268,7 @@ import { Account, Address, DevnetEntrypoint, TokenManagementTransactionsOutcomeP
         const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
         const alice = await Account.newFromPem(filePath);
 
-        const contract = Address.newFromBech32("erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqf8llllswuedva");
+        const contract = Address.newFromBech32("drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqf8llllsy4lvxt");
         // fetch the nonce of the network // md-as-comment
         alice.nonce = await entrypoint.recallAccountNonce(alice.address);
 
@@ -292,7 +292,7 @@ import { Account, Address, DevnetEntrypoint, TokenManagementTransactionsOutcomeP
         const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
         const alice = await Account.newFromPem(filePath);
 
-        const contract = Address.newFromBech32("erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqf8llllswuedva");
+        const contract = Address.newFromBech32("drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqf8llllsy4lvxt");
 
         const transaction = await factory.createTransactionForUndelegating(alice.address, {
             delegationContract: contract,
@@ -324,7 +324,7 @@ import { Account, Address, DevnetEntrypoint, TokenManagementTransactionsOutcomeP
         const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
         const alice = await Account.newFromPem(filePath);
 
-        const contract = Address.newFromBech32("erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqf8llllswuedva");
+        const contract = Address.newFromBech32("drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqf8llllsy4lvxt");
 
         // fetch the nonce of the network // md-as-comment
         alice.nonce = await entrypoint.recallAccountNonce(alice.address);
@@ -348,7 +348,7 @@ import { Account, Address, DevnetEntrypoint, TokenManagementTransactionsOutcomeP
         const filePath = path.join("../src", "testdata", "testwallets", "alice.pem");
         const alice = await Account.newFromPem(filePath);
 
-        const contract = Address.newFromBech32("erd1qqqqqqqqqqqqqqqpqqqqqqqqqqqqqqqqqqqqqqqqqqqqqf8llllswuedva");
+        const contract = Address.newFromBech32("drt1yvesqqqqqqqqqqqqqqqqqqqqqqqqyvesqqqqqqqqqqqqqf8llllsy4lvxt");
 
         const transaction = await factory.createTransactionForWithdrawing(alice.address, {
             delegationContract: contract,

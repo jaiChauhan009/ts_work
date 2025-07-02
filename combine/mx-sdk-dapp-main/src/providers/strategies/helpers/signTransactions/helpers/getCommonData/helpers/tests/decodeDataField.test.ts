@@ -23,7 +23,7 @@ const DECODED_DATA = {
   },
   [DecodeMethodEnum.smart]: {
     displayValue:
-      'MultiDCDTNFTTransfer@erd1qqqqqqqqqqqqqpgqzw0d0tj25qme9e4ukverjjjqle6xamay0n4s5r0v9g@\x02@WREWA-a28c59@@10000000000000000000@MEX-a659d0@@9352009123466089130430749@addLiquidity@9900000000000000000@9258489032231428239126441',
+      'MultiDCDTNFTTransfer@drt1qqqqqqqqqqqqqpgqzw0d0tj25qme9e4ukverjjjqle6xamay0n4sflc0xk@\x02@WREWA-a28c59@@10000000000000000000@MEX-a659d0@@9352009123466089130430749@addLiquidity@9900000000000000000@9258489032231428239126441',
     highlight: 'WREWA-a28c59@@10000000000000000000'
   }
 };

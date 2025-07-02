@@ -146,7 +146,7 @@ describe('TransactionService', () => {
 
   describe('getTransactionCountForAddressRaw', () => {
     it('should return transactions count for given address', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       jest.spyOn(indexerService, 'getTransactionCountForAddress').mockResolvedValue(200);
 
       const result = await service.getTransactionCountForAddressRaw(address);
@@ -178,10 +178,10 @@ describe('TransactionService', () => {
         nonce: 85514,
         round: 17034196,
         value: '0',
-        receiver: 'erd1qqqqqqqqqqqqqpgq7rwhny4mx6dhuzcsymrhdsv2vmvarecgh4vq687aqr',
+        receiver: 'drt1qqqqqqqqqqqqqpgq7rwhny4mx6dhuzcsymrhdsv2vmvarecgh4vq8mf7ra',
         receiverUserName: 'YWxpY2UyLnN1ZmZpeA==',
         receiverUsername: '',
-        sender: 'erd1sdrjn0uuulydacwjam3v5afl427ptk797fpcujpfcsakfck8aqjquq9afc',
+        sender: 'drt1sdrjn0uuulydacwjam3v5afl427ptk797fpcujpfcsakfck8aqjqpuj72x',
         senderUserName: '',
         senderUsername: '',
         receiverShard: 0,
@@ -201,13 +201,13 @@ describe('TransactionService', () => {
         hasOperations: true,
         tokens: [''],
         dcdtValues: ['10'],
-        receivers: ['erd1', 'erd2'],
+        receivers: ['drt1', 'erd2'],
         receiversShardIDs: [1],
         operation: 'transfer',
         scResults: [''],
-        relayerAddr: 'erd1sdrjn0uuulydacwjam3v5afl427ptk797fpcujpfcsakfck8aqjquq9afc',
+        relayerAddr: 'drt1sdrjn0uuulydacwjam3v5afl427ptk797fpcujpfcsakfck8aqjqpuj72x',
         version: 1,
-        relayer: 'erd1sdrjn0uuulydacwjam3v5afl427ptk797fpcujpfcsakfck8aqjquq9afc',
+        relayer: 'drt1sdrjn0uuulydacwjam3v5afl427ptk797fpcujpfcsakfck8aqjqpuj72x',
         isRelayed: true,
         isScCall: true,
         relayerSignature: 'bc51e9032332740d60c404d4bf553ae225ca77a70ad799a1cdfc6e73609be8ec62e89ac6e2c2621ffbfb89e6fab620c137010662f3ebea9c422c9f1dbec04a03',
@@ -219,10 +219,10 @@ describe('TransactionService', () => {
         nonce: 1893,
         round: 17034196,
         value: '0',
-        receiver: 'erd1qqqqqqqqqqqqqpgq7rwhny4mx6dhuzcsymrhdsv2vmvarecgh4vq687aqr',
+        receiver: 'drt1qqqqqqqqqqqqqpgq7rwhny4mx6dhuzcsymrhdsv2vmvarecgh4vq8mf7ra',
         receiverUserName: '',
         receiverUsername: '',
-        sender: 'erd1sdrjn0uuulydacwjam3v5afl427ptk797fpcujpfcsakfck8aqjquq9afc',
+        sender: 'drt1sdrjn0uuulydacwjam3v5afl427ptk797fpcujpfcsakfck8aqjqpuj72x',
         senderUserName: '',
         senderUsername: '',
         receiverShard: 0,
@@ -242,13 +242,13 @@ describe('TransactionService', () => {
         hasOperations: true,
         tokens: [''],
         dcdtValues: ['10'],
-        receivers: ['erd1', 'erd2'],
+        receivers: ['drt1', 'erd2'],
         receiversShardIDs: [1],
         operation: 'transfer',
         scResults: [''],
-        relayerAddr: 'erd1sdrjn0uuulydacwjam3v5afl427ptk797fpcujpfcsakfck8aqjquq9afc',
+        relayerAddr: 'drt1sdrjn0uuulydacwjam3v5afl427ptk797fpcujpfcsakfck8aqjqpuj72x',
         version: 1,
-        relayer: 'erd1sdrjn0uuulydacwjam3v5afl427ptk797fpcujpfcsakfck8aqjquq9afc',
+        relayer: 'drt1sdrjn0uuulydacwjam3v5afl427ptk797fpcujpfcsakfck8aqjqpuj72x',
         isRelayed: true,
         isScCall: true,
         relayerSignature: 'bc51e9032332740d60c404d4bf553ae225ca77a70ad799a1cdfc6e73609be8ec62e89ac6e2c2621ffbfb89e6fab620c137010662f3ebea9c422c9f1dbec04a03',

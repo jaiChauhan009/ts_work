@@ -36,7 +36,7 @@ describe('Marketplace Service', () => {
           edges: [
             {
               node: {
-                ownerAddress: 'erd1rwzt4gcqk9e6xqgzgvssdhad3l3pgzsqf08fqhzjrkkmp2kllgpsgppy4j',
+                ownerAddress: 'drt1rwzt4gcqk9e6xqgzgvssdhad3l3pgzsqf08fqhzjrkkmp2kllgps4ak8kv',
                 identifier: 'Test-2d29f9-0103',
                 collection: 'Test-2d29f9',
                 status: 'running',
@@ -62,7 +62,7 @@ describe('Marketplace Service', () => {
 
       expect(result).toEqual(expect.arrayContaining([
         expect.objectContaining({
-          owner: 'erd1rwzt4gcqk9e6xqgzgvssdhad3l3pgzsqf08fqhzjrkkmp2kllgpsgppy4j',
+          owner: 'drt1rwzt4gcqk9e6xqgzgvssdhad3l3pgzsqf08fqhzjrkkmp2kllgps4ak8kv',
           auctionId: 842843,
           identifier: 'Test-2d29f9-0103',
           collection: 'Test-2d29f9',
@@ -91,7 +91,7 @@ describe('Marketplace Service', () => {
 
   describe('getAccountStats', () => {
     it('should return account auction stats', async () => {
-      const address: string = 'erd14wxx9p9kld06w66n6lcxcchv976n7crzma8w7s3tkaqcme8hr7fqdhhfdg';
+      const address: string = 'drt14wxx9p9kld06w66n6lcxcchv976n7crzma8w7s3tkaqcme8hr7fqstq2wk';
       const graphqlResults = {
         accountStats: {
           auctions: '20',
@@ -120,7 +120,7 @@ describe('Marketplace Service', () => {
     });
 
     it('should throw BadRequestException if result cannot be fetched', async () => {
-      const address: string = 'erd14wxx9p9kld06w66n6lcxcchv976n7crzma8w7s3tkaqcme8hr7fqdhhfdg';
+      const address: string = 'drt14wxx9p9kld06w66n6lcxcchv976n7crzma8w7s3tkaqcme8hr7fqstq2wk';
 
       jest.spyOn(service['graphQlService'], 'getNftServiceData').mockReturnValueOnce(Promise.resolve(null));
 
@@ -173,7 +173,7 @@ describe('Marketplace Service', () => {
 
   describe('getAccountAuctions', () => {
     it('should return an array of auctions for a specific address with status auction = running', async () => {
-      const address: string = 'erd14wxx9p9kld06w66n6lcxcchv976n7crzma8w7s3tkaqcme8hr7fqdhhfdg';
+      const address: string = 'drt14wxx9p9kld06w66n6lcxcchv976n7crzma8w7s3tkaqcme8hr7fqstq2wk';
 
       const result = {
         auctions: {
@@ -250,7 +250,7 @@ describe('Marketplace Service', () => {
     });
 
     it('should return an empty array if getNftServiceData returns no results', async () => {
-      const address: string = 'erd14wxx9p9kld06w66n6lcxcchv976n7crzma8w7s3tkaqcme8hr7fqdhhfdg';
+      const address: string = 'drt14wxx9p9kld06w66n6lcxcchv976n7crzma8w7s3tkaqcme8hr7fqstq2wk';
 
       const state: AuctionStatus = AuctionStatus.running;
       jest.spyOn(graphQlService, 'getNftServiceData').mockResolvedValue(Promise.resolve(null));
@@ -281,11 +281,11 @@ describe('Marketplace Service', () => {
                 endDate: 1676585733,
                 marketplace: { key: 'xoxno' },
                 asset: {
-                  creatorAddress: 'erd14wxx9p9kld06w66n6lcxcchv976n7crzma8w7s3tkaqcme8hr7fqdhhfdg',
+                  creatorAddress: 'drt14wxx9p9kld06w66n6lcxcchv976n7crzma8w7s3tkaqcme8hr7fqstq2wk',
                 },
                 minBid: { amount: '1900000000000000000', token: 'REWA' },
                 maxBid: { amount: '1900000000000000000', token: 'REWA' },
-                ownerAddress: 'erd14wxx9p9kld06w66n6lcxcchv976n7crzma8w7s3tkaqcme8hr7fqdhhfdg',
+                ownerAddress: 'drt14wxx9p9kld06w66n6lcxcchv976n7crzma8w7s3tkaqcme8hr7fqstq2wk',
                 marketplaceAuctionId: 586854,
                 startDate: 1676576532,
               },
@@ -299,7 +299,7 @@ describe('Marketplace Service', () => {
       const result = await service.getAuctionId(auctionId);
 
       expect(result).toEqual(expect.objectContaining({
-        owner: 'erd14wxx9p9kld06w66n6lcxcchv976n7crzma8w7s3tkaqcme8hr7fqdhhfdg',
+        owner: 'drt14wxx9p9kld06w66n6lcxcchv976n7crzma8w7s3tkaqcme8hr7fqstq2wk',
         identifier: 'Test-2d29f9-01',
         collection: 'Test-2d29f9',
         status: 'running',
@@ -376,7 +376,7 @@ describe('Marketplace Service', () => {
   });
 
   describe('getAccountAuctionsCount', () => {
-    const collection: string = 'erd14wxx9p9kld06w66n6lcxcchv976n7crzma8w7s3tkaqcme8hr7fqdhhfdg';
+    const collection: string = 'drt14wxx9p9kld06w66n6lcxcchv976n7crzma8w7s3tkaqcme8hr7fqstq2wk';
     const mockResult = {
       auctions: {
         pageData: {

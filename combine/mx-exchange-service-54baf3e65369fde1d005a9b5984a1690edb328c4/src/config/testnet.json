@@ -3,34 +3,34 @@
         "chainID": "T"
     },
     "scAddress": {
-        "routerAddress": "erd1qqqqqqqqqqqqqpgqfd2apcqxxmvngsnhmq4xfq22pfnq7gctexksm0gudw",
-        "MEX-708726": "erd1qqqqqqqqqqqqqpgqzjstzefzeastekqpxz6ysh3d0k9eap9aexkscvsdqn",
-        "WEGLD_USDC": "erd1qqqqqqqqqqqqqpgqfsfcrxnlym0fjlnuvus2dmlz6ju9cpsfexks8wq4d4",
+        "routerAddress": "drt1qqqqqqqqqqqqqpgqfd2apcqxxmvngsnhmq4xfq22pfnq7gctexksxnllws",
+        "MEX-708726": "drt1qqqqqqqqqqqqqpgqzjstzefzeastekqpxz6ysh3d0k9eap9aexks9s8wrd",
+        "WEGLD_USDC": "drt1qqqqqqqqqqqqqpgqfsfcrxnlym0fjlnuvus2dmlz6ju9cpsfexks6jhkwt",
         "proxyDexAddress": {
-            "v1": "erd1qqqqqqqqqqqqqpgqyxu6kgfxmw22zx5atyal4vtpwkc62v86exkshygpfx",
-            "v2": "erd1qqqqqqqqqqqqqpgqkh74aapaz5cahf4rf8fzyxvqkh6ca86yexksjtmmnm"
+            "v1": "drt1qqqqqqqqqqqqqpgqyxu6kgfxmw22zx5atyal4vtpwkc62v86exks2clz2c",
+            "v2": "drt1qqqqqqqqqqqqqpgqkh74aapaz5cahf4rf8fzyxvqkh6ca86yexks0hvcs9"
         },
-        "lockedAssetAddress": "erd1qqqqqqqqqqqqqpgq68yyplpvzs40urda5y7ce8xgn6kj3sarexkslzm02u",
-        "metabondingStakingAddress": "erd1qqqqqqqqqqqqqpgq4jpq0azcwlmcdluzv5ra8ev4vts8ht090n4suseqfa",
+        "lockedAssetAddress": "drt1qqqqqqqqqqqqqpgq68yyplpvzs40urda5y7ce8xgn6kj3sarexksz7vvfz",
+        "metabondingStakingAddress": "drt1qqqqqqqqqqqqqpgq4jpq0azcwlmcdluzv5ra8ev4vts8ht090n4spvwr2r",
         "simpleLockAddress": [
-            "erd1qqqqqqqqqqqqqpgq5fszwql529edaggetu7vkauc07dzed9zexksqdewxw"
+            "drt1qqqqqqqqqqqqqpgq5fszwql529edaggetu7vkauc07dzed9zexksa3wd9s"
         ],
         "wrappingAddress": {
-            "shardID-0": "erd1qqqqqqqqqqqqqpgqqkwzsxkjc83vlfex9dmznwm7tjvxlqqkpauqx0n782",
-            "shardID-1": "erd1qqqqqqqqqqqqqpgqhpmz3gh6jnwuyw4qxnksfh74tv8kdf6gexksrputsf",
-            "shardID-2": "erd1qqqqqqqqqqqqqpgqvn9ew0wwn7a3pk053ezex98497hd4exqdg0q8v2e0c"
+            "shardID-0": "drt1qqqqqqqqqqqqqpgqqkwzsxkjc83vlfex9dmznwm7tjvxlqqkpauqmnyay5",
+            "shardID-1": "drt1qqqqqqqqqqqqqpgqhpmz3gh6jnwuyw4qxnksfh74tv8kdf6gexks7atgnh",
+            "shardID-2": "drt1qqqqqqqqqqqqqpgqvn9ew0wwn7a3pk053ezex98497hd4exqdg0q6sa6vx"
         },
         "priceDiscovery": [
         ],
-        "simpleLockEnergy": "erd1qqqqqqqqqqqqqpgqgcd4wquv46u5u9gvvz4x3avuwmjqwfstexksk37nf4",
-        "feesCollector": "erd1qqqqqqqqqqqqqpgqt5mtw8hjy5n8vkap5ea3nmd4qd9rwyzvexksw07tns",
-        "energyUpdate": "erd1qqqqqqqqqqqqqpgq37e5r67hvtrkyhs6yadwvwtk3rxk792e0n4s066pa5",
-        "tokenUnstake": "erd1qqqqqqqqqqqqqpgqyxus98ytge6yt2ptesjxa5dzjfuz60dgexks3zee0k",
-        "lockedTokenWrapper": "erd1qqqqqqqqqqqqqpgqs9c75ev7kzttp33gq0868qcwynv2ajgt0n4s9k628r",
-        "escrow": "erd1qqqqqqqqqqqqqpgqcsmrv0hh6fvmhe4e7q4resj7rkeqxp7p0n4s0qfapx",
-        "positionCreator": "erd1qqqqqqqqqqqqqpgqa7hv0nahgsl8tz0psat46x0tchm0wuyc0n4s6q28ad",
-        "lockedTokenPositionCreator": "erd1qqqqqqqqqqqqqpgq3q0rzdp8zlu8nmkr4cs6nhx78x3p080u0n4s34yj8g",
-        "composableTasks": "erd1qqqqqqqqqqqqqpgq7ykazrzd905zvnlr88dpfw06677lxe9w0n4suz00uh"
+        "simpleLockEnergy": "drt1qqqqqqqqqqqqqpgqgcd4wquv46u5u9gvvz4x3avuwmjqwfstexkstdfs2t",
+        "feesCollector": "drt1qqqqqqqqqqqqqpgqt5mtw8hjy5n8vkap5ea3nmd4qd9rwyzvexksnnfgsw",
+        "energyUpdate": "drt1qqqqqqqqqqqqqpgq37e5r67hvtrkyhs6yadwvwtk3rxk792e0n4sjxdz72",
+        "tokenUnstake": "drt1qqqqqqqqqqqqqpgqyxus98ytge6yt2ptesjxa5dzjfuz60dgexksv7w6vg",
+        "lockedTokenWrapper": "drt1qqqqqqqqqqqqqpgqs9c75ev7kzttp33gq0868qcwynv2ajgt0n4sc2dfya",
+        "escrow": "drt1qqqqqqqqqqqqqpgqcsmrv0hh6fvmhe4e7q4resj7rkeqxp7p0n4sju77zc",
+        "positionCreator": "drt1qqqqqqqqqqqqqpgqa7hv0nahgsl8tz0psat46x0tchm0wuyc0n4s8uay7n",
+        "lockedTokenPositionCreator": "drt1qqqqqqqqqqqqqpgq3q0rzdp8zlu8nmkr4cs6nhx78x3p080u0n4svfn3yk",
+        "composableTasks": "drt1qqqqqqqqqqqqqpgq7ykazrzd905zvnlr88dpfw06677lxe9w0n4sp7cvlf"
     },
     "governance": {
         "oldEnergy": {},
@@ -50,10 +50,10 @@
                 "unlockedRewards": [
                 ],
                 "lockedRewards": [
-                    "erd1qqqqqqqqqqqqqpgqk232ukl7944vmjq44krjns0yturh6ms9exksgmr2sc",
-                    "erd1qqqqqqqqqqqqqpgq3qw8j5kd6295y8ud4kwc7k3qyhdcvu6fexksas5lm6",
-                    "erd1qqqqqqqqqqqqqpgqzqlavpqgwkrnslzrl05aqms2au2327asexksc4u3qg",
-                    "erd1qqqqqqqqqqqqqpgqv2w0j3wveyv09mclcnnulcn0d5vwuhe8exksu2n3rz"
+                    "drt1qqqqqqqqqqqqqpgqk232ukl7944vmjq44krjns0yturh6ms9exks485fnx",
+                    "drt1qqqqqqqqqqqqqpgq3qw8j5kd6295y8ud4kwc7k3qyhdcvu6fexksqvrucy",
+                    "drt1qqqqqqqqqqqqqpgqzqlavpqgwkrnslzrl05aqms2au2327asexks9ftjrk",
+                    "drt1qqqqqqqqqqqqqpgqv2w0j3wveyv09mclcnnulcn0d5vwuhe8exkspkyjqu"
                     
                 ]
         }

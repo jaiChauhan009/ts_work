@@ -32,12 +32,12 @@ describe('Register DCDT Token test', () => {
     await changeInputText({
       dataTestId: DataTestIdsEnum.contractInput,
       shouldOverride: true,
-      text: 'erd1qqqqqqqqqqqqqpgqfcm6l6rd42hwhskmk4thlp9kz58npfq50gfqdrthqa'
+      text: 'drt1qqqqqqqqqqqqqpgqfcm6l6rd42hwhskmk4thlp9kz58npfq50gfqslu5rr'
     });
 
     await expectInputToHaveValue({
       dataTestId: DataTestIdsEnum.contractInput,
-      value: 'erd1qqqqqqqqqqqqqpgqfcm6l6rd42hwhskmk4thlp9kz58npfq50gfqdrthqa'
+      value: 'drt1qqqqqqqqqqqqqpgqfcm6l6rd42hwhskmk4thlp9kz58npfq50gfqslu5rr'
     });
 
     await page.type('#react-select-3-input', 'MEX');

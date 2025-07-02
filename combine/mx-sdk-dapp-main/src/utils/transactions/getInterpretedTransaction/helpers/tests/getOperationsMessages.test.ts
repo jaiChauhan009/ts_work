@@ -20,8 +20,8 @@ describe('getOperationsMessages', () => {
       action: TransactionOperationActionTypeEnum.transfer,
       dcdtType: 'FungibleDCDT',
       receiver:
-        'erd1qqqqqqqqqqqqqpgq4gdcg0k83u7lpv4s4532w3au9y9h0vm70eqq6m8qk2',
-      sender: 'erd1axhx4kenjlae6sknq7zjg2g4fvzavv979r2fg425p62wkl84avtqsf7vvv',
+        'drt1qqqqqqqqqqqqqpgq4gdcg0k83u7lpv4s4532w3au9y9h0vm70eqq88sr45',
+      sender: 'drt1axhx4kenjlae6sknq7zjg2g4fvzavv979r2fg425p62wkl84avtqd4f00j',
       value: '1',
       decimals: 4,
       identifier: 'REWA'

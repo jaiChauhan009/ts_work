@@ -81,7 +81,7 @@ describe('ProxyFarmTransactionsService', () => {
                 type: 'MetaDCDT',
                 name: 'xMEXLPStaked',
                 creator:
-                    'erd1qqqqqqqqqqqqqpgqat0auzsgk9x0g9gm8n6tq6qa9xtmwu4h295qaalzvq',
+                    'drt1qqqqqqqqqqqqqpgqat0auzsgk9x0g9gm8n6tq6qa9xtmwu4h295qqpgp07',
                 balance: '12150032824158390',
                 decimals: 18,
                 ticker: 'LKFARM-123456',
@@ -90,7 +90,7 @@ describe('ProxyFarmTransactionsService', () => {
 
         const transactions = await service.migrateTotalFarmPosition(
             Address.Zero().bech32(),
-            'erd1qqqqqqqqqqqqqpgqt6ltx52ukss9d2qag2k67at28a36xc9lkp2sr06394',
+            'drt1qqqqqqqqqqqqqpgqt6ltx52ukss9d2qag2k67at28a36xc9lkp2s7ndjxt',
         );
 
         expect(transactions.length).toEqual(0);
@@ -113,7 +113,7 @@ describe('ProxyFarmTransactionsService', () => {
                 type: 'MetaDCDT',
                 name: 'xMEXLPStaked',
                 creator:
-                    'erd1qqqqqqqqqqqqqpgqat0auzsgk9x0g9gm8n6tq6qa9xtmwu4h295qaalzvq',
+                    'drt1qqqqqqqqqqqqqpgqat0auzsgk9x0g9gm8n6tq6qa9xtmwu4h295qqpgp07',
                 balance: '12150032824158390',
                 decimals: 18,
                 ticker: 'LKFARM-123456',
@@ -122,12 +122,12 @@ describe('ProxyFarmTransactionsService', () => {
 
         const transactions = await service.migrateTotalFarmPosition(
             Address.Zero().bech32(),
-            'erd1qqqqqqqqqqqqqpgqt6ltx52ukss9d2qag2k67at28a36xc9lkp2sr06394',
+            'drt1qqqqqqqqqqqqqpgqt6ltx52ukss9d2qag2k67at28a36xc9lkp2s7ndjxt',
         );
 
         expect(transactions[0].data).toEqual(
             encodeTransactionData(
-                'DCDTNFTTransfer@LKFARM-123456@05@12150032824158390@erd1qqqqqqqqqqqqqpgqt6ltx52ukss9d2qag2k67at28a36xc9lkp2sr06394@claimRewardsProxy@erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpqsdtp6mh',
+                'DCDTNFTTransfer@LKFARM-123456@05@12150032824158390@drt1qqqqqqqqqqqqqpgqt6ltx52ukss9d2qag2k67at28a36xc9lkp2s7ndjxt@claimRewardsProxy@drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpqsshkecf',
             ),
         );
     });

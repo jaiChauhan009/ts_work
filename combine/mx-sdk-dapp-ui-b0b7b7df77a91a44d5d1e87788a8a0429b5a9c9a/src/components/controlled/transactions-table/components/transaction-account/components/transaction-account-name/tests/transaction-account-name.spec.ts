@@ -8,7 +8,7 @@ describe('transaction-account-name', () => {
       components: [TransactionAccountName],
       html: `
         <mvx-transaction-account-name
-          address="erd1q..."
+          address="drt1q..."
           name="Alice"
           description="Alice's Wallet"
           data-test-id="account-name"
@@ -29,7 +29,7 @@ describe('transaction-account-name', () => {
       components: [TransactionAccountName],
       html: `
         <mvx-transaction-account-name
-          address="erd1q..."
+          address="drt1q..."
           data-test-id="account-trim"
         />
       `,
@@ -37,7 +37,7 @@ describe('transaction-account-name', () => {
 
     const trimElement = root?.querySelector('mvx-trim');
     expect(trimElement).not.toBeNull();
-    expect(trimElement?.getAttribute('text')).toBe('erd1q...');
+    expect(trimElement?.getAttribute('text')).toBe('drt1q...');
     expect(trimElement?.getAttribute('datatestid')).toBe('account-trim');
   });
 
@@ -46,7 +46,7 @@ describe('transaction-account-name', () => {
       components: [TransactionAccountName],
       html: `
         <mvx-transaction-account-name
-          address="erd1q..."
+          address="drt1q..."
           name=""
         />
       `,
@@ -61,7 +61,7 @@ describe('transaction-account-name', () => {
       components: [TransactionAccountName],
       html: `
         <mvx-transaction-account-name
-          address="erd1q..."
+          address="drt1q..."
           name="Bob"
           class="custom-class"
         />
@@ -79,7 +79,7 @@ describe('transaction-account-name', () => {
       components: [TransactionAccountName],
       html: `
         <mvx-transaction-account-name
-          address="erd1q..."
+          address="drt1q..."
           name="Charlie"
         />
       `,
@@ -94,7 +94,7 @@ describe('transaction-account-name', () => {
       components: [TransactionAccountName],
       html: `
         <mvx-transaction-account-name
-          address="erd1q..."
+          address="drt1q..."
           name="Dave"
           description="Dave's Savings"
         />

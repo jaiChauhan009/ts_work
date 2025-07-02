@@ -115,7 +115,7 @@ describe('EscrowAbiService', () => {
             '616c6c53656e646572732c5594ae2f77a913119bc9db52833245a5879674cd4aeaedcd92f6f9e7edf17d2e696e646578344abc44119cfcace253de05e33c01796c12f96f3bcc52b504b9bc2b96927ceb':
                 '01',
             '616c6c53656e646572732c5594ae2f77a913119bc9db52833245a5879674cd4aeaedcd92f6f9e7edf17d2e6974656d00000001':
-                '6e593caf5c21cd2e419c8249101e20eb53770d6b2512ee9f19b971fd3c0a0e89', // erd1devnet6uy8xjusvusfy3q83qadfhwrtty5fwa8ceh9cl60q2p6ysra7aaa
+                '6e593caf5c21cd2e419c8249101e20eb53770d6b2512ee9f19b971fd3c0a0e89', // drt1devnet6uy8xjusvusfy3q83qadfhwrtty5fwa8ceh9cl60q2p6ys7pf77r
             '616c6c53656e646572732c5594ae2f77a913119bc9db52833245a5879674cd4aeaedcd92f6f9e7edf17d2e6c656e':
                 '01',
         });
@@ -138,7 +138,7 @@ describe('EscrowAbiService', () => {
         const sender = Address.Zero();
         const receivers = await service.getAllReceiversRaw(sender.bech32());
         expect(receivers).toEqual([
-            'erd1devnet6uy8xjusvusfy3q83qadfhwrtty5fwa8ceh9cl60q2p6ysra7aaa',
+            'drt1devnet6uy8xjusvusfy3q83qadfhwrtty5fwa8ceh9cl60q2p6ys7pf77r',
         ]);
         await cachingService.deleteInCache(`escrow.scKeys`);
     });
@@ -162,8 +162,8 @@ describe('EscrowAbiService', () => {
         const sender = Address.Zero();
         const receivers = await service.getAllReceiversRaw(sender.bech32());
         expect(receivers).toEqual([
-            'erd1devnet6uy8xjusvusfy3q83qadfhwrtty5fwa8ceh9cl60q2p6ysra7aaa',
-            'erd1932eft30w753xyvme8d49qejgkjc09n5e49w4mwdjtm0neld797su0dlxp',
+            'drt1devnet6uy8xjusvusfy3q83qadfhwrtty5fwa8ceh9cl60q2p6ys7pf77r',
+            'drt1932eft30w753xyvme8d49qejgkjc09n5e49w4mwdjtm0neld797spn6u9l',
         ]);
         await cachingService.deleteInCache(`escrow.scKeys`);
     });

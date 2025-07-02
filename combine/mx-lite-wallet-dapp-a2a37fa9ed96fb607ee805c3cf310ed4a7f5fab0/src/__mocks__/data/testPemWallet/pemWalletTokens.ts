@@ -4,7 +4,7 @@ export const pemWalletTokens = [
     identifier: 'ASH-e3d1b7',
     name: 'ASH',
     ticker: 'ASH',
-    owner: 'erd1f0dwxpl3vxe936cla2mkky7nym4g3xn4vgfz497dpupqul8uktzshxqj5l',
+    owner: 'drt1f0dwxpl3vxe936cla2mkky7nym4g3xn4vgfz497dpupqul8uktzs26h3hp',
     decimals: 18,
     isPaused: false,
     assets: {
@@ -17,7 +17,7 @@ export const pemWalletTokens = [
       svgUrl:
         'https://devnet-media.dharitri.org/tokens/asset/ASH-e3d1b7/logo.svg',
       lockedAccounts: {
-        erd1w280yjym0xc2aw80dvn2a4ew5vzvtshtr8nux8wa5wzqm78y7nvsq0ktun:
+        drt1w280yjym0xc2aw80dvn2a4ew5vzvtshtr8nux8wa5wzqm78y7nvsanpgld:
           'Locked Account #1'
       },
       extraTokens: [
@@ -70,7 +70,7 @@ export const pemWalletTokens = [
     identifier: 'WREWA-a28c59',
     name: 'WrappedREWA',
     ticker: 'WREWA',
-    owner: 'erd1x39tc3q3nn72ecjnmcz7x0qp09kp97t080x99dgyhx7zh95j0n4szskhlv',
+    owner: 'drt1x39tc3q3nn72ecjnmcz7x0qp09kp97t080x99dgyhx7zh95j0n4slvp5uj',
     decimals: 18,
     isPaused: false,
     assets: {

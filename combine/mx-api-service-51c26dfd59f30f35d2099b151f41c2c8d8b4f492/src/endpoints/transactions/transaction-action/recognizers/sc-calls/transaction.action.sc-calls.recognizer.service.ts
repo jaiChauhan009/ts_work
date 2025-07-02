@@ -23,7 +23,7 @@ export class SCCallActionRecognizerService implements TransactionActionRecognize
   }
 
   private getSCDeployAction(metadata: TransactionMetadata): TransactionAction | undefined {
-    if (metadata.receiver !== 'erd1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq6gq4hu') {
+    if (metadata.receiver !== 'drt1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq85hk5z') {
       return undefined;
     }
 

@@ -15,7 +15,7 @@ export async function getBalance(address: string): Promise<CallToolResult> {
       content: [
         {
           type: "text",
-          text: "Invalid address. Please provide a bech32 address (erd1...)",
+          text: "Invalid address. Please provide a bech32 address (drt1...)",
         },
       ],
     };

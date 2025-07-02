@@ -49,7 +49,7 @@ describe('UsernameService', () => {
 
   describe('getUsernameForAddressRaw', () => {
     it('should return username for valid address', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const expectedUsername = 'testuser';
 
       jest.spyOn(service['apiService'], 'get').mockResolvedValue({
@@ -63,7 +63,7 @@ describe('UsernameService', () => {
     });
 
     it('should return null for invalid address', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
 
       jest.spyOn(service['apiService'], 'get').mockRejectedValue(new Error('Invalid address'));
       jest.spyOn(service['logger'], 'error').mockImplementation(() => { });
@@ -74,7 +74,7 @@ describe('UsernameService', () => {
     });
 
     it('should return null when an error occurs', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz1';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su1';
       const expectedError = new Error('Test error');
 
       const apiServiceSpy = jest.spyOn(service['apiService'], 'get').mockRejectedValue(expectedError);
@@ -90,7 +90,7 @@ describe('UsernameService', () => {
 
   describe('getUsernameForAddress', () => {
     it('should return cached username if available', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const cachedUsername = 'alice';
 
       const cachingServiceSpy = jest.spyOn(service['cachingService'], 'getOrSet').mockResolvedValue(cachedUsername);
@@ -101,7 +101,7 @@ describe('UsernameService', () => {
     });
 
     it('should return null if getUsernameForAddressRaw fails', async () => {
-      const address = 'erd1Invalid';
+      const address = 'drt1Invalid';
 
       const cachingServiceSpy = jest.spyOn(service['cachingService'], 'getOrSet').mockResolvedValue(null);
       jest.spyOn(service, 'getUsernameForAddressRaw').mockRejectedValue(new Error('Failed to get username'));
@@ -112,7 +112,7 @@ describe('UsernameService', () => {
     });
 
     it('should return null when getUsernameForAddressRaw returns null', async () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
 
       const getUsernameForAddressRawMock = jest.spyOn(service as any, 'getUsernameForAddressRaw').mockResolvedValue(null);
       const cachingServiceSpy = jest.spyOn(service['cachingService'], 'getOrSet').mockImplementation((_key, func) => func());
@@ -128,7 +128,7 @@ describe('UsernameService', () => {
   describe('getAddressForUsername', () => {
     it('should cross-check username when getting address', async () => {
       const username = 'alice';
-      const expectedAddress = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const expectedAddress = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
 
       const cachingServiceSpy = jest.spyOn(service['cachingService'], 'getOrSet').mockResolvedValue(expectedAddress);
       jest.spyOn(service as any, 'getAddressForUsernameRaw').mockResolvedValue(expectedAddress);
@@ -142,7 +142,7 @@ describe('UsernameService', () => {
 
     it('should return null if cross-check fails', async () => {
       const username = 'bob';
-      const expectedAddress = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz1';
+      const expectedAddress = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su1';
 
       const cachingServiceSpy = jest.spyOn(service['cachingService'], 'getOrSet').mockResolvedValue(null);
       jest.spyOn(service as any, 'getAddressForUsernameRaw').mockResolvedValue(expectedAddress);
@@ -172,19 +172,19 @@ describe('UsernameService', () => {
 
   describe('getUsernameRedirectRoute', () => {
     it('should return route with address only when withGuardianInfo is undefined', () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const result = service.getUsernameRedirectRoute(address, undefined);
       expect(result).toStrictEqual(`/accounts/${address}`);
     });
 
     it('should return route with address only when withGuardianInfo is false', () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const result = service.getUsernameRedirectRoute(address, false);
       expect(result).toStrictEqual(`/accounts/${address}`);
     });
 
     it('should return route with address and withGuardianInfo when withGuardianInfo is true', () => {
-      const address = 'erd1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycqjjyknz';
+      const address = 'drt1qga7ze0l03chfgru0a32wxqf2226nzrxnyhzer9lmudqhjgy7ycq0wn4su';
       const result = service.getUsernameRedirectRoute(address, true);
       expect(result).toStrictEqual(`/accounts/${address}?withGuardianInfo=true`);
     });
